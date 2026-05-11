@@ -1,0 +1,53 @@
+{
+  "expo": {
+    "name": "Lexio Underground",
+    "slug": "lexio-underground",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "scheme": "lexio",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0D0D0F"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.lexio.underground",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "Lexio needs microphone access to record your speaking practice and conversation shadow exercises."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0D0D0F"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.lexio.underground",
+      "permissions": [
+        "RECORD_AUDIO",
+        "RECEIVE_BOOT_COMPLETED",
+        "VIBRATE",
+        "SCHEDULE_EXACT_ALARM"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-sqlite",
+      "expo-font",
+      [
+        "expo-notifications",
+        {
+          "sounds": []
+        }
+      ]
+    ]
+  }
+}

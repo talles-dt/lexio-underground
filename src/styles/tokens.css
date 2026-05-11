@@ -1,0 +1,79 @@
+/**
+ * Lexio Underground — Design Tokens
+ * Source: lexio-vault/02-design/DESIGN.md
+ * Bridge between design and implementation. Consume via CSS vars or Tailwind config.
+ */
+
+:root {
+  /* ─── Color: Core ─────────────────────────────────────── */
+  --obsidian:     #0D0D0F;   /* Primary background. The void. */
+  --surface:      #141416;   /* Cards, elevated sections, floor plan rooms. */
+  --ivory:        #F5F0E8;   /* Primary text. Warm, scholarly. */
+  --zinc:         #71717A;   /* Secondary text, dormant lines, metadata. */
+
+  /* ─── Color: Signal ───────────────────────────────────── */
+  --phosphor:    #00FF88;   /* Discovery pulse. Active states. CTAs. Used sparingly. */
+  --amber:        #FF9500;   /* Unlocks, new items, revelations. */
+  --violet:       #A855F7;   /* Cultural atoms, cross-language elements. */
+  --crimson:      #DC2626;   /* Map of ignorance nodes (ignorance = opportunity). */
+
+  /* ─── Color: Stage ────────────────────────────────────── */
+  --stage-roots:       #00FF88;
+  --stage-sprouts:    #22C55E;
+  --stage-branches:   #FF9500;
+  --stage-canopy:     #166534;
+  --stage-underground:#A855F7;
+
+  /* ─── Border & Radius ────────────────────────────────── */
+  --radius-card:   12px;
+  --radius-btn:    8px;
+  --border-subtle: #27272A;
+  --border-ivory:  #F5F0E8;
+  --border-active: #00FF88;
+
+  /* ─── Typography ──────────────────────────────────────── */
+  --font-display: 'Syne', system-ui, sans-serif;
+  --font-serif:   'Source Serif 4', Georgia, serif;
+  --font-mono:    'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Type scale */
+  --text-display: 700 48px/56px    var(--font-display);
+  --text-h1:      700 32px/40px    var(--font-display);
+  --text-h2:      600 24px/32px    var(--font-serif);
+  --text-body:    400 16px/26px    var(--font-serif);
+  --text-body-lg: 400 18px/28px    var(--font-serif);
+  --text-ui:      500 14px/20px    var(--font-mono);
+  --text-caption: 400 12px/16px    var(--font-mono);
+
+  /* ─── Spacing (4px base) ─────────────────────────────── */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* ─── Motion ─────────────────────────────────────────── */
+  --duration-instant:  150ms;
+  --duration-fast:     200ms;
+  --duration-normal:   300ms;
+  --duration-slow:    400ms;
+  --duration-reveal:  500ms;
+  --duration-palace:   1300ms;
+
+  --ease-smooth:  cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out:    cubic-bezier(0, 0, 0.2, 1);
+
+  /* ─── Shadows / Glows ─────────────────────────────────── */
+  --glow-phosphor: 0 0 12px rgba(0, 255, 136, 0.3);
+  --glow-amber:    0 0 12px rgba(255, 149, 0, 0.3);
+  --glow-violet:   0 0 12px rgba(168, 85, 247, 0.3);
+  --glow-ivory:    0 0 8px  rgba(245, 240, 232, 0.15);
+
+  /* ─── Layout ──────────────────────────────────────────── */
+  --max-width-content: 480px;
+  --nav-height-mobile: 64px;
+}
