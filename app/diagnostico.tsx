@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { OnboardingPreamble } from '@/src/components/onboarding/Preamble';
 import { EmailCapture } from '@/src/components/onboarding/EmailCapture';
 import { DiagnosticQuiz } from '@/src/components/DiagnosticQuiz';
+import { colors, typography, spacing, radius } from '@/theme/tokens';
 
 export default function DiagnosticoScreen() {
   const [step, setStep] = useState<'preamble' | 'email' | 'quiz' | 'result'>('preamble');
@@ -70,7 +71,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: 20,
+    paddingHorizontal: spacing[4],
   },
   resultContent: {
     width: '100%',
@@ -79,31 +80,31 @@ const styles = StyleSheet.create({
   resultHeader: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 16,
+    marginBottom: spacing[3],
   },
   logoMark: {
-    marginRight: 12,
+    marginRight: spacing[2],
   },
   resultTitle: {
-    ...typography.headlineLG,
+    ...typography.display,
     color: colors.ivory,
   },
   resultSubtitle: {
     ...typography.body,
     color: colors.zinc,
-    marginBottom: 12,
+    marginBottom: spacing[2],
     textAlign: 'center',
   },
   shareInputContainer: {
-    marginVertical: 16,
+    marginVertical: spacing[4],
   },
   shareInput: {
     backgroundColor: colors.surface,
     borderWidth: 1,
     borderColor: colors.borderSubtle,
     borderRadius: radius.btn,
-    paddingHorizontal: 12,
-    paddingVertical: 14,
+    paddingHorizontal: spacing[3],
+    paddingVertical: spacing[2],
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -115,8 +116,8 @@ const styles = StyleSheet.create({
   },
   copyButton: {
     backgroundColor: colors.phosphor,
-    paddingHorizontal: 16,
-    paddingVertical: 12,
+    paddingHorizontal: spacing[4],
+    paddingVertical: spacing[3],
     borderRadius: radius.btn,
   },
   copyButtonText: {

@@ -2,23 +2,59 @@
  * Lexio Underground — Design Tokens
  * TypeScript constants + theme object for use throughout the app.
  * Source: lexio-vault/02-design/DESIGN.md
+ * Enhanced with stitch_experience design brief additions
  */
 
 export const colors = {
   // Core
   obsidian: '#0D0D0F',
   surface: '#141416',
+  // Surface variants from stitch design brief
+  surfaceDim: '#0c160e',
+  surfaceBright: '#323c32',
+  surfaceContainerLowest: '#071009',
+  surfaceContainerLow: '#141e16',
+  surfaceContainer: '#18221a',
+  surfaceContainerHigh: '#222c24',
+  surfaceContainerHighest: '#2d372e',
+  surfaceVariant: '#2d372e',
+  // Text colors
   ivory: '#F5F0E8',
   zinc: '#71717A',
-
-  // Signal
+  // Additional text colors from stitch
+  onSurface: '#dae6d8',
+  onSurfaceVariant: '#b9cbb9',
+  inverseSurface: '#dae6d8',
+  inverseOnSurface: '#29332a',
+  // Signal colors
   phosphor: '#00FF88',
+  phosphorFixed: '#60ff99',
+  phosphorFixedDim: '#00e479', // surface-tint from stitch
+  onPhosphor: '#003919',
+  onPhosphorContainer: '#007139',
+  inversePhosphor: '#006d37',
+  // Accent colors
   amber: '#FF9500',
   violet: '#A855F7',
   crimson: '#DC2626',
-
+  // Additional accent colors from stitch
+  secondary: '#ffbc7c',
+  onSecondary: '#4b2800',
+  secondaryContainer: '#fe9400',
+  onSecondaryContainer: '#633700',
+  tertiary: '#fffaf7',
+  onTertiary: '#3d2f00',
+  tertiaryContainer: '#ffdb79',
+  onTertiaryContainer: '#795f01',
+  // Error colors
+  error: '#ffb4ab',
+  onError: '#690005',
+  errorContainer: '#93000a',
+  onErrorContainer: '#ffdad6',
   // Borders
   borderSubtle: '#27272A',
+  outline: '#849585',
+  outlineVariant: '#3b4b3d',
 } as const;
 
 export const stageColors = {
