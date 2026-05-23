@@ -4,7 +4,7 @@
       "src": "package.json",
       "use": "@expo/vercel-builder",
       "config": {
-        "expoCommand": "expo export:web"
+        "expoCommand": "expo export"
       }
     }
   ],
