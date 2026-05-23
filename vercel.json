@@ -1,0 +1,18 @@
+{
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@expo/vercel-builder",
+      "config": {
+        "expoCommand": "expo export:web"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/web-build/$1"
+    }
+  ],
+  "cleanUrls": true
+}
