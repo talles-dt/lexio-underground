@@ -2,17 +2,12 @@
   "builds": [
     {
       "src": "package.json",
-      "use": "@expo/vercel-builder",
+      "use": "@vercel/next",
       "config": {
-        "expoCommand": "expo export"
+        "distDir": ".next"
       }
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/web-build/$1"
-    }
-  ],
+  "routes": [],
   "cleanUrls": true
 }
