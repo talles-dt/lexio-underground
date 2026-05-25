@@ -9,13 +9,15 @@ export default function Callback() {
   const params = useSearchParams();
 
   React.useEffect(() => {
-    if (params?.error) {
-      console.error("OAuth error:", params.error);
+    const error = params.get('error');
+    if (error) {
+      console.error("OAuth error:", error);
       return;
     }
-    if (params?.code) {
+    const code = params.get('code');
+    if (code) {
       supabase.auth
-        .exchangeCodeForSession(params.code as string)
+        .exchangeCodeForSession(code)
         .then(({ error }) => {
           if (error) console.error("Session exchange error:", error);
           else router.replace("/");
