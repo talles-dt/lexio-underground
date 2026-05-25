@@ -2,7 +2,7 @@
 // Dynamic lesson generation with multi-tier LLM fallback + Supabase persistence
 
 import { z } from "zod";
-import { supabase } from '../src/lib/supabase';
+import { supabase } from '../../src/lib/supabase';
 
 const LessonSchema = z.object({
   pillar: z.enum([
