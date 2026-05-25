@@ -1,5 +1,5 @@
 // app/api/diagnostico/route.ts
-import { supabase } from '../../src/lib/supabase';
+import { supabase } from '@/lib/supabase';
 import { z } from "zod";
 
 const DiagnosticSchema = z.object({
