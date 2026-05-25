@@ -2,7 +2,7 @@ import React from "react";
 import { useRouter } from "expo-router";
 import { View, Text, Image, Linking } from "react-native";
 import { Button } from "@/components/ui";
-import { supabase } from '../../src/lib/supabase';
+import { supabase } from '@/lib/supabase';
 
 const productId = process.env.EXPO_PUBLIC_STRIPE_PRODUCT_ID;
 
