@@ -1,6 +1,7 @@
 // app/lessons.tsx
 "use client";
 
+import React from "react";
 import { View, Text } from "react-native";
 import { LessonCard } from "../src/components/LessonCard";
 

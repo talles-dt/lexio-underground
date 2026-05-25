@@ -30,7 +30,7 @@ export default function PulseScreen() {
       >
         {/* Dashboard cards would go here */}
         <View style={{ marginBottom: spacing[12] }}>
-          <Text style={typography.h3}>Welcome Back</Text>
+          <Text style={typography.h2}>Welcome Back</Text>
           <Text style={typography.body}>
             Your Cartografa is complete. Ready to dive into your personalized
             learning path?

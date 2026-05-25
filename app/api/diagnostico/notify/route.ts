@@ -4,7 +4,14 @@
 import { Resend } from "resend";
 import { z } from "zod";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Lazy-initialize Resend client only when API key is available
+let resendClient: Resend | null = null;
+const getResend = () => {
+  if (!resendClient && process.env.RESEND_API_KEY) {
+    resendClient = new Resend(process.env.RESEND_API_KEY);
+  }
+  return resendClient;
+};
 
 const ArchetypeSchema = z.object({
   email: z.string().email(),
@@ -39,53 +46,59 @@ export async function POST(req: Request) {
     intro: `Você é **${archetype_name}**.`,
   };
 
-  try {
-    const { data, error } = await resend.emails.send({
-      from: "Liceu Underground <noreply@lexio.underground>",
-      to: email,
-      subject: tpl.subject,
-      html: `
-        <p>Olá, ${name}. ${tpl.intro}</p>
-        <p>Comece seu treinamento: <a href="https://lexio.underground/${archetype_key}">Abrir</a></p>
-        <p>Compartilhe: <a href="https://lexio.underground/diagnostico/${share_token}">Link público</a></p>
-      `,
-    });
-
-    if (error) throw error;
-    return new Response(JSON.stringify(data), { status: 200 });
-  } catch (err: any) {
-    console.error("Resend failed, attempting SMTP fallback:", err);
-
-    // SMTP Fallback
+  // Try Resend first
+  const resend = getResend();
+  if (resend) {
     try {
-      const nodemailer = require("nodemailer");
-      const transporter = nodemailer.createTransport({
-        host: process.env.SMTP_HOST,
-        port: Number(process.env.SMTP_PORT),
-        secure: false,
-        auth: {
-          user: process.env.SMTP_USER,
-          pass: process.env.SMTP_PASS,
-        },
-      });
-
-      await transporter.sendMail({
-        from: "Liceu Underground <noreply@liceu.underground>",
+      const { data, error } = await resend.emails.send({
+        from: "Liceu Underground <noreply@lexio.underground>",
         to: email,
         subject: tpl.subject,
         html: `
           <p>Olá, ${name}. ${tpl.intro}</p>
           <p>Comece seu treinamento: <a href="https://lexio.underground/${archetype_key}">Abrir</a></p>
-          <p>Compartilhe: <a href="https://lexio.underground/diagnostico/${share_token}">Link</a></p>
+          <p>Compartilhe: <a href="https://lexio.underground/diagnostico/${share_token}">Link público</a></p>
         `,
       });
 
-      console.warn("SMTP fallback used for:", email);
-      return new Response(JSON.stringify({ fallback: true }), { status: 200 });
-    } catch (smtpErr: any) {
-      return new Response(JSON.stringify({ error: smtpErr.message }), {
-        status: 500,
-      });
+      if (error) throw error;
+      return new Response(JSON.stringify(data), { status: 200 });
+    } catch (err: any) {
+      console.error("Resend failed, attempting SMTP fallback:", err);
     }
+  } else {
+    console.warn("RESEND_API_KEY not set, skipping to SMTP fallback");
+  }
+
+  // SMTP Fallback
+  try {
+    const nodemailer = require("nodemailer");
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT),
+      secure: false,
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    });
+
+    await transporter.sendMail({
+      from: "Liceu Underground <noreply@liceu.underground>",
+      to: email,
+      subject: tpl.subject,
+      html: `
+        <p>Olá, ${name}. ${tpl.intro}</p>
+        <p>Comece seu treinamento: <a href="https://lexio.underground/${archetype_key}">Abrir</a></p>
+        <p>Compartilhe: <a href="https://lexio.underground/diagnostico/${share_token}">Link</a></p>
+      `,
+    });
+
+    console.warn("SMTP fallback used for:", email);
+    return new Response(JSON.stringify({ fallback: true }), { status: 200 });
+  } catch (smtpErr: any) {
+    return new Response(JSON.stringify({ error: smtpErr.message }), {
+      status: 500,
+    });
   }
 }

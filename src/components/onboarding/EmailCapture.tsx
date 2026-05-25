@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing[4],
   },
   heading: {
-    ...typography.headlineLG,
+    ...typography.display,
     color: colors.ivory,
     marginBottom: spacing[2],
     textAlign: "center",
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     width: "85%",
   },
   interestLabel: {
-    ...typography.uiLabel,
+    ...typography.ui,
     alignSelf: "flex-start",
     color: colors.ivory,
     marginBottom: spacing[1],

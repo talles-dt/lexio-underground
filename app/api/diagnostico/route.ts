@@ -1,10 +1,11 @@
 // app/api/diagnostico/route.ts
-import { supabase } from '@/lib/supabase';
+import { supabase } from "@/lib/supabase";
 import { z } from "zod";
 
+// Using z.record with explicit key and value types for Zod v4 compatibility
 const DiagnosticSchema = z.object({
   email: z.string().email(),
-  answers: z.record(z.any()),
+  answers: z.record(z.string(), z.any()),
 });
 
 const determineArchetype = (scores: Record<string, number>) => {
@@ -56,7 +57,7 @@ export async function POST(req: Request) {
       {
         status: 500,
         headers: { "Content-Type": "application/json" },
-      },
+      }
     );
   }
 

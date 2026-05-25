@@ -2,7 +2,7 @@
 // Dynamic lesson generation with multi-tier LLM fallback + Supabase persistence
 
 import { z } from "zod";
-import { supabase } from '@/lib/supabase';
+import { supabase } from "@/lib/supabase";
 
 const LessonSchema = z.object({
   pillar: z.enum([
@@ -22,17 +22,19 @@ const archetypes = {
   communication: "Exemplo real → Situação cultural",
   vocabulary: "Sinônimo PT → Sinônimo EN",
   culture: "Empréstimo cultural → Sistema equivalente",
-};
+} as const;
+
+type Pillar = keyof typeof archetypes;
 
 async function generateLesson(
-  pillar: string,
+  pillar: Pillar,
   difficulty: string,
   interest: string,
 ) {
   const prompt = `
  You are Lexio, an AI tutor for ${difficulty} level English.
  Anchor the lesson to a memory palace hook: **${interest}**.
- Focus pillar: **${pillar}** (${archetypes[pillar]}).
+ Focus pillar: **${pillar}** (${archetypes[pillar as keyof typeof archetypes]}).
 
  Output **JSON-only** with keys:
  - **grammar**: PT-BR interference warning + English rule
@@ -56,7 +58,7 @@ async function generateLesson(
           messages: [{ role: "user", content: prompt }],
           temperature: 0.3,
         }),
-      },
+      }
     );
     const data = await response.json();
     return LessonSchema.parse(JSON.parse(data.choices[0].message.content));
@@ -101,7 +103,7 @@ export async function POST(req: Request) {
         pillar,
         difficulty,
         content: JSON.stringify(lesson),
-      },
+      }
     ])
     .select()
     .single();

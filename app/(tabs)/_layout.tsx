@@ -69,35 +69,45 @@ export default function TabsLayout() {
         name="index"
         options={{
           title: "Pulse",
-          tabBarIcon: ({ focused }) => <PulseIcon active={focused} />,
+          tabBarIcon: ({ focused }: { focused: boolean }) => (
+            <PulseIcon active={focused} />
+          ),
         }}
       />
       <Tabs.Screen
         name="palace"
         options={{
           title: "Palace",
-          tabBarIcon: ({ focused }) => <PalaceIcon active={focused} />,
+          tabBarIcon: ({ focused }: { focused: boolean }) => (
+            <PulseIcon active={focused} />
+          ),
         }}
       />
       <Tabs.Screen
         name="shadow"
         options={{
           title: "Shadow",
-          tabBarIcon: ({ focused }) => <ShadowIcon active={focused} />,
+          tabBarIcon: ({ focused }: { focused: boolean }) => (
+            <ShadowIcon active={focused} />
+          ),
         }}
       />
       <Tabs.Screen
         name="vault"
         options={{
           title: "Vault",
-          tabBarIcon: ({ focused }) => <VaultIcon active={focused} />,
+          tabBarIcon: ({ focused }: { focused: boolean }) => (
+            <PulseIcon active={focused} />
+          ),
         }}
       />
       <Tabs.Screen
         name="profile"
         options={{
           title: "Profile",
-          tabBarIcon: ({ focused }) => <ProfileIcon active={focused} />,
+          tabBarIcon: ({ focused }: { focused: boolean }) => (
+            <PulseIcon active={focused} />
+          ),
         }}
       />
     </Tabs>

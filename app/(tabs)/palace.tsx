@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { View, Text, StyleSheet, ScrollView, Dimensions } from "react-native";
 import { useLearnerStore } from "@/stores/learnerStore";
 import { colors, typography, spacing, stageColors } from "@/theme/tokens";
