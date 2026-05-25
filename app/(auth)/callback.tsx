@@ -1,7 +1,8 @@
 import React from "react";
 import { View, Text, ActivityIndicator } from "react-native";
-import { useRouter, useSearchParams } from "expo-router";
-import { supabase } from '../../src/lib/supabase';
+import { useRouter } from "expo-router";
+import { useSearchParams } from "next/navigation";
+import { supabase } from '@/lib/supabase';
 
 export default function Callback() {
   const router = useRouter();
