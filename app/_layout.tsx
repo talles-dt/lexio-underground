@@ -1,8 +1,8 @@
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import { View, StyleSheet } from 'react-native';
-import { colors } from '@/theme/tokens';
-import '@/styles/globals.css';
+import { Stack } from "expo-router";
+import { StatusBar } from "expo-status-bar";
+import { View, StyleSheet } from "react-native";
+import { colors } from "@/theme/tokens";
+import "@/styles/globals.css";
 
 export default function RootLayout() {
   return (
@@ -12,7 +12,7 @@ export default function RootLayout() {
         screenOptions={{
           headerShown: false,
           contentStyle: { backgroundColor: colors.obsidian },
-          animation: 'fade',
+          animation: "fade",
         }}
       />
     </View>
@@ -21,7 +21,7 @@ export default function RootLayout() {
 
 const styles = StyleSheet.create({
   root: {
-    flex: 1,
     backgroundColor: colors.obsidian,
+    flex: 1,
   },
 });

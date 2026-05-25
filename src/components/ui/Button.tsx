@@ -1,7 +1,7 @@
-import { Pressable, Text, StyleSheet } from 'react-native';
-import { colors, radius, typography } from '@/theme/tokens';
+import { Pressable, Text, StyleSheet } from "react-native";
+import { colors, radius, typography } from "@/theme/tokens";
 
-type Variant = 'primary' | 'secondary' | 'ghost';
+type Variant = "primary" | "secondary" | "ghost";
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -12,45 +12,26 @@ interface ButtonProps {
 }
 
 const styles = StyleSheet.create({
-  primary: {
-    backgroundColor: colors.ivory,
-    paddingVertical: 12,
-    paddingHorizontal: 24,
-    borderRadius: radius.btn,
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'row',
-    gap: 8,
-  },
-  secondary: {
-    backgroundColor: 'transparent',
-    paddingVertical: 12,
-    paddingHorizontal: 24,
-    borderRadius: radius.btn,
-    borderWidth: 1,
-    borderColor: colors.ivory,
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'row',
-    gap: 8,
-  },
-  ghost: {
-    backgroundColor: 'transparent',
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'row',
-    gap: 4,
-  },
-  fullWidth: {
-    width: '100%',
-  },
   disabled: {
     opacity: 0.5,
   },
+  fullWidth: {
+    width: "100%",
+  },
+  ghost: {
+    alignItems: "center",
+    backgroundColor: "transparent",
+    flexDirection: "row",
+    gap: 4,
+    justifyContent: "center",
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+  },
   label: {
     ...typography.ui,
+  },
+  labelGhost: {
+    color: colors.zinc,
   },
   labelPrimary: {
     color: colors.obsidian,
@@ -58,25 +39,44 @@ const styles = StyleSheet.create({
   labelSecondary: {
     color: colors.ivory,
   },
-  labelGhost: {
-    color: colors.zinc,
+  primary: {
+    alignItems: "center",
+    backgroundColor: colors.ivory,
+    borderRadius: radius.btn,
+    flexDirection: "row",
+    gap: 8,
+    justifyContent: "center",
+    paddingHorizontal: 24,
+    paddingVertical: 12,
+  },
+  secondary: {
+    alignItems: "center",
+    backgroundColor: "transparent",
+    borderColor: colors.ivory,
+    borderRadius: radius.btn,
+    borderWidth: 1,
+    flexDirection: "row",
+    gap: 8,
+    justifyContent: "center",
+    paddingHorizontal: 24,
+    paddingVertical: 12,
   },
 });
 
 export function Button({
   children,
-  variant = 'primary',
+  variant = "primary",
   onPress,
   disabled = false,
   fullWidth = false,
 }: ButtonProps) {
   const variantStyle = styles[variant];
   const labelStyle =
-    variant === 'primary'
+    variant === "primary"
       ? styles.labelPrimary
-      : variant === 'secondary'
-      ? styles.labelSecondary
-      : styles.labelGhost;
+      : variant === "secondary"
+        ? styles.labelSecondary
+        : styles.labelGhost;
 
   return (
     <Pressable

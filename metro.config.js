@@ -1,4 +1,4 @@
-const { getDefaultConfig } = require('expo/metro-config');
+const { getDefaultConfig } = require("expo/metro-config");
 
 module.exports = (() => {
   const config = getDefaultConfig(__dirname);
@@ -6,12 +6,12 @@ module.exports = (() => {
   // Add support for web extensions
   config.resolver.sourceExts = [
     ...config.resolver.sourceExts,
-    'js',
-    'jsx',
-    'ts',
-    'tsx',
-    'cjs',
-    'mjs',
+    "js",
+    "jsx",
+    "ts",
+    "tsx",
+    "cjs",
+    "mjs",
   ];
 
   return config;

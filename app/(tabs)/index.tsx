@@ -1,8 +1,9 @@
 // app/(tabs)/index.tsx
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
-import { useLearnerStore } from '@/stores/learnerStore';
-import { colors, typography, spacing } from '@/theme/tokens';
-import { Card } from '@/components/ui';
+import React from 'react';
+import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { useLearnerStore } from "@/stores/learnerStore";
+import { colors, typography, spacing } from "@/theme/tokens";
+import { Card } from "@/components/ui";
 
 export default function PulseScreen() {
   const { cartografaComplete, maturityStage } = useLearnerStore();
@@ -31,7 +32,8 @@ export default function PulseScreen() {
         <View style={{ marginBottom: spacing[12] }}>
           <Text style={typography.h3}>Welcome Back</Text>
           <Text style={typography.body}>
-            Your Cartografa is complete. Ready to dive into your personalized learning path?
+            Your Cartografa is complete. Ready to dive into your personalized
+            learning path?
           </Text>
         </View>
       </ScrollView>
@@ -41,32 +43,32 @@ export default function PulseScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: colors.surface,
+    flex: 1,
     padding: spacing[6],
   },
   content: {
     flexGrow: 1,
   },
   emptyState: {
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  logoMark: {
-    fontSize: 48,
-    fontWeight: '800',
-    color: colors.phosphor,
-    marginBottom: spacing[4],
-  },
-  emptyTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: colors.ivory,
-    marginBottom: spacing[2],
+    alignItems: "center",
+    justifyContent: "center",
   },
   emptySubtitle: {
-    fontSize: 16,
     color: colors.zinc,
-    textAlign: 'center',
+    fontSize: 16,
+    textAlign: "center",
+  },
+  emptyTitle: {
+    color: colors.ivory,
+    fontSize: 24,
+    fontWeight: "600",
+    marginBottom: spacing[2],
+  },
+  logoMark: {
+    color: colors.phosphor,
+    fontSize: 48,
+    fontWeight: "800",
+    marginBottom: spacing[4],
   },
 });

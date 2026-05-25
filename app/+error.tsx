@@ -1,5 +1,5 @@
-import { ScrollView, StyleSheet, View, Text } from 'react-native';
-import { colors, typography, spacing } from '@/theme/tokens';
+import { ScrollView, StyleSheet, View, Text } from "react-native";
+import { colors, typography, spacing } from "@/theme/tokens";
 
 export default function GlobalError({
   error,
@@ -23,31 +23,31 @@ export default function GlobalError({
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: colors.obsidian,
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: spacing[8],
+  body: {
+    ...typography.body,
+    color: colors.zinc,
+    marginBottom: spacing[6],
+    textAlign: "center",
   },
   code: {
     ...typography.display,
     color: colors.crimson,
     marginBottom: spacing[4],
   },
-  title: {
-    ...typography.h1,
-    color: colors.ivory,
-    marginBottom: spacing[3],
-  },
-  body: {
-    ...typography.body,
-    color: colors.zinc,
-    textAlign: 'center',
-    marginBottom: spacing[6],
+  container: {
+    alignItems: "center",
+    backgroundColor: colors.obsidian,
+    flex: 1,
+    justifyContent: "center",
+    padding: spacing[8],
   },
   retry: {
     ...typography.ui,
     color: colors.phosphor,
+  },
+  title: {
+    ...typography.h1,
+    color: colors.ivory,
+    marginBottom: spacing[3],
   },
 });

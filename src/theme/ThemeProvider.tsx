@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { createContext, useContext } from 'react';
-import { theme } from './tokens';
-import type { Theme } from './tokens';
+import { createContext, useContext } from "react";
+import { theme } from "./tokens";
+import type { Theme } from "./tokens";
 
 const ThemeContext = createContext<Theme>(theme);
 

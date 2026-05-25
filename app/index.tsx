@@ -1,7 +1,7 @@
 // app/index.tsx
-import { View, Text, StyleSheet, Pressable } from 'react-native';
-import { Link } from 'expo-router';
-import { colors, typography, spacing, radius } from '@/theme/tokens';
+import { View, Text, StyleSheet, Pressable } from "react-native";
+import { Link } from "expo-router";
+import { colors, typography, spacing, radius } from "@/theme/tokens";
 
 export default function HomePage() {
   return (
@@ -35,13 +35,31 @@ export default function HomePage() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: colors.obsidian,
-    justifyContent: 'center',
+    flex: 1,
+    justifyContent: "center",
     paddingHorizontal: spacing[4],
   },
   content: {
-    alignItems: 'center',
+    alignItems: "center",
+  },
+  ctaButton: {
+    backgroundColor: colors.phosphor,
+    borderRadius: radius.btn,
+    paddingHorizontal: spacing[6],
+    paddingVertical: spacing[3],
+  },
+  ctaText: {
+    ...typography.ui,
+    color: colors.obsidian,
+    fontWeight: "600" as const,
+  },
+  description: {
+    ...typography.body,
+    color: colors.zinc,
+    marginBottom: spacing[8],
+    maxWidth: 300,
+    textAlign: "center",
   },
   logoContainer: {
     marginBottom: spacing[6],
@@ -49,31 +67,13 @@ const styles = StyleSheet.create({
   logoText: {
     ...typography.display,
     color: colors.ivory,
-    textAlign: 'center',
+    textAlign: "center",
   },
   tagline: {
     ...typography.bodyLg,
     color: colors.phosphor,
-    textAlign: 'center',
+    fontStyle: "italic" as const,
     marginBottom: spacing[4],
-    fontStyle: 'italic' as const,
-  },
-  description: {
-    ...typography.body,
-    color: colors.zinc,
-    textAlign: 'center',
-    maxWidth: 300,
-    marginBottom: spacing[8],
-  },
-  ctaButton: {
-    backgroundColor: colors.phosphor,
-    paddingHorizontal: spacing[6],
-    paddingVertical: spacing[3],
-    borderRadius: radius.btn,
-  },
-  ctaText: {
-    ...typography.ui,
-    color: colors.obsidian,
-    fontWeight: '600' as const,
+    textAlign: "center",
   },
 });

@@ -10,43 +10,63 @@ exports.StripeProvider = function StripeProvider({ children }) {
 exports.useStripe = function useStripe() {
   return {
     // Mock initPaymentSheet - returns a promise that resolves
-    initPaymentSheet: async function(options) {
+    initPaymentSheet: async function (options) {
       return Promise.resolve();
     },
     // Mock presentPaymentSheet - returns a promise that resolves with success
-    presentPaymentSheet: async function() {
-      return Promise.resolve({ result: 'success' });
+    presentPaymentSheet: async function () {
+      return Promise.resolve({ result: "success" });
     },
     // Mock reset - returns a promise that resolves
-    reset: async function() {
+    reset: async function () {
       return Promise.resolve();
     },
     // Mock confirmPaymentSheetPresent - returns false by default
-    confirmPaymentSheetPresent: async function() {
+    confirmPaymentSheetPresent: async function () {
       return Promise.resolve(false);
-    }
+    },
   };
 };
 
 // Export other components as empty divs for compatibility
 exports.CardField = function CardField() {
-  return React.createElement('div', { 'data-testid': 'stripe-card-field' }, 'Mock Card Field');
+  return React.createElement(
+    "div",
+    { "data-testid": "stripe-card-field" },
+    "Mock Card Field",
+  );
 };
 
 exports.ApplePayButton = function ApplePayButton() {
-  return React.createElement('button', { 'data-testid': 'stripe-apple-pay' }, 'Apple Pay (Mock)');
+  return React.createElement(
+    "button",
+    { "data-testid": "stripe-apple-pay" },
+    "Apple Pay (Mock)",
+  );
 };
 
 exports.GooglePayButton = function GooglePayButton() {
-  return React.createElement('button', { 'data-testid': 'stripe-google-pay' }, 'Google Pay (Mock)');
+  return React.createElement(
+    "button",
+    { "data-testid": "stripe-google-pay" },
+    "Google Pay (Mock)",
+  );
 };
 
 exports.LinkAuthenticationElement = function LinkAuthenticationElement() {
-  return React.createElement('div', { 'data-testid': 'stripe-link-auth' }, 'Link Auth (Mock)');
+  return React.createElement(
+    "div",
+    { "data-testid": "stripe-link-auth" },
+    "Link Auth (Mock)",
+  );
 };
 
 exports.PaymentSheet = function PaymentSheet() {
-  return React.createElement('div', { 'data-testid': 'stripe-payment-sheet' }, 'Payment Sheet (Mock)');
+  return React.createElement(
+    "div",
+    { "data-testid": "stripe-payment-sheet" },
+    "Payment Sheet (Mock)",
+  );
 };
 
 // Export the default object
@@ -58,5 +78,5 @@ exports.default = {
   GooglePayButton: exports.GooglePayButton,
   LinkAuthenticationElement: exports.LinkAuthenticationElement,
   PaymentSheet: exports.PaymentSheet,
-  PaymentSheetPresets: {}
+  PaymentSheetPresets: {},
 };

@@ -1,5 +1,5 @@
-import { create } from 'zustand';
-import type { PillarScores, MapNode, MaturityStage } from '@/types';
+import { create } from "zustand";
+import type { PillarScores, MapNode, MaturityStage } from "@/types";
 
 interface LearnerState {
   // Auth
@@ -31,16 +31,15 @@ const initialState = {
   cartografaComplete: false,
   pillarScores: null,
   mapOfIgnorance: [],
-  maturityStage: 'roots' as MaturityStage,
-  palaceRooms: ['entrance'],
+  maturityStage: "roots" as MaturityStage,
+  palaceRooms: ["entrance"],
   palaceItems: 0,
 };
 
 export const useLearnerStore = create<LearnerState>((set) => ({
   ...initialState,
 
-  setAuth: (userId, email) =>
-    set({ isAuthenticated: true, userId, email }),
+  setAuth: (userId, email) => set({ isAuthenticated: true, userId, email }),
 
   setCartografaResults: (scores, map) =>
     set({

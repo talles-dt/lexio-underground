@@ -1,8 +1,8 @@
 // app/api/diagnostico/notify/route.ts
 // Real Resend integration with archetype-specific templates + SMTP fallback
 
-import { Resend } from 'resend';
-import { z } from 'zod';
+import { Resend } from "resend";
+import { z } from "zod";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -21,7 +21,8 @@ const TEMPLATES: Record<string, { subject: string; intro: string }> = {
   },
   architect: {
     subject: "Você constrói. Falta fazer sangrar.",
-    intro: "Seu arquétipo é **O Arquiteto** — argumentos perfeitos, mas paixão?",
+    intro:
+      "Seu arquétipo é **O Arquiteto** — argumentos perfeitos, mas paixão?",
   },
   grammarian: {
     subject: "Sua gramática não é um erro.",
@@ -40,7 +41,7 @@ export async function POST(req: Request) {
 
   try {
     const { data, error } = await resend.emails.send({
-      from: 'Liceu Underground <noreply@lexio.underground>',
+      from: "Liceu Underground <noreply@lexio.underground>",
       to: email,
       subject: tpl.subject,
       html: `
@@ -53,11 +54,11 @@ export async function POST(req: Request) {
     if (error) throw error;
     return new Response(JSON.stringify(data), { status: 200 });
   } catch (err: any) {
-    console.error('Resend failed, attempting SMTP fallback:', err);
+    console.error("Resend failed, attempting SMTP fallback:", err);
 
     // SMTP Fallback
     try {
-      const nodemailer = require('nodemailer');
+      const nodemailer = require("nodemailer");
       const transporter = nodemailer.createTransport({
         host: process.env.SMTP_HOST,
         port: Number(process.env.SMTP_PORT),
@@ -69,7 +70,7 @@ export async function POST(req: Request) {
       });
 
       await transporter.sendMail({
-        from: 'Liceu Underground <noreply@liceu.underground>',
+        from: "Liceu Underground <noreply@liceu.underground>",
         to: email,
         subject: tpl.subject,
         html: `
@@ -82,7 +83,9 @@ export async function POST(req: Request) {
       console.warn("SMTP fallback used for:", email);
       return new Response(JSON.stringify({ fallback: true }), { status: 200 });
     } catch (smtpErr: any) {
-      return new Response(JSON.stringify({ error: smtpErr.message }), { status: 500 });
+      return new Response(JSON.stringify({ error: smtpErr.message }), {
+        status: 500,
+      });
     }
   }
 }

@@ -1,6 +1,7 @@
-import { Tabs } from 'expo-router';
-import { View, Text, StyleSheet } from 'react-native';
-import { colors, typography } from '@/theme/tokens';
+import React from "react";
+import { Tabs } from "expo-router";
+import { View, Text, StyleSheet } from "react-native";
+import { colors, typography } from "@/theme/tokens";
 
 // Simple icon components (inline SVG-style)
 function PulseIcon({ active }: { active: boolean }) {
@@ -67,35 +68,35 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Pulse',
+          title: "Pulse",
           tabBarIcon: ({ focused }) => <PulseIcon active={focused} />,
         }}
       />
       <Tabs.Screen
         name="palace"
         options={{
-          title: 'Palace',
+          title: "Palace",
           tabBarIcon: ({ focused }) => <PalaceIcon active={focused} />,
         }}
       />
       <Tabs.Screen
         name="shadow"
         options={{
-          title: 'Shadow',
+          title: "Shadow",
           tabBarIcon: ({ focused }) => <ShadowIcon active={focused} />,
         }}
       />
       <Tabs.Screen
         name="vault"
         options={{
-          title: 'Vault',
+          title: "Vault",
           tabBarIcon: ({ focused }) => <VaultIcon active={focused} />,
         }}
       />
       <Tabs.Screen
         name="profile"
         options={{
-          title: 'Profile',
+          title: "Profile",
           tabBarIcon: ({ focused }) => <ProfileIcon active={focused} />,
         }}
       />
@@ -104,16 +105,16 @@ export default function TabsLayout() {
 }
 
 const styles = StyleSheet.create({
-  iconBox: {
-    width: 24,
-    height: 24,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   iconActive: {},
+  iconBox: {
+    alignItems: "center",
+    height: 24,
+    justifyContent: "center",
+    width: 24,
+  },
   iconText: {
-    fontSize: 18,
     color: colors.zinc,
+    fontSize: 18,
   },
   iconTextActive: {
     color: colors.ivory,

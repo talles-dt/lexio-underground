@@ -1,29 +1,30 @@
-import { useEffect } from 'react';
-import { useLocalSearchParams, useRouter } from 'expo-router';
-import { supabase } from '@/lib/supabase';
-import { Text, View } from 'react-native';
+import React from "react";
+import { View, Text, ActivityIndicator } from "react-native";
+import { useRouter, useSearchParams } from "expo-router";
+import { supabase } from '../../src/lib/supabase';
 
-export default function CallbackScreen() {
+export default function Callback() {
   const router = useRouter();
-  const { license } = useLocalSearchParams();
+  const params = useSearchParams();
 
-  useEffect(() => {
-    if (license) {
-      supabase.rpc('redeem_license', { license_key: license as string })
+  React.useEffect(() => {
+    if (params?.error) {
+      console.error("OAuth error:", params.error);
+      return;
+    }
+    if (params?.code) {
+      supabase.auth
+        .exchangeCodeForSession(params.code as string)
         .then(({ error }) => {
-          if (error) {
-            alert(`Redemption failed: ${error.message}`);
-            router.replace('/');
-          } else {
-            router.replace('/stitch_experience/founder');
-          }
+          if (error) console.error("Session exchange error:", error);
+          else router.replace("/");
         });
     }
-  }, [license]);
+  }, [params]);
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Redeeming your founder access...</Text>
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <ActivityIndicator size="large" />
     </View>
   );
 }

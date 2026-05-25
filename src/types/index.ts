@@ -17,34 +17,39 @@ export interface MapNode {
   node_id: string;
   pillar: keyof PillarScores;
   description: string;
-  severity: 'high' | 'medium' | 'low';
+  severity: "high" | "medium" | "low";
 }
 
 // Maturity stages
-export type MaturityStage = 'roots' | 'sprouts' | 'branches' | 'canopy' | 'underground';
+export type MaturityStage =
+  | "roots"
+  | "sprouts"
+  | "branches"
+  | "canopy"
+  | "underground";
 
 // Pillar definitions
 export const PILLAR_WEIGHTS = {
   grammar: 0.25,
-  logic: 0.20,
-  vocab: 0.20,
-  culture: 0.20,
+  logic: 0.2,
+  vocab: 0.2,
+  culture: 0.2,
   comm: 0.15,
 } as const;
 
 export const PILLAR_LABELS: Record<keyof PillarScores, string> = {
-  grammar: 'Grammar',
-  logic: 'Logic',
-  vocab: 'Vocabulary',
-  culture: 'Culture',
-  comm: 'Communication',
+  grammar: "Grammar",
+  logic: "Logic",
+  vocab: "Vocabulary",
+  culture: "Culture",
+  comm: "Communication",
 };
 
 // Palace
 export interface PalaceRoom {
   id: string;
   name: string;
-  pillar: keyof PillarScores | 'entrance' | 'communication';
+  pillar: keyof PillarScores | "entrance" | "communication";
   items: PalaceItem[];
   isUnlocked: boolean;
   isConnected: boolean;
@@ -63,13 +68,13 @@ export interface PalaceItem {
 }
 
 // Session
-export type SessionType = 'pulse' | 'deep' | 'shadow';
+export type SessionType = "pulse" | "deep" | "shadow";
 
 // Cartografa stages
 export const CARTOGRAFA_STAGES: Array<keyof PillarScores> = [
-  'grammar',
-  'logic',
-  'vocab',
-  'culture',
-  'comm',
+  "grammar",
+  "logic",
+  "vocab",
+  "culture",
+  "comm",
 ];

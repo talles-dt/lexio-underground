@@ -1,43 +1,59 @@
 // app/diagnostico.tsx
-import { View, StyleSheet, Pressable } from 'react-native';
-import { useState } from 'react';
+import React from "react";
+import { View, StyleSheet, Pressable, Text } from "react-native";
+import { useState } from "react";
 
-import { OnboardingPreamble } from '@/src/components/onboarding/Preamble';
-import { EmailCapture } from '@/src/components/onboarding/EmailCapture';
-import { DiagnosticQuiz } from '@/src/components/DiagnosticQuiz';
-import { colors, typography, spacing, radius } from '@/theme/tokens';
+import { OnboardingPreamble } from "@/components/onboarding/Preamble";
+import { EmailCapture } from "@/components/onboarding/EmailCapture";
+import { DiagnosticQuiz } from "@/components/DiagnosticQuiz";
+import { colors, typography, spacing, radius } from "@/theme/tokens";
 
 export default function DiagnosticoScreen() {
-  const [step, setStep] = useState<'preamble' | 'email' | 'quiz' | 'result'>('preamble');
-  const [email, setEmail] = useState('');
-  const [interest, setInterest] = useState('');
-  const [shareLink, setShareLink] = useState('');
+  const [step, setStep] = useState<"preamble" | "email" | "quiz" | "result">(
+    "preamble",
+  );
+  const [email, setEmail] = useState("");
+  const [interest, setInterest] = useState("");
+  const [shareLink, setShareLink] = useState("");
 
-  const handleBeginCartografa = () => setStep('email');
+  const handleBeginCartografa = () => setStep("email");
   const handleSubmitEmail = (email: string, interest: string) => {
     setEmail(email);
     setInterest(interest);
-    setStep('quiz');
+    setStep("quiz");
   };
   const handleQuizComplete = (shareToken: string) => {
     setShareLink(`https://liceu.underground/diagnostico/${shareToken}`);
-    setStep('result');
+    setStep("result");
   };
 
   let content = null;
-  if (step === 'preamble') {
+  if (step === "preamble") {
     content = <OnboardingPreamble onBeginCartografa={handleBeginCartografa} />;
-  } else if (step === 'email') {
+  } else if (step === "email") {
     content = <EmailCapture onSubmit={handleSubmitEmail} />;
-  } else if (step === 'quiz') {
-    content = <DiagnosticQuiz email={email} interest={interest} onShareToken={handleQuizComplete} />;
-  } else if (step === 'result') {
+  } else if (step === "quiz") {
+    content = (
+      <DiagnosticQuiz
+        email={email}
+        interest={interest}
+        onShareToken={handleQuizComplete}
+      />
+    );
+  } else if (step === "result") {
     content = (
       <View style={styles.resultContainer}>
         <View style={styles.resultContent}>
           <View style={styles.resultHeader}>
             <View style={styles.logoMark}>
-              <View style={{ width: 24, height: 24, backgroundColor: colors.phosphor, borderRadius: 4 }} />
+              <View
+                style={{
+                  width: 24,
+                  height: 24,
+                  backgroundColor: colors.phosphor,
+                  borderRadius: 4,
+                }}
+              />
             </View>
             <Text style={styles.resultTitle}>Obrigado!</Text>
           </View>
@@ -55,74 +71,70 @@ export default function DiagnosticoScreen() {
     );
   }
 
-  return (
-    <View style={styles.container}>
-      {content}
-    </View>
-  );
+  return <View style={styles.container}>{content}</View>;
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: colors.obsidian,
-  },
-  resultContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+  },
+  copyButton: {
+    backgroundColor: colors.phosphor,
+    borderRadius: radius.btn,
     paddingHorizontal: spacing[4],
+    paddingVertical: spacing[3],
   },
-  resultContent: {
-    width: '100%',
-    maxWidth: 340,
-  },
-  resultHeader: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: spacing[3],
+  copyButtonText: {
+    ...typography.ui,
+    color: colors.obsidian,
+    fontWeight: "600" as const,
   },
   logoMark: {
     marginRight: spacing[2],
   },
-  resultTitle: {
-    ...typography.display,
-    color: colors.ivory,
+  resultContainer: {
+    alignItems: "center",
+    flex: 1,
+    justifyContent: "center",
+    paddingHorizontal: spacing[4],
+  },
+  resultContent: {
+    maxWidth: 340,
+    width: "100%",
+  },
+  resultHeader: {
+    alignItems: "center",
+    flexDirection: "row",
+    marginBottom: spacing[3],
   },
   resultSubtitle: {
     ...typography.body,
     color: colors.zinc,
     marginBottom: spacing[2],
-    textAlign: 'center',
+    textAlign: "center",
+  },
+  resultTitle: {
+    ...typography.display,
+    color: colors.ivory,
+  },
+  shareInput: {
+    alignItems: "center",
+    backgroundColor: colors.surface,
+    borderColor: colors.borderSubtle,
+    borderRadius: radius.btn,
+    borderWidth: 1,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingHorizontal: spacing[3],
+    paddingVertical: spacing[2],
   },
   shareInputContainer: {
     marginVertical: spacing[4],
-  },
-  shareInput: {
-    backgroundColor: colors.surface,
-    borderWidth: 1,
-    borderColor: colors.borderSubtle,
-    borderRadius: radius.btn,
-    paddingHorizontal: spacing[3],
-    paddingVertical: spacing[2],
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
   },
   shareLink: {
     ...typography.ui,
     color: colors.ivory,
     flexShrink: 1,
-  },
-  copyButton: {
-    backgroundColor: colors.phosphor,
-    paddingHorizontal: spacing[4],
-    paddingVertical: spacing[3],
-    borderRadius: radius.btn,
-  },
-  copyButtonText: {
-    ...typography.ui,
-    color: colors.obsidian,
-    fontWeight: '600' as const,
   },
 });

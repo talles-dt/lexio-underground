@@ -1,7 +1,7 @@
-import { createClient } from '@supabase/supabase-js';
+import { createClient } from "@supabase/supabase-js";
 
-const supabaseUrl = process.env.EXPO_PUBLIC_SUPABASE_URL ?? '';
-const supabaseAnonKey = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY ?? '';
+const supabaseUrl = process.env.EXPO_PUBLIC_SUPABASE_URL ?? "";
+const supabaseAnonKey = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY ?? "";
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
@@ -14,14 +14,17 @@ export type Database = {
           email: string;
           name: string | null;
           priority_language: string;
-          tier: 'free' | 'pro_lifetime' | 'family';
+          tier: "free" | "pro_lifetime" | "family";
           created_at: string;
           family_group_id: string | null;
           locale: string;
           found_member: boolean;
         };
-        Insert: Omit<Database['public']['Tables']['users']['Row'], 'id' | 'created_at'>;
-        Update: Partial<Database['public']['Tables']['users']['Insert']>;
+        Insert: Omit<
+          Database["public"]["Tables"]["users"]["Row"],
+          "id" | "created_at"
+        >;
+        Update: Partial<Database["public"]["Tables"]["users"]["Insert"]>;
       };
       cartografa_sessions: {
         Row: {
@@ -33,8 +36,13 @@ export type Database = {
           map_of_ignorance: Record<string, unknown>;
           raw_response_log: Record<string, unknown> | null;
         };
-        Insert: Omit<Database['public']['Tables']['cartografa_sessions']['Row'], 'id' | 'timestamp'>;
-        Update: Partial<Database['public']['Tables']['cartografa_sessions']['Insert']>;
+        Insert: Omit<
+          Database["public"]["Tables"]["cartografa_sessions"]["Row"],
+          "id" | "timestamp"
+        >;
+        Update: Partial<
+          Database["public"]["Tables"]["cartografa_sessions"]["Insert"]
+        >;
       };
       palace_items: {
         Row: {
@@ -48,8 +56,8 @@ export type Database = {
           learned_at: number;
           next_review: number | null;
         };
-        Insert: Omit<Database['public']['Tables']['palace_items']['Row'], 'id'>;
-        Update: Partial<Database['public']['Tables']['palace_items']['Insert']>;
+        Insert: Omit<Database["public"]["Tables"]["palace_items"]["Row"], "id">;
+        Update: Partial<Database["public"]["Tables"]["palace_items"]["Insert"]>;
       };
     };
   };

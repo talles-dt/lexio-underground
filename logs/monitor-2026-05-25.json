@@ -1,24 +1,55 @@
-[
-  {
-    "timestamp": "2026-05-25T14:28:20.280875Z",
-    "status": "initialized",
-    "message": "Self-monitoring loop activated for Lexio Underground project",
-    "version": "1.0.0",
-    "components_monitored": [
-      "homepage",
-      "stripe-stubs",
-      "nextjs-config",
-      "environment-variables",
-      "typescript-types",
-      "eslint-linting",
-      "prettier-formatting",
-      "test-suite",
-      "build-verification",
-      "dependency-validation",
-      "health-check-endpoint"
-    ],
-    "self_regulation_enabled": true,
-    "monitoring_interval_minutes": 15,
-    "next_scheduled_run": "2026-05-25T11:30:00-03:00"
-  }
-]
+{
+  "timestamp": "2026-05-25T00:00:00Z",
+  "status": "degraded",
+  "steps": {
+    "environment": "pass",
+    "static_analysis": "fail",
+    "test_suite": "fail",
+    "build": "fail",
+    "runtime_validation": "fail",
+    "auto_fix": "partial"
+  },
+  "details": {
+    "environment": {
+      "node_version": "v22.22.2",
+      "env_vars_loaded": true,
+      "critical_deps": ["@stripe/stripe-react-native", "@types/node", "@types/react-native"]
+    },
+    "static_analysis": {
+      "typescript_errors": 23,
+      "eslint_errors": 189,
+      "prettier_warnings": 2
+    },
+    "test_suite": {
+      "unit_tests": {"configured": false, "status": "skipped"},
+      "build": {"configured": true, "status": "failed", "error": "Missing tamagui dependency + incorrect Expo export command"}
+    },
+    "runtime_validation": {
+      "outdated_deps": ["expo-router", "react-native", "tamagui"],
+      "module_imports": {
+        "stripe_stub": "pass",
+        "supabase_ts": "fail"
+      },
+      "deno_files": ["supabase/functions/redeem_license/index.ts"]
+    },
+    "auto_fix": {
+      "prettier": "applied",
+      "deps_installed": ["tamagui", "@tremor/react", "react-dom"],
+      "code_patches": ["React imports", "Text imports", "tamagui path"]
+    }
+  },
+  "actions_taken": [
+    "Applied Prettier formatting",
+    "Installed missing dependencies (tamagui, @tremor/react, react-dom)",
+    "Added missing React imports to .tsx files",
+    "Fixed incorrect tamagui import paths",
+    "Added missing Text imports to .tsx files"
+  ],
+  "next_steps": [
+    "Manually review TypeScript errors in files listed above",
+    "Update outdated dependencies (expo-router, react-native, tamagui)",
+    "Fix incorrect import path for @/lib/supabase",
+    "Review Deno-specific files (supabase/functions/redeem_license/index.ts)",
+    "Add test script to package.json"
+  ]
+}

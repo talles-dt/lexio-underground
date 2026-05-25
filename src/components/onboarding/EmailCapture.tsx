@@ -1,12 +1,16 @@
 // src/components/onboarding/EmailCapture.tsx
-import React from 'react';
-import { View, Text, StyleSheet, Pressable } from 'react-native';
-import { Input } from '@/components/ui';
-import { colors, typography, spacing } from '@/theme/tokens';
+import React from "react";
+import { View, Text, StyleSheet, Pressable } from "react-native";
+import { Input } from "@/components/ui";
+import { colors, typography, spacing } from "@/theme/tokens";
 
-export const EmailCapture = ({ onSubmit }: { onSubmit: (email: string, interest: string) => void }) => {
-  const [email, setEmail] = React.useState('');
-  const [interest, setInterest] = React.useState('');
+export const EmailCapture = ({
+  onSubmit,
+}: {
+  onSubmit: (email: string, interest: string) => void;
+}) => {
+  const [email, setEmail] = React.useState("");
+  const [interest, setInterest] = React.useState("");
 
   const handleSubmit = () => {
     if (email.trim() && interest.trim()) {
@@ -29,7 +33,9 @@ export const EmailCapture = ({ onSubmit }: { onSubmit: (email: string, interest:
         placeholderTextColor={colors.zinc}
         style={styles.input}
       />
-      <Text style={styles.interestLabel}>Memory Palace Hook (e.g., "minha casa", "cachorro"):</Text>
+      <Text style={styles.interestLabel}>
+        Memory Palace Hook (e.g., "minha casa", "cachorro"):
+      </Text>
       <Input
         placeholder="Where do you want to anchor this lesson?"
         value={interest}
@@ -45,49 +51,49 @@ export const EmailCapture = ({ onSubmit }: { onSubmit: (email: string, interest:
 };
 
 const styles = StyleSheet.create({
+  button: {
+    backgroundColor: colors.phosphor,
+    borderRadius: 30,
+    marginTop: spacing[6],
+    paddingHorizontal: 28,
+    paddingVertical: 14,
+    width: "85%",
+  },
+  buttonText: {
+    ...typography.ui,
+    color: colors.obsidian,
+    fontWeight: "600" as const,
+    textAlign: "center",
+  },
   container: {
-    flex: 1,
+    alignItems: "center",
     backgroundColor: colors.obsidian,
-    justifyContent: 'center',
-    alignItems: 'center',
+    flex: 1,
+    justifyContent: "center",
     paddingHorizontal: spacing[4],
   },
   heading: {
     ...typography.headlineLG,
     color: colors.ivory,
-    textAlign: 'center',
     marginBottom: spacing[2],
+    textAlign: "center",
+  },
+  input: {
+    marginVertical: spacing[2],
+    width: "85%",
+  },
+  interestLabel: {
+    ...typography.uiLabel,
+    alignSelf: "flex-start",
+    color: colors.ivory,
+    marginBottom: spacing[1],
+    marginTop: spacing[4],
   },
   subtext: {
     ...typography.body,
     color: colors.zinc,
-    textAlign: 'center',
-    maxWidth: 300,
     marginBottom: spacing[6],
-  },
-  input: {
-    width: '85%',
-    marginVertical: spacing[2],
-  },
-  interestLabel: {
-    ...typography.uiLabel,
-    color: colors.ivory,
-    marginTop: spacing[4],
-    marginBottom: spacing[1],
-    alignSelf: 'flex-start',
-  },
-  button: {
-    backgroundColor: colors.phosphor,
-    paddingVertical: 14,
-    paddingHorizontal: 28,
-    borderRadius: 30,
-    marginTop: spacing[6],
-    width: '85%',
-  },
-  buttonText: {
-    ...typography.ui,
-    color: colors.obsidian,
-    fontWeight: '600' as const,
-    textAlign: 'center',
+    maxWidth: 300,
+    textAlign: "center",
   },
 });

@@ -1,7 +1,7 @@
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
-import { useLearnerStore } from '@/stores/learnerStore';
-import { colors, typography, spacing, stageColors } from '@/theme/tokens';
-import { Card } from '@/components/ui';
+import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { useLearnerStore } from "@/stores/learnerStore";
+import { colors, typography, spacing, stageColors } from "@/theme/tokens";
+import { Card } from "@/components/ui";
 
 export default function ProfileScreen() {
   const { maturityStage, pillarScores, palaceItems, cartografaComplete } =
@@ -18,11 +18,11 @@ export default function ProfileScreen() {
         </View>
         <Text style={styles.stageName}>{maturityStage.toUpperCase()}</Text>
         <Text style={styles.tagline}>
-          {maturityStage === 'roots' && 'The beginning of knowing.'}
-          {maturityStage === 'sprouts' && 'First words, finding their place.'}
-          {maturityStage === 'branches' && 'Reaching outward.'}
-          {maturityStage === 'canopy' && 'Seeing the whole structure.'}
-          {maturityStage === 'underground' && 'You are the culture.'}
+          {maturityStage === "roots" && "The beginning of knowing."}
+          {maturityStage === "sprouts" && "First words, finding their place."}
+          {maturityStage === "branches" && "Reaching outward."}
+          {maturityStage === "canopy" && "Seeing the whole structure."}
+          {maturityStage === "underground" && "You are the culture."}
         </Text>
       </View>
 
@@ -33,7 +33,7 @@ export default function ProfileScreen() {
         </Card>
         <Card style={styles.statCard}>
           <Text style={styles.statValue}>
-            {cartografaComplete ? 'Yes' : 'No'}
+            {cartografaComplete ? "Yes" : "No"}
           </Text>
           <Text style={styles.statLabel}>Cartografa</Text>
         </Card>
@@ -71,61 +71,70 @@ export default function ProfileScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: colors.obsidian,
+  actionItem: {
+    ...typography.body,
+    borderBottomColor: colors.borderSubtle,
+    borderBottomWidth: 1,
+    color: colors.ivory,
+    paddingVertical: spacing[3],
   },
-  content: {
-    padding: spacing[4],
-    paddingTop: spacing[8],
-    paddingBottom: spacing[16],
-  },
-  header: {
-    alignItems: 'center',
-    marginBottom: spacing[8],
+  actions: {
+    gap: spacing[3],
   },
   avatar: {
-    width: 80,
-    height: 80,
+    alignItems: "center",
     borderRadius: 40,
     borderWidth: 2,
-    alignItems: 'center',
-    justifyContent: 'center',
+    height: 80,
+    justifyContent: "center",
     marginBottom: spacing[3],
+    width: 80,
   },
   avatarText: {
     ...typography.display,
     fontSize: 32,
   },
-  stageName: {
-    ...typography.h1,
-    color: colors.ivory,
-    letterSpacing: 2,
-  },
-  tagline: {
-    ...typography.body,
-    color: colors.zinc,
-    fontStyle: 'italic',
-    marginTop: spacing[2],
-    textAlign: 'center',
-  },
-  statsRow: {
-    flexDirection: 'row',
-    gap: spacing[3],
-    marginBottom: spacing[4],
-  },
-  statCard: {
+  container: {
+    backgroundColor: colors.obsidian,
     flex: 1,
-    alignItems: 'center',
   },
-  statValue: {
-    ...typography.h1,
+  content: {
+    padding: spacing[4],
+    paddingBottom: spacing[16],
+    paddingTop: spacing[8],
+  },
+  header: {
+    alignItems: "center",
+    marginBottom: spacing[8],
+  },
+  pillarBar: {
+    backgroundColor: colors.borderSubtle,
+    borderRadius: 2,
+    flex: 1,
+    height: 4,
+  },
+  pillarFill: {
+    backgroundColor: colors.phosphor,
+    borderRadius: 2,
+    height: "100%",
+  },
+  pillarName: {
+    ...typography.caption,
     color: colors.ivory,
-    marginBottom: spacing[1],
+    textTransform: "capitalize",
+    width: 70,
   },
-  statLabel: {
+  pillarRow: {
+    alignItems: "center",
+    flexDirection: "row",
+    gap: spacing[3],
+    marginBottom: spacing[3],
+  },
+  pillarScore: {
     ...typography.caption,
     color: colors.zinc,
+    textAlign: "right",
+    width: 30,
   },
   pillarsCard: {
     marginBottom: spacing[6],
@@ -136,43 +145,34 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
     marginBottom: spacing[4],
   },
-  pillarRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: spacing[3],
-    gap: spacing[3],
-  },
-  pillarName: {
-    ...typography.caption,
+  stageName: {
+    ...typography.h1,
     color: colors.ivory,
-    width: 70,
-    textTransform: 'capitalize',
+    letterSpacing: 2,
   },
-  pillarBar: {
+  statCard: {
+    alignItems: "center",
     flex: 1,
-    height: 4,
-    backgroundColor: colors.borderSubtle,
-    borderRadius: 2,
   },
-  pillarFill: {
-    height: '100%',
-    backgroundColor: colors.phosphor,
-    borderRadius: 2,
-  },
-  pillarScore: {
+  statLabel: {
     ...typography.caption,
     color: colors.zinc,
-    width: 30,
-    textAlign: 'right',
   },
-  actions: {
-    gap: spacing[3],
-  },
-  actionItem: {
-    ...typography.body,
+  statValue: {
+    ...typography.h1,
     color: colors.ivory,
-    paddingVertical: spacing[3],
-    borderBottomWidth: 1,
-    borderBottomColor: colors.borderSubtle,
+    marginBottom: spacing[1],
+  },
+  statsRow: {
+    flexDirection: "row",
+    gap: spacing[3],
+    marginBottom: spacing[4],
+  },
+  tagline: {
+    ...typography.body,
+    color: colors.zinc,
+    fontStyle: "italic",
+    marginTop: spacing[2],
+    textAlign: "center",
   },
 });
