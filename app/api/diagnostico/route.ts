@@ -1,5 +1,5 @@
 // app/api/diagnostico/route.ts
-import { supabase } from "@/lib/supabase";
+import { supabaseAdmin } from "@/lib/supabase";
 import { z } from "zod";
 
 // Using z.record with explicit key and value types for Zod v4 compatibility
@@ -39,7 +39,7 @@ export async function POST(req: Request) {
   });
   const archetype = determineArchetype(scores);
 
-  const { data: insertData, error: insertError } = await supabase
+  const { data: insertData, error: insertError } = await supabaseAdmin
     .from("diagnostic_sessions")
     .insert([
       {
