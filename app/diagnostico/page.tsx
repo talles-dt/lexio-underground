@@ -19,6 +19,7 @@ import {
 import { Question, Pillar } from "@/cartografa/question-bank";
 import PillarRadar from "@/components/PillarRadar";
 import ShareCard from "@/components/ShareCard";
+import RoadmapPreview from "@/components/RoadmapPreview";
 
 // ─── STEP TYPES ─────────────────────────────────────────────
 type Step = "preamble" | "email" | "cartografa" | "transition" | "result";
@@ -867,6 +868,13 @@ export default function DiagnosticoPage() {
               {error}
             </p>
           )}
+
+          {/* Roadmap Preview */}
+          <RoadmapPreview
+            recommendedFocus={result.recommended_focus}
+            overallReadiness={result.overall_readiness}
+            animate={true}
+          />
 
           <div style={{ textAlign: "center", marginTop: spacing[4] }}>
             <Link href="/" style={{ ...s.btn, marginRight: spacing[3] }}>
