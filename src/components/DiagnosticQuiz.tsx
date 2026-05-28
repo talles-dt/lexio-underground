@@ -1,16 +1,10 @@
 // src/components/DiagnosticQuiz.tsx
 // React Native version of the diagnostic quiz with Lexio DNA
 // Enhanced to match stitch brief specifications for Cartografa Test (Grammar stage)
-import React from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  Pressable,
-  TextInput,
-  Clipboard,
-} from "react-native";
-import { colors, typography, spacing, radius, duration } from "@/theme/tokens";
+import React, { useState } from "react";
+import { Text, StyleSheet, TextInput, Pressable, View } from "react-native";
+import { colors, typography, spacing, radius } from "@/theme/tokens";
+import * as Clipboard from "expo-clipboard";
 
 type Question = {
   id: string;
@@ -134,8 +128,7 @@ export function DiagnosticQuiz({
             <Pressable
               style={styles.copyButton}
               onPress={() => {
-                // Copy to clipboard
-                Clipboard.setString(shareLink);
+                Clipboard.setStringAsync(shareLink);
                 // TODO: Show toast using duration.instant or duration.fast
               }}
             >

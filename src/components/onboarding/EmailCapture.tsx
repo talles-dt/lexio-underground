@@ -1,6 +1,7 @@
 // src/components/onboarding/EmailCapture.tsx
 import React from "react";
-import { View, Text, StyleSheet, Pressable } from "react-native";
+import { View, StyleSheet, Pressable } from "react-native";
+import { Text } from "react-native";
 import { Input } from "@/components/ui";
 import { colors, typography, spacing } from "@/theme/tokens";
 

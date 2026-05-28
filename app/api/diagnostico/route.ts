@@ -1,5 +1,5 @@
 // app/api/diagnostico/route.ts
-import { supabase } from "@/lib/supabase";
+import { supabase } from "../../../app/lib/supabase-mock";
 import { z } from "zod";
 
 // Using z.record with explicit key and value types for Zod v4 compatibility
@@ -39,27 +39,49 @@ export async function POST(req: Request) {
   });
   const archetype = determineArchetype(scores);
 
-  const { data, error } = await supabase
+  const { data: insertData, error: insertError } = await supabase
     .from("diagnostic_sessions")
-    .insert({
-      email,
-      answers,
-      scores,
-      archetype_key: archetype.key,
-      archetype_name: archetype.name,
-    })
-    .select("share_token")
-    .single();
+    .insert([
+      {
+        email,
+        answers,
+        scores,
+        archetype_key: archetype.key,
+        archetype_name: archetype.name,
+      },
+    ]);
 
-  if (error || !data?.share_token) {
+  if (insertError || !insertData) {
     return new Response(
-      JSON.stringify({ error: error?.message || "Failed to create session" }),
+      JSON.stringify({
+        error: insertError?.message || "Failed to create session",
+      }),
       {
         status: 500,
         headers: { "Content-Type": "application/json" },
-      }
+      },
     );
   }
+
+  const { data: selectData, error: selectError } = (await supabase
+    .from("diagnostic_sessions")
+    .select("share_token")
+    .eq("email", email)
+    .single()) as { data: { share_token: string } | null; error: any };
+
+  if (selectError || !selectData?.share_token) {
+    return new Response(
+      JSON.stringify({
+        error: selectError?.message || "Failed to fetch share token",
+      }),
+      {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      },
+    );
+  }
+
+  const share_token = selectData.share_token;
 
   try {
     await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/diagnostico/notify`, {
@@ -70,14 +92,15 @@ export async function POST(req: Request) {
         name: email.split("@")[0],
         archetype_key: archetype.key,
         archetype_name: archetype.name,
-        share_token: data.share_token,
+        share_token,
       }),
     });
   } catch (notifyErr) {
     console.error("Failed to send notification:", notifyErr);
   }
 
-  return new Response(JSON.stringify({ share_token: data.share_token }), {
+  return new Response(JSON.stringify({ share_token }), {
+    status: 200,
     headers: { "Content-Type": "application/json" },
   });
 }
