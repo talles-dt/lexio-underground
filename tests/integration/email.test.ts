@@ -1,18 +1,17 @@
+import nodemailer from "nodemailer";
+
 jest.mock("nodemailer");
 const mockSMTPTransport = {
   sendMail: jest.fn().mockResolvedValue({ accepted: ["test@example.com"] }),
 };
 
 beforeAll(() => {
-  // NODE_ENV is read-only; mock SMTP via jest.mock
-  global.fetch = jest.fn(() => Promise.reject(new Error("ECONNREFUSED")));
-  jest
-    .spyOn(require("nodemailer"), "createTransport")
-    .mockReturnValue(mockSMTPTransport);
+  // Mock SMTP via jest.mock
+  jest.spyOn(nodemailer, "createTransport").mockReturnValue(mockSMTPTransport);
 });
 
 afterAll(() => {
-  // Restore original environment
+  jest.restoreAllMocks();
 });
 
 describe("SMTP fallback", () => {
@@ -20,6 +19,7 @@ describe("SMTP fallback", () => {
     const fetchSpy = jest
       .spyOn(global, "fetch")
       .mockRejectedValue(new Error("ECONNREFUSED"));
+
     const response = await fetch(
       process.env.TEST_API_URL ||
         "http://localhost:3000/api/diagnostico/notify",

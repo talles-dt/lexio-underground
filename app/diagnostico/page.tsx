@@ -1,5 +1,7 @@
 "use client";
 
+
+
 import { useState, useCallback, useRef, useEffect } from "react";
 import Link from "next/link";
 import { colors, spacing, radius } from "@/theme/tokens";
@@ -16,6 +18,7 @@ import {
 } from "@/cartografa/adaptive-engine";
 import { Question, Pillar } from "@/cartografa/question-bank";
 import PillarRadar from "@/components/PillarRadar";
+import ShareCard from "@/components/ShareCard";
 
 // ─── STEP TYPES ─────────────────────────────────────────────
 type Step = "preamble" | "email" | "cartografa" | "transition" | "result";
@@ -722,7 +725,13 @@ export default function DiagnosticoPage() {
           <p style={s.identityCallout}>{result.identity_callout}</p>
 
           {/* Pillar Radar */}
-          <div style={{ display: "flex", justifyContent: "center", marginBottom: spacing[6] }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginBottom: spacing[6],
+            }}
+          >
             <PillarRadar
               scores={{
                 grammar: result.pillar_scores.grammar.score,
@@ -817,9 +826,25 @@ export default function DiagnosticoPage() {
             </p>
           </div>
 
-          {/* Share */}
+          {/* Share Card */}
           {shareLink && (
-            <div style={s.shareBox}>
+            <ShareCard
+              scores={{
+                grammar: result.pillar_scores.grammar.score,
+                logic: result.pillar_scores.logic.score,
+                vocab: result.pillar_scores.vocab.score,
+                culture: result.pillar_scores.culture.score,
+                comm: result.pillar_scores.comm.score,
+              }}
+              identityCallout={result.identity_callout}
+              readinessLabel={getReadinessLabel(result.overall_readiness)}
+              shareUrl={shareLink}
+            />
+          )}
+
+          {/* Copy link fallback */}
+          {shareLink && (
+            <div style={{ ...s.shareBox, marginTop: spacing[3] }}>
               <span style={s.shareLink}>{shareLink}</span>
               <button
                 style={s.copyBtn}

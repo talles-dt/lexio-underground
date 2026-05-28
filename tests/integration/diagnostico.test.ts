@@ -4,7 +4,7 @@ test("POST /api/diagnostico returns mock share token", async () => {
     input.toString().includes("/api/diagnostico")
       ? Promise.resolve({
           ok: true,
-          json: () => Promise.resolve({ shareToken: "mock-share-token" }),
+          json: () => Promise.resolve({ share_token: "mock" }),
         } as Response)
       : Promise.reject(new Error("Mock not configured")),
   );

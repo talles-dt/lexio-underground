@@ -31,15 +31,12 @@ const PILLAR_COLORS: Record<string, string> = {
 function getPentagonPoints(
   cx: number,
   cy: number,
-  radius: number
+  radius: number,
 ): [number, number][] {
   const points: [number, number][] = [];
   for (let i = 0; i < 5; i++) {
     const angle = (Math.PI * 2 * i) / 5 - Math.PI / 2; // start from top
-    points.push([
-      cx + radius * Math.cos(angle),
-      cy + radius * Math.sin(angle),
-    ]);
+    points.push([cx + radius * Math.cos(angle), cy + radius * Math.sin(angle)]);
   }
   return points;
 }
@@ -49,7 +46,7 @@ function getScaledPoints(
   cx: number,
   cy: number,
   radius: number,
-  scores: Record<string, number>
+  scores: Record<string, number>,
 ): [number, number][] {
   const basePoints = getPentagonPoints(cx, cy, radius);
   return basePoints.map(([x, y], i) => {
@@ -222,7 +219,9 @@ export default function PillarRadar({
               x={x}
               y={isTop ? y - 8 : isBottom ? y + 16 : y}
               textAnchor="middle"
-              dominantBaseline={isTop ? "auto" : isBottom ? "hanging" : "middle"}
+              dominantBaseline={
+                isTop ? "auto" : isBottom ? "hanging" : "middle"
+              }
               fill={PILLAR_COLORS[key]}
               fontSize={12}
               fontFamily="system-ui, -apple-system, sans-serif"

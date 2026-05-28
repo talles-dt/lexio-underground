@@ -2,13 +2,24 @@ import { mockLessons } from "../mocks/lessons";
 
 test("POST /api/lessons/generate returns 201 with mock lesson", async () => {
   // Mock fetch to avoid hitting real API
-  // @ts-expect-error: Mock lacks Response fields
   global.fetch = jest.fn((url) =>
     url.toString().includes("/api/lessons")
       ? Promise.resolve({
           ok: true,
-          json: async () => mockLessons,
-        })
+          status: 201,
+          json: async () => ({
+            content: {
+              grammar: `mock lesson: cachorro at B2`,
+              vocabulary: "",
+              logic: "",
+              culture: "",
+              communication: "",
+            },
+            mnemonic: "**→** cachorro",
+            difficulty: "B2",
+            pillar: "grammar",
+          }),
+        } as Response)
       : Promise.reject(new Error("Mock not configured")),
   );
 
