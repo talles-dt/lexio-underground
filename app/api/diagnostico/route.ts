@@ -49,7 +49,9 @@ export async function POST(req: Request) {
         archetype_key: archetype.key,
         archetype_name: archetype.name,
       },
-    ]);
+    ])
+    .select("share_token")
+    .single();
 
   if (insertError || !insertData) {
     return new Response(
@@ -64,25 +66,7 @@ export async function POST(req: Request) {
     );
   }
 
-  const { data: selectData, error: selectError } = (await supabase
-    .from("diagnostic_sessions")
-    .select("share_token")
-    .eq("email", email)
-    .single()) as { data: { share_token: string } | null; error: any };
-
-  if (selectError || !selectData?.share_token) {
-    return new Response(
-      JSON.stringify({
-        error: selectError?.message || "Failed to fetch share token",
-      }),
-      {
-        status: 500,
-        headers: { "Content-Type": "application/json" },
-      },
-    );
-  }
-
-  const share_token = selectData.share_token;
+  const share_token = insertData.share_token;
 
   try {
     await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/diagnostico/notify`, {
