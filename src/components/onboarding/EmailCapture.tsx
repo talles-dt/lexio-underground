@@ -1,3 +1,5 @@
+"use client";
+
 // src/components/onboarding/EmailCapture.tsx
 import React from "react";
 import { View, StyleSheet, Pressable } from "react-native";

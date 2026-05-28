@@ -1,10 +1,9 @@
-// src/components/LessonCard.tsx
-// Interactive lesson card with Tremor styling + memory palace integration
-
 "use client";
 
-import { Card, Title, Text, Divider } from "@tremor/react";
-import { useState } from "react";
+import React, { useState } from "react";
+import { View, Pressable } from "react-native";
+import { Text } from "react-native";
+import { Card } from "@/components/ui";
 
 interface Lesson {
   grammar: string;
@@ -21,44 +20,87 @@ export function LessonCard({
   difficulty: string;
 }) {
   const [expanded, setExpanded] = useState(false);
+  const mnemonicParts = lesson.mnemonic.split("**→**");
+  const displayMnemonic = mnemonicParts[1] || lesson.mnemonic;
+
+  const styles = StyleSheet.create({
+    bold: {
+      fontWeight: "bold",
+    },
+    button: {
+      backgroundColor: "#3B82F6",
+      borderRadius: 4,
+      marginTop: 16,
+      paddingHorizontal: 12,
+      paddingVertical: 8,
+    },
+    buttonText: {
+      color: "#FFFFFF",
+      fontSize: 12,
+    },
+    card: {
+      borderColor: "#4B5563",
+      borderRadius: 8,
+      borderWidth: 1,
+      elevation: 5,
+      overflow: "hidden",
+      shadowColor: "#000",
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.25,
+      shadowRadius: 4,
+    },
+    container: {
+      gap: 8,
+    },
+    divider: {
+      borderBottomWidth: 1,
+      marginVertical: 8,
+    },
+    italic: {
+      fontStyle: "italic",
+    },
+    title: {
+      fontSize: 20,
+      fontWeight: "bold",
+    },
+  });
 
   return (
-    <Card className="mx-auto max-w-md my-4">
-      <Title className="text-tremor-brand">Lesson ({difficulty})</Title>
-      <Text className="italic">"{lesson.mnemonic.split("**→**")[1]}"</Text>
+    <View style={styles.card}>
+      <Text style={styles.title}>Lesson ({difficulty})</Text>
+      <Text style={styles.italic}>"{displayMnemonic}"</Text>
 
-      <Divider />
+      <View style={styles.divider} />
 
-      <div className="space-y-4">
-        <div>
-          <Text className="font-bold">Grammar:</Text>
+      <View style={styles.container}>
+        <View>
+          <Text style={styles.bold}>Grammar:</Text>
           <Text>{lesson.grammar}</Text>
-        </div>
+        </View>
 
-        <div>
-          <Text className="font-bold">Logic:</Text>
+        <View>
+          <Text style={styles.bold}>Logic:</Text>
           <Text>{lesson.logic}</Text>
-        </div>
+        </View>
 
         {expanded && (
-          <div>
-            <Text className="font-bold">Communication:</Text>
+          <View>
+            <Text style={styles.bold}>Communication:</Text>
             <Text>{lesson.communication}</Text>
 
-            <Divider />
+            <View style={styles.divider} />
 
-            <Text className="font-bold">Memory Palace:</Text>
-            <Text className="whitespace-pre-line">{lesson.mnemonic}</Text>
-          </div>
+            <Text style={styles.bold}>Memory Palace:</Text>
+            <Text>{lesson.mnemonic.replace(/\\n/g, "\n")}</Text>
+          </View>
         )}
-      </div>
+      </View>
 
-      <button
-        onClick={() => setExpanded(!expanded)}
-        className="mt-4 px-3 py-1 text-xs bg-tremor-brand text-white rounded"
-      >
-        {expanded ? "Collapse" : "Expand"}
-      </button>
-    </Card>
+      <Pressable onPress={() => setExpanded(!expanded)} style={styles.button}>
+        <Text style={styles.buttonText}>
+          {expanded ? "Collapse" : "Expand"}
+        </Text>
+      </Pressable>
+    </View>
   );
 }

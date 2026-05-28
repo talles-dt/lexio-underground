@@ -1,61 +1,57 @@
-// src/components/onboarding/Preamble.tsx
-import { View, Text, StyleSheet, Pressable } from "react-native";
-import { colors, typography, spacing } from "@/theme/tokens";
+"use client";
 
-export const OnboardingPreamble = ({
-  onBeginCartografa,
-}: {
-  onBeginCartografa: () => void;
-}) => {
+import React from "react";
+import { View, StyleSheet, Pressable, Text } from "react-native";
+import { colors, typography, spacing, radius } from "@/theme/tokens";
+
+interface PreambleProps {
+  onPress: () => void;
+  onBeginCartografa?: () => void;
+}
+
+const styles = StyleSheet.create({
+  button: {
+    backgroundColor: colors.phosphor,
+    borderRadius: radius.btn,
+    paddingHorizontal: spacing[8],
+    paddingVertical: spacing[6],
+  },
+  buttonText: {
+    color: "white",
+    fontSize: typography.ui.fontSize,
+  },
+  container: {
+    alignItems: "center",
+    flex: 1,
+    justifyContent: "center",
+    padding: spacing[8],
+  },
+  subtitle: {
+    color: colors.secondary,
+    fontSize: typography.h2.fontSize,
+    marginBottom: spacing[16],
+    textAlign: "center",
+  },
+  title: {
+    color: colors.phosphor,
+    fontSize: typography.h1.fontSize,
+    fontWeight: "bold",
+    marginBottom: spacing[4],
+  },
+});
+
+export const OnboardingPreamble = ({ onPress }: PreambleProps) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.wordmark}>Lexio Underground</Text>
-      <Text style={styles.description}>
-        Every language learner has a map of what they don't know. Today we draw
-        yours.
+      <Text style={styles.title}>Lexio Underground</Text>
+      <Text style={styles.subtitle}>
+        Map your ignorance. Master your language.
       </Text>
-      <Pressable
-        onPress={onBeginCartografa}
-        style={styles.button}
-        accessibilityLabel="Begin Cartografa"
-      >
-        <Text style={styles.buttonText}>Begin Cartografa</Text>
+      <Pressable style={styles.button} onPress={onPress}>
+        <Text style={styles.buttonText}>Begin your Cartografa</Text>
       </Pressable>
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  button: {
-    backgroundColor: colors.phosphor,
-    borderRadius: 30,
-    paddingHorizontal: 28,
-    paddingVertical: 14,
-  },
-  buttonText: {
-    ...typography.ui,
-    color: colors.obsidian,
-    fontWeight: "600" as const,
-  },
-  container: {
-    flex: 1,
-    backgroundColor: colors.obsidian, // Black background
-    justifyContent: "center",
-    alignItems: "center",
-    paddingHorizontal: spacing[4],
-  },
-  description: {
-    ...typography.bodyItalic,
-    color: colors.zinc,
-    lineHeight: 24,
-    marginBottom: spacing[12],
-    maxWidth: 300,
-    textAlign: "center",
-  },
-  wordmark: {
-    ...typography.display,
-    color: colors.ivory,
-    marginBottom: spacing[8],
-    textAlign: "center",
-  },
-});
+export const Preamble = OnboardingPreamble; // backward compatibility

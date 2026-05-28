@@ -15,6 +15,7 @@ const nextConfig = {
     root: resolve(__dirname),
     resolveAlias: {
       "react-native": "react-native-web",
+      "expo-clipboard": "./src/stubs/expo-clipboard.js",
     },
   },
 

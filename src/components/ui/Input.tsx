@@ -1,30 +1,19 @@
 import { TextInput, StyleSheet, TextInputProps } from "react-native";
+import React from "react";
 import { colors, radius, typography } from "@/theme/tokens";
 
-interface InputProps extends TextInputProps {
-  // Additional props can be added here
+export function Input(props: TextInputProps) {
+  return <TextInput style={styles.input} {...props} />;
 }
 
-export function Input(props: InputProps) {
-  return (
-    <TextInput
-      style={styles.input}
-      placeholderTextColor={colors.zinc}
-      {...props}
-    />
-  );
-}
+export default Input;
 
 const styles = StyleSheet.create({
   input: {
-    backgroundColor: colors.obsidian,
-    borderColor: colors.borderSubtle,
+    backgroundColor: colors.surfaceContainerHigh,
     borderRadius: radius.btn,
-    borderWidth: 1,
-    color: colors.ivory,
-    width: "100%",
-    ...typography.ui,
-    paddingHorizontal: 16,
-    paddingVertical: 12,
+    color: colors.onSurface,
+    fontFamily: typography.body.fontFamily,
+    padding: 12,
   },
 });

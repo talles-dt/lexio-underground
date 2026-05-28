@@ -58,7 +58,7 @@ async function generateLesson(
           messages: [{ role: "user", content: prompt }],
           temperature: 0.3,
         }),
-      }
+      },
     );
     const data = await response.json();
     return LessonSchema.parse(JSON.parse(data.choices[0].message.content));
@@ -103,7 +103,7 @@ export async function POST(req: Request) {
         pillar,
         difficulty,
         content: JSON.stringify(lesson),
-      }
+      },
     ])
     .select()
     .single();

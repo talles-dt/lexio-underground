@@ -1,0 +1,8 @@
+{
+  "timestamp": "$(date -u +'%Y-%m-%dT%H:%M:%SZ')",
+  "status": "in_progress",
+  "steps": {},
+  "warnings": [],
+  "actions_taken": [],
+  "duration_seconds": {}
+}

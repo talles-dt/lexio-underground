@@ -1,37 +1,28 @@
-import { View, StyleSheet, ViewProps } from "react-native";
+import { View, StyleSheet } from "react-native";
+import React from "react";
 import { colors, radius, spacing } from "@/theme/tokens";
-
-interface CardProps extends ViewProps {
-  children: React.ReactNode;
-  elevated?: boolean;
-}
 
 export function Card({
   children,
-  elevated = false,
   style,
-  ...props
-}: CardProps) {
-  return (
-    <View style={[styles.card, elevated && styles.elevated, style]} {...props}>
-      {children}
-    </View>
-  );
+}: {
+  children: React.ReactNode;
+  style?: Record<string, unknown>;
+}) {
+  return <View style={[styles.card, style]}>{children}</View>;
 }
+
+export default Card;
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: colors.surface,
-    borderColor: colors.borderSubtle,
-    borderRadius: radius.card,
-    borderWidth: 1,
-    padding: spacing[4],
-  },
-  elevated: {
-    elevation: 8,
-    shadowColor: colors.phosphor,
-    shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: 0.15,
-    shadowRadius: 12,
+    backgroundColor: "white",
+    borderRadius: 8,
+    elevation: 2,
+    padding: 16,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
   },
 });

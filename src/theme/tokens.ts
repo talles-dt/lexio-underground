@@ -57,13 +57,16 @@ export const colors = {
   outlineVariant: "#3b4b3d",
 } as const;
 
-export const stageColors = {
+import { MaturityStage } from "@/types";
+import { stageColors } from "./tokens.stageColors";
+
+export const themeColors: Record<MaturityStage, string> = {
   roots: "#00FF88",
   sprouts: "#22C55E",
   branches: "#FF9500",
   canopy: "#166534",
   underground: "#A855F7",
-} as const;
+};
 
 export const typography = {
   display: {

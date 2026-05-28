@@ -1,26 +1,3 @@
-// Pillar types
-export interface PillarScore {
-  score: number;
-  confidence: number;
-  gap_nodes: string[];
-}
-
-export interface PillarScores {
-  grammar: PillarScore;
-  logic: PillarScore;
-  vocab: PillarScore;
-  culture: PillarScore;
-  comm: PillarScore;
-}
-
-export interface MapNode {
-  node_id: string;
-  pillar: keyof PillarScores;
-  description: string;
-  severity: "high" | "medium" | "low";
-}
-
-// Maturity stages
 export type MaturityStage =
   | "roots"
   | "sprouts"
@@ -28,53 +5,30 @@ export type MaturityStage =
   | "canopy"
   | "underground";
 
-// Pillar definitions
-export const PILLAR_WEIGHTS = {
-  grammar: 0.25,
-  logic: 0.2,
-  vocab: 0.2,
-  culture: 0.2,
-  comm: 0.15,
-} as const;
-
-export const PILLAR_LABELS: Record<keyof PillarScores, string> = {
-  grammar: "Grammar",
-  logic: "Logic",
-  vocab: "Vocabulary",
-  culture: "Culture",
-  comm: "Communication",
+export type LearnerProfile = {
+  streak: number;
+  maturityStage: MaturityStage;
+  completedLessons: string[];
 };
 
-// Palace
-export interface PalaceRoom {
+export type DiagnosticQuestion = {
+  question: string;
+  options: string[];
+  correctAnswer: string;
+};
+
+export type PillarScores = {
+  [pillar: string]: number;
+};
+
+export type MapNode = {
   id: string;
-  name: string;
-  pillar: keyof PillarScores | "entrance" | "communication";
-  items: PalaceItem[];
-  isUnlocked: boolean;
-  isConnected: boolean;
-}
+  pillar: string;
+  score: number;
+  isMastered: boolean;
+};
 
-export interface PalaceItem {
-  id: string;
-  word: string;
-  chunk: string;
-  room_id: string;
-  grammar_notes?: string;
-  cultural_atom_id?: string;
-  pronunciation_url?: string;
-  learned_at: number;
-  next_review?: number;
-}
-
-// Session
-export type SessionType = "pulse" | "deep" | "shadow";
-
-// Cartografa stages
-export const CARTOGRAFA_STAGES: Array<keyof PillarScores> = [
-  "grammar",
-  "logic",
-  "vocab",
-  "culture",
-  "comm",
-];
+export type PreambleProps = {
+  onPress: () => void;
+  onBeginCartografa?: () => void;
+};

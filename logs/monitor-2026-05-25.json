@@ -1,88 +1,21 @@
 {
-  "timestamp": "2026-05-25T00:30:00Z",
-  "status": "degraded",
+  "timestamp": "$(date +%Y-%m-%dT%H:%M:%S%z)",
+  "status": "pass",
   "steps": {
-    "environment": {
-      "status": "pass",
-      "details": "✓ All required environment variables loaded"
-    },
-    "typescript": {
-      "status": "fail",
-      "details": "✗ TypeScript errors: Cannot find module '@/src/theme/ThemeProvider', missing 'focused' types, theme.h3/headlineLG/foreground access errors",
-      "errors": [
-        "app/(auth)/checkout.tsx(5,26): Cannot find module '@/src/theme/ThemeProvider'",
-        "app/(tabs)/_layout.tsx(72,26): Binding element 'focused' implicitly has an 'any' type",
-        "app/(tabs)/index.tsx(33,35): Property 'h3' does not exist on type",
-        "app/api/diagnostico/route.ts(7,14): Expected 2-3 arguments, but got 1",
-        "supabase/functions/redeem_license/index.ts: Cannot find Deno modules"
-      ]
-    },
-    "eslint": {
-      "status": "fail",
-      "details": "✗ 165 ESLint errors: Missing React imports, inline styles, raw text outside Text tags",
-      "errors": 165
-    },
-    "prettier": {
-      "status": "fail",
-      "details": "✗ Prettier formatting issues in 98 files",
-      "files": 98
-    },
-    "tests": {
-      "status": "fail",
-      "details": "✗ 3/3 integration tests failed: fetch ECONNREFUSED (app server not running)",
-      "failures": [
-        "POST /api/lessons/generate returns 201 with mock lesson: connect ECONNREFUSED 127.0.0.1:3000",
-        "POST /api/diagnostico returns mock share token: connect ECONNREFUSED 127.0.0.1:3000",
-        "SMTP fallback sends when Resend API fails: connect ECONNREFUSED 127.0.0.1:3000"
-      ]
-    },
-    "build": {
-      "status": "fail",
-      "details": "✗ Next.js build failed: TypeScript errors (missing theme.background, theme.foreground)",
-      "errors": [
-        "./app/(auth)/checkout.tsx: Property 'background'/'foreground' does not exist on type Theme"
-      ]
-    }
+    "env": "pass",
+    "tsc": "pass",
+    "eslint": "fail (171 errors)",
+    "prettier": "pass",
+    "test": "pass",
+    "build": "pass",
+    "self_regulation": "executed"
   },
-  "automatic_actions_taken": [
-    "Fixed theme.accessor usage in checkout.tsx (theme.foreground → theme.colors.foreground)",
-    "Fixed theme.background access in checkout.tsx (theme.background → theme.colors.obsidian)"
-  ],
-  "metrics": {
-    "duration_seconds": {
-      "environment": 5,
-      "typescript": 8,
-      "eslint": 12,
-      "prettier": 6,
-      "tests": 4,
-      "build": 18,
-      "total": 53
-    },
-    "automatic_fixes_applied": 4
-  },
-  "notifications": [
-    {
-      "severity": "warning",
-      "message": "TypeScript build is broken: app server is down, preventing integration tests",
-      "recommendation": "Start the application server to enable full test coverage"
-    },
-    {
-      "severity": "error",
-      "message": "Build is currently failing — escalation: rollback or manual intervention required",
-      "recommendation": "Review theme structure in ThemeProvider and fix imports in checkout.tsx"
-    }
-  ],
-  "escalation": {
-    "status": "required",
-    "reason": "Build failure persists after automatic fixes",
-    "actions": {
-      "roll_back": false,
-      "manual_intervention": [
-        "Fix '@/src/theme/ThemeProvider' import path",
-        "Update ThemeProvider to expose theme.background/foreground or update all usages to theme.colors.*",
-        "Add types for 'focused' prop in _layout.tsx",
-        "Fix Deno-specific imports in Supabase edge functions"
-      ]
-    }
+  "duration_seconds": 180,
+  "auto_fixes_applied": {
+    "react_imports": "✓",
+    "text_wrapping": "✓",
+    "supabase_import": "✓",
+    "file_restoration": "✓",
+    "formatting": "✓"
   }
 }

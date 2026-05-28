@@ -1,0 +1,46 @@
+{
+  "timestamp": "2026-05-27T00:00:00Z",
+  "status": "warning",
+  "steps": {
+    "system_metrics": {
+      "node_version": "v22.22.2",
+      "supabase_env": "missing",
+      "status": "fail"
+    },
+    "static_analysis": {
+      "eslint": "config_found",
+      "typescript": {
+        "errors": [
+          "app/(tabs)/profile.tsx(47,60): Unexpected token. Did you mean `{'>'}` or `&gt;`?",
+          "app/(tabs)/profile.tsx(48,13): Expression expected",
+          "app/(tabs)/profile.tsx(48,43): Expression expected",
+          "app/(tabs)/profile.tsx(59,11): Unexpected token. Did you mean `{'}'}` or `&rbrace;`?"
+        ],
+        "status": "fail"
+      },
+      "status": "fail"
+    },
+    "test_suite": {
+      "unit_tests": "not_run",
+      "build": "not_run"
+    },
+    "health_check": "skipped",
+    "static_analysis_corrections": {
+      "supabase_import": "fixed ./lib/supabase → ../../../../lib/supabase",
+      "typescript_errors": "fixed missing optional chain in pillarScores",
+      "missing_deps": "ran npm install --legacy-peer-deps",
+      "status": "partial_success"
+    }
+  },
+  "warnings": [
+    "Missing Supabase environment variables",
+    "Outdated dependencies: @react-navigation, @supabase/supabase-js, dotenv, eslint, expo, react-native, typescript",
+    "Build may fail due to missing Supabase ENV"
+  ],
+  "actions_taken": [
+    "Fixed incorrect Supabase import paths",
+    "Added optional chaining to pillarScores in ProfileScreen",
+    "Ran npm install --legacy-peer-deps to resolve dependency conflicts",
+    "Logged outdated dependencies"
+  ]
+}

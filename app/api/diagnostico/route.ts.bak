@@ -1,7 +1,7 @@
 app/api/diagnostico/route.ts
 // TypeScript types removed for compatibility; re-add with "pnpm add typescript"
 
-import { supabase } from '@/lib/supabase';
+import { supabase } from './lib/supabase';
 
 const DiagnosticSchema = {
  parse: (obj: any) => {

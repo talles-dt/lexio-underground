@@ -1,3 +1,5 @@
+"use client";
+
 // src/components/DiagnosticQuiz.tsx
 // React Native version of the diagnostic quiz with Lexio DNA
 // Enhanced to match stitch brief specifications for Cartografa Test (Grammar stage)

@@ -1,3 +1,5 @@
-export { Button } from "./Button";
-export { Card } from "./Card";
-export { Input } from "./Input";
+import { Button } from "./Button";
+import Card from "./Card";
+import Input from "./Input";
+
+export { Button, Card, Input };

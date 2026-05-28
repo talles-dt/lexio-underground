@@ -1,10 +1,11 @@
 "use client";
 
-import { createContext, useContext } from "react";
-import { theme } from "./tokens";
-import type { Theme } from "./tokens";
+import React, { createContext, useContext } from "react";
+import * as tokens from "./tokens";
+export { tokens };
+export type Theme = typeof tokens;
 
-const ThemeContext = createContext<Theme>(theme);
+const ThemeContext = createContext<Theme>(tokens);
 
 export const ThemeProvider = ThemeContext.Provider;
 
