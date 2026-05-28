@@ -1,24 +1,29 @@
 "use client";
 
 import dynamic from "next/dynamic";
-
-const DiagnosticoContent = dynamic(
-  () => import("@/components/DiagnosticQuiz"),
-  { ssr: false, loading: () => <div style={{ color: "#F5F0E8", padding: 40, textAlign: "center" }}>Loading...</div> }
-);
+import { useState } from "react";
+import { colors, spacing } from "@/theme/tokens";
 
 const Preamble = dynamic(
-  () => import("@/components/onboarding/Preamble").then(m => ({ default: m.OnboardingPreamble || m.Preamble })),
+  () => import("@/components/onboarding/Preamble").then((m) => ({
+    default: m.OnboardingPreamble || m.Preamble,
+  })),
   { ssr: false }
 );
 
 const EmailCapture = dynamic(
-  () => import("@/components/onboarding/EmailCapture").then(m => ({ default: m.EmailCapture })),
+  () => import("@/components/onboarding/EmailCapture").then((m) => ({
+    default: m.EmailCapture,
+  })),
   { ssr: false }
 );
 
-import { useState } from "react";
-import { colors, spacing } from "@/theme/tokens";
+const DiagnosticQuiz = dynamic(
+  () => import("@/components/DiagnosticQuiz").then((m) => ({
+    default: m.DiagnosticQuiz,
+  })),
+  { ssr: false, loading: () => <p style={{ color: colors.zinc, padding: 40, textAlign: "center" }}>Loading quiz...</p> }
+);
 
 export default function DiagnosticoPage() {
   const [step, setStep] = useState<"preamble" | "email" | "quiz">("preamble");
@@ -58,7 +63,7 @@ export default function DiagnosticoPage() {
 
   return (
     <div style={containerStyle}>
-      <DiagnosticoContent
+      <DiagnosticQuiz
         email={email}
         interest={interest}
         onShareToken={(token: string) => {
