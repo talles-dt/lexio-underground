@@ -1,5 +1,5 @@
 // app/api/diagnostico/route.ts
-import { supabase } from "../../../app/lib/supabase-mock";
+import { supabase } from "@/lib/supabase";
 import { z } from "zod";
 
 // Using z.record with explicit key and value types for Zod v4 compatibility
