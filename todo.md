@@ -5,7 +5,7 @@
 
 ---
 
-## Phase 1 — Real Cartografa *(the core product)*
+## Phase 1 — Real Cartografa _(the core product)_
 
 Everything else is meaningless without a real diagnostic.
 
@@ -20,9 +20,9 @@ Everything else is meaningless without a real diagnostic.
 
 ---
 
-## Phase 2 — Report + Identity Moment *(the "aha")*
+## Phase 2 — Report + Identity Moment _(the "aha")_
 
-> *"Your grammar is your anchor. Culture is your frontier."*
+> _"Your grammar is your anchor. Culture is your frontier."_
 
 - [ ] **2.1** Pillar radar — SVG pentagon chart, animated stroke-dashoffset reveal
 - [ ] **2.2** Progressive report reveal — first pillar appears before others load
@@ -35,7 +35,7 @@ Everything else is meaningless without a real diagnostic.
 
 ---
 
-## Phase 3 — Auth + Persistence *(make it real)*
+## Phase 3 — Auth + Persistence _(make it real)_
 
 - [ ] **3.1** Email/password signup — Supabase Auth, pre-filled from Cartografa email
 - [ ] **3.2** Google OAuth — callback route exists, wire it up
@@ -47,7 +47,7 @@ Everything else is meaningless without a real diagnostic.
 
 ---
 
-## Phase 4 — Palace + Pulse Mode *(retention)*
+## Phase 4 — Palace + Pulse Mode _(retention)_
 
 The vault's 70% daily engagement target depends on this.
 
@@ -62,7 +62,7 @@ The vault's 70% daily engagement target depends on this.
 
 ---
 
-## Phase 5 — AI + Monetization *(money + magic)*
+## Phase 5 — AI + Monetization _(money + magic)_
 
 - [ ] **5.1** NVIDIA NIM integration — real AI scoring for Cartografa responses
 - [ ] **5.2** LexioMind v1 — fine-tuned model for pillar scoring
@@ -90,20 +90,20 @@ The vault's 70% daily engagement target depends on this.
 
 ## Current State
 
-| Area | Status |
-|---|---|
-| Landing page | ✅ Working |
-| Email capture | ✅ Working |
-| Quiz flow | ⚠️ 3 static questions (needs Phases 1–2) |
+| Area           | Status                                      |
+| -------------- | ------------------------------------------- |
+| Landing page   | ✅ Working                                  |
+| Email capture  | ✅ Working                                  |
+| Quiz flow      | ⚠️ 3 static questions (needs Phases 1–2)    |
 | API + Supabase | ✅ Working (service role key, RLS bypassed) |
-| Share link | ✅ Working |
-| Auth | ❌ Not wired on web |
-| Palace | ❌ Not implemented |
-| AI pipeline | ❌ Mock only |
-| Payments | ❌ Not implemented |
-| Design tokens | ✅ Colors match vault |
-| Typography | ⚠️ Fonts referenced but not loaded on web |
+| Share link     | ✅ Working                                  |
+| Auth           | ❌ Not wired on web                         |
+| Palace         | ❌ Not implemented                          |
+| AI pipeline    | ❌ Mock only                                |
+| Payments       | ❌ Not implemented                          |
+| Design tokens  | ✅ Colors match vault                       |
+| Typography     | ⚠️ Fonts referenced but not loaded on web   |
 
 ---
 
-*Source: `lexio-vault/` audit, 2026-05-28*
+_Source: `lexio-vault/` audit, 2026-05-28_

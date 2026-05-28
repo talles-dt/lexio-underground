@@ -17,8 +17,18 @@ const mockLesson = {
 const sections = [
   { key: "grammar", label: "Grammar", icon: "📝", content: mockLesson.grammar },
   { key: "logic", label: "Logic", icon: "🧩", content: mockLesson.logic },
-  { key: "communication", label: "Communication", icon: "💬", content: mockLesson.communication },
-  { key: "mnemonic", label: "Memory Palace", icon: "🏛️", content: mockLesson.mnemonic },
+  {
+    key: "communication",
+    label: "Communication",
+    icon: "💬",
+    content: mockLesson.communication,
+  },
+  {
+    key: "mnemonic",
+    label: "Memory Palace",
+    icon: "🏛️",
+    content: mockLesson.mnemonic,
+  },
 ];
 
 export default function LessonsPage() {

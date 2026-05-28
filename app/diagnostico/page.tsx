@@ -15,14 +15,10 @@ import {
   getReadinessLabel,
 } from "@/cartografa/adaptive-engine";
 import { Question, Pillar } from "@/cartografa/question-bank";
+import PillarRadar from "@/components/PillarRadar";
 
 // ─── STEP TYPES ─────────────────────────────────────────────
-type Step =
-  | "preamble"
-  | "email"
-  | "cartografa"
-  | "transition"
-  | "result";
+type Step = "preamble" | "email" | "cartografa" | "transition" | "result";
 
 // ─── STYLES ─────────────────────────────────────────────────
 const s = {
@@ -410,7 +406,7 @@ export default function DiagnosticoPage() {
     const { correct } = processAnswer(
       cartografaState,
       currentQuestion.id,
-      answer
+      answer,
     );
 
     setQuestionCount((c) => c + 1);
@@ -456,13 +452,7 @@ export default function DiagnosticoPage() {
 
     // Force re-render
     setCartografaState({ ...cartografaState });
-  }, [
-    cartografaState,
-    currentQuestion,
-    selectedAnswer,
-    textAnswer,
-    prevStage,
-  ]);
+  }, [cartografaState, currentQuestion, selectedAnswer, textAnswer, prevStage]);
 
   // Submit results to API
   const submitResults = useCallback(
@@ -483,7 +473,7 @@ export default function DiagnosticoPage() {
         const data = await res.json();
         if (res.ok && data.share_token) {
           setShareLink(
-            `${window.location.origin}/diagnostico/${data.share_token}`
+            `${window.location.origin}/diagnostico/${data.share_token}`,
           );
         } else {
           setError(data.error || "Failed to save results");
@@ -494,7 +484,7 @@ export default function DiagnosticoPage() {
         setSubmitting(false);
       }
     },
-    [email, interest, cartografaState]
+    [email, interest, cartografaState],
   );
 
   // ── PREAMBLE ──
@@ -508,8 +498,8 @@ export default function DiagnosticoPage() {
             we draw yours.
           </p>
           <p style={s.desc}>
-            A 15–20 minute adaptive diagnostic across 5 pillars: Grammar,
-            Logic, Vocabulary, Culture, and Communication.
+            A 15–20 minute adaptive diagnostic across 5 pillars: Grammar, Logic,
+            Vocabulary, Culture, and Communication.
           </p>
           <button style={s.btn} onClick={() => setStep("email")}>
             Begin your Cartografa
@@ -526,9 +516,7 @@ export default function DiagnosticoPage() {
     return (
       <div style={s.page}>
         <div style={s.card}>
-          <h2 style={{ ...s.title, fontSize: 28 }}>
-            Save your progress
-          </h2>
+          <h2 style={{ ...s.title, fontSize: 28 }}>Save your progress</h2>
           <p style={s.desc}>
             Your email is a safety net — we&apos;ll send your Cartografa report
             and learning path here.
@@ -545,7 +533,8 @@ export default function DiagnosticoPage() {
           </div>
           <div style={{ textAlign: "left", marginBottom: spacing[4] }}>
             <label style={s.label}>
-              Memory Palace Hook (e.g., &quot;minha casa&quot;, &quot;cachorro&quot;)
+              Memory Palace Hook (e.g., &quot;minha casa&quot;,
+              &quot;cachorro&quot;)
             </label>
             <input
               style={s.input}
@@ -572,9 +561,7 @@ export default function DiagnosticoPage() {
     return (
       <div style={s.page}>
         <div style={s.card}>
-          <p style={s.stageHeader}>
-            Stage {cartografaState.currentStage} of 5
-          </p>
+          <p style={s.stageHeader}>Stage {cartografaState.currentStage} of 5</p>
           <h2 style={s.stageTitle}>
             {getStageName(cartografaState.currentStage)}
           </h2>
@@ -618,7 +605,9 @@ export default function DiagnosticoPage() {
 
             {/* Likert scale (1-5) */}
             {currentQuestion.type === "likert" && (
-              <div style={{ display: "flex", gap: 8, justifyContent: "center" }}>
+              <div
+                style={{ display: "flex", gap: 8, justifyContent: "center" }}
+              >
                 {[1, 2, 3, 4, 5].map((val) => (
                   <button
                     key={val}
@@ -682,10 +671,7 @@ export default function DiagnosticoPage() {
             )}
 
             {/* Why explanation */}
-            <button
-              style={s.whyBtn}
-              onClick={() => setShowWhy(!showWhy)}
-            >
+            <button style={s.whyBtn} onClick={() => setShowWhy(!showWhy)}>
               {showWhy ? "Ocultar explicação" : "Por quê?"}
             </button>
             {showWhy && (
@@ -735,6 +721,22 @@ export default function DiagnosticoPage() {
           <h1 style={s.resultTitle}>Obrigado!</h1>
           <p style={s.identityCallout}>{result.identity_callout}</p>
 
+          {/* Pillar Radar */}
+          <div style={{ display: "flex", justifyContent: "center", marginBottom: spacing[6] }}>
+            <PillarRadar
+              scores={{
+                grammar: result.pillar_scores.grammar.score,
+                logic: result.pillar_scores.logic.score,
+                vocab: result.pillar_scores.vocab.score,
+                culture: result.pillar_scores.culture.score,
+                comm: result.pillar_scores.comm.score,
+              }}
+              size={300}
+              animate={true}
+              delay={300}
+            />
+          </div>
+
           {/* Stats */}
           <div style={s.statsRow}>
             <div style={s.statItem}>
@@ -744,7 +746,7 @@ export default function DiagnosticoPage() {
             <div style={s.statItem}>
               <div style={s.statValue}>
                 {Math.round(
-                  (result.total_correct / result.total_questions) * 100
+                  (result.total_correct / result.total_questions) * 100,
                 )}
                 %
               </div>
@@ -787,7 +789,7 @@ export default function DiagnosticoPage() {
                     </span>
                   </div>
                 );
-              }
+              },
             )}
           </div>
 
@@ -801,13 +803,17 @@ export default function DiagnosticoPage() {
               borderRadius: radius.card,
             }}
           >
-            <p style={{ fontSize: 14, color: colors.zinc, marginBottom: spacing[1] }}>
+            <p
+              style={{
+                fontSize: 14,
+                color: colors.zinc,
+                marginBottom: spacing[1],
+              }}
+            >
               Recommended focus
             </p>
             <p style={{ fontSize: 16, color: colors.ivory }}>
-              {result.recommended_focus
-                .map((p) => PILLAR_NAMES[p])
-                .join(" & ")}
+              {result.recommended_focus.map((p) => PILLAR_NAMES[p]).join(" & ")}
             </p>
           </div>
 
@@ -825,16 +831,20 @@ export default function DiagnosticoPage() {
           )}
 
           {error && (
-            <p style={{ color: "#ef4444", fontSize: 14, textAlign: "center", marginBottom: spacing[3] }}>
+            <p
+              style={{
+                color: "#ef4444",
+                fontSize: 14,
+                textAlign: "center",
+                marginBottom: spacing[3],
+              }}
+            >
               {error}
             </p>
           )}
 
           <div style={{ textAlign: "center", marginTop: spacing[4] }}>
-            <Link
-              href="/"
-              style={{ ...s.btn, marginRight: spacing[3] }}
-            >
+            <Link href="/" style={{ ...s.btn, marginRight: spacing[3] }}>
               Voltar ao início
             </Link>
             <Link

@@ -13,7 +13,7 @@ const DiagnosticSchema = z.object({
         score: z.number(),
         confidence: z.number(),
         gap_nodes: z.array(z.any()),
-      })
+      }),
     ),
     map_of_ignorance: z.array(z.any()),
     overall_readiness: z.string(),
@@ -32,7 +32,7 @@ export async function POST(req: Request) {
   // Determine archetype from strongest pillar
   const pillarScores = results.pillar_scores;
   const strongest = Object.entries(pillarScores).sort(
-    (a, b) => b[1].score - a[1].score
+    (a, b) => b[1].score - a[1].score,
   )[0];
 
   const archetypeMap: Record<string, { key: string; name: string }> = {
@@ -71,7 +71,7 @@ export async function POST(req: Request) {
       {
         status: 500,
         headers: { "Content-Type": "application/json" },
-      }
+      },
     );
   }
 
