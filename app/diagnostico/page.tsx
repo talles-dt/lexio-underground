@@ -1,29 +1,30 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import Link from "next/link";
 import { colors, spacing, radius } from "@/theme/tokens";
+import {
+  CartografaState,
+  CartografaResult,
+  createInitialState,
+  selectNextQuestion,
+  processAnswer,
+  generateResults,
+  getStageName,
+  getStageDescription,
+  getReadinessLabel,
+} from "@/cartografa/adaptive-engine";
+import { Question, Pillar } from "@/cartografa/question-bank";
 
-// ─── Quiz Data ─────────────────────────────────────────────
-const questions = [
-  {
-    id: "grammar_1",
-    text: 'Quando encontrar uma construção linguística que soa estranha, você tenta entender POR QUE ela soa assim?',
-    why: 'Esta pergunta avalia sua intuição gramatical — a capacidade de detectar construções que "soam erradas" mesmo sem saber a regra específica.',
-  },
-  {
-    id: "logic_1",
-    text: "Você costuma revisitar ideias que acreditava estar dominadas para verificar se realmente as compreende?",
-    why: 'Esta pergunta identifica seu "Mapa da Ignorância" — lacunas disfarçadas de conhecimento.',
-  },
-  {
-    id: "communication_1",
-    text: "Ao se expressar em situações reais, você prioriza fazer-se entender sobre falar perfeitamente?",
-    why: "Esta pergunta mede sua fluência comunicativa — valorizar ser compreendido sobre a perfeição formal.",
-  },
-];
+// ─── STEP TYPES ─────────────────────────────────────────────
+type Step =
+  | "preamble"
+  | "email"
+  | "cartografa"
+  | "transition"
+  | "result";
 
-// ─── Styles ────────────────────────────────────────────────
+// ─── STYLES ─────────────────────────────────────────────────
 const s = {
   page: {
     minHeight: "100vh",
@@ -36,9 +37,14 @@ const s = {
     fontFamily: "system-ui, -apple-system, sans-serif",
   } as React.CSSProperties,
   card: {
-    maxWidth: 520,
+    maxWidth: 580,
     width: "100%",
     textAlign: "center" as const,
+  } as React.CSSProperties,
+  wideCard: {
+    maxWidth: 640,
+    width: "100%",
+    textAlign: "left" as const,
   } as React.CSSProperties,
   title: {
     fontSize: 40,
@@ -86,6 +92,21 @@ const s = {
     marginBottom: spacing[3],
     boxSizing: "border-box" as const,
   } as React.CSSProperties,
+  textarea: {
+    width: "100%",
+    minHeight: 120,
+    padding: "12px 14px",
+    backgroundColor: colors.surface,
+    color: colors.ivory,
+    border: `1px solid ${colors.borderSubtle}`,
+    borderRadius: radius.btn,
+    fontSize: 15,
+    outline: "none",
+    marginBottom: spacing[3],
+    boxSizing: "border-box" as const,
+    resize: "vertical" as const,
+    fontFamily: "inherit",
+  } as React.CSSProperties,
   label: {
     display: "block",
     fontSize: 14,
@@ -93,31 +114,77 @@ const s = {
     marginBottom: spacing[1],
     textAlign: "left" as const,
   } as React.CSSProperties,
+  stageHeader: {
+    fontSize: 13,
+    color: colors.zinc,
+    textAlign: "center" as const,
+    marginBottom: spacing[1],
+  } as React.CSSProperties,
+  stageTitle: {
+    fontSize: 24,
+    fontWeight: 700,
+    color: colors.ivory,
+    textAlign: "center" as const,
+    marginBottom: spacing[1],
+  } as React.CSSProperties,
+  stageDesc: {
+    fontSize: 14,
+    color: colors.zinc,
+    textAlign: "center" as const,
+    fontStyle: "italic",
+    marginBottom: spacing[4],
+  } as React.CSSProperties,
+  progressBar: {
+    width: "100%",
+    height: 4,
+    backgroundColor: colors.surface,
+    borderRadius: 2,
+    marginBottom: spacing[4],
+    overflow: "hidden",
+  } as React.CSSProperties,
+  progressFill: {
+    height: "100%",
+    backgroundColor: colors.phosphor,
+    borderRadius: 2,
+    transition: "width 0.3s ease",
+  } as React.CSSProperties,
   questionCard: {
-    backgroundColor: colors.obsidian,
-    border: `1px solid ${colors.zinc}`,
+    backgroundColor: colors.surface,
+    border: `1px solid ${colors.borderSubtle}`,
     borderRadius: radius.card,
     padding: spacing[4],
     marginBottom: spacing[4],
     textAlign: "left" as const,
   } as React.CSSProperties,
   questionText: {
-    fontSize: 15,
+    fontSize: 16,
     color: colors.ivory,
-    marginBottom: spacing[3],
     lineHeight: 1.5,
+    marginBottom: spacing[3],
   } as React.CSSProperties,
-  radioRow: {
+  optionRow: {
     display: "flex",
     alignItems: "center",
-    gap: 8,
-    marginBottom: 6,
+    gap: 12,
+    padding: "10px 12px",
+    borderRadius: radius.btn,
     cursor: "pointer",
+    marginBottom: 6,
+    border: `1px solid transparent`,
+    transition: "all 0.15s ease",
+  } as React.CSSProperties,
+  optionRowHover: {
+    backgroundColor: colors.surfaceContainerHigh,
+    borderColor: colors.zinc,
+  } as React.CSSProperties,
+  optionRowSelected: {
+    backgroundColor: colors.surfaceContainerHigh,
+    borderColor: colors.phosphor,
   } as React.CSSProperties,
   radioOuter: {
-    width: 18,
-    height: 18,
-    borderRadius: 9,
+    width: 20,
+    height: 20,
+    borderRadius: 10,
     border: `2px solid ${colors.zinc}`,
     display: "flex",
     alignItems: "center",
@@ -133,9 +200,10 @@ const s = {
     borderRadius: 5,
     backgroundColor: colors.phosphor,
   } as React.CSSProperties,
-  radioLabel: {
+  optionText: {
     fontSize: 14,
     color: colors.ivory,
+    flex: 1,
   } as React.CSSProperties,
   whyBtn: {
     background: "none",
@@ -143,12 +211,12 @@ const s = {
     borderRadius: radius.btn,
     color: colors.ivory,
     fontSize: 13,
-    padding: "4px 12px",
+    padding: "6px 14px",
     cursor: "pointer",
-    marginTop: spacing[2],
+    marginTop: spacing[3],
   } as React.CSSProperties,
   whyBox: {
-    backgroundColor: colors.surface,
+    backgroundColor: colors.surfaceContainerHigh,
     borderRadius: radius.btn,
     padding: spacing[3],
     marginTop: spacing[2],
@@ -158,24 +226,6 @@ const s = {
     color: colors.amber,
     fontStyle: "italic",
     lineHeight: 1.5,
-  } as React.CSSProperties,
-  stage: {
-    fontSize: 13,
-    color: colors.zinc,
-    textAlign: "center" as const,
-    marginBottom: spacing[4],
-  } as React.CSSProperties,
-  hookLabel: {
-    fontSize: 14,
-    color: colors.zinc,
-    textAlign: "center" as const,
-    marginBottom: spacing[1],
-  } as React.CSSProperties,
-  hookValue: {
-    fontSize: 15,
-    color: colors.ivory,
-    textAlign: "center" as const,
-    marginBottom: spacing[4],
   } as React.CSSProperties,
   actions: {
     display: "flex",
@@ -191,11 +241,61 @@ const s = {
     cursor: "pointer",
     padding: "8px 16px",
   } as React.CSSProperties,
+  // Result styles
   resultTitle: {
-    fontSize: 28,
+    fontSize: 32,
     fontWeight: 700,
     color: colors.ivory,
     marginBottom: spacing[2],
+  } as React.CSSProperties,
+  identityCallout: {
+    fontSize: 18,
+    color: colors.phosphor,
+    fontStyle: "italic",
+    marginBottom: spacing[6],
+    lineHeight: 1.5,
+  } as React.CSSProperties,
+  pillarRow: {
+    display: "flex",
+    alignItems: "center",
+    gap: 12,
+    marginBottom: spacing[3],
+  } as React.CSSProperties,
+  pillarLabel: {
+    width: 100,
+    fontSize: 14,
+    color: colors.zinc,
+    textTransform: "capitalize" as const,
+  } as React.CSSProperties,
+  pillarBar: {
+    flex: 1,
+    height: 8,
+    backgroundColor: colors.surface,
+    borderRadius: 4,
+    overflow: "hidden",
+  } as React.CSSProperties,
+  pillarFill: {
+    height: "100%",
+    borderRadius: 4,
+    transition: "width 0.5s ease",
+  } as React.CSSProperties,
+  pillarScore: {
+    width: 50,
+    fontSize: 14,
+    color: colors.ivory,
+    textAlign: "right" as const,
+    fontWeight: 600,
+  } as React.CSSProperties,
+  readinessBadge: {
+    display: "inline-block",
+    padding: "6px 16px",
+    backgroundColor: colors.surfaceContainerHigh,
+    border: `1px solid ${colors.phosphor}`,
+    borderRadius: radius.btn,
+    fontSize: 14,
+    color: colors.phosphor,
+    fontWeight: 600,
+    marginBottom: spacing[4],
   } as React.CSSProperties,
   shareBox: {
     backgroundColor: colors.surface,
@@ -227,29 +327,189 @@ const s = {
     cursor: "pointer",
     flexShrink: 0,
   } as React.CSSProperties,
+  statsRow: {
+    display: "flex",
+    justifyContent: "center",
+    gap: spacing[6],
+    marginBottom: spacing[4],
+  } as React.CSSProperties,
+  statItem: {
+    textAlign: "center" as const,
+  } as React.CSSProperties,
+  statValue: {
+    fontSize: 24,
+    fontWeight: 700,
+    color: colors.phosphor,
+  } as React.CSSProperties,
+  statLabel: {
+    fontSize: 12,
+    color: colors.zinc,
+    textTransform: "uppercase" as const,
+    letterSpacing: 1,
+  } as React.CSSProperties,
 };
 
-// ─── Page Component ────────────────────────────────────────
+// ─── PILLAR COLORS ──────────────────────────────────────────
+const PILLAR_COLORS: Record<Pillar, string> = {
+  grammar: colors.phosphor,
+  logic: colors.amber,
+  vocab: colors.violet,
+  culture: "#DC2626",
+  comm: "#22C55E",
+};
+
+const PILLAR_NAMES: Record<Pillar, string> = {
+  grammar: "Gramática",
+  logic: "Lógica",
+  vocab: "Vocabulário",
+  culture: "Cultura",
+  comm: "Comunicação",
+};
+
+// ─── PAGE COMPONENT ─────────────────────────────────────────
 export default function DiagnosticoPage() {
-  const [step, setStep] = useState<"preamble" | "email" | "quiz" | "result">("preamble");
+  const [step, setStep] = useState<Step>("preamble");
   const [email, setEmail] = useState("");
   const [interest, setInterest] = useState("");
-  const [answers, setAnswers] = useState<Record<string, number>>({});
-  const [expandedWhy, setExpandedWhy] = useState<string | null>(null);
+  const [cartografaState, setCartografaState] =
+    useState<CartografaState | null>(null);
+  const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
+  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
+  const [textAnswer, setTextAnswer] = useState("");
+  const [showWhy, setShowWhy] = useState(false);
+  const [showTransition, setShowTransition] = useState(false);
+  const [result, setResult] = useState<CartografaResult | null>(null);
   const [shareLink, setShareLink] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
+  const [questionCount, setQuestionCount] = useState(0);
+  const [prevStage, setPrevStage] = useState(0);
 
-  // ── Preamble ──
+  // Initialize Cartografa
+  const startCartografa = useCallback(() => {
+    const state = createInitialState();
+    const question = selectNextQuestion(state);
+    setCartografaState(state);
+    setCurrentQuestion(question);
+    setSelectedAnswer(null);
+    setTextAnswer("");
+    setShowWhy(false);
+    setQuestionCount(0);
+    setPrevStage(1);
+    setStep("cartografa");
+  }, []);
+
+  // Handle answer submission
+  const handleAnswer = useCallback(() => {
+    if (!cartografaState || !currentQuestion) return;
+    if (currentQuestion.type !== "open-text" && selectedAnswer === null) return;
+    if (currentQuestion.type === "open-text" && !textAnswer.trim()) return;
+
+    const answer =
+      currentQuestion.type === "open-text" ? textAnswer : selectedAnswer!;
+    const { correct } = processAnswer(
+      cartografaState,
+      currentQuestion.id,
+      answer
+    );
+
+    setQuestionCount((c) => c + 1);
+
+    // Check if stage changed
+    const newPillar = cartografaState.currentPillar;
+    const newStage = cartografaState.currentStage;
+    const stageChanged = newStage !== prevStage;
+
+    // Get next question
+    const nextQuestion = selectNextQuestion(cartografaState);
+
+    if (!nextQuestion || cartografaState.allResolved) {
+      // Cartografa complete — generate results
+      const results = generateResults(cartografaState);
+      setResult(results);
+      setStep("result");
+
+      // Submit to API
+      submitResults(results);
+      return;
+    }
+
+    if (stageChanged) {
+      setPrevStage(newStage);
+      setShowTransition(true);
+      setStep("transition");
+
+      setTimeout(() => {
+        setShowTransition(false);
+        setCurrentQuestion(nextQuestion);
+        setSelectedAnswer(null);
+        setTextAnswer("");
+        setShowWhy(false);
+        setStep("cartografa");
+      }, 2000);
+    } else {
+      setCurrentQuestion(nextQuestion);
+      setSelectedAnswer(null);
+      setTextAnswer("");
+      setShowWhy(false);
+    }
+
+    // Force re-render
+    setCartografaState({ ...cartografaState });
+  }, [
+    cartografaState,
+    currentQuestion,
+    selectedAnswer,
+    textAnswer,
+    prevStage,
+  ]);
+
+  // Submit results to API
+  const submitResults = useCallback(
+    async (results: CartografaResult) => {
+      setSubmitting(true);
+      setError("");
+      try {
+        const res = await fetch("/api/diagnostico", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email,
+            interest,
+            answers: cartografaState?.history || [],
+            results,
+          }),
+        });
+        const data = await res.json();
+        if (res.ok && data.share_token) {
+          setShareLink(
+            `${window.location.origin}/diagnostico/${data.share_token}`
+          );
+        } else {
+          setError(data.error || "Failed to save results");
+        }
+      } catch {
+        setError("Network error. Results saved locally.");
+      } finally {
+        setSubmitting(false);
+      }
+    },
+    [email, interest, cartografaState]
+  );
+
+  // ── PREAMBLE ──
   if (step === "preamble") {
     return (
       <div style={s.page}>
         <div style={s.card}>
           <h1 style={s.title}>Lexio Underground</h1>
-          <p style={s.subtitle}>Map your ignorance. Master your language.</p>
+          <p style={s.subtitle}>
+            Every language learner has a map of what they don&apos;t know. Today
+            we draw yours.
+          </p>
           <p style={s.desc}>
-            Discover what you don&apos;t know through the Cartografa assessment,
-            then receive a personalized learning path based on your Memory Palace hook.
+            A 15–20 minute adaptive diagnostic across 5 pillars: Grammar,
+            Logic, Vocabulary, Culture, and Communication.
           </p>
           <button style={s.btn} onClick={() => setStep("email")}>
             Begin your Cartografa
@@ -259,15 +519,19 @@ export default function DiagnosticoPage() {
     );
   }
 
-  // ── Email Capture ──
+  // ── EMAIL CAPTURE ──
   if (step === "email") {
-    const canContinue = email.trim().includes("@") && interest.trim().length >= 2;
+    const canContinue =
+      email.trim().includes("@") && interest.trim().length >= 2;
     return (
       <div style={s.page}>
         <div style={s.card}>
-          <h2 style={{ ...s.title, fontSize: 28 }}>Enter your email to begin</h2>
+          <h2 style={{ ...s.title, fontSize: 28 }}>
+            Save your progress
+          </h2>
           <p style={s.desc}>
-            We&apos;ll send your Cartografa report and learning path to this address.
+            Your email is a safety net — we&apos;ll send your Cartografa report
+            and learning path here.
           </p>
           <div style={{ textAlign: "left", marginBottom: spacing[3] }}>
             <label style={s.label}>Email</label>
@@ -294,7 +558,7 @@ export default function DiagnosticoPage() {
           <button
             style={{ ...s.btn, ...(canContinue ? {} : s.btnDisabled) }}
             disabled={!canContinue}
-            onClick={() => canContinue && setStep("quiz")}
+            onClick={() => canContinue && startCartografa()}
           >
             Continue to Cartografa →
           </button>
@@ -303,100 +567,156 @@ export default function DiagnosticoPage() {
     );
   }
 
-  // ── Quiz ──
-  if (step === "quiz") {
-    const allAnswered = questions.every((q) => answers[q.id] !== undefined);
+  // ── STAGE TRANSITION ──
+  if (step === "transition" && cartografaState) {
+    return (
+      <div style={s.page}>
+        <div style={s.card}>
+          <p style={s.stageHeader}>
+            Stage {cartografaState.currentStage} of 5
+          </p>
+          <h2 style={s.stageTitle}>
+            {getStageName(cartografaState.currentStage)}
+          </h2>
+          <p style={s.stageDesc}>
+            {getStageDescription(cartografaState.currentStage)}
+          </p>
+        </div>
+      </div>
+    );
+  }
 
-    const handleSubmit = async () => {
-      if (!allAnswered) return;
-      setSubmitting(true);
-      setError("");
-      try {
-        const res = await fetch("/api/diagnostico", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email, answers, interest }),
-        });
-        const data = await res.json();
-        if (res.ok && data.share_token) {
-          const link = `${window.location.origin}/diagnostico/${data.share_token}`;
-          setShareLink(link);
-          setStep("result");
-        } else {
-          setError(data.error || "Failed to submit. Please try again.");
-        }
-      } catch {
-        setError("Network error. Please try again.");
-      } finally {
-        setSubmitting(false);
-      }
-    };
+  // ── CARTOGRAFA ──
+  if (step === "cartografa" && currentQuestion && cartografaState) {
+    const stage = cartografaState.currentStage;
+    const totalAnswered = cartografaState.history.length;
+    const estimatedTotal = 25; // rough estimate for progress bar
+    const progress = Math.min(100, (totalAnswered / estimatedTotal) * 100);
 
     return (
       <div style={s.page}>
-        <div style={{ ...s.card, maxWidth: 580 }}>
-          <p style={s.stage}>Stage 1 of 5 — Grammar</p>
-          <p style={s.hookLabel}>Memory Palace Hook</p>
-          <p style={s.hookValue}>{interest}</p>
+        <div style={s.wideCard}>
+          {/* Header */}
+          <p style={s.stageHeader}>
+            Stage {stage} of 5 — {getStageName(stage)}
+          </p>
+          <p style={s.stageDesc}>{getStageDescription(stage)}</p>
 
-          {questions.map((q) => (
-            <div key={q.id} style={s.questionCard}>
-              <p style={s.questionText}>{q.text}</p>
-              {[1, 2, 3, 4, 5].map((val) => (
+          {/* Progress bar */}
+          <div style={s.progressBar}>
+            <div
+              style={{
+                ...s.progressFill,
+                width: `${progress}%`,
+              }}
+            />
+          </div>
+
+          {/* Question */}
+          <div style={s.questionCard}>
+            <p style={s.questionText}>{currentQuestion.prompt}</p>
+
+            {/* Likert scale (1-5) */}
+            {currentQuestion.type === "likert" && (
+              <div style={{ display: "flex", gap: 8, justifyContent: "center" }}>
+                {[1, 2, 3, 4, 5].map((val) => (
+                  <button
+                    key={val}
+                    onClick={() => setSelectedAnswer(val)}
+                    style={{
+                      width: 48,
+                      height: 48,
+                      borderRadius: 24,
+                      border: `2px solid ${selectedAnswer === val ? colors.phosphor : colors.zinc}`,
+                      backgroundColor:
+                        selectedAnswer === val
+                          ? colors.phosphor
+                          : "transparent",
+                      color:
+                        selectedAnswer === val ? colors.obsidian : colors.ivory,
+                      fontSize: 16,
+                      fontWeight: 600,
+                      cursor: "pointer",
+                      transition: "all 0.15s ease",
+                    }}
+                  >
+                    {val}
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {/* Multiple choice (gap-select, chunk, scenario) */}
+            {(currentQuestion.type === "gap-select" ||
+              currentQuestion.type === "chunk" ||
+              currentQuestion.type === "scenario") &&
+              currentQuestion.options?.map((opt, i) => (
                 <div
-                  key={val}
-                  style={s.radioRow}
-                  onClick={() => setAnswers((prev) => ({ ...prev, [q.id]: val }))}
+                  key={i}
+                  onClick={() => setSelectedAnswer(i)}
+                  style={{
+                    ...s.optionRow,
+                    ...(selectedAnswer === i ? s.optionRowSelected : {}),
+                  }}
                 >
                   <div
                     style={{
                       ...s.radioOuter,
-                      ...(answers[q.id] === val ? s.radioOuterSelected : {}),
+                      ...(selectedAnswer === i ? s.radioOuterSelected : {}),
                     }}
                   >
-                    {answers[q.id] === val && <div style={s.radioInner} />}
+                    {selectedAnswer === i && <div style={s.radioInner} />}
                   </div>
-                  <span style={s.radioLabel}>{val}</span>
+                  <span style={s.optionText}>{opt}</span>
                 </div>
               ))}
-              <button
-                style={s.whyBtn}
-                onClick={() =>
-                  setExpandedWhy(expandedWhy === q.id ? null : q.id)
-                }
-              >
-                {expandedWhy === q.id ? "Ocultar explicação" : "Por quê?"}
-              </button>
-              {expandedWhy === q.id && (
-                <div style={s.whyBox}>
-                  <p style={s.whyText}>{q.why}</p>
-                </div>
-              )}
-            </div>
-          ))}
 
-          {error && (
-            <p style={{ color: "#ef4444", fontSize: 14, marginBottom: spacing[3] }}>
-              {error}
-            </p>
-          )}
+            {/* Open text */}
+            {currentQuestion.type === "open-text" && (
+              <textarea
+                style={s.textarea}
+                placeholder="Write your answer in English..."
+                value={textAnswer}
+                onChange={(e) => setTextAnswer(e.target.value)}
+              />
+            )}
 
-          <div style={s.actions}>
+            {/* Why explanation */}
             <button
-              style={s.skipBtn}
-              onClick={() => alert("Funcionalidade de pular ainda não implementada")}
+              style={s.whyBtn}
+              onClick={() => setShowWhy(!showWhy)}
             >
-              Pular
+              {showWhy ? "Ocultar explicação" : "Por quê?"}
             </button>
+            {showWhy && (
+              <div style={s.whyBox}>
+                <p style={s.whyText}>{currentQuestion.whyExplanation}</p>
+              </div>
+            )}
+          </div>
+
+          {/* Actions */}
+          <div style={s.actions}>
+            <span style={{ fontSize: 13, color: colors.zinc }}>
+              {totalAnswered} answered
+            </span>
             <button
               style={{
                 ...s.btn,
-                ...(!allAnswered || submitting ? s.btnDisabled : {}),
+                ...((currentQuestion.type !== "open-text" &&
+                  selectedAnswer === null) ||
+                (currentQuestion.type === "open-text" && !textAnswer.trim())
+                  ? s.btnDisabled
+                  : {}),
               }}
-              disabled={!allAnswered || submitting}
-              onClick={handleSubmit}
+              disabled={
+                (currentQuestion.type !== "open-text" &&
+                  selectedAnswer === null) ||
+                (currentQuestion.type === "open-text" && !textAnswer.trim())
+              }
+              onClick={handleAnswer}
             >
-              {submitting ? "Enviando..." : "Enviar"}
+              {cartografaState.allResolved ? "Finish" : "Next →"}
             </button>
           </div>
         </div>
@@ -404,26 +724,141 @@ export default function DiagnosticoPage() {
     );
   }
 
-  // ── Result ──
+  // ── RESULT ──
+  if (step === "result" && result) {
+    const minutes = Math.floor(result.duration_seconds / 60);
+    const seconds = result.duration_seconds % 60;
+
+    return (
+      <div style={s.page}>
+        <div style={s.wideCard}>
+          <h1 style={s.resultTitle}>Obrigado!</h1>
+          <p style={s.identityCallout}>{result.identity_callout}</p>
+
+          {/* Stats */}
+          <div style={s.statsRow}>
+            <div style={s.statItem}>
+              <div style={s.statValue}>{result.total_questions}</div>
+              <div style={s.statLabel}>Questions</div>
+            </div>
+            <div style={s.statItem}>
+              <div style={s.statValue}>
+                {Math.round(
+                  (result.total_correct / result.total_questions) * 100
+                )}
+                %
+              </div>
+              <div style={s.statLabel}>Correct</div>
+            </div>
+            <div style={s.statItem}>
+              <div style={s.statValue}>
+                {minutes}:{seconds.toString().padStart(2, "0")}
+              </div>
+              <div style={s.statLabel}>Duration</div>
+            </div>
+          </div>
+
+          {/* Readiness badge */}
+          <div style={{ textAlign: "center", marginBottom: spacing[4] }}>
+            <span style={s.readinessBadge}>
+              {getReadinessLabel(result.overall_readiness)}
+            </span>
+          </div>
+
+          {/* Pillar scores */}
+          <div style={{ marginBottom: spacing[6] }}>
+            {(["grammar", "logic", "vocab", "culture", "comm"] as Pillar[]).map(
+              (pillar) => {
+                const ps = result.pillar_scores[pillar];
+                return (
+                  <div key={pillar} style={s.pillarRow}>
+                    <span style={s.pillarLabel}>{PILLAR_NAMES[pillar]}</span>
+                    <div style={s.pillarBar}>
+                      <div
+                        style={{
+                          ...s.pillarFill,
+                          width: `${ps.score * 100}%`,
+                          backgroundColor: PILLAR_COLORS[pillar],
+                        }}
+                      />
+                    </div>
+                    <span style={s.pillarScore}>
+                      {Math.round(ps.score * 100)}%
+                    </span>
+                  </div>
+                );
+              }
+            )}
+          </div>
+
+          {/* Recommended focus */}
+          <div
+            style={{
+              textAlign: "center",
+              marginBottom: spacing[4],
+              padding: spacing[3],
+              backgroundColor: colors.surfaceContainerHigh,
+              borderRadius: radius.card,
+            }}
+          >
+            <p style={{ fontSize: 14, color: colors.zinc, marginBottom: spacing[1] }}>
+              Recommended focus
+            </p>
+            <p style={{ fontSize: 16, color: colors.ivory }}>
+              {result.recommended_focus
+                .map((p) => PILLAR_NAMES[p])
+                .join(" & ")}
+            </p>
+          </div>
+
+          {/* Share */}
+          {shareLink && (
+            <div style={s.shareBox}>
+              <span style={s.shareLink}>{shareLink}</span>
+              <button
+                style={s.copyBtn}
+                onClick={() => navigator.clipboard.writeText(shareLink)}
+              >
+                Copiar link
+              </button>
+            </div>
+          )}
+
+          {error && (
+            <p style={{ color: "#ef4444", fontSize: 14, textAlign: "center", marginBottom: spacing[3] }}>
+              {error}
+            </p>
+          )}
+
+          <div style={{ textAlign: "center", marginTop: spacing[4] }}>
+            <Link
+              href="/"
+              style={{ ...s.btn, marginRight: spacing[3] }}
+            >
+              Voltar ao início
+            </Link>
+            <Link
+              href="/lessons"
+              style={{
+                ...s.btn,
+                backgroundColor: "transparent",
+                border: `1px solid ${colors.phosphor}`,
+                color: colors.phosphor,
+              }}
+            >
+              Ver lições
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Fallback
   return (
     <div style={s.page}>
       <div style={s.card}>
-        <p style={s.resultTitle}>Obrigado!</p>
-        <p style={{ ...s.desc, marginBottom: spacing[4] }}>
-          Compartilhe seu resultado:
-        </p>
-        <div style={s.shareBox}>
-          <span style={s.shareLink}>{shareLink}</span>
-          <button
-            style={s.copyBtn}
-            onClick={() => navigator.clipboard.writeText(shareLink)}
-          >
-            Copiar link
-          </button>
-        </div>
-        <Link href="/" style={{ ...s.btn, marginTop: spacing[4] }}>
-          Voltar ao início
-        </Link>
+        <p style={s.desc}>Loading...</p>
       </div>
     </div>
   );
