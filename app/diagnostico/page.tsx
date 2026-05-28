@@ -20,9 +20,11 @@ import { Question, Pillar } from "@/cartografa/question-bank";
 import PillarRadar from "@/components/PillarRadar";
 import ShareCard from "@/components/ShareCard";
 import RoadmapPreview from "@/components/RoadmapPreview";
+import SignupForm from "@/components/SignupForm";
+import { useAuth } from "@/lib/auth";
 
 // ─── STEP TYPES ─────────────────────────────────────────────
-type Step = "preamble" | "email" | "cartografa" | "transition" | "result";
+type Step = "preamble" | "email" | "cartografa" | "transition" | "result" | "signup";
 
 // ─── STYLES ─────────────────────────────────────────────────
 const s = {
@@ -368,6 +370,7 @@ const PILLAR_NAMES: Record<Pillar, string> = {
 
 // ─── PAGE COMPONENT ─────────────────────────────────────────
 export default function DiagnosticoPage() {
+  const { signUp, signInWithGoogle, user, linkSession } = useAuth();
   const [step, setStep] = useState<Step>("preamble");
   const [email, setEmail] = useState("");
   const [interest, setInterest] = useState("");
@@ -380,8 +383,11 @@ export default function DiagnosticoPage() {
   const [showTransition, setShowTransition] = useState(false);
   const [result, setResult] = useState<CartografaResult | null>(null);
   const [shareLink, setShareLink] = useState("");
+  const [shareToken, setShareToken] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
+  const [signupError, setSignupError] = useState("");
+  const [signupLoading, setSignupLoading] = useState(false);
   const [questionCount, setQuestionCount] = useState(0);
   const [prevStage, setPrevStage] = useState(0);
 
@@ -476,6 +482,7 @@ export default function DiagnosticoPage() {
         });
         const data = await res.json();
         if (res.ok && data.share_token) {
+          setShareToken(data.share_token);
           setShareLink(
             `${window.location.origin}/diagnostico/${data.share_token}`,
           );
@@ -892,6 +899,87 @@ export default function DiagnosticoPage() {
               Ver lições
             </Link>
           </div>
+
+          {/* Create Account CTA */}
+          {!user && (
+            <div style={{ textAlign: "center", marginTop: spacing[4] }}>
+              <button
+                onClick={() => setStep("signup")}
+                style={{
+                  padding: "12px 28px",
+                  backgroundColor: colors.phosphor,
+                  color: colors.obsidian,
+                  border: "none",
+                  borderRadius: radius.btn,
+                  fontSize: 15,
+                  fontWeight: 600,
+                  cursor: "pointer",
+                }}
+              >
+                Criar conta para salvar resultados →
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  }
+
+  // ── SIGNUP ──
+  if (step === "signup") {
+    const handleSignup = async (
+      signupEmail: string,
+      password: string,
+      name: string
+    ) => {
+      setSignupError("");
+      setSignupLoading(true);
+
+      const { error: signUpError } = await signUp(signupEmail, password, name);
+
+      if (signUpError) {
+        setSignupError(signUpError);
+        setSignupLoading(false);
+        return;
+      }
+
+      // Link the diagnostic session to the new user
+      if (shareToken) {
+        await linkSession(shareToken);
+      }
+
+      setSignupLoading(false);
+      // Stay on signup page — user needs to confirm email
+      setSignupError(
+        "Conta criada! Verifique seu email para confirmar o cadastro."
+      );
+    };
+
+    const handleGoogleLogin = async () => {
+      setSignupError("");
+      const { error: oauthError } = await signInWithGoogle();
+      if (oauthError) {
+        setSignupError(oauthError);
+      }
+      // OAuth will redirect — session linking happens in callback
+    };
+
+    const handleSkipSignup = () => {
+      // Go back to results
+      setStep("result");
+    };
+
+    return (
+      <div style={s.page}>
+        <div style={s.card}>
+          <SignupForm
+            email={email}
+            onSignup={handleSignup}
+            onGoogleLogin={handleGoogleLogin}
+            onSkip={handleSkipSignup}
+            error={signupError}
+            loading={signupLoading}
+          />
         </div>
       </div>
     );

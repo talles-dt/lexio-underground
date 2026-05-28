@@ -1,5 +1,6 @@
 import React from "react";
 import { colors } from "@/theme/tokens";
+import Providers from "./providers";
 
 export const metadata = {
   title: "Lexio Underground",
@@ -21,7 +22,7 @@ export default function RootLayout({
           minHeight: "100vh",
         }}
       >
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
