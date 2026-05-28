@@ -1,13 +1,17 @@
--- Migration: Create diagnostic_sessions table for Cartografa results
+-- Migration: Create or update diagnostic_sessions table for Cartografa results
 -- Based on lexio-vault/03-architecture/data-model.md
--- Run in Supabase SQL Editor or via `supabase db push`
+-- Run in Supabase SQL Editor
 
 -- Enable UUID extension if not already enabled
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
--- ─── DIAGNOSTIC SESSIONS ───────────────────────────────────
--- Stores complete Cartografa results per session
-CREATE TABLE IF NOT EXISTS public.diagnostic_sessions (
+-- ─── DROP OLD TABLE IF IT EXISTS (old schema is incompatible) ───
+-- The old schema had: email, answers (jsonb), scores (jsonb), archetype_key, archetype_name, share_token
+-- The new schema adds: pillar_scores, map_of_ignorance, overall_readiness, etc.
+DROP TABLE IF EXISTS public.diagnostic_sessions CASCADE;
+
+-- ─── CREATE TABLE WITH NEW SCHEMA ──────────────────────────
+CREATE TABLE public.diagnostic_sessions (
   id              uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
   
   -- User info (nullable until auth is wired)
@@ -53,13 +57,12 @@ CREATE TABLE IF NOT EXISTS public.diagnostic_sessions (
 );
 
 -- ─── INDEXES ────────────────────────────────────────────────
-CREATE INDEX IF NOT EXISTS idx_diagnostic_sessions_email ON public.diagnostic_sessions(email);
-CREATE INDEX IF NOT EXISTS idx_diagnostic_sessions_user_id ON public.diagnostic_sessions(user_id);
-CREATE INDEX IF NOT EXISTS idx_diagnostic_sessions_share_token ON public.diagnostic_sessions(share_token);
-CREATE INDEX IF NOT EXISTS idx_diagnostic_sessions_created_at ON public.diagnostic_sessions(created_at DESC);
+CREATE INDEX idx_diagnostic_sessions_email ON public.diagnostic_sessions(email);
+CREATE INDEX idx_diagnostic_sessions_user_id ON public.diagnostic_sessions(user_id);
+CREATE INDEX idx_diagnostic_sessions_share_token ON public.diagnostic_sessions(share_token);
+CREATE INDEX idx_diagnostic_sessions_created_at ON public.diagnostic_sessions(created_at DESC);
 
 -- ─── RLS POLICIES ──────────────────────────────────────────
--- Enable RLS
 ALTER TABLE public.diagnostic_sessions ENABLE ROW LEVEL SECURITY;
 
 -- Service role can do everything (for API routes)
@@ -76,7 +79,7 @@ CREATE POLICY "Anon can insert" ON public.diagnostic_sessions
   WITH CHECK (true);
 
 -- Anon can read by share_token (for public result pages)
-CREATE POLICY "Anon can read by share_token" ON public.diagnostic_sessions
+CREATE POLICY "Anon can read all" ON public.diagnostic_sessions
   FOR SELECT
   TO anon
   USING (true);
@@ -100,6 +103,10 @@ CREATE TRIGGER set_updated_at
   BEFORE UPDATE ON public.diagnostic_sessions
   FOR EACH ROW
   EXECUTE FUNCTION public.handle_updated_at();
+
+-- ─── GRANT PERMISSIONS ─────────────────────────────────────
+-- Ensure anon role can access auth.users for FK validation
+GRANT SELECT ON auth.users TO anon;
 
 -- ─── COMMENTS ──────────────────────────────────────────────
 COMMENT ON TABLE public.diagnostic_sessions IS 'Cartografa diagnostic results — one row per completed session';
