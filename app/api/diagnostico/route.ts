@@ -55,6 +55,7 @@ export async function POST(req: Request) {
     return new Response(
       JSON.stringify({
         error: insertError?.message || "Failed to create session",
+        details: { insertError, insertData },
       }),
       {
         status: 500,
