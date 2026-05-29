@@ -35,7 +35,7 @@ const PILLAR_COLORS: Record<string, string> = {
 // ─── CANVAS RENDERING ──────────────────────────────────────
 function renderShareCard(
   canvas: HTMLCanvasElement,
-  props: ShareCardProps
+  props: ShareCardProps,
 ): void {
   const ctx = canvas.getContext("2d")!;
   const w = 600;
@@ -209,7 +209,11 @@ function renderShareCard(
     ctx.fillStyle = "#F5F0E8";
     ctx.font = "bold 12px system-ui, -apple-system, sans-serif";
     ctx.textAlign = "left";
-    ctx.fillText(`${Math.round(score * 100)}%`, barX + barWidth + 10, y + barHeight / 2);
+    ctx.fillText(
+      `${Math.round(score * 100)}%`,
+      barX + barWidth + 10,
+      y + barHeight / 2,
+    );
   }
 
   // Footer
@@ -226,7 +230,7 @@ function roundRect(
   y: number,
   w: number,
   h: number,
-  r: number
+  r: number,
 ) {
   ctx.beginPath();
   ctx.moveTo(x + r, y);
@@ -248,7 +252,7 @@ function wrapText(
   x: number,
   y: number,
   maxWidth: number,
-  lineHeight: number
+  lineHeight: number,
 ) {
   const words = text.split(" ");
   let line = "";

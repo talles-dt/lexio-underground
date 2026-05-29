@@ -1,0 +1,162 @@
+/**
+ * Lexio Underground — Motion Philosophy (Phase 6.2)
+ * Transitions, pulses, amber glows per vault spec
+ * Source: lexio-vault/02-design/DESIGN.md
+ */
+
+/* ─── DURATION TOKENS ────────────────────────────────────── */
+:root {
+  --anim-instant: 150ms;
+  --anim-fast: 200ms;
+  --anim-normal: 300ms;
+  --anim-slow: 500ms;
+  --anim-reveal: 800ms;
+  --anim-glacial: 1300ms;
+}
+
+/* ─── EASING ──────────────────────────────────────────────── */
+.ease-smooth { transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+.ease-out { transition-timing-function: cubic-bezier(0, 0, 0.2, 1); }
+.ease-in { transition-timing-function: cubic-bezier(0.4, 0, 1, 1); }
+.ease-spring { transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1); }
+
+/* ─── FADE IN ────────────────────────────────────────────── */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.anim-fade-in {
+  animation: fade-in var(--anim-normal) ease-out;
+}
+
+/* ─── SLIDE UP ────────────────────────────────────────────── */
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.anim-slide-up {
+  animation: slide-up var(--anim-slow) ease-out;
+}
+
+/* ─── PULSE (Phosphor) ────────────────────────────────────── */
+@keyframes pulse-phosphor {
+  0% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.5); }
+  50% { box-shadow: 0 0 0 12px rgba(0, 255, 136, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0); }
+}
+
+.anim-pulse-phosphor {
+  animation: pulse-phosphor 2s ease-out infinite;
+}
+
+/* ─── PULSE (Amber — discovery) ──────────────────────────── */
+@keyframes pulse-amber {
+  0% { box-shadow: 0 0 0 0 rgba(255, 149, 0, 0.6); }
+  50% { box-shadow: 0 0 0 12px rgba(255, 149, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 149, 0, 0); }
+}
+
+.anim-pulse-amber {
+  animation: pulse-amber 2s ease-out infinite;
+}
+
+/* ─── GLOW (Phosphor) ────────────────────────────────────── */
+@keyframes glow-phosphor {
+  0% { filter: drop-shadow(0 0 4px rgba(0, 255, 136, 0.3)); }
+  50% { filter: drop-shadow(0 0 12px rgba(0, 255, 136, 0.6)); }
+  100% { filter: drop-shadow(0 0 4px rgba(0, 255, 136, 0.3)); }
+}
+
+.anim-glow-phosphor {
+  animation: glow-phosphor 3s ease-in-out infinite;
+}
+
+/* ─── STAGGER ENTRY ───────────────────────────────────────── */
+.anim-stagger > * {
+  opacity: 0;
+  animation: slide-up var(--anim-slow) ease-out forwards;
+}
+
+.anim-stagger > *:nth-child(1) { animation-delay: 0ms; }
+.anim-stagger > *:nth-child(2) { animation-delay: 100ms; }
+.anim-stagger > *:nth-child(3) { animation-delay: 200ms; }
+.anim-stagger > *:nth-child(4) { animation-delay: 300ms; }
+.anim-stagger > *:nth-child(5) { animation-delay: 400ms; }
+.anim-stagger > *:nth-child(6) { animation-delay: 500ms; }
+.anim-stagger > *:nth-child(7) { animation-delay: 600ms; }
+.anim-stagger > *:nth-child(8) { animation-delay: 700ms; }
+
+/* ─── SCALE IN ────────────────────────────────────────────── */
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.anim-scale-in {
+  animation: scale-in var(--anim-normal) ease-out;
+}
+
+/* ─── CORRECT FLASH (Ivory) ──────────────────────────────── */
+@keyframes flash-correct {
+  0% { background-color: rgba(245, 240, 232, 0.15); }
+  100% { background-color: transparent; }
+}
+
+.anim-flash-correct {
+  animation: flash-correct var(--anim-fast) ease-out;
+}
+
+/* ─── DISCOVERY FLASH (Amber) ────────────────────────────── */
+@keyframes flash-discovery {
+  0% { background-color: rgba(255, 149, 0, 0.15); }
+  100% { background-color: transparent; }
+}
+
+.anim-flash-discovery {
+  animation: flash-discovery var(--anim-fast) ease-out;
+}
+
+/* ─── PULSE MODE BUTTON ───────────────────────────────────── */
+@keyframes pulse-btn-glow {
+  0% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.5); }
+  50% { box-shadow: 0 0 0 8px rgba(0, 255, 136, 0.3); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.5); }
+}
+
+.pulse-indicator {
+  animation: pulse-btn-glow 2s ease-in-out infinite;
+}
+
+/* ─── BLUEPRINT DRAW ──────────────────────────────────────── */
+@keyframes blueprint-draw {
+  from { stroke-dashoffset: 100%; }
+  to { stroke-dashoffset: 0; }
+}
+
+.anim-blueprint-draw {
+  stroke-dasharray: 100%;
+  animation: blueprint-draw var(--anim-glacial) ease-out forwards;
+}
+
+/* ─── RIPPLE (General) ─────────────────────────────────────── */
+@keyframes ripple {
+  0% { box-shadow: 0 0 0 0 var(--ripple-color, rgba(0, 255, 136, 0.5)); }
+  100% { box-shadow: 0 0 0 16px var(--ripple-color, rgba(0, 255, 136, 0)); }
+}
+
+.anim-ripple {
+  animation: ripple var(--anim-fast) ease-out;
+}
+
+/* ─── PROGRESS GLOW ────────────────────────────────────────── */
+@keyframes progress-glow {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+.anim-progress-active {
+  animation: progress-glow 2s ease-in-out infinite;
+}

@@ -1,9 +1,9 @@
 "use client";
 
-
-
-import { useState, useCallback, useRef, useEffect } from "react";
+import React from "react";
+import { useState, useCallback, useRef, useEffect, ReactNode } from "react";
 import Link from "next/link";
+import { Text, View } from 'react-native';
 import { colors, spacing, radius } from "@/theme/tokens";
 import {
   CartografaState,
@@ -24,7 +24,13 @@ import SignupForm from "@/components/SignupForm";
 import { useAuth } from "@/lib/auth";
 
 // ─── STEP TYPES ─────────────────────────────────────────────
-type Step = "preamble" | "email" | "cartografa" | "transition" | "result" | "signup";
+type Step =
+  | "preamble"
+  | "email"
+  | "cartografa"
+  | "transition"
+  | "result"
+  | "signup";
 
 // ─── STYLES ─────────────────────────────────────────────────
 const s = {
@@ -390,10 +396,132 @@ export default function DiagnosticoPage() {
   const [signupLoading, setSignupLoading] = useState(false);
   const [questionCount, setQuestionCount] = useState(0);
   const [prevStage, setPrevStage] = useState(0);
+  const [sessionId, setSessionId] = useState<string | null>(null);
+  const [saveTimer, setSaveTimer] = useState<ReturnType<typeof setTimeout> | null>(null);
+  const [restoring, setRestoring] = useState(false);
+
+  // Generate a session id for save-state tracking
+  const generateSessionId = useCallback(() => {
+    return "carto-" + crypto.randomUUID().slice(0, 8);
+  }, []);
+
+  // Save current state to Supabase for drop-out rescue
+  const saveCurrentState = useCallback(
+    async (state: CartografaState) => {
+      if (!sessionId || !email) return;
+      try {
+        await fetch("/api/diagnostico/save-state", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            session_id: sessionId,
+            email,
+            current_pillar: state.currentPillar,
+            current_stage: state.currentStage,
+            answered_ids: Array.from(state.pillars[state.currentPillar]?.answeredIds || []),
+            history: state.history,
+            pillar_states: Object.fromEntries(
+              Object.entries(state.pillars).map(([p, ps]) => [
+                p,
+                {
+                  currentDifficulty: ps.currentDifficulty,
+                  correctAtDifficulty: ps.correctAtDifficulty,
+                  totalCorrect: ps.totalCorrect,
+                  totalAnswered: ps.totalAnswered,
+                  answeredIds: Array.from(ps.answeredIds),
+                  score: ps.score,
+                  confidence: ps.confidence,
+                  resolved: ps.resolved,
+                },
+              ]),
+            ),
+            timestamp: Date.now(),
+          }),
+        });
+      } catch {
+        // Silent fail — save-state is non-critical
+      }
+    },
+    [sessionId, email],
+  );
+
+  // Debounced save: fires 500ms after last answer to batch writes
+  const debouncedSave = useCallback(
+    (state: CartografaState) => {
+      if (saveTimer) clearTimeout(saveTimer);
+      const timer = setTimeout(() => saveCurrentState(state), 500);
+      setSaveTimer(timer);
+    },
+    [saveCurrentState, saveTimer],
+  );
+
+  // Check for existing incomplete session to resume
+  const checkForResume = useCallback(async (userEmail: string) => {
+    setRestoring(true);
+    try {
+      const res = await fetch(`/api/diagnostico/resume?email=${encodeURIComponent(userEmail)}`);
+      const data = await res.json();
+      if (data.session?.state) {
+        const s = data.session.state;
+        // Reconstruct CartografaState from saved data
+        const state = createInitialState();
+        if (s.current_pillar) state.currentPillar = s.current_pillar;
+        if (s.current_stage) state.currentStage = s.current_stage;
+        if (s.pillar_states) {
+          for (const [p, ps] of Object.entries(s.pillar_states) as any) {
+            if (state.pillars[p as keyof typeof state.pillars]) {
+              const sp = ps as any;
+              state.pillars[p as keyof typeof state.pillars].currentDifficulty = sp.currentDifficulty ?? 2;
+              state.pillars[p as keyof typeof state.pillars].correctAtDifficulty = sp.correctAtDifficulty ?? 0;
+              state.pillars[p as keyof typeof state.pillars].totalCorrect = sp.totalCorrect ?? 0;
+              state.pillars[p as keyof typeof state.pillars].totalAnswered = sp.totalAnswered ?? 0;
+              state.pillars[p as keyof typeof state.pillars].score = sp.score ?? 0.5;
+              state.pillars[p as keyof typeof state.pillars].confidence = sp.confidence ?? 0;
+              state.pillars[p as keyof typeof state.pillars].resolved = sp.resolved ?? false;
+              if (sp.answeredIds) {
+                for (const id of sp.answeredIds) {
+                  state.pillars[p as keyof typeof state.pillars].answeredIds.add(id);
+                }
+              }
+            }
+          }
+        }
+        if (data.session.history) {
+          state.history = data.session.history;
+        }
+        setSessionId(data.session.session_id);
+        return state;
+      }
+    } catch {
+      // Silent fail — resume is non-critical
+    } finally {
+      setRestoring(false);
+    }
+    return null;
+  }, []);
 
   // Initialize Cartografa
-  const startCartografa = useCallback(() => {
+  const startCartografa = useCallback(async () => {
     const state = createInitialState();
+    // Try to resume existing session
+    if (email) {
+      const restored = await checkForResume(email);
+      if (restored) {
+        const question = selectNextQuestion(restored);
+        setCartografaState(restored);
+        setCurrentQuestion(question);
+        setSelectedAnswer(null);
+        setTextAnswer("");
+        setShowWhy(false);
+        setQuestionCount(restored.history.length);
+        setPrevStage(restored.currentStage);
+        setStep("cartografa");
+        return;
+      }
+    }
+    // Fresh start
+    const id = generateSessionId();
+    setSessionId(id);
     const question = selectNextQuestion(state);
     setCartografaState(state);
     setCurrentQuestion(question);
@@ -403,7 +531,7 @@ export default function DiagnosticoPage() {
     setQuestionCount(0);
     setPrevStage(1);
     setStep("cartografa");
-  }, []);
+  }, [email, generateSessionId, checkForResume]);
 
   // Handle answer submission
   const handleAnswer = useCallback(() => {
@@ -420,6 +548,9 @@ export default function DiagnosticoPage() {
     );
 
     setQuestionCount((c) => c + 1);
+
+    // Save state after every answer (drop-out rescue)
+    debouncedSave(cartografaState);
 
     // Check if stage changed
     const newPillar = cartografaState.currentPillar;
@@ -527,20 +658,21 @@ export default function DiagnosticoPage() {
     return (
       <div style={s.page}>
         <div style={s.card}>
-          <h2 style={{ ...s.title, fontSize: 28 }}>Save your progress</h2>
-          <p style={s.desc}>
-            Your email is a safety net — we&apos;ll send your Cartografa report
+          <Text style={{ ...s.title, fontSize: 28 }}>Save your progress</Text>
+          <Text style={s.desc}>
+            Your email is a safety net — we'll send your Cartografa report
             and learning path here.
-          </p>
-          <div style={{ textAlign: "left", marginBottom: spacing[3] }}>
-            <label style={s.label}>Email</label>
-            <input
-              style={s.input}
-              type="email"
-              placeholder="your@email.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
+          </Text>
+          <View style={{ textAlign: "left", marginBottom: spacing[3] }}>
+          <Text style={s.label}>Email</Text>
+          <TextInput
+           style={s.input}
+           type="email"
+           placeholder="your@email.com"
+           value={email}
+           onChange={(e) => setEmail(e.target.value)}
+          />
+          </View>
           </div>
           <div style={{ textAlign: "left", marginBottom: spacing[4] }}>
             <label style={s.label}>
@@ -562,10 +694,10 @@ export default function DiagnosticoPage() {
           >
             Continue to Cartografa →
           </button>
-        </div>
-      </div>
-    );
-  }
+          </div>
+          );
+          }
+          }
 
   // ── STAGE TRANSITION ──
   if (step === "transition" && cartografaState) {
@@ -582,7 +714,8 @@ export default function DiagnosticoPage() {
         </div>
       </div>
     );
-  }
+    }
+    }
 
   // ── CARTOGRAFA ──
   if (step === "cartografa" && currentQuestion && cartografaState) {
@@ -719,7 +852,8 @@ export default function DiagnosticoPage() {
         </div>
       </div>
     );
-  }
+    }
+    }
 
   // ── RESULT ──
   if (step === "result" && result) {
@@ -923,14 +1057,15 @@ export default function DiagnosticoPage() {
         </div>
       </div>
     );
-  }
+    }
+    }
 
   // ── SIGNUP ──
   if (step === "signup") {
     const handleSignup = async (
       signupEmail: string,
       password: string,
-      name: string
+      name: string,
     ) => {
       setSignupError("");
       setSignupLoading(true);
@@ -951,7 +1086,7 @@ export default function DiagnosticoPage() {
       setSignupLoading(false);
       // Stay on signup page — user needs to confirm email
       setSignupError(
-        "Conta criada! Verifique seu email para confirmar o cadastro."
+        "Conta criada! Verifique seu email para confirmar o cadastro.",
       );
     };
 
@@ -983,7 +1118,8 @@ export default function DiagnosticoPage() {
         </div>
       </div>
     );
-  }
+    }
+    }
 
   // Fallback
   return (
@@ -993,4 +1129,6 @@ export default function DiagnosticoPage() {
       </div>
     </div>
   );
-}
+  }
+
+  export default Page;

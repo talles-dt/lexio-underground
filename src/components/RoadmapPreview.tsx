@@ -22,14 +22,16 @@ const PILLAR_ROOMS: Record<string, Room[]> = {
     {
       name: "Transformation Hall",
       pillar: "grammar",
-      description: "Surface → deep structure drills. Identify the rules behind what sounds right.",
+      description:
+        "Surface → deep structure drills. Identify the rules behind what sounds right.",
       icon: "🏛️",
       locked: false,
     },
     {
       name: "Tense Observatory",
       pillar: "grammar",
-      description: "Map the timeline. Past, present, future — and the spaces between.",
+      description:
+        "Map the timeline. Past, present, future — and the spaces between.",
       icon: "🔭",
       locked: true,
     },
@@ -38,7 +40,8 @@ const PILLAR_ROOMS: Record<string, Room[]> = {
     {
       name: "Ignorance Map Room",
       pillar: "logic",
-      description: "What you don't know you don't know. The map of your blind spots.",
+      description:
+        "What you don't know you don't know. The map of your blind spots.",
       icon: "🗺️",
       locked: false,
     },
@@ -54,14 +57,16 @@ const PILLAR_ROOMS: Record<string, Room[]> = {
     {
       name: "Chunking Workshop",
       pillar: "vocab",
-      description: "Words that travel together. Collocations, phrasal verbs, fixed expressions.",
+      description:
+        "Words that travel together. Collocations, phrasal verbs, fixed expressions.",
       icon: "🧩",
       locked: false,
     },
     {
       name: "Cultural Atom Vault",
       pillar: "vocab",
-      description: "Memes, idioms, slang — the living language no textbook teaches.",
+      description:
+        "Memes, idioms, slang — the living language no textbook teaches.",
       icon: "💎",
       locked: true,
     },
@@ -70,14 +75,16 @@ const PILLAR_ROOMS: Record<string, Room[]> = {
     {
       name: "Context Reading Room",
       pillar: "culture",
-      description: "What they mean vs. what they say. The gap is where culture lives.",
+      description:
+        "What they mean vs. what they say. The gap is where culture lives.",
       icon: "📚",
       locked: false,
     },
     {
       name: "Sapir-Whorf Lab",
       pillar: "culture",
-      description: "How language shapes thought. See the world through another tongue.",
+      description:
+        "How language shapes thought. See the world through another tongue.",
       icon: "🧪",
       locked: true,
     },
@@ -86,14 +93,16 @@ const PILLAR_ROOMS: Record<string, Room[]> = {
     {
       name: "Fluency Arena",
       pillar: "comm",
-      description: "Speak before you're ready. Write before it's perfect. Ship it.",
+      description:
+        "Speak before you're ready. Write before it's perfect. Ship it.",
       icon: "🏟️",
       locked: false,
     },
     {
       name: "Conversation Shadow",
       pillar: "comm",
-      description: "AI conversations that model correct speech without correcting you.",
+      description:
+        "AI conversations that model correct speech without correcting you.",
       icon: "👤",
       locked: true,
     },
@@ -155,9 +164,8 @@ export default function RoadmapPreview({
   // Third room: pick from a different pillar
   const allPillars = ["grammar", "logic", "vocab", "culture", "comm"];
   const thirdPillar =
-    allPillars.find(
-      (p) => !recommendedFocus.includes(p) && PILLAR_ROOMS[p]
-    ) || "grammar";
+    allPillars.find((p) => !recommendedFocus.includes(p) && PILLAR_ROOMS[p]) ||
+    "grammar";
   const thirdRooms = PILLAR_ROOMS[thirdPillar];
   if (thirdRooms && thirdRooms.length > 0) {
     rooms.push(thirdRooms[0]);
@@ -383,8 +391,8 @@ export default function RoadmapPreview({
             margin: 0,
           }}
         >
-          &ldquo;Break a leg&rdquo; — Inglês não é sobre traduzir palavras. É sobre entender
-          o que eles realmente querem dizer.
+          &ldquo;Break a leg&rdquo; — Inglês não é sobre traduzir palavras. É
+          sobre entender o que eles realmente querem dizer.
         </p>
       </div>
 

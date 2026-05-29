@@ -1,6 +1,14 @@
 // app/api/diagnostico/route.ts
-import { supabaseAdmin } from "@/lib/supabase";
+// Submit completed Cartografa results — uses new schema (Phase 3.4 fix)
+import { createClient } from "@supabase/supabase-js";
+import { NextResponse } from "next/server";
 import { z } from "zod";
+
+const supabaseAdmin = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL || "",
+  process.env.SUPABASE_SERVICE_ROLE_KEY || "",
+  { auth: { persistSession: false } },
+);
 
 const DiagnosticSchema = z.object({
   email: z.string().email(),
@@ -23,11 +31,21 @@ const DiagnosticSchema = z.object({
     total_correct: z.number(),
     duration_seconds: z.number(),
   }),
+  session_id: z.string().optional(),
 });
 
 export async function POST(req: Request) {
   const body = await req.json();
-  const { email, interest, answers, results } = DiagnosticSchema.parse(body);
+  const parsed = DiagnosticSchema.safeParse(body);
+
+  if (!parsed.success) {
+    return NextResponse.json(
+      { error: "Invalid request body", details: parsed.error.flatten() },
+      { status: 400 },
+    );
+  }
+
+  const { email, interest, answers, results, session_id } = parsed.data;
 
   // Determine archetype from strongest pillar
   const pillarScores = results.pillar_scores;
@@ -48,34 +66,50 @@ export async function POST(req: Request) {
     name: "Desconhecido",
   };
 
-  // Insert into Supabase
-  const { data: insertData, error: insertError } = await supabaseAdmin
-    .from("diagnostic_sessions")
-    .insert([
-      {
-        email,
-        answers: { interest, answers, results },
-        scores: pillarScores,
-        archetype_key: archetype.key,
-        archetype_name: archetype.name,
-      },
-    ])
-    .select("share_token")
-    .single();
+  // Prepare record matching the new schema
+  const record: Record<string, unknown> = {
+    email,
+    interest,
+    pillar_scores: results.pillar_scores,
+    map_of_ignorance: results.map_of_ignorance,
+    overall_readiness: results.overall_readiness,
+    recommended_focus: results.recommended_focus,
+    identity_callout: results.identity_callout,
+    archetype_key: archetype.key,
+    archetype_name: archetype.name,
+    raw_response_log: answers,
+    total_questions: results.total_questions,
+    total_correct: results.total_correct,
+    duration_seconds: results.duration_seconds,
+    completed_at: new Date().toISOString(),
+  };
 
-  if (insertError || !insertData) {
-    return new Response(
-      JSON.stringify({
-        error: insertError?.message || "Failed to create session",
-      }),
-      {
-        status: 500,
-        headers: { "Content-Type": "application/json" },
-      },
+  // If session_id provided, update existing save-state record; otherwise insert new
+  let query;
+  if (session_id) {
+    query = supabaseAdmin
+      .from("diagnostic_sessions")
+      .update(record)
+      .eq("id", session_id)
+      .select("share_token");
+  } else {
+    query = supabaseAdmin
+      .from("diagnostic_sessions")
+      .insert([record])
+      .select("share_token");
+  }
+
+  const { data: result, error: insertError } = await query.single();
+
+  if (insertError || !result) {
+    console.error("Diagnostic insert error:", insertError);
+    return NextResponse.json(
+      { error: insertError?.message || "Failed to create session" },
+      { status: 500 },
     );
   }
 
-  const share_token = insertData.share_token;
+  const share_token = result.share_token;
 
   // Fire-and-forget email notification
   try {
@@ -94,8 +128,5 @@ export async function POST(req: Request) {
     console.error("Failed to send notification:", notifyErr);
   }
 
-  return new Response(JSON.stringify({ share_token }), {
-    status: 200,
-    headers: { "Content-Type": "application/json" },
-  });
+  return NextResponse.json({ share_token }, { status: 200 });
 }

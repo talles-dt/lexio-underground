@@ -38,11 +38,11 @@ interface AuthContextType extends AuthState {
   signUp: (
     email: string,
     password: string,
-    name?: string
+    name?: string,
   ) => Promise<{ error: string | null }>;
   signIn: (
     email: string,
-    password: string
+    password: string,
   ) => Promise<{ error: string | null }>;
   signInWithGoogle: () => Promise<{ error: string | null }>;
   signOut: () => Promise<void>;
@@ -73,13 +73,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     });
 
     // Get initial session
-    getSupabase().auth.getSession().then(({ data: { session } }) => {
-      setState({
-        user: session?.user ?? null,
-        session,
-        loading: false,
+    getSupabase()
+      .auth.getSession()
+      .then(({ data: { session } }) => {
+        setState({
+          user: session?.user ?? null,
+          session,
+          loading: false,
+        });
       });
-    });
 
     return () => subscription.unsubscribe();
   }, []);
@@ -97,7 +99,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       });
       return { error: error?.message || null };
     },
-    []
+    [],
   );
 
   // Sign in with email/password
@@ -137,7 +139,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
       return { error: error?.message || null };
     },
-    [state.user]
+    [state.user],
   );
 
   return (

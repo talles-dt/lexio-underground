@@ -1,7 +1,5 @@
 "use client";
 
-
-
 import Link from "next/link";
 import { colors, spacing, radius } from "@/theme/tokens";
 
