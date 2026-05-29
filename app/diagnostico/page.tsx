@@ -3,7 +3,6 @@
 import React from "react";
 import { useState, useCallback, useRef, useEffect, ReactNode } from "react";
 import Link from "next/link";
-import { Text, View } from 'react-native';
 import { colors, spacing, radius } from "@/theme/tokens";
 import {
   CartografaState,
@@ -658,26 +657,25 @@ export default function DiagnosticoPage() {
     return (
       <div style={s.page}>
         <div style={s.card}>
-          <Text style={{ ...s.title, fontSize: 28 }}>Save your progress</Text>
-          <Text style={s.desc}>
+          <h2 style={{ ...s.title, fontSize: 28 }}>Save your progress</h2>
+          <p style={s.desc}>
             Your email is a safety net — we'll send your Cartografa report
             and learning path here.
-          </Text>
-          <View style={{ textAlign: "left", marginBottom: spacing[3] }}>
-          <Text style={s.label}>Email</Text>
-          <TextInput
-           style={s.input}
-           type="email"
-           placeholder="your@email.com"
-           value={email}
-           onChange={(e) => setEmail(e.target.value)}
-          />
-          </View>
+          </p>
+          <div style={{ textAlign: "left", marginBottom: spacing[3] }}>
+            <label style={s.label}>Email</label>
+            <input
+              style={s.input}
+              type="email"
+              placeholder="your@email.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </div>
           <div style={{ textAlign: "left", marginBottom: spacing[4] }}>
             <label style={s.label}>
-              Memory Palace Hook (e.g., &quot;minha casa&quot;,
-              &quot;cachorro&quot;)
+              Memory Palace Hook (e.g., "minha casa",
+              "cachorro")
             </label>
             <input
               style={s.input}
@@ -694,10 +692,10 @@ export default function DiagnosticoPage() {
           >
             Continue to Cartografa →
           </button>
-          </div>
-          );
-          }
-          }
+        </div>
+      </div>
+    );
+  }
 
   // ── STAGE TRANSITION ──
   if (step === "transition" && cartografaState) {

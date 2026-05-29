@@ -76,6 +76,7 @@
     "react-native-web": "0.21.2",
     "resend": "^6.12.3",
     "stream": "^0.0.3",
+    "stripe": "^22.2.0",
     "tamagui": "^2.0.0",
     "url": "^0.11.4",
     "url-parse": "^1.5.10",
