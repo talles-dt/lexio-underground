@@ -19,14 +19,17 @@ describe("Checkout API Logic", () => {
     });
 
     it("has correct amounts", () => {
-      expect(PRICES.monthly.amount).toBe(4900);    // R$ 49,00
-      expect(PRICES.annual.amount).toBe(46800);     // R$ 468,00
-      expect(PRICES.lifetime.amount).toBe(149000);  // R$ 1.490,00
+      expect(PRICES.monthly.amount).toBe(4900); // R$ 49,00
+      expect(PRICES.annual.amount).toBe(46800); // R$ 468,00
+      expect(PRICES.lifetime.amount).toBe(149000); // R$ 1.490,00
     });
   });
 
   describe("Tier validation", () => {
-    function validateTier(tier: string): { valid: boolean; price?: { amount: number; description: string } } {
+    function validateTier(tier: string): {
+      valid: boolean;
+      price?: { amount: number; description: string };
+    } {
       if (!tier || !PRICES[tier as PriceTier]) {
         return { valid: false };
       }
@@ -55,7 +58,10 @@ describe("Checkout API Logic", () => {
   });
 
   describe("User ID validation", () => {
-    function validateUserId(user_id: string | undefined): { valid: boolean; error?: string } {
+    function validateUserId(user_id: string | undefined): {
+      valid: boolean;
+      error?: string;
+    } {
       if (!user_id) {
         return { valid: false, error: "user_id required" };
       }
@@ -77,19 +83,31 @@ describe("Checkout API Logic", () => {
   });
 
   describe("Mock fallback URL", () => {
-    function buildMockUrl(tier: string, userId: string, siteUrl?: string): string {
+    function buildMockUrl(
+      tier: string,
+      userId: string,
+      siteUrl?: string,
+    ): string {
       const base = siteUrl || "http://localhost:3000";
       return `${base}/checkout/mock?tier=${tier}&user_id=${userId}`;
     }
 
     it("builds correct mock URL", () => {
       const url = buildMockUrl("monthly", "user-123");
-      expect(url).toBe("http://localhost:3000/checkout/mock?tier=monthly&user_id=user-123");
+      expect(url).toBe(
+        "http://localhost:3000/checkout/mock?tier=monthly&user_id=user-123",
+      );
     });
 
     it("uses custom site URL when provided", () => {
-      const url = buildMockUrl("lifetime", "user-456", "https://lexio.oliceu.com");
-      expect(url).toBe("https://lexio.oliceu.com/checkout/mock?tier=lifetime&user_id=user-456");
+      const url = buildMockUrl(
+        "lifetime",
+        "user-456",
+        "https://lexio.oliceu.com",
+      );
+      expect(url).toBe(
+        "https://lexio.oliceu.com/checkout/mock?tier=lifetime&user_id=user-456",
+      );
     });
   });
 

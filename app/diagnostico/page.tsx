@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useState, useCallback, useRef, useEffect, ReactNode } from "react";
+import { View, Text } from "react-native";
 import Link from "next/link";
 import { colors, spacing, radius } from "@/theme/tokens";
 import {
@@ -379,9 +380,12 @@ export default function DiagnosticoPage() {
   const [step, setStep] = useState<Step>("preamble");
   const [email, setEmail] = useState("");
   const [interest, setInterest] = useState("");
-  const [cartografaState, setCartografaState] =
-    useState<CartografaState | null>(null);
-  const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
+  const [cartografaState, setCartografaState] = useState<CartografaState | null>(
+    null,
+  );
+  const [currentQuestion, setCurrentQuestion] = useState<Question | null>(
+    null,
+  );
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [textAnswer, setTextAnswer] = useState("");
   const [showWhy, setShowWhy] = useState(false);
@@ -396,10 +400,11 @@ export default function DiagnosticoPage() {
   const [questionCount, setQuestionCount] = useState(0);
   const [prevStage, setPrevStage] = useState(0);
   const [sessionId, setSessionId] = useState<string | null>(null);
-  const [saveTimer, setSaveTimer] = useState<ReturnType<typeof setTimeout> | null>(null);
+  const [saveTimer, setSaveTimer] = useState<ReturnType<typeof setTimeout> | null>(
+    null,
+  );
   const [restoring, setRestoring] = useState(false);
 
-  // Generate a session id for save-state tracking
   const generateSessionId = useCallback(() => {
     return "carto-" + crypto.randomUUID().slice(0, 8);
   }, []);
@@ -499,634 +504,618 @@ export default function DiagnosticoPage() {
     return null;
   }, []);
 
-  // Initialize Cartografa
-  const startCartografa = useCallback(async () => {
-    const state = createInitialState();
-    // Try to resume existing session
-    if (email) {
-      const restored = await checkForResume(email);
-      if (restored) {
-        const question = selectNextQuestion(restored);
-        setCartografaState(restored);
-        setCurrentQuestion(question);
-        setSelectedAnswer(null);
-        setTextAnswer("");
-        setShowWhy(false);
-        setQuestionCount(restored.history.length);
-        setPrevStage(restored.currentStage);
-        setStep("cartografa");
-        return;
+  const startNewSession = useCallback(async () => {
+    const newSessionId = generateSessionId();
+    setSessionId(newSessionId);
+    setCartografaState(createInitialState());
+    setCurrentQuestion(null);
+    setStep("cartografa");
+    await fetch("/api/diagnostico/start", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, interest, session_id: newSessionId }),
+    });
+  }, [email, interest, generateSessionId]);
+
+  // Map user email to session for drop-out rescue
+  const linkEmailToSession = useCallback(async () => {
+    if (!sessionId || !email) return;
+    await fetch("/api/diagnostico/link-email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ session_id: sessionId, email }),
+    });
+  }, [sessionId, email]);
+
+  useEffect(() => {
+    if (step === "cartografa" && cartografaState && currentQuestion === null) {
+      const nextQ = selectNextQuestion(cartografaState);
+      setCurrentQuestion(nextQ);
+      if (!questionCount) {
+        setQuestionCount(Object.values(cartografaState.pillars).reduce(
+          (acc, p) => acc + p.totalAnswered,
+          0,
+        ));
       }
     }
-    // Fresh start
-    const id = generateSessionId();
-    setSessionId(id);
-    const question = selectNextQuestion(state);
-    setCartografaState(state);
-    setCurrentQuestion(question);
-    setSelectedAnswer(null);
-    setTextAnswer("");
-    setShowWhy(false);
-    setQuestionCount(0);
-    setPrevStage(1);
-    setStep("cartografa");
-  }, [email, generateSessionId, checkForResume]);
+  }, [step, cartografaState, currentQuestion, questionCount]);
 
-  // Handle answer submission
-  const handleAnswer = useCallback(() => {
-    if (!cartografaState || !currentQuestion) return;
-    if (currentQuestion.type !== "open-text" && selectedAnswer === null) return;
-    if (currentQuestion.type === "open-text" && !textAnswer.trim()) return;
+  const handleQuizAnswer = useCallback(
+    async (answerIndex: number) => {
+      if (!cartografaState || !currentQuestion || submitting) return;
 
-    const answer =
-      currentQuestion.type === "open-text" ? textAnswer : selectedAnswer!;
-    const { correct } = processAnswer(
-      cartografaState,
-      currentQuestion.id,
-      answer,
-    );
-
-    setQuestionCount((c) => c + 1);
-
-    // Save state after every answer (drop-out rescue)
-    debouncedSave(cartografaState);
-
-    // Check if stage changed
-    const newPillar = cartografaState.currentPillar;
-    const newStage = cartografaState.currentStage;
-    const stageChanged = newStage !== prevStage;
-
-    // Get next question
-    const nextQuestion = selectNextQuestion(cartografaState);
-
-    if (!nextQuestion || cartografaState.allResolved) {
-      // Cartografa complete — generate results
-      const results = generateResults(cartografaState);
-      setResult(results);
-      setStep("result");
-
-      // Submit to API
-      submitResults(results);
-      return;
-    }
-
-    if (stageChanged) {
-      setPrevStage(newStage);
-      setShowTransition(true);
-      setStep("transition");
-
-      setTimeout(() => {
-        setShowTransition(false);
-        setCurrentQuestion(nextQuestion);
-        setSelectedAnswer(null);
-        setTextAnswer("");
-        setShowWhy(false);
-        setStep("cartografa");
-      }, 2000);
-    } else {
-      setCurrentQuestion(nextQuestion);
-      setSelectedAnswer(null);
-      setTextAnswer("");
-      setShowWhy(false);
-    }
-
-    // Force re-render
-    setCartografaState({ ...cartografaState });
-  }, [cartografaState, currentQuestion, selectedAnswer, textAnswer, prevStage]);
-
-  // Submit results to API
-  const submitResults = useCallback(
-    async (results: CartografaResult) => {
       setSubmitting(true);
       setError("");
-      try {
-        const res = await fetch("/api/diagnostico", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            email,
-            interest,
-            answers: cartografaState?.history || [],
-            results,
-          }),
-        });
-        const data = await res.json();
-        if (res.ok && data.share_token) {
-          setShareToken(data.share_token);
-          setShareLink(
-            `${window.location.origin}/diagnostico/${data.share_token}`,
-          );
-        } else {
-          setError(data.error || "Failed to save results");
-        }
-      } catch {
-        setError("Network error. Results saved locally.");
-      } finally {
-        setSubmitting(false);
-      }
+
+      const updatedState = processAnswer(
+        cartografaState,
+        currentQuestion.id,
+        currentQuestion.options[answerIndex],
+      );
+
+      setCartografaState(updatedState);
+      setSelectedAnswer(answerIndex);
+      setQuestionCount(qc => qc + 1);
+      await saveCurrentState(updatedState);
+      debouncedSave(updatedState);
+
+      // Show ‚Why?‘ explanation for wrong answers
+      const tookCorrectAnswer = currentQuestion.options[answerIndex].correct;
+      const showWhyOnMistake = !tookCorrectAnswer && currentQuestion.explanation;
+      setShowWhy(showWhyOnMistake);
     },
-    [email, interest, cartografaState],
+    [cartografaState, currentQuestion, submitting, debouncedSave, saveCurrentState],
   );
 
-  // ── PREAMBLE ──
-  if (step === "preamble") {
-    return (
-      <div style={s.page}>
-        <div style={s.card}>
-          <h1 style={s.title}>Lexio Underground</h1>
-          <p style={s.subtitle}>
-            Every language learner has a map of what they don&apos;t know. Today
-            we draw yours.
-          </p>
-          <p style={s.desc}>
-            A 15–20 minute adaptive diagnostic across 5 pillars: Grammar, Logic,
-            Vocabulary, Culture, and Communication.
-          </p>
-          <button style={s.btn} onClick={() => setStep("email")}>
-            Begin your Cartografa
-          </button>
-        </div>
-      </div>
-    );
-  }
+  const handleTextAnswer = useCallback(async () => {
+    if (!cartografaState || !currentQuestion || submitting || !textAnswer.trim()) return;
 
-  // ── EMAIL CAPTURE ──
-  if (step === "email") {
-    const canContinue =
-      email.trim().includes("@") && interest.trim().length >= 2;
+    setSubmitting(true);
+    setError("");
+
+    const updatedState = processAnswer(
+      cartografaState,
+      currentQuestion.id,
+      { text: textAnswer, correct: false }, // Assume incorrect until backend validates
+    );
+
+    setCartografaState(updatedState);
+    setSelectedAnswer(null);
+    setTextAnswer("");
+    setQuestionCount(qc => qc + 1);
+    await saveCurrentState(updatedState);
+    debouncedSave(updatedState);
+    setShowWhy(false);
+  }, [cartografaState, currentQuestion, submitting, textAnswer, debouncedSave, saveCurrentState]);
+
+  const proceedToNextQuestion = useCallback(() => {
+    setSelectedAnswer(null);
+    setShowWhy(false);
+    setCurrentQuestion(null); // Triggers new question selection
+    setSubmitting(false);
+  }, []);
+
+  const generateAndShowResults = useCallback(async () => {
+    if (!cartografaState) return;
+
+    const res = generateResults(cartografaState);
+    setResult(res);
+    setShowTransition(true);
+
+    // Generate share token
+    try {
+      const res = await fetch("/api/diagnostico/share", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          pillar_scores: res.pillar_scores,
+          overall_readiness: res.overall_readiness,
+          recommended_focus: res.recommended_focus,
+          identity_callout: res.identity_callout,
+        }),
+      });
+      const data = await res.json();
+      if (data.share_token) {
+        setShareToken(data.share_token);
+        setShareLink(
+          `${process.env.NEXT_PUBLIC_APP_URL}/diagnostico/resultado?token=${data.share_token}`,
+        );
+      }
+    } catch {
+      setError("Falha ao gerar link de compartilhamento");
+    }
+
+    // Link email to results for "returning user" features
+    await linkEmailToSession();
+  }, [cartografaState, linkEmailToSession]);
+
+  const handleMsgSubmit = useCallback(async () => {
+    await linkEmailToSession();
+    setStep("cartografa");
+  }, [linkEmailToSession]);
+
+  const handleSignupSubmit = useCallback(
+    async (email: string, password: string) => {
+      setSignupLoading(true);
+      try {
+        await signUp(email, password);
+        if (sessionId && linkSession) {
+          await linkSession(sessionId);
+        }
+        await linkEmailToSession();
+        setStep("cartografa");
+        setSignupError("");
+      } catch (err) {
+        setSignupError(
+          err instanceof Error ? err.message : "Falha no cadastro",
+        );
+      } finally {
+        setSignupLoading(false);
+      }
+    },
+    [sessionId, linkSession, linkEmailToSession, signUp],
+  );
+
+  // Auto-resume if email exists
+  useEffect(() => {
+    if (email && step === "email") {
+      checkForResume(email).then(state => {
+        if (state) {
+          setCartografaState(state);
+          setCurrentQuestion(null);
+          setStep("cartografa");
+        }
+      });
+    }
+  }, [email, step, checkForResume]);
+
+  // ─── RENDER FUNCTIONS ──────────────────────────────────────
+  const PreambleContent = () => (
+    <>
+      <h1 style={s.title}>Diagnóstico de Português</h1>
+      <p style={s.subtitle}>
+        Um exame adaptativo para mapear suas habilidades na língua
+      </p>
+      <p style={s.desc}>
+        Responda perguntas de múltipla escolha ou texto livre.
+        <strong>Totalmente gratuito e sem cadastro.</strong>
+      </p>
+      <button
+        onClick={() => setStep("email")}
+        style={s.btn}
+        disabled={false}
+      >
+        Iniciar diagnóstico
+      </button>
+    </>
+  );
+
+  const EmailContent = () => (
+    <>
+      <div style={s.stageHeader}>{getStageName(0)}</div>
+      <h1 style={s.title}>Vamos começar!</h1>
+      <div style={s.stageDesc}>
+        {getStageDescription(0)}
+        <br />
+        <em>Opcional — recomendamos para salvar seu progresso.</em>
+      </div>
+
+      <label htmlFor="email" style={s.label}>
+        E-mail
+      </label>
+      <input
+        type="email"
+        id="email"
+        style={s.input}
+        value={email}
+        onChange={e => setEmail(e.target.value)}
+        onKeyDown={e => e.key === "Enter" && handleMsgSubmit()}
+        placeholder="e-mail@exemplo.com"
+        disabled={restoring}
+      />
+
+      <button
+        onClick={handleMsgSubmit}
+        style={s.btn}
+        disabled={restoring}
+      >
+        {restoring ? <Text>Carregando...</Text> : <Text>Continuar →</Text>}
+      </button>
+
+      <button
+        style={s.skipBtn}
+        onClick={() => {
+          setEmail("guest@lexio.com");
+          setStep("cartografa");
+        }}
+      >
+        Pular →
+      </button>
+    </>
+  );
+
+  const QuestionContent = () => {
+    if (!currentQuestion) return null;
+    const currentStageIndex =
+      cartografaState && cartografaState.currentStage >= 2
+        ? cartografaState.currentStage * 8 + cartografaState.currentPillarIndex
+        : 0;
+    const progress =
+      prevStage > 0 && questionCount
+        ? Math.min(((questionCount - prevStage) / 24) * 100, 100)
+        : 0;
+
+    // Determine if current question is the last of the pillar
+    const isLastQuestion =
+      cartografaState &&
+      cartografaState.pillars[cartografaState.currentPillar]
+        .answeredIds.size >=
+        Object.keys(cartografaState.pillars).length * 8;
+
     return (
-      <div style={s.page}>
-        <div style={s.card}>
-          <h2 style={{ ...s.title, fontSize: 28 }}>Save your progress</h2>
-          <p style={s.desc}>
-            Your email is a safety net — we'll send your Cartografa report
-            and learning path here.
-          </p>
-          <div style={{ textAlign: "left", marginBottom: spacing[3] }}>
-            <label style={s.label}>Email</label>
-            <input
-              style={s.input}
-              type="email"
-              placeholder="your@email.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <div style={{ textAlign: "left", marginBottom: spacing[4] }}>
-            <label style={s.label}>
-              Memory Palace Hook (e.g., "minha casa",
-              "cachorro")
-            </label>
-            <input
-              style={s.input}
-              type="text"
-              placeholder="Where do you want to anchor this lesson?"
-              value={interest}
-              onChange={(e) => setInterest(e.target.value)}
-            />
-          </div>
-          <button
-            style={{ ...s.btn, ...(canContinue ? {} : s.btnDisabled) }}
-            disabled={!canContinue}
-            onClick={() => canContinue && startCartografa()}
+      <>
+        <div style={s.stageHeader}>{getStageName(cartografaState?.currentStage || 0)}</div>
+        <h2 style={{ ...s.title, fontSize: 24 }}>
+          {PILLAR_NAMES[currentQuestion.pillar]}
+        </h2>
+        <div style={s.stageDesc}>
+          {currentQuestion.stageInfo.description}
+          <br />
+          <em>
+            {currentQuestion.difficultyInfo.description}
+          </em>
+        </div>
+        
+        <div>
+          Etapa {cartografaState.currentStage + 1} • Pergunta {currentQuestion.id.slice(-2)}
+        </div>
+
+        <div style={s.progressBar}>
+          <div style={{ ...s.progressFill, width: `${progress}%` }} />
+        </div>
+
+        <div style={s.questionCard}>
+          <p style={s.questionText}>{currentQuestion.prompt}</p>
+
+          {currentQuestion.layout === "default" && (<>
+          {currentQuestion.options.map((opt, idx) => (
+          <div
+          style={selectedAnswer === idx ? { ...s.optionRow, ...s.optionRowSelected } : s.optionRow}
+          onClick={() => !submitting && handleQuizAnswer(idx)}
+          key={idx}
           >
-            Continue to Cartografa →
-          </button>
-        </div>
-      </div>
-    );
-  }
-
-  // ── STAGE TRANSITION ──
-  if (step === "transition" && cartografaState) {
-    return (
-      <div style={s.page}>
-        <div style={s.card}>
-          <p style={s.stageHeader}>Stage {cartografaState.currentStage} of 5</p>
-          <h2 style={s.stageTitle}>
-            {getStageName(cartografaState.currentStage)}
-          </h2>
-          <p style={s.stageDesc}>
-            {getStageDescription(cartografaState.currentStage)}
-          </p>
-        </div>
-      </div>
-    );
-    }
-    }
-
-  // ── CARTOGRAFA ──
-  if (step === "cartografa" && currentQuestion && cartografaState) {
-    const stage = cartografaState.currentStage;
-    const totalAnswered = cartografaState.history.length;
-    const estimatedTotal = 25; // rough estimate for progress bar
-    const progress = Math.min(100, (totalAnswered / estimatedTotal) * 100);
-
-    return (
-      <div style={s.page}>
-        <div style={s.wideCard}>
-          {/* Header */}
-          <p style={s.stageHeader}>
-            Stage {stage} of 5 — {getStageName(stage)}
-          </p>
-          <p style={s.stageDesc}>{getStageDescription(stage)}</p>
-
-          {/* Progress bar */}
-          <div style={s.progressBar}>
-            <div
-              style={{
-                ...s.progressFill,
-                width: `${progress}%`,
-              }}
-            />
+          <div
+          style={selectedAnswer === idx ? { ...s.radioOuter, ...s.radioOuterSelected } : s.radioOuter}
+          >
+          {selectedAnswer === idx && <div style={s.radioInner} />}
           </div>
+          <div style={s.optionText}>{opt.text}</div>
+          </div>
+          ))}
+          </>)}
 
-          {/* Question */}
-          <div style={s.questionCard}>
-            <p style={s.questionText}>{currentQuestion.prompt}</p>
-
-            {/* Likert scale (1-5) */}
-            {currentQuestion.type === "likert" && (
-              <div
-                style={{ display: "flex", gap: 8, justifyContent: "center" }}
-              >
-                {[1, 2, 3, 4, 5].map((val) => (
-                  <button
-                    key={val}
-                    onClick={() => setSelectedAnswer(val)}
-                    style={{
-                      width: 48,
-                      height: 48,
-                      borderRadius: 24,
-                      border: `2px solid ${selectedAnswer === val ? colors.phosphor : colors.zinc}`,
-                      backgroundColor:
-                        selectedAnswer === val
-                          ? colors.phosphor
-                          : "transparent",
-                      color:
-                        selectedAnswer === val ? colors.obsidian : colors.ivory,
-                      fontSize: 16,
-                      fontWeight: 600,
-                      cursor: "pointer",
-                      transition: "all 0.15s ease",
-                    }}
-                  >
-                    {val}
-                  </button>
-                ))}
-              </div>
-            )}
-
-            {/* Multiple choice (gap-select, chunk, scenario) */}
-            {(currentQuestion.type === "gap-select" ||
-              currentQuestion.type === "chunk" ||
-              currentQuestion.type === "scenario") &&
-              currentQuestion.options?.map((opt, i) => (
-                <div
-                  key={i}
-                  onClick={() => setSelectedAnswer(i)}
-                  style={{
-                    ...s.optionRow,
-                    ...(selectedAnswer === i ? s.optionRowSelected : {}),
-                  }}
-                >
-                  <div
-                    style={{
-                      ...s.radioOuter,
-                      ...(selectedAnswer === i ? s.radioOuterSelected : {}),
-                    }}
-                  >
-                    {selectedAnswer === i && <div style={s.radioInner} />}
-                  </div>
-                  <span style={s.optionText}>{opt}</span>
-                </div>
-              ))}
-
-            {/* Open text */}
-            {currentQuestion.type === "open-text" && (
+          {currentQuestion.layout === "text" && (
+            <div>
               <textarea
                 style={s.textarea}
-                placeholder="Write your answer in English..."
                 value={textAnswer}
-                onChange={(e) => setTextAnswer(e.target.value)}
+                onChange={e => setTextAnswer(e.target.value)}
+                disabled={submitting}
               />
-            )}
+              <button
+                style={s.btn}
+                onClick={handleTextAnswer}
+                disabled={submitting || !textAnswer.trim()}
+              >
+                {submitting ? <Text>"Enviando..."</Text> : <Text>"Enviar resposta"</Text>}
+              </button>
+            </div>
+          )}
 
-            {/* Why explanation */}
-            <button style={s.whyBtn} onClick={() => setShowWhy(!showWhy)}>
-              {showWhy ? "Ocultar explicação" : "Por quê?"}
-            </button>
-            {showWhy && (
-              <div style={s.whyBox}>
-                <p style={s.whyText}>{currentQuestion.whyExplanation}</p>
-              </div>
-            )}
-          </div>
-
-          {/* Actions */}
-          <div style={s.actions}>
-            <span style={{ fontSize: 13, color: colors.zinc }}>
-              {totalAnswered} answered
-            </span>
-            <button
-              style={{
-                ...s.btn,
-                ...((currentQuestion.type !== "open-text" &&
-                  selectedAnswer === null) ||
-                (currentQuestion.type === "open-text" && !textAnswer.trim())
-                  ? s.btnDisabled
-                  : {}),
-              }}
-              disabled={
-                (currentQuestion.type !== "open-text" &&
-                  selectedAnswer === null) ||
-                (currentQuestion.type === "open-text" && !textAnswer.trim())
-              }
-              onClick={handleAnswer}
-            >
-              {cartografaState.allResolved ? "Finish" : "Next →"}
-            </button>
-          </div>
+          {showWhy && (
+            <div style={s.whyBox}>
+              <p style={s.whyText}>{currentQuestion.explanation}</p>
+            </div>
+          )}
         </div>
-      </div>
-    );
-    }
-    }
 
-  // ── RESULT ──
-  if (step === "result" && result) {
-    const minutes = Math.floor(result.duration_seconds / 60);
-    const seconds = result.duration_seconds % 60;
-
-    return (
-      <div style={s.page}>
-        <div style={s.wideCard}>
-          <h1 style={s.resultTitle}>Obrigado!</h1>
-          <p style={s.identityCallout}>{result.identity_callout}</p>
-
-          {/* Pillar Radar */}
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              marginBottom: spacing[6],
-            }}
+        <div style={s.actions}>
+          <button
+            style={s.skipBtn}
+            onClick={proceedToNextQuestion}
+            disabled={submitting}
           >
-            <PillarRadar
-              scores={{
-                grammar: result.pillar_scores.grammar.score,
-                logic: result.pillar_scores.logic.score,
-                vocab: result.pillar_scores.vocab.score,
-                culture: result.pillar_scores.culture.score,
-                comm: result.pillar_scores.comm.score,
-              }}
-              size={300}
-              animate={true}
-              delay={300}
-            />
-          </div>
+            Pular →
+          </button>
+          <button
+            style={s.btn}
+            onClick={proceedToNextQuestion}
+            disabled={selectedAnswer === null && !textAnswer.trim()}
+          >
+            {isLastQuestion ? <Text>"Ver resultados →"</Text> : <Text>"Próxima pergunta →"</Text>}
+          </button>
+        </div>
+      </>
+    );
+  };
 
-          {/* Stats */}
-          <div style={s.statsRow}>
-            <div style={s.statItem}>
-              <div style={s.statValue}>{result.total_questions}</div>
-              <div style={s.statLabel}>Questions</div>
+  const TransitionContent = () => (
+    <>
+      <RoadmapPreview
+        recommendedFocus={result?.recommended_focus || []}
+        overallReadiness={result?.overall_readiness || 0}
+        animate={showTransition}
+      />
+      <br />
+      <button
+        style={s.btn}
+        onClick={() => {
+          setStep("result");
+          setShowTransition(false);
+        }}
+        disabled={false}
+      >
+        Ver relatório →
+      </button>
+    </>
+  );
+
+  // ── RESULT CONTENT (WRAPPED IN DIV) ───────────────────────────
+  const ResultContent = () => {
+    if (!result) return null;
+    const minutes = Math.floor(result.duration_seconds / 60);
+    const seconds = result?.duration_seconds % 60;
+    return (
+      <div>
+        <div style={s?.page || {}}>
+          <div style={s?.wideCard || {}}>
+            <h1 style={s?.resultTitle || {}}>Obrigado!</h1>
+            <p style={s?.identityCallout || {}}>{result.identity_callout}</p>
+
+            {/* Pillar Radar */}
+            <div
+              style=
+                {
+                  {
+                    display: "flex",
+                    justifyContent: "center",
+                    marginBottom: spacing[6],
+                  }
+                }
+            >
+              <PillarRadar
+                scores=
+                  {
+                    {
+                      grammar: result.pillar_scores.grammar.score,
+                      logic: result.pillar_scores.logic.score,
+                      vocab: result.pillar_scores.vocab.score,
+                      culture: result.pillar_scores.culture.score,
+                      comm: result.pillar_scores.comm.score,
+                    }
+                  }
+                size={300}
+                animate={true}
+                delay={300}
+              />
             </div>
-            <div style={s.statItem}>
-              <div style={s.statValue}>
-                {Math.round(
-                  (result.total_correct / result.total_questions) * 100,
-                )}
-                %
+
+            {/* Stats */}
+            <div style={s.statsRow}>
+              <div style={s.statItem}>
+                <div style={s.statValue}>{result.total_questions}</div>
+                <div style={s.statLabel}>Questions</div>
               </div>
-              <div style={s.statLabel}>Correct</div>
-            </div>
-            <div style={s.statItem}>
-              <div style={s.statValue}>
-                {minutes}:{seconds.toString().padStart(2, "0")}
+              <div style={s.statItem}>
+                <div style={s.statValue}> 
+                  {Math.round(
+                    (result.total_correct / result.total_questions) * 100,
+                  )}
+                  %
+                </div>
+                <div style={s.statLabel}>Correct</div>
               </div>
-              <div style={s.statLabel}>Duration</div>
+              <div style={s.statItem}>
+                <div style={s.statValue}> 
+                  {minutes}:{(seconds ?? 0).toString().padStart(2, "0")}
+                </div>
+                <div style={s.statLabel}>Duration</div>
+              </div>
             </div>
-          </div>
 
-          {/* Readiness badge */}
-          <div style={{ textAlign: "center", marginBottom: spacing[4] }}>
-            <span style={s.readinessBadge}>
-              {getReadinessLabel(result.overall_readiness)}
-            </span>
-          </div>
+            {/* Readiness badge */}
+            <div style={{ textAlign: "center", marginBottom: spacing[4] }}>
+              <span style={s.readinessBadge}> 
+                {getReadinessLabel(result.overall_readiness)}
+              </span>
+            </div>
 
-          {/* Pillar scores */}
-          <div style={{ marginBottom: spacing[6] }}>
-            {(["grammar", "logic", "vocab", "culture", "comm"] as Pillar[]).map(
-              (pillar) => {
+            {/* Pillar scores */}
+            <div style={{ marginBottom: spacing[6] }}> 
+              {( [
+                "grammar",
+                "logic",
+                "vocab",
+                "culture",
+                "comm",
+              ] as Pillar[]).map((pillar) => {
                 const ps = result.pillar_scores[pillar];
                 return (
-                  <div key={pillar} style={s.pillarRow}>
+                  <div key={pillar} style={s.pillarRow}> 
                     <span style={s.pillarLabel}>{PILLAR_NAMES[pillar]}</span>
-                    <div style={s.pillarBar}>
+                    <div style={s.pillarBar}> 
                       <div
-                        style={{
-                          ...s.pillarFill,
-                          width: `${ps.score * 100}%`,
-                          backgroundColor: PILLAR_COLORS[pillar],
-                        }}
+                        style={{ ...s.pillarFill, width: `${ps.score * 100}%`, backgroundColor: PILLAR_COLORS[pillar], }}
                       />
                     </div>
-                    <span style={s.pillarScore}>
+                    <span style={s.pillarScore}> 
                       {Math.round(ps.score * 100)}%
                     </span>
                   </div>
                 );
-              },
+              })}
+            </div>
+
+            {/* Recommended focus */}
+            <div
+              style=
+                {
+                  {
+                    textAlign: "center",
+                    marginBottom: spacing[4],
+                    padding: spacing[3],
+                    backgroundColor: colors.surfaceContainerHigh,
+                    borderRadius: radius.card,
+                  }
+                }
+            >
+              <p
+                style=
+                  {
+                    {
+                      fontSize: 14,
+                      color: colors.zinc,
+                      marginBottom: spacing[1],
+                    }
+                  }
+              >
+                Recommended focus
+              </p>
+              <p style={{ fontSize: 16, color: colors.ivory }}> 
+                {result.recommended_focus 
+                  .map((p) => PILLAR_NAMES[p]) 
+                  .join(" & ")}
+              </p>
+            </div>
+
+            {/* Share Card */}
+            {shareLink && (
+              <ShareCard
+                scores=
+                  {
+                    {
+                      grammar: result.pillar_scores.grammar.score,
+                      logic: result.pillar_scores.logic.score,
+                      vocab: result.pillar_scores.vocab.score,
+                      culture: result.pillar_scores.culture.score,
+                      comm: result.pillar_scores.comm.score,
+                    }
+                  }
+                identityCallout={result.identity_callout}
+                readinessLabel={getReadinessLabel(result.overall_readiness)}
+                shareUrl={shareLink}
+              />
+            )}
+
+            {/* Copy link fallback */}
+            {shareLink && (
+              <div style={{ ...s.shareBox, marginTop: spacing[3] }}> 
+                <span style={s.shareLink}>{shareLink}</span>
+                <button
+                  style={s.copyBtn}
+                  onClick={() => navigator.clipboard.writeText(shareLink)}
+                >
+                  Copiar link
+                </button>
+              </div>
+            )}
+
+            {error && (
+              <p
+                style=
+                  {
+                    {
+                      color: "#ef4444",
+                      fontSize: 14,
+                      textAlign: "center",
+                      marginBottom: spacing[3],
+                    }
+                  }
+              >
+                {error}
+              </p>
+            )}
+
+            {/* Roadmap Preview */}
+            <RoadmapPreview
+              recommendedFocus={result.recommended_focus}
+              overallReadiness={result.overall_readiness}
+              animate={true}
+            />
+
+            <div style={{ textAlign: "center", marginTop: spacing[4] }}> 
+              <Link href="/" style={{ ...s.btn, marginRight: spacing[3] }}> 
+                Voltar ao início
+              </Link>
+              <Link
+                href="/lessons"
+                style=
+                  {
+                    {
+                      ...s.btn,
+                      backgroundColor: "transparent",
+                      border: `1px solid ${colors.phosphor}`,
+                      color: colors.phosphor,
+                    }
+                  }
+              >
+                Ver lições
+              </Link>
+            </div>
+
+            {/* Create Account CTA */}
+            {!user && (
+              <div style={{ textAlign: "center", marginTop: spacing[4] }}> 
+                <button
+                  onClick={() => setStep("signup")}
+                  style=
+                    {
+                      {
+                        padding: "12px 28px",
+                        backgroundColor: colors.phosphor,
+                        color: colors.obsidian,
+                        border: "none",
+                        borderRadius: radius.btn,
+                        fontSize: 15,
+                        fontWeight: 600,
+                        cursor: "pointer",
+                      }
+                    }
+                >
+                  Criar conta para salvar resultados →
+                </button>
+              </div>
             )}
           </div>
-
-          {/* Recommended focus */}
-          <div
-            style={{
-              textAlign: "center",
-              marginBottom: spacing[4],
-              padding: spacing[3],
-              backgroundColor: colors.surfaceContainerHigh,
-              borderRadius: radius.card,
-            }}
-          >
-            <p
-              style={{
-                fontSize: 14,
-                color: colors.zinc,
-                marginBottom: spacing[1],
-              }}
-            >
-              Recommended focus
-            </p>
-            <p style={{ fontSize: 16, color: colors.ivory }}>
-              {result.recommended_focus.map((p) => PILLAR_NAMES[p]).join(" & ")}
-            </p>
-          </div>
-
-          {/* Share Card */}
-          {shareLink && (
-            <ShareCard
-              scores={{
-                grammar: result.pillar_scores.grammar.score,
-                logic: result.pillar_scores.logic.score,
-                vocab: result.pillar_scores.vocab.score,
-                culture: result.pillar_scores.culture.score,
-                comm: result.pillar_scores.comm.score,
-              }}
-              identityCallout={result.identity_callout}
-              readinessLabel={getReadinessLabel(result.overall_readiness)}
-              shareUrl={shareLink}
-            />
-          )}
-
-          {/* Copy link fallback */}
-          {shareLink && (
-            <div style={{ ...s.shareBox, marginTop: spacing[3] }}>
-              <span style={s.shareLink}>{shareLink}</span>
-              <button
-                style={s.copyBtn}
-                onClick={() => navigator.clipboard.writeText(shareLink)}
-              >
-                Copiar link
-              </button>
-            </div>
-          )}
-
-          {error && (
-            <p
-              style={{
-                color: "#ef4444",
-                fontSize: 14,
-                textAlign: "center",
-                marginBottom: spacing[3],
-              }}
-            >
-              {error}
-            </p>
-          )}
-
-          {/* Roadmap Preview */}
-          <RoadmapPreview
-            recommendedFocus={result.recommended_focus}
-            overallReadiness={result.overall_readiness}
-            animate={true}
-          />
-
-          <div style={{ textAlign: "center", marginTop: spacing[4] }}>
-            <Link href="/" style={{ ...s.btn, marginRight: spacing[3] }}>
-              Voltar ao início
-            </Link>
-            <Link
-              href="/lessons"
-              style={{
-                ...s.btn,
-                backgroundColor: "transparent",
-                border: `1px solid ${colors.phosphor}`,
-                color: colors.phosphor,
-              }}
-            >
-              Ver lições
-            </Link>
-          </div>
-
-          {/* Create Account CTA */}
-          {!user && (
-            <div style={{ textAlign: "center", marginTop: spacing[4] }}>
-              <button
-                onClick={() => setStep("signup")}
-                style={{
-                  padding: "12px 28px",
-                  backgroundColor: colors.phosphor,
-                  color: colors.obsidian,
-                  border: "none",
-                  borderRadius: radius.btn,
-                  fontSize: 15,
-                  fontWeight: 600,
-                  cursor: "pointer",
-                }}
-              >
-                Criar conta para salvar resultados →
-              </button>
-            </div>
-          )}
         </div>
       </div>
     );
-    }
-    }
+  };
 
-  // ── SIGNUP ──
-  if (step === "signup") {
-    const handleSignup = async (
-      signupEmail: string,
-      password: string,
-      name: string,
-    ) => {
-      setSignupError("");
-      setSignupLoading(true);
+  const SignupContent = () => (
+    <SignupForm
+      onSubmit={handleSignupSubmit}
+      loading={signupLoading}
+      error={signupError}
+      disabled={false}
+    />
+  );
 
-      const { error: signUpError } = await signUp(signupEmail, password, name);
+  // ─── RENDER LOGIC ────────────────────────────────────────
+  if (user && step === "email") {
+    setStep("cartografa");
+  }
 
-      if (signUpError) {
-        setSignupError(signUpError);
-        setSignupLoading(false);
-        return;
-      }
-
-      // Link the diagnostic session to the new user
-      if (shareToken) {
-        await linkSession(shareToken);
-      }
-
-      setSignupLoading(false);
-      // Stay on signup page — user needs to confirm email
-      setSignupError(
-        "Conta criada! Verifique seu email para confirmar o cadastro.",
-      );
-    };
-
-    const handleGoogleLogin = async () => {
-      setSignupError("");
-      const { error: oauthError } = await signInWithGoogle();
-      if (oauthError) {
-        setSignupError(oauthError);
-      }
-      // OAuth will redirect — session linking happens in callback
-    };
-
-    const handleSkipSignup = () => {
-      // Go back to results
-      setStep("result");
-    };
-
-    return (
-      <div style={s.page}>
-        <div style={s.card}>
-          <SignupForm
-            email={email}
-            onSignup={handleSignup}
-            onGoogleLogin={handleGoogleLogin}
-            onSkip={handleSkipSignup}
-            error={signupError}
-            loading={signupLoading}
-          />
-        </div>
-      </div>
-    );
-    }
-    }
-
-  // Fallback
   return (
-    <div style={s.page}>
-      <div style={s.card}>
-        <p style={s.desc}>Loading...</p>
+    <div>
+      <div style={s.page}>
+        {step === "preamble" && <PreambleContent />}
+        {step === "email" && <EmailContent />}
+        {step === "cartografa" && cartografaState && <QuestionContent />}
+        {step === "transition" && <TransitionContent />}
+        {step === "result" && result && <ResultContent />}
+        {step === "signup" && <SignupContent />}
       </div>
     </div>
   );
-  }
-
-  export default Page;
+}

@@ -1,7 +1,11 @@
 // tests/unit/question-bank.test.ts
 // Integrity tests for the question bank
 
-import { QUESTION_BANK, QUESTIONS_BY_PILLAR, getQuestionsByDifficulty } from "../../src/cartografa/question-bank";
+import {
+  QUESTION_BANK,
+  QUESTIONS_BY_PILLAR,
+  getQuestionsByDifficulty,
+} from "../../src/cartografa/question-bank";
 
 describe("Question Bank", () => {
   it("contains exactly 50 questions", () => {
@@ -23,7 +27,13 @@ describe("Question Bank", () => {
   });
 
   it("has 2 questions per difficulty level per pillar", () => {
-    for (const pillar of ["grammar", "logic", "vocab", "culture", "comm"] as const) {
+    for (const pillar of [
+      "grammar",
+      "logic",
+      "vocab",
+      "culture",
+      "comm",
+    ] as const) {
       for (let diff = 1; diff <= 5; diff++) {
         const questions = getQuestionsByDifficulty(pillar, diff);
         expect(questions).toHaveLength(2);
@@ -77,7 +87,8 @@ describe("Question Bank", () => {
 
   it("has valid options for select-type questions (gap-select, chunk, scenario)", () => {
     const selectQuestions = QUESTION_BANK.filter(
-      (q) => q.type === "gap-select" || q.type === "chunk" || q.type === "scenario",
+      (q) =>
+        q.type === "gap-select" || q.type === "chunk" || q.type === "scenario",
     );
     expect(selectQuestions.length).toBeGreaterThan(0);
     for (const q of selectQuestions) {

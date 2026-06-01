@@ -3,9 +3,10 @@
 
 describe("Founding Member Claim Logic", () => {
   describe("License key validation", () => {
-    function validateLicenseKey(
-      license_key: string | undefined,
-    ): { valid: boolean; error?: string } {
+    function validateLicenseKey(license_key: string | undefined): {
+      valid: boolean;
+      error?: string;
+    } {
       if (!license_key) {
         return { valid: false, error: "license_key and user_id are required" };
       }
@@ -34,9 +35,10 @@ describe("Founding Member Claim Logic", () => {
   });
 
   describe("User ID validation", () => {
-    function validateUserId(
-      user_id: string | undefined,
-    ): { valid: boolean; error?: string } {
+    function validateUserId(user_id: string | undefined): {
+      valid: boolean;
+      error?: string;
+    } {
       if (!user_id) {
         return { valid: false, error: "license_key and user_id are required" };
       }
@@ -48,7 +50,9 @@ describe("Founding Member Claim Logic", () => {
     });
 
     it("accepts valid user_id", () => {
-      expect(validateUserId("550e8400-e29b-41d4-a716-446655440000").valid).toBe(true);
+      expect(validateUserId("550e8400-e29b-41d4-a716-446655440000").valid).toBe(
+        true,
+      );
     });
   });
 
@@ -82,9 +86,10 @@ describe("Founding Member Claim Logic", () => {
   });
 
   describe("Tier upgrade", () => {
-    function upgradeTier(
-      currentTier: string,
-    ): { success: boolean; tier: string } {
+    function upgradeTier(currentTier: string): {
+      success: boolean;
+      tier: string;
+    } {
       if (currentTier === "pro_lifetime") {
         return { success: true, tier: "pro_lifetime" };
       }

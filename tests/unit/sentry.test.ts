@@ -1,7 +1,11 @@
 // tests/unit/sentry.test.ts
 // Unit tests for Sentry error monitoring wrapper
 
-import { captureException, captureMessage, getRecentLogs } from "../../src/lib/sentry";
+import {
+  captureException,
+  captureMessage,
+  getRecentLogs,
+} from "../../src/lib/sentry";
 
 describe("Sentry wrapper", () => {
   beforeEach(() => {

@@ -2,6 +2,7 @@
 // Resume a Cartografa session from saved state (drop-out rescue)
 import { createClient } from "@supabase/supabase-js";
 import { NextResponse } from "next/server";
+import { NextRequest } from "next/server";
 
 const supabaseAdmin = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL || "",

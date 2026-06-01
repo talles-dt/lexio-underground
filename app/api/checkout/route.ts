@@ -2,14 +2,15 @@
 // Stripe checkout session creation (Phase 5.4)
 // Creates Stripe Checkout Session and returns URL for redirect
 
-import { NextRequest, NextResponse } from "next/server";
-import { supabase } from "@/lib/supabase";
+import { NextResponse } from "next/server";
+import { NextRequest } from "next/server";
+import { supabase } from "../../lib/supabase.js";
 
 // Pricing from spec: monthly (R$ 49), annual (R$ 468), lifetime (R$ 1,490)
 // Stripe expects amounts in cents for zero-decimal currencies like BRL
 const PRICES = {
-  monthly: { amount: 4900, description: "Mensal" },      // R$ 49,00
-  annual: { amount: 46800, description: "Anual" },        // R$ 468,00
+  monthly: { amount: 4900, description: "Mensal" }, // R$ 49,00
+  annual: { amount: 46800, description: "Anual" }, // R$ 468,00
   lifetime: { amount: 149000, description: "Vitalício" }, // R$ 1.490,00
 } as const;
 
@@ -39,21 +40,29 @@ export async function POST(req: NextRequest) {
 
     // Mock Stripe in test environment
     let stripe;
-    if (process.env.NODE_ENV === 'test') {
+    if (process.env.NODE_ENV === "test") {
       stripe = {
         customers: {
-          create: jest.fn().mockResolvedValue({ id: 'mock_customer_id' }),
-          retrieve: jest.fn().mockResolvedValue({ id: 'mock_customer_id' }),
+          create: jest.fn().mockResolvedValue({ id: "mock_customer_id" }),
+          retrieve: jest.fn().mockResolvedValue({ id: "mock_customer_id" }),
         },
         checkout: {
           sessions: {
-            create: jest.fn().mockResolvedValue({ url: 'https://mock-checkout.stripe.com' }),
+            create: jest
+              .fn()
+              .mockResolvedValue({ url: "https://mock-checkout.stripe.com" }),
           },
         },
       };
     } else {
-      const stripeModule = require("stripe");
-      stripe = stripeModule(process.env.STRIPE_SECRET_KEY);
+      const stripeModule = await import("stripe");
+      stripe = new stripeModule.default(
+        process.env.STRIPE_SECRET_KEY as string,
+        {
+          apiVersion:
+            (process.env.STRIPE_API_VERSION as string) || "2024-06-20",
+        },
+      );
     }
 
     // Get or create customer
@@ -74,7 +83,10 @@ export async function POST(req: NextRequest) {
       customerId = customer.id;
 
       // Save stripe_customer_id to user profile
-      await supabase.from("users").update({ stripe_customer_id: customerId }).eq("id", user_id);
+      await supabase
+        .from("users")
+        .update({ stripe_customer_id: customerId })
+        .eq("id", user_id);
     }
 
     const session = await stripe.checkout.sessions.create({
@@ -86,22 +98,35 @@ export async function POST(req: NextRequest) {
             currency: "brl",
             product_data: {
               name: `Lexio Underground - ${price.description}`,
-              description: tier === "lifetime" ? "Acesso vitalício" : `Assinatura ${price.description.toLowerCase()}`,
+              description:
+                tier === "lifetime"
+                  ? "Acesso vitalício"
+                  : `Assinatura ${price.description.toLowerCase()}`,
             },
             unit_amount: price.amount,
-            recurring: tier === "lifetime" ? undefined : { interval: tier === "annual" ? "year" : "month" },
+            recurring:
+              tier === "lifetime"
+                ? undefined
+                : { interval: tier === "annual" ? "year" : "month" },
           },
           quantity: 1,
         },
       ],
-      success_url: success_url || `${process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"}/palace?checkout=success`,
-      cancel_url: cancel_url || `${process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"}/pricing?checkout=cancel`,
+      success_url:
+        success_url ||
+        `${process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"}/palace?checkout=success`,
+      cancel_url:
+        cancel_url ||
+        `${process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"}/pricing?checkout=cancel`,
       metadata: { user_id, tier },
     });
 
     return NextResponse.json({ url: session.url });
   } catch (err) {
     console.error("Checkout error:", err);
-    return NextResponse.json({ error: "Failed to create checkout session" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to create checkout session" },
+      { status: 500 },
+    );
   }
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { View, Pressable } from "react-native";
+import { View, Pressable, StyleSheet } from "react-native";
 import { Text } from "react-native";
 import { Card } from "@/components/ui";
 

@@ -72,7 +72,7 @@ export async function POST(req: Request) {
 
   // SMTP Fallback
   try {
-    const nodemailer = require("nodemailer");
+    const nodemailer = (await import("nodemailer")).default;
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: Number(process.env.SMTP_PORT),

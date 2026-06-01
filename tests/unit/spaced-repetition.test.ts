@@ -1,7 +1,10 @@
 // tests/unit/spaced-repetition.test.ts
 // Unit tests for SM-2 spaced repetition algorithm
 
-import { applySM2, getDailyReviewQueue } from "../../src/palace/spaced-repetition";
+import {
+  applySM2,
+  getDailyReviewQueue,
+} from "../../src/palace/spaced-repetition";
 
 describe("Spaced Repetition (SM-2)", () => {
   describe("applySM2", () => {
@@ -96,7 +99,13 @@ describe("Spaced Repetition (SM-2)", () => {
       future.setDate(future.getDate() + 1);
 
       const items = [
-        { id: "1", next_review: future.toISOString(), pillar: "grammar", title: "Test", content: "test" },
+        {
+          id: "1",
+          next_review: future.toISOString(),
+          pillar: "grammar",
+          title: "Test",
+          content: "test",
+        },
       ];
 
       const queue = getDailyReviewQueue(items, 7);
@@ -108,7 +117,13 @@ describe("Spaced Repetition (SM-2)", () => {
       past.setDate(past.getDate() - 1);
 
       const items = [
-        { id: "1", next_review: past.toISOString(), pillar: "grammar", title: "Test", content: "test" },
+        {
+          id: "1",
+          next_review: past.toISOString(),
+          pillar: "grammar",
+          title: "Test",
+          content: "test",
+        },
       ];
 
       const queue = getDailyReviewQueue(items, 7);
@@ -139,8 +154,20 @@ describe("Spaced Repetition (SM-2)", () => {
       newer.setDate(newer.getDate() - 1);
 
       const items = [
-        { id: "newer", next_review: newer.toISOString(), pillar: "grammar", title: "Newer", content: "test" },
-        { id: "older", next_review: older.toISOString(), pillar: "grammar", title: "Older", content: "test" },
+        {
+          id: "newer",
+          next_review: newer.toISOString(),
+          pillar: "grammar",
+          title: "Newer",
+          content: "test",
+        },
+        {
+          id: "older",
+          next_review: older.toISOString(),
+          pillar: "grammar",
+          title: "Older",
+          content: "test",
+        },
       ];
 
       const queue = getDailyReviewQueue(items, 7);

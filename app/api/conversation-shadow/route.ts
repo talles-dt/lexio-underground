@@ -2,7 +2,8 @@
 // Async Conversation Shadow — record → AI response → review (Phase 5.6)
 // 3-turn history maintained per user
 
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
+import { NextRequest } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import type { ShadowMessage } from "@/lexio-mind/orchestrator";
 
@@ -42,7 +43,8 @@ export async function POST(req: NextRequest) {
       }));
 
     // Generate AI response
-    const { generateShadowResponse } = await import("@/lexio-mind/orchestrator");
+    const { generateShadowResponse } =
+      await import("@/lexio-mind/orchestrator");
     const aiResponse = await generateShadowResponse(history, message);
 
     // Save user message

@@ -2,6 +2,7 @@
 // Save individual answer state for drop-out rescue (Phase 1.4)
 import { createClient } from "@supabase/supabase-js";
 import { NextResponse } from "next/server";
+import { NextRequest } from "next/server";
 
 const supabaseAdmin = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL || "",
@@ -13,14 +14,14 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
     const {
-      session_id,       // generated client-side on start
+      session_id, // generated client-side on start
       email,
       current_pillar,
       current_stage,
       current_difficulty,
-      answered_ids,     // string[]
-      history,          // AnswerRecord[]
-      pillar_states,    // Record<Pillar, PillarState>
+      answered_ids, // string[]
+      history, // AnswerRecord[]
+      pillar_states, // Record<Pillar, PillarState>
       timestamp,
     } = body;
 
@@ -32,24 +33,22 @@ export async function POST(request: Request) {
     }
 
     // Upsert: create or update the session record
-    const { error } = await supabaseAdmin
-      .from("diagnostic_sessions")
-      .upsert(
-        {
-          id: session_id,
-          email,
-          state: {
-            current_pillar,
-            current_stage,
-            current_difficulty,
-            answered_ids,
-            pillar_states,
-          },
-          raw_response_log: history,
-          updated_at: new Date().toISOString(),
+    const { error } = await supabaseAdmin.from("diagnostic_sessions").upsert(
+      {
+        id: session_id,
+        email,
+        state: {
+          current_pillar,
+          current_stage,
+          current_difficulty,
+          answered_ids,
+          pillar_states,
         },
-        { onConflict: "id" },
-      );
+        raw_response_log: history,
+        updated_at: new Date().toISOString(),
+      },
+      { onConflict: "id" },
+    );
 
     if (error) {
       console.error("Save-state error:", error);

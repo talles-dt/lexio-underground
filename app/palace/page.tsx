@@ -1,4 +1,5 @@
-"use client";
+import React from "react";
+("use client");
 
 import { useState, useCallback, useEffect } from "react";
 import Link from "next/link";
@@ -104,18 +105,113 @@ const s = {
 
 // ─── MOCK DATA (will be replaced by Supabase queries) ──────
 const MOCK_ROOMS: RoomData[] = [
-  { slug: "transformation-hall", name: "Transformation Hall", pillar: "grammar", description: "Surface → deep structure drills", icon: "🏛️", unlocked: true, itemsCount: 3, color: colors.phosphor },
-  { slug: "ignorance-map", name: "Ignorance Map Room", pillar: "logic", description: "What you don't know", icon: "🗺️", unlocked: true, itemsCount: 2, color: colors.amber },
-  { slug: "chunking-workshop", name: "Chunking Workshop", pillar: "vocab", description: "Words that travel together", icon: "🧩", unlocked: true, itemsCount: 5, color: colors.violet },
-  { slug: "context-reading-room", name: "Context Reading Room", pillar: "culture", description: "Meaning vs. words", icon: "📚", unlocked: false, itemsCount: 0, color: "#DC2626" },
-  { slug: "fluency-arena", name: "Fluency Arena", pillar: "comm", description: "Speak before ready", icon: "🏟️", unlocked: false, itemsCount: 0, color: "#22C55E" },
+  {
+    slug: "transformation-hall",
+    name: "Transformation Hall",
+    pillar: "grammar",
+    description: "Surface → deep structure drills",
+    icon: "🏛️",
+    unlocked: true,
+    itemsCount: 3,
+    color: colors.phosphor,
+  },
+  {
+    slug: "ignorance-map",
+    name: "Ignorance Map Room",
+    pillar: "logic",
+    description: "What you don't know",
+    icon: "🗺️",
+    unlocked: true,
+    itemsCount: 2,
+    color: colors.amber,
+  },
+  {
+    slug: "chunking-workshop",
+    name: "Chunking Workshop",
+    pillar: "vocab",
+    description: "Words that travel together",
+    icon: "🧩",
+    unlocked: true,
+    itemsCount: 5,
+    color: colors.violet,
+  },
+  {
+    slug: "context-reading-room",
+    name: "Context Reading Room",
+    pillar: "culture",
+    description: "Meaning vs. words",
+    icon: "📚",
+    unlocked: false,
+    itemsCount: 0,
+    color: "#DC2626",
+  },
+  {
+    slug: "fluency-arena",
+    name: "Fluency Arena",
+    pillar: "comm",
+    description: "Speak before ready",
+    icon: "🏟️",
+    unlocked: false,
+    itemsCount: 0,
+    color: "#22C55E",
+  },
 ];
 
 const MOCK_PULSE_ITEMS: PulseItem[] = [
-  { id: "p1", pillar: "grammar", title: "Make vs Do", content: "make a mistake", explanation: "\"Make a mistake\" é colocação fixa. Brasileiros frequentemente confundem porque \"fazer\" serve para ambos.", itemType: "chunk", icon: "🧩", easeFactor: 2.5, intervalDays: 0, repetitions: 0, nextReview: new Date().toISOString() },
-  { id: "p2", pillar: "vocab", title: "Phrasal Verb", content: "put off = adiar", explanation: "\"Put off\" = adiar. Não confunda com \"put away\" (guardar).", itemType: "word", icon: "💎", easeFactor: 2.5, intervalDays: 0, repetitions: 0, nextReview: new Date().toISOString() },
-  { id: "p3", pillar: "logic", title: "Since vs For", content: "since 2019 / for 3 years", explanation: "\"Since\" = ponto no tempo. \"For\" = duração.", itemType: "chunk", icon: "🔍", easeFactor: 2.5, intervalDays: 0, repetitions: 0, nextReview: new Date().toISOString() },
-  { id: "p4", pillar: "culture", title: "Small Talk", content: "\"How are you?\" is not a question", explanation: "Nos EUA é saudação, não pergunta literal. Responda \"Good, thanks!\"", itemType: "cultural_atom", icon: "🌍", easeFactor: 2.5, intervalDays: 0, repetitions: 0, nextReview: new Date().toISOString() },
+  {
+    id: "p1",
+    pillar: "grammar",
+    title: "Make vs Do",
+    content: "make a mistake",
+    explanation:
+      '"Make a mistake" é colocação fixa. Brasileiros frequentemente confundem porque "fazer" serve para ambos.',
+    itemType: "chunk",
+    icon: "🧩",
+    easeFactor: 2.5,
+    intervalDays: 0,
+    repetitions: 0,
+    nextReview: new Date().toISOString(),
+  },
+  {
+    id: "p2",
+    pillar: "vocab",
+    title: "Phrasal Verb",
+    content: "put off = adiar",
+    explanation: '"Put off" = adiar. Não confunda com "put away" (guardar).',
+    itemType: "word",
+    icon: "💎",
+    easeFactor: 2.5,
+    intervalDays: 0,
+    repetitions: 0,
+    nextReview: new Date().toISOString(),
+  },
+  {
+    id: "p3",
+    pillar: "logic",
+    title: "Since vs For",
+    content: "since 2019 / for 3 years",
+    explanation: '"Since" = ponto no tempo. "For" = duração.',
+    itemType: "chunk",
+    icon: "🔍",
+    easeFactor: 2.5,
+    intervalDays: 0,
+    repetitions: 0,
+    nextReview: new Date().toISOString(),
+  },
+  {
+    id: "p4",
+    pillar: "culture",
+    title: "Small Talk",
+    content: '"How are you?" is not a question',
+    explanation:
+      'Nos EUA é saudação, não pergunta literal. Responda "Good, thanks!"',
+    itemType: "cultural_atom",
+    icon: "🌍",
+    easeFactor: 2.5,
+    intervalDays: 0,
+    repetitions: 0,
+    nextReview: new Date().toISOString(),
+  },
 ];
 
 // ─── PAGE ───────────────────────────────────────────────────
@@ -139,9 +235,7 @@ export default function PalacePage() {
   const handleReviewComplete = useCallback(
     (itemId: string, quality: ReviewResult["quality"]) => {
       // In production: update Supabase `palace_items` row
-      setPulseItems((prev) =>
-        prev.filter((i) => i.id !== itemId),
-      );
+      setPulseItems((prev) => prev.filter((i) => i.id !== itemId));
     },
     [],
   );
@@ -153,9 +247,7 @@ export default function PalacePage() {
       // In production: fetch items for that room
       const room = rooms.find((r) => r.slug === slug);
       if (room) {
-        setPaletteItems(
-          pulseItems.filter((i) => i.pillar === room.pillar),
-        );
+        setPaletteItems(pulseItems.filter((i) => i.pillar === room.pillar));
       }
     },
     [activeRoom, rooms, pulseItems],
@@ -166,7 +258,14 @@ export default function PalacePage() {
       <div style={s.page}>
         <div style={{ ...s.emptyState, maxWidth: 480, margin: "80px auto" }}>
           <div style={s.emptyIcon}>🏗️</div>
-          <h2 style={{ fontSize: 24, fontWeight: 700, marginBottom: spacing[2], color: colors.ivory }}>
+          <h2
+            style={{
+              fontSize: 24,
+              fontWeight: 700,
+              marginBottom: spacing[2],
+              color: colors.ivory,
+            }}
+          >
             Your Palace Awaits
           </h2>
           <p style={s.subtitle}>
@@ -264,12 +363,8 @@ export default function PalacePage() {
       {activeRoom && (
         <div style={s.section}>
           <h3 style={s.sectionTitle}>
-            {
-              rooms.find((r) => r.slug === activeRoom)?.icon
-            }{" "}
-            {
-              rooms.find((r) => r.slug === activeRoom)?.name
-            }
+            {rooms.find((r) => r.slug === activeRoom)?.icon}{" "}
+            {rooms.find((r) => r.slug === activeRoom)?.name}
           </h3>
 
           {paletteItems.length === 0 ? (

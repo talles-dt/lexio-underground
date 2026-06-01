@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { View, StyleSheet, Pressable, Text } from "react-native";
+import { View, StyleSheet, Text, Pressable } from "react-native";
 import { colors, typography, spacing, radius } from "@/theme/tokens";
 
 interface PreambleProps {

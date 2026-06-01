@@ -7,9 +7,9 @@ import type { Question } from "@/cartografa/question-bank";
 
 // ─── CARTOGRAFA OPEN-TEXT SCORING ──────────────────────────
 export interface ScoredOpenAnswer {
-  score: number;         // 0.0–1.0
-  confidence: number;    // 0.0–1.0
-  feedback: string;      // PT-BR feedback
+  score: number; // 0.0–1.0
+  confidence: number; // 0.0–1.0
+  feedback: string; // PT-BR feedback
   keywordsFound: string[];
   keywordsMissing: string[];
   grammarIssues: string[];
@@ -37,7 +37,10 @@ Responda APENAS com JSON no formato:
     { role: "user", content: answer },
   ];
 
-  const response = await callLLM(messages, { temperature: 0.2, maxTokens: 512 });
+  const response = await callLLM(messages, {
+    temperature: 0.2,
+    maxTokens: 512,
+  });
   const parsed = extractJson<ScoredOpenAnswer>(response.content);
 
   if (parsed && typeof parsed.score === "number") {
@@ -52,12 +55,14 @@ Responda APENAS com JSON no formato:
   const text = answer.toLowerCase();
   const keywords = question.keywords || [];
   const found = keywords.filter((kw) => text.includes(kw.toLowerCase()));
-  const fallbackScore = keywords.length > 0 ? found.length / keywords.length : 0.5;
+  const fallbackScore =
+    keywords.length > 0 ? found.length / keywords.length : 0.5;
 
   return {
     score: fallbackScore,
     confidence: 0.3,
-    feedback: "Não foi possível avaliar automaticamente. Revisão manual necessária.",
+    feedback:
+      "Não foi possível avaliar automaticamente. Revisão manual necessária.",
     keywordsFound: found,
     keywordsMissing: keywords.filter((kw) => !found.includes(kw)),
     grammarIssues: [],
@@ -98,11 +103,18 @@ Output **JSON-only** with keys:
 - **mnemonic**: CONCEPT **→** LOCATION **→** VISUAL HOOK **→** PORTUGUESE ANCHOR`;
 
   const messages: LLMMessage[] = [
-    { role: "system", content: "You are an English tutor for Brazilian Portuguese speakers. Always output valid JSON." },
+    {
+      role: "system",
+      content:
+        "You are an English tutor for Brazilian Portuguese speakers. Always output valid JSON.",
+    },
     { role: "user", content: prompt },
   ];
 
-  const response = await callLLM(messages, { temperature: 0.3, maxTokens: 1024 });
+  const response = await callLLM(messages, {
+    temperature: 0.3,
+    maxTokens: 1024,
+  });
   const parsed = extractJson<GeneratedLesson>(response.content);
 
   if (parsed && parsed.grammar && parsed.mnemonic) {
@@ -112,8 +124,10 @@ Output **JSON-only** with keys:
   // Fallback mock
   return {
     grammar: `**[${pillar}]** PT-BR interference: "Eu tenho 25 anos" → English omits the article. Rule: *Zero article for age statements*.`,
-    logic: "English avoids implicit subjects in formal writing. Prefer *It is* over *Is* for existential statements.",
-    communication: "Example: When writing an email, start with *Dear X* and close with *Best regards*.",
+    logic:
+      "English avoids implicit subjects in formal writing. Prefer *It is* over *Is* for existential statements.",
+    communication:
+      "Example: When writing an email, start with *Dear X* and close with *Best regards*.",
     mnemonic: `CONCEPT: ${pillar} **→** LOCATION: ${interest} **→** HOOK: golden retriever wearing a tie **→** ANCHOR: *"meu cachorro usa gravata"*`,
     pillar,
     difficulty,
@@ -124,7 +138,7 @@ Output **JSON-only** with keys:
 export interface ShadowMessage {
   role: "user" | "assistant";
   content: string;
-  corrected?: string;   // AI correction of user's message
+  corrected?: string; // AI correction of user's message
   grammarNotes?: string[];
 }
 
@@ -150,7 +164,10 @@ Rules:
     { role: "user", content: userMessage },
   ];
 
-  const response = await callLLM(messages, { temperature: 0.5, maxTokens: 512 });
+  const response = await callLLM(messages, {
+    temperature: 0.5,
+    maxTokens: 512,
+  });
   const parsed = extractJson<{
     response: string;
     corrected?: string;

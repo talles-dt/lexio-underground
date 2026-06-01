@@ -1,9 +1,11 @@
 // app/api/lessons/generate/route.ts
 // AI-powered lesson generation using LexioMind + NVIDIA NIM (Phase 5.3 fix)
 // Multi-tier fallback: OpenRouter → Mock
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
+import { NextRequest } from "next/server";
 import { z } from "zod";
-import { supabase } from "@/lib/supabase";
+// Updated import to use explicit extension for ESM
+import { supabase } from "@/lib/supabase.js";
 
 const RequestSchema = z.object({
   pillar: z.enum(["grammar", "logic", "vocab", "culture", "comm"]),

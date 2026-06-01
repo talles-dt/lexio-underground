@@ -122,7 +122,11 @@ export default function PalaceBlueprint({
   const svgRef = useRef<SVGSVGElement>(null);
   const [reveal, setReveal] = useState(!animate);
   const [roomReveals, setRoomReveals] = useState<boolean[]>([
-    false, false, false, false, false,
+    false,
+    false,
+    false,
+    false,
+    false,
   ]);
 
   // Staggered reveal animation
@@ -138,13 +142,16 @@ export default function PalaceBlueprint({
 
     // Stagger room reveals every 300ms
     const timers = rooms.map((_, i) =>
-      setTimeout(() => {
-        setRoomReveals((prev) => {
-          const next = [...prev];
-          next[i] = true;
-          return next;
-        });
-      }, 400 + i * 300),
+      setTimeout(
+        () => {
+          setRoomReveals((prev) => {
+            const next = [...prev];
+            next[i] = true;
+            return next;
+          });
+        },
+        400 + i * 300,
+      ),
     );
 
     return () => {
@@ -266,7 +273,13 @@ export default function PalaceBlueprint({
               <polygon
                 points={points}
                 fill={room.unlocked ? `${room.color}12` : "transparent"}
-                stroke={room.unlocked ? (isActive ? room.color : `${room.color}60`) : colors.zinc}
+                stroke={
+                  room.unlocked
+                    ? isActive
+                      ? room.color
+                      : `${room.color}60`
+                    : colors.zinc
+                }
                 strokeWidth={isActive ? 2 : 1}
                 strokeDasharray={room.unlocked ? "none" : "4 4"}
               />

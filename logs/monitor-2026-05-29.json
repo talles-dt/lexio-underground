@@ -1,0 +1,61 @@
+{
+  "timestamp": "2026-05-29T00:15:00Z",
+  "status": "partial_failure",
+  "steps": {
+    "collect_system_metrics": "pass",
+    "static_analysis": "fail",
+    "test_suite": "fail",
+    "build_verification": "fail",
+    "self_regulation": "partial_success"
+  },
+  "errors_identified": [
+    {
+      "step": "static_analysis",
+      "errors": [
+        "eslint raw-text violations",
+        "missing react imports",
+        "inline styles",
+        "color literals"
+      ],
+      "autofix_attempted": true,
+      "autofix_status": "partial_success"
+    },
+    {
+      "step": "test_suite",
+      "errors": [
+        "jest environment jsdom not found",
+        "esm import syntax in tests",
+        "superfluous export {}"
+      ],
+      "autofix_attempted": true,
+      "autofix_status": "partial_success"
+    },
+    {
+      "step": "build_verification",
+      "errors": [
+        "nextjs turbopack configuration invalid",
+        "workspace root warning"
+      ],
+      "autofix_attempted": true,
+      "autofix_status": "success"
+    },
+    {
+      "step": "self_regulation",
+      "errors": ["npm install timeout"],
+      "autofix_attempted": false,
+      "autofix_status": "escalated"
+    }
+  ],
+  "warnings": ["node_modules reset failed", "dependency conflicts persistent"],
+  "next_steps": [
+    "Manually run `rm -rf node_modules package-lock.json && npm install` to resolve dependency conflicts.",
+    "Review `src/types/index.d.ts` for completeness.",
+    "Apply remaining `patch` suggestions for raw text, styles, and colors."
+  ],
+  "metadata": {
+    "duration_seconds": 450,
+    "tool_calls": 78,
+    "files_modified": 69,
+    "tests_rewritten": 9
+  }
+}

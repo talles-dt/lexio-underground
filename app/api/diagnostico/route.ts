@@ -2,6 +2,7 @@
 // Submit completed Cartografa results — uses new schema (Phase 3.4 fix)
 import { createClient } from "@supabase/supabase-js";
 import { NextResponse } from "next/server";
+import { NextRequest } from "next/server";
 import { z } from "zod";
 
 const supabaseAdmin = createClient(

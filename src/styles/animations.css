@@ -15,15 +15,27 @@
 }
 
 /* ─── EASING ──────────────────────────────────────────────── */
-.ease-smooth { transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
-.ease-out { transition-timing-function: cubic-bezier(0, 0, 0.2, 1); }
-.ease-in { transition-timing-function: cubic-bezier(0.4, 0, 1, 1); }
-.ease-spring { transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1); }
+.ease-smooth {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.ease-out {
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+.ease-in {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+.ease-spring {
+  transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
 
 /* ─── FADE IN ────────────────────────────────────────────── */
 @keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .anim-fade-in {
@@ -32,8 +44,14 @@
 
 /* ─── SLIDE UP ────────────────────────────────────────────── */
 @keyframes slide-up {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .anim-slide-up {
@@ -42,9 +60,15 @@
 
 /* ─── PULSE (Phosphor) ────────────────────────────────────── */
 @keyframes pulse-phosphor {
-  0% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.5); }
-  50% { box-shadow: 0 0 0 12px rgba(0, 255, 136, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0); }
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(0, 255, 136, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 255, 136, 0);
+  }
 }
 
 .anim-pulse-phosphor {
@@ -53,9 +77,15 @@
 
 /* ─── PULSE (Amber — discovery) ──────────────────────────── */
 @keyframes pulse-amber {
-  0% { box-shadow: 0 0 0 0 rgba(255, 149, 0, 0.6); }
-  50% { box-shadow: 0 0 0 12px rgba(255, 149, 0, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(255, 149, 0, 0); }
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 149, 0, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(255, 149, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 149, 0, 0);
+  }
 }
 
 .anim-pulse-amber {
@@ -64,9 +94,15 @@
 
 /* ─── GLOW (Phosphor) ────────────────────────────────────── */
 @keyframes glow-phosphor {
-  0% { filter: drop-shadow(0 0 4px rgba(0, 255, 136, 0.3)); }
-  50% { filter: drop-shadow(0 0 12px rgba(0, 255, 136, 0.6)); }
-  100% { filter: drop-shadow(0 0 4px rgba(0, 255, 136, 0.3)); }
+  0% {
+    filter: drop-shadow(0 0 4px rgba(0, 255, 136, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(0, 255, 136, 0.6));
+  }
+  100% {
+    filter: drop-shadow(0 0 4px rgba(0, 255, 136, 0.3));
+  }
 }
 
 .anim-glow-phosphor {
@@ -79,19 +115,41 @@
   animation: slide-up var(--anim-slow) ease-out forwards;
 }
 
-.anim-stagger > *:nth-child(1) { animation-delay: 0ms; }
-.anim-stagger > *:nth-child(2) { animation-delay: 100ms; }
-.anim-stagger > *:nth-child(3) { animation-delay: 200ms; }
-.anim-stagger > *:nth-child(4) { animation-delay: 300ms; }
-.anim-stagger > *:nth-child(5) { animation-delay: 400ms; }
-.anim-stagger > *:nth-child(6) { animation-delay: 500ms; }
-.anim-stagger > *:nth-child(7) { animation-delay: 600ms; }
-.anim-stagger > *:nth-child(8) { animation-delay: 700ms; }
+.anim-stagger > *:nth-child(1) {
+  animation-delay: 0ms;
+}
+.anim-stagger > *:nth-child(2) {
+  animation-delay: 100ms;
+}
+.anim-stagger > *:nth-child(3) {
+  animation-delay: 200ms;
+}
+.anim-stagger > *:nth-child(4) {
+  animation-delay: 300ms;
+}
+.anim-stagger > *:nth-child(5) {
+  animation-delay: 400ms;
+}
+.anim-stagger > *:nth-child(6) {
+  animation-delay: 500ms;
+}
+.anim-stagger > *:nth-child(7) {
+  animation-delay: 600ms;
+}
+.anim-stagger > *:nth-child(8) {
+  animation-delay: 700ms;
+}
 
 /* ─── SCALE IN ────────────────────────────────────────────── */
 @keyframes scale-in {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .anim-scale-in {
@@ -100,8 +158,12 @@
 
 /* ─── CORRECT FLASH (Ivory) ──────────────────────────────── */
 @keyframes flash-correct {
-  0% { background-color: rgba(245, 240, 232, 0.15); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(245, 240, 232, 0.15);
+  }
+  100% {
+    background-color: transparent;
+  }
 }
 
 .anim-flash-correct {
@@ -110,8 +172,12 @@
 
 /* ─── DISCOVERY FLASH (Amber) ────────────────────────────── */
 @keyframes flash-discovery {
-  0% { background-color: rgba(255, 149, 0, 0.15); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(255, 149, 0, 0.15);
+  }
+  100% {
+    background-color: transparent;
+  }
 }
 
 .anim-flash-discovery {
@@ -120,9 +186,15 @@
 
 /* ─── PULSE MODE BUTTON ───────────────────────────────────── */
 @keyframes pulse-btn-glow {
-  0% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.5); }
-  50% { box-shadow: 0 0 0 8px rgba(0, 255, 136, 0.3); }
-  100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.5); }
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(0, 255, 136, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.5);
+  }
 }
 
 .pulse-indicator {
@@ -131,8 +203,12 @@
 
 /* ─── BLUEPRINT DRAW ──────────────────────────────────────── */
 @keyframes blueprint-draw {
-  from { stroke-dashoffset: 100%; }
-  to { stroke-dashoffset: 0; }
+  from {
+    stroke-dashoffset: 100%;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 .anim-blueprint-draw {
@@ -142,8 +218,12 @@
 
 /* ─── RIPPLE (General) ─────────────────────────────────────── */
 @keyframes ripple {
-  0% { box-shadow: 0 0 0 0 var(--ripple-color, rgba(0, 255, 136, 0.5)); }
-  100% { box-shadow: 0 0 0 16px var(--ripple-color, rgba(0, 255, 136, 0)); }
+  0% {
+    box-shadow: 0 0 0 0 var(--ripple-color, rgba(0, 255, 136, 0.5));
+  }
+  100% {
+    box-shadow: 0 0 0 16px var(--ripple-color, rgba(0, 255, 136, 0));
+  }
 }
 
 .anim-ripple {
@@ -152,9 +232,15 @@
 
 /* ─── PROGRESS GLOW ────────────────────────────────────────── */
 @keyframes progress-glow {
-  0% { opacity: 0.6; }
-  50% { opacity: 1; }
-  100% { opacity: 0.6; }
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
 }
 
 .anim-progress-active {

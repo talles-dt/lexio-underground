@@ -1,0 +1,13 @@
+# Lexio Underground: Ignore files too large for Prettier
+**/node_modules
+.next
+.next/
+**/*.min.js
+**/*.min.css
+**/dist
+**/build
+.DS_Store
+*.svg
+
+# Large files with fragments
+app/diagnostico/page.tsx

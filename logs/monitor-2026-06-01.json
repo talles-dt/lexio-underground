@@ -1,0 +1,77 @@
+{
+  "timestamp": "2026-06-01T00:15:00Z",
+  "status": "warning",
+  "steps": [
+    {
+      "name": "system-metrics",
+      "status": "pass",
+      "details": {
+        "node_version": "v22.22.2",
+        "env_vars": "supabase_url=http://mock.supabase.url"
+      }
+    },
+    {
+      "name": "static-analysis",
+      "status": "fail",
+      "details": {
+        "typescript_errors": 144,
+        "eslint_config": ".eslintrc.json created (but plugins install blocked)",
+        "prettier_warnings": 2
+      }
+    },
+    {
+      "name": "test-suite",
+      "status": "blocked",
+      "details": {
+        "error": "Duplicate Jest configs (resolved: removed jest.config.cjs), security scan blocked test execution"
+      }
+    },
+    {
+      "name": "build",
+      "status": "fail",
+      "details": {
+        "error": "React 19 upgrade required, blocked by dependency conflicts",
+        "dependencies_blocking": ["@supabase/auth-helpers-nextjs@^0.10.1"]
+      }
+    }
+  ],
+  "warnings": [
+    "Supabase URL is placeholder (http://mock.supabase.url)",
+    "Dependency conflicts blocking upgrades: @supabase/auth-helpers-nextjs@^0.10.1 not found",
+    "ESLint plugins install blocked by dependency conflicts",
+    "React 19 upgrade blocked",
+    "Test execution blocked by security scan (schemeless URL in --config)"
+  ],
+  "auto_fixes_applied": [
+    "package.json: added 'type: \"module\"'",
+    "next.config.mjs: added Turbopack extensions",
+    "Top 5 ESM imports patched with .js extensions",
+    "Created .eslintrc.json for ESLint",
+    "Fixed Prettier JSON syntax error in log file",
+    "Removed duplicate jest.config.cjs",
+    "Downgraded ESLint to 8.56.0 (attempted, blocked by dependency conflicts)"
+  ],
+  "critical_issues_pending": [
+    {
+      "issue": "Supabase URL placeholder",
+      "mitigation": "Replace http://mock.supabase.url with valid Supabase URL in .env.local"
+    },
+    {
+      "issue": "React 19 upgrade blocked",
+      "mitigation": "Resolve dependency conflicts (pin or upgrade @supabase/auth-helpers-nextjs)"
+    },
+    {
+      "issue": "ESLint plugins missing",
+      "mitigation": "Install @typescript-eslint/eslint-plugin, eslint-plugin-react, eslint-plugin-react-native after resolving conflicts"
+    }
+  ],
+  "escalation": {
+    "required": true,
+    "reason": "Dependency conflicts and Supabase URL placeholder require manual intervention",
+    "actions": [
+      "grep -r "http://mock.supabase.url" .env.local && replace with valid SUPABASE_URL",
+      "npm install @supabase/auth-helpers-nextjs@latest --save --legacy-peer-deps",
+      "npm install react@19.0.0-rc.0 react-dom@19.0.0-rc.0 --save --legacy-peer-deps"
+    ]
+  }
+}

@@ -17,22 +17,23 @@ export async function POST(req: NextRequest) {
     const { event, user_id, properties } = body;
 
     if (!event) {
-      return NextResponse.json({ error: "event name required" }, { status: 400 });
+      return NextResponse.json(
+        { error: "event name required" },
+        { status: 400 },
+      );
     }
 
     // Log the event
-    const { error } = await supabaseAdmin
-      .from("telemetry")
-      .insert([
-        {
-          event,
-          user_id: user_id || null,
-          properties: properties || {},
-          user_agent: req.headers.get("user-agent") || null,
-          ip: req.headers.get("x-forwarded-for") || null,
-          timestamp: new Date().toISOString(),
-        },
-      ]);
+    const { error } = await supabaseAdmin.from("telemetry").insert([
+      {
+        event,
+        user_id: user_id || null,
+        properties: properties || {},
+        user_agent: req.headers.get("user-agent") || null,
+        ip: req.headers.get("x-forwarded-for") || null,
+        timestamp: new Date().toISOString(),
+      },
+    ]);
 
     if (error) {
       console.error("Track error:", error);

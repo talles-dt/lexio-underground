@@ -30,7 +30,13 @@ interface PulseModeProps {
   onReviewComplete?: (
     itemId: string,
     quality: ReviewResult["quality"],
-    updatedSM2: { easeFactor: number; intervalDays: number; repetitions: number; nextReview: Date; isMastered: boolean },
+    updatedSM2: {
+      easeFactor: number;
+      intervalDays: number;
+      repetitions: number;
+      nextReview: Date;
+      isMastered: boolean;
+    },
   ) => void;
   onClose?: () => void;
 }
@@ -200,7 +206,9 @@ export default function PulseMode({
 }: PulseModeProps) {
   const [queue, setQueue] = useState<PulseItem[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedQuality, setSelectedQuality] = useState<ReviewResult["quality"] | null>(null);
+  const [selectedQuality, setSelectedQuality] = useState<
+    ReviewResult["quality"] | null
+  >(null);
   const [showExplanation, setShowExplanation] = useState(false);
   const [completed, setCompleted] = useState(false);
   const [startTime] = useState(Date.now());
@@ -212,7 +220,7 @@ export default function PulseMode({
   }, [items]);
 
   const currentItem = queue[currentIndex];
-  const progress = queue.length > 0 ? ((currentIndex) / queue.length) * 100 : 0;
+  const progress = queue.length > 0 ? (currentIndex / queue.length) * 100 : 0;
   const elapsed = Math.floor((Date.now() - startTime) / 1000);
 
   const handleSubmit = useCallback(() => {
@@ -238,7 +246,13 @@ export default function PulseMode({
     } else {
       setCompleted(true);
     }
-  }, [selectedQuality, currentItem, currentIndex, queue.length, onReviewComplete]);
+  }, [
+    selectedQuality,
+    currentItem,
+    currentIndex,
+    queue.length,
+    onReviewComplete,
+  ]);
 
   // Loading state
   if (queue.length === 0) {
@@ -248,7 +262,8 @@ export default function PulseMode({
           <p style={{ fontSize: 48, marginBottom: spacing[3] }}>🎉</p>
           <h2 style={s.title}>All caught up!</h2>
           <p style={s.subtitle}>
-            No items due for review. Come back later or add more items to your palace.
+            No items due for review. Come back later or add more items to your
+            palace.
           </p>
           {onClose && (
             <button style={s.btn} onClick={onClose}>
@@ -270,7 +285,8 @@ export default function PulseMode({
           <p style={{ fontSize: 48, marginBottom: spacing[3] }}>⚡</p>
           <h2 style={s.title}>Pulse Complete!</h2>
           <p style={s.subtitle}>
-            {queue.length} items reviewed in {minutes}:{seconds.toString().padStart(2, "0")}
+            {queue.length} items reviewed in {minutes}:
+            {seconds.toString().padStart(2, "0")}
           </p>
           <p
             style={{
@@ -298,7 +314,9 @@ export default function PulseMode({
     <div style={s.overlay}>
       <div style={s.card}>
         {/* Header */}
-        <p style={{ fontSize: 11, color: colors.zinc, marginBottom: spacing[1] }}>
+        <p
+          style={{ fontSize: 11, color: colors.zinc, marginBottom: spacing[1] }}
+        >
           Pulse Mode — {currentIndex + 1} of {queue.length}
         </p>
         <div style={s.progressBar}>
@@ -309,7 +327,8 @@ export default function PulseMode({
         <p
           style={{ fontSize: 11, color: colors.zinc, marginBottom: spacing[3] }}
         >
-          ⏱ {Math.floor(elapsed / 60)}:{(elapsed % 60).toString().padStart(2, "0")}
+          ⏱ {Math.floor(elapsed / 60)}:
+          {(elapsed % 60).toString().padStart(2, "0")}
         </p>
 
         {/* Item card */}
@@ -389,7 +408,9 @@ export default function PulseMode({
           ].map(({ val, label }) => (
             <div key={val} style={{ textAlign: "center" }}>
               <button
-                onClick={() => setSelectedQuality(val as ReviewResult["quality"])}
+                onClick={() =>
+                  setSelectedQuality(val as ReviewResult["quality"])
+                }
                 style={{
                   ...s.qualityBtn,
                   ...(selectedQuality === val ? s.qualityBtnSelected : {}),

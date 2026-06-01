@@ -2,7 +2,8 @@
 // ElevenLabs TTS for palace item pronunciation (Phase 5.7)
 // Returns audio stream for a given text
 
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
+import { NextRequest } from "next/server";
 
 // Default voice: Rachel (clear, neutral American English)
 const DEFAULT_VOICE = "21m00Tcm4TlvDq8ikWAM";
@@ -21,7 +22,8 @@ export async function POST(req: NextRequest) {
         mock: true,
         text,
         audio_url: null,
-        message: "ElevenLabs API key not configured. Set ELEVENLABS_API_KEY in .env.local",
+        message:
+          "ElevenLabs API key not configured. Set ELEVENLABS_API_KEY in .env.local",
       });
     }
 
@@ -32,7 +34,7 @@ export async function POST(req: NextRequest) {
       {
         method: "POST",
         headers: {
-          "Accept": "audio/mpeg",
+          Accept: "audio/mpeg",
           "Content-Type": "application/json",
           "xi-api-key": process.env.ELEVENLABS_API_KEY,
         },
@@ -65,7 +67,10 @@ export async function POST(req: NextRequest) {
     });
   } catch (err) {
     console.error("TTS error:", err);
-    return NextResponse.json({ error: "Failed to generate speech" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to generate speech" },
+      { status: 500 },
+    );
   }
 }
 
@@ -73,9 +78,7 @@ export async function POST(req: NextRequest) {
 export async function GET() {
   if (!process.env.ELEVENLABS_API_KEY) {
     return NextResponse.json({
-      voices: [
-        { voice_id: DEFAULT_VOICE, name: "Rachel (Default)" },
-      ],
+      voices: [{ voice_id: DEFAULT_VOICE, name: "Rachel (Default)" }],
       mock: true,
     });
   }
@@ -95,6 +98,9 @@ export async function GET() {
     return NextResponse.json({ voices: data.voices });
   } catch (err) {
     console.error("Voices fetch error:", err);
-    return NextResponse.json({ error: "Failed to fetch voices" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to fetch voices" },
+      { status: 500 },
+    );
   }
 }

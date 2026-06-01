@@ -7,9 +7,9 @@ export interface ReviewResult {
 }
 
 export interface SM2State {
-  easeFactor: number;     // starting at 2.5
-  intervalDays: number;   // current interval in days
-  repetitions: number;    // consecutive correct responses
+  easeFactor: number; // starting at 2.5
+  intervalDays: number; // current interval in days
+  repetitions: number; // consecutive correct responses
 }
 
 export interface SM2Update {
@@ -23,10 +23,7 @@ export interface SM2Update {
 const MIN_EASE_FACTOR = 1.3;
 const MASTERED_INTERVAL = 180; // 6 months = mastered
 
-export function applySM2(
-  state: SM2State,
-  result: ReviewResult,
-): SM2Update {
+export function applySM2(state: SM2State, result: ReviewResult): SM2Update {
   const { quality } = result;
   const q = quality;
 
@@ -77,7 +74,10 @@ export function applySM2(
 }
 
 // Map Cartografa answer correctness to SM-2 quality
-export function cartografaToQuality(correct: boolean, confidence?: number): ReviewResult["quality"] {
+export function cartografaToQuality(
+  correct: boolean,
+  confidence?: number,
+): ReviewResult["quality"] {
   if (!correct) return 1; // wrong = near blackout
   if (!confidence) return 3; // correct but unsure
   if (confidence >= 0.9) return 5; // perfect
@@ -87,13 +87,29 @@ export function cartografaToQuality(correct: boolean, confidence?: number): Revi
 
 // Get daily review queue from items sorted by next_review
 export function getDailyReviewQueue(
-  items: { id: string; next_review: string; pillar: string; title: string; content: string; explanation?: string }[],
+  items: {
+    id: string;
+    next_review: string;
+    pillar: string;
+    title: string;
+    content: string;
+    explanation?: string;
+  }[],
   maxItems: number = 7,
-): { id: string; pillar: string; title: string; content: string; explanation?: string }[] {
+): {
+  id: string;
+  pillar: string;
+  title: string;
+  content: string;
+  explanation?: string;
+}[] {
   const now = new Date();
   const due = items
     .filter((item) => new Date(item.next_review) <= now)
-    .sort((a, b) => new Date(a.next_review).getTime() - new Date(b.next_review).getTime())
+    .sort(
+      (a, b) =>
+        new Date(a.next_review).getTime() - new Date(b.next_review).getTime(),
+    )
     .slice(0, maxItems);
 
   return due;

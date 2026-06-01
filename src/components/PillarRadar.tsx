@@ -227,20 +227,18 @@ export default function PillarRadar({
               />
             )}
             {/* Connect last to first to close the pentagon if all active */}
-            {i === 4 &&
-              pillarProgress[0] > 0 &&
-              pillarProgress[4] > 0 && (
-                <line
-                  x1={x}
-                  y1={y}
-                  x2={currentDataPoints[0][0]}
-                  y2={currentDataPoints[0][1]}
-                  stroke={colors.phosphor}
-                  strokeWidth={1.5}
-                  strokeOpacity={0.6}
-                  style={{ transition: "all 0.2s ease" }}
-                />
-              )}
+            {i === 4 && pillarProgress[0] > 0 && pillarProgress[4] > 0 && (
+              <line
+                x1={x}
+                y1={y}
+                x2={currentDataPoints[0][0]}
+                y2={currentDataPoints[0][1]}
+                stroke={colors.phosphor}
+                strokeWidth={1.5}
+                strokeOpacity={0.6}
+                style={{ transition: "all 0.2s ease" }}
+              />
+            )}
 
             {/* Data point circle */}
             {isActive && (
@@ -268,7 +266,10 @@ export default function PillarRadar({
                 fontSize={11}
                 fontFamily="system-ui, -apple-system, sans-serif"
                 fontWeight={600}
-                style={{ opacity: isComplete ? 1 : 0, transition: "opacity 0.3s ease" }}
+                style={{
+                  opacity: isComplete ? 1 : 0,
+                  transition: "opacity 0.3s ease",
+                }}
               >
                 {Math.round(score * 100)}%
               </text>
@@ -288,7 +289,13 @@ export default function PillarRadar({
         const isComplete = prog >= 1;
 
         return (
-          <g key={i} style={{ opacity: isActive ? 1 : 0, transition: "opacity 0.4s ease" }}>
+          <g
+            key={i}
+            style={{
+              opacity: isActive ? 1 : 0,
+              transition: "opacity 0.4s ease",
+            }}
+          >
             {/* Pillar name */}
             <text
               x={x}

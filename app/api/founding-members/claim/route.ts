@@ -2,7 +2,8 @@
 // Founding member license claim (Phase 5.5)
 // Only Cartografa completers can claim a founding member license
 
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
+import { NextRequest } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 
 const supabaseAdmin = createClient(
@@ -42,7 +43,7 @@ export async function POST(req: NextRequest) {
       .from("founders")
       .select("*")
       .eq("license_key", license_key)
-      .is("claimed_at", null)  // not yet claimed
+      .is("claimed_at", null) // not yet claimed
       .single();
 
     if (licenseError || !license) {

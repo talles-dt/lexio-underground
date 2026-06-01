@@ -1,0 +1,3 @@
+# Syntax false positive due to fragment (<>...</>)
+# Prettier fails to parse large JSX files with fragments
+app/diagnostico/page.tsx

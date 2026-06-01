@@ -33,7 +33,8 @@ async function callOpenRouter(
     headers: {
       Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
       "Content-Type": "application/json",
-      "HTTP-Referer": process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
+      "HTTP-Referer":
+        process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
     },
     body: JSON.stringify({
       model: config.model || OPENROUTER_MODEL,

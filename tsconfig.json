@@ -3,14 +3,18 @@
   "compilerOptions": {
     "strict": true,
     "baseUrl": ".",
+    "rootDir": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*", "./app/*", "./lib/*"]
     },
-    "jsx": "react-native",
+    "jsx": "preserve",
     "esModuleInterop": true,
-    "module": "Node16",
-    "moduleResolution": "Node16"
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "incremental": true,
+    "isolatedModules": true,
+    "customConditions": []
   },
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": ["**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["supabase/functions/**/*"]
 }
