@@ -51,7 +51,7 @@ describe("Founding Member Claim Logic", () => {
 
     it("accepts valid user_id", () => {
       expect(validateUserId("550e8400-e29b-41d4-a716-446655440000").valid).toBe(
-        true,
+        true
       );
     });
   });

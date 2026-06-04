@@ -1,3 +1,12 @@
+export type Pillar =
+  | "mushin"
+  | "kobo"
+  | "ki"
+  | "rei"
+  | "zanshin"
+  | "yomi"
+  | "maai";
+
 export type MaturityStage =
   | "roots"
   | "sprouts"

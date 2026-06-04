@@ -1,4 +1,4 @@
-import { TextInput, StyleSheet, TextInputProps } from "react-native";
+import { TextInput, StyleSheet, TextInputProps, Text } from "react-native";
 import React from "react";
 import { colors, radius, typography } from "@/theme/tokens";
 

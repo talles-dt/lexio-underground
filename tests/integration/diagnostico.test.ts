@@ -6,7 +6,7 @@ test("POST /api/diagnostico returns mock share token", async () => {
           ok: true,
           json: () => Promise.resolve({ share_token: "mock" }),
         } as Response)
-      : Promise.reject(new Error("Mock not configured")),
+      : Promise.reject(new Error("Mock not configured"))
   );
 
   const response = await fetch("http://localhost:3000/api/diagnostico", {

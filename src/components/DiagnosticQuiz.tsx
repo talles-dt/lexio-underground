@@ -30,7 +30,7 @@ export function DiagnosticQuiz({
   const [shareLink, setShareLink] = React.useState<string>("");
   const [expandedWhy, setExpandedWhy] = React.useState<string | null>(null); // Track which question's "Why?" is expanded
   const [activeQuestion, setActiveQuestion] = React.useState<string | null>(
-    null,
+    null
   ); // Track which option is currently tapped
 
   // Updated questions with explicit Lexio DNA:
@@ -85,7 +85,7 @@ export function DiagnosticQuiz({
       if (response.ok) {
         const data = await response.json();
         setShareLink(
-          `https://liceu.underground/diagnostico/${data.share_token}`,
+          `https://liceu.underground/diagnostico/${data.share_token}`
         );
         setSubmitted(true);
         onShareToken(data.share_token);
@@ -121,8 +121,10 @@ export function DiagnosticQuiz({
               />
             </View>
             <Text style={styles.resultTitle}>Obrigado!</Text>
+            <Text style={styles.resultSubtitle}>
+              Compartilhe seu resultado:
+            </Text>
           </View>
-          <Text style={styles.resultSubtitle}>Compartilhe seu resultado:</Text>
           <View style={styles.shareInputContainer}>
             <View style={styles.shareInput}>
               <Text style={styles.shareLink}>{shareLink}</Text>
@@ -131,12 +133,19 @@ export function DiagnosticQuiz({
               style={styles.copyButton}
               onPress={() => {
                 Clipboard.setStringAsync(shareLink);
-                // TODO: Show toast using duration.instant or duration.fast
               }}
             >
               <Text style={styles.copyButtonText}>Copiar link</Text>
             </Pressable>
           </View>
+          <View style={styles.skipContainer}>
+            <Pressable style={styles.skipButton} onPress={handleSkip}>
+              <Text style={styles.skipText}>Pular</Text>
+            </Pressable>
+          </View>
+          <Pressable style={styles.button} onPress={handleSubmit}>
+            <Text style={styles.buttonText}>Enviar</Text>
+          </Pressable>
         </View>
       </View>
     );
@@ -169,7 +178,7 @@ export function DiagnosticQuiz({
                 key={val}
                 style={[
                   styles.optionRow,
-                  activeQuestion === `${q.id}-${val}` && styles.optionRowActive, // Highlight when tapped
+                  activeQuestion === `${q.id}-${val}` && styles.optionRowActive,
                 ]}
               >
                 <Pressable
@@ -177,11 +186,11 @@ export function DiagnosticQuiz({
                     styles.radioButton,
                     answers[q.id] === val ? styles.radioButtonSelected : null,
                   ]}
-                  onPressIn={() => setActiveQuestion(`${q.id}-${val}`)} // Start highlight on press
-                  onPressOut={() => setActiveQuestion(null)} // End highlight when released
+                  onPressIn={() => setActiveQuestion(`${q.id}-${val}`)}
+                  onPressOut={() => setActiveQuestion(null)}
                   onPress={() => {
                     setAnswers((prev) => ({ ...prev, [q.id]: val }));
-                    setActiveQuestion(null); // Remove highlight after selection
+                    setActiveQuestion(null);
                   }}
                 >
                   <View style={styles.radioInner} />
@@ -189,7 +198,6 @@ export function DiagnosticQuiz({
                 <Text style={styles.optionText}>{val}</Text>
               </View>
             ))}
-            {/* Expandable "Why?" section in amber italic */}
             {expandedWhy === q.id && (
               <View style={styles.whyContainer}>
                 <Text style={styles.whyText}>{q.whyExplanation}</Text>
@@ -198,7 +206,7 @@ export function DiagnosticQuiz({
             <Pressable
               style={styles.whyButton}
               onPress={() => {
-                setExpandedWhy(expandedWhy === q.id ? null : q.id); // Toggle expansion
+                setExpandedWhy(expandedWhy === q.id ? null : q.id);
               }}
             >
               <Text style={styles.whyToggleText}>
@@ -258,10 +266,10 @@ const styles = StyleSheet.create({
     borderRadius: radius.btn,
     borderWidth: 1,
     color: colors.ivory,
+    marginBottom: spacing[4],
     paddingHorizontal: spacing[3],
     paddingVertical: spacing[2],
     ...typography.ui,
-    marginBottom: spacing[4],
   },
   logoMark: {
     marginRight: spacing[2],
@@ -276,10 +284,10 @@ const styles = StyleSheet.create({
     // Temporary highlight style when tapped
     backgroundColor: colors.phosphorFixedDim, // surface-tint from stitch (dimmed phosphor)
     borderRadius: radius.btn,
-    paddingHorizontal: spacing[2],
-    paddingVertical: spacing[1],
     marginHorizontal: -spacing[2], // Compensate for padding
     marginVertical: -spacing[1], // Compensate for padding
+    paddingHorizontal: spacing[2],
+    paddingVertical: spacing[1],
   },
   optionText: {
     ...typography.ui,

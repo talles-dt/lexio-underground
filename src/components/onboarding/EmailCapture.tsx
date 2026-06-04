@@ -1,6 +1,7 @@
 "use client";
 
 // src/components/onboarding/EmailCapture.tsx
+import React from "react";
 import { View, StyleSheet, Text, Pressable } from "react-native";
 import { Input } from "@/components/ui";
 import { colors, typography, spacing } from "@/theme/tokens";
@@ -12,6 +13,9 @@ export const EmailCapture = ({
 }) => {
   const [email, setEmail] = React.useState("");
   const [interest, setInterest] = React.useState("");
+
+  const handleEmailChange = (email: string) => setEmail(email);
+  const handleInterestChange = (interest: string) => setInterest(interest);
 
   const handleSubmit = () => {
     if (email.trim() && interest.trim()) {
@@ -28,7 +32,7 @@ export const EmailCapture = ({
       <Input
         placeholder="your@email.com"
         value={email}
-        onChangeText={setEmail}
+        onChangeText={handleEmailChange}
         autoCapitalize="none"
         keyboardType="email-address"
         placeholderTextColor={colors.zinc}
@@ -40,7 +44,7 @@ export const EmailCapture = ({
       <Input
         placeholder="Where do you want to anchor this lesson?"
         value={interest}
-        onChangeText={setInterest}
+        onChangeText={handleInterestChange}
         placeholderTextColor={colors.zinc}
         style={styles.input}
       />

@@ -4,11 +4,25 @@ import { createClient } from "@supabase/supabase-js";
 import { NextResponse } from "next/server";
 import { NextRequest } from "next/server";
 
-const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL || "",
-  process.env.SUPABASE_SERVICE_ROLE_KEY || "",
-  { auth: { persistSession: false } },
-);
+let _supabaseAdmin: any = null;
+function getSupabaseAdmin() {
+  if (!_supabaseAdmin) {
+    const { createClient } = require("@supabase/supabase-js");
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
+    const key = process.env.SUPABASE_SERVICE_ROLE_KEY || "";
+    if (!url || !key) {
+      _supabaseAdmin = createClient(
+        "https://placeholder.supabase.co",
+        "placeholder"
+      );
+    } else {
+      _supabaseAdmin = createClient(url, key, {
+        auth: { persistSession: false },
+      });
+    }
+  }
+  return _supabaseAdmin;
+}
 
 export async function POST(request: Request) {
   try {
@@ -28,27 +42,29 @@ export async function POST(request: Request) {
     if (!session_id || !email) {
       return NextResponse.json(
         { error: "session_id and email are required" },
-        { status: 400 },
+        { status: 400 }
       );
     }
 
     // Upsert: create or update the session record
-    const { error } = await supabaseAdmin.from("diagnostic_sessions").upsert(
-      {
-        id: session_id,
-        email,
-        state: {
-          current_pillar,
-          current_stage,
-          current_difficulty,
-          answered_ids,
-          pillar_states,
+    const { error } = await getSupabaseAdmin()
+      .from("diagnostic_sessions")
+      .upsert(
+        {
+          id: session_id,
+          email,
+          state: {
+            current_pillar,
+            current_stage,
+            current_difficulty,
+            answered_ids,
+            pillar_states,
+          },
+          raw_response_log: history,
+          updated_at: new Date().toISOString(),
         },
-        raw_response_log: history,
-        updated_at: new Date().toISOString(),
-      },
-      { onConflict: "id" },
-    );
+        { onConflict: "id" }
+      );
 
     if (error) {
       console.error("Save-state error:", error);
@@ -60,7 +76,7 @@ export async function POST(request: Request) {
     console.error("Save-state parse error:", err);
     return NextResponse.json(
       { error: "Invalid request body" },
-      { status: 400 },
+      { status: 400 }
     );
   }
 }

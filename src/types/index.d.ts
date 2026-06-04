@@ -1,12 +1,14 @@
-// Global type declarations
+// src/types/index.d.ts
+// Type declarations
 
-// Supabase
-declare module "@/lib/supabase" {
+// Export Pillar as a union string literal
+export type Pillar = "grammar" | "logic" | "vocab" | "culture" | "comm";
+
+declare module "../../lib/supabase" {
   import { SupabaseClient } from "@supabase/supabase-js";
   export const supabase: SupabaseClient;
 }
 
-// Theme tokens
 interface Theme {
   colors: {
     [key: string]: string;
@@ -19,7 +21,6 @@ declare module "@/theme/tokens" {
   export default theme;
 }
 
-// LearnerStore
 declare module "@/stores/learnerStore" {
   import LearnerStore from "@/types";
   export { LearnerStore };
@@ -31,17 +32,19 @@ declare module "@/components/PillarRadar" {
   export default PillarRadar;
 }
 
-// Other components
+// ShareCard
 declare module "@/components/ShareCard" {
   const ShareCard: React.FC<{ shareToken: string }>;
   export default ShareCard;
 }
 
+// RoadmapPreview
 declare module "@/components/RoadmapPreview" {
   const RoadmapPreview: React.FC<{ rooms: any[] }>;
   export default RoadmapPreview;
 }
 
+// SignupForm
 declare module "@/components/SignupForm" {
   const SignupForm: React.FC;
   export default SignupForm;

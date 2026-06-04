@@ -1,7 +1,7 @@
 "use client";
 
 import React, { createContext, useContext } from "react";
-import * as tokens from "./tokens";
+import tokens from "./tokens";
 export { tokens };
 export type Theme = typeof tokens;
 

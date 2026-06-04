@@ -5,11 +5,25 @@ import { NextResponse } from "next/server";
 import { NextRequest } from "next/server";
 import { z } from "zod";
 
-const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL || "",
-  process.env.SUPABASE_SERVICE_ROLE_KEY || "",
-  { auth: { persistSession: false } },
-);
+let _supabaseAdmin: any = null;
+function getSupabaseAdmin() {
+  if (!_supabaseAdmin) {
+    const { createClient } = require("@supabase/supabase-js");
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
+    const key = process.env.SUPABASE_SERVICE_ROLE_KEY || "";
+    if (!url || !key) {
+      _supabaseAdmin = createClient(
+        "https://placeholder.supabase.co",
+        "placeholder"
+      );
+    } else {
+      _supabaseAdmin = createClient(url, key, {
+        auth: { persistSession: false },
+      });
+    }
+  }
+  return _supabaseAdmin;
+}
 
 const DiagnosticSchema = z.object({
   email: z.string().email(),
@@ -22,7 +36,7 @@ const DiagnosticSchema = z.object({
         score: z.number(),
         confidence: z.number(),
         gap_nodes: z.array(z.any()),
-      }),
+      })
     ),
     map_of_ignorance: z.array(z.any()),
     overall_readiness: z.string(),
@@ -42,7 +56,7 @@ export async function POST(req: Request) {
   if (!parsed.success) {
     return NextResponse.json(
       { error: "Invalid request body", details: parsed.error.flatten() },
-      { status: 400 },
+      { status: 400 }
     );
   }
 
@@ -51,7 +65,7 @@ export async function POST(req: Request) {
   // Determine archetype from strongest pillar
   const pillarScores = results.pillar_scores;
   const strongest = Object.entries(pillarScores).sort(
-    (a, b) => b[1].score - a[1].score,
+    (a, b) => b[1].score - a[1].score
   )[0];
 
   const archetypeMap: Record<string, { key: string; name: string }> = {
@@ -88,13 +102,13 @@ export async function POST(req: Request) {
   // If session_id provided, update existing save-state record; otherwise insert new
   let query;
   if (session_id) {
-    query = supabaseAdmin
+    query = getSupabaseAdmin()
       .from("diagnostic_sessions")
       .update(record)
       .eq("id", session_id)
       .select("share_token");
   } else {
-    query = supabaseAdmin
+    query = getSupabaseAdmin()
       .from("diagnostic_sessions")
       .insert([record])
       .select("share_token");
@@ -106,7 +120,7 @@ export async function POST(req: Request) {
     console.error("Diagnostic insert error:", insertError);
     return NextResponse.json(
       { error: insertError?.message || "Failed to create session" },
-      { status: 500 },
+      { status: 500 }
     );
   }
 

@@ -31,7 +31,7 @@ const PILLAR_COLORS: Record<string, string> = {
 function getPentagonPoints(
   cx: number,
   cy: number,
-  radius: number,
+  radius: number
 ): [number, number][] {
   const points: [number, number][] = [];
   for (let i = 0; i < 5; i++) {
@@ -46,7 +46,7 @@ function scalePoint(
   point: [number, number],
   cx: number,
   cy: number,
-  factor: number,
+  factor: number
 ): [number, number] {
   return [cx + (point[0] - cx) * factor, cy + (point[1] - cy) * factor];
 }

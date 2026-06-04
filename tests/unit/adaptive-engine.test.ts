@@ -1,15 +1,14 @@
 // tests/unit/adaptive-engine.test.ts
 // Unit tests for the Cartografa adaptive engine
 
-import {
+const {
   createInitialState,
   selectNextQuestion,
   processAnswer,
   generateResults,
   getStageName,
-  getStageDescription,
   getReadinessLabel,
-} from "../../src/cartografa/adaptive-engine";
+} = require("../../src/cartografa/adaptive-engine");
 
 describe("Adaptive Engine", () => {
   describe("createInitialState", () => {
@@ -202,7 +201,7 @@ describe("Adaptive Engine", () => {
       expect(results.pillar_scores).toBeDefined();
       expect(results.map_of_ignorance).toBeDefined();
       expect(results.overall_readiness).toMatch(
-        /^(roots|sprouts|branches|canopy|underground)$/,
+        /^(roots|sprouts|branches|canopy|underground)$/
       );
       expect(results.recommended_focus).toHaveLength(2);
       expect(results.identity_callout).toBeTruthy();

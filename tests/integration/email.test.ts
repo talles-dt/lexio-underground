@@ -1,4 +1,4 @@
-import nodemailer from "nodemailer";
+const nodemailer = require("nodemailer");
 
 jest.mock("nodemailer");
 const mockSMTPTransport = {
@@ -33,7 +33,7 @@ describe("SMTP fallback", () => {
           archetype_name: "Silence",
           share_token: "test-token",
         }),
-      },
+      }
     );
     expect(mockSMTPTransport.sendMail).toHaveBeenCalled();
     fetchSpy.mockRestore();

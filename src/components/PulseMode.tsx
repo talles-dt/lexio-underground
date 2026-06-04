@@ -1,4 +1,5 @@
-"use client";
+import React from "react";
+("use client");
 
 import { useState, useCallback, useEffect } from "react";
 import { colors, spacing, radius } from "@/theme/tokens";
@@ -10,18 +11,18 @@ import {
 } from "@/palace/spaced-repetition";
 
 // ─── TYPES ──────────────────────────────────────────────────
-export interface PulseItem {
+interface PulseItem {
   id: string;
+  next_review: string;
   pillar: string;
   title: string;
   content: string;
   explanation?: string;
-  itemType: string;
+  itemType: "word" | "chunk" | "cultural_atom";
   icon: string;
   easeFactor: number;
   intervalDays: number;
   repetitions: number;
-  nextReview: string;
 }
 
 interface PulseModeProps {
@@ -36,7 +37,7 @@ interface PulseModeProps {
       repetitions: number;
       nextReview: Date;
       isMastered: boolean;
-    },
+    }
   ) => void;
   onClose?: () => void;
 }
@@ -204,7 +205,6 @@ export default function PulseMode({
   onReviewComplete,
   onClose,
 }: PulseModeProps) {
-  const [queue, setQueue] = useState<PulseItem[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedQuality, setSelectedQuality] = useState<
     ReviewResult["quality"] | null
@@ -212,10 +212,24 @@ export default function PulseMode({
   const [showExplanation, setShowExplanation] = useState(false);
   const [completed, setCompleted] = useState(false);
   const [startTime] = useState(Date.now());
+  const [queue, setQueue] = useState<PulseItem[]>([]);
 
   // Build daily review queue on mount
   useEffect(() => {
-    const daily = getDailyReviewQueue(items, 7);
+    const daily = getDailyReviewQueue(items, 7).map((item) => ({
+      ...item,
+      id: item.id || "",
+      next_review: new Date().toISOString(),
+      pillar: item.pillar || "",
+      title: item.title || "",
+      content: item.content || "",
+      explanation: item.explanation,
+      itemType: "word" as const,
+      icon: "💎",
+      easeFactor: 2.5,
+      intervalDays: 1,
+      repetitions: 0,
+    }));
     setQueue(daily);
   }, [items]);
 
@@ -233,7 +247,7 @@ export default function PulseMode({
         intervalDays: currentItem.intervalDays,
         repetitions: currentItem.repetitions,
       },
-      { quality: selectedQuality },
+      { quality: selectedQuality }
     );
 
     onReviewComplete?.(currentItem.id, selectedQuality, sm2Result);
@@ -282,8 +296,12 @@ export default function PulseMode({
     return (
       <div style={s.overlay}>
         <div style={s.card}>
-          <p style={{ fontSize: 48, marginBottom: spacing[3] }}>⚡</p>
-          <h2 style={s.title}>Pulse Complete!</h2>
+          <p style={{ fontSize: 48, marginBottom: spacing[3] }}>
+            ⚡
+          </p>
+          <h2 style={s.title}>
+            Pulse Complete!
+          </h2>
           <p style={s.subtitle}>
             {queue.length} items reviewed in {minutes}:
             {seconds.toString().padStart(2, "0")}

@@ -17,8 +17,9 @@ const styles = StyleSheet.create({
     paddingVertical: spacing[6],
   },
   buttonText: {
-    color: "white",
+    color: colors.ivory,
     fontSize: typography.ui.fontSize,
+    textAlign: "center",
   },
   container: {
     alignItems: "center",

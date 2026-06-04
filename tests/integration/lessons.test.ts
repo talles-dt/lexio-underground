@@ -2,7 +2,7 @@ import { mockLessons } from "../mocks/lessons";
 
 test("POST /api/lessons/generate returns 201 with mock lesson", async () => {
   // Mock fetch to avoid hitting real API
-  global.fetch = jest.fn((url) =>
+  global.fetch = jest.fn((url: URL | RequestInfo) =>
     url.toString().includes("/api/lessons")
       ? Promise.resolve({
           ok: true,
@@ -20,7 +20,7 @@ test("POST /api/lessons/generate returns 201 with mock lesson", async () => {
             pillar: "grammar",
           }),
         } as Response)
-      : Promise.reject(new Error("Mock not configured")),
+      : Promise.reject(new Error("Mock not configured"))
   );
 
   const response = await fetch("http://localhost:3000/api/lessons/generate", {

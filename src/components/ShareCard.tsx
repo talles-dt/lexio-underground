@@ -1,4 +1,5 @@
-"use client";
+import React from "react";
+("use client");
 
 import { useRef, useCallback, useState } from "react";
 import { colors, spacing, radius } from "@/theme/tokens";
@@ -35,7 +36,7 @@ const PILLAR_COLORS: Record<string, string> = {
 // ─── CANVAS RENDERING ──────────────────────────────────────
 function renderShareCard(
   canvas: HTMLCanvasElement,
-  props: ShareCardProps,
+  props: ShareCardProps
 ): void {
   const ctx = canvas.getContext("2d")!;
   const w = 600;
@@ -150,7 +151,7 @@ function renderShareCard(
 
     ctx.fillStyle = "#71717A";
     ctx.font = "11px system-ui, -apple-system, sans-serif";
-    ctx.fillText(`${Math.round(score * 100)}%`, x, y + 8);
+    ctx.fillText(`${Math.round(props.scores[key] * 100)}%`, x, y + 8);
   }
 
   // Readiness badge
@@ -212,7 +213,7 @@ function renderShareCard(
     ctx.fillText(
       `${Math.round(score * 100)}%`,
       barX + barWidth + 10,
-      y + barHeight / 2,
+      y + barHeight / 2
     );
   }
 
@@ -230,7 +231,7 @@ function roundRect(
   y: number,
   w: number,
   h: number,
-  r: number,
+  r: number
 ) {
   ctx.beginPath();
   ctx.moveTo(x + r, y);
@@ -252,7 +253,7 @@ function wrapText(
   x: number,
   y: number,
   maxWidth: number,
-  lineHeight: number,
+  lineHeight: number
 ) {
   const words = text.split(" ");
   let line = "";

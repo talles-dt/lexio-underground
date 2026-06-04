@@ -17,7 +17,7 @@ export interface ScoredOpenAnswer {
 
 export async function scoreOpenAnswer(
   question: Question,
-  answer: string,
+  answer: string
 ): Promise<ScoredOpenAnswer> {
   const systemPrompt = `Você é o LexioMind, um avaliador de proficiência em inglês para brasileiros.
 Avalie a resposta do aluno para a pergunta: "${question.prompt}".
@@ -82,7 +82,7 @@ export interface GeneratedLesson {
 export async function generateLesson(
   pillar: string,
   difficulty: string,
-  interest: string,
+  interest: string
 ): Promise<GeneratedLesson> {
   const archetypes: Record<string, string> = {
     grammar: "Interferência PT-BR → Regra inglesa concreta",
@@ -144,7 +144,7 @@ export interface ShadowMessage {
 
 export async function generateShadowResponse(
   history: ShadowMessage[],
-  userMessage: string,
+  userMessage: string
 ): Promise<ShadowMessage> {
   const systemPrompt = `You are Lexio, an English conversation partner for Brazilian learners.
 Rules:

@@ -2,8 +2,8 @@
 // ElevenLabs TTS for palace item pronunciation (Phase 5.7)
 // Returns audio stream for a given text
 
-import { NextResponse } from "next/server";
-import { NextRequest } from "next/server";
+import { NextResponse } from "next/server.js";
+import { NextRequest } from "next/server.js";
 
 // Default voice: Rachel (clear, neutral American English)
 const DEFAULT_VOICE = "21m00Tcm4TlvDq8ikWAM";
@@ -46,7 +46,7 @@ export async function POST(req: NextRequest) {
             similarity_boost: 0.5,
           },
         }),
-      },
+      }
     );
 
     if (!response.ok) {
@@ -69,7 +69,7 @@ export async function POST(req: NextRequest) {
     console.error("TTS error:", err);
     return NextResponse.json(
       { error: "Failed to generate speech" },
-      { status: 500 },
+      { status: 500 }
     );
   }
 }
@@ -100,7 +100,7 @@ export async function GET() {
     console.error("Voices fetch error:", err);
     return NextResponse.json(
       { error: "Failed to fetch voices" },
-      { status: 500 },
+      { status: 500 }
     );
   }
 }

@@ -1,17 +1,17 @@
 // tests/unit/spaced-repetition.test.ts
 // Unit tests for SM-2 spaced repetition algorithm
 
-import {
+const {
   applySM2,
   getDailyReviewQueue,
-} from "../../src/palace/spaced-repetition";
+} = require("../../src/palace/spaced-repetition");
 
 describe("Spaced Repetition (SM-2)", () => {
   describe("applySM2", () => {
     it("resets on failed review (quality < 3)", () => {
       const result = applySM2(
         { easeFactor: 2.5, intervalDays: 10, repetitions: 5 },
-        { quality: 1 },
+        { quality: 1 }
       );
 
       expect(result.repetitions).toBe(0);
@@ -22,7 +22,7 @@ describe("Spaced Repetition (SM-2)", () => {
     it("sets day 1 interval for first correct answer", () => {
       const result = applySM2(
         { easeFactor: 2.5, intervalDays: 0, repetitions: 0 },
-        { quality: 4 },
+        { quality: 4 }
       );
 
       expect(result.repetitions).toBe(1);
@@ -48,7 +48,7 @@ describe("Spaced Repetition (SM-2)", () => {
     it("adjusts ease factor correctly for perfect response", () => {
       const result = applySM2(
         { easeFactor: 2.5, intervalDays: 1, repetitions: 0 },
-        { quality: 5 },
+        { quality: 5 }
       );
 
       // Perfect response: EF' = EF + (0.1 - (5-5)*(0.08 + (5-5)*0.02)) = 2.5 + 0.1 = 2.6
@@ -58,7 +58,7 @@ describe("Spaced Repetition (SM-2)", () => {
     it("never drops ease factor below minimum", () => {
       const result = applySM2(
         { easeFactor: 1.3, intervalDays: 1, repetitions: 0 },
-        { quality: 0 },
+        { quality: 0 }
       );
 
       expect(result.easeFactor).toBeGreaterThanOrEqual(1.3);
@@ -76,7 +76,7 @@ describe("Spaced Repetition (SM-2)", () => {
     it("sets nextReview in the future", () => {
       const result = applySM2(
         { easeFactor: 2.5, intervalDays: 0, repetitions: 0 },
-        { quality: 3 },
+        { quality: 3 }
       );
 
       expect(result.nextReview.getTime()).toBeGreaterThan(Date.now());
@@ -85,7 +85,7 @@ describe("Spaced Repetition (SM-2)", () => {
     it("handles quality 2 same as failure", () => {
       const result = applySM2(
         { easeFactor: 2.5, intervalDays: 10, repetitions: 3 },
-        { quality: 2 },
+        { quality: 2 }
       );
 
       expect(result.repetitions).toBe(0);

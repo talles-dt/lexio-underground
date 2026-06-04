@@ -771,7 +771,7 @@ const commQuestions: Question[] = [
 ];
 
 // ─── EXPORT: FULL QUESTION BANK ─────────────────────────────
-export const QUESTION_BANK: Question[] = [
+const QUESTION_BANK: Question[] = [
   ...grammarQuestions,
   ...logicQuestions,
   ...vocabQuestions,
@@ -780,7 +780,7 @@ export const QUESTION_BANK: Question[] = [
 ];
 
 // Questions per pillar for quick lookup
-export const QUESTIONS_BY_PILLAR: Record<Pillar, Question[]> = {
+const QUESTIONS_BY_PILLAR: Record<Pillar, Question[]> = {
   grammar: grammarQuestions,
   logic: logicQuestions,
   vocab: vocabQuestions,
@@ -789,9 +789,12 @@ export const QUESTIONS_BY_PILLAR: Record<Pillar, Question[]> = {
 };
 
 // Questions per difficulty for adaptive selection
-export function getQuestionsByDifficulty(
+function getQuestionsByDifficulty(
   pillar: Pillar,
-  difficulty: number,
+  difficulty: number
 ): Question[] {
   return QUESTIONS_BY_PILLAR[pillar].filter((q) => q.difficulty === difficulty);
 }
+
+// Export for external use
+export { QUESTION_BANK, QUESTIONS_BY_PILLAR, getQuestionsByDifficulty };

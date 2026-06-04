@@ -2,14 +2,23 @@
 // W&B-style experiment tracking (Phase 6.3)
 // Lightweight event logging to Supabase for analytics
 
-import { NextRequest, NextResponse } from "next/server";
-import { createClient } from "@supabase/supabase-js";
+import { NextRequest, NextResponse } from "next/server.js";
+import { createClient, SupabaseClient } from "@supabase/supabase-js";
 
-const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL || "",
-  process.env.SUPABASE_SERVICE_ROLE_KEY || "",
-  { auth: { persistSession: false } },
-);
+let _supabaseAdmin: SupabaseClient | null = null;
+function getSupabaseAdmin() {
+  if (!_supabaseAdmin) {
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
+    const key = process.env.SUPABASE_SERVICE_ROLE_KEY || "";
+    if (!url || !key) {
+      return createClient("https://placeholder.supabase.co", "placeholder");
+    }
+    _supabaseAdmin = createClient(url, key, {
+      auth: { persistSession: false },
+    });
+  }
+  return _supabaseAdmin;
+}
 
 export async function POST(req: NextRequest) {
   try {
@@ -19,21 +28,23 @@ export async function POST(req: NextRequest) {
     if (!event) {
       return NextResponse.json(
         { error: "event name required" },
-        { status: 400 },
+        { status: 400 }
       );
     }
 
     // Log the event
-    const { error } = await supabaseAdmin.from("telemetry").insert([
-      {
-        event,
-        user_id: user_id || null,
-        properties: properties || {},
-        user_agent: req.headers.get("user-agent") || null,
-        ip: req.headers.get("x-forwarded-for") || null,
-        timestamp: new Date().toISOString(),
-      },
-    ]);
+    const { error } = await getSupabaseAdmin()
+      .from("telemetry")
+      .insert([
+        {
+          event,
+          user_id: user_id || null,
+          properties: properties || {},
+          user_agent: req.headers.get("user-agent") || null,
+          ip: req.headers.get("x-forwarded-for") || null,
+          timestamp: new Date().toISOString(),
+        },
+      ]);
 
     if (error) {
       console.error("Track error:", error);

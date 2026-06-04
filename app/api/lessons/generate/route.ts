@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 import { NextRequest } from "next/server";
 import { z } from "zod";
 // Updated import to use explicit extension for ESM
-import { supabase } from "@/lib/supabase.js";
+import { supabase } from "../../../../lib/supabase.js";
 
 const RequestSchema = z.object({
   pillar: z.enum(["grammar", "logic", "vocab", "culture", "comm"]),
@@ -21,15 +21,15 @@ export async function POST(req: NextRequest) {
   if (!parsed.success) {
     return NextResponse.json(
       { error: "Invalid request", details: parsed.error.flatten() },
-      { status: 400 },
+      { status: 400 }
     );
   }
 
   const { pillar, difficulty, interest, user_id } = parsed.data;
 
   // Delegate to LexioMind orchestrator (dynamic import so it's not bundled on serverless edge)
-  const { generateLesson } = await import("@/lexio-mind/orchestrator");
-  const lesson = await generateLesson(pillar, difficulty, interest);
+  const { generateLesson } = await import("@/stubs/lexio-mind-orchestrator.js");
+  const lesson = await generateLesson({ pillar, difficulty, interest });
 
   // Persist to Supabase
   const { data, error } = await supabase

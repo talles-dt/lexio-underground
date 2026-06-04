@@ -1,11 +1,12 @@
 {
-  "extends": "expo/tsconfig.base",
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "strict": true,
     "baseUrl": ".",
     "rootDir": ".",
     "paths": {
-      "@/*": ["./src/*", "./app/*", "./lib/*"]
+      "@/*": ["./src/*", "./app/*", "./lib/*"],
+      "@/types/*": ["src/types/*"]
     },
     "jsx": "preserve",
     "esModuleInterop": true,
@@ -13,7 +14,15 @@
     "moduleResolution": "NodeNext",
     "incremental": true,
     "isolatedModules": true,
-    "customConditions": []
+    "customConditions": [],
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "noEmit": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": ["**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["supabase/functions/**/*"]

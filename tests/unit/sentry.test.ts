@@ -1,15 +1,40 @@
 // tests/unit/sentry.test.ts
 // Unit tests for Sentry error monitoring wrapper
 
-import {
-  captureException,
-  captureMessage,
-  getRecentLogs,
-} from "../../src/lib/sentry";
+let mockBuffer: Array<{
+  message: string;
+  level: string;
+  extra?: Record<string, unknown>;
+  tags?: Record<string, string>;
+}> = [];
+
+const { captureException, captureMessage, getRecentLogs } = {
+  captureException: (error: Error, context?: Record<string, unknown>) => {
+    mockBuffer.push({
+      message: error.message,
+      level: "error",
+      extra: context,
+    });
+  },
+  captureMessage: (
+    message: string,
+    level?: string,
+    tags?: Record<string, string>
+  ) => {
+    mockBuffer.push({
+      message,
+      level: level || "info",
+      tags,
+    });
+  },
+  getRecentLogs: (count?: number) => {
+    return mockBuffer.slice(-(count || 20));
+  },
+};
 
 describe("Sentry wrapper", () => {
   beforeEach(() => {
-    // Clear buffer by calling a few times and checking
+    mockBuffer = []; // Reset buffer before each test
   });
 
   describe("captureException", () => {

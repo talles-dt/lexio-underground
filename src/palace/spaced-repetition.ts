@@ -76,7 +76,7 @@ export function applySM2(state: SM2State, result: ReviewResult): SM2Update {
 // Map Cartografa answer correctness to SM-2 quality
 export function cartografaToQuality(
   correct: boolean,
-  confidence?: number,
+  confidence?: number
 ): ReviewResult["quality"] {
   if (!correct) return 1; // wrong = near blackout
   if (!confidence) return 3; // correct but unsure
@@ -95,7 +95,7 @@ export function getDailyReviewQueue(
     content: string;
     explanation?: string;
   }[],
-  maxItems: number = 7,
+  maxItems: number = 7
 ): {
   id: string;
   pillar: string;
@@ -108,9 +108,15 @@ export function getDailyReviewQueue(
     .filter((item) => new Date(item.next_review) <= now)
     .sort(
       (a, b) =>
-        new Date(a.next_review).getTime() - new Date(b.next_review).getTime(),
+        new Date(a.next_review).getTime() - new Date(b.next_review).getTime()
     )
     .slice(0, maxItems);
 
   return due;
 }
+// Expose CommonJS exports
+(module as any).exports = {
+  applySM2,
+  cartografaToQuality,
+  getDailyReviewQueue,
+};

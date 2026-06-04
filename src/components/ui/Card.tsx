@@ -1,29 +1,24 @@
 import React from "react";
-import { View, Text } from "react-native";
-import React from "react";
-import { colors, radius, spacing } from "@/theme/tokens";
 
-export function Card({
-  children,
-  style,
-}: {
+interface CardProps {
   children: React.ReactNode;
-  style?: Record<string, unknown>;
-}) {
-  return <View style={[styles.card, style]}>{children}</View>;
+  style?: React.CSSProperties;
+}
+
+export function Card({ children, style }: CardProps) {
+  return (
+    <div
+      style={{
+        backgroundColor: "#fff",
+        borderRadius: 8,
+        boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+        padding: 16,
+        ...style,
+      }}
+    >
+      {children}
+    </div>
+  );
 }
 
 export default Card;
-
-const styles = StyleSheet.create({
-  card: {
-    backgroundColor: "white",
-    borderRadius: 8,
-    elevation: 2,
-    padding: 16,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-  },
-});

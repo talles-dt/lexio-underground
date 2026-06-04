@@ -86,7 +86,7 @@ describe("Checkout API Logic", () => {
     function buildMockUrl(
       tier: string,
       userId: string,
-      siteUrl?: string,
+      siteUrl?: string
     ): string {
       const base = siteUrl || "http://localhost:3000";
       return `${base}/checkout/mock?tier=${tier}&user_id=${userId}`;
@@ -95,7 +95,7 @@ describe("Checkout API Logic", () => {
     it("builds correct mock URL", () => {
       const url = buildMockUrl("monthly", "user-123");
       expect(url).toBe(
-        "http://localhost:3000/checkout/mock?tier=monthly&user_id=user-123",
+        "http://localhost:3000/checkout/mock?tier=monthly&user_id=user-123"
       );
     });
 
@@ -103,10 +103,10 @@ describe("Checkout API Logic", () => {
       const url = buildMockUrl(
         "lifetime",
         "user-456",
-        "https://lexio.oliceu.com",
+        "https://lexio.oliceu.com"
       );
       expect(url).toBe(
-        "https://lexio.oliceu.com/checkout/mock?tier=lifetime&user_id=user-456",
+        "https://lexio.oliceu.com/checkout/mock?tier=lifetime&user_id=user-456"
       );
     });
   });

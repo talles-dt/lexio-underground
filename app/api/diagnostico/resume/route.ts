@@ -4,11 +4,25 @@ import { createClient } from "@supabase/supabase-js";
 import { NextResponse } from "next/server";
 import { NextRequest } from "next/server";
 
-const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL || "",
-  process.env.SUPABASE_SERVICE_ROLE_KEY || "",
-  { auth: { persistSession: false } },
-);
+let _supabaseAdmin: any = null;
+function getSupabaseAdmin() {
+  if (!_supabaseAdmin) {
+    const { createClient } = require("@supabase/supabase-js");
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
+    const key = process.env.SUPABASE_SERVICE_ROLE_KEY || "";
+    if (!url || !key) {
+      _supabaseAdmin = createClient(
+        "https://placeholder.supabase.co",
+        "placeholder"
+      );
+    } else {
+      _supabaseAdmin = createClient(url, key, {
+        auth: { persistSession: false },
+      });
+    }
+  }
+  return _supabaseAdmin;
+}
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -18,11 +32,11 @@ export async function GET(request: Request) {
   if (!sessionId && !email) {
     return NextResponse.json(
       { error: "Provide session_id or email to resume" },
-      { status: 400 },
+      { status: 400 }
     );
   }
 
-  let query = supabaseAdmin
+  let query = _supabaseAdmin
     .from("diagnostic_sessions")
     .select("id, email, state, raw_response_log")
     .is("completed_at", null) // only incomplete sessions
@@ -40,7 +54,7 @@ export async function GET(request: Request) {
   if (error || !data) {
     return NextResponse.json(
       { session: null, error: error?.message || null },
-      { status: 200 },
+      { status: 200 }
     );
   }
 

@@ -58,18 +58,103 @@ const supabase: SupabaseClient = {
             user_metadata: {},
             aud: "authenticated",
             created_at: new Date().toISOString(),
-          } as unknown as User,
-          error: null,
+          } as User,
         },
+        error: null,
       }),
     exchangeCodeForSession: () =>
       Promise.resolve<AuthTokenResponse>({
-        data: null as unknown as { user: User; session: Session },
+        data: {
+          session: {
+            access_token: "mock-access-token",
+            token_type: "bearer",
+            expires_in: 3600,
+            refresh_token: "mock-refresh-token",
+            user: {
+              id: "mock-user-id",
+              email: "mock@example.com",
+              app_metadata: {},
+              user_metadata: {},
+              aud: "authenticated",
+              created_at: new Date().toISOString(),
+            } as User,
+          },
+          user: {
+            id: "mock-user-id",
+            email: "mock@example.com",
+            app_metadata: {},
+            user_metadata: {},
+            aud: "authenticated",
+            created_at: new Date().toISOString(),
+          } as User,
+        },
         error: null,
       }),
     signInWithOAuth: (options: { provider: Provider }) =>
       Promise.resolve<OAuthResponse>({
         data: { provider: options.provider, url: "https://mock.oauth" },
+        error: null,
+      }),
+    signInWithPassword: (_: { email: string; password: string }) =>
+      Promise.resolve<AuthTokenResponse>({
+        data: {
+          session: {
+            access_token: "mock-access-token",
+            token_type: "bearer",
+            expires_in: 3600,
+            refresh_token: "mock-refresh-token",
+            user: {
+              id: "mock-user-id",
+              email: "mock@example.com",
+              app_metadata: {},
+              user_metadata: {},
+              aud: "authenticated",
+              created_at: new Date().toISOString(),
+            } as User,
+          } as Session,
+          user: {
+            id: "mock-user-id",
+            email: "mock@example.com",
+            app_metadata: {},
+            user_metadata: {},
+            aud: "authenticated",
+            created_at: new Date().toISOString(),
+          } as User,
+        },
+        error: null,
+      }),
+    signUp: (_: { email: string; password: string }) =>
+      Promise.resolve<UserResponse>({
+        data: {
+          user: {
+            id: "mock-user-id",
+            email: "mock@example.com",
+            app_metadata: {},
+            user_metadata: {},
+            aud: "authenticated",
+            created_at: new Date().toISOString(),
+          } as User,
+        },
+        error: null,
+      }),
+    getSession: () =>
+      Promise.resolve<{ data: { session: Session }; error: null }>({
+        data: {
+          session: {
+            access_token: "mock-access-token",
+            token_type: "bearer",
+            expires_in: 3600,
+            refresh_token: "mock-refresh-token",
+            user: {
+              id: "mock-user-id",
+              email: "mock@example.com",
+              app_metadata: {},
+              user_metadata: {},
+              aud: "authenticated",
+              created_at: new Date().toISOString(),
+            } as User,
+          } as Session,
+        },
         error: null,
       }),
   },

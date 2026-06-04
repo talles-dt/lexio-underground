@@ -1,9 +1,7 @@
-"use client";
-
-import React, { useState } from "react";
-import { View, Pressable, StyleSheet } from "react-native";
-import { Text } from "react-native";
-import { Card } from "@/components/ui";
+import { useState } from "react";
+import React from "react";
+import { View, Text, Pressable, StyleSheet } from "react-native";
+import { colors } from "@/theme/tokens";
 
 interface Lesson {
   grammar: string;
@@ -24,27 +22,31 @@ export function LessonCard({
   const displayMnemonic = mnemonicParts[1] || lesson.mnemonic;
 
   const styles = StyleSheet.create({
+    body: {
+      color: colors.ivory,
+    },
     bold: {
       fontWeight: "bold",
     },
     button: {
-      backgroundColor: "#3B82F6",
+      backgroundColor: "#3b82f6",
       borderRadius: 4,
       marginTop: 16,
       paddingHorizontal: 12,
       paddingVertical: 8,
     },
     buttonText: {
-      color: "#FFFFFF",
+      color: colors.ivory,
       fontSize: 12,
     },
     card: {
-      borderColor: "#4B5563",
+      borderColor: "#4b5563",
       borderRadius: 8,
       borderWidth: 1,
       elevation: 5,
       overflow: "hidden",
-      shadowColor: "#000",
+      padding: 16,
+      shadowColor: "#000000",
       shadowOffset: { width: 0, height: 2 },
       shadowOpacity: 0.25,
       shadowRadius: 4,
@@ -53,6 +55,7 @@ export function LessonCard({
       gap: 8,
     },
     divider: {
+      borderBottomColor: colors.zinc,
       borderBottomWidth: 1,
       marginVertical: 8,
     },
@@ -60,6 +63,7 @@ export function LessonCard({
       fontStyle: "italic",
     },
     title: {
+      color: colors.ivory,
       fontSize: 20,
       fontWeight: "bold",
     },
@@ -68,39 +72,41 @@ export function LessonCard({
   return (
     <View style={styles.card}>
       <Text style={styles.title}>Lesson ({difficulty})</Text>
-      <Text style={styles.italic}>"{displayMnemonic}"</Text>
+      <Text style={[styles.italic, styles.body]}>"{displayMnemonic}"</Text>
 
       <View style={styles.divider} />
 
       <View style={styles.container}>
         <View>
-          <Text style={styles.bold}>Grammar:</Text>
-          <Text>{lesson.grammar}</Text>
+          <Text style={[styles.bold, styles.body]}>Grammar:</Text>
+          <Text style={styles.body}>{lesson.grammar}</Text>
         </View>
 
         <View>
-          <Text style={styles.bold}>Logic:</Text>
-          <Text>{lesson.logic}</Text>
+          <Text style={[styles.bold, styles.body]}>Logic:</Text>
+          <Text style={styles.body}>{lesson.logic}</Text>
         </View>
 
         {expanded && (
           <View>
-            <Text style={styles.bold}>Communication:</Text>
-            <Text>{lesson.communication}</Text>
+            <Text style={[styles.bold, styles.body]}>Communication:</Text>
+            <Text style={styles.body}>{lesson.communication}</Text>
 
             <View style={styles.divider} />
 
-            <Text style={styles.bold}>Memory Palace:</Text>
-            <Text>{lesson.mnemonic.replace(/\\n/g, "\n")}</Text>
+            <Text style={[styles.bold, styles.body]}>Memory Palace:</Text>
+            <Text style={styles.body}>
+              {lesson.mnemonic.replace(/\n/g, "\n")}
+            </Text>
           </View>
         )}
-      </View>
 
-      <Pressable onPress={() => setExpanded(!expanded)} style={styles.button}>
-        <Text style={styles.buttonText}>
-          {expanded ? "Collapse" : "Expand"}
-        </Text>
-      </Pressable>
+        <Pressable onPress={() => setExpanded(!expanded)} style={styles.button}>
+          <Text style={styles.buttonText}>
+            {expanded ? "Collapse" : "Expand"}
+          </Text>
+        </Pressable>
+      </View>
     </View>
   );
 }

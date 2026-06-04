@@ -1,9 +1,10 @@
-import React from "react";
-import { Pressable, StyleSheet } from "react-native";
-import { Text } from "react-native";
-import { colors, radius, typography } from "@/theme/tokens";
+"use client";
 
-type Variant = "primary" | "secondary" | "ghost";
+import React from "react";
+import { StyleSheet, TouchableOpacity, Text } from "react-native";
+import { colors, radius } from "@/theme/tokens";
+
+type Variant = "primary" | "secondary" | "tertiary" | "invisible";
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -13,58 +14,6 @@ interface ButtonProps {
   fullWidth?: boolean;
 }
 
-const styles = StyleSheet.create({
-  disabled: {
-    opacity: 0.5,
-  },
-  fullWidth: {
-    width: "100%",
-  },
-  ghost: {
-    alignItems: "center",
-    backgroundColor: "transparent",
-    flexDirection: "row",
-    gap: 4,
-    justifyContent: "center",
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-  },
-  label: {
-    ...typography.ui,
-  },
-  labelGhost: {
-    color: colors.zinc,
-  },
-  labelPrimary: {
-    color: colors.obsidian,
-  },
-  labelSecondary: {
-    color: colors.ivory,
-  },
-  primary: {
-    alignItems: "center",
-    backgroundColor: colors.ivory,
-    borderRadius: radius.btn,
-    flexDirection: "row",
-    gap: 8,
-    justifyContent: "center",
-    paddingHorizontal: 24,
-    paddingVertical: 12,
-  },
-  secondary: {
-    alignItems: "center",
-    backgroundColor: "transparent",
-    borderColor: colors.ivory,
-    borderRadius: radius.btn,
-    borderWidth: 1,
-    flexDirection: "row",
-    gap: 8,
-    justifyContent: "center",
-    paddingHorizontal: 24,
-    paddingVertical: 12,
-  },
-});
-
 export function Button({
   children,
   variant = "primary",
@@ -72,25 +21,55 @@ export function Button({
   disabled = false,
   fullWidth = false,
 }: ButtonProps) {
-  const variantStyle = styles[variant];
-  const labelStyle =
-    variant === "primary"
-      ? styles.labelPrimary
-      : variant === "secondary"
-        ? styles.labelSecondary
-        : styles.labelGhost;
+  const buttonStyles = [
+    styles.base,
+    styles[variant],
+    fullWidth && styles.fullWidth,
+    disabled && styles.disabled,
+  ].filter(Boolean);
 
   return (
-    <Pressable
+    <TouchableOpacity
+      style={buttonStyles}
       onPress={onPress}
       disabled={disabled}
-      style={[
-        variantStyle,
-        fullWidth && styles.fullWidth,
-        disabled && styles.disabled,
-      ]}
+      activeOpacity={0.7}
     >
-      <Text style={[typography.ui, labelStyle]}>{children}</Text>
-    </Pressable>
+      <Text style={styles.text}>{children}</Text>
+    </TouchableOpacity>
   );
 }
+
+const styles = StyleSheet.create({
+  base: {
+    alignItems: "center",
+    borderRadius: radius.btn,
+    justifyContent: "center",
+    paddingHorizontal: 24,
+    paddingVertical: 12,
+  },
+  disabled: {
+    opacity: 0.5,
+  },
+  fullWidth: {
+    width: "100%",
+  },
+  invisible: {
+    backgroundColor: "transparent",
+  },
+  primary: {
+    backgroundColor: colors.phosphor,
+  },
+  secondary: {
+    backgroundColor: colors.surfaceContainerHigh,
+    borderColor: colors.outlineVariant,
+    borderWidth: 1,
+  },
+  tertiary: {
+    backgroundColor: colors.amber,
+  },
+  text: {
+    color: colors.obsidian,
+    fontWeight: "600",
+  },
+});

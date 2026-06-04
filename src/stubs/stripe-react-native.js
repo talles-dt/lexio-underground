@@ -33,7 +33,7 @@ exports.CardField = function CardField() {
   return React.createElement(
     "div",
     { "data-testid": "stripe-card-field" },
-    "Mock Card Field",
+    "Mock Card Field"
   );
 };
 
@@ -41,7 +41,7 @@ exports.ApplePayButton = function ApplePayButton() {
   return React.createElement(
     "button",
     { "data-testid": "stripe-apple-pay" },
-    "Apple Pay (Mock)",
+    "Apple Pay (Mock)"
   );
 };
 
@@ -49,7 +49,7 @@ exports.GooglePayButton = function GooglePayButton() {
   return React.createElement(
     "button",
     { "data-testid": "stripe-google-pay" },
-    "Google Pay (Mock)",
+    "Google Pay (Mock)"
   );
 };
 
@@ -57,7 +57,7 @@ exports.LinkAuthenticationElement = function LinkAuthenticationElement() {
   return React.createElement(
     "div",
     { "data-testid": "stripe-link-auth" },
-    "Link Auth (Mock)",
+    "Link Auth (Mock)"
   );
 };
 
@@ -65,7 +65,7 @@ exports.PaymentSheet = function PaymentSheet() {
   return React.createElement(
     "div",
     { "data-testid": "stripe-payment-sheet" },
-    "Payment Sheet (Mock)",
+    "Payment Sheet (Mock)"
   );
 };
 

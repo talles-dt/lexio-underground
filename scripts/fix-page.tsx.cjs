@@ -19,7 +19,7 @@ content = content.replace(
       "user: user" +
       "});"
     );
-  },
+  }
 );
 fs.writeFileSync("app/diagnostico/page.tsx", content);
 console.log("✓ Wrapped JSX in variable-binding closure");

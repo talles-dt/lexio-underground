@@ -1,10 +1,9 @@
 // app/api/checkout/route.ts
 // Stripe checkout session creation (Phase 5.4)
 // Creates Stripe Checkout Session and returns URL for redirect
-
-import { NextResponse } from "next/server";
-import { NextRequest } from "next/server";
-import { supabase } from "../../lib/supabase.js";
+import { NextResponse } from "next/server.js";
+import { NextRequest } from "next/server.js";
+import { supabase } from "../../../lib/supabase.js";
 
 // Pricing from spec: monthly (R$ 49), annual (R$ 468), lifetime (R$ 1,490)
 // Stripe expects amounts in cents for zero-decimal currencies like BRL
@@ -57,11 +56,7 @@ export async function POST(req: NextRequest) {
     } else {
       const stripeModule = await import("stripe");
       stripe = new stripeModule.default(
-        process.env.STRIPE_SECRET_KEY as string,
-        {
-          apiVersion:
-            (process.env.STRIPE_API_VERSION as string) || "2024-06-20",
-        },
+        process.env.STRIPE_SECRET_KEY as string
       );
     }
 
@@ -126,7 +121,7 @@ export async function POST(req: NextRequest) {
     console.error("Checkout error:", err);
     return NextResponse.json(
       { error: "Failed to create checkout session" },
-      { status: 500 },
+      { status: 500 }
     );
   }
 }

@@ -25,7 +25,7 @@ interface LLMConfig {
 // ─── OPENROUTER (NVIDIA NIM) ───────────────────────────────
 async function callOpenRouter(
   messages: LLMMessage[],
-  config: LLMConfig = {},
+  config: LLMConfig = {}
 ): Promise<LLMResponse> {
   const start = Date.now();
   const response = await fetch(OPENROUTER_URL, {
@@ -73,7 +73,7 @@ function callMock(messages: LLMMessage[]): LLMResponse {
 // ─── PUBLIC API ────────────────────────────────────────────
 export async function callLLM(
   messages: LLMMessage[],
-  config: LLMConfig = {},
+  config: LLMConfig = {}
 ): Promise<LLMResponse> {
   // Tier 1: OpenRouter NVIDIA NIM
   if (process.env.OPENROUTER_API_KEY) {

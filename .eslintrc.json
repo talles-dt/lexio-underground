@@ -1,9 +1,7 @@
 {
   "root": true,
   "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "@typescript-eslint"
-  ],
+  "plugins": ["@typescript-eslint"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
@@ -16,11 +14,11 @@
     }
   },
   "rules": {
+    "react/react-in-jsx-scope": "off",
     "react-native/no-unused-styles": "error",
     "react-native/split-platform-components": "error",
     "react-native/no-raw-text": "error",
-    "react-native/no-color-literals": "error",
-    "react/react-in-jsx-scope": "off"
+    "react-native/no-color-literals": "error"
   },
   "env": {
     "node": true,

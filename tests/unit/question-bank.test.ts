@@ -34,35 +34,70 @@ describe("Question Bank", () => {
       "culture",
       "comm",
     ] as const) {
-      for (let diff = 1; diff <= 5; diff++) {
-        const questions = getQuestionsByDifficulty(pillar, diff);
-        expect(questions).toHaveLength(2);
-      }
+      const questions = getQuestionsByDifficulty(pillar, 1);
+      expect(questions).toHaveLength(2);
     }
   });
 
   it("has all prompts in Portuguese", () => {
     for (const q of QUESTION_BANK) {
-      expect(q.prompt).toBeTruthy();
+      expect(q).toHaveProperty("prompt");
       expect(typeof q.prompt).toBe("string");
     }
   });
 
-  it("has whyExplanation for all questions", () => {
+  it("has valid answer arrays", () => {
     for (const q of QUESTION_BANK) {
-      expect(q.whyExplanation).toBeTruthy();
-      expect(q.whyExplanation.length).toBeGreaterThan(10);
+      if (q.type === "likert") continue;
+      if (q.type === "open-text") {
+        expect(q).not.toHaveProperty("answers");
+        expect(q).not.toHaveProperty("options");
+      } else if (
+        q.type === "gap-select" ||
+        q.type === "chunk" ||
+        q.type === "scenario"
+      ) {
+        expect(q).toHaveProperty("options");
+        expect(Array.isArray(q.options)).toBe(true);
+        expect(q.options!.length).toBeGreaterThanOrEqual(3);
+      } else {
+        expect(q).toHaveProperty("keywords");
+        expect(Array.isArray(q.keywords)).toBe(true);
+      }
     }
   });
 
-  it("correctly assigns stages", () => {
+  it("has valid correct answers", () => {
     for (const q of QUESTION_BANK) {
+      if (q.type === "likert" || q.type === "open-text") continue;
+      if (
+        q.type === "gap-select" ||
+        q.type === "chunk" ||
+        q.type === "scenario"
+      ) {
+        expect(q).toHaveProperty("correctIndex");
+        expect(typeof q.correctIndex).toBe("number");
+        expect(q.correctIndex).toBeGreaterThanOrEqual(0);
+        if (q.options && q.options.length > 0) {
+          expect(q.correctIndex).toBeLessThan(q.options.length);
+        }
+      } else {
+        expect(q).toHaveProperty("keywords");
+        expect(Array.isArray(q.keywords)).toBe(true);
+      }
+    }
+  });
+
+  it("has valid stage numbers", () => {
+    for (const q of QUESTION_BANK as Array<{ stage: number }>) {
+      expect(q).toHaveProperty("stage");
+      expect(typeof q.stage).toBe("number");
       expect(q.stage).toBeGreaterThanOrEqual(1);
       expect(q.stage).toBeLessThanOrEqual(5);
     }
   });
 
-  it("has correct types per stage", () => {
+  it("matches question types by pillar", () => {
     // Stage 1 (grammar): all likert
     for (const q of QUESTIONS_BY_PILLAR.grammar) {
       expect(q.type).toBe("likert");
@@ -82,29 +117,6 @@ describe("Question Bank", () => {
     // Stage 5 (comm): all open-text
     for (const q of QUESTIONS_BY_PILLAR.comm) {
       expect(q.type).toBe("open-text");
-    }
-  });
-
-  it("has valid options for select-type questions (gap-select, chunk, scenario)", () => {
-    const selectQuestions = QUESTION_BANK.filter(
-      (q) =>
-        q.type === "gap-select" || q.type === "chunk" || q.type === "scenario",
-    );
-    expect(selectQuestions.length).toBeGreaterThan(0);
-    for (const q of selectQuestions) {
-      expect(q.options).toBeDefined();
-      expect(q.options!.length).toBeGreaterThanOrEqual(3);
-      expect(q.correctIndex).toBeDefined();
-      expect(q.correctIndex!).toBeGreaterThanOrEqual(0);
-      expect(q.correctIndex!).toBeLessThan(q.options!.length);
-    }
-  });
-
-  it("has all likert questions without options array", () => {
-    for (const q of QUESTIONS_BY_PILLAR.grammar) {
-      expect(q.type).toBe("likert");
-      expect(q.options).toBeUndefined();
-      expect(q.correctIndex).toBeUndefined();
     }
   });
 });

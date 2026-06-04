@@ -9,6 +9,8 @@ import {
   QUESTIONS_BY_PILLAR,
 } from "./question-bank";
 
+export type { Pillar };
+
 // ─── TYPES ──────────────────────────────────────────────────
 export interface PillarState {
   pillar: Pillar;
@@ -117,7 +119,7 @@ export function selectNextQuestion(state: CartografaState): Question | null {
   let question = pickQuestionAtDifficulty(
     pillar,
     pillarState.currentDifficulty,
-    pillarState.answeredIds,
+    pillarState.answeredIds
   );
 
   // If no question at current difficulty, try adjacent difficulties
@@ -126,13 +128,13 @@ export function selectNextQuestion(state: CartografaState): Question | null {
       question = pickQuestionAtDifficulty(
         pillar,
         pillarState.currentDifficulty + offset,
-        pillarState.answeredIds,
+        pillarState.answeredIds
       );
       if (question) break;
       question = pickQuestionAtDifficulty(
         pillar,
         pillarState.currentDifficulty - offset,
-        pillarState.answeredIds,
+        pillarState.answeredIds
       );
       if (question) break;
     }
@@ -158,7 +160,7 @@ export function selectNextQuestion(state: CartografaState): Question | null {
 export function processAnswer(
   state: CartografaState,
   questionId: string,
-  answer: number | string,
+  answer: number | string
 ): { correct: boolean; updated: boolean } {
   const question = QUESTION_BANK.find((q) => q.id === questionId);
   if (!question) return { correct: false, updated: false };
@@ -277,7 +279,7 @@ function updateScoreAndConfidence(pillarState: PillarState): void {
   const spread = z * Math.sqrt((p * (1 - p) + (z * z) / (4 * n)) / n);
   pillarState.confidence = Math.min(
     1,
-    Math.max(0, (center - spread) / denominator),
+    Math.max(0, (center - spread) / denominator)
   );
 }
 
@@ -285,11 +287,11 @@ function updateScoreAndConfidence(pillarState: PillarState): void {
 function pickQuestionAtDifficulty(
   pillar: Pillar,
   difficulty: number,
-  answeredIds: Set<string>,
+  answeredIds: Set<string>
 ): Question | null {
   const clamped = Math.max(1, Math.min(5, difficulty));
   const candidates = QUESTIONS_BY_PILLAR[pillar].filter(
-    (q) => q.difficulty === clamped && !answeredIds.has(q.id),
+    (q) => q.difficulty === clamped && !answeredIds.has(q.id)
   );
   if (candidates.length === 0) return null;
   return candidates[Math.floor(Math.random() * candidates.length)];
@@ -373,7 +375,7 @@ export function generateResults(state: CartografaState): CartografaResult {
 
   // Recommended focus = weakest pillars
   const sorted = [...PILLAR_ORDER].sort(
-    (a, b) => pillar_scores[a].score - pillar_scores[b].score,
+    (a, b) => pillar_scores[a].score - pillar_scores[b].score
   );
   const recommended_focus = sorted.slice(0, 2);
 
@@ -451,7 +453,7 @@ export function getStageDescription(stage: number): string {
 }
 
 export function getReadinessLabel(
-  readiness: CartografaResult["overall_readiness"],
+  readiness: CartografaResult["overall_readiness"]
 ): string {
   const labels: Record<string, string> = {
     roots: "Raízes",

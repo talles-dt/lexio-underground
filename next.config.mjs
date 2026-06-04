@@ -1,14 +1,20 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-  transpilePackages: ["react-native", "react-native-web"], // Silence workspace warning
-  // Turbopack settings
+  transpilePackages: ["react-native", "react-native-web"],
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      "react-native$": "react-native-web",
+    };
+    config.resolve.fallback = { fs: false, path: false, os: false };
+    return config;
+  },
   experimental: {
-    typedRoutes: true,
     turbo: {
-      root: __dirname,
-      resolveExtensions: [".js", ".jsx", ".ts", ".tsx"], // Fallback to Webpack
+      browser: false,
+      resolveExtensions: [".web.js", ".web.jsx", ".js", ".jsx", ".ts", ".tsx"],
     },
   },
 };
