@@ -11,16 +11,22 @@
   "lang": "pt-BR",
   "icons": [
     {
-      "src": "/assets/icon.png",
+      "src": "/assets/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
       "src": "/assets/icon.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
   "categories": ["education", "language"],
@@ -31,14 +37,14 @@
       "short_name": "Diagnostic",
       "description": "Start the adaptive diagnostic",
       "url": "/diagnostico",
-      "icons": [{ "src": "/assets/icon.png", "sizes": "192x192" }]
+      "icons": [{ "src": "/assets/icon-192.png", "sizes": "192x192", "type": "image/png" }]
     },
     {
       "name": "Memory Palace",
       "short_name": "Palace",
       "description": "Your memory palace",
       "url": "/palace",
-      "icons": [{ "src": "/assets/icon.png", "sizes": "192x192" }]
+      "icons": [{ "src": "/assets/icon-192.png", "sizes": "192x192", "type": "image/png" }]
     }
   ]
 }
