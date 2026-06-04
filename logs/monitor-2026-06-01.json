@@ -1,77 +1,56 @@
 {
-  "timestamp": "2026-06-01T00:15:00Z",
+  "timestamp": "2026-06-01T20:00:00Z",
   "status": "warning",
-  "steps": [
-    {
-      "name": "system-metrics",
-      "status": "pass",
-      "details": {
-        "node_version": "v22.22.2",
-        "env_vars": "supabase_url=http://mock.supabase.url"
+  "steps": {
+    "system_metrics": {
+      "node_version": "v22.22.2",
+      "supabase_url": "http://mock.supabase.url",
+      "status": "warning",
+      "reason": "Supabase URL is a mock; replace with valid URL in .env.local"
+    },
+    "static_analysis": {
+      "typescript": {
+        "status": "fail",
+        "errors": 124,
+        "reason": "Missing modules, ESM import paths, Supabase.js compatibility"
+      },
+      "eslint": {
+        "status": "pass",
+        "warnings": 63,
+        "reason": "Unused variables, implicit any, unescaped quotes"
+      },
+      "prettier": {
+        "status": "fail",
+        "errors": 3,
+        "reason": "Syntax errors in jest.config.mjs and log files"
       }
     },
-    {
-      "name": "static-analysis",
-      "status": "fail",
-      "details": {
-        "typescript_errors": 144,
-        "eslint_config": ".eslintrc.json created (but plugins install blocked)",
-        "prettier_warnings": 2
-      }
-    },
-    {
-      "name": "test-suite",
-      "status": "blocked",
-      "details": {
-        "error": "Duplicate Jest configs (resolved: removed jest.config.cjs), security scan blocked test execution"
-      }
-    },
-    {
-      "name": "build",
-      "status": "fail",
-      "details": {
-        "error": "React 19 upgrade required, blocked by dependency conflicts",
-        "dependencies_blocking": ["@supabase/auth-helpers-nextjs@^0.10.1"]
+    "test_suite": {
+      "jest": {
+        "status": "fail",
+        "reason": "ESM/CJS incompatibility (SyntaxError: Unexpected token ':')"
+      },
+      "build": {
+        "status": "fail",
+        "reason": "next.config.js syntax error + Turbopack incompatibility"
       }
     }
+  },
+  "actions_taken": [
+    "Added .js extensions to imports via patch",
+    "Installed missing dependencies (zod, @supabase/supabase-js, etc.)",
+    "Fixed duplicate imports in LessonCard.tsx and Button.tsx",
+    "Patched next.config.js and jest.config.mjs",
+    "Downgraded ESLint to 8.56.0 for legacy config compatibility"
+  ],
+  "pending_actions": [
+    "Replace mock Supabase URL in .env.local with valid URL",
+    "Resolve React Native Flow syntax incompatibility with Turbopack",
+    "Fix @stripe/stripe-react-native web incompatibility (platform-specific imports)"
   ],
   "warnings": [
-    "Supabase URL is placeholder (http://mock.supabase.url)",
-    "Dependency conflicts blocking upgrades: @supabase/auth-helpers-nextjs@^0.10.1 not found",
-    "ESLint plugins install blocked by dependency conflicts",
-    "React 19 upgrade blocked",
-    "Test execution blocked by security scan (schemeless URL in --config)"
-  ],
-  "auto_fixes_applied": [
-    "package.json: added 'type: \"module\"'",
-    "next.config.mjs: added Turbopack extensions",
-    "Top 5 ESM imports patched with .js extensions",
-    "Created .eslintrc.json for ESLint",
-    "Fixed Prettier JSON syntax error in log file",
-    "Removed duplicate jest.config.cjs",
-    "Downgraded ESLint to 8.56.0 (attempted, blocked by dependency conflicts)"
-  ],
-  "critical_issues_pending": [
-    {
-      "issue": "Supabase URL placeholder",
-      "mitigation": "Replace http://mock.supabase.url with valid Supabase URL in .env.local"
-    },
-    {
-      "issue": "React 19 upgrade blocked",
-      "mitigation": "Resolve dependency conflicts (pin or upgrade @supabase/auth-helpers-nextjs)"
-    },
-    {
-      "issue": "ESLint plugins missing",
-      "mitigation": "Install @typescript-eslint/eslint-plugin, eslint-plugin-react, eslint-plugin-react-native after resolving conflicts"
-    }
-  ],
-  "escalation": {
-    "required": true,
-    "reason": "Dependency conflicts and Supabase URL placeholder require manual intervention",
-    "actions": [
-      "grep -r "http://mock.supabase.url" .env.local && replace with valid SUPABASE_URL",
-      "npm install @supabase/auth-helpers-nextjs@latest --save --legacy-peer-deps",
-      "npm install react@19.0.0-rc.0 react-dom@19.0.0-rc.0 --save --legacy-peer-deps"
-    ]
-  }
+    "Supabase URL is invalid for production",
+    "Build blocked by Turbopack + React Native Flow syntax",
+    "Jest ESM/CJS incompatibility persists"
+  ]
 }

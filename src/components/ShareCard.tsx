@@ -1,5 +1,6 @@
+"use client";
+
 import React from "react";
-("use client");
 
 import { useRef, useCallback, useState } from "react";
 import { colors, spacing, radius } from "@/theme/tokens";

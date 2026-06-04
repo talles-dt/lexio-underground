@@ -1,4 +1,5 @@
 import React from "react";
+import "@/styles/globals.css";
 import { colors } from "@/theme/tokens";
 import Providers from "@/providers";
 

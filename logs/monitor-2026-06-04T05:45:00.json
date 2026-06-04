@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-06-04T05:45:00-03:00",
+  "status": "pass",
+  "steps": {
+    "system_metrics": "v22.22.3",
+    "static_analysis": [
+      "Auto-fixed 'use client' directive placement in app/page.tsx, app/lessons/page.tsx, app/palace/page.tsx",
+      "Auto-fixed duplicate Text import in app/page.tsx",
+      "Auto-fixed React Native style issues in app/page.tsx",
+      "Auto-fixed next/server import extensions in API routes",
+      "Auto-fixed TypeScript any types in app/api/conversation-shadow/route.ts",
+      "Auto-fixed raw text and inline styles in app/lessons/page.tsx"
+    ],
+    "test_suite": "✓ All tests passed",
+    "build": "✓ Build compiled with warnings (non-blocking)"
+  },
+  "warnings": [
+    "Supabase critical dependency warning: next.config.mjs",
+    "Lint warnings in API routes and components (non-blocking)",
+    "React Native incompatibility warnings (p, h2, div tags)"
+  ]
+}

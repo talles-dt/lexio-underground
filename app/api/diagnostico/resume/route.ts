@@ -36,7 +36,7 @@ export async function GET(request: Request) {
     );
   }
 
-  let query = _supabaseAdmin
+  let query = getSupabaseAdmin()
     .from("diagnostic_sessions")
     .select("id, email, state, raw_response_log")
     .is("completed_at", null) // only incomplete sessions
