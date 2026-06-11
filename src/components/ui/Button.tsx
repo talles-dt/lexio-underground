@@ -1,88 +1,80 @@
 "use client";
 
 import React from "react";
-import { TouchableOpacity, Text, StyleSheet } from "react-native";
+import { colors, spacing, radius } from "@/theme/tokens";
 
 interface ButtonProps {
-  children: React.ReactNode;
-  variant?: "primary" | "secondary" | "tertiary";
-  onPress?: () => void;
-  disabled?: boolean;
-  fullWidth?: boolean;
+ children: React.ReactNode;
+ variant?: "primary" | "secondary" | "tertiary";
+ onPress?: () => void;
+ disabled?: boolean;
+ fullWidth?: boolean;
 }
 
-// Fallback theme tokens
-const colors = {
-  phosphor: "#FFDD00",
-  surfaceContainerHigh: "#E0E0E0",
-  outlineVariant: "#CCCCCC",
-  obsidian: "#2A2A2A",
-  amber: "#FFC107",
+const variantStyles: Record<string, React.CSSProperties> = {
+ primary: {
+ backgroundColor: colors.phosphor,
+ },
+ secondary: {
+ backgroundColor: colors.surfaceContainerHigh,
+ borderColor: colors.outlineVariant,
+ borderWidth: 1,
+ borderStyle: "solid",
+ },
+ tertiary: {
+ backgroundColor: colors.amber,
+ },
 };
 
-const spacing = {
-  3: 12,
-  6: 24,
-};
-
-const radius = {
-  btn: 8,
-};
 export function Button(props: ButtonProps) {
-  const {
-    children,
-    variant = "primary",
-    onPress,
-    disabled = false,
-    fullWidth = false,
-  } = props;
+ const {
+ children,
+ variant = "primary",
+ onPress,
+ disabled = false,
+ fullWidth = false,
+ } = props;
 
-  const buttonStyles = [
-    styles.base,
-    styles[variant],
-    fullWidth && styles.fullWidth,
-    disabled && styles.disabled,
-  ].filter(Boolean) as (typeof styles.base)[];
+ const buttonStyle: React.CSSProperties = {
+ ...styles.base,
+ ...variantStyles[variant],
+ ...(fullWidth ? styles.fullWidth : {}),
+ ...(disabled ? styles.disabled : {}),
+ };
 
-  return (
-    <TouchableOpacity
-      style={buttonStyles}
-      onPress={onPress}
-      disabled={disabled}
-      activeOpacity={0.7}
-    >
-      <Text style={styles.text}>{children}</Text>
-    </TouchableOpacity>
-  );
+ return (
+ <button
+ type="button"
+ style={buttonStyle}
+ onClick={onPress}
+ disabled={disabled}
+ >
+ <span style={styles.text}>{children}</span>
+ </button>
+ );
 }
 
-const styles = StyleSheet.create({
-  base: {
-    alignItems: "center",
-    borderRadius: radius.btn,
-    justifyContent: "center",
-    paddingHorizontal: spacing[6],
-    paddingVertical: spacing[3],
-  },
-  disabled: {
-    opacity: 0.5,
-  },
-  fullWidth: {
-    width: "100%",
-  },
-  primary: {
-    backgroundColor: colors.phosphor,
-  },
-  secondary: {
-    backgroundColor: colors.surfaceContainerHigh,
-    borderColor: colors.outlineVariant,
-    borderWidth: 1,
-  },
-  tertiary: {
-    backgroundColor: colors.amber,
-  },
-  text: {
-    color: colors.obsidian,
-    fontWeight: "600",
-  },
-});
+const styles: Record<string, React.CSSProperties> = {
+ base: {
+ display: "flex",
+ alignItems: "center",
+ justifyContent: "center",
+ borderRadius: radius.btn,
+ paddingLeft: spacing[6],
+ paddingRight: spacing[6],
+ paddingTop: spacing[3],
+ paddingBottom: spacing[3],
+ border: "none",
+ cursor: "pointer",
+ },
+ disabled: {
+ opacity: 0.5,
+ },
+ fullWidth: {
+ width: "100%",
+ },
+ text: {
+ color: colors.obsidian,
+ fontWeight: 600,
+ },
+};

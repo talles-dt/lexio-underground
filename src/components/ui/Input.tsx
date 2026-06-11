@@ -1,19 +1,21 @@
-import { TextInput, StyleSheet, TextInputProps, Text } from "react-native";
 import React from "react";
 import { colors, radius, typography } from "@/theme/tokens";
 
-export function Input(props: TextInputProps) {
-  return <TextInput style={styles.input} {...props} />;
+export function Input(props: React.InputHTMLAttributes<HTMLInputElement>) {
+ const { style, ...rest } = props;
+ return <input style={{ ...styles.input, ...(style as React.CSSProperties) }} {...rest} />;
 }
 
 export default Input;
 
-const styles = StyleSheet.create({
-  input: {
-    backgroundColor: colors.surfaceContainerHigh,
-    borderRadius: radius.btn,
-    color: colors.onSurface,
-    fontFamily: typography.body.fontFamily,
-    padding: 12,
-  },
-});
+const styles: Record<string, React.CSSProperties> = {
+ input: {
+ backgroundColor: colors.surfaceContainerHigh,
+ borderRadius: radius.btn,
+ color: colors.onSurface,
+ fontFamily: typography.body.fontFamily,
+ padding: 12,
+ border: "none",
+ outline: "none",
+ },
+};

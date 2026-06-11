@@ -1,106 +1,104 @@
 "use client";
 
 import React, { useState } from "react";
-import { View, Text, Pressable, StyleSheet } from "react-native";
 import { colors } from "@/theme/tokens";
 
 interface Lesson {
-  id: string;
-  title: string;
-  mnemonic: string;
-  archetype_key: string;
-  difficulty: string;
+ id: string;
+ title: string;
+ mnemonic: string;
+ archetype_key: string;
+ difficulty: string;
 }
 
 function highlightRichText(text: string) {
-  return text
-    .replace(
-      /\*\*(.*?)\*\*/gm,
-      (match, group) => `<Text style={styles.bold}>${group}</Text>`
-    )
-    .replace(
-      /\((.*?)\)/gm,
-      (match, group) => `<Text style={styles.italic}>($group)</Text>`
-    );
+ return text
+ .replace(
+ /\*\*(.*?)\*\*/gm,
+ (match, group) => `<span style={styles.bold}>${group}</span>`
+ )
+ .replace(
+ /\((.*?)\)/gm,
+ (match, group) => `<span style={styles.italic}>(${group})</span>`
+ );
 }
 
 export const LessonCard = ({
-  lesson,
-  hapticSchedule,
+ lesson,
+ hapticSchedule,
 }: {
-  lesson: Lesson;
-  hapticSchedule: (lsnId: string) => void;
+ lesson: Lesson;
+ hapticSchedule: (lsnId: string) => void;
 }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const [difficulty, displayMnemonic] = lesson.mnemonic.split("→");
+ const [isExpanded, setIsExpanded] = useState(false);
+ const [difficulty, displayMnemonic] = lesson.mnemonic.split("→");
 
-  return (
-    <View style={styles.card}>
-      <Pressable
-        onPress={() => {
-          setIsExpanded(!isExpanded);
-          hapticSchedule(lesson.id);
-        }}
-      >
-        <View style={styles.header}>
-          <Text style={styles.title}>Lesson</Text>
-          <Text style={styles.difficulty}>{difficulty.trim()}</Text>
-        </View>
-        <Text style={styles.mnemonic}>{displayMnemonic.trim()}</Text>
-      </Pressable>
+ return (
+ <div style={styles.card}>
+ <button
+ type="button"
+ onClick={() => {
+ setIsExpanded(!isExpanded);
+ hapticSchedule(lesson.id);
+ }}
+ style={{ background: "none", border: "none", cursor: "pointer", padding: 0, textAlign: "left", width: "100%" }}
+ >
+ <div style={styles.header}>
+ <span style={styles.title}>Lesson</span>
+ <span style={styles.difficulty}>{difficulty.trim()}</span>
+ </div>
+ <span style={styles.mnemonic}>{displayMnemonic.trim()}</span>
+ </button>
 
-      {isExpanded && (
-        <View style={styles.expandedContent}>
-          <Text style={styles.body}>{lesson.title}</Text>
-        </View>
-      )}
-    </View>
-  );
+ {isExpanded && (
+ <div style={styles.expandedContent}>
+ <span style={styles.body}>{lesson.title}</span>
+ </div>
+ )}
+ </div>
+ );
 };
 
-const styles = StyleSheet.create({
-  body: {
-    fontSize: 14,
-    lineHeight: 20,
-  },
-  bold: {
-    fontWeight: "bold",
-  },
-  card: {
-    backgroundColor: colors.card,
-    borderRadius: 12,
-    elevation: 2,
-    marginBottom: 12,
-    padding: 16,
-    shadowColor: colors.obsidian,
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-  },
-  difficulty: {
-    color: colors.primary,
-    fontSize: 16,
-  },
-  expandedContent: {
-    marginTop: 8,
-  },
-  header: {
-    alignItems: "center",
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-  italic: {
-    fontStyle: "italic",
-  },
-  mnemonic: {
-    color: colors.text,
-    fontSize: 16,
-    fontWeight: "600",
-    marginVertical: 8,
-  },
-  title: {
-    color: colors.text,
-    fontSize: 18,
-    fontWeight: "bold",
-  },
-});
+const styles: Record<string, React.CSSProperties> = {
+ body: {
+ fontSize: 14,
+ lineHeight: "20px",
+ },
+ bold: {
+ fontWeight: "bold",
+ },
+ card: {
+ backgroundColor: colors.card,
+ borderRadius: 12,
+ marginBottom: 12,
+ padding: 16,
+ boxShadow: `0 2px 4px rgba(13, 13, 15, 0.1)`,
+ },
+ difficulty: {
+ color: colors.primary,
+ fontSize: 16,
+ },
+ expandedContent: {
+ marginTop: 8,
+ },
+ header: {
+ display: "flex",
+ alignItems: "center",
+ justifyContent: "space-between",
+ },
+ italic: {
+ fontStyle: "italic",
+ },
+ mnemonic: {
+ color: colors.text,
+ fontSize: 16,
+ fontWeight: 600,
+ marginTop: 8,
+ marginBottom: 8,
+ },
+ title: {
+ color: colors.text,
+ fontSize: 18,
+ fontWeight: "bold",
+ },
+};
