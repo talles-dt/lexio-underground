@@ -2,8 +2,8 @@
 // ElevenLabs TTS for palace item pronunciation (Phase 5.7)
 // Returns audio stream for a given text
 
-import { NextResponse } from "next/server.js";
-import { NextRequest } from "next/server.js";
+import { NextResponse } from "next/server";
+import { NextRequest } from "next/server";
 
 // Default voice: Rachel (clear, neutral American English)
 const DEFAULT_VOICE = "21m00Tcm4TlvDq8ikWAM";

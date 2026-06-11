@@ -2,7 +2,7 @@
 // W&B-style experiment tracking (Phase 6.3)
 // Lightweight event logging to Supabase for analytics
 
-import { NextRequest, NextResponse } from "next/server.js";
+import { NextRequest, NextResponse } from "next/server";
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
 
 let _supabaseAdmin: SupabaseClient | null = null;
