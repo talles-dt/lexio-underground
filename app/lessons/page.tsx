@@ -1,63 +1,58 @@
 "use client";
 
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
 import Link from "next/link";
 import { colors, spacing, radius } from "@/theme/tokens";
 
 export default function LessonsPage() {
   return (
-    <View style={styles.container}>
-      <View style={styles.navbar}>
+    <div style={styles.container}>
+      <nav style={styles.navbar}>
         <Link href="/palace" style={styles.navLink}>
-          <View style={styles.navLinkContent}>
-            <Text style={styles.navLinkText}>Home</Text>
-          </View>
+          <span style={styles.navLinkContent}>Home</span>
         </Link>
         <Link href="/diagnostico" style={styles.navLink}>
-          <View style={styles.navLinkContent}>
-            <Text style={styles.navLinkText}>Take the Cartografa</Text>
-          </View>
+          <span style={styles.navLinkContent}>Take the Cartografa</span>
         </Link>
-      </View>
-      <View style={styles.mainContent}>
-        <Text style={styles.title}>My Lessons</Text>
-        <Text style={styles.placeholder}>No lessons found.</Text>
-      </View>
-    </View>
+      </nav>
+      <main style={styles.mainContent}>
+        <h1 style={styles.title}>My Lessons</h1>
+        <p style={styles.placeholder}>No lessons found.</p>
+      </main>
+    </div>
   );
 }
 
-const styles = StyleSheet.create({
+const styles: Record<string, React.CSSProperties> = {
   container: {
     backgroundColor: colors.obsidian,
-    flex: 1,
+    minHeight: "100vh",
     padding: spacing[4],
   },
   mainContent: {
-    alignSelf: "center",
     marginTop: spacing[6],
     maxWidth: 600,
     width: "100%",
+    margin: "0 auto",
   },
   navLink: {
-    textDecorationLine: "none",
+    textDecoration: "none",
   },
   navLinkContent: {
     backgroundColor: colors.phosphor,
     borderRadius: radius.btn,
     marginRight: spacing[3],
-    paddingHorizontal: 28,
-    paddingVertical: 12,
-  },
-  navLinkText: {
+    padding: "12px 28px",
+    display: "inline-block",
     color: colors.obsidian,
-    fontWeight: "600",
+    fontWeight: 600 as const,
   },
   navbar: {
+    display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
-    paddingVertical: spacing[4],
+    paddingTop: spacing[4],
+    paddingBottom: spacing[4],
   },
   placeholder: {
     color: colors.zinc,
@@ -66,7 +61,7 @@ const styles = StyleSheet.create({
   title: {
     color: colors.ivory,
     fontSize: 24,
-    fontWeight: "700",
+    fontWeight: 700,
     marginBottom: spacing[4],
   },
-});
+};

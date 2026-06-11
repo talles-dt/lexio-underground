@@ -4,8 +4,7 @@
 import { NextResponse } from "next/server";
 import { NextRequest } from "next/server";
 import { z } from "zod";
-// Updated import to use explicit extension for ESM
-import { supabase } from "../../../../lib/supabase.js";
+import { createClient } from "@supabase/supabase-js";
 
 const RequestSchema = z.object({
   pillar: z.enum(["grammar", "logic", "vocab", "culture", "comm"]),
@@ -32,6 +31,11 @@ export async function POST(req: NextRequest) {
   const lesson = await generateLesson({ pillar, difficulty, interest });
 
   // Persist to Supabase
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL || "",
+    process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "",
+    { auth: { persistSession: false } }
+  );
   const { data, error } = await supabase
     .from("lessons")
     .insert([

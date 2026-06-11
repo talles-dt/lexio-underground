@@ -1,19 +1,23 @@
 // app/api/checkout/route.ts
 // Stripe checkout session creation (Phase 5.4)
-// Creates Stripe Checkout Session and returns URL for redirect
-import { NextResponse } from "next/server.js";
-import { NextRequest } from "next/server.js";
-import { supabase } from "../../../lib/supabase.js";
+import { NextResponse } from "next/server";
+import { NextRequest } from "next/server";
+import { createClient } from "@supabase/supabase-js";
 
 // Pricing from spec: monthly (R$ 49), annual (R$ 468), lifetime (R$ 1,490)
-// Stripe expects amounts in cents for zero-decimal currencies like BRL
 const PRICES = {
-  monthly: { amount: 4900, description: "Mensal" }, // R$ 49,00
-  annual: { amount: 46800, description: "Anual" }, // R$ 468,00
-  lifetime: { amount: 149000, description: "Vitalício" }, // R$ 1.490,00
+  monthly: { amount: 4900, description: "Mensal" },
+  annual: { amount: 46800, description: "Anual" },
+  lifetime: { amount: 149000, description: "Vitalício" },
 } as const;
 
 export type PriceTier = keyof typeof PRICES;
+
+function getSupabaseAdmin() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY || "";
+  return createClient(url, key, { auth: { persistSession: false } });
+}
 
 export async function POST(req: NextRequest) {
   try {
@@ -37,28 +41,10 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    // Mock Stripe in test environment
-    let stripe;
-    if (process.env.NODE_ENV === "test") {
-      stripe = {
-        customers: {
-          create: jest.fn().mockResolvedValue({ id: "mock_customer_id" }),
-          retrieve: jest.fn().mockResolvedValue({ id: "mock_customer_id" }),
-        },
-        checkout: {
-          sessions: {
-            create: jest
-              .fn()
-              .mockResolvedValue({ url: "https://mock-checkout.stripe.com" }),
-          },
-        },
-      };
-    } else {
-      const stripeModule = await import("stripe");
-      stripe = new stripeModule.default(
-        process.env.STRIPE_SECRET_KEY as string
-      );
-    }
+    const stripe = (await import("stripe")).default;
+    const stripeClient = new stripe(process.env.STRIPE_SECRET_KEY as string);
+
+    const supabase = getSupabaseAdmin();
 
     // Get or create customer
     const { data: user } = await supabase
@@ -70,21 +56,20 @@ export async function POST(req: NextRequest) {
     let customerId = user?.stripe_customer_id;
 
     if (!customerId) {
-      const customer = await stripe.customers.create({
+      const customer = await stripeClient.customers.create({
         email: user?.email || "",
         name: user?.name || "",
         metadata: { user_id },
       });
       customerId = customer.id;
 
-      // Save stripe_customer_id to user profile
       await supabase
         .from("users")
         .update({ stripe_customer_id: customerId })
         .eq("id", user_id);
     }
 
-    const session = await stripe.checkout.sessions.create({
+    const session = await stripeClient.checkout.sessions.create({
       customer: customerId,
       mode: tier === "lifetime" ? "payment" : "subscription",
       line_items: [

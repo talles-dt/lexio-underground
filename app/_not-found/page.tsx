@@ -1,21 +1,18 @@
 "use client";
 
-import React from "react";
-import { Text, View } from "react-native";
-
 import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <View>
-      <Text style={{ fontSize: 24, fontWeight: "bold" }}>Not Found</Text>
-      <Text>
-        <Text>Return </Text>
-        <Link href="/">
-          <Text>home</Text>
+    <div style={{ padding: 48, textAlign: "center" }}>
+      <h1 style={{ fontSize: 24, fontWeight: "bold" }}>Not Found</h1>
+      <p>
+        Return{" "}
+        <Link href="/" style={{ textDecoration: "underline" }}>
+          home
         </Link>
-        <Text>.</Text>
-      </Text>
-    </View>
+        .
+      </p>
+    </div>
   );
 }

@@ -4,10 +4,7 @@
 // Export Pillar as a union string literal
 export type Pillar = "grammar" | "logic" | "vocab" | "culture" | "comm";
 
-declare module "../../lib/supabase" {
-  import { SupabaseClient } from "@supabase/supabase-js";
-  export const supabase: SupabaseClient;
-}
+declare module "nodemailer";
 
 interface Theme {
   colors: {

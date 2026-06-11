@@ -3,6 +3,10 @@
 import React from "react";
 import dynamic from "next/dynamic";
 
+type PalaceBlueprintProps = {
+  rooms: Array<{ id: string; name: string }>;
+};
+
 const PalaceBlueprint = dynamic<PalaceBlueprintProps>(
   () =>
     import("../../src/components/PalaceBlueprint.js").then(
@@ -13,21 +17,17 @@ const PalaceBlueprint = dynamic<PalaceBlueprintProps>(
   }
 );
 
-type PalaceBlueprintProps = {
-  rooms: Array<{ id: string; name: string }>;
-};
-
 export type { PalaceBlueprintProps };
 
 const usePalaceStore = () => {
   return {
-    rooms: [],
+    rooms: [] as Array<{ id: string; name: string }>,
     initializePalace: () => {},
     palaceCreated: false,
   };
 };
 
 export default function PalaceBuilder() {
-  const { rooms } = usePalaceStore(); // Placeholder
+  const { rooms } = usePalaceStore();
   return <PalaceBlueprint rooms={rooms} />;
 }
