@@ -1,8 +1,5 @@
 "use client";
 
-// src/components/DiagnosticQuiz.tsx
-// React Native version of the diagnostic quiz with Lexio DNA
-// Enhanced to match stitch brief specifications for Cartografa Test (Grammar stage)
 import React, { useState } from "react";
 import { Text, StyleSheet, TextInput, Pressable, View } from "react-native";
 import { colors, typography, spacing, radius } from "@/theme/tokens";
@@ -11,12 +8,12 @@ import * as Clipboard from "expo-clipboard";
 type Question = {
   id: string;
   text: string;
-  whyExplanation: string; // For the expandable "Why?" section
+  whyExplanation: string;
 };
 
 type DiagnosticQuizProps = {
   email: string;
-  interest: string; // Memory palace hook - passed from email capture, read-only here
+  interest: string;
   onShareToken: (token: string) => void;
 };
 
@@ -25,18 +22,12 @@ export function DiagnosticQuiz({
   interest,
   onShareToken,
 }: DiagnosticQuizProps) {
-  const [answers, setAnswers] = React.useState<Record<string, number>>({});
-  const [submitted, setSubmitted] = React.useState(false);
-  const [shareLink, setShareLink] = React.useState<string>("");
-  const [expandedWhy, setExpandedWhy] = React.useState<string | null>(null); // Track which question's "Why?" is expanded
-  const [activeQuestion, setActiveQuestion] = React.useState<string | null>(
-    null
-  ); // Track which option is currently tapped
+  const [answers, setAnswers] = useState<Record<string, number>>({});
+  const [submitted, setSubmitted] = useState(false);
+  const [shareLink, setShareLink] = useState<string>("");
+  const [expandedWhy, setExpandedWhy] = useState<string | null>(null);
+  const [activeQuestion, setActiveQuestion] = useState<string | null>(null);
 
-  // Updated questions with explicit Lexio DNA:
-  // 1. Grammar: Acceptability judgments + self-explanation (why it sounds strange)
-  // 2. Logic: Map of Ignorance - revisiting "known" ideas to check understanding
-  // 3. Communication: Prioritizing being understood over perfect fluency
   const questions: Question[] = [
     {
       id: "grammar_1",
@@ -59,12 +50,10 @@ export function DiagnosticQuiz({
   ];
 
   const handleSubmit = async () => {
-    // Basic validation
     if (!email || !interest) {
       alert("Please fill in all fields");
       return;
     }
-    // Check if all questions answered
     const allAnswered = questions.every((q) => answers[q.id] !== undefined);
     if (!allAnswered) {
       alert("Please answer all questions");
@@ -75,11 +64,7 @@ export function DiagnosticQuiz({
       const response = await fetch("/api/diagnostico", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email,
-          answers,
-          interest,
-        }),
+        body: JSON.stringify({ email, answers, interest }),
       });
 
       if (response.ok) {
@@ -100,8 +85,6 @@ export function DiagnosticQuiz({
   };
 
   const handleSkip = () => {
-    // For MVP, treat skip as submitting empty answers
-    // In full Cartografa, this would navigate differently or use adaptive logic
     alert("Funcionalidade de pular ainda não implementada na versão MVP");
   };
 
@@ -113,38 +96,36 @@ export function DiagnosticQuiz({
             <View style={styles.logoMark}>
               <View
                 style={{
-                  width: 24,
-                  height: 24,
-                  backgroundColor: colors.phosphor,
-                  borderRadius: 4,
+                  width: 40,
+                  height: 40,
+                  backgroundColor: colors.lime,
+                  borderRadius: radius.full,
                 }}
               />
             </View>
-            <Text style={styles.resultTitle}>Obrigado!</Text>
-            <Text style={styles.resultSubtitle}>
-              Compartilhe seu resultado:
-            </Text>
           </View>
-          <View style={styles.shareInputContainer}>
-            <View style={styles.shareInput}>
-              <Text style={styles.shareLink}>{shareLink}</Text>
-            </View>
+          <Text style={styles.resultTitle}>Obrigado!</Text>
+          <Text style={styles.resultSubtitle}>
+            Seu diagnóstico foi concluído e seu link exclusivo foi gerado.
+          </Text>
+          <View style={styles.shareLinkContainer}>
+            <TextInput
+              style={styles.shareLinkInput}
+              value={shareLink}
+              editable={false}
+            />
             <Pressable
               style={styles.copyButton}
-              onPress={() => {
-                Clipboard.setStringAsync(shareLink);
-              }}
+              onPress={() => Clipboard.setStringAsync(shareLink)}
             >
-              <Text style={styles.copyButtonText}>Copiar link</Text>
+              <Text style={styles.copyButtonText}>Copiar</Text>
             </Pressable>
           </View>
-          <View style={styles.skipContainer}>
-            <Pressable style={styles.skipButton} onPress={handleSkip}>
-              <Text style={styles.skipText}>Pular</Text>
-            </Pressable>
-          </View>
-          <Pressable style={styles.button} onPress={handleSubmit}>
-            <Text style={styles.buttonText}>Enviar</Text>
+          <Pressable
+            style={styles.newQuizButton}
+            onPress={() => setSubmitted(false)}
+          >
+            <Text style={styles.newQuizButtonText}>Fazer novo diagnóstico</Text>
           </Pressable>
         </View>
       </View>
@@ -153,280 +134,236 @@ export function DiagnosticQuiz({
 
   return (
     <View style={styles.container}>
-      {/* Stage indicator - Top: 'Stage 1 of 5 — Grammar' in JetBrains Mono zinc */}
-      <View style={styles.stageIndicator}>
-        <Text style={styles.stageText}>Stage 1 of 5 — Grammar</Text>
-      </View>
+      <Text style={styles.title}>Diagnóstico Lexio</Text>
+      <Text style={styles.subtitle}>Descubra seus pilares de aprendizado</Text>
+      <Text style={styles.email}>Para: {email}</Text>
 
-      {/* Memory Palace Hook - Read-only input */}
-      <Text style={styles.title}>Memory Palace Hook</Text>
-      <Text style={styles.subtitle}>(e.g., "minha casa", "cachorro"):</Text>
-      <TextInput
-        style={styles.input}
-        value={interest}
-        editable={false}
-        placeholderTextColor={colors.zinc}
-      />
+      {questions.map((question) => (
+        <View key={question.id} style={styles.questionCard}>
+          <Text style={styles.questionText}>{question.text}</Text>
 
-      {/* Question card - Center: question card (obsidian, zinc border) */}
-      <View style={styles.questionCard}>
-        {questions.map((q) => (
-          <View key={q.id} style={styles.questionContainer}>
-            <Text style={styles.questionText}>{q.text}</Text>
-            {[1, 2, 3, 4, 5].map((val) => (
-              <View
-                key={val}
-                style={[
-                  styles.optionRow,
-                  activeQuestion === `${q.id}-${val}` && styles.optionRowActive,
-                ]}
-              >
+          {/* Multiple choice answers */}
+          <View style={styles.answerOptions}>
+            {["Nunca", "Raramente", "Às vezes", "Frequentemente", "Sempre"].map(
+              (option, index) => (
                 <Pressable
+                  key={index}
                   style={[
-                    styles.radioButton,
-                    answers[q.id] === val ? styles.radioButtonSelected : null,
+                    styles.answerOption,
+                    answers[question.id] === index &&
+                      styles.answerOptionSelected,
                   ]}
-                  onPressIn={() => setActiveQuestion(`${q.id}-${val}`)}
-                  onPressOut={() => setActiveQuestion(null)}
                   onPress={() => {
-                    setAnswers((prev) => ({ ...prev, [q.id]: val }));
-                    setActiveQuestion(null);
+                    setAnswers({ ...answers, [question.id]: index });
                   }}
+                  onPressIn={() => setActiveQuestion(question.id)}
+                  onPressOut={() => setActiveQuestion(null)}
                 >
-                  <View style={styles.radioInner} />
+                  <Text
+                    style={[
+                      styles.answerText,
+                      answers[question.id] === index &&
+                        styles.answerTextSelected,
+                    ]}
+                  >
+                    {option}
+                  </Text>
                 </Pressable>
-                <Text style={styles.optionText}>{val}</Text>
-              </View>
-            ))}
-            {expandedWhy === q.id && (
-              <View style={styles.whyContainer}>
-                <Text style={styles.whyText}>{q.whyExplanation}</Text>
-              </View>
+              )
             )}
-            <Pressable
-              style={styles.whyButton}
-              onPress={() => {
-                setExpandedWhy(expandedWhy === q.id ? null : q.id);
-              }}
-            >
-              <Text style={styles.whyToggleText}>
-                {expandedWhy === q.id ? "Ocultar explicação" : "Por quê?"}
-              </Text>
-            </Pressable>
           </View>
-        ))}
-      </View>
 
-      {/* Skip button - Bottom: 'Skip' in zinc */}
-      <View style={styles.skipContainer}>
-        <Pressable style={styles.skipButton} onPress={handleSkip}>
-          <Text style={styles.skipText}>Pular</Text>
-        </Pressable>
-      </View>
+          {/* Why explanation */}
+          <Pressable
+            style={styles.whyButton}
+            onPress={() => {
+              expandedWhy === question.id
+                ? setExpandedWhy(null)
+                : setExpandedWhy(question.id);
+            }}
+          >
+            <Text style={styles.whyButtonText}>Por quê?</Text>
+          </Pressable>
 
-      {/* Submit button */}
-      <Pressable style={styles.button} onPress={handleSubmit}>
-        <Text style={styles.buttonText}>Enviar</Text>
+          {expandedWhy === question.id && (
+            <View style={styles.whyExplanation}>
+              <Text style={styles.whyExplanationText}>
+                {question.whyExplanation}
+              </Text>
+            </View>
+          )}
+        </View>
+      ))}
+
+      <Pressable style={styles.submitButton} onPress={handleSubmit}>
+        <Text style={styles.submitButtonText}>Enviar</Text>
+      </Pressable>
+
+      <Pressable style={styles.skipButton} onPress={handleSkip}>
+        <Text style={styles.skipButtonText}>Pular diagnóstico</Text>
       </Pressable>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  button: {
-    alignItems: "center",
-    backgroundColor: colors.phosphor,
-    marginTop: spacing[4],
-    paddingVertical: spacing[3],
+  answerOption: {
+    backgroundColor: colors.ivory,
+    borderColor: colors.zinc,
+    borderRadius: radius.sm,
+    borderWidth: 1,
+    marginBottom: spacing.sm,
+    padding: spacing.sm,
   },
-  buttonText: {
-    ...typography.ui,
+  answerOptionSelected: {
+    backgroundColor: colors.amber,
+    borderColor: colors.amber,
+  },
+  answerOptions: {
+    marginBottom: spacing.sm,
+  },
+  answerText: {
     color: colors.obsidian,
-    fontWeight: "600" as const,
+    fontSize: typography.text.md,
+  },
+  answerTextSelected: {
+    color: colors.ivory,
   },
   container: {
     backgroundColor: colors.obsidian,
     flex: 1,
-    padding: spacing[4],
+    padding: spacing.md,
   },
   copyButton: {
-    backgroundColor: colors.phosphor,
-    borderRadius: radius.btn,
-    paddingHorizontal: spacing[3],
-    paddingVertical: spacing[2],
+    backgroundColor: colors.lime,
+    borderRadius: radius.sm,
+    marginLeft: spacing.sm,
+    padding: spacing.sm,
   },
   copyButtonText: {
-    ...typography.ui,
-    color: colors.obsidian,
-    fontWeight: "600" as const,
-  },
-  input: {
-    backgroundColor: colors.surface,
-    borderColor: colors.borderSubtle,
-    borderRadius: radius.btn,
-    borderWidth: 1,
     color: colors.ivory,
-    marginBottom: spacing[4],
-    paddingHorizontal: spacing[3],
-    paddingVertical: spacing[2],
-    ...typography.ui,
+    fontSize: typography.text.sm,
+  },
+  email: {
+    color: colors.zinc,
+    fontSize: typography.text.md,
+    marginBottom: spacing.lg,
+    textAlign: "center",
   },
   logoMark: {
-    marginRight: spacing[2],
+    marginBottom: spacing.sm,
   },
-  optionRow: {
+  newQuizButton: {
     alignItems: "center",
-    flexDirection: "row",
-    marginVertical: spacing[1],
-    // Base styling - active state will overlay
   },
-  optionRowActive: {
-    // Temporary highlight style when tapped
-    backgroundColor: colors.phosphorFixedDim, // surface-tint from stitch (dimmed phosphor)
-    borderRadius: radius.btn,
-    marginHorizontal: -spacing[2], // Compensate for padding
-    marginVertical: -spacing[1], // Compensate for padding
-    paddingHorizontal: spacing[2],
-    paddingVertical: spacing[1],
-  },
-  optionText: {
-    ...typography.ui,
-    color: colors.ivory,
+  newQuizButtonText: {
+    color: colors.violet,
+    fontSize: typography.text.sm,
+    textDecorationLine: "underline",
   },
   questionCard: {
-    backgroundColor: colors.obsidian,
-    borderColor: colors.zinc,
-    borderRadius: radius.card,
-    borderWidth: 1,
-    marginBottom: spacing[4],
-    padding: spacing[4],
-  },
-  questionContainer: {
-    marginVertical: spacing[3],
+    backgroundColor: colors.ivory,
+    borderRadius: radius.md,
+    marginBottom: spacing.md,
+    padding: spacing.md,
   },
   questionText: {
-    ...typography.ui,
-    color: colors.ivory,
-    marginBottom: spacing[1],
-  },
-  radioButton: {
-    borderColor: colors.zinc,
-    borderRadius: 9,
-    borderWidth: 2,
-    height: 18,
-    marginRight: spacing[2],
-    width: 18,
-  },
-  radioButtonSelected: {
-    borderColor: colors.phosphor,
-  },
-  radioInner: {
-    backgroundColor: colors.phosphor,
-    borderRadius: 5,
-    height: 10,
-    width: 10,
+    color: colors.obsidian,
+    fontSize: typography.text.md,
+    fontWeight: "600",
+    marginBottom: spacing.md,
   },
   resultContainer: {
-    alignItems: "center",
+    backgroundColor: colors.obsidian,
     flex: 1,
-    justifyContent: "center",
-    paddingHorizontal: spacing[4],
+    padding: spacing.md,
   },
   resultContent: {
-    maxWidth: 340,
-    width: "100%",
+    backgroundColor: colors.ivory,
+    borderRadius: radius.md,
+    padding: spacing.md,
   },
   resultHeader: {
     alignItems: "center",
-    flexDirection: "row",
-    marginBottom: spacing[4],
+    marginBottom: spacing.md,
   },
   resultSubtitle: {
-    ...typography.body,
-    color: colors.zinc,
-    marginBottom: spacing[2],
+    color: colors.grayDark,
+    fontSize: typography.text.md,
+    marginBottom: spacing.lg,
     textAlign: "center",
   },
   resultTitle: {
-    ...typography.display,
-    color: colors.ivory,
-  },
-  shareInput: {
-    alignItems: "center",
-    backgroundColor: colors.surface,
-    borderColor: colors.borderSubtle,
-    borderRadius: radius.btn,
-    borderWidth: 1,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    paddingHorizontal: spacing[3],
-    paddingVertical: spacing[2],
-  },
-  shareInputContainer: {
-    marginVertical: spacing[3],
-  },
-  shareLink: {
-    ...typography.ui,
-    color: colors.ivory,
-    flexShrink: 1,
-  },
-  skipButton: {
-    paddingHorizontal: spacing[3],
-    paddingVertical: spacing[2],
-  },
-  skipContainer: {
-    borderTopColor: colors.borderSubtle,
-    borderTopWidth: 1,
-    marginTop: spacing[6],
-    paddingTop: spacing[4],
-  },
-  skipText: {
-    ...typography.ui,
-    color: colors.zinc,
-  },
-  stageIndicator: {
-    paddingVertical: spacing[2],
-  },
-  stageText: {
-    ...typography.ui,
-    color: colors.zinc,
+    color: colors.obsidian,
+    fontSize: 28,
+    fontWeight: "bold",
+    marginBottom: spacing.sm,
     textAlign: "center",
   },
-  subtitle: {
-    ...typography.body,
+  shareLinkContainer: {
+    alignItems: "center",
+    flexDirection: "row",
+    marginBottom: spacing.lg,
+  },
+  shareLinkInput: {
+    borderColor: colors.zinc,
+    borderRadius: radius.sm,
+    borderWidth: 1,
+    color: colors.grayDark,
+    flex: 1,
+    fontSize: typography.text.sm,
+    padding: spacing.sm,
+  },
+  skipButton: {
+    alignItems: "center",
+    marginTop: spacing.sm,
+  },
+  skipButtonText: {
     color: colors.zinc,
-    marginBottom: spacing[6],
+    fontSize: typography.text.sm,
+    textDecorationLine: "underline",
+  },
+  submitButton: {
+    alignItems: "center",
+    backgroundColor: colors.lime,
+    borderRadius: radius.md,
+    marginTop: spacing.md,
+    padding: spacing.md,
+  },
+  submitButtonText: {
+    color: colors.ivory,
+    fontSize: typography.text.md,
+    fontWeight: "bold",
+  },
+  subtitle: {
+    color: colors.zinc,
+    fontSize: typography.text.lg,
+    marginBottom: spacing.md,
     textAlign: "center",
   },
   title: {
-    ...typography.display,
     color: colors.ivory,
-    marginBottom: spacing[2],
+    fontSize: 28,
+    fontWeight: "bold",
+    marginBottom: spacing.sm,
     textAlign: "center",
   },
   whyButton: {
-    alignItems: "center",
-    borderColor: colors.zinc,
-    borderRadius: radius.btn,
-    borderWidth: 1,
-    marginTop: spacing[2],
-    paddingHorizontal: spacing[3],
-    paddingVertical: spacing[1],
+    alignSelf: "flex-end",
   },
-  whyContainer: {
-    backgroundColor: colors.surface,
-    borderRadius: radius.btn,
-    marginTop: spacing[2],
-    paddingHorizontal: spacing[3],
-    paddingVertical: spacing[2],
+  whyButtonText: {
+    color: colors.violet,
+    fontSize: typography.text.sm,
   },
-  whyText: {
-    ...typography.bodyItalic,
-    color: colors.amber,
-    lineHeight: 22,
+  whyExplanation: {
+    backgroundColor: colors.grayLightest,
+    borderRadius: radius.sm,
+    marginTop: spacing.sm,
+    padding: spacing.sm,
   },
-  whyToggleText: {
-    ...typography.ui,
-    color: colors.ivory,
+  whyExplanationText: {
+    color: colors.obsidian,
+    fontSize: typography.text.sm,
+    lineHeight: typography.text.lg,
   },
 });

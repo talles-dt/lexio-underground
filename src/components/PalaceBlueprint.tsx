@@ -1,6 +1,6 @@
 import React from "react";
-import { Text } from "react-native";
-// Type declarations for stub
+import { View, Text } from "react-native";
+
 interface Room {
   id: string;
   name: string;
@@ -10,8 +10,13 @@ interface PalaceBlueprintProps {
   rooms: Room[];
 }
 
-const dynamicComponent: React.FC<PalaceBlueprintProps> = ({ rooms }) => (
-  <Text>PalaceBlueprint Dynamic Placeholder (rooms: {rooms.length})</Text>
-);
+const PalaceBlueprint: React.FC<PalaceBlueprintProps> = ({ rooms }) => {
+  return (
+    <View>
+      <Text>PalaceBlueprint Dynamic Placeholder</Text>
+      <Text>Total Rooms: {rooms.length}</Text>
+    </View>
+  );
+};
 
-export default dynamicComponent;
+export default PalaceBlueprint;

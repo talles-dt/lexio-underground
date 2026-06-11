@@ -9,6 +9,16 @@ export const colors = {
   // Core
   obsidian: "#0D0D0F",
   surface: "#141416",
+  // Legacy aliases (auto-added by monitoring loop)
+  white: "#F5F0E8", // alias for ivory
+  blackPrimary: "#0D0D0F", // alias for obsidian
+  grayLight: "#71717A", // alias for zinc
+  grayDark: "#3f3f46", // dark gray
+  grayLightest: "#27272A", // lightest gray
+  red: "#DC2626", // alias for crimson
+  card: "#141416", // alias for surface
+  primary: "#00FF88", // alias for phosphor
+  text: "#F5F0E8", // alias for ivory
   // Surface variants from stitch design brief
   surfaceDim: "#0c160e",
   surfaceBright: "#323c32",
@@ -37,6 +47,7 @@ export const colors = {
   amber: "#FF9500",
   violet: "#A855F7",
   crimson: "#DC2626",
+  lime: "#C4F82A",
   // Additional accent colors from stitch
   secondary: "#ffbc7c",
   onSecondary: "#4b2800",
@@ -57,7 +68,7 @@ export const colors = {
   outlineVariant: "#3b4b3d",
 } as const;
 
-import { MaturityStage } from "@/types";
+import { MaturityStage } from "@/types/stubs";
 import { stageColors } from "./tokens.stageColors";
 
 export const themeColors: Record<MaturityStage, string> = {
@@ -87,6 +98,20 @@ export const typography = {
     lineHeight: 32,
     fontWeight: "600" as const,
   },
+  heading: {
+    xl: {
+      fontFamily: "Syne-Bold",
+      fontSize: 28,
+      lineHeight: 36,
+      fontWeight: "700" as const,
+    },
+  },
+  text: {
+    sm: 12,
+    md: 14,
+    lg: 16,
+    xl: 18,
+  } as const,
   body: {
     fontFamily: "SourceSerif4-Regular",
     fontSize: 16,
@@ -128,11 +153,18 @@ export const spacing = {
   8: 32,
   12: 48,
   16: 64,
+  xs: 4,
+  sm: 8,
+  md: 16,
+  lg: 24,
 } as const;
 
 export const radius = {
   card: 12,
   btn: 8,
+  full: 9999,
+  sm: 6,
+  md: 12,
 } as const;
 
 export const duration = {

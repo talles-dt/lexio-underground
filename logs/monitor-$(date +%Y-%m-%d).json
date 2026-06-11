@@ -1,8 +1,0 @@
-{
-  "timestamp": "$(date -Iseconds)",
-  "status": "pending",
-  "steps": {},
-  "warnings": [],
-  "errors": [],
-  "actions_taken": []
-}

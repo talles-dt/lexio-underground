@@ -4,7 +4,10 @@ import React from "react";
 import dynamic from "next/dynamic";
 
 const PalaceBlueprint = dynamic<PalaceBlueprintProps>(
-  () => import("../../src/components/PalaceBlueprint.js").then((mod) => mod.default),
+  () =>
+    import("../../src/components/PalaceBlueprint.js").then(
+      (mod) => mod.default
+    ),
   {
     ssr: false,
   }

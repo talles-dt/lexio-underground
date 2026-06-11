@@ -1,37 +1,21 @@
+"use client";
+
 import React from "react";
-("use client");
+import { Text, View } from "react-native";
 
-import { Text } from "react-native";
-
-import { type Viewport } from "next";
-
-export const viewport: Viewport = {
-  themeColor: "#ffffff",
-  width: "device-width",
-  initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
-};
-
-export const metadata = {
-  title: "Lexio Underground",
-};
+import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <div>
+    <View>
+      <Text style={{ fontSize: 24, fontWeight: "bold" }}>Not Found</Text>
       <Text>
-        <h1>
-          <Text>Not Found</Text>
-        </h1>
-      </Text>
-      <Text>
-        <Text>Return</Text>
-        <a href="/">
+        <Text>Return </Text>
+        <Link href="/">
           <Text>home</Text>
-        </a>
+        </Link>
         <Text>.</Text>
       </Text>
-    </div>
+    </View>
   );
 }

@@ -53,8 +53,8 @@ export async function POST(req: NextRequest) {
 
     // Generate AI response
     const generateShadowResponse = async (
-      history: ShadowMessage[],
-      message: string
+      _history: ShadowMessage[],
+      _message: string
     ) => {
       return {
         content: "Mock shadow response",

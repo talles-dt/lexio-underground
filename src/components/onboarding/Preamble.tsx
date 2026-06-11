@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import { View, StyleSheet, Text, Pressable } from "react-native";
+import { View, Text, Pressable, StyleSheet } from "react-native";
+import { Button } from "@/components/ui";
 import { colors, typography, spacing, radius } from "@/theme/tokens";
-
 interface PreambleProps {
   onPress: () => void;
   onBeginCartografa?: () => void;
@@ -56,3 +56,5 @@ export const OnboardingPreamble = ({ onPress }: PreambleProps) => {
 };
 
 export const Preamble = OnboardingPreamble; // backward compatibility
+
+export default OnboardingPreamble;

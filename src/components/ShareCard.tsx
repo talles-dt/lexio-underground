@@ -1,9 +1,7 @@
 "use client";
 
-import React from "react";
-
-import { useRef, useCallback, useState } from "react";
-import { colors, spacing, radius } from "@/theme/tokens";
+import React, { useRef, useCallback, useState } from "react";
+import { colors } from "@/theme/tokens";
 
 interface ShareCardProps {
   scores: {
@@ -34,7 +32,6 @@ const PILLAR_COLORS: Record<string, string> = {
   comm: "#22C55E",
 };
 
-// ─── CANVAS RENDERING ──────────────────────────────────────
 function renderShareCard(
   canvas: HTMLCanvasElement,
   props: ShareCardProps
@@ -274,7 +271,6 @@ function wrapText(
   ctx.fillText(line.trim(), x, currentY);
 }
 
-// ─── COMPONENT ──────────────────────────────────────────────
 export default function ShareCard({
   scores,
   identityCallout,
@@ -309,7 +305,6 @@ export default function ShareCard({
   }, [scores, identityCallout, readinessLabel, shareUrl]);
 
   const shareText = `${identityCallout}\n\nMy Cartografa result: ${shareUrl}`;
-
   const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
   const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
   const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
@@ -331,22 +326,22 @@ export default function ShareCard({
           gap: 8,
           justifyContent: "center",
           flexWrap: "wrap",
-          marginBottom: spacing[3],
+          marginBottom: 16,
         }}
       >
         <button
           onClick={handleDownload}
           disabled={downloading}
           style={{
-            padding: "10px 20px",
+            padding: "8px 16px",
             backgroundColor: colors.phosphor,
             color: colors.obsidian,
             border: "none",
-            borderRadius: radius.btn,
+            borderRadius: 4,
             fontSize: 14,
             fontWeight: 600,
-            cursor: downloading ? "wait" : "pointer",
-            opacity: downloading ? 0.7 : 1,
+            cursor: "pointer",
+            opacity: downloading ? 0.5 : 1,
           }}
         >
           {downloading ? "Generating..." : "📥 Download PNG"}
@@ -357,11 +352,11 @@ export default function ShareCard({
           target="_blank"
           rel="noopener noreferrer"
           style={{
-            padding: "10px 20px",
+            padding: "8px 16px",
             backgroundColor: "#0077B5",
-            color: "#fff",
+            color: "white",
             border: "none",
-            borderRadius: radius.btn,
+            borderRadius: 4,
             fontSize: 14,
             fontWeight: 600,
             textDecoration: "none",
@@ -376,11 +371,11 @@ export default function ShareCard({
           target="_blank"
           rel="noopener noreferrer"
           style={{
-            padding: "10px 20px",
+            padding: "8px 16px",
             backgroundColor: "#1DA1F2",
-            color: "#fff",
+            color: "white",
             border: "none",
-            borderRadius: radius.btn,
+            borderRadius: 4,
             fontSize: 14,
             fontWeight: 600,
             textDecoration: "none",
@@ -395,11 +390,11 @@ export default function ShareCard({
           target="_blank"
           rel="noopener noreferrer"
           style={{
-            padding: "10px 20px",
+            padding: "8px 16px",
             backgroundColor: "#25D366",
-            color: "#fff",
+            color: "white",
             border: "none",
-            borderRadius: radius.btn,
+            borderRadius: 4,
             fontSize: 14,
             fontWeight: 600,
             textDecoration: "none",

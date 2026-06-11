@@ -1,24 +1,24 @@
+"use client";
+
 import React from "react";
+import { View, Text, StyleSheet } from "react-native";
+import { colors } from "@/theme/tokens";
 
 interface CardProps {
   children: React.ReactNode;
-  style?: React.CSSProperties;
+  style?: object;
 }
 
 export function Card({ children, style }: CardProps) {
-  return (
-    <div
-      style={{
-        backgroundColor: "#fff",
-        borderRadius: 8,
-        boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
-        padding: 16,
-        ...style,
-      }}
-    >
-      {children}
-    </div>
-  );
+  return <View style={[styles.card, style]}>{children}</View>;
 }
 
-export default Card;
+const styles = StyleSheet.create({
+  card: {
+    backgroundColor: colors.surface,
+    borderColor: colors.borderSubtle,
+    borderRadius: 12,
+    borderWidth: 1,
+    padding: 16,
+  },
+});

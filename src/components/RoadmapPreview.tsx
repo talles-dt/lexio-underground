@@ -187,8 +187,8 @@ export default function RoadmapPreview({
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(20px)",
-        transition: "all 0.6s ease",
-        marginTop: spacing[6],
+        transition: "all 0.4s ease",
+        marginTop: spacing[4],
         marginBottom: spacing[4],
       }}
     >
@@ -196,24 +196,24 @@ export default function RoadmapPreview({
       <div style={{ textAlign: "center", marginBottom: spacing[4] }}>
         <p
           style={{
-            fontSize: 13,
+            fontSize: 12,
             color: colors.zinc,
             textTransform: "uppercase",
-            letterSpacing: 2,
-            marginBottom: spacing[1],
+            letterSpacing: 1,
+            marginBottom: spacing[2],
           }}
         >
           Your First Month
         </p>
         <h3
           style={{
-            fontSize: 24,
+            fontSize: 18,
             fontWeight: 700,
             color: colors.ivory,
-            marginBottom: spacing[1],
+            marginBottom: spacing[2],
           }}
         >
-          Here&apos;s where it starts
+          Here's where it starts
         </h3>
         <p
           style={{
@@ -252,7 +252,11 @@ export default function RoadmapPreview({
               backgroundColor: room.locked
                 ? colors.surface
                 : colors.surfaceContainerHigh,
-              border: `1px solid ${room.locked ? colors.borderSubtle : PILLAR_COLORS[room.pillar]}40`,
+              border: `1px solid ${
+                room.locked
+                  ? colors.borderSubtle
+                  : `${PILLAR_COLORS[room.pillar]}40`
+              }`,
               borderRadius: radius.card,
               position: "relative",
               overflow: "hidden",
@@ -261,12 +265,10 @@ export default function RoadmapPreview({
             {/* Room number */}
             <div
               style={{
-                width: 36,
-                height: 36,
-                borderRadius: 18,
-                backgroundColor: room.locked
-                  ? colors.surfaceContainerHigh
-                  : PILLAR_COLORS[room.pillar],
+                width: 40,
+                height: 40,
+                borderRadius: radius.sm,
+                backgroundColor: `${PILLAR_COLORS[room.pillar]}20`,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -283,16 +285,11 @@ export default function RoadmapPreview({
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: spacing[2],
-                  marginBottom: spacing[1],
+                  gap: spacing[1],
                 }}
               >
                 <span
-                  style={{
-                    fontSize: 15,
-                    fontWeight: 600,
-                    color: room.locked ? colors.zinc : colors.ivory,
-                  }}
+                  style={{ fontSize: 15, fontWeight: 600, color: colors.ivory }}
                 >
                   {room.name}
                 </span>
@@ -318,7 +315,7 @@ export default function RoadmapPreview({
                   fontSize: 13,
                   color: colors.zinc,
                   lineHeight: 1.4,
-                  margin: 0,
+                  marginTop: spacing[1],
                 }}
               >
                 {room.description}
@@ -327,9 +324,9 @@ export default function RoadmapPreview({
                 style={{
                   fontSize: 11,
                   color: PILLAR_COLORS[room.pillar],
-                  fontWeight: 500,
-                  marginTop: spacing[1],
-                  display: "inline-block",
+                  fontWeight: 600,
+                  marginTop: spacing[2],
+                  display: "block",
                 }}
               >
                 {PILLAR_NAMES[room.pillar]}
@@ -374,21 +371,20 @@ export default function RoadmapPreview({
       >
         <p
           style={{
-            fontSize: 13,
+            fontSize: 16,
             color: colors.violet,
-            marginBottom: spacing[1],
-            fontWeight: 600,
+            marginBottom: spacing[2],
           }}
         >
           💎 Cultural Atom Preview
         </p>
         <p
           style={{
-            fontSize: 14,
-            color: colors.ivory,
+            fontSize: 13,
+            color: colors.zinc,
             fontStyle: "italic",
             lineHeight: 1.5,
-            margin: 0,
+            marginBottom: spacing[2],
           }}
         >
           &ldquo;Break a leg&rdquo; — Inglês não é sobre traduzir palavras. É
@@ -398,12 +394,7 @@ export default function RoadmapPreview({
 
       {/* CTA */}
       <div style={{ textAlign: "center", marginTop: spacing[4] }}>
-        <p
-          style={{
-            fontSize: 13,
-            color: colors.zinc,
-          }}
-        >
+        <p style={{ fontSize: 13, color: colors.zinc }}>
           Complete your Cartografa to unlock your full palace blueprint
         </p>
       </div>

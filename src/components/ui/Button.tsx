@@ -1,32 +1,48 @@
 "use client";
 
 import React from "react";
-import { StyleSheet, TouchableOpacity, Text } from "react-native";
-import { colors, radius } from "@/theme/tokens";
-
-type Variant = "primary" | "secondary" | "tertiary" | "invisible";
+import { TouchableOpacity, Text, StyleSheet } from "react-native";
 
 interface ButtonProps {
   children: React.ReactNode;
-  variant?: Variant;
+  variant?: "primary" | "secondary" | "tertiary";
   onPress?: () => void;
   disabled?: boolean;
   fullWidth?: boolean;
 }
 
-export function Button({
-  children,
-  variant = "primary",
-  onPress,
-  disabled = false,
-  fullWidth = false,
-}: ButtonProps) {
+// Fallback theme tokens
+const colors = {
+  phosphor: "#FFDD00",
+  surfaceContainerHigh: "#E0E0E0",
+  outlineVariant: "#CCCCCC",
+  obsidian: "#2A2A2A",
+  amber: "#FFC107",
+};
+
+const spacing = {
+  3: 12,
+  6: 24,
+};
+
+const radius = {
+  btn: 8,
+};
+export function Button(props: ButtonProps) {
+  const {
+    children,
+    variant = "primary",
+    onPress,
+    disabled = false,
+    fullWidth = false,
+  } = props;
+
   const buttonStyles = [
     styles.base,
     styles[variant],
     fullWidth && styles.fullWidth,
     disabled && styles.disabled,
-  ].filter(Boolean);
+  ].filter(Boolean) as (typeof styles.base)[];
 
   return (
     <TouchableOpacity
@@ -45,17 +61,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: radius.btn,
     justifyContent: "center",
-    paddingHorizontal: 24,
-    paddingVertical: 12,
+    paddingHorizontal: spacing[6],
+    paddingVertical: spacing[3],
   },
   disabled: {
     opacity: 0.5,
   },
   fullWidth: {
     width: "100%",
-  },
-  invisible: {
-    backgroundColor: "transparent",
   },
   primary: {
     backgroundColor: colors.phosphor,

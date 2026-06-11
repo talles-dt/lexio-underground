@@ -1,5 +1,6 @@
 // Stub for @stripe/stripe-react-native for web builds
 // This provides a compatible interface that works in browser environments
+var React = require("react");
 
 // Mock the StripeProvider component
 exports.StripeProvider = function StripeProvider({ children }) {

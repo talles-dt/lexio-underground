@@ -63,7 +63,7 @@ export async function POST(req: Request) {
 
       if (error) throw error;
       return new Response(JSON.stringify(data), { status: 200 });
-    } catch (err: any) {
+    } catch (err) {
       console.error("Resend failed, attempting SMTP fallback:", err);
     }
   } else {
@@ -96,8 +96,10 @@ export async function POST(req: Request) {
 
     console.warn("SMTP fallback used for:", email);
     return new Response(JSON.stringify({ fallback: true }), { status: 200 });
-  } catch (smtpErr: any) {
-    return new Response(JSON.stringify({ error: smtpErr.message }), {
+  } catch (smtpErr) {
+    const errorMessage =
+      smtpErr instanceof Error ? smtpErr.message : "Unknown error";
+    return new Response(JSON.stringify({ error: errorMessage }), {
       status: 500,
     });
   }

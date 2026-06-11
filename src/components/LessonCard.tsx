@@ -1,112 +1,106 @@
-import { useState } from "react";
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { View, Text, Pressable, StyleSheet } from "react-native";
 import { colors } from "@/theme/tokens";
 
 interface Lesson {
-  grammar: string;
-  logic: string;
-  communication: string;
+  id: string;
+  title: string;
   mnemonic: string;
+  archetype_key: string;
+  difficulty: string;
 }
 
-export function LessonCard({
+function highlightRichText(text: string) {
+  return text
+    .replace(
+      /\*\*(.*?)\*\*/gm,
+      (match, group) => `<Text style={styles.bold}>${group}</Text>`
+    )
+    .replace(
+      /\((.*?)\)/gm,
+      (match, group) => `<Text style={styles.italic}>($group)</Text>`
+    );
+}
+
+export const LessonCard = ({
   lesson,
-  difficulty,
+  hapticSchedule,
 }: {
   lesson: Lesson;
-  difficulty: string;
-}) {
-  const [expanded, setExpanded] = useState(false);
-  const mnemonicParts = lesson.mnemonic.split("**→**");
-  const displayMnemonic = mnemonicParts[1] || lesson.mnemonic;
-
-  const styles = StyleSheet.create({
-    body: {
-      color: colors.ivory,
-    },
-    bold: {
-      fontWeight: "bold",
-    },
-    button: {
-      backgroundColor: "#3b82f6",
-      borderRadius: 4,
-      marginTop: 16,
-      paddingHorizontal: 12,
-      paddingVertical: 8,
-    },
-    buttonText: {
-      color: colors.ivory,
-      fontSize: 12,
-    },
-    card: {
-      borderColor: "#4b5563",
-      borderRadius: 8,
-      borderWidth: 1,
-      elevation: 5,
-      overflow: "hidden",
-      padding: 16,
-      shadowColor: "#000000",
-      shadowOffset: { width: 0, height: 2 },
-      shadowOpacity: 0.25,
-      shadowRadius: 4,
-    },
-    container: {
-      gap: 8,
-    },
-    divider: {
-      borderBottomColor: colors.zinc,
-      borderBottomWidth: 1,
-      marginVertical: 8,
-    },
-    italic: {
-      fontStyle: "italic",
-    },
-    title: {
-      color: colors.ivory,
-      fontSize: 20,
-      fontWeight: "bold",
-    },
-  });
+  hapticSchedule: (lsnId: string) => void;
+}) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [difficulty, displayMnemonic] = lesson.mnemonic.split("→");
 
   return (
     <View style={styles.card}>
-      <Text style={styles.title}>Lesson ({difficulty})</Text>
-      <Text style={[styles.italic, styles.body]}>"{displayMnemonic}"</Text>
-
-      <View style={styles.divider} />
-
-      <View style={styles.container}>
-        <View>
-          <Text style={[styles.bold, styles.body]}>Grammar:</Text>
-          <Text style={styles.body}>{lesson.grammar}</Text>
+      <Pressable
+        onPress={() => {
+          setIsExpanded(!isExpanded);
+          hapticSchedule(lesson.id);
+        }}
+      >
+        <View style={styles.header}>
+          <Text style={styles.title}>Lesson</Text>
+          <Text style={styles.difficulty}>{difficulty.trim()}</Text>
         </View>
+        <Text style={styles.mnemonic}>{displayMnemonic.trim()}</Text>
+      </Pressable>
 
-        <View>
-          <Text style={[styles.bold, styles.body]}>Logic:</Text>
-          <Text style={styles.body}>{lesson.logic}</Text>
+      {isExpanded && (
+        <View style={styles.expandedContent}>
+          <Text style={styles.body}>{lesson.title}</Text>
         </View>
-
-        {expanded && (
-          <View>
-            <Text style={[styles.bold, styles.body]}>Communication:</Text>
-            <Text style={styles.body}>{lesson.communication}</Text>
-
-            <View style={styles.divider} />
-
-            <Text style={[styles.bold, styles.body]}>Memory Palace:</Text>
-            <Text style={styles.body}>
-              {lesson.mnemonic.replace(/\n/g, "\n")}
-            </Text>
-          </View>
-        )}
-
-        <Pressable onPress={() => setExpanded(!expanded)} style={styles.button}>
-          <Text style={styles.buttonText}>
-            {expanded ? "Collapse" : "Expand"}
-          </Text>
-        </Pressable>
-      </View>
+      )}
     </View>
   );
-}
+};
+
+const styles = StyleSheet.create({
+  body: {
+    fontSize: 14,
+    lineHeight: 20,
+  },
+  bold: {
+    fontWeight: "bold",
+  },
+  card: {
+    backgroundColor: colors.card,
+    borderRadius: 12,
+    elevation: 2,
+    marginBottom: 12,
+    padding: 16,
+    shadowColor: colors.obsidian,
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+  },
+  difficulty: {
+    color: colors.primary,
+    fontSize: 16,
+  },
+  expandedContent: {
+    marginTop: 8,
+  },
+  header: {
+    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  italic: {
+    fontStyle: "italic",
+  },
+  mnemonic: {
+    color: colors.text,
+    fontSize: 16,
+    fontWeight: "600",
+    marginVertical: 8,
+  },
+  title: {
+    color: colors.text,
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+});

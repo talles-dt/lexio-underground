@@ -1,16 +1,20 @@
 "use client";
 
-// src/components/onboarding/EmailCapture.tsx
 import React from "react";
-import { View, StyleSheet, Text, Pressable } from "react-native";
-import { Input } from "@/components/ui";
+import {
+  View,
+  Text,
+  Pressable,
+  TextInput as Input,
+  StyleSheet,
+} from "react-native";
 import { colors, typography, spacing } from "@/theme/tokens";
 
-export const EmailCapture = ({
-  onSubmit,
-}: {
+interface EmailCaptureProps {
   onSubmit: (email: string, interest: string) => void;
-}) => {
+}
+
+const EmailCapture = ({ onSubmit }: EmailCaptureProps) => {
   const [email, setEmail] = React.useState("");
   const [interest, setInterest] = React.useState("");
 
@@ -27,7 +31,8 @@ export const EmailCapture = ({
     <View style={styles.container}>
       <Text style={styles.heading}>Enter your email to begin</Text>
       <Text style={styles.subtext}>
-        We'll send your Cartografa report and learning path to this address.
+        We&apos;ll send your Cartografa report and learning path to this
+        address.
       </Text>
       <Input
         placeholder="your@email.com"
@@ -39,7 +44,8 @@ export const EmailCapture = ({
         style={styles.input}
       />
       <Text style={styles.interestLabel}>
-        Memory Palace Hook (e.g., "minha casa", "cachorro"):
+        Memory Palace Hook (e.g., &ldquo;minha casa&rdquo;,
+        &ldquo;cachorro&rdquo;):
       </Text>
       <Input
         placeholder="Where do you want to anchor this lesson?"
@@ -102,3 +108,5 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
 });
+
+export default EmailCapture;

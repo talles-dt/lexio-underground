@@ -779,6 +779,9 @@ const QUESTION_BANK: Question[] = [
   ...commQuestions,
 ];
 
+// List of all pillars in order
+const PILLARS: Pillar[] = ["grammar", "logic", "vocab", "culture", "comm"];
+
 // Questions per pillar for quick lookup
 const QUESTIONS_BY_PILLAR: Record<Pillar, Question[]> = {
   grammar: grammarQuestions,
@@ -797,4 +800,9 @@ function getQuestionsByDifficulty(
 }
 
 // Export for external use
-export { QUESTION_BANK, QUESTIONS_BY_PILLAR, getQuestionsByDifficulty };
+export {
+  QUESTION_BANK,
+  QUESTIONS_BY_PILLAR,
+  getQuestionsByDifficulty,
+  PILLARS,
+};

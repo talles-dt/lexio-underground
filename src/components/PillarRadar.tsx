@@ -51,282 +51,133 @@ function scalePoint(
   return [cx + (point[0] - cx) * factor, cy + (point[1] - cy) * factor];
 }
 
-// Convert points to SVG polygon string
-function pointsToString(points: [number, number][]): string {
-  return points.map(([x, y]) => `${x},${y}`).join(" ");
+// Draw axis line
+function drawAxis(
+  ctx: CanvasRenderingContext2D,
+  cx: number,
+  cy: number,
+  startX: number,
+  startY: number,
+  endX: number,
+  endY: number
+) {
+  ctx.beginPath();
+  ctx.moveTo(startX, startY);
+  ctx.lineTo(endX, endY);
+  ctx.strokeStyle = "#e5e7eb";
+  ctx.lineWidth = 2;
+  ctx.stroke();
 }
 
-export default function PillarRadar({
+// Draw pillar label
+function drawLabel(
+  ctx: CanvasRenderingContext2D,
+  x: number,
+  y: number,
+  text: string,
+  color: string
+) {
+  ctx.fillStyle = color;
+  ctx.font = "bold 14px Inter";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.fillText(text, x, y);
+}
+
+// Draw polygon
+function drawPolygon(
+  ctx: CanvasRenderingContext2D,
+  points: [number, number][],
+  color: string,
+  alpha: number,
+  fill: boolean
+) {
+  if (points.length === 0) return;
+  ctx.globalAlpha = alpha;
+  ctx.beginPath();
+  ctx.moveTo(points[0][0], points[0][1]);
+  for (let i = 1; i < points.length; i++) {
+    ctx.lineTo(points[i][0], points[i][1]);
+  }
+  ctx.closePath();
+  if (fill) {
+    ctx.fillStyle = color;
+    ctx.fill();
+  }
+  ctx.lineWidth = 2;
+  ctx.strokeStyle = color;
+  ctx.stroke();
+  ctx.globalAlpha = 1;
+}
+
+export function PillarRadar({
   scores,
-  size = 280,
-  animate = true,
+  size = 250,
+  animate = false,
   delay = 0,
 }: PillarRadarProps) {
-  // Per-pillar progress: 0 = not started, 0→1 = animating, 1 = done
-  const [pillarProgress, setPillarProgress] = useState<number[]>([
-    0, 0, 0, 0, 0,
-  ]);
-  const animRef = useRef<number | null>(null);
-  const hasStartedRef = useRef(false);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [scoreBounds] = useState({
+    min: 0,
+    max: 5,
+  });
+  const [isMounted, setIsMounted] = useState(false);
 
-  const cx = size / 2;
-  const cy = size / 2;
-  const radius = size * 0.38;
-  const labelRadius = size * 0.46;
-
-  // Progressive reveal: Grammar first, then Logic, Vocab, Culture, Comm
-  // Each pillar takes ~600ms to animate. Next pillar starts when previous hits 1.
-  // Stagger delays: pillar 0 starts at 0ms, pillar 1 at 600ms, pillar 2 at 1200ms, etc.
   useEffect(() => {
-    if (!animate) {
-      setPillarProgress([1, 1, 1, 1, 1]);
-      return;
-    }
+    setIsMounted(true);
+  }, []);
 
-    if (hasStartedRef.current) return;
-    hasStartedRef.current = true;
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas || !isMounted) return;
 
-    const PILLAR_DURATION = 700; // ms per pillar
-    const STAGGER = 500; // ms between pillar starts (overlap so next starts before prev finishes)
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
 
-    const tick = () => {
-      const baseTime = Date.now() - delay;
-      const progresses = PILLAR_KEYS.map((_, i) => {
-        const pillarStart = i * STAGGER;
-        const elapsedMs = Math.max(0, baseTime - pillarStart);
-        const t = Math.min(1, elapsedMs / PILLAR_DURATION);
-        // Ease out cubic
-        return 1 - Math.pow(1 - t, 3);
-      });
+    // Clear canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      setPillarProgress(progresses);
+    // Center and radius
+    const cx = canvas.width / 2;
+    const cy = canvas.height / 2;
+    const radius = Math.min(canvas.width, canvas.height) * 0.4;
 
-      // Keep animating until last pillar is complete
-      if (progresses[4] < 1) {
-        animRef.current = requestAnimationFrame(tick);
-      }
-    };
+    // Scores as fractions
+    const scoresNormalized = PILLAR_KEYS.reduce(
+      (acc, key) => {
+        acc[key] =
+          (scores[key] - scoreBounds.min) / (scoreBounds.max - scoreBounds.min);
+        return acc;
+      },
+      {} as Record<(typeof PILLAR_KEYS)[number], number>
+    );
 
-    animRef.current = requestAnimationFrame(tick);
-    return () => {
-      if (animRef.current) cancelAnimationFrame(animRef.current);
-    };
-  }, [animate, delay]);
+    // Generate main pentagon points
+    const pentagonPoints = getPentagonPoints(cx, cy, radius);
+    // Build axes and labels
+    pentagonPoints.forEach((point, i) => {
+      // Draw axis
+      drawAxis(ctx, cx, cy, cx, cy, point[0], point[1]);
+      // Draw label
+      const labelX = point[0] + (point[0] - cx) * 0.2;
+      const labelY = point[1] + (point[1] - cy) * 0.2;
+      drawLabel(
+        ctx,
+        labelX,
+        labelY,
+        PILLAR_LABELS[i],
+        PILLAR_COLORS[PILLAR_KEYS[i]]
+      );
+    });
 
-  // Build animated scores based on per-pillar progress
-  const animatedScores = {
-    grammar: scores.grammar * pillarProgress[0],
-    logic: scores.logic * pillarProgress[1],
-    vocab: scores.vocab * pillarProgress[2],
-    culture: scores.culture * pillarProgress[3],
-    comm: scores.comm * pillarProgress[4],
-  };
+    // Build radar shape
+    const radarPoints = pentagonPoints.map((point, i) => {
+      const key = PILLAR_KEYS[i];
+      return scalePoint(point, cx, cy, scoresNormalized[key]);
+    });
+    // Draw radar polygon
+    drawPolygon(ctx, radarPoints, "#0ea5e9", 0.4, true);
+  }, [scores, size, animate, delay, isMounted, scoreBounds]);
 
-  const basePoints = getPentagonPoints(cx, cy, radius);
-
-  const currentDataPoints = basePoints.map((pt, i) => {
-    const key = PILLAR_KEYS[i];
-    const score = scores[key] ?? 0;
-    const target = scalePoint(pt, cx, cy, score);
-    const prog = pillarProgress[i] ?? 0;
-    return scalePoint(target, cx, cy, prog);
-  }) as [number, number][];
-
-  const gridLevels = [0.2, 0.4, 0.6, 0.8, 1.0];
-  const labelPoints = getPentagonPoints(cx, cy, labelRadius);
-
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox={`0 0 ${size} ${size}`}
-      style={{ overflow: "visible" }}
-    >
-      {/* Grid levels — only reveal as pillars progress */}
-      {gridLevels.map((level, i) => {
-        const gridPoints = getPentagonPoints(cx, cy, radius * level);
-        // Fade in grid as first pillar progresses
-        const gridOpacity = Math.min(0.3, pillarProgress[0] * 0.3);
-        return (
-          <polygon
-            key={i}
-            points={pointsToString(gridPoints)}
-            fill="none"
-            stroke={colors.zinc}
-            strokeWidth={0.5}
-            opacity={gridOpacity}
-            style={{ transition: "opacity 0.3s ease" }}
-          />
-        );
-      })}
-
-      {/* Axis lines — reveal progressively */}
-      {basePoints.map(([x, y], i) => {
-        const prog = pillarProgress[i] ?? 0;
-        // Axis line: endpoint animates from center outward
-        const endX = cx + (x - cx) * Math.min(1, prog * 2);
-        const endY = cy + (y - cy) * Math.min(1, prog * 2);
-        return (
-          <line
-            key={i}
-            x1={cx}
-            y1={cy}
-            x2={endX}
-            y2={endY}
-            stroke={colors.zinc}
-            strokeWidth={0.5}
-            opacity={0.3}
-            style={{ transition: "all 0.3s ease" }}
-          />
-        );
-      })}
-
-      {/* Data polygon — fill (only from started pillars) */}
-      {pillarProgress.some((p) => p > 0) && (
-        <polygon
-          points={pointsToString(currentDataPoints)}
-          fill={colors.phosphor}
-          fillOpacity={0.15}
-          stroke="none"
-        />
-      )}
-
-      {/* Data polygon — stroke */}
-      {pillarProgress.some((p) => p > 0) && (
-        <polygon
-          points={pointsToString(currentDataPoints)}
-          fill="none"
-          stroke={colors.phosphor}
-          strokeWidth={2}
-          strokeLinejoin="round"
-          style={{ transition: "all 0.3s ease" }}
-        />
-      )}
-
-      {/* Data points — each appears when its pillar starts */}
-      {currentDataPoints.map(([x, y], i) => {
-        const key = PILLAR_KEYS[i];
-        const score = animatedScores[key];
-        const prog = pillarProgress[i] ?? 0;
-        const isActive = prog > 0;
-        const isComplete = prog >= 1;
-
-        return (
-          <g key={i}>
-            {/* Connecting line from previous point (if both pillars active) */}
-            {i > 0 && pillarProgress[i - 1] > 0 && pillarProgress[i] > 0 && (
-              <line
-                x1={currentDataPoints[i - 1][0]}
-                y1={currentDataPoints[i - 1][1]}
-                x2={x}
-                y2={y}
-                stroke={PILLAR_COLORS[key]}
-                strokeWidth={1.5}
-                strokeOpacity={isComplete ? 0.6 : 0.3}
-                style={{ transition: "all 0.2s ease" }}
-              />
-            )}
-            {/* Connect last to first to close the pentagon if all active */}
-            {i === 4 && pillarProgress[0] > 0 && pillarProgress[4] > 0 && (
-              <line
-                x1={x}
-                y1={y}
-                x2={currentDataPoints[0][0]}
-                y2={currentDataPoints[0][1]}
-                stroke={colors.phosphor}
-                strokeWidth={1.5}
-                strokeOpacity={0.6}
-                style={{ transition: "all 0.2s ease" }}
-              />
-            )}
-
-            {/* Data point circle */}
-            {isActive && (
-              <circle
-                cx={x}
-                cy={y}
-                r={isComplete ? 5 : 3 + prog * 2}
-                fill={PILLAR_COLORS[key]}
-                stroke={colors.obsidian}
-                strokeWidth={2}
-                style={{
-                  transition: "all 0.3s ease",
-                  opacity: Math.min(1, prog * 2),
-                }}
-              />
-            )}
-
-            {/* Score tooltip — only when pillar is complete */}
-            {isComplete && (
-              <text
-                x={x}
-                y={y - 12}
-                textAnchor="middle"
-                fill={colors.ivory}
-                fontSize={11}
-                fontFamily="system-ui, -apple-system, sans-serif"
-                fontWeight={600}
-                style={{
-                  opacity: isComplete ? 1 : 0,
-                  transition: "opacity 0.3s ease",
-                }}
-              >
-                {Math.round(score * 100)}%
-              </text>
-            )}
-          </g>
-        );
-      })}
-
-      {/* Labels — reveal as each pillar starts */}
-      {labelPoints.map(([x, y], i) => {
-        const key = PILLAR_KEYS[i];
-        const score = animatedScores[key];
-        const prog = pillarProgress[i] ?? 0;
-        const isTop = i === 0;
-        const isBottom = i === 3;
-        const isActive = prog > 0;
-        const isComplete = prog >= 1;
-
-        return (
-          <g
-            key={i}
-            style={{
-              opacity: isActive ? 1 : 0,
-              transition: "opacity 0.4s ease",
-            }}
-          >
-            {/* Pillar name */}
-            <text
-              x={x}
-              y={isTop ? y - 8 : isBottom ? y + 16 : y}
-              textAnchor="middle"
-              dominantBaseline={
-                isTop ? "auto" : isBottom ? "hanging" : "middle"
-              }
-              fill={PILLAR_COLORS[key]}
-              fontSize={12}
-              fontFamily="system-ui, -apple-system, sans-serif"
-              fontWeight={600}
-            >
-              {PILLAR_LABELS[i]}
-            </text>
-            {/* Score below label */}
-            {isComplete && (
-              <text
-                x={x}
-                y={isTop ? y + 4 : isBottom ? y + 28 : y + 14}
-                textAnchor="middle"
-                fill={colors.zinc}
-                fontSize={10}
-                fontFamily="system-ui, -apple-system, sans-serif"
-              >
-                {Math.round(score * 100)}%
-              </text>
-            )}
-          </g>
-        );
-      })}
-    </svg>
-  );
+  return <canvas ref={canvasRef} width={size} height={size} />;
 }

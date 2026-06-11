@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import type { PillarScores, MapNode, MaturityStage } from "@/types";
+import type { PillarScores, MapNode, MaturityStage } from "@/types/stubs";
 
 interface LearnerState {
   // Auth
