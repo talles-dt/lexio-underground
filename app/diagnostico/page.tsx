@@ -344,6 +344,7 @@ export default function DiagnosticoPage() {
             totalCorrect={result.total_correct}
             durationSeconds={result.duration_seconds}
             recommendedFocus={result.recommended_focus}
+            mapData={result.map_of_ignorance}
             shareToken={shareToken}
             onShare={handleShare}
             onContinue={() => { window.location.href = "/onboarding"; }}

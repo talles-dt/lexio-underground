@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import { PillarRadar } from "@/components/PillarRadar";
+import { MapOfIgnorance } from "@/components/MapOfIgnorance";
 import { colors, spacing, radius, typography } from "@/theme/tokens";
 
 type PillarKey = "grammar" | "logic" | "vocab" | "culture" | "comm";
@@ -14,6 +15,13 @@ interface PillarScoresMap {
   comm: number;
 }
 
+interface MapNodeInput {
+  node_id: string;
+  pillar: string;
+  description: string;
+  severity: "high" | "medium" | "low";
+}
+
 interface CartografaReportProps {
   pillarScores: PillarScoresMap;
   overallReadiness: string;
@@ -22,6 +30,7 @@ interface CartografaReportProps {
   totalCorrect: number;
   durationSeconds: number;
   recommendedFocus: string[];
+  mapData?: MapNodeInput[];
   shareToken: string | null;
   onShare: () => void;
   onContinue?: () => void;
@@ -92,6 +101,7 @@ export function CartografaReport({
   totalCorrect,
   durationSeconds,
   recommendedFocus,
+  mapData,
   shareToken,
   onShare,
   onContinue,
@@ -101,7 +111,8 @@ export function CartografaReport({
   // Phase 0: Radar drawing (handled by PillarRadar internally, ~500ms)
   // Phase 1: Badge reveal (delay 600ms)
   // Phase 2: Identity typewriter (delay 1000ms)
-  // Phase 3: Stats + focus (delay proportionate to callout length)
+  // Phase 2.5: Map of Ignorance (delay 1200ms)
+  // Phase 3: Stats + focus (delay 1400ms)
   // Phase 4: Actions (after everything else)
 
   const [phase, setPhase] = useState(0);
@@ -110,8 +121,8 @@ export function CartografaReport({
     const timers: ReturnType<typeof setTimeout>[] = [];
     timers.push(setTimeout(() => setPhase(1), 600));   // badge
     timers.push(setTimeout(() => setPhase(2), 1000));  // identity
-    timers.push(setTimeout(() => setPhase(3), 1400));  // stats
-    timers.push(setTimeout(() => setPhase(4), 1800));  // actions
+    timers.push(setTimeout(() => setPhase(3), 1600));  // map + stats
+    timers.push(setTimeout(() => setPhase(4), 2200));  // actions
     return () => timers.forEach(clearTimeout);
   }, []);
 
@@ -199,6 +210,22 @@ export function CartografaReport({
           )}
         </p>
       </div>
+
+      {/* ── Map of Ignorance ───────────────────────── */}
+      {mapData && mapData.length > 0 && (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginBottom: spacing[6],
+            opacity: phase >= 3 ? 1 : 0,
+            transform: phase >= 3 ? "translateY(0)" : "translateY(12px)",
+            transition: "opacity 600ms ease, transform 600ms ease",
+          }}
+        >
+          <MapOfIgnorance nodes={mapData} size={320} />
+        </div>
+      )}
 
       {/* ── Stats ──────────────────────────────────── */}
       <div
