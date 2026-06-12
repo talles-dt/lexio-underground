@@ -68,7 +68,7 @@ export default function HomePage() {
  assessment, then receive a personalized learning path based on your
  Memory Palace hook.
  </p>
- <Link href="/diagnostico" style={styles.cta}>
+ <Link href="/onboarding" style={styles.cta}>
  Begin your Cartografa
  </Link>
  </section>

@@ -260,11 +260,16 @@ export default function DiagnosticoPage() {
     const nextQ = selectNextQuestion(stateClone);
 
     if (!nextQ) {
-      // Diagnostic complete
-      const r = generateResults(stateClone);
-      setResult(r);
-      setEngineState(stateClone);
-      setCurrentQuestion(null);
+    // Diagnostic complete
+    const r = generateResults(stateClone);
+    setResult(r);
+    setEngineState(stateClone);
+    setCurrentQuestion(null);
+    // Signal onboarding flow that Cartografa is done
+    if (typeof window !== "undefined") {
+    localStorage.setItem("lexio_diag_complete", "true");
+    try { localStorage.setItem("lexio_diag_result", JSON.stringify(r)); } catch {}
+    }
     } else {
       setEngineState(stateClone);
       setCurrentQuestion(nextQ);
@@ -391,9 +396,17 @@ export default function DiagnosticoPage() {
 
           {/* Share button */}
           <div style={{ marginTop: spacing[8], display: "flex", gap: spacing[3] }}>
-            <button style={styles.primaryBtn} onClick={handleShare}>
-              Compartilhar Resultados
-            </button>
+          <button style={styles.primaryBtn} onClick={handleShare}>
+          Compartilhar Resultados
+          </button>
+          {typeof window !== "undefined" && localStorage.getItem("lexio_ob_step") && (
+          <button
+          style={{ ...styles.primaryBtn, backgroundColor: colors.amber }}
+          onClick={() => window.location.href = "/onboarding"}
+          >
+          Continue your journey →
+          </button>
+          )}
           </div>
 
           {/* Share token display */}
