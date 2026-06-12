@@ -5,14 +5,20 @@ import { colors, spacing, radius, typography, duration } from "@/theme/tokens";
 import { createClient } from "@supabase/supabase-js";
 import PalaceBlueprintComponent from "@/components/PalaceBlueprint";
 import type { PalaceBlueprintProps, Room, MaturityStage } from "@/components/PalaceBlueprint";
+import PalaceConstructionComponent from "@/components/PalaceConstruction";
+import type { PalaceConstructionProps } from "@/components/PalaceConstruction";
 
 /* ------------------------------------------------------------------ */
-/*  Lazy wrapper (no SSR — SVG canvas)                                */
+/*  Lazy wrappers (no SSR — SVG canvas)                               */
 /* ------------------------------------------------------------------ */
 
 import dynamic from "next/dynamic";
 const PalaceBlueprint = dynamic<PalaceBlueprintProps>(
   () => Promise.resolve(PalaceBlueprintComponent),
+  { ssr: false }
+);
+const PalaceConstruction = dynamic<PalaceConstructionProps>(
+  () => Promise.resolve(PalaceConstructionComponent),
   { ssr: false }
 );
 
@@ -38,6 +44,16 @@ export default function PalacePage() {
   const [loading, setLoading] = useState(true);
   const [selectedRoom, setSelectedRoom] = useState<string | null>(null);
   const [roomDetail, setRoomDetail] = useState<Record<string, unknown> | null>(null);
+  const [showConstruction, setShowConstruction] = useState(false);
+  const [constructionDone, setConstructionDone] = useState(false);
+
+  // Check if user has seen the construction animation before
+  useEffect(() => {
+    const seen = typeof window !== "undefined" && localStorage.getItem("lexio_palace_construction_seen");
+    if (!seen) {
+      setShowConstruction(true);
+    }
+  }, []);
 
   // Fetch palace data from Supabase
   useEffect(() => {
@@ -110,13 +126,27 @@ export default function PalacePage() {
         </p>
       </header>
 
-      {/* Blueprint */}
+      {/* Blueprint / Construction */}
       <main style={styles.main}>
         {loading ? (
           <div style={styles.loadingContainer}>
             <div style={styles.loadingPulse} />
             <span style={styles.loadingText}>Loading palace...</span>
           </div>
+        ) : showConstruction && !constructionDone ? (
+          <PalaceConstruction
+            rooms={rooms}
+            maturityStage={maturityStage}
+            onRoomClick={handleRoomClick}
+            onComplete={() => {
+              setConstructionDone(true);
+              setShowConstruction(false);
+              if (typeof window !== "undefined") {
+                localStorage.setItem("lexio_palace_construction_seen", "1");
+              }
+            }}
+            skip={!showConstruction}
+          />
         ) : (
           <PalaceBlueprint
             rooms={rooms}
