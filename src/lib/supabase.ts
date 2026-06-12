@@ -59,20 +59,35 @@ export type Database = {
         >;
       };
       palace_items: {
-        Row: {
-          id: string;
-          palace_id: string;
-          word: string;
-          chunk: string;
-          grammar_notes: string | null;
-          cultural_atom_id: string | null;
-          pronunciation_url: string | null;
-          learned_at: number;
-          next_review: number | null;
-        };
-        Insert: Omit<Database["public"]["Tables"]["palace_items"]["Row"], "id">;
-        Update: Partial<Database["public"]["Tables"]["palace_items"]["Insert"]>;
+      Row: {
+      id: string;
+      palace_id: string;
+      word: string;
+      chunk: string;
+      grammar_notes: string | null;
+      cultural_atom_id: string | null;
+      pronunciation_url: string | null;
+      learned_at: number;
+      next_review: number | null;
       };
-    };
-  };
+      Insert: Omit<Database["public"]["Tables"]["palace_items"]["Row"], "id">;
+      Update: Partial<Database["public"]["Tables"]["palace_items"]["Insert"]>;
+      };
+      learner_progression: {
+      Row: {
+      user_id: string;
+      language: string;
+      maturity_stage: string;
+      pillar_weights: Record<string, number>;
+      last_cartografa_date: string | null;
+      palace_room_names: string[];
+      };
+      Insert: Omit<
+      Database["public"]["Tables"]["learner_progression"]["Row"],
+      "user_id" | "language"
+      > & { user_id: string; language: string };
+      Update: Partial<Database["public"]["Tables"]["learner_progression"]["Insert"]>;
+      };
+      };
+      };
 };

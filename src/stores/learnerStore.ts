@@ -1,26 +1,40 @@
 import { create } from "zustand";
 import type { PillarScores, MapNode, MaturityStage } from "@/types/stubs";
 
+// Debounce timer (module-level, not in state)
+let syncTimeout: ReturnType<typeof setTimeout> | null = null;
+const DEBOUNCE_MS = 2000;
+
 interface LearnerState {
   // Auth
   isAuthenticated: boolean;
   userId: string | null;
   email: string | null;
+  language: string;
 
   // Cartografa
   cartografaComplete: boolean;
   pillarScores: PillarScores | null;
   mapOfIgnorance: MapNode[];
   maturityStage: MaturityStage;
+  pillarWeights: Record<string, number>;
 
   // Palace
   palaceRooms: string[];
   palaceItems: number;
 
+  // Sync state
+  isLoaded: boolean;
+  isSyncing: boolean;
+
   // Actions
   setAuth: (userId: string, email: string) => void;
   setCartografaResults: (scores: PillarScores, map: MapNode[]) => void;
   addPalaceItem: (room: string) => void;
+  setMaturityStage: (stage: MaturityStage) => void;
+  setPalaceRooms: (rooms: string[]) => void;
+  loadFromSupabase: (userId: string, language?: string) => Promise<void>;
+  syncToSupabase: () => Promise<void>;
   reset: () => void;
 }
 
@@ -28,33 +42,121 @@ const initialState = {
   isAuthenticated: false,
   userId: null,
   email: null,
+  language: "en",
   cartografaComplete: false,
   pillarScores: null,
   mapOfIgnorance: [],
   maturityStage: "roots" as MaturityStage,
+  pillarWeights: {} as Record<string, number>,
   palaceRooms: ["entrance"],
   palaceItems: 0,
+  isLoaded: false,
+  isSyncing: false,
 };
 
-export const useLearnerStore = create<LearnerState>((set) => ({
+function scheduleSync(store: () => LearnerState) {
+  if (syncTimeout) clearTimeout(syncTimeout);
+  syncTimeout = setTimeout(() => {
+    store().syncToSupabase();
+  }, DEBOUNCE_MS);
+}
+
+export const useLearnerStore = create<LearnerState>((set, get) => ({
   ...initialState,
 
-  setAuth: (userId, email) => set({ isAuthenticated: true, userId, email }),
+  setAuth: (userId, email) => {
+    set({ isAuthenticated: true, userId, email });
+    get().loadFromSupabase(userId);
+  },
 
-  setCartografaResults: (scores, map) =>
+  setCartografaResults: (scores, map) => {
+    const avg =
+      Object.values(scores).reduce((a: number, b: number) => a + b, 0) /
+      Math.max(Object.keys(scores).length, 1);
+    let stage: MaturityStage = "roots";
+    if (avg >= 80) stage = "underground";
+    else if (avg >= 60) stage = "canopy";
+    else if (avg >= 40) stage = "branches";
+    else if (avg >= 20) stage = "sprouts";
+
     set({
       cartografaComplete: true,
       pillarScores: scores,
       mapOfIgnorance: map,
-    }),
+      maturityStage: stage,
+    });
+    scheduleSync(get);
+  },
 
-  addPalaceItem: (room) =>
+  addPalaceItem: (room) => {
     set((state) => ({
       palaceItems: state.palaceItems + 1,
       palaceRooms: state.palaceRooms.includes(room)
         ? state.palaceRooms
         : [...state.palaceRooms, room],
-    })),
+    }));
+    scheduleSync(get);
+  },
 
-  reset: () => set(initialState),
+  setMaturityStage: (stage) => {
+    set({ maturityStage: stage });
+    scheduleSync(get);
+  },
+
+  setPalaceRooms: (rooms) => {
+    set({ palaceRooms: rooms });
+    scheduleSync(get);
+  },
+
+  loadFromSupabase: async (userId, language = "en") => {
+    if (!userId) return;
+    set({ isLoaded: false });
+    try {
+      const res = await fetch(
+        `/api/learner-progression?user_id=${encodeURIComponent(userId)}&language=${language}`
+      );
+      if (!res.ok) return;
+      const data = await res.json();
+      set({
+        language,
+        maturityStage: (data.maturity_stage as MaturityStage) || "roots",
+        pillarWeights: data.pillar_weights || {},
+        palaceRooms: data.palace_room_names || ["entrance"],
+        cartografaComplete: !!data.last_cartografa_date,
+        isLoaded: true,
+      });
+    } catch {
+      set({ isLoaded: true });
+    }
+  },
+
+  syncToSupabase: async () => {
+    const { userId, language, maturityStage, pillarWeights, palaceRooms, cartografaComplete, isSyncing } = get();
+    if (!userId || isSyncing) return;
+
+    set({ isSyncing: true });
+    try {
+      await fetch("/api/learner-progression", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          user_id: userId,
+          language: language || "en",
+          maturity_stage: maturityStage,
+          pillar_weights: pillarWeights,
+          last_cartografa_date: cartografaComplete ? new Date().toISOString() : null,
+          palace_room_names: palaceRooms,
+        }),
+      });
+    } catch {
+      // Will retry on next debounced sync
+    } finally {
+      set({ isSyncing: false });
+    }
+  },
+
+  reset: () => {
+    if (syncTimeout) clearTimeout(syncTimeout);
+    set(initialState);
+  },
 }));

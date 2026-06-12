@@ -1,0 +1,69 @@
+import { NextRequest, NextResponse } from "next/server";
+import { supabaseAdmin } from "@/lib/supabase";
+
+// GET /api/learner-progression?user_id=xxx&language=en
+export async function GET(req: NextRequest) {
+  const userId = req.nextUrl.searchParams.get("user_id");
+  const language = req.nextUrl.searchParams.get("language") || "en";
+
+  if (!userId) {
+    return NextResponse.json({ error: "user_id required" }, { status: 400 });
+  }
+
+  const { data, error } = await supabaseAdmin
+    .from("learner_progression")
+    .select("*")
+    .eq("user_id", userId)
+    .eq("language", language)
+    .single();
+
+  if (error && error.code !== "PGRST116") {
+    // PGRST116 = no rows returned (not an error for us)
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+
+  if (!data) {
+    // No progression record yet — return defaults
+    return NextResponse.json({
+      user_id: userId,
+      language,
+      maturity_stage: "roots",
+      pillar_weights: { grammar: 0, logic: 0, vocab: 0, culture: 0, comm: 0 },
+      last_cartografa_date: null,
+      palace_room_names: ["entrance"],
+    });
+  }
+
+  return NextResponse.json(data);
+}
+
+// UPSERT /api/learner-progression
+export async function POST(req: NextRequest) {
+  const body = await req.json();
+  const { user_id, language, maturity_stage, pillar_weights, last_cartografa_date, palace_room_names } = body;
+
+  if (!user_id) {
+    return NextResponse.json({ error: "user_id required" }, { status: 400 });
+  }
+
+  const upsertData = {
+    user_id,
+    language: language || "en",
+    maturity_stage: maturity_stage || "roots",
+    pillar_weights: pillar_weights || {},
+    last_cartografa_date: last_cartografa_date || null,
+    palace_room_names: palace_room_names || ["entrance"],
+  };
+
+  const { data, error } = await supabaseAdmin
+    .from("learner_progression")
+    .upsert(upsertData, { onConflict: "user_id,language" })
+    .select()
+    .single();
+
+  if (error) {
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+
+  return NextResponse.json(data);
+}
