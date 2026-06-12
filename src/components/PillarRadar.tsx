@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { colors } from "@/theme/tokens";
 
 interface PillarRadarProps {
@@ -13,7 +13,7 @@ interface PillarRadarProps {
   };
   size?: number;
   animate?: boolean;
-  delay?: number; // initial delay before starting
+  delay?: number; // ms before animation starts
 }
 
 const PILLAR_LABELS = ["Grammar", "Logic", "Vocab", "Culture", "Comm"];
@@ -27,7 +27,7 @@ const PILLAR_COLORS: Record<string, string> = {
   comm: "#22C55E",
 };
 
-// Generate pentagon vertices
+// ─── SVG polygon math ─────────────────────────────────────
 function getPentagonPoints(
   cx: number,
   cy: number,
@@ -41,7 +41,6 @@ function getPentagonPoints(
   return points;
 }
 
-// Scale a single point by a score factor (0 = at center, 1 = at full radius)
 function scalePoint(
   point: [number, number],
   cx: number,
@@ -51,133 +50,229 @@ function scalePoint(
   return [cx + (point[0] - cx) * factor, cy + (point[1] - cy) * factor];
 }
 
-// Draw axis line
-function drawAxis(
-  ctx: CanvasRenderingContext2D,
-  cx: number,
-  cy: number,
-  startX: number,
-  startY: number,
-  endX: number,
-  endY: number
-) {
-  ctx.beginPath();
-  ctx.moveTo(startX, startY);
-  ctx.lineTo(endX, endY);
-  ctx.strokeStyle = "#e5e7eb";
-  ctx.lineWidth = 2;
-  ctx.stroke();
+function pointsToString(points: [number, number][]): string {
+  return points.map((p) => `${p[0]},${p[1]}`).join(" ");
 }
 
-// Draw pillar label
-function drawLabel(
-  ctx: CanvasRenderingContext2D,
-  x: number,
-  y: number,
-  text: string,
-  color: string
-) {
-  ctx.fillStyle = color;
-  ctx.font = "bold 14px Inter";
-  ctx.textAlign = "center";
-  ctx.textBaseline = "middle";
-  ctx.fillText(text, x, y);
-}
-
-// Draw polygon
-function drawPolygon(
-  ctx: CanvasRenderingContext2D,
-  points: [number, number][],
-  color: string,
-  alpha: number,
-  fill: boolean
-) {
-  if (points.length === 0) return;
-  ctx.globalAlpha = alpha;
-  ctx.beginPath();
-  ctx.moveTo(points[0][0], points[0][1]);
-  for (let i = 1; i < points.length; i++) {
-    ctx.lineTo(points[i][0], points[i][1]);
-  }
-  ctx.closePath();
-  if (fill) {
-    ctx.fillStyle = color;
-    ctx.fill();
-  }
-  ctx.lineWidth = 2;
-  ctx.strokeStyle = color;
-  ctx.stroke();
-  ctx.globalAlpha = 1;
-}
-
+// ─── Component ───────────────────────────────────────────
 export function PillarRadar({
   scores,
-  size = 250,
-  animate = false,
+  size = 280,
+  animate = true,
   delay = 0,
 }: PillarRadarProps) {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [scoreBounds] = useState({
-    min: 0,
-    max: 5,
-  });
-  const [isMounted, setIsMounted] = useState(false);
+  const [revealStep, setRevealStep] = useState(animate ? 0 : 5);
 
   useEffect(() => {
-    setIsMounted(true);
-  }, []);
+    if (!animate || revealStep >= 5) return;
 
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas || !isMounted) return;
+    const timers: ReturnType<typeof setTimeout>[] = [];
 
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    // Clear canvas
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    // Center and radius
-    const cx = canvas.width / 2;
-    const cy = canvas.height / 2;
-    const radius = Math.min(canvas.width, canvas.height) * 0.4;
-
-    // Scores as fractions
-    const scoresNormalized = PILLAR_KEYS.reduce(
-      (acc, key) => {
-        acc[key] =
-          (scores[key] - scoreBounds.min) / (scoreBounds.max - scoreBounds.min);
-        return acc;
-      },
-      {} as Record<(typeof PILLAR_KEYS)[number], number>
-    );
-
-    // Generate main pentagon points
-    const pentagonPoints = getPentagonPoints(cx, cy, radius);
-    // Build axes and labels
-    pentagonPoints.forEach((point, i) => {
-      // Draw axis
-      drawAxis(ctx, cx, cy, cx, cy, point[0], point[1]);
-      // Draw label
-      const labelX = point[0] + (point[0] - cx) * 0.2;
-      const labelY = point[1] + (point[1] - cy) * 0.2;
-      drawLabel(
-        ctx,
-        labelX,
-        labelY,
-        PILLAR_LABELS[i],
-        PILLAR_COLORS[PILLAR_KEYS[i]]
+    // Progressive pillar reveal: 80ms stagger per the motion-philosophy spec
+    for (let i = 0; i < 5; i++) {
+      timers.push(
+        setTimeout(() => {
+          setRevealStep(i + 1);
+        }, delay + i * 80)
       );
-    });
+    }
 
-    // Build radar shape
-    const radarPoints = pentagonPoints.map((point, i) => {
-      const key = PILLAR_KEYS[i];
-      return scalePoint(point, cx, cy, scoresNormalized[key]);
-    });
-    // Draw radar polygon
-    drawPolygon(ctx, radarPoints, "#0ea5e9", 0.4, true);
-  }, [scores, size, animate, delay, isMounted, scoreBounds]);
+    return () => timers.forEach(clearTimeout);
+  }, [animate, delay, revealStep]);
 
-  return <canvas ref={canvasRef} width={size} height={size} />;
+  const cx = size / 2;
+  const cy = size / 2;
+  const radius = size * 0.38;
+  const outerR = radius;
+  const gridLevels = [0.25, 0.5, 0.75, 1.0];
+
+  const outerPoints = getPentagonPoints(cx, cy, outerR);
+
+  // ─── Radar polygon (the actual scores shape) ──────
+  const radarPointsFull = outerPoints.map((point, i) => {
+    const key = PILLAR_KEYS[i];
+    const factor = Math.max(0.05, (scores[key] || 0) / 5);
+    return scalePoint(point, cx, cy, factor);
+  });
+
+  // Only include pillars that have been revealed
+  const visibleRadarPoints = radarPointsFull.slice(0, revealStep);
+  const radarPath = pointsToString(visibleRadarPoints);
+
+  // ─── Compute path length for stroke-dashoffset ────
+  // Total perimeter approximation for dashoffset animation
+  const totalPerimeter = visibleRadarPoints.reduce((acc, p, i) => {
+    const next = visibleRadarPoints[(i + 1) % visibleRadarPoints.length];
+    const dx = next[0] - p[0];
+    const dy = next[1] - p[1];
+    return acc + Math.sqrt(dx * dx + dy * dy);
+  }, 0);
+
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox={`0 0 ${size} ${size}`}
+      style={{ overflow: "visible" }}
+    >
+      {/* Grid levels (concentric pentagons) */}
+      {gridLevels.map((level, li) => {
+        const gridPoints = getPentagonPoints(cx, cy, outerR * level);
+        return (
+          <polygon
+            key={`grid-${li}`}
+            points={pointsToString(gridPoints)}
+            fill="none"
+            stroke={colors.zinc}
+            strokeWidth={0.5}
+            opacity={0.3}
+          />
+        );
+      })}
+
+      {/* Axis lines */}
+      {outerPoints.map((point, i) => (
+        <line
+          key={`axis-${i}`}
+          x1={cx}
+          y1={cy}
+          x2={point[0]}
+          y2={point[1]}
+          stroke={colors.zinc}
+          strokeWidth={0.5}
+          opacity={0.4}
+        />
+      ))}
+
+      {/* Axis labels */}
+      {outerPoints.map((point, i) => {
+        const labelX = point[0] + (point[0] - cx) * 0.22;
+        const labelY = point[1] + (point[1] - cy) * 0.22;
+        return (
+          <text
+            key={`label-${i}`}
+            x={labelX}
+            y={labelY}
+            textAnchor="middle"
+            dominantBaseline="central"
+            fill={PILLAR_COLORS[PILLAR_KEYS[i]]}
+            fontSize={13}
+            fontWeight={700}
+            fontFamily="Inter, system-ui, sans-serif"
+            opacity={revealStep > i ? 1 : 0.2}
+            style={{
+              transition: "opacity 300ms ease",
+            }}
+          >
+            {PILLAR_LABELS[i]}
+          </text>
+        );
+      })}
+
+      {/* Score numbers next to labels */}
+      {outerPoints.map((point, i) => {
+        const key = PILLAR_KEYS[i];
+        const scoreVal = scores[key] || 0;
+        const labelX = point[0] + (point[0] - cx) * 0.38;
+        const labelY = point[1] + (point[1] - cy) * 0.38;
+        return (
+          <text
+            key={`score-${i}`}
+            x={labelX}
+            y={labelY}
+            textAnchor="middle"
+            dominantBaseline="central"
+            fill={colors.ivory}
+            fontSize={11}
+            fontWeight={600}
+            fontFamily="Inter, system-ui, sans-serif"
+            opacity={revealStep > i ? 0.7 : 0}
+            style={{
+              transition: "opacity 300ms ease 100ms",
+            }}
+          >
+            {scoreVal.toFixed(1)}
+          </text>
+        );
+      })}
+
+      {/* Radar polygon fill */}
+      {visibleRadarPoints.length >= 3 && (
+        <polygon
+          points={radarPath}
+          fill={`${colors.phosphor}15`}
+          stroke="none"
+          opacity={0.6}
+          style={{
+            transition: "opacity 500ms ease",
+          }}
+        />
+      )}
+
+      {/* Radar polygon stroke with dashoffset animation */}
+      {visibleRadarPoints.length >= 3 && (
+        <polygon
+          points={radarPath}
+          fill="none"
+          stroke={colors.phosphor}
+          strokeWidth={2.5}
+          strokeLinejoin="round"
+          style={{
+            strokeDasharray: totalPerimeter,
+            strokeDashoffset: totalPerimeter,
+            animation: `radar-draw 500ms ease-out forwards`,
+            animationDelay: `${delay}ms`,
+          }}
+        />
+      )}
+
+      {/* Vertex dots for revealed pillars */}
+      {visibleRadarPoints.map((point, i) => (
+        <g key={`dot-${i}`}>
+          {/* Glow */}
+          <circle
+            cx={point[0]}
+            cy={point[1]}
+            r={8}
+            fill={PILLAR_COLORS[PILLAR_KEYS[i]]}
+            opacity={0.2}
+            style={{
+              animation: `pulse-glow 2s ease-in-out infinite`,
+              animationDelay: `${delay + i * 80 + 300}ms`,
+            }}
+          />
+          {/* Actual dot */}
+          <circle
+            cx={point[0]}
+            cy={point[1]}
+            r={4}
+            fill={PILLAR_COLORS[PILLAR_KEYS[i]]}
+            style={{
+              opacity: 0,
+              animation: `dot-appear 300ms ease-out forwards`,
+              animationDelay: `${delay + i * 80 + 200}ms`,
+            }}
+          />
+        </g>
+      ))}
+
+      {/* Inline keyframes */}
+      <defs>
+        <style>{`
+          @keyframes radar-draw {
+            to { stroke-dashoffset: 0; }
+          }
+          @keyframes dot-appear {
+            0% { opacity: 0; transform: scale(0); }
+            60% { opacity: 1; transform: scale(1.3); }
+            100% { opacity: 1; transform: scale(1); }
+          }
+          @keyframes pulse-glow {
+            0%, 100% { opacity: 0.15; r: 8; }
+            50% { opacity: 0.35; r: 11; }
+          }
+        `}</style>
+      </defs>
+    </svg>
+  );
 }

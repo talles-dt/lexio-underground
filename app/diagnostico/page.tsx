@@ -16,6 +16,7 @@ import {
 } from "@/cartografa/adaptive-engine";
 import type { Question } from "@/cartografa/question-bank";
 import { PillarRadar } from "@/components/PillarRadar";
+import { CartografaReport } from "@/components/CartografaReport";
 import { MaturityStage } from "@/types/stubs";
 import { colors, spacing, radius, typography, duration } from "@/theme/tokens";
 
@@ -330,91 +331,24 @@ export default function DiagnosticoPage() {
       comm: result.pillar_scores.comm.score,
     };
 
-    const readinessColor: Record<string, string> = {
-      roots: colors.phosphor,
-      sprouts: "#22C55E",
-      branches: colors.amber,
-      canopy: colors.violet,
-      underground: colors.crimson,
-    };
+    const showContinue = typeof window !== "undefined" && !!localStorage.getItem("lexio_ob_step");
 
     return (
       <div style={styles.container}>
         <div style={{ ...styles.card, maxWidth: 640 }}>
-          {/* Radar */}
-          <div style={{ display: "flex", justifyContent: "center", marginBottom: spacing[6] }}>
-            <PillarRadar scores={radarScores} size={280} />
-          </div>
-
-          {/* Readiness badge */}
-          <div style={styles.badgeContainer}>
-            <span
-              style={{
-                ...styles.badge,
-                backgroundColor: readinessColor[result.overall_readiness] || colors.phosphor,
-                color: colors.obsidian,
-              }}
-            >
-              {getReadinessLabel(result.overall_readiness)}
-            </span>
-          </div>
-
-          {/* Identity callout */}
-          <p style={styles.identityCallout}>{result.identity_callout}</p>
-
-          {/* Stats */}
-          <div style={styles.statsRow}>
-            <div style={styles.stat}>
-              <span style={styles.statValue}>{result.total_questions}</span>
-              <span style={styles.statLabel}>perguntas</span>
-            </div>
-            <div style={styles.stat}>
-              <span style={styles.statValue}>{result.total_correct}</span>
-              <span style={styles.statLabel}>corretas</span>
-            </div>
-            <div style={styles.stat}>
-              <span style={styles.statValue}>
-                {Math.round(result.duration_seconds / 60)}m
-              </span>
-              <span style={styles.statLabel}>tempo</span>
-            </div>
-          </div>
-
-          {/* Recommended focus */}
-          <div style={{ marginTop: spacing[4] }}>
-            <p style={{ ...typography.caption, color: colors.zinc, marginBottom: spacing[2] }}>
-              Foco recomendado
-            </p>
-            <div style={{ display: "flex", gap: spacing[2] }}>
-              {result.recommended_focus.map((p) => (
-                <span key={p} style={styles.focusChip}>
-                  {getStageName(getStageForPillar(p))}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Share button */}
-          <div style={{ marginTop: spacing[8], display: "flex", gap: spacing[3] }}>
-          <button style={styles.primaryBtn} onClick={handleShare}>
-          Compartilhar Resultados
-          </button>
-          {typeof window !== "undefined" && localStorage.getItem("lexio_ob_step") && (
-          <button
-          style={{ ...styles.primaryBtn, backgroundColor: colors.amber }}
-          onClick={() => window.location.href = "/onboarding"}
-          >
-          Continue your journey →
-          </button>
-          )}
-          </div>
-
-          {/* Share token display */}
-          {shareToken && (
-            <p style={{ ...typography.caption, color: colors.phosphor, marginTop: spacing[3] }}>
-              Token: {shareToken}
-            </p>
-          )}
+          <CartografaReport
+            pillarScores={radarScores}
+            overallReadiness={result.overall_readiness}
+            identityCallout={result.identity_callout || ""}
+            totalQuestions={result.total_questions}
+            totalCorrect={result.total_correct}
+            durationSeconds={result.duration_seconds}
+            recommendedFocus={result.recommended_focus}
+            shareToken={shareToken}
+            onShare={handleShare}
+            onContinue={() => { window.location.href = "/onboarding"; }}
+            showContinue={showContinue}
+          />
         </div>
       </div>
     );
