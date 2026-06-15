@@ -46,6 +46,7 @@ interface AuthContextType extends AuthState {
     password: string
   ) => Promise<{ error: string | null }>;
   signInWithGoogle: () => Promise<{ error: string | null }>;
+  signInWithApple: () => Promise<{ error: string | null }>;
   signOut: () => Promise<void>;
   linkSession: (shareToken: string) => Promise<{ error: string | null }>;
 }
@@ -123,6 +124,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return { error: error?.message || null };
   }, []);
 
+  // Sign in with Apple OAuth
+  const signInWithApple = useCallback(async () => {
+    const { error } = await getSupabase().auth.signInWithOAuth({
+      provider: "apple",
+      options: {
+        redirectTo: `${window.location.origin}/auth/callback`,
+      },
+    });
+    return { error: error?.message || null };
+  }, []);
+
   // Sign out
   const signOut = useCallback(async () => {
     await getSupabase().auth.signOut();
@@ -150,6 +162,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         signUp,
         signIn,
         signInWithGoogle,
+        signInWithApple,
         signOut,
         linkSession,
       }}
