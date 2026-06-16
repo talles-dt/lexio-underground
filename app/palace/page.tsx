@@ -7,6 +7,8 @@ import PalaceBlueprintComponent from "@/components/PalaceBlueprint";
 import type { PalaceBlueprintProps, Room, MaturityStage } from "@/components/PalaceBlueprint";
 import PalaceConstructionComponent from "@/components/PalaceConstruction";
 import type { PalaceConstructionProps } from "@/components/PalaceConstruction";
+import { PalaceRoomDetail } from "@/components/PalaceRoomDetail";
+import type { PalaceItem } from "@/components/PalaceRoomDetail";
 
 /* ------------------------------------------------------------------ */
 /*  Lazy wrappers (no SSR — SVG canvas)                               */
@@ -156,42 +158,32 @@ export default function PalacePage() {
         )}
       </main>
 
-      {/* Room Detail Panel */}
-      {selectedRoom && (
-        <div style={styles.detailOverlay} onClick={() => setSelectedRoom(null)}>
-          <div style={styles.detailCard} onClick={(e) => e.stopPropagation()}>
-            <h2 style={styles.detailTitle}>{selectedRoom.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())}</h2>
-            <div style={styles.detailContent}>
-              {roomDetail && Array.isArray(roomDetail) && roomDetail.length > 0 ? (
-                <ul style={styles.itemList}>
-                  {roomDetail.map((item: unknown, i: number) => {
-                    const record = item as Record<string, unknown>;
-                    return (
-                      <li key={i} style={styles.itemRow}>
-                        <span style={styles.itemWord}>{String(record.word || record.chunk || "—")}</span>
-                        <span style={styles.itemDate}>
-                          {record.learned_at
-                            ? new Date(String(record.learned_at)).toLocaleDateString()
-                            : ""}
-                        </span>
-                      </li>
-                    );
-                  })}
-                </ul>
-              ) : (
-                <p style={styles.emptyRoom}>This room is empty. Complete lessons to fill it.</p>
-              )}
-            </div>
-            <button
-              type="button"
-              onClick={() => setSelectedRoom(null)}
-              style={styles.closeButton}
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
+      {/* Room Detail Drawer */}
+      {selectedRoom && (() => {
+        const room = rooms.find((r) => r.id === selectedRoom);
+        const detailItems: PalaceItem[] = Array.isArray(roomDetail)
+          ? (roomDetail as Record<string, unknown>[]).map((r, i) => ({
+              id: String(r.id || i),
+              name: String(r.word || r.chunk || r.name || "—"),
+              type: (String(r.type || "vocabulary").replace(/ /g, "_") as PalaceItem["type"]),
+              depth: Number(r.depth ?? 0),
+              mastered: Boolean(r.mastered),
+              lastReviewed: r.learned_at ? String(r.learned_at) : undefined,
+            }))
+          : [];
+        return (
+          <PalaceRoomDetail
+            roomId={selectedRoom}
+            roomName={room?.name || selectedRoom.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())}
+            pillar={room?.pillar || "none"}
+            itemCount={room?.items ?? 0}
+            connections={room?.connectedTo || []}
+            maturityStage={maturityStage}
+            onClose={() => setSelectedRoom(null)}
+            items={detailItems}
+          />
+        );
+      })()}
 
       {/* Stage legend */}
       <footer style={styles.legend}>
