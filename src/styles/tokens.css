@@ -36,24 +36,24 @@
   --font-serif: "Source Serif 4", Georgia, serif;
   --font-mono: "JetBrains Mono", "Fira Code", monospace;
 
-  /* Type scale */
-  --text-display: 700 48px/56px var(--font-display);
-  --text-h1: 700 32px/40px var(--font-display);
-  --text-h2: 600 24px/32px var(--font-serif);
-  --text-body: 400 16px/26px var(--font-serif);
-  --text-body-lg: 400 18px/28px var(--font-serif);
-  --text-ui: 500 14px/20px var(--font-mono);
-  --text-caption: 400 12px/16px var(--font-mono);
+  /* Type scale — tight line-heights for dense UI */
+  --text-display: 700 36px/42px var(--font-display);
+  --text-h1: 700 28px/34px var(--font-display);
+  --text-h2: 600 20px/26px var(--font-serif);
+  --text-body: 400 14px/18px var(--font-serif);
+  --text-body-lg: 400 15px/20px var(--font-serif);
+  --text-ui: 500 13px/18px var(--font-mono);
+  --text-caption: 400 11px/14px var(--font-mono);
 
-  /* ─── Spacing (4px base) ─────────────────────────────── */
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-6: 24px;
-  --space-8: 32px;
-  --space-12: 48px;
-  --space-16: 64px;
+  /* ─── Spacing (2px base) ─────────────────────────────── */
+  --space-1: 2px;
+  --space-2: 4px;
+  --space-3: 8px;
+  --space-4: 12px;
+  --space-6: 16px;
+  --space-8: 24px;
+  --space-12: 32px;
+  --space-16: 48px;
 
   /* ─── Motion ─────────────────────────────────────────── */
   --duration-instant: 150ms;
@@ -74,6 +74,6 @@
   --glow-ivory: 0 0 8px rgba(245, 240, 232, 0.15);
 
   /* ─── Layout ──────────────────────────────────────────── */
-  --max-width-content: 480px;
-  --nav-height-mobile: 64px;
+  --max-width-content: 640px;
+  --nav-height-mobile: 56px;
 }

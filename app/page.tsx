@@ -20,14 +20,14 @@ export default function HomePage() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        padding: `${spacing[8]}px ${spacing[4]}px`,
+        padding: `${spacing[6]}px ${spacing[3]}px`,
         textAlign: "center",
       }}>
         <h1 style={{
           ...typography.display,
           color: colors.ivory,
           margin: 0,
-          marginBottom: spacing[2],
+          marginBottom: spacing[1],
         }}>
           Lexio Underground
         </h1>
@@ -35,21 +35,19 @@ export default function HomePage() {
           ...typography.bodyItalic,
           color: colors.phosphor,
           margin: 0,
-          marginBottom: spacing[3],
+          marginBottom: spacing[2],
         }}>
           Map your ignorance. Master your language.
         </p>
         <p style={{
-          fontFamily: "SourceSerif4-Regular, serif",
-          fontSize: 15,
-          lineHeight: 22,
+          ...typography.bodyLg,
           color: colors.zinc,
           maxWidth: 480,
           margin: 0,
-          marginBottom: spacing[6],
+          marginBottom: spacing[4],
         }}>
           A self-diagnostic tool for language learners. Discover what you
-          don&apos;t know through the Cartografa assessment, then build your
+          don't know through the Cartografa assessment, then build your
           Memory Palace as you learn.
         </p>
 
@@ -58,12 +56,12 @@ export default function HomePage() {
           backgroundColor: colors.phosphor,
           color: colors.obsidian,
           fontWeight: 700,
-          padding: `${spacing[3]}px ${spacing[8]}px`,
+          padding: `${spacing[2]}px ${spacing[6]}px`,
           borderRadius: radius.btn,
           textDecoration: "none",
           fontFamily: typography.ui.fontFamily,
-          fontSize: 16,
-          marginBottom: spacing[12],
+          fontSize: typography.ui.fontSize,
+          marginBottom: spacing[6],
         }}>
           Begin your Cartografa
         </Link>
@@ -88,7 +86,7 @@ export default function HomePage() {
       {/* Footer */}
       <footer style={{
         textAlign: "center",
-        padding: spacing[4],
+        padding: spacing[2],
         borderTop: `1px solid ${colors.borderSubtle}`,
       }}>
         <p style={{

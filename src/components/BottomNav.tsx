@@ -64,7 +64,7 @@ export function BottomNav() {
         bottom: 0,
         left: 0,
         right: 0,
-        height: 64,
+        height: 52,
         backgroundColor: colors.surface,
         borderTop: `1px solid ${colors.borderSubtle}`,
         display: "flex",
