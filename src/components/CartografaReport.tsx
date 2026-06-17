@@ -3,7 +3,7 @@
 import { useEffect, useState, useRef } from "react";
 import { PillarRadar } from "@/components/PillarRadar";
 import { MapOfIgnorance } from "@/components/MapOfIgnorance";
-import { colors, spacing, radius, typography } from "@/theme/tokens";
+import { colors, spacing, radius, typography, duration } from "@/theme/tokens";
 
 type PillarKey = "grammar" | "logic" | "vocab" | "culture" | "comm";
 
@@ -35,6 +35,8 @@ interface CartografaReportProps {
   onShare: () => void;
   onContinue?: () => void;
   showContinue?: boolean;
+  previousScores?: PillarScoresMap | null;
+  isReCheck?: boolean;
 }
 
 const readinessColor: Record<string, string> = {
@@ -106,6 +108,8 @@ export function CartografaReport({
   onShare,
   onContinue,
   showContinue = false,
+  previousScores = null,
+  isReCheck = false,
 }: CartografaReportProps) {
   // Animation phase tracking:
   // Phase 0: Radar drawing (handled by PillarRadar internally, ~500ms)
@@ -149,6 +153,56 @@ export function CartografaReport({
       <div style={{ display: "flex", justifyContent: "center", marginBottom: spacing[6] }}>
         <PillarRadar scores={pillarScores} size={280} animate={true} delay={0} />
       </div>
+
+      {/* ── Re-check delta banner ──────────────────── */}
+      {isReCheck && previousScores && phase >= 1 && (
+        <div style={{
+          display: "flex",
+          justifyContent: "center",
+          marginBottom: spacing[4],
+          opacity: phase >= 1 ? 1 : 0,
+          transition: `opacity ${duration.normal}ms ease`,
+        }}>
+          <div style={{
+            backgroundColor: colors.surface,
+            border: `1px solid ${colors.borderSubtle}`,
+            borderRadius: radius.card,
+            padding: `${spacing[3]}px ${spacing[4]}px`,
+            display: "flex",
+            gap: spacing[4],
+            flexWrap: "wrap",
+            justifyContent: "center",
+          }}>
+            {(Object.keys(pillarScores) as PillarKey[]).map((key) => {
+              const delta = pillarScores[key] - previousScores[key];
+              const isUp = delta > 0;
+              const isFlat = delta === 0;
+              const color = isUp ? colors.phosphor : isFlat ? colors.zinc : colors.crimson;
+              const arrow = isUp ? "↑" : isFlat ? "→" : "↓";
+              return (
+                <div key={key} style={{ display: "flex", alignItems: "center", gap: 4 }}>
+                  <span style={{
+                    fontFamily: typography.caption.fontFamily,
+                    fontSize: 11,
+                    color: colors.zinc,
+                    textTransform: "capitalize" as const,
+                  }}>
+                    {key}
+                  </span>
+                  <span style={{
+                    fontFamily: typography.ui.fontFamily,
+                    fontSize: 13,
+                    fontWeight: 700,
+                    color,
+                  }}>
+                    {arrow} {Math.abs(delta)}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       {/* ── Readiness badge ────────────────────────── */}
       <div
