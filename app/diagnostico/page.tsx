@@ -589,7 +589,7 @@ const styles: Record<string, React.CSSProperties> = {
   prompt: {
     ...typography.h1,
     fontSize: 24,
-    lineHeight: 32,
+    lineHeight: "32px",
     fontWeight: 700,
     color: colors.ivory,
     marginBottom: spacing[6],
@@ -675,7 +675,7 @@ const styles: Record<string, React.CSSProperties> = {
   identityCallout: {
     ...typography.bodyItalic,
     fontSize: 18,
-    lineHeight: 28,
+    lineHeight: "28px",
     textAlign: "center" as const,
     color: colors.ivory,
     marginBottom: spacing[6],
@@ -694,7 +694,7 @@ const styles: Record<string, React.CSSProperties> = {
   statValue: {
     ...typography.h1,
     fontSize: 28,
-    lineHeight: 36,
+    lineHeight: "36px",
     color: colors.ivory,
   },
   statLabel: {

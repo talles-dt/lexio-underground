@@ -251,7 +251,7 @@ const styles: Record<string, React.CSSProperties> = {
   title: {
     fontFamily: typography.display.fontFamily,
     fontSize: 28,
-    lineHeight: 36,
+    lineHeight: "36px",
     color: colors.ivory,
     margin: 0,
     paddingBottom: spacing[1],

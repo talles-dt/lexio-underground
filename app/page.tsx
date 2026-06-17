@@ -15,12 +15,10 @@ export default function HomePage() {
     }}>
       {/* Hero */}
       <section style={{
-        flex: 1,
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "center",
-        padding: `${spacing[6]}px ${spacing[3]}px`,
+        padding: `${spacing[8]}px ${spacing[3]}px ${spacing[4]}px`,
         textAlign: "center",
       }}>
         <h1 style={{

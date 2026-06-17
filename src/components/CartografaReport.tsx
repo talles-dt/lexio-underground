@@ -242,7 +242,7 @@ export function CartografaReport({
           style={{
             ...typography.bodyItalic,
             fontSize: 15,
-            lineHeight: 20,
+            lineHeight: "20px",
             textAlign: "center",
             color: colors.ivory,
           }}

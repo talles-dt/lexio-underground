@@ -717,7 +717,7 @@ function Stat({ label, value, color }: { label: string; value: string; color: st
         fontFamily: typography.display.fontFamily,
         fontSize: 32,
         color,
-        lineHeight: 1,
+        lineHeight: "32px",
         marginBottom: spacing[1],
       }}>
         {value}

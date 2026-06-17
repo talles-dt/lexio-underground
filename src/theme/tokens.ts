@@ -83,26 +83,26 @@ export const typography = {
   display: {
     fontFamily: "Syne-Bold",
     fontSize: 36,
-    lineHeight: 42,
+    lineHeight: "42px",
     fontWeight: "700" as const,
   },
   h1: {
     fontFamily: "Syne-Bold",
     fontSize: 28,
-    lineHeight: 34,
+    lineHeight: "34px",
     fontWeight: "700" as const,
   },
   h2: {
     fontFamily: "SourceSerif4-SemiBold",
     fontSize: 20,
-    lineHeight: 26,
+    lineHeight: "26px",
     fontWeight: "600" as const,
   },
   heading: {
     xl: {
       fontFamily: "Syne-Bold",
       fontSize: 24,
-      lineHeight: 30,
+      lineHeight: "30px",
       fontWeight: "700" as const,
     },
   },
@@ -115,31 +115,31 @@ export const typography = {
   body: {
     fontFamily: "SourceSerif4-Regular",
     fontSize: 14,
-    lineHeight: 18,
+    lineHeight: "18px",
     fontWeight: "400" as const,
   },
   bodyItalic: {
     fontFamily: "SourceSerif4-Italic",
     fontSize: 14,
-    lineHeight: 18,
+    lineHeight: "18px",
     fontStyle: "italic" as const,
   },
   bodyLg: {
     fontFamily: "SourceSerif4-Regular",
     fontSize: 15,
-    lineHeight: 20,
+    lineHeight: "20px",
     fontWeight: "400" as const,
   },
   ui: {
     fontFamily: "JetBrainsMono-Medium",
     fontSize: 13,
-    lineHeight: 18,
+    lineHeight: "18px",
     fontWeight: "500" as const,
   },
   caption: {
     fontFamily: "JetBrainsMono-Regular",
     fontSize: 11,
-    lineHeight: 14,
+    lineHeight: "14px",
     fontWeight: "400" as const,
   },
 } as const;
