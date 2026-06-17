@@ -163,7 +163,7 @@ export default function FamilyPage() {
         </p>
       </header>
 
-      <main style={{ maxWidth: 560, margin: "0 auto", paddingLeft: spacing[4], paddingRight: spacing[4], paddingBottom: spacing[8] }}>
+      <main style={{ maxWidth: 720, margin: "0 auto", paddingLeft: spacing[4], paddingRight: spacing[4], paddingBottom: spacing[8] }}>
         {loading ? (
           <div style={{ textAlign: "center", paddingTop: spacing[12] }}>
             <span style={{ fontFamily: typography.ui.fontFamily, color: colors.zinc }}>Loading...</span>

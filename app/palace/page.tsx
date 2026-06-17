@@ -215,6 +215,8 @@ const styles: Record<string, React.CSSProperties> = {
     color: colors.ivory,
     display: "flex",
     flexDirection: "column",
+    backgroundImage: `radial-gradient(circle at 1px 1px, ${colors.borderSubtle}40 1px, transparent 0)`,
+    backgroundSize: "40px 40px",
   },
   navbar: {
     display: "flex",
@@ -241,18 +243,18 @@ const styles: Record<string, React.CSSProperties> = {
   },
   header: {
     textAlign: "center",
-    paddingTop: spacing[4],
-    paddingBottom: spacing[6],
+    paddingTop: spacing[2],
+    paddingBottom: spacing[3],
     paddingLeft: spacing[4],
     paddingRight: spacing[4],
   },
   title: {
     fontFamily: typography.display.fontFamily,
-    fontSize: typography.display.fontSize,
-    lineHeight: typography.display.lineHeight,
+    fontSize: 28,
+    lineHeight: 36,
     color: colors.ivory,
     margin: 0,
-    paddingBottom: spacing[3],
+    paddingBottom: spacing[1],
   },
   subtitle: {
     fontFamily: typography.bodyItalic.fontFamily,

@@ -120,10 +120,10 @@ export function MaturityStages({ currentStage = "roots", onStageClick }: Maturit
 
   return (
     <div style={{
-      maxWidth: 480,
+      maxWidth: 720,
       width: "100%",
       margin: "0 auto",
-      padding: `${spacing[8]}px ${spacing[4]}px`,
+      padding: `${spacing[6]}px ${spacing[4]}px`,
     }}>
       <h2 style={{
         fontFamily: typography.display.fontFamily,

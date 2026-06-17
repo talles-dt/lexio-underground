@@ -380,7 +380,7 @@ export default function MemeVaultPage() {
       </div>
 
       {/* Meme grid */}
-      <main style={{ maxWidth: 800, margin: "0 auto", paddingLeft: spacing[4], paddingRight: spacing[4], paddingBottom: spacing[8] }}>
+      <main style={{ maxWidth: 1000, margin: "0 auto", paddingLeft: spacing[4], paddingRight: spacing[4], paddingBottom: spacing[8] }}>
         {loading && memes.length === 0 ? (
           <div style={{ textAlign: "center", paddingTop: spacing[12] }}>
             <span style={{ fontFamily: typography.ui.fontFamily, color: colors.zinc }}>Loading vault...</span>

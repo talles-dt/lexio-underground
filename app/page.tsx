@@ -1,77 +1,148 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
-import { colors, spacing, radius } from "@/theme/tokens";
-
-const styles = {
- body: {
- color: colors.zinc,
- fontFamily: "SourceSerif4-Regular, serif",
- fontSize: 16,
- fontWeight: "400",
- lineHeight: 26,
- marginBottom: spacing[8],
- } satisfies React.CSSProperties,
- container: {
- alignItems: "center",
- backgroundColor: colors.obsidian,
- display: "flex",
- justifyContent: "center",
- minHeight: "100vh",
- padding: `0 ${spacing[4]}px`,
- } satisfies React.CSSProperties,
- content: {
- maxWidth: 600,
- textAlign: "center",
- width: "100%",
- } satisfies React.CSSProperties,
- cta: {
- display: "inline-block",
- backgroundColor: colors.phosphor,
- borderRadius: radius.btn,
- color: colors.obsidian,
- fontSize: 14,
- marginTop: spacing[2],
- padding: `${spacing[3]}px ${spacing[6]}px`,
- textDecoration: "none",
- } satisfies React.CSSProperties,
- subtitle: {
- color: colors.phosphor,
- fontFamily: "SourceSerif4-Regular, serif",
- fontSize: 18,
- fontStyle: "italic",
- fontWeight: "400",
- lineHeight: 28,
- marginBottom: spacing[4],
- } satisfies React.CSSProperties,
- title: {
- color: colors.ivory,
- fontFamily: "Syne-Bold, sans-serif",
- fontSize: 48,
- fontWeight: "700",
- lineHeight: 56,
- marginBottom: spacing[6],
- } satisfies React.CSSProperties,
-};
+import { colors, spacing, radius, typography } from "@/theme/tokens";
 
 export default function HomePage() {
- return (
- <main style={styles.container}>
- <section style={styles.content}>
- <h1 style={styles.title}>Lexio Underground</h1>
- <p style={styles.subtitle}>
- Map your ignorance. Master your language.
- </p>
- <p style={styles.body}>
- Lexio Underground is a self-diagnostic tool for language learners.
- Begin by discovering what you don&apos;t know through the Cartografa
- assessment, then receive a personalized learning path based on your
- Memory Palace hook.
- </p>
- <Link href="/onboarding" style={styles.cta}>
- Begin your Cartografa
- </Link>
- </section>
- </main>
- );
+  return (
+    <div style={{
+      minHeight: "100vh",
+      backgroundColor: colors.obsidian,
+      color: colors.ivory,
+      display: "flex",
+      flexDirection: "column",
+    }}>
+      {/* Hero */}
+      <section style={{
+        flex: 1,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: `${spacing[8]}px ${spacing[4]}px`,
+        textAlign: "center",
+      }}>
+        <h1 style={{
+          fontFamily: typography.display.fontFamily,
+          fontSize: 48,
+          fontWeight: 700,
+          lineHeight: 56,
+          color: colors.ivory,
+          margin: 0,
+          marginBottom: spacing[3],
+        }}>
+          Lexio Underground
+        </h1>
+        <p style={{
+          fontFamily: typography.bodyItalic.fontFamily,
+          fontStyle: typography.bodyItalic.fontStyle,
+          fontSize: 18,
+          color: colors.phosphor,
+          margin: 0,
+          marginBottom: spacing[4],
+        }}>
+          Map your ignorance. Master your language.
+        </p>
+        <p style={{
+          fontFamily: "SourceSerif4-Regular, serif",
+          fontSize: 16,
+          lineHeight: 26,
+          color: colors.zinc,
+          maxWidth: 480,
+          margin: 0,
+          marginBottom: spacing[8],
+        }}>
+          A self-diagnostic tool for language learners. Discover what you
+          don&apos;t know through the Cartografa assessment, then build your
+          Memory Palace as you learn.
+        </p>
+
+        <Link href="/onboarding" style={{
+          display: "inline-block",
+          backgroundColor: colors.phosphor,
+          color: colors.obsidian,
+          fontWeight: 700,
+          padding: `${spacing[3]}px ${spacing[8]}px`,
+          borderRadius: radius.btn,
+          textDecoration: "none",
+          fontFamily: typography.ui.fontFamily,
+          fontSize: 16,
+          marginBottom: spacing[12],
+        }}>
+          Begin your Cartografa
+        </Link>
+
+        {/* Quick links grid */}
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
+          gap: spacing[3],
+          maxWidth: 600,
+          width: "100%",
+        }}>
+          <QuickLink href="/diagnostico" icon="🗺" label="Diagnóstico" />
+          <QuickLink href="/pulse" icon="⚡" label="Pulse" />
+          <QuickLink href="/palace" icon="🏛" label="Palace" />
+          <QuickLink href="/deep" icon="🧠" label="Deep Mode" />
+          <QuickLink href="/profile" icon="👤" label="Profile" />
+          <QuickLink href="/pricing" icon="💎" label="Pricing" />
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer style={{
+        textAlign: "center",
+        padding: spacing[4],
+        borderTop: `1px solid ${colors.borderSubtle}`,
+      }}>
+        <p style={{
+          fontFamily: typography.caption.fontFamily,
+          fontSize: 11,
+          color: `${colors.zinc}60`,
+          margin: 0,
+        }}>
+          Lexio Underground — Cartografa your ignorance. Build your palace.
+        </p>
+      </footer>
+    </div>
+  );
+}
+
+function QuickLink({ href, icon, label }: { href: string; icon: string; label: string }) {
+  return (
+    <Link
+      href={href}
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: spacing[2],
+        padding: `${spacing[4]}px ${spacing[2]}px`,
+        backgroundColor: colors.surface,
+        border: `1px solid ${colors.borderSubtle}`,
+        borderRadius: radius.card,
+        textDecoration: "none",
+        color: colors.ivory,
+        transition: "border-color 0.2s, transform 0.2s",
+      }}
+      onMouseEnter={(e) => {
+        (e.currentTarget as HTMLElement).style.borderColor = colors.phosphor;
+        (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
+      }}
+      onMouseLeave={(e) => {
+        (e.currentTarget as HTMLElement).style.borderColor = colors.borderSubtle;
+        (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
+      }}
+    >
+      <span style={{ fontSize: 24 }}>{icon}</span>
+      <span style={{
+        fontFamily: typography.ui.fontFamily,
+        fontSize: 13,
+        fontWeight: 600,
+      }}>
+        {label}
+      </span>
+    </Link>
+  );
 }
