@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect, useRef } from "react";
 import { colors, spacing, radius, typography, duration } from "@/theme/tokens";
+import { useSessionTracker } from "@/lib/sessionTracker";
 
 // ─── Inline SM-2 (minimal, no external import to avoid ESM/CJS mismatch) ──
 function miniSM2(easeFactor: number, intervalDays: number, repetitions: number, quality: number) {
@@ -103,8 +104,30 @@ export default function PulsePage() {
   const [phase, setPhase] = useState<"reveal" | "rate" | "explain">("reveal");
   const [selected, setSelected] = useState<number | null>(null);
   const [completed, setCompleted] = useState(false);
+  const [logged, setLogged] = useState(false);
+  const sessionStartRef = useRef(Date.now());
+  const { logSessionEvent } = useSessionTracker();
 
   const item = FIRST_PULSE_ITEMS[idx];
+
+  // Log session on completion
+  useEffect(() => {
+    if (completed && !logged) {
+      setLogged(true);
+      const durationSec = Math.floor((Date.now() - sessionStartRef.current) / 1000);
+      logSessionEvent({
+        session_type: "pulse",
+        duration_seconds: durationSec,
+        items_covered: idx + 1,
+        completed_flag: true,
+        pillar: item?.pillar,
+        metadata: {
+          items_reviewed: idx + 1,
+          last_item_id: item?.id,
+        },
+      });
+    }
+  }, [completed, logged, idx, item, logSessionEvent]);
 
   const handleRate = useCallback((quality: number) => {
     setSelected(quality);

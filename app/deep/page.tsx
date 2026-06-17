@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { colors, spacing, radius, typography, duration } from "@/theme/tokens";
+import { useSessionTracker } from "@/lib/sessionTracker";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -159,6 +160,35 @@ export default function DeepPage() {
     itemsPalaced: 0,
     sessionStart: Date.now(),
   });
+
+  const { startSession } = useSessionTracker();
+  const trackerRef = useRef<ReturnType<typeof startSession> | null>(null);
+  const [sessionLogged, setSessionLogged] = useState(false);
+
+  // Start tracker on mount
+  useEffect(() => {
+    trackerRef.current = startSession();
+  }, [startSession]);
+
+  // Log session event on completion
+  useEffect(() => {
+    if (session.phase === "complete" && trackerRef.current && !sessionLogged) {
+      setSessionLogged(true);
+      const duration = trackerRef.current.elapsed();
+      trackerRef.current.end({
+        session_type: "deep",
+        items_covered: session.atomsCompleted + session.tasksCompleted,
+        completed_flag: true,
+        pillar: session.challengeNode?.pillar || undefined,
+        metadata: {
+          atoms_completed: session.atomsCompleted,
+          tasks_completed: session.tasksCompleted,
+          items_palaced: session.itemsPalaced,
+          duration_seconds: duration,
+        },
+      });
+    }
+  }, [session.phase, sessionLogged, session.atomsCompleted, session.tasksCompleted, session.itemsPalaced, session.challengeNode]);
 
   const [selectedNode, setSelectedNode] = useState<string | null>(null);
   const [taskInput, setTaskInput] = useState("");
