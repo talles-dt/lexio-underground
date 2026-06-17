@@ -3,6 +3,7 @@
 import { useCallback } from "react";
 import { supabase } from "@/lib/auth";
 import { useLearnerStore } from "@/stores/learnerStore";
+import { recordSessionStart } from "@/lib/timeOfDay";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -124,6 +125,7 @@ export function useSessionTracker() {
     end: (input: Omit<SessionEventInput, "duration_seconds">) => Promise<{ error: string | null }>;
   } => {
     const started = Date.now();
+    recordSessionStart(); // Track chronotype
 
     return {
       elapsed: () => Math.floor((Date.now() - started) / 1000),
