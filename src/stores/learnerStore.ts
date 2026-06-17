@@ -23,6 +23,10 @@ interface LearnerState {
   palaceRooms: string[];
   palaceItems: number;
 
+  // Live update
+  updatePillarScore: (pillar: string, delta: number) => void;
+  lastScoreUpdate: number | null;
+
   // Sync state
   isLoaded: boolean;
   isSyncing: boolean;
@@ -52,6 +56,7 @@ const initialState = {
   palaceItems: 0,
   isLoaded: false,
   isSyncing: false,
+  lastScoreUpdate: null as number | null,
 };
 
 function scheduleSync(store: () => LearnerState) {
@@ -85,6 +90,18 @@ export const useLearnerStore = create<LearnerState>((set, get) => ({
       mapOfIgnorance: map,
       maturityStage: stage,
     });
+    scheduleSync(get);
+  },
+
+  updatePillarScore: (pillar, delta) => {
+    const current = get().pillarScores;
+    if (!current) return;
+    const updated = { ...current };
+    const key = pillar as keyof typeof updated;
+    if (key in updated) {
+      updated[key] = Math.max(0, Math.min(100, (updated[key] as number) + delta));
+    }
+    set({ pillarScores: updated, lastScoreUpdate: Date.now() });
     scheduleSync(get);
   },
 
