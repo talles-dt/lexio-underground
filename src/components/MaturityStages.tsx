@@ -123,14 +123,15 @@ export function MaturityStages({ currentStage = "roots", onStageClick }: Maturit
       maxWidth: 720,
       width: "100%",
       margin: "0 auto",
-      padding: `${spacing[6]}px ${spacing[4]}px`,
+      padding: `${spacing[4]}px ${spacing[3]}px`,
     }}>
       <h2 style={{
         fontFamily: typography.display.fontFamily,
-        fontSize: typography.display.fontSize,
+        fontSize: 20,
+        lineHeight: 26,
         color: colors.ivory,
         margin: 0,
-        paddingBottom: spacing[2],
+        paddingBottom: spacing[1],
         textAlign: "center",
       }}>
         Identity Path
@@ -138,10 +139,11 @@ export function MaturityStages({ currentStage = "roots", onStageClick }: Maturit
       <p style={{
         fontFamily: typography.bodyItalic.fontFamily,
         fontStyle: typography.bodyItalic.fontStyle,
-        fontSize: typography.body.fontSize,
+        fontSize: 13,
+        lineHeight: 16,
         color: colors.zinc,
         margin: 0,
-        paddingBottom: spacing[8],
+        paddingBottom: spacing[4],
         textAlign: "center",
       }}>
         Not a progress bar. An identity.
@@ -157,9 +159,9 @@ export function MaturityStages({ currentStage = "roots", onStageClick }: Maturit
         {/* Connecting line */}
         <div style={{
           position: "absolute",
-          left: 23,
-          top: 24,
-          bottom: 24,
+          left: 17,
+          top: 18,
+          bottom: 18,
           width: 2,
           backgroundColor: colors.borderSubtle,
         }}>
@@ -184,8 +186,8 @@ export function MaturityStages({ currentStage = "roots", onStageClick }: Maturit
               style={{
                 display: "flex",
                 alignItems: "flex-start",
-                gap: spacing[4],
-                padding: `${spacing[4]}px 0`,
+                gap: spacing[3],
+                padding: `${spacing[2]}px 0`,
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? "translateX(0)" : "translateX(-20px)",
                 transition: `opacity ${duration.normal}ms ease, transform ${duration.normal}ms ease`,
@@ -204,16 +206,16 @@ export function MaturityStages({ currentStage = "roots", onStageClick }: Maturit
               {/* Node circle */}
               <div style={{
                 position: "relative",
-                width: 48,
-                height: 48,
+                width: 36,
+                height: 36,
                 flexShrink: 0,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
               }}>
                 <div style={{
-                  width: isCurrent ? 40 : 32,
-                  height: isCurrent ? 40 : 32,
+                  width: isCurrent ? 32 : 24,
+                  height: isCurrent ? 32 : 24,
                   borderRadius: "50%",
                   border: `2px solid ${isCurrent ? stage.color : isPast ? stage.color : colors.borderSubtle}`,
                   backgroundColor: isCurrent || isPast ? `${stage.color}15` : "transparent",
@@ -235,7 +237,7 @@ export function MaturityStages({ currentStage = "roots", onStageClick }: Maturit
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    fontSize: isCurrent ? 16 : 12,
+                    fontSize: isCurrent ? 14 : 10,
                     fontWeight: 700,
                     fontFamily: typography.display.fontFamily,
                     color: isCurrent ? stage.color : isPast ? stage.color : colors.zinc,
@@ -247,11 +249,11 @@ export function MaturityStages({ currentStage = "roots", onStageClick }: Maturit
                 {isCurrent && (
                   <div style={{
                     position: "absolute",
-                    width: 56,
-                    height: 56,
+                    width: 44,
+                    height: 44,
                     borderRadius: "50%",
                     backgroundColor: `${stage.color}10`,
-                    filter: "blur(8px)",
+                    filter: "blur(6px)",
                     zIndex: -1,
                   }} />
                 )}
@@ -260,13 +262,14 @@ export function MaturityStages({ currentStage = "roots", onStageClick }: Maturit
               {/* Content */}
               <div style={{
                 flex: 1,
-                paddingBottom: spacing[2],
+                paddingBottom: spacing[1],
                 borderBottom: i < STAGES.length - 1 ? `1px solid ${colors.borderSubtle}` : "none",
               }}>
-                <div style={{ display: "flex", alignItems: "center", gap: spacing[2], marginBottom: spacing[1] }}>
+                <div style={{ display: "flex", alignItems: "center", gap: spacing[2], marginBottom: 2 }}>
                   <h3 style={{
                     fontFamily: typography.h2.fontFamily,
-                    fontSize: isCurrent ? typography.h2.fontSize : 16,
+                    fontSize: isCurrent ? 16 : 14,
+                    lineHeight: 20,
                     color: isCurrent ? stage.color : isPast ? stage.color : colors.zinc,
                     margin: 0,
                     transition: `color ${duration.normal}ms ease`,
@@ -275,14 +278,14 @@ export function MaturityStages({ currentStage = "roots", onStageClick }: Maturit
                   </h3>
                   {isCurrent && (
                     <span style={{
-                      fontSize: typography.caption.fontSize,
+                      fontSize: 9,
                       fontFamily: typography.caption.fontFamily,
                       textTransform: "uppercase" as const,
-                      letterSpacing: 2,
+                      letterSpacing: 1.5,
                       color: stage.color,
                       backgroundColor: `${stage.color}15`,
-                      padding: "2px 8px",
-                      borderRadius: 10,
+                      padding: "1px 6px",
+                      borderRadius: 8,
                     }}>
                       You are here
                     </span>
@@ -292,19 +295,19 @@ export function MaturityStages({ currentStage = "roots", onStageClick }: Maturit
                 <p style={{
                   fontFamily: typography.bodyItalic.fontFamily,
                   fontStyle: typography.bodyItalic.fontStyle,
-                  fontSize: typography.body.fontSize,
+                  fontSize: 13,
+                  lineHeight: 16,
                   color: isCurrent ? colors.ivory : isPast ? colors.zinc : `${colors.zinc}60`,
                   margin: 0,
-                  paddingBottom: spacing[2],
-                  lineHeight: 1.5,
+                  paddingBottom: spacing[1],
                 }}>
                   &ldquo;{stage.description}&rdquo;
                 </p>
 
                 <div style={{
                   display: "flex",
-                  gap: spacing[4],
-                  fontSize: typography.caption.fontSize,
+                  gap: spacing[3],
+                  fontSize: 10,
                   fontFamily: typography.caption.fontFamily,
                   color: colors.zinc,
                 }}>

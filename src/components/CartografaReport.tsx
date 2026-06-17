@@ -150,8 +150,8 @@ export function CartografaReport({
       }}
     >
       {/* ── Radar ──────────────────────────────────── */}
-      <div style={{ display: "flex", justifyContent: "center", marginBottom: spacing[6] }}>
-        <PillarRadar scores={pillarScores} size={280} animate={true} delay={0} />
+      <div style={{ display: "flex", justifyContent: "center", marginBottom: spacing[4] }}>
+        <PillarRadar scores={pillarScores} size={260} animate={true} delay={0} />
       </div>
 
       {/* ── Re-check delta banner ──────────────────── */}
@@ -233,8 +233,7 @@ export function CartografaReport({
       {/* ── Identity callout (typewriter) ──────────── */}
       <div
         style={{
-          minHeight: 56,
-          marginBottom: spacing[6],
+          marginBottom: spacing[4],
           opacity: phase >= 2 ? 1 : 0,
           transition: "opacity 400ms ease",
         }}
@@ -242,8 +241,8 @@ export function CartografaReport({
         <p
           style={{
             ...typography.bodyItalic,
-            fontSize: 18,
-            lineHeight: 28,
+            fontSize: 15,
+            lineHeight: 20,
             textAlign: "center",
             color: colors.ivory,
           }}
@@ -354,7 +353,7 @@ export function CartografaReport({
       {/* ── Actions ────────────────────────────────── */}
       <div
         style={{
-          marginTop: spacing[8],
+          marginTop: spacing[4],
           display: "flex",
           gap: spacing[3],
           opacity: phase >= 4 ? 1 : 0,

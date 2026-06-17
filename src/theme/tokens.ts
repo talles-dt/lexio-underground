@@ -114,20 +114,20 @@ export const typography = {
   } as const,
   body: {
     fontFamily: "SourceSerif4-Regular",
-    fontSize: 15,
-    lineHeight: 22,
+    fontSize: 14,
+    lineHeight: 18,
     fontWeight: "400" as const,
   },
   bodyItalic: {
     fontFamily: "SourceSerif4-Italic",
-    fontSize: 15,
-    lineHeight: 22,
+    fontSize: 14,
+    lineHeight: 18,
     fontStyle: "italic" as const,
   },
   bodyLg: {
     fontFamily: "SourceSerif4-Regular",
-    fontSize: 16,
-    lineHeight: 24,
+    fontSize: 15,
+    lineHeight: 20,
     fontWeight: "400" as const,
   },
   ui: {
