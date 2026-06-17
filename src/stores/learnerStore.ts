@@ -1,6 +1,9 @@
 import { create } from "zustand";
 import type { PillarScores, MapNode, MaturityStage } from "@/types/stubs";
 
+// Re-export MapNode as MapNodeInput for components that need it
+export type { MapNode as MapNodeInput };
+
 // Debounce timer (module-level, not in state)
 let syncTimeout: ReturnType<typeof setTimeout> | null = null;
 const DEBOUNCE_MS = 2000;
