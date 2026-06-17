@@ -24,34 +24,29 @@ export default function HomePage() {
         textAlign: "center",
       }}>
         <h1 style={{
-          fontFamily: typography.display.fontFamily,
-          fontSize: 48,
-          fontWeight: 700,
-          lineHeight: 56,
+          ...typography.display,
           color: colors.ivory,
           margin: 0,
-          marginBottom: spacing[3],
+          marginBottom: spacing[2],
         }}>
           Lexio Underground
         </h1>
         <p style={{
-          fontFamily: typography.bodyItalic.fontFamily,
-          fontStyle: typography.bodyItalic.fontStyle,
-          fontSize: 18,
+          ...typography.bodyItalic,
           color: colors.phosphor,
           margin: 0,
-          marginBottom: spacing[4],
+          marginBottom: spacing[3],
         }}>
           Map your ignorance. Master your language.
         </p>
         <p style={{
           fontFamily: "SourceSerif4-Regular, serif",
-          fontSize: 16,
-          lineHeight: 26,
+          fontSize: 15,
+          lineHeight: 22,
           color: colors.zinc,
           maxWidth: 480,
           margin: 0,
-          marginBottom: spacing[8],
+          marginBottom: spacing[6],
         }}>
           A self-diagnostic tool for language learners. Discover what you
           don&apos;t know through the Cartografa assessment, then build your

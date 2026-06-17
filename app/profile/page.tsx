@@ -23,13 +23,13 @@ export default function ProfilePage() {
       <div style={{
         background: `linear-gradient(135deg, ${colors.surface} 0%, ${colors.obsidian} 100%)`,
         borderBottom: `1px solid ${colors.borderSubtle}`,
-        padding: `${spacing[6]}px ${spacing[4]}px`,
+        padding: `${spacing[4]}px ${spacing[4]}px`,
       }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
           <p style={{
             fontFamily: typography.bodyItalic.fontFamily,
             fontStyle: typography.bodyItalic.fontStyle,
-            fontSize: 14,
+            fontSize: 13,
             color: colors.phosphor,
             margin: 0,
             marginBottom: spacing[1],
@@ -37,12 +37,10 @@ export default function ProfilePage() {
             {timeContent.greeting}
           </p>
           <h1 style={{
-            fontFamily: typography.display.fontFamily,
-            fontSize: 28,
-            fontWeight: 700,
+            ...typography.h1,
             color: colors.ivory,
             margin: 0,
-            marginBottom: spacing[2],
+            marginBottom: spacing[1],
           }}>
             Your Profile
           </h1>
@@ -50,7 +48,7 @@ export default function ProfilePage() {
             <p style={{
               fontFamily: typography.bodyItalic.fontFamily,
               fontStyle: typography.bodyItalic.fontStyle,
-              fontSize: 13,
+              fontSize: 12,
               color: colors.zinc,
               margin: 0,
             }}>
@@ -64,8 +62,8 @@ export default function ProfilePage() {
       <div style={{
         display: "flex",
         justifyContent: "center",
-        gap: spacing[2],
-        padding: `${spacing[4]}px ${spacing[4]}px ${spacing[2]}px`,
+        gap: spacing[3],
+        padding: `${spacing[3]}px ${spacing[4]}px ${spacing[1]}px`,
       }}>
         <TabButton active={tab === "identity"} onClick={() => setTab("identity")}>
           🌱 Identity
