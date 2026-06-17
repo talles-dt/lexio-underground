@@ -3,7 +3,6 @@ export {
   duration,
   radius,
   spacing,
-  theme,
   themeColors,
   typography,
 } from "./tokens";

@@ -176,7 +176,7 @@ export const duration = {
   palace: 1300,
 } as const;
 
-export const theme = {
+const theme = {
   colors,
   stageColors,
   typography,
