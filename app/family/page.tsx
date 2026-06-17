@@ -1,9 +1,8 @@
 "use client";
 
+import { FamilyChallenges } from "@/components/FamilyChallenges";
 import React, { useState, useEffect, useCallback } from "react";
 import { colors, spacing, radius, typography, duration } from "@/theme/tokens";
-
-/* ------------------------------------------------------------------ */
 /*  Types                                                              */
 /* ------------------------------------------------------------------ */
 
@@ -355,6 +354,41 @@ export default function FamilyPage() {
                 Manage Subscription
               </button>
             </div>
+          </div>
+        )}
+
+        {/* Family Challenges — only show when group exists */}
+        {group && members.length > 0 && (
+          <div style={{
+            marginTop: spacing[8],
+            backgroundColor: colors.surface,
+            border: `1px solid ${colors.borderSubtle}`,
+            borderRadius: radius.card,
+            padding: spacing[6],
+          }}>
+            <h2 style={{
+              fontFamily: typography.h2.fontFamily,
+              fontSize: typography.h2.fontSize,
+              color: colors.ivory,
+              margin: 0,
+              marginBottom: spacing[4],
+            }}>
+              🎭 Desafios Culturais
+            </h2>
+            <p style={{
+              fontFamily: typography.bodyItalic.fontFamily,
+              fontStyle: typography.bodyItalic.fontStyle,
+              fontSize: typography.body.fontSize,
+              color: colors.zinc,
+              margin: 0,
+              marginBottom: spacing[4],
+            }}>
+              Compartilhe palavras, memes e descobertas culturais com sua família. Sem pontuação — só descoberta mútua.
+            </p>
+            <FamilyChallenges
+              currentUserId="current"
+              members={members}
+            />
           </div>
         )}
 
