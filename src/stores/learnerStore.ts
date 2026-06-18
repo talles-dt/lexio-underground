@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import type { PillarScores, MapNode, MaturityStage } from "@/types/stubs";
+import { supabase } from "@/lib/supabase";
 
 // Re-export MapNode as MapNodeInput for components that need it
 export type { MapNode as MapNodeInput };
@@ -13,6 +14,7 @@ interface LearnerState {
   isAuthenticated: boolean;
   userId: string | null;
   email: string | null;
+  role: "user" | "admin" | "super_admin";
   language: string;
 
   // Cartografa
@@ -49,6 +51,7 @@ const initialState = {
   isAuthenticated: false,
   userId: null,
   email: null,
+  role: "user" as "user" | "admin" | "super_admin",
   language: "en",
   cartografaComplete: false,
   pillarScores: null,
@@ -132,17 +135,23 @@ export const useLearnerStore = create<LearnerState>((set, get) => ({
     if (!userId) return;
     set({ isLoaded: false });
     try {
-      const res = await fetch(
-        `/api/learner-progression?user_id=${encodeURIComponent(userId)}&language=${language}`
-      );
-      if (!res.ok) return;
-      const data = await res.json();
+      // Fetch learner progression data
+      const [progRes, userRes] = await Promise.all([
+        fetch(`/api/learner-progression?user_id=${encodeURIComponent(userId)}&language=${language}`),
+        supabase
+          .from("users")
+          .select("role")
+          .eq("id", userId)
+          .single(),
+      ]);
+      const data = progRes.ok ? await progRes.json() : {};
       set({
         language,
         maturityStage: (data.maturity_stage as MaturityStage) || "roots",
         pillarWeights: data.pillar_weights || {},
         palaceRooms: data.palace_room_names || ["entrance"],
         cartografaComplete: !!data.last_cartografa_date,
+        role: userRes.data?.role || "user",
         isLoaded: true,
       });
     } catch {

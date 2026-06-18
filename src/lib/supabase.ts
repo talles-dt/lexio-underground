@@ -34,12 +34,66 @@ export type Database = {
           locale: string;
           found_member: boolean;
           stripe_customer_id: string | null;
+          role: "user" | "admin" | "super_admin";
+          consent_given: boolean;
+          consent_date: string | null;
+          updated_at: string;
         };
         Insert: Omit<
           Database["public"]["Tables"]["users"]["Row"],
           "id" | "created_at"
         >;
         Update: Partial<Database["public"]["Tables"]["users"]["Insert"]>;
+      };
+      admin_bypasses: {
+        Row: {
+          id: string;
+          user_id: string;
+          granted_by: string;
+          bypass_type: "payment" | "early_access" | "partnership" | "other";
+          reason: string;
+          partnership_id: string | null;
+          is_active: boolean;
+          expires_at: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: Omit<Database["public"]["Tables"]["admin_bypasses"]["Row"], "id" | "created_at" | "updated_at">;
+        Update: Partial<Database["public"]["Tables"]["admin_bypasses"]["Insert"]>;
+      };
+      admin_partnerships: {
+        Row: {
+          id: string;
+          name: string;
+          contact_email: string | null;
+          contact_name: string | null;
+          partnership_type: "school" | "company" | "influencer" | "other";
+          max_bypasses: number;
+          bypasses_used: number;
+          is_active: boolean;
+          starts_at: string;
+          expires_at: string | null;
+          notes: string | null;
+          created_by: string;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: Omit<Database["public"]["Tables"]["admin_partnerships"]["Row"], "id" | "created_at" | "updated_at">;
+        Update: Partial<Database["public"]["Tables"]["admin_partnerships"]["Insert"]>;
+      };
+      admin_audit_log: {
+        Row: {
+          id: string;
+          admin_id: string;
+          action: string;
+          target_type: string | null;
+          target_id: string | null;
+          metadata: Record<string, unknown> | null;
+          ip_address: string | null;
+          created_at: string;
+        };
+        Insert: Omit<Database["public"]["Tables"]["admin_audit_log"]["Row"], "id" | "created_at">;
+        Update: Partial<Database["public"]["Tables"]["admin_audit_log"]["Insert"]>;
       };
       diagnostic_sessions: {
         Row: {
