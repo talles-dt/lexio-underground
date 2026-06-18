@@ -66,9 +66,14 @@ export default function SignInPage() {
       setLoading(true);
       try {
         if (tab === "signin") {
-          const { error: signInError } =
+          const { error: signInError, data } =
             await supabase().auth.signInWithPassword({ email, password });
-          if (signInError) setError(signInError.message);
+          if (signInError) {
+            setError(signInError.message);
+          } else if (data?.user) {
+            // Redirect to home after successful sign-in
+            window.location.href = "/";
+          }
         } else {
           const { error: signUpError } = await supabase().auth.signUp({
             email,

@@ -67,6 +67,17 @@ export default function HomePage() {
           Begin your Cartografa
         </Link>
 
+        {/* Sign in link for returning users */}
+        <Link href="/signin" style={{
+          color: colors.zinc,
+          fontFamily: typography.ui.fontFamily,
+          fontSize: 13,
+          textDecoration: "none",
+          marginTop: spacing[2],
+        }}>
+          Already have an account? Sign in
+        </Link>
+
         {/* Quick links — only visible after diagnostic is complete */}
         {hasAccess && (
         <div style={{
