@@ -1,389 +1,725 @@
 "use client";
 
-import React, { useState, useCallback, useEffect, useRef } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import { colors, spacing, radius, typography, duration } from "@/theme/tokens";
-import { useSessionTracker } from "@/lib/sessionTracker";
+import { useAuth } from "@/lib/auth";
+import { supabase } from "@/lib/supabase";
 
-// ─── Inline SM-2 (minimal, no external import to avoid ESM/CJS mismatch) ──
-function miniSM2(easeFactor: number, intervalDays: number, repetitions: number, quality: number) {
-  let ef = easeFactor;
-  let rep = repetitions;
-  let interval = intervalDays;
+/* ------------------------------------------------------------------ */
+/*  Types                                                              */
+/* ------------------------------------------------------------------ */
 
-  if (quality >= 3) {
-    rep += 1;
-    if (rep === 1) interval = 1;
-    else if (rep === 2) interval = 6;
-    else interval = Math.round(interval * ef);
-    ef = Math.max(1.3, ef + (0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02)));
-  } else {
-    rep = 0;
-    interval = 1;
-  }
-
-  const nextReview = new Date();
-  nextReview.setDate(nextReview.getDate() + interval);
-
-  return { easeFactor: ef, intervalDays: interval, repetitions: rep, nextReview, isMastered: rep >= 5 };
-}
-
-// ─── Types ─────────────────────────────────────────────────
-interface PulseItem {
+interface CulturalAtom {
   id: string;
-  pillar: string;
   title: string;
-  content: string;
-  explanation?: string;
-  itemType: "word" | "chunk" | "cultural_atom";
-  icon: string;
-  easeFactor: number;
-  intervalDays: number;
-  repetitions: number;
+  description: string;
+  pillar: "grammar" | "logic" | "vocab" | "culture" | "comm";
+  difficulty: number;
+  content: string; // The actual learning content
+  example?: string;
+  translation?: string;
 }
 
-// ─── First pulse items ─────────────────────────────────────
-const FIRST_PULSE_ITEMS: PulseItem[] = [
+interface PulseSession {
+  atom: CulturalAtom;
+  pronunciation?: string; // TTS audio URL
+  palaceRoom: string; // Which room to place this in
+  completed: boolean;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Cultural Atoms Database (seed data)                                */
+/* ------------------------------------------------------------------ */
+
+const CULTURAL_ATOMS: CulturalAtom[] = [
+  // Vocabulary atoms
   {
-    id: "pulse_welcome_1",
+    id: "atom_v1",
+    title: "Actually ≠ Atualmente",
+    description: "One of the most common false friends",
     pillar: "vocab",
-    title: "Serendipity",
-    content: "The occurrence of events by chance in a happy way",
-    explanation: "From Arabic _siriṣāndip_ via Portuguese — a word that travelled the Silk Road to English.",
-    itemType: "word",
-    icon: "✨",
-    easeFactor: 2.5,
-    intervalDays: 1,
-    repetitions: 0,
+    difficulty: 1,
+    content: "\"Actually\" means 'in fact' or 'really' — not 'currently'. For 'currently', use 'at the moment' or 'right now'.",
+    example: "\"I'm actually working on it\" = I'm really working on it (not 'atualmente')",
+    translation: "\"Actually\" = في الواقع / فعلاً (não 'atualmente')",
   },
   {
-    id: "pulse_welcome_2",
+    id: "atom_v2",
+    title: "Make vs Do",
+    description: "The eternal confusion",
+    pillar: "vocab",
+    difficulty: 1,
+    content: "\"Make\" = create/produce something. \"Do\" = perform an activity. \"Make a mistake\" (create it), \"Do homework\" (perform it).",
+    example: "\"I made dinner\" (I created it) vs \"I did the dishes\" (I performed the task)",
+    translation: "\"Make\" = يصنع/يعمل، \"Do\" = يفعل/يؤدي",
+  },
+  {
+    id: "atom_v3",
+    title: "Take a shower / Have a shower",
+    description: "Collocation awareness",
+    pillar: "vocab",
+    difficulty: 1,
+    content: "\"Take a shower\" is the standard American collocation. \"Have a shower\" is British. \"Do a shower\" doesn't exist.",
+    example: "\"I need to take a shower before we leave\"",
+    translation: "\"Take a shower\" = يستحم (أمريكية)، \"Have a shower\" = يستحم (بريطانية)",
+  },
+  {
+    id: "atom_v4",
+    title: "Get — The Swiss Army Knife",
+    description: "One verb, dozens of meanings",
+    pillar: "vocab",
+    difficulty: 2,
+    content: "\"Get\" can mean: receive (get a letter), become (get tired), arrive (get to work), understand (get it), fetch (get water).",
+    example: "\"I got it\" can mean: I received it / I understand it / I fetched it",
+    translation: "\"Get\" = يحصل/يصبح/يفهم/يحضر — حسب السياق",
+  },
+  {
+    id: "atom_v5",
+    title: "Phrasal Verb: Put Off",
+    description: "Postponement with attitude",
+    pillar: "vocab",
+    difficulty: 2,
+    content: "\"Put off\" = postpone/delay. \"Put away\" = store. \"Put down\" = place down/criticize. \"Put out\" = extinguish/inconvenience.",
+    example: "\"Don't put off until tomorrow what you can do today\"",
+    translation: "\"Put off\" = يؤجل، \"Put away\" = يخزن، \"Put down\" = يضع/ينتقد",
+  },
+  // Culture atoms
+  {
+    id: "atom_c1",
+    title: "\"That's Interesting\" — The Polite No",
+    description: "Reading between American lines",
     pillar: "culture",
-    title: "British understatement",
-    content: "\"Not bad\" means \"quite good\". \"Rather good\" means \"exceptional\".",
-    explanation: "Indirectness is a cultural atom — it signals politeness, not weakness.",
-    itemType: "cultural_atom",
-    icon: "🎭",
-    easeFactor: 2.5,
-    intervalDays: 1,
-    repetitions: 0,
+    difficulty: 2,
+    content: "In American culture, \"That's interesting\" said with a flat tone often means \"I disagree but don't want to argue.\" Context and tone are everything.",
+    example: "If someone says \"That's interesting...\" with a pause and no follow-up, they likely disagree.",
+    translation: "\"That's interesting\" يمكن أن تعني \"لا أتفق\" بلهجة مهذبة",
   },
   {
-    id: "pulse_welcome_3",
+    id: "atom_c2",
+    title: "The RSVP Obligation",
+    description: "Cultural expectations around invitations",
+    pillar: "culture",
+    difficulty: 1,
+    content: "RSVP = \"Répondez s'il vous plaît\" (please respond). In Anglo culture, you MUST respond — even if you can't attend. Ignoring is rude.",
+    example: "If you can't go, reply: \"Thank you for the invitation, but I won't be able to attend.\"",
+    translation: "RSVP = الرجاء الرد — عدم الرد يعتبر وقحاً",
+  },
+  {
+    id: "atom_c3",
+    title: "\"How Are You?\" — Not a Real Question",
+    description: "Social formula vs genuine inquiry",
+    pillar: "culture",
+    difficulty: 1,
+    content: "\"How are you?\" in American culture is a greeting, not a real question. The expected answer is \"Good, thanks\" — not your actual health status.",
+    example: "Wrong: \"Well, I've been having back pain...\" Right: \"Good, thanks! How are you?\"",
+    translation: "\"How are you?\" = تحية اجتماعية، ليس سؤالاً حقيقياً",
+  },
+  {
+    id: "atom_c4",
+    title: "Small Talk — The Social Glue",
+    description: "Why Americans talk about weather",
+    pillar: "culture",
+    difficulty: 2,
+    content: "Small talk (weather, sports, weekend plans) is not meaningless — it's social bonding. Skipping it and jumping to business feels cold.",
+    example: "Before a meeting: \"How was your weekend?\" → 30 seconds of small talk → then business.",
+    translation: "المحادثة الخفيفة = مفتاح العلاقات الاجتماعية في الثقافة الأمريكية",
+  },
+  {
+    id: "atom_c5",
+    title: "The \"Sorry\" Reflex",
+    description: "When Americans apologize",
+    pillar: "culture",
+    difficulty: 3,
+    content: "Americans say \"sorry\" for things that aren't their fault — bumping into furniture, asking a question, existing near someone. It's social lubricant, not admission of guilt.",
+    example: "\"Sorry, could you repeat that?\" — You're not sorry, you're being polite.",
+    translation: "\"Sorry\" في الثقافة الأمريكية = تهذيب، ليس اعتذاراً حقيقياً",
+  },
+  // Grammar atoms
+  {
+    id: "atom_g1",
+    title: "Present Perfect vs Simple Past",
+    description: "The Brazilian nightmare",
     pillar: "grammar",
-    title: "Used to vs. Would",
-    content: "\"I used to play tennis\" (past habit, any verb) vs. \"I would play tennis\" (past habit, action verbs only)",
-    explanation: "\"Used to\" works with stative verbs (be, know, like). \"Would\" does not.",
-    itemType: "chunk",
-    icon: "📐",
-    easeFactor: 2.5,
-    intervalDays: 1,
-    repetitions: 0,
+    difficulty: 2,
+    content: "Use Present Perfect for actions connected to now: \"I have lived here for 5 years\" (still living). Use Simple Past for completed actions: \"I lived there in 2010\" (not anymore).",
+    example: "\"I have seen that movie\" (at some point, relevant now) vs \"I saw that movie last week\" (specific past time)",
+    translation: "Present Perfect = المضارع التام (مرتبط بالحاضر)، Simple Past = الماضي البسيط (انتهى)",
+  },
+  {
+    id: "atom_g2",
+    title: "The Subjunctive Were",
+    description: "Hypothetical thinking in English",
+    pillar: "grammar",
+    difficulty: 3,
+    content: "\"If I were rich\" (not \"was\") — the subjunctive mood. It signals hypothetical/unreal situations. \"Were\" for all persons in formal English.",
+    example: "\"If I were you, I would study more\" (I'm not you — hypothetical)",
+    translation: "\"Were\" في الجمل الشرطية = صيغة افتراضية (لو كنت)",
+  },
+  // Logic atoms
+  {
+    id: "atom_l1",
+    title: "False Friends: Pretender vs Pretend",
+    description: "Words that lie to you",
+    pillar: "logic",
+    difficulty: 1,
+    content: "\"Pretender\" in Portuguese = to intend. \"Pretend\" in English = to fake/false. \"I pretend to go\" (PT) ≠ \"I pretend to go\" (EN — means you're faking it).",
+    example: "PT: \"Pretendo estudar\" → EN: \"I intend to study\" (NOT \"I pretend to study\")",
+    translation: "\"Pretender\" (برتغالي) ≠ \"Pretend\" (إنجليزي) — أصدقاء كاذبون",
+  },
+  {
+    id: "atom_l2",
+    title: "The Article Trap",
+    description: "When to use a/an/the/∅",
+    pillar: "logic",
+    difficulty: 3,
+    content: "English articles don't map to Portuguese. \"I love music\" (no article) but \"I love the music in this film\" (specific). \"I'm a teacher\" (profession) but \"I'm the teacher\" (the only one).",
+    example: "\"Life is beautiful\" (general, no article) vs \"The life of a teacher is hard\" (specific)",
+    translation: "أدوات التعريف والتنكير في الإنجليزية لا تتطابق مع البرتغالية",
+  },
+  // Communication atoms
+  {
+    id: "atom_m1",
+    title: "Hedging Language",
+    description: "How to sound less direct",
+    pillar: "comm",
+    difficulty: 2,
+    content: "Americans hedge: \"I think maybe we could possibly...\" instead of \"We should...\" Hedging sounds polite, not weak.",
+    example: "\"I was wondering if you might be able to...\" (polite request) vs \"Can you...?\" (direct)",
+    translation: "التلطيف في الإنجليزية = أدب، وليس ضعفاً",
+  },
+  {
+    id: "atom_m2",
+    title: "The \"Could You\" Formula",
+    description: "Polite requests that actually work",
+    pillar: "comm",
+    difficulty: 1,
+    content: "\"Could you\" is more polite than \"Can you.\" \"Would you mind\" is even more polite. \"I was wondering if\" is the most indirect.",
+    example: "\"Could you pass the salt?\" (polite) → \"Would you mind passing the salt?\" (very polite)",
+    translation: "\"Could you\" = هل يمكنك (مهذب)، \"Would you mind\" = هل تمانع (أكثر تهذيباً)",
   },
 ];
 
-const PILLAR_COLORS: Record<string, string> = {
-  grammar: colors.phosphor,
-  logic: colors.amber,
-  vocab: colors.violet,
-  culture: "#DC2626",
-  comm: "#22C55E",
-};
+/* ------------------------------------------------------------------ */
+/*  Pulse Mode Component                                               */
+/* ------------------------------------------------------------------ */
 
-const QUALITY_LABELS = [
-  "Complete blackout",
-  "Wrong, but recognized after seeing",
-  "Wrong, but seemed easy to recall",
-  "Hard — correct with serious effort",
-  "Good — correct with hesitation",
-  "Perfect — effortless recall",
-];
+export default function PulseModePage() {
+  const { user } = useAuth();
+  const [session, setSession] = useState<PulseSession | null>(null);
+  const [step, setStep] = useState<"intro" | "atom" | "pronunciation" | "palace" | "done">("intro");
+  const [loading, setLoading] = useState(true);
+  const [showTranslation, setShowTranslation] = useState(false);
+  const [timeOfDay, setTimeOfDay] = useState<"morning" | "afternoon" | "evening">("morning");
 
-// ─── Component ─────────────────────────────────────────────
-export default function PulsePage() {
-  const [idx, setIdx] = useState(0);
-  const [phase, setPhase] = useState<"reveal" | "rate" | "explain">("reveal");
-  const [selected, setSelected] = useState<number | null>(null);
-  const [completed, setCompleted] = useState(false);
-  const [logged, setLogged] = useState(false);
-  const sessionStartRef = useRef(Date.now());
-  const { logSessionEvent } = useSessionTracker();
-
-  const item = FIRST_PULSE_ITEMS[idx];
-
-  // Log session on completion
+  // Determine time of day
   useEffect(() => {
-    if (completed && !logged) {
-      setLogged(true);
-      const durationSec = Math.floor((Date.now() - sessionStartRef.current) / 1000);
-      logSessionEvent({
-        session_type: "pulse",
-        duration_seconds: durationSec,
-        items_covered: idx + 1,
-        completed_flag: true,
-        pillar: item?.pillar,
-        metadata: {
-          items_reviewed: idx + 1,
-          last_item_id: item?.id,
-        },
-      });
-    }
-  }, [completed, logged, idx, item, logSessionEvent]);
-
-  const handleRate = useCallback((quality: number) => {
-    setSelected(quality);
-    setPhase("explain");
+    const hour = new Date().getHours();
+    if (hour < 12) setTimeOfDay("morning");
+    else if (hour < 18) setTimeOfDay("afternoon");
+    else setTimeOfDay("evening");
   }, []);
 
-  const handleNext = useCallback(() => {
-    if (idx + 1 >= FIRST_PULSE_ITEMS.length) {
-      setCompleted(true);
-      if (typeof window !== "undefined") {
-        localStorage.setItem("lexio_pulse_complete", "true");
+  // Load today's pulse session
+  useEffect(() => {
+    async function loadPulse() {
+      if (!user) { setLoading(false); return; }
+      try {
+        // Check if already completed today
+        const today = new Date().toISOString().split("T")[0];
+        const { data: existing } = await supabase
+          .from("pulse_sessions")
+          .select("*")
+          .eq("user_id", user.id)
+          .eq("completed_at", today)
+          .single();
+
+        if (existing) {
+          setStep("done");
+          setLoading(false);
+          return;
+        }
+
+        // Get a random atom the user hasn't seen
+        const { data: seen } = await supabase
+          .from("pulse_sessions")
+          .select("atom_id")
+          .eq("user_id", user.id);
+
+        const seenIds = new Set((seen || []).map((s: { atom_id: string }) => s.atom_id));
+        const unseen = CULTURAL_ATOMS.filter((a) => !seenIds.has(a.id));
+        const atom = unseen.length > 0
+          ? unseen[Math.floor(Math.random() * unseen.length)]
+          : CULTURAL_ATOMS[Math.floor(Math.random() * CULTURAL_ATOMS.length)];
+
+        // Determine palace room based on pillar
+        const pillarRooms: Record<string, string> = {
+          grammar: "grammar",
+          logic: "logic",
+          vocab: "vocab",
+          culture: "culture",
+          comm: "comm",
+        };
+
+        setSession({
+          atom,
+          palaceRoom: pillarRooms[atom.pillar] || "entrance",
+          completed: false,
+        });
+        setStep("atom");
+      } catch {
+        // No session yet, create one
+        const atom = CULTURAL_ATOMS[Math.floor(Math.random() * CULTURAL_ATOMS.length)];
+        setSession({
+          atom,
+          palaceRoom: atom.pillar,
+          completed: false,
+        });
+        setStep("atom");
+      } finally {
+        setLoading(false);
       }
-    } else {
-      setIdx(idx + 1);
-      setPhase("reveal");
-      setSelected(null);
     }
-  }, [idx]);
+    loadPulse();
+  }, [user]);
 
-  const s: Record<string, React.CSSProperties> = {
-    container: {
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
-      minHeight: "100vh",
-      backgroundColor: colors.obsidian,
-      padding: spacing[4],
-    },
-    card: {
-      backgroundColor: colors.surface,
-      borderRadius: radius.card,
-      padding: spacing[8],
-      maxWidth: 520,
-      width: "100%",
-    },
-    title: {
-      ...typography.h1,
-      color: colors.phosphor,
-      fontWeight: 700,
-      marginBottom: spacing[4],
-      textAlign: "center" as const,
-    },
-    pillarTag: {
-      display: "inline-block",
-      padding: `${spacing[1]}px ${spacing[3]}px`,
-      borderRadius: radius.full,
-      fontSize: 12,
-      fontWeight: 600,
-      marginBottom: spacing[3],
-    },
-    itemTitle: {
-      ...typography.h2,
-      color: colors.ivory,
-      fontWeight: 700,
-      marginBottom: spacing[3],
-    },
-    itemContent: {
-      ...typography.body,
-      color: colors.ivory,
-      marginBottom: spacing[6],
-      lineHeight: 1.6,
-    },
-    explanation: {
-      ...typography.body,
-      color: colors.amber,
-      fontStyle: "italic",
-      padding: spacing[4],
-      borderRadius: radius.md,
-      backgroundColor: `${colors.amber}10`,
-      marginBottom: spacing[6],
-    },
-    ratingGrid: {
-      display: "grid",
-      gridTemplateColumns: "repeat(6, 1fr)",
-      gap: spacing[2],
-      marginBottom: spacing[4],
-    },
-    ratingBtn: {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      width: 44,
-      height: 44,
-      borderRadius: radius.card,
-      border: `1px solid ${colors.zinc}`,
-      backgroundColor: "transparent",
-      color: colors.ivory,
-      cursor: "pointer",
-      fontWeight: 700,
-      fontSize: 16,
-      transition: `all ${duration.normal}ms ease`,
-    },
-    ratingBtnSelected: {
-      backgroundColor: colors.phosphor,
-      color: colors.obsidian,
-      borderColor: colors.phosphor,
-    },
-    ratingLabels: {
-      display: "flex",
-      justifyContent: "space-between",
-      marginBottom: spacing[6],
-    },
-    ratingLabel: {
-      ...typography.caption,
-      color: colors.zinc,
-      fontSize: 10,
-      textAlign: "center" as const,
-      flex: 1,
-      padding: `0 ${spacing[1]}px`,
-    },
-    primaryBtn: {
-      backgroundColor: colors.phosphor,
-      color: colors.obsidian,
-      borderRadius: radius.btn,
-      padding: `${spacing[3]}px ${spacing[8]}px`,
-      border: "none",
-      cursor: "pointer",
-      fontSize: 16,
-      fontWeight: 600,
-      width: "100%",
-    },
-    counter: {
-      ...typography.caption,
-      color: colors.zinc,
-      textAlign: "center" as const,
-      marginBottom: spacing[4],
-    },
-    completionMsg: {
-      ...typography.h2,
-      color: colors.amber,
-      fontStyle: "italic",
-      marginBottom: spacing[4],
-      textAlign: "center" as const,
-    },
-    subtitle: {
-      ...typography.body,
-      color: colors.zinc,
-      marginBottom: spacing[6],
-      textAlign: "center" as const,
-    },
-  };
+  const handleComplete = useCallback(async () => {
+    if (!user || !session) return;
+    try {
+      await supabase.from("pulse_sessions").insert({
+        user_id: user.id,
+        atom_id: session.atom.id,
+        pillar: session.atom.pillar,
+        palace_room: session.palaceRoom,
+        completed_at: new Date().toISOString().split("T")[0],
+      });
+    } catch {
+      // Silent fail — not critical
+    }
+    setStep("done");
+  }, [user, session]);
 
-  // ── Completion screen ──────────────────────────────────
-  if (completed) {
-    const inOnboarding = typeof window !== "undefined" && localStorage.getItem("lexio_ob_step");
+  if (loading) {
     return (
       <div style={s.container}>
-        <div style={s.card}>
-          <h2 style={s.title}>Pulse Complete</h2>
-          <p style={s.completionMsg}>
-            You&apos;ve placed your first items. Your Memory Palace is taking shape.
-          </p>
-          <p style={s.subtitle}>
-            {FIRST_PULSE_ITEMS.length} items reviewed. Come back tomorrow for more.
-          </p>
-          {inOnboarding ? (
-            <button style={s.primaryBtn} onClick={() => window.location.href = "/onboarding"}>
-              Continue your journey →
-            </button>
-          ) : (
-            <button style={s.primaryBtn} onClick={() => window.location.href = "/palace"}>
-              Visit your Palace →
-            </button>
-          )}
+        <div style={s.loadingWrap}>
+          <div style={s.spinner} />
+          <span style={s.loadingText}>Preparing your pulse...</span>
         </div>
       </div>
     );
   }
 
-  // ── Active pulse ───────────────────────────────────────
   return (
     <div style={s.container}>
-      <div style={s.card}>
-        <p style={s.counter}>
-          {idx + 1} / {FIRST_PULSE_ITEMS.length}
+      {/* Header */}
+      <header style={s.header}>
+        <h1 style={s.title}>Pulse Mode</h1>
+        <p style={s.subtitle}>
+          {timeOfDay === "morning" && "☀️ Morning pulse — 3 minutes to sharpen your mind"}
+          {timeOfDay === "afternoon" && "🌤 Afternoon pulse — a quick cultural atom"}
+          {timeOfDay === "evening" && "🌙 Evening pulse — wind down with language"}
         </p>
+      </header>
 
-        {/* Pillar tag */}
-        <div style={{ textAlign: "center" }}>
-          <span style={{
-            ...s.pillarTag,
-            backgroundColor: `${PILLAR_COLORS[item.pillar] || colors.zinc}20`,
-            color: PILLAR_COLORS[item.pillar] || colors.zinc,
-          }}>
-            {item.icon} {item.pillar}
-          </span>
-        </div>
+      <main style={s.main}>
+        {step === "atom" && session && (
+          <div style={s.card}>
+            {/* Pillar badge */}
+            <div style={pillarBadgeStyle(session.atom.pillar)}>
+              {session.atom.pillar}
+            </div>
 
-        {/* Item content */}
-        <div style={{ textAlign: "center", marginTop: spacing[4] }}>
-          <h3 style={s.itemTitle}>{item.title}</h3>
-          <p style={s.itemContent}>{item.content}</p>
-        </div>
+            {/* Title */}
+            <h2 style={s.atomTitle}>{session.atom.title}</h2>
+            <p style={s.atomDescription}>{session.atom.description}</p>
 
-        {/* Rating phase */}
-        {phase === "reveal" && (
-          <div style={{ textAlign: "center" }}>
-            <p style={{ ...typography.caption, color: colors.zinc, marginBottom: spacing[4] }}>
-              How well did you know this?
-            </p>
-            <button
-              style={{ ...s.primaryBtn, marginBottom: spacing[2] }}
-              onClick={() => setPhase("rate")}
-            >
-              Show me →
-            </button>
+            {/* Content */}
+            <div style={s.contentBox}>
+              <p style={s.contentText}>{session.atom.content}</p>
+            </div>
+
+            {/* Example */}
+            {session.atom.example && (
+              <div style={s.exampleBox}>
+                <span style={s.exampleLabel}>Example:</span>
+                <p style={s.exampleText}>{session.atom.example}</p>
+              </div>
+            )}
+
+            {/* Translation toggle */}
+            {session.atom.translation && (
+              <button
+                onClick={() => setShowTranslation(!showTranslation)}
+                style={s.translationToggle}
+              >
+                {showTranslation ? "Hide translation" : "Show translation"}
+              </button>
+            )}
+            {showTranslation && session.atom.translation && (
+              <div style={s.translationBox}>
+                <p style={s.translationText}>{session.atom.translation}</p>
+              </div>
+            )}
+
+            {/* Actions */}
+            <div style={s.actions}>
+              <button onClick={() => setStep("palace")} style={s.primaryBtn}>
+                Place in Palace →
+              </button>
+            </div>
           </div>
         )}
 
-        {phase === "rate" && (
-          <>
-            <div style={s.ratingGrid}>
-              {[0, 1, 2, 3, 4, 5].map((q) => (
-                <button
-                  key={q}
-                  style={{
-                    ...s.ratingBtn,
-                    ...(selected === q ? s.ratingBtnSelected : {}),
-                  }}
-                  onClick={() => handleRate(q)}
-                >
-                  {q}
-                </button>
-              ))}
+        {step === "palace" && session && (
+          <div style={s.card}>
+            <div style={s.palaceIcon}>🏛</div>
+            <h2 style={s.palaceTitle}>Place in Palace</h2>
+            <p style={s.palaceDescription}>
+              This atom will be placed in your <strong>{session.palaceRoom}</strong> room.
+            </p>
+            <div style={s.palaceRoomCard}>
+              <span style={s.palaceRoomIcon}>
+                {session.palaceRoom === "grammar" && "📐"}
+                {session.palaceRoom === "logic" && "🧩"}
+                {session.palaceRoom === "vocab" && "📚"}
+                {session.palaceRoom === "culture" && "🌍"}
+                {session.palaceRoom === "comm" && "💬"}
+              </span>
+              <span style={s.palaceRoomName}>{session.palaceRoom} room</span>
             </div>
-            <div style={s.ratingLabels}>
-              {QUALITY_LABELS.map((label, i) => (
-                <span key={i} style={s.ratingLabel}>{i === 0 || i === 5 ? label : ""}</span>
-              ))}
+            <div style={s.actions}>
+              <button onClick={() => setStep("atom")} style={s.secondaryBtn}>
+                ← Back
+              </button>
+              <button onClick={handleComplete} style={s.primaryBtn}>
+                Complete Pulse ✓
+              </button>
             </div>
-          </>
+          </div>
         )}
 
-        {/* Explanation phase */}
-        {phase === "explain" && selected !== null && (
-          <>
-            {item.explanation && (
-              <div style={s.explanation}>{item.explanation}</div>
-            )}
-            <div style={{
-              ...typography.caption,
-              color: colors.zinc,
-              textAlign: "center" as const,
-              marginBottom: spacing[4],
-            }}>
-              {selected >= 3
-                ? "Great recall! This item will reappear less frequently."
-                : "No worries — this item will come back soon so it sticks."}
+        {step === "done" && (
+          <div style={s.card}>
+            <div style={s.doneIcon}>✓</div>
+            <h2 style={s.doneTitle}>Pulse Complete</h2>
+            <p style={s.doneDescription}>
+              You've completed today's pulse. Come back tomorrow for a new atom.
+            </p>
+            <div style={s.doneStats}>
+              <div style={s.statItem}>
+                <span style={s.statValue}>3</span>
+                <span style={s.statLabel}>min</span>
+              </div>
+              <div style={s.statItem}>
+                <span style={s.statValue}>1</span>
+                <span style={s.statLabel}>atom</span>
+              </div>
+              <div style={s.statItem}>
+                <span style={s.statValue}>∞</span>
+                <span style={s.statLabel}>streak</span>
+              </div>
             </div>
-            <button style={s.primaryBtn} onClick={handleNext}>
-              {idx + 1 >= FIRST_PULSE_ITEMS.length ? "Complete" : "Next item →"}
-            </button>
-          </>
+            <div style={s.actions}>
+              <a href="/" style={s.primaryBtn}>Back to Home</a>
+            </div>
+          </div>
         )}
-      </div>
+      </main>
     </div>
   );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Styles                                                             */
+/* ------------------------------------------------------------------ */
+
+const s: Record<string, React.CSSProperties> = {
+  container: {
+    minHeight: "100vh",
+    backgroundColor: colors.obsidian,
+    color: colors.ivory,
+    display: "flex",
+    flexDirection: "column",
+  },
+  loadingWrap: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    minHeight: "60vh",
+    gap: spacing[3],
+  },
+  spinner: {
+    width: 32,
+    height: 32,
+    border: `3px solid ${colors.borderSubtle}`,
+    borderTopColor: colors.phosphor,
+    borderRadius: "50%",
+    animation: "spin 0.8s linear infinite",
+  },
+  loadingText: {
+    fontFamily: typography.ui.fontFamily,
+    fontSize: typography.ui.fontSize,
+    color: colors.zinc,
+  },
+  header: {
+    textAlign: "center",
+    padding: `${spacing[6]}px ${spacing[3]}px ${spacing[2]}`,
+  },
+  title: {
+    fontFamily: typography.display.fontFamily,
+    fontSize: 28,
+    lineHeight: "36px",
+    color: colors.ivory,
+    margin: 0,
+    marginBottom: spacing[1],
+  },
+  subtitle: {
+    fontFamily: typography.bodyItalic.fontFamily,
+    fontStyle: "italic",
+    fontSize: typography.body.fontSize,
+    color: colors.zinc,
+    margin: 0,
+  },
+  main: {
+    flex: 1,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: spacing[3],
+  },
+  card: {
+    backgroundColor: colors.surface,
+    border: `1px solid ${colors.borderSubtle}`,
+    borderRadius: radius.card,
+    padding: spacing[6],
+    maxWidth: 520,
+    width: "100%",
+    textAlign: "center",
+  },
+  atomTitle: {
+    fontFamily: typography.h1.fontFamily,
+    fontSize: 22,
+    lineHeight: "28px",
+    color: colors.ivory,
+    margin: 0,
+    marginBottom: spacing[1],
+  },
+  atomDescription: {
+    fontFamily: typography.bodyItalic.fontFamily,
+    fontStyle: "italic",
+    fontSize: typography.body.fontSize,
+    color: colors.phosphor,
+    margin: 0,
+    marginBottom: spacing[4],
+  },
+  contentBox: {
+    backgroundColor: colors.obsidian,
+    borderRadius: radius.btn,
+    padding: spacing[4],
+    marginBottom: spacing[3],
+    textAlign: "left",
+  },
+  contentText: {
+    fontFamily: typography.body.fontFamily,
+    fontSize: typography.body.fontSize,
+    lineHeight: "24px",
+    color: colors.ivory,
+    margin: 0,
+  },
+  exampleBox: {
+    backgroundColor: `${colors.phosphor}08`,
+    border: `1px solid ${colors.phosphor}20`,
+    borderRadius: radius.btn,
+    padding: spacing[3],
+    marginBottom: spacing[3],
+    textAlign: "left",
+  },
+  exampleLabel: {
+    fontFamily: typography.caption.fontFamily,
+    fontSize: 10,
+    fontWeight: 600,
+    textTransform: "uppercase",
+    letterSpacing: 1,
+    color: colors.phosphor,
+    display: "block",
+    marginBottom: spacing[1],
+  },
+  exampleText: {
+    fontFamily: typography.bodyItalic.fontFamily,
+    fontStyle: "italic",
+    fontSize: typography.body.fontSize,
+    color: colors.ivory,
+    margin: 0,
+  },
+  translationToggle: {
+    background: "none",
+    border: "none",
+    color: colors.zinc,
+    fontFamily: typography.caption.fontFamily,
+    fontSize: 11,
+    cursor: "pointer",
+    padding: spacing[1],
+    marginBottom: spacing[3],
+  },
+  translationBox: {
+    backgroundColor: `${colors.violet}08`,
+    border: `1px solid ${colors.violet}20`,
+    borderRadius: radius.btn,
+    padding: spacing[3],
+    marginBottom: spacing[4],
+    textAlign: "left",
+  },
+  translationText: {
+    fontFamily: typography.body.fontFamily,
+    fontSize: typography.body.fontSize,
+    color: colors.ivory,
+    margin: 0,
+    lineHeight: "22px",
+  },
+  actions: {
+    display: "flex",
+    justifyContent: "center",
+    gap: spacing[2],
+    marginTop: spacing[4],
+  },
+  primaryBtn: {
+    display: "inline-block",
+    backgroundColor: colors.phosphor,
+    color: colors.obsidian,
+    fontWeight: 700,
+    padding: `${spacing[2]}px ${spacing[4]}px`,
+    borderRadius: radius.btn,
+    textDecoration: "none",
+    fontFamily: typography.ui.fontFamily,
+    fontSize: 14,
+    border: "none",
+    cursor: "pointer",
+  },
+  secondaryBtn: {
+    display: "inline-block",
+    backgroundColor: "transparent",
+    color: colors.zinc,
+    fontWeight: 600,
+    padding: `${spacing[2]}px ${spacing[4]}px`,
+    borderRadius: radius.btn,
+    textDecoration: "none",
+    fontFamily: typography.ui.fontFamily,
+    fontSize: 14,
+    border: `1px solid ${colors.borderSubtle}`,
+    cursor: "pointer",
+  },
+  palaceIcon: {
+    fontSize: 48,
+    marginBottom: spacing[2],
+  },
+  palaceTitle: {
+    fontFamily: typography.h1.fontFamily,
+    fontSize: 22,
+    color: colors.ivory,
+    margin: 0,
+    marginBottom: spacing[1],
+  },
+  palaceDescription: {
+    fontFamily: typography.body.fontFamily,
+    fontSize: typography.body.fontSize,
+    color: colors.zinc,
+    margin: 0,
+    marginBottom: spacing[4],
+  },
+  palaceRoomCard: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: spacing[2],
+    backgroundColor: colors.obsidian,
+    borderRadius: radius.btn,
+    padding: spacing[3],
+    marginBottom: spacing[4],
+  },
+  palaceRoomIcon: {
+    fontSize: 24,
+  },
+  palaceRoomName: {
+    fontFamily: typography.ui.fontFamily,
+    fontSize: 14,
+    fontWeight: 600,
+    color: colors.ivory,
+    textTransform: "capitalize",
+  },
+  doneIcon: {
+    width: 56,
+    height: 56,
+    borderRadius: "50%",
+    backgroundColor: `${colors.phosphor}15`,
+    border: `2px solid ${colors.phosphor}`,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    margin: "0 auto",
+    marginBottom: spacing[3],
+    fontFamily: typography.h1.fontFamily,
+    fontSize: 24,
+    color: colors.phosphor,
+  },
+  doneTitle: {
+    fontFamily: typography.h1.fontFamily,
+    fontSize: 22,
+    color: colors.ivory,
+    margin: 0,
+    marginBottom: spacing[1],
+  },
+  doneDescription: {
+    fontFamily: typography.body.fontFamily,
+    fontSize: typography.body.fontSize,
+    color: colors.zinc,
+    margin: 0,
+    marginBottom: spacing[4],
+  },
+  doneStats: {
+    display: "flex",
+    justifyContent: "center",
+    gap: spacing[6],
+    marginBottom: spacing[4],
+  },
+  statItem: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
+  statValue: {
+    fontFamily: typography.display.fontFamily,
+    fontSize: 24,
+    color: colors.phosphor,
+  },
+  statLabel: {
+    fontFamily: typography.caption.fontFamily,
+    fontSize: 10,
+    color: colors.zinc,
+    textTransform: "uppercase",
+    letterSpacing: 1,
+  },
+};
+
+// Pillar badge colors helper
+function pillarBadgeStyle(pillar: string): React.CSSProperties {
+  const color = pillar === "grammar" ? colors.phosphor :
+    pillar === "logic" ? colors.amber :
+    pillar === "vocab" ? colors.violet :
+    pillar === "culture" ? colors.phosphorFixedDim :
+    colors.crimson;
+  return {
+    display: "inline-block",
+    padding: "2px 10px",
+    borderRadius: 12,
+    fontFamily: typography.caption.fontFamily,
+    fontSize: 10,
+    fontWeight: 600,
+    textTransform: "uppercase",
+    letterSpacing: 1.5,
+    marginBottom: spacing[3],
+    backgroundColor: `${color}15`,
+    color,
+    border: `1px solid ${color}30`,
+  };
 }
