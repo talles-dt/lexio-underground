@@ -3,8 +3,11 @@
 import React from "react";
 import Link from "next/link";
 import { colors, spacing, radius, typography } from "@/theme/tokens";
+import { useHasAccess } from "@/lib/access";
 
 export default function HomePage() {
+  const hasAccess = useHasAccess();
+
   return (
     <div style={{
       minHeight: "100vh",
@@ -59,12 +62,13 @@ export default function HomePage() {
           textDecoration: "none",
           fontFamily: typography.ui.fontFamily,
           fontSize: typography.ui.fontSize,
-          marginBottom: spacing[6],
+          marginBottom: hasAccess ? spacing[6] : 0,
         }}>
           Begin your Cartografa
         </Link>
 
-        {/* Quick links grid */}
+        {/* Quick links — only visible after diagnostic is complete */}
+        {hasAccess && (
         <div style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
@@ -79,6 +83,7 @@ export default function HomePage() {
           <QuickLink href="/profile" icon="👤" label="Profile" />
           <QuickLink href="/pricing" icon="💎" label="Pricing" />
         </div>
+        )}
       </section>
 
       {/* Footer */}

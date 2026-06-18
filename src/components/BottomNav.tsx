@@ -4,6 +4,7 @@ import React from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { colors, spacing, typography, duration } from "@/theme/tokens";
+import { useHasAccess } from "@/lib/access";
 
 /* ------------------------------------------------------------------ */
 /*  Bottom navigation — 5 core routes                                  */
@@ -52,10 +53,11 @@ const NAV_ITEMS: NavItem[] = [
 
 export function BottomNav() {
   const pathname = usePathname();
+  const hasAccess = useHasAccess();
 
-  // Hide on certain routes
+  // Hide on auth routes or when diagnostic not yet complete
   const hiddenRoutes = ["/onboarding", "/signin", "/auth"];
-  if (hiddenRoutes.some((r) => pathname.startsWith(r))) return null;
+  if (hiddenRoutes.some((r) => pathname.startsWith(r)) || !hasAccess) return null;
 
   return (
     <nav
