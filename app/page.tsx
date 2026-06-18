@@ -90,15 +90,38 @@ export default function HomePage() {
           Begin your Cartografa
         </Link>
 
-        {/* Sign in link for returning users */}
+        {/* Sign in button for returning users */}
         <Link href="/signin" style={{
-          color: colors.zinc,
+          display: "inline-flex",
+          alignItems: "center",
+          gap: spacing[2],
+          padding: `${spacing[2]}px ${spacing[4]}px`,
+          borderRadius: radius.btn,
+          border: `1px solid ${colors.borderSubtle}`,
+          backgroundColor: "transparent",
+          color: colors.ivory,
           fontFamily: typography.ui.fontFamily,
-          fontSize: 13,
+          fontSize: typography.ui.fontSize,
+          fontWeight: 600,
           textDecoration: "none",
-          marginTop: spacing[2],
-        }}>
-          Already have an account? Sign in
+          marginTop: spacing[3],
+          transition: "border-color 0.2s, color 0.2s",
+        }}
+        onMouseEnter={(e) => {
+          (e.currentTarget as HTMLElement).style.borderColor = colors.phosphor;
+          (e.currentTarget as HTMLElement).style.color = colors.phosphor;
+        }}
+        onMouseLeave={(e) => {
+          (e.currentTarget as HTMLElement).style.borderColor = colors.borderSubtle;
+          (e.currentTarget as HTMLElement).style.color = colors.ivory;
+        }}
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+            <polyline points="10 17 15 12 10 7"/>
+            <line x1="15" y1="12" x2="3" y2="12"/>
+          </svg>
+          Sign in to your account
         </Link>
 
         {/* Quick links — only visible after diagnostic is complete */}
