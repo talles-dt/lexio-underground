@@ -215,8 +215,12 @@ const styles: Record<string, React.CSSProperties> = {
     color: colors.ivory,
     display: "flex",
     flexDirection: "column",
-    backgroundImage: `radial-gradient(circle at 1px 1px, ${colors.borderSubtle}40 1px, transparent 0)`,
-    backgroundSize: "40px 40px",
+    backgroundImage: `
+      radial-gradient(circle at 1px 1px, ${colors.borderSubtle}30 1px, transparent 0),
+      radial-gradient(ellipse at 50% 30%, ${colors.phosphor}05 0%, transparent 60%)
+    `,
+    backgroundSize: "40px 40px, 100% 100%",
+    overflow: "hidden",
   },
   navbar: {
     display: "flex",

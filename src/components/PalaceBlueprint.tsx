@@ -25,7 +25,7 @@ interface PalaceBlueprintProps {
 }
 
 /* ------------------------------------------------------------------ */
-/*  Floor Plan Layout (isometric grid positions)                       */
+/*  Layout constants                                                   */
 /* ------------------------------------------------------------------ */
 
 const ROOM_DEFS: Room[] = [
@@ -53,26 +53,14 @@ const STAGE_DOORS: Record<MaturityStage, [string, string][]> = {
   underground: [["grammar", "vocab"], ["grammar", "logic"], ["logic", "comm"], ["culture", "vocab"], ["culture", "comm"], ["entrance", "grammar"], ["entrance", "vocab"]],
 };
 
-/* ------------------------------------------------------------------ */
-/*  Isometric projection helpers                                       */
-/* ------------------------------------------------------------------ */
-
-// Isometric transform: x-axis goes right-down, y-axis goes left-down
-function isoProject(gridX: number, gridY: number, scale = 1): { x: number; y: number } {
-  return {
-    x: (gridX - gridY) * 60 * scale,
-    y: (gridX + gridY) * 30 * scale,
-  };
-}
-
-// Room positions on isometric grid (col, row)
-const ROOM_POSITIONS: Record<string, [number, number]> = {
-  entrance: [1, 3],
-  grammar:  [0, 1],
-  vocab:    [2, 1],
-  logic:    [0, 3],
-  culture:  [2, 3],
-  comm:     [1, 4],
+// 3D grid positions (x, y, z) — z is height/depth
+const ROOM_POSITIONS_3D: Record<string, [number, number, number]> = {
+  entrance: [1, 3, 0],
+  grammar:  [0, 1, 1],
+  vocab:    [2, 1, 1],
+  logic:    [0, 3, 1],
+  culture:  [2, 3, 1],
+  comm:     [1, 4, 2],
 };
 
 const PILLAR_COLORS: Record<string, string> = {
@@ -85,202 +73,227 @@ const PILLAR_COLORS: Record<string, string> = {
 };
 
 /* ------------------------------------------------------------------ */
-/*  SVG Room Component                                                 */
+/*  3D Room Card (CSS 3D transform)                                    */
 /* ------------------------------------------------------------------ */
 
-const ROOM_WIDTH = 120;
-const ROOM_HEIGHT = 60;
+const ROOM_SIZE = 100;
+const ROOM_DEPTH = 30;
 
-function IsoRoom({
+function Room3D({
   room,
-  center,
+  gridPos,
   color,
   unlocked,
   hovered,
+  visible,
   onHover,
   onClick,
-  animDelay,
+  sceneRotX,
+  sceneRotZ,
 }: {
   room: Room;
-  center: { x: number; y: number };
+  gridPos: [number, number, number];
   color: string;
   unlocked: boolean;
   hovered: boolean;
+  visible: boolean;
   onHover: (id: string | null) => void;
   onClick: (id: string) => void;
-  animDelay: number;
+  sceneRotX: number;
+  sceneRotZ: number;
 }) {
-  const hw = ROOM_WIDTH / 2;
-  const hh = ROOM_HEIGHT / 2;
+  const [gx, gy, gz] = gridPos;
 
-  // Isometric diamond points
-  const top =    `${center.x},${center.y - hh}`;
-  const right =  `${center.x + hw},${center.y}`;
-  const bottom = `${center.x},${center.y + hh}`;
-  const left =   `${center.x - hw},${center.y}`;
+  // Convert grid position to 3D translate
+  // x: left-right, y: depth (into screen), z: height
+  const tx = gx * (ROOM_SIZE + 20) - 110;
+  const ty = gy * (ROOM_SIZE * 0.5 + 15) - 80;
+  const tz = gz * ROOM_DEPTH;
 
-  const opacity = unlocked ? 1 : 0.35;
+  const opacity = unlocked ? 1 : 0.3;
   const strokeW = hovered && unlocked ? 2.5 : 1.5;
   const strokeColor = unlocked ? color : colors.zinc;
-  const fillColor = unlocked ? `${color}15` : "transparent";
-  const glowFilter = hovered && unlocked ? `url(#glow-${room.id})` : undefined;
+  const fillColor = unlocked ? `${color}18` : "transparent";
+  const zIndex = Math.round(1000 - ty + tz);
 
   return (
-    <g
+    <div
       onMouseEnter={() => onHover(room.id)}
       onMouseLeave={() => onHover(null)}
       onClick={() => unlocked && onClick(room.id)}
-      style={{ cursor: unlocked ? "pointer" : "default" }}
+      style={{
+        position: "absolute",
+        left: "50%",
+        top: "50%",
+        width: ROOM_SIZE,
+        height: ROOM_SIZE * 0.6,
+        transform: `translate(-50%, -50%) translate3d(${tx}px, ${ty}px, ${tz}px)`,
+        transformStyle: "preserve-3d",
+        zIndex,
+        cursor: unlocked ? "pointer" : "default",
+        opacity: visible ? opacity : 0,
+        transition: `opacity ${duration.reveal}ms ease-out, transform ${duration.normal}ms ease-out`,
+      }}
     >
-      {/* Glow filter definition */}
-      <defs>
-        <filter id={`glow-${room.id}`} x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur stdDeviation="4" result="blur" />
-          <feMerge>
-            <feMergeNode in="blur" />
-            <feMergeNode in="SourceGraphic" />
-          </feMerge>
-        </filter>
-      </defs>
-
-      {/* Room diamond */}
-      <polygon
-        points={`${top} ${right} ${bottom} ${left}`}
-        fill={fillColor}
-        stroke={strokeColor}
-        strokeWidth={strokeW}
-        opacity={opacity}
-        filter={glowFilter}
+      {/* Room floor (top face) */}
+      <div
         style={{
+          position: "absolute",
+          inset: 0,
+          backgroundColor: fillColor,
+          border: `${strokeW}px solid ${strokeColor}`,
+          borderRadius: 8,
+          transform: `translateZ(0px)`,
+          transformStyle: "preserve-3d",
+          backdropFilter: hovered && unlocked ? "blur(2px)" : "none",
+          boxShadow: hovered && unlocked
+            ? `0 0 20px ${color}40, 0 0 40px ${color}20`
+            : `0 2px 8px rgba(0,0,0,0.3)`,
           transition: `all ${duration.normal}ms ease-out`,
         }}
-      />
-
-      {/* Dotted outline for locked rooms */}
-      {!unlocked && (
-        <polygon
-          points={`${top} ${right} ${bottom} ${left}`}
-          fill="none"
-          stroke={colors.zinc}
-          strokeWidth={1}
-          strokeDasharray="4 4"
-          opacity={0.4}
-        />
-      )}
-
-      {/* Room name label */}
-      <text
-        x={center.x}
-        y={center.y - 4}
-        textAnchor="middle"
-        fill={unlocked ? colors.ivory : colors.zinc}
-        fontFamily="JetBrainsMono-Medium, monospace"
-        fontSize={10}
-        fontWeight={500}
-        opacity={opacity}
-        style={{ transition: `all ${duration.normal}ms ease-out` }}
       >
-        {room.name}
-      </text>
+        {/* Room name */}
+        <div style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          textAlign: "center",
+          width: "100%",
+          padding: `0 ${spacing[1]}px`,
+        }}>
+          <span style={{
+            fontFamily: "JetBrainsMono-Medium, monospace",
+            fontSize: 10,
+            fontWeight: 500,
+            color: unlocked ? colors.ivory : colors.zinc,
+            letterSpacing: 0.5,
+          }}>
+            {room.name}
+          </span>
+          {unlocked && room.items > 0 && (
+            <div style={{
+              fontFamily: "JetBrainsMono-Regular, monospace",
+              fontSize: 8,
+              color,
+              opacity: 0.7,
+              marginTop: 2,
+            }}>
+              {room.items} items
+            </div>
+          )}
+          {!unlocked && (
+            <div style={{
+              fontFamily: "JetBrainsMono-Regular, monospace",
+              fontSize: 8,
+              color: colors.zinc,
+              opacity: 0.4,
+              marginTop: 2,
+            }}>
+              🔒
+            </div>
+          )}
+        </div>
+      </div>
 
-      {/* Item count */}
-      {unlocked && room.items > 0 && (
-        <text
-          x={center.x}
-          y={center.y + 12}
-          textAnchor="middle"
-          fill={color}
-          fontFamily="JetBrainsMono-Regular, monospace"
-          fontSize={8}
-          opacity={0.7}
-        >
-          {room.items} items
-        </text>
+      {/* Room depth (side faces) — creates 3D extrusion */}
+      {unlocked && (
+        <>
+          {/* Right face */}
+          <div
+            style={{
+              position: "absolute",
+              right: 0,
+              top: 0,
+              width: ROOM_DEPTH,
+              height: "100%",
+              backgroundColor: `${color}08`,
+              borderRight: `1px solid ${color}30`,
+              borderTop: `1px solid ${color}30`,
+              transform: `rotateY(90deg) translateZ(${ROOM_DEPTH / 2}px)`,
+              transformOrigin: "right center",
+              borderRadius: `0 4px 4px 0`,
+            }}
+          />
+          {/* Bottom face */}
+          <div
+            style={{
+              position: "absolute",
+              bottom: 0,
+              left: 0,
+              width: "100%",
+              height: ROOM_DEPTH,
+              backgroundColor: `${color}05`,
+              borderBottom: `1px solid ${color}20`,
+              borderLeft: `1px solid ${color}20`,
+              transform: `rotateX(-90deg) translateZ(${ROOM_DEPTH / 2}px)`,
+              transformOrigin: "bottom center",
+              borderRadius: `0 0 4px 4px`,
+            }}
+          />
+        </>
       )}
-
-      {/* Lock icon for locked rooms */}
-      {!unlocked && (
-        <text
-          x={center.x}
-          y={center.y + 12}
-          textAnchor="middle"
-          fill={colors.zinc}
-          fontSize={10}
-          opacity={0.4}
-        >
-          🔒
-        </text>
-      )}
-    </g>
+    </div>
   );
 }
 
 /* ------------------------------------------------------------------ */
-/*  SVG Door (connection between rooms)                                */
+/*  3D Door (connection between rooms)                                 */
 /* ------------------------------------------------------------------ */
 
-function IsoDoor({
-  from,
-  to,
+function Door3D({
+  fromPos,
+  toPos,
   active,
+  sceneRotX,
+  sceneRotZ,
 }: {
-  from: { x: number; y: number };
-  to: { x: number; y: number };
+  fromPos: [number, number, number];
+  toPos: [number, number, number];
   active: boolean;
+  sceneRotX: number;
+  sceneRotZ: number;
 }) {
   if (!active) return null;
 
-  const mx = (from.x + to.x) / 2;
-  const my = (from.y + to.y) / 2;
+  const [fx, fy, fz] = fromPos;
+  const [tx, ty, tz] = toPos;
+
+  const midX = (fx + tx) / 2 * (ROOM_SIZE + 20) - 110;
+  const midY = (fy + ty) / 2 * (ROOM_SIZE * 0.5 + 15) - 80;
+  const midZ = (fz + tz) / 2 * ROOM_DEPTH;
+
+  const dx = (tx - fx) * (ROOM_SIZE + 20);
+  const dy = (ty - fy) * (ROOM_SIZE * 0.5 + 15);
+  const length = Math.sqrt(dx * dx + dy * dy);
+  const angle = Math.atan2(dy, dx) * (180 / Math.PI);
 
   return (
-    <g>
-      <line
-        x1={from.x}
-        y1={from.y}
-        x2={to.x}
-        y2={to.y}
-        stroke={colors.phosphorFixedDim}
-        strokeWidth={1}
-        strokeDasharray="6 3"
-        opacity={0.5}
-      />
-      {/* Door marker (small diamond at midpoint) */}
-      <rect
-        x={mx - 3}
-        y={my - 3}
-        width={6}
-        height={6}
-        fill={colors.phosphorFixedDim}
-        opacity={0.6}
-        transform={`rotate(45, ${mx}, ${my})`}
-      />
-    </g>
+    <div
+      style={{
+        position: "absolute",
+        left: "50%",
+        top: "50%",
+        width: length,
+        height: 4,
+        transform: `translate(-50%, -50%) translate3d(${midX}px, ${midY}px, ${midZ + 2}px) rotateZ(${angle}deg)`,
+        transformStyle: "preserve-3d",
+        zIndex: Math.round(1000 - midY + midZ),
+        pointerEvents: "none",
+      }}
+    >
+      <div style={{
+        width: "100%",
+        height: "100%",
+        background: `repeating-linear-gradient(90deg, ${colors.phosphorFixedDim}80 0px, ${colors.phosphorFixedDim}80 6px, transparent 6px, transparent 12px)`,
+        borderRadius: 2,
+      }} />
+    </div>
   );
 }
 
 /* ------------------------------------------------------------------ */
-/*  Grid overlay                                                       */
-/* ------------------------------------------------------------------ */
-
-function BlueprintGrid({ width, height }: { width: number; height: number }) {
-  const lines: React.ReactNode[] = [];
-  const step = 30;
-  for (let x = 0; x < width; x += step) {
-    lines.push(
-      <line key={`v${x}`} x1={x} y1={0} x2={x} y2={height} stroke={colors.zinc} strokeWidth={0.3} opacity={0.15} />
-    );
-  }
-  for (let y = 0; y < height; y += step) {
-    lines.push(
-      <line key={`h${y}`} x1={0} y1={y} x2={width} y2={y} stroke={colors.zinc} strokeWidth={0.3} opacity={0.15} />
-    );
-  }
-  return <g>{lines}</g>;
-}
-
-/* ------------------------------------------------------------------ */
-/*  PalaceBlueprint Component                                          */
+/*  PalaceBlueprint Component (CSS 3D)                                 */
 /* ------------------------------------------------------------------ */
 
 const PalaceBlueprint: React.FC<PalaceBlueprintProps> = ({
@@ -290,15 +303,14 @@ const PalaceBlueprint: React.FC<PalaceBlueprintProps> = ({
 }) => {
   const [hoveredRoom, setHoveredRoom] = useState<string | null>(null);
   const [revealedRooms, setRevealedRooms] = useState<Set<string>>(new Set());
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Merge prop rooms with defaults
   const rooms = (propRooms && propRooms.length > 0 ? propRooms : ROOM_DEFS).map((r) => {
     const def = ROOM_DEFS.find((d) => d.id === r.id);
     return { ...def, ...r } as Room;
   });
 
-  // Unlock rooms based on maturity stage
   const unlockedIds = STAGE_ROOMS[maturityStage] || STAGE_ROOMS.roots;
   const activeDoors = STAGE_DOORS[maturityStage] || [];
 
@@ -307,120 +319,165 @@ const PalaceBlueprint: React.FC<PalaceBlueprintProps> = ({
     unlocked: r.unlocked || unlockedIds.includes(r.id),
   }));
 
-  // Staggered room reveal animation
+  // Staggered room reveal
   useEffect(() => {
     const ids = unlockedIds;
     ids.forEach((id, i) => {
       setTimeout(() => {
         setRevealedRooms((prev) => new Set(prev).add(id));
-      }, i * 300);
+      }, i * 250);
     });
+    // Reset and re-reveal on stage change
+    setRevealedRooms(new Set());
+    setTimeout(() => {
+      ids.forEach((id, i) => {
+        setTimeout(() => {
+          setRevealedRooms((prev) => new Set(prev).add(id));
+        }, i * 250);
+      });
+    }, 50);
   }, [maturityStage]);
 
-  // Compute SVG positions
-  const svgWidth = 600;
-  const svgHeight = 450;
-  const offsetX = svgWidth / 2;
-  const offsetY = 60;
+  // Parallax: track mouse for subtle 3D rotation
+  const handleMouseMove = useCallback((e: React.MouseEvent) => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    setMousePos({ x, y });
+  }, []);
 
-  const positions: Record<string, { x: number; y: number }> = {};
-  for (const [id, [gx, gy]] of Object.entries(ROOM_POSITIONS)) {
-    const p = isoProject(gx, gy);
-    positions[id] = { x: p.x + offsetX, y: p.y + offsetY };
-  }
+  // Base rotation + parallax offset
+  const baseRotX = 55;
+  const baseRotZ = -35;
+  const parallaxX = mousePos.y * 8; // tilt up/down based on mouse Y
+  const parallaxZ = mousePos.x * 6; // rotate left/right based on mouse X
+  const rotX = baseRotX + parallaxX;
+  const rotZ = baseRotZ + parallaxZ;
 
   return (
     <div
       ref={containerRef}
+      onMouseMove={handleMouseMove}
       style={{
         position: "relative",
         width: "100%",
-        maxWidth: 640,
+        maxWidth: 680,
         margin: "0 auto",
+        perspective: "1200px",
+        perspectiveOrigin: "50% 40%",
+        height: 420,
+        userSelect: "none",
       }}
     >
       {/* Maturity stage label */}
       <div style={{
-        textAlign: "center" as const,
+        textAlign: "center",
         marginBottom: spacing[3],
         fontFamily: typography.display.fontFamily,
-        fontSize: 14,
+        fontSize: 13,
         color: colors.zinc,
-        textTransform: "uppercase" as const,
+        textTransform: "uppercase",
         letterSpacing: 3,
+        transition: `color ${duration.normal}ms ease-out`,
       }}>
-        {maturityStage === "underground" ? "The Underground" : maturityStage}
+        {maturityStage === "underground" ? "⟐ The Underground ⟐" : maturityStage}
       </div>
 
-      <svg
-        viewBox={`0 0 ${svgWidth} ${svgHeight}`}
-        width="100%"
-        height="100%"
-        style={{ display: "block" }}
+      {/* 3D Scene container */}
+      <div
+        style={{
+          position: "relative",
+          width: "100%",
+          height: 340,
+          transformStyle: "preserve-3d",
+          transform: `rotateX(${rotX}deg) rotateZ(${rotZ}deg)`,
+          transition: "transform 0.15s ease-out",
+        }}
       >
-        {/* Background grid */}
-        <BlueprintGrid width={svgWidth} height={svgHeight} />
+        {/* Floor grid (3D plane) */}
+        <div
+          style={{
+            position: "absolute",
+            left: "50%",
+            top: "50%",
+            width: 400,
+            height: 300,
+            transform: "translate(-50%, -50%) rotateX(90deg) translateZ(-10px)",
+            transformStyle: "preserve-3d",
+            backgroundImage: `
+              linear-gradient(${colors.borderSubtle}20 1px, transparent 1px),
+              linear-gradient(90deg, ${colors.borderSubtle}20 1px, transparent 1px)
+            `,
+            backgroundSize: "40px 40px",
+            borderRadius: 12,
+            border: `1px solid ${colors.borderSubtle}30`,
+          }}
+        />
 
         {/* Doors (connections) */}
         {activeDoors.map(([fromId, toId]) => (
-          <IsoDoor
+          <Door3D
             key={`${fromId}-${toId}`}
-            from={positions[fromId]}
-            to={positions[toId]}
+            fromPos={ROOM_POSITIONS_3D[fromId]}
+            toPos={ROOM_POSITIONS_3D[toId]}
             active={true}
+            sceneRotX={rotX}
+            sceneRotZ={rotZ}
           />
         ))}
 
         {/* Rooms */}
         {enrichedRooms.map((room, i) => {
-          const pos = positions[room.id];
+          const pos = ROOM_POSITIONS_3D[room.id];
           if (!pos) return null;
           const isVisible = revealedRooms.has(room.id);
           const color = PILLAR_COLORS[room.pillar] || colors.zinc;
 
           return (
-            <g
+            <Room3D
               key={room.id}
-              opacity={isVisible ? 1 : 0}
-              style={{
-                transition: `opacity ${duration.reveal}ms ease-out`,
-              }}
-            >
-              <IsoRoom
-                room={room}
-                center={pos}
-                color={color}
-                unlocked={room.unlocked}
-                hovered={hoveredRoom === room.id}
-                onHover={setHoveredRoom}
-                onClick={onRoomClick || (() => {})}
-                animDelay={i * 300}
-              />
-            </g>
+              room={room}
+              gridPos={pos}
+              color={color}
+              unlocked={room.unlocked}
+              hovered={hoveredRoom === room.id}
+              visible={isVisible}
+              onHover={setHoveredRoom}
+              onClick={onRoomClick || (() => {})}
+              sceneRotX={rotX}
+              sceneRotZ={rotZ}
+            />
           );
         })}
 
-        {/* "New Rooms" indicator for branches+ */}
-        {(maturityStage === "branches" || maturityStage === "canopy" || maturityStage === "underground") && positions["comm"] && (
-          <text
-            x={positions["comm"].x}
-            y={positions["comm"].y + ROOM_HEIGHT / 2 + 20}
-            textAnchor="middle"
-            fill={colors.amber}
-            fontFamily="JetBrainsMono-Regular, monospace"
-            fontSize={9}
-            opacity={0.7}
+        {/* "New Rooms" indicator */}
+        {(maturityStage === "branches" || maturityStage === "canopy" || maturityStage === "underground") && (
+          <div
+            style={{
+              position: "absolute",
+              left: "50%",
+              top: "50%",
+              transform: `translate(-50%, -50%) translate3d(${1 * (ROOM_SIZE + 20) - 110}px, ${4 * (ROOM_SIZE * 0.5 + 15) - 80 + ROOM_SIZE * 0.6 + 10}px, ${2 * ROOM_DEPTH}px)`,
+              fontFamily: "JetBrainsMono-Regular, monospace",
+              fontSize: 9,
+              color: colors.amber,
+              opacity: 0.7,
+              whiteSpace: "nowrap",
+              pointerEvents: "none",
+              textAlign: "center",
+            }}
           >
             ← newly unlocked
-          </text>
+          </div>
         )}
-      </svg>
+      </div>
 
-      {/* Room detail tooltip */}
+      {/* Hover tooltip */}
       {hoveredRoom && enrichedRooms.find((r) => r.id === hoveredRoom)?.unlocked && (
         <div style={{
           position: "absolute",
-          bottom: 8,
+          bottom: 0,
           left: "50%",
           transform: "translateX(-50%)",
           backgroundColor: colors.surface,
@@ -430,8 +487,10 @@ const PalaceBlueprint: React.FC<PalaceBlueprintProps> = ({
           fontFamily: typography.ui.fontFamily,
           fontSize: 12,
           color: colors.ivory,
-          whiteSpace: "nowrap" as const,
-          pointerEvents: "none" as const,
+          whiteSpace: "nowrap",
+          pointerEvents: "none",
+          zIndex: 9999,
+          boxShadow: `0 4px 12px rgba(0,0,0,0.4)`,
         }}>
           {enrichedRooms.find((r) => r.id === hoveredRoom)?.name}
           {enrichedRooms.find((r) => r.id === hoveredRoom)?.items
@@ -439,6 +498,21 @@ const PalaceBlueprint: React.FC<PalaceBlueprintProps> = ({
             : " — empty room"}
         </div>
       )}
+
+      {/* Ambient glow under the palace */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: 20,
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: 200,
+          height: 40,
+          background: `radial-gradient(ellipse, ${colors.phosphor}10 0%, transparent 70%)`,
+          borderRadius: "50%",
+          pointerEvents: "none",
+        }}
+      />
     </div>
   );
 };
