@@ -1,25 +1,25 @@
 /**
  * Lexio Underground — Design Tokens
- * TypeScript constants + theme object for use throughout the app.
- * Source: lexio-vault/02-design/DESIGN.md
- * Enhanced with stitch_experience design brief additions
+ * Single source of truth: CSS custom properties in src/styles/tokens.css
+ * This module re-exports CSS var references for use in inline styles.
+ * Edit tokens.css as the single source of truth.
  */
 
+// All colors as CSS var references
 export const colors = {
   // Core
-  obsidian: "#0D0D0F",
-  surface: "#141416",
-  // Legacy aliases (auto-added by monitoring loop)
-  white: "#F5F0E8", // alias for ivory
-  blackPrimary: "#0D0D0F", // alias for obsidian
-  grayLight: "#71717A", // alias for zinc
-  grayDark: "#3f3f46", // dark gray
-  grayLightest: "#27272A", // lightest gray
-  red: "#DC2626", // alias for crimson
-  card: "#141416", // alias for surface
-  primary: "#00FF88", // alias for phosphor
-  text: "#F5F0E8", // alias for ivory
-  // Surface variants from stitch design brief
+  obsidian: "var(--obsidian)",
+  surface: "var(--surface)",
+  ivory: "var(--ivory)",
+  zinc: "var(--zinc)",
+  // Signal
+  phosphor: "var(--phosphor)",
+  amber: "var(--amber)",
+  violet: "var(--violet)",
+  crimson: "var(--crimson)",
+  // Borders
+  borderSubtle: "var(--border-subtle)",
+  // Extended surface variants
   surfaceDim: "#0c160e",
   surfaceBright: "#323c32",
   surfaceContainerLowest: "#071009",
@@ -29,26 +29,19 @@ export const colors = {
   surfaceContainerHighest: "#2d372e",
   surfaceVariant: "#2d372e",
   // Text colors
-  ivory: "#F5F0E8",
-  zinc: "#71717A",
-  // Additional text colors from stitch
   onSurface: "#dae6d8",
   onSurfaceVariant: "#b9cbb9",
   inverseSurface: "#dae6d8",
   inverseOnSurface: "#29332a",
-  // Signal colors
-  phosphor: "#00FF88",
+  text: "var(--ivory)",
+  // Phosphor variants
   phosphorFixed: "#60ff99",
-  phosphorFixedDim: "#00e479", // surface-tint from stitch
+  phosphorFixedDim: "#00e479",
   onPhosphor: "#003919",
   onPhosphorContainer: "#007139",
   inversePhosphor: "#006d37",
-  // Accent colors
-  amber: "#FF9500",
-  violet: "#A855F7",
-  crimson: "#DC2626",
+  // Accent variants
   lime: "#C4F82A",
-  // Additional accent colors from stitch
   secondary: "#ffbc7c",
   onSecondary: "#4b2800",
   secondaryContainer: "#fe9400",
@@ -57,93 +50,93 @@ export const colors = {
   onTertiary: "#3d2f00",
   tertiaryContainer: "#ffdb79",
   onTertiaryContainer: "#795f01",
-  // Error colors
+  // Error
   error: "#ffb4ab",
   onError: "#690005",
   errorContainer: "#93000a",
   onErrorContainer: "#ffdad6",
-  // Borders
-  borderSubtle: "#27272A",
+  // Outline
   outline: "#849585",
   outlineVariant: "#3b4b3d",
+  // Aliases
+  white: "var(--ivory)",
+  blackPrimary: "var(--obsidian)",
+  grayLight: "var(--zinc)",
+  grayDark: "#3f3f46",
+  grayLightest: "#27272a",
+  card: "var(--surface)",
+  primary: "var(--phosphor)",
+  red: "var(--crimson)",
 } as const;
 
-import { MaturityStage } from "@/types/stubs";
-import { stageColors } from "./tokens.stageColors";
-
-export const themeColors: Record<MaturityStage, string> = {
-  roots: "#00FF88",
-  sprouts: "#22C55E",
-  branches: "#FF9500",
-  canopy: "#166534",
-  underground: "#A855F7",
-};
-
+// Typography values (in px, for use in inline styles)
 export const typography = {
   display: {
-    fontFamily: "Syne-Bold",
+    fontFamily: "var(--font-display)",
     fontSize: 36,
     lineHeight: "42px",
     fontWeight: "700" as const,
   },
   h1: {
-    fontFamily: "Syne-Bold",
+    fontFamily: "var(--font-display)",
     fontSize: 28,
     lineHeight: "34px",
     fontWeight: "700" as const,
   },
   h2: {
-    fontFamily: "SourceSerif4-SemiBold",
+    fontFamily: "var(--font-serif)",
     fontSize: 20,
     lineHeight: "26px",
     fontWeight: "600" as const,
   },
   heading: {
     xl: {
-      fontFamily: "Syne-Bold",
+      fontFamily: "var(--font-display)",
       fontSize: 24,
       lineHeight: "30px",
       fontWeight: "700" as const,
     },
   },
+  body: {
+    fontFamily: "var(--font-serif)",
+    fontSize: 14,
+    lineHeight: "18px",
+    fontWeight: "400" as const,
+  },
+  bodyItalic: {
+    fontFamily: "var(--font-serif)",
+    fontSize: 14,
+    lineHeight: "18px",
+    fontStyle: "italic" as const,
+  },
+  bodyLg: {
+    fontFamily: "var(--font-serif)",
+    fontSize: 15,
+    lineHeight: "20px",
+    fontWeight: "400" as const,
+  },
+  ui: {
+    fontFamily: "var(--font-mono)",
+    fontSize: 13,
+    lineHeight: "18px",
+    fontWeight: "500" as const,
+  },
+  caption: {
+    fontFamily: "var(--font-mono)",
+    fontSize: 11,
+    lineHeight: "14px",
+    fontWeight: "400" as const,
+  },
+  // Font size shortcuts (for use as typography.text.md etc.)
   text: {
     sm: 12,
     md: 14,
     lg: 16,
     xl: 18,
   } as const,
-  body: {
-    fontFamily: "SourceSerif4-Regular",
-    fontSize: 14,
-    lineHeight: "18px",
-    fontWeight: "400" as const,
-  },
-  bodyItalic: {
-    fontFamily: "SourceSerif4-Italic",
-    fontSize: 14,
-    lineHeight: "18px",
-    fontStyle: "italic" as const,
-  },
-  bodyLg: {
-    fontFamily: "SourceSerif4-Regular",
-    fontSize: 15,
-    lineHeight: "20px",
-    fontWeight: "400" as const,
-  },
-  ui: {
-    fontFamily: "JetBrainsMono-Medium",
-    fontSize: 13,
-    lineHeight: "18px",
-    fontWeight: "500" as const,
-  },
-  caption: {
-    fontFamily: "JetBrainsMono-Regular",
-    fontSize: 11,
-    lineHeight: "14px",
-    fontWeight: "400" as const,
-  },
 } as const;
 
+// Spacing scale (2px base) — must match --space-* in tokens.css
 export const spacing = {
   1: 2,
   2: 4,
@@ -153,6 +146,7 @@ export const spacing = {
   8: 24,
   12: 32,
   16: 48,
+  // Named aliases (backward compat)
   xs: 2,
   sm: 4,
   md: 8,
@@ -160,6 +154,7 @@ export const spacing = {
   xl: 16,
 } as const;
 
+// Radius
 export const radius = {
   card: 12,
   btn: 8,
@@ -168,6 +163,7 @@ export const radius = {
   md: 12,
 } as const;
 
+// Duration
 export const duration = {
   instant: 150,
   fast: 200,
@@ -177,9 +173,18 @@ export const duration = {
   palace: 1300,
 } as const;
 
+// Stage colors (for maturity progression)
+export const themeColors = {
+  roots: "var(--phosphor)",
+  sprouts: "#22c55e",
+  branches: "var(--amber)",
+  canopy: "#166534",
+  underground: "var(--violet)",
+} as const;
+
 const theme = {
   colors,
-  stageColors,
+  themeColors,
   typography,
   spacing,
   radius,

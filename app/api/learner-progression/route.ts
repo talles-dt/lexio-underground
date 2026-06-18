@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabaseAdmin } from "@/lib/supabase";
+import { getSupabaseAdmin } from "@/lib/supabase";
 
-// GET /api/learner-progression?user_id=xxx&language=en
 export async function GET(req: NextRequest) {
   const userId = req.nextUrl.searchParams.get("user_id");
   const language = req.nextUrl.searchParams.get("language") || "en";
@@ -10,7 +9,8 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "user_id required" }, { status: 400 });
   }
 
-  const { data, error } = await supabaseAdmin
+  const supabase = getSupabaseAdmin();
+  const { data, error } = await supabase
     .from("learner_progression")
     .select("*")
     .eq("user_id", userId)
@@ -18,12 +18,10 @@ export async function GET(req: NextRequest) {
     .single();
 
   if (error && error.code !== "PGRST116") {
-    // PGRST116 = no rows returned (not an error for us)
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 
   if (!data) {
-    // No progression record yet — return defaults
     return NextResponse.json({
       user_id: userId,
       language,
@@ -37,7 +35,6 @@ export async function GET(req: NextRequest) {
   return NextResponse.json(data);
 }
 
-// UPSERT /api/learner-progression
 export async function POST(req: NextRequest) {
   const body = await req.json();
   const { user_id, language, maturity_stage, pillar_weights, last_cartografa_date, palace_room_names } = body;
@@ -46,18 +43,17 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "user_id required" }, { status: 400 });
   }
 
-  const upsertData = {
-    user_id,
-    language: language || "en",
-    maturity_stage: maturity_stage || "roots",
-    pillar_weights: pillar_weights || {},
-    last_cartografa_date: last_cartografa_date || null,
-    palace_room_names: palace_room_names || ["entrance"],
-  };
-
-  const { data, error } = await supabaseAdmin
+  const supabase = getSupabaseAdmin();
+  const { data, error } = await supabase
     .from("learner_progression")
-    .upsert(upsertData, { onConflict: "user_id,language" })
+    .upsert({
+      user_id,
+      language: language || "en",
+      maturity_stage: maturity_stage || "roots",
+      pillar_weights: pillar_weights || {},
+      last_cartografa_date: last_cartografa_date || null,
+      palace_room_names: palace_room_names || ["entrance"],
+    }, { onConflict: "user_id,language" })
     .select()
     .single();
 

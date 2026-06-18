@@ -1,13 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabaseAdmin } from "@/lib/supabase";
+import { getSupabaseAdmin } from "@/lib/supabase";
 
 async function requireAdmin(request: NextRequest) {
   const authHeader = request.headers.get("authorization");
   if (!authHeader?.startsWith("Bearer ")) return { error: "Missing auth header", status: 401 };
   const token = authHeader.replace("Bearer ", "");
-  const { data: { user }, error: authError } = await supabaseAdmin.auth.getUser(token);
+  const supabase = getSupabaseAdmin();
+  const { data: { user }, error: authError } = await supabase.auth.getUser(token);
   if (authError || !user) return { error: "Invalid token", status: 401 };
-  const { data: profile } = await supabaseAdmin.from("users").select("role").eq("id", user.id).single();
+  const { data: profile } = await supabase.from("users").select("role").eq("id", user.id).single();
   if (!profile || (profile.role !== "admin" && profile.role !== "super_admin")) return { error: "Forbidden", status: 403 };
   return { user, profile };
 }
@@ -20,7 +21,8 @@ export async function GET(request: NextRequest) {
   const limit = Math.min(parseInt(searchParams.get("limit") || "50"), 200);
   const action = searchParams.get("action");
 
-  let query = supabaseAdmin
+  const supabase = getSupabaseAdmin();
+  let query = supabase
     .from("admin_audit_log")
     .select("*")
     .order("created_at", { ascending: false })

@@ -44,7 +44,11 @@ export async function middleware(request: NextRequest) {
   // Not logged in → redirect to signin
   if (!user) {
     const redirectUrl = new URL("/signin", request.url);
-    redirectUrl.searchParams.set("redirect", request.nextUrl.pathname);
+    // Only set redirect param if it's a safe relative path
+    const rawNext = request.nextUrl.pathname;
+    if (rawNext.startsWith("/") && !rawNext.startsWith("//")) {
+      redirectUrl.searchParams.set("redirect", rawNext);
+    }
     return NextResponse.redirect(redirectUrl);
   }
 

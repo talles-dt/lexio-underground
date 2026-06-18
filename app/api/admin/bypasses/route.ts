@@ -1,14 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabaseAdmin } from "@/lib/supabase";
+import { getSupabaseAdmin } from "@/lib/supabase";
 import { logAdminAction } from "@/lib/admin-audit";
 
 async function requireAdmin(request: NextRequest) {
   const authHeader = request.headers.get("authorization");
   if (!authHeader?.startsWith("Bearer ")) return { error: "Missing auth header", status: 401 };
   const token = authHeader.replace("Bearer ", "");
-  const { data: { user }, error: authError } = await supabaseAdmin.auth.getUser(token);
+  const supabase = getSupabaseAdmin();
+  const { data: { user }, error: authError } = await supabase.auth.getUser(token);
   if (authError || !user) return { error: "Invalid token", status: 401 };
-  const { data: profile } = await supabaseAdmin.from("users").select("role").eq("id", user.id).single();
+  const { data: profile } = await supabase.from("users").select("role").eq("id", user.id).single();
   if (!profile || (profile.role !== "admin" && profile.role !== "super_admin")) return { error: "Forbidden", status: 403 };
   return { user, profile };
 }
@@ -17,12 +18,6 @@ function getClientIp(request: NextRequest) {
   return request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
 }
 
-// ═════════════════════════════════════════════════════════════════
-// GET /api/admin/bypasses — List active bypasses
-// POST /api/admin/bypasses — Grant a bypass
-// PATCH /api/admin/bypasses — Revoke a bypass
-// ═════════════════════════════════════════════════════════════════
-
 export async function GET(request: NextRequest) {
   const admin = await requireAdmin(request);
   if ("error" in admin) return NextResponse.json({ error: admin.error }, { status: admin.status });
@@ -30,7 +25,8 @@ export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const activeOnly = searchParams.get("active") !== "false";
 
-  let query = supabaseAdmin
+  const supabase = getSupabaseAdmin();
+  let query = supabase
     .from("admin_bypasses")
     .select("*, users!admin_bypasses_user_id_fkey(email, name)")
     .order("created_at", { ascending: false });
@@ -53,12 +49,13 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "user_email, bypass_type, reason required" }, { status: 400 });
   }
 
-  const { data: targetUser } = await supabaseAdmin
+  const supabase = getSupabaseAdmin();
+  const { data: targetUser } = await supabase
     .from("users").select("id, email").eq("email", user_email).single();
 
   if (!targetUser) return NextResponse.json({ error: `User not found: ${user_email}` }, { status: 404 });
 
-  const { data: bypass, error } = await supabaseAdmin
+  const { data: bypass, error } = await supabase
     .from("admin_bypasses")
     .insert({
       user_id: targetUser.id,
@@ -88,7 +85,8 @@ export async function PATCH(request: NextRequest) {
     return NextResponse.json({ error: "bypass_id and is_active required" }, { status: 400 });
   }
 
-  const { data, error } = await supabaseAdmin
+  const supabase = getSupabaseAdmin();
+  const { data, error } = await supabase
     .from("admin_bypasses")
     .update({ is_active, updated_at: new Date().toISOString() })
     .eq("id", bypass_id)

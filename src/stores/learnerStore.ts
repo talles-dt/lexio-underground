@@ -81,9 +81,11 @@ export const useLearnerStore = create<LearnerState>((set, get) => ({
   },
 
   setCartografaResults: (scores, map) => {
-    const avg =
-      Object.values(scores).reduce((a: number, b: number) => a + b, 0) /
-      Math.max(Object.keys(scores).length, 1);
+    // Guard against null/undefined pillar scores (partial diagnostic)
+    const values = Object.values(scores).filter((v): v is number => typeof v === "number" && !isNaN(v));
+    const avg = values.length > 0
+      ? values.reduce((a, b) => a + b, 0) / values.length
+      : 0;
     let stage: MaturityStage = "roots";
     if (avg >= 80) stage = "underground";
     else if (avg >= 60) stage = "canopy";

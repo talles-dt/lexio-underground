@@ -1,4 +1,4 @@
-import { createClient } from "@supabase/supabase-js";
+import { createClient, SupabaseClient } from "@supabase/supabase-js";
 
 const supabaseUrl =
   process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL || "";
@@ -15,9 +15,21 @@ const supabaseServiceKey =
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 // Admin client (bypasses RLS — for inserts/writes in API routes)
-export const supabaseAdmin = supabaseServiceKey
-  ? createClient(supabaseUrl, supabaseServiceKey)
-  : supabase;
+// Throws if service key is missing — fail fast, don't silently degrade
+let _supabaseAdmin: SupabaseClient | null = null;
+
+export function getSupabaseAdmin(): SupabaseClient {
+  if (!_supabaseAdmin) {
+    if (!supabaseServiceKey) {
+      throw new Error(
+        "SUPABASE_SERVICE_ROLE_KEY is not set. " +
+        "Admin APIs cannot function without the service role key."
+      );
+    }
+    _supabaseAdmin = createClient(supabaseUrl, supabaseServiceKey);
+  }
+  return _supabaseAdmin;
+}
 
 export type Database = {
   public: {

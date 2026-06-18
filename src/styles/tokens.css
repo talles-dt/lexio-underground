@@ -77,3 +77,7 @@
   --max-width-content: 640px;
   --nav-height-mobile: 56px;
 }
+
+/* ─── Token sync note ────────────────────────────────────── */
+/* JS tokens in src/theme/tokens.ts read from these CSS vars. */
+/* Edit this file as the single source of truth for design tokens. */

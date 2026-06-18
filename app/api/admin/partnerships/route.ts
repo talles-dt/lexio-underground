@@ -1,26 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabaseAdmin } from "@/lib/supabase";
+import { getSupabaseAdmin } from "@/lib/supabase";
 import { logAdminAction } from "@/lib/admin-audit";
 
 async function requireAdmin(request: NextRequest) {
   const authHeader = request.headers.get("authorization");
-  if (!authHeader?.startsWith("Bearer ")) {
-    return { error: "Missing auth header", status: 401 };
-  }
+  if (!authHeader?.startsWith("Bearer ")) return { error: "Missing auth header", status: 401 };
   const token = authHeader.replace("Bearer ", "");
-  const {
-    data: { user },
-    error: authError,
-  } = await supabaseAdmin.auth.getUser(token);
+  const supabase = getSupabaseAdmin();
+  const { data: { user }, error: authError } = await supabase.auth.getUser(token);
   if (authError || !user) return { error: "Invalid token", status: 401 };
-  const { data: profile } = await supabaseAdmin
-    .from("users")
-    .select("role")
-    .eq("id", user.id)
-    .single();
-  if (!profile || (profile.role !== "admin" && profile.role !== "super_admin")) {
-    return { error: "Forbidden", status: 403 };
-  }
+  const { data: profile } = await supabase.from("users").select("role").eq("id", user.id).single();
+  if (!profile || (profile.role !== "admin" && profile.role !== "super_admin")) return { error: "Forbidden", status: 403 };
   return { user, profile };
 }
 
@@ -28,16 +18,12 @@ function getClientIp(request: NextRequest) {
   return request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
 }
 
-// ═════════════════════════════════════════════════════════════════
-// GET /api/admin/partnerships — List partnerships
-// POST /api/admin/partnerships — Create partnership
-// ═════════════════════════════════════════════════════════════════
-
 export async function GET(request: NextRequest) {
   const admin = await requireAdmin(request);
   if ("error" in admin) return NextResponse.json({ error: admin.error }, { status: admin.status });
 
-  const { data, error } = await supabaseAdmin
+  const supabase = getSupabaseAdmin();
+  const { data, error } = await supabase
     .from("admin_partnerships")
     .select("*")
     .order("created_at", { ascending: false });
@@ -57,7 +43,8 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "name and partnership_type required" }, { status: 400 });
   }
 
-  const { data, error } = await supabaseAdmin
+  const supabase = getSupabaseAdmin();
+  const { data, error } = await supabase
     .from("admin_partnerships")
     .insert({
       name,

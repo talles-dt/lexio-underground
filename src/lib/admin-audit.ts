@@ -1,4 +1,4 @@
-import { supabaseAdmin } from "@/lib/supabase";
+import { getSupabaseAdmin } from "@/lib/supabase";
 
 /**
  * Write an entry to the admin audit log.
@@ -13,7 +13,8 @@ export async function logAdminAction(
   ipAddress: string
 ): Promise<void> {
   try {
-    await supabaseAdmin.from("admin_audit_log").insert({
+    const supabase = getSupabaseAdmin();
+    await supabase.from("admin_audit_log").insert({
       admin_id: adminId,
       action,
       target_type: targetType,

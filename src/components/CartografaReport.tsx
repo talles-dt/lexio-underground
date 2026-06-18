@@ -174,7 +174,9 @@ export function CartografaReport({
             justifyContent: "center",
           }}>
             {(Object.keys(pillarScores) as PillarKey[]).map((key) => {
-              const delta = pillarScores[key] - previousScores[key];
+              const current = pillarScores[key] ?? 0;
+              const previous = previousScores?.[key] ?? 0;
+              const delta = current - previous;
               const isUp = delta > 0;
               const isFlat = delta === 0;
               const color = isUp ? colors.phosphor : isFlat ? colors.zinc : colors.crimson;
