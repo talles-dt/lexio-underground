@@ -7,6 +7,9 @@ export async function GET(request: NextRequest) {
   const next = requestUrl.searchParams.get("next") || "/";
 
   if (code) {
+    // Create a response we can modify
+    const response = NextResponse.redirect(new URL(next, requestUrl.origin));
+
     const supabase = createServerClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
@@ -16,10 +19,14 @@ export async function GET(request: NextRequest) {
             return request.cookies.get(name)?.value;
           },
           set(name: string, value: string, options: CookieOptions) {
+            // Set cookie on BOTH the request (for exchangeCodeForSession)
+            // and the response (for the browser)
             request.cookies.set({ name, value, ...options });
+            response.cookies.set({ name, value, ...options });
           },
           remove(name: string, options: CookieOptions) {
             request.cookies.set({ name, value: "", ...options });
+            response.cookies.set({ name, value: "", ...options });
           },
         },
       }
@@ -30,6 +37,9 @@ export async function GET(request: NextRequest) {
       console.error("Auth callback error:", error.message);
       return NextResponse.redirect(new URL("/signin?error=auth", requestUrl.origin));
     }
+
+    // Return the response with session cookies set
+    return response;
   }
 
   return NextResponse.redirect(new URL(next, requestUrl.origin));

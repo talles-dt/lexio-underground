@@ -1,6 +1,6 @@
 "use client";
-import React from "react";
 
+import React from "react";
 import {
   createContext,
   useContext,
@@ -11,20 +11,65 @@ import {
 } from "react";
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
 import type { User, Session } from "@supabase/supabase-js";
+import type { CookieOptions } from "@supabase/ssr";
 import { useLearnerStore } from "@/stores/learnerStore";
 
-// Lazy-init so SSR prerendering doesn't crash when env vars are missing
+// ─── Cookie helpers ────────────────────────────────────────────
+const COOKIE_PREFIX = "sb";
+
+function getCookie(name: string): string | null {
+  const match = document.cookie.match(new RegExp(`(^| )${name}=([^;]+)`));
+  return match ? decodeURIComponent(match[2]) : null;
+}
+
+function setCookie(name: string, value: string, options?: CookieOptions) {
+  let cookie = `${name}=${encodeURIComponent(value)}`;
+  if (options?.maxAge) cookie += `; max-age=${options.maxAge}`;
+  if (options?.path) cookie += `; path=${options.path}`;
+  if (options?.domain) cookie += `; domain=${options.domain}`;
+  if (options?.sameSite) cookie += `; samesite=${options.sameSite}`;
+  if (options?.secure || typeof window !== "undefined" && window.location.protocol === "https:") {
+    cookie += "; secure";
+  }
+  document.cookie = cookie;
+}
+
+function removeCookie(name: string) {
+  document.cookie = `${name}=; max-age=0; path=/`;
+}
+
+// ─── Supabase client factory ───────────────────────────────────
 let _supabase: SupabaseClient | null = null;
-function getSupabase() {
+
+function getSupabase(): SupabaseClient {
   if (!_supabase) {
     const url = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
     const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
     if (!url || !key) {
-      // Return a dummy client that will fail gracefully
-      // This only happens during SSR prerendering of static pages
       return createClient("https://placeholder.supabase.co", "placeholder");
     }
-    _supabase = createClient(url, key);
+
+    _supabase = createClient(url, key, {
+      auth: {
+        storage: {
+          getItem: (key: string) => {
+            // Try cookie first, then localStorage
+            return getCookie(key) ?? localStorage.getItem(key);
+          },
+          setItem: (key: string, value: string) => {
+            setCookie(key, value, { maxAge: 60 * 60 * 24 * 365, path: "/", sameSite: "lax" });
+            localStorage.setItem(key, value);
+          },
+          removeItem: (key: string) => {
+            removeCookie(key);
+            localStorage.removeItem(key);
+          },
+        },
+        autoRefreshToken: true,
+        persistSession: true,
+        detectSessionInUrl: true,
+      },
+    });
   }
   return _supabase;
 }
@@ -65,9 +110,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   // Listen for auth changes
   useEffect(() => {
-    const {
-      data: { subscription },
-    } = getSupabase().auth.onAuthStateChange((_event, session) => {
+    const client = getSupabase();
+
+    // Get initial session
+    client.auth.getSession().then(({ data: { session } }) => {
       setState({
         user: session?.user ?? null,
         session,
@@ -75,19 +121,27 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       });
     });
 
-    // Get initial session
-    getSupabase()
-      .auth.getSession()
-      .then(({ data: { session } }) => {
-        setState({
-          user: session?.user ?? null,
-          session,
-          loading: false,
-        });
+    // Listen for auth state changes
+    const {
+      data: { subscription },
+    } = client.auth.onAuthStateChange((_event, session) => {
+      setState({
+        user: session?.user ?? null,
+        session,
+        loading: false,
       });
+    });
 
     return () => subscription.unsubscribe();
   }, []);
+
+  // Sync auth state → learner store
+  const setAuth = useLearnerStore((s) => s.setAuth);
+  useEffect(() => {
+    if (state.user && !state.loading) {
+      setAuth(state.user.id, state.user.email || "");
+    }
+  }, [state.user, state.loading, setAuth]);
 
   // Sign up with email/password
   const signUp = useCallback(
@@ -107,11 +161,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   // Sign in with email/password
   const signIn = useCallback(async (email: string, password: string) => {
-    const { error } = await getSupabase().auth.signInWithPassword({
+    const { error, data } = await getSupabase().auth.signInWithPassword({
       email,
       password,
     });
-    return { error: error?.message || null };
+    return { error: error?.message || null, data };
   }, []);
 
   // Sign in with Google OAuth
@@ -136,29 +190,26 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return { error: error?.message || null };
   }, []);
 
-  // Sync auth state → learner store
-  const setAuth = useLearnerStore((s) => s.setAuth);
-  useEffect(() => {
-    if (state.user && !state.loading) {
-      setAuth(state.user.id, state.user.email || "");
-    }
-  }, [state.user, state.loading, setAuth]);
-
   // Sign out
   const signOut = useCallback(async () => {
     await getSupabase().auth.signOut();
+    // Clear all auth cookies
+    document.cookie.split(";").forEach((cookie) => {
+      const name = cookie.split("=")[0].trim();
+      if (name.startsWith("sb-") || name.startsWith("supabase")) {
+        removeCookie(name);
+      }
+    });
   }, []);
 
   // Link a diagnostic session to the current user
   const linkSession = useCallback(
     async (shareToken: string) => {
       if (!state.user) return { error: "Not authenticated" };
-
       const { error } = await getSupabase()
         .from("diagnostic_sessions")
         .update({ user_id: state.user.id })
         .eq("share_token", shareToken);
-
       return { error: error?.message || null };
     },
     [state.user]

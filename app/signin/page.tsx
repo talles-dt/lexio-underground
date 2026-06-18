@@ -3,10 +3,12 @@
 import React, { useState, useCallback } from "react";
 import { colors, spacing, radius, typography } from "@/theme/tokens";
 import { supabase } from "@/lib/auth";
+import { useRouter } from "next/navigation";
 
 type Tab = "signin" | "signup" | "forgot";
 
 export default function SignInPage() {
+  const router = useRouter();
   const [tab, setTab] = useState<Tab>("signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -110,7 +112,9 @@ export default function SignInPage() {
               setError(signInError.message);
             }
           } else if (data?.user) {
-            window.location.href = "/";
+            // Let the session cookie propagate, then navigate
+            setTimeout(() => router.push("/"), 300);
+            setSuccess("Signing in…");
           }
         } else {
           const { error: signUpError } = await supabase().auth.signUp({
