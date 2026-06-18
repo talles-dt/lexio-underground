@@ -6,6 +6,16 @@
 @import "./tokens.css";
 @import "./animations.css";
 
+/* ─── Stitch Motion Global Styles ───────────────────────────────── */
+::selection {
+  background: rgba(0, 255, 136, 0.25);
+  color: #f5f0e8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 /* ─── Reset ──────────────────────────────────────────────── */
 *,
 *::before,
