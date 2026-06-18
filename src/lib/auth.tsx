@@ -11,6 +11,7 @@ import {
 } from "react";
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
 import type { User, Session } from "@supabase/supabase-js";
+import { useLearnerStore } from "@/stores/learnerStore";
 
 // Lazy-init so SSR prerendering doesn't crash when env vars are missing
 let _supabase: SupabaseClient | null = null;
@@ -134,6 +135,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     });
     return { error: error?.message || null };
   }, []);
+
+  // Sync auth state → learner store
+  const setAuth = useLearnerStore((s) => s.setAuth);
+  useEffect(() => {
+    if (state.user && !state.loading) {
+      setAuth(state.user.id, state.user.email || "");
+    }
+  }, [state.user, state.loading, setAuth]);
 
   // Sign out
   const signOut = useCallback(async () => {

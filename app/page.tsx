@@ -3,10 +3,33 @@
 import React from "react";
 import Link from "next/link";
 import { colors, spacing, radius, typography } from "@/theme/tokens";
-import { useHasAccess } from "@/lib/access";
+import { useHasAccessWithLoading } from "@/lib/access";
 
 export default function HomePage() {
-  const hasAccess = useHasAccess();
+  const { access: hasAccess, loading } = useHasAccessWithLoading();
+
+  // Show loading spinner while store fetches user data
+  if (loading) {
+    return (
+      <div style={{
+        minHeight: "100vh",
+        backgroundColor: colors.obsidian,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}>
+        <div style={{
+          width: 32,
+          height: 32,
+          border: `3px solid ${colors.borderSubtle}`,
+          borderTopColor: colors.phosphor,
+          borderRadius: "50%",
+          animation: "spin 0.8s linear infinite",
+        }} />
+        <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+      </div>
+    );
+  }
 
   return (
     <div style={{
