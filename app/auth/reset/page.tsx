@@ -1,17 +1,63 @@
 "use client";
 
-import React, { useState, useCallback } from "react";
-import { useRouter } from "next/navigation";
+import React, { useState, useCallback, useEffect, Suspense } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { colors, spacing, radius, typography } from "@/theme/tokens";
 import { supabase } from "@/lib/auth";
 
-export default function ResetPasswordPage() {
+function ResetPasswordForm() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
+  const [tokenReady, setTokenReady] = useState(false);
+
+  // Supabase puts the token in the URL fragment (#access_token=...).
+  // Next.js can't read fragments server-side, so we extract them client-side
+  // and exchange them for a session via the Supabase auth API.
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash && hash.includes("access_token")) {
+      // Parse the fragment params
+      const params = new URLSearchParams(hash.replace("#", "?"));
+      const access_token = params.get("access_token");
+      const refresh_token = params.get("refresh_token");
+      if (access_token && refresh_token) {
+        // Exchange the tokens for a session
+        supabase().auth
+          .setSession({ access_token, refresh_token })
+          .then(({ error }) => {
+            if (error) {
+              setError("Invalid or expired reset link. Please request a new one.");
+            } else {
+              setTokenReady(true);
+            }
+          });
+      } else {
+        setError("Invalid reset link. Please request a new one.");
+      }
+    } else {
+      // No hash fragment — check if there are query params (some Supabase configs use ? instead)
+      const accessToken = searchParams.get("access_token");
+      const refreshToken = searchParams.get("refresh_token");
+      if (accessToken && refreshToken) {
+        supabase().auth
+          .setSession({ access_token: accessToken, refresh_token: refreshToken })
+          .then(({ error }) => {
+            if (error) {
+              setError("Invalid or expired reset link. Please request a new one.");
+            } else {
+              setTokenReady(true);
+            }
+          });
+      } else {
+        setError("Invalid reset link. Please request a new one.");
+      }
+    }
+  }, [searchParams]);
 
   const handleSubmit = useCallback(
     async (e: React.FormEvent) => {
@@ -34,7 +80,6 @@ export default function ResetPasswordPage() {
           setError(updateError.message);
         } else {
           setSuccess(true);
-          // Redirect to sign in after a short delay
           setTimeout(() => router.push("/signin"), 3000);
         }
       } catch {
@@ -46,19 +91,57 @@ export default function ResetPasswordPage() {
     [password, confirmPassword, router]
   );
 
-  if (success) {
+  // Loading state while we exchange the token
+  if (!tokenReady && !error) {
     return (
       <div style={s.page}>
         <div style={s.card}>
-          <h1 style={s.title}>Password Updated</h1>
-          <p style={s.message}>
-            Your password has been changed successfully. Redirecting you to sign in…
-          </p>
+          <div style={{
+            width: 32, height: 32,
+            border: `3px solid ${colors.borderSubtle}`,
+            borderTopColor: colors.phosphor,
+            borderRadius: "50%",
+            animation: "spin 0.8s linear infinite",
+            margin: "0 auto",
+          }} />
+          <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+          <p style={{ ...s.subtitle, marginTop: spacing[3] }}>Verifying reset link…</p>
         </div>
       </div>
     );
   }
 
+  // Error state
+  if (error && !tokenReady) {
+    return (
+      <div style={s.page}>
+        <div style={s.card}>
+          <h1 style={s.title}>Link Error</h1>
+          <p style={s.message}>{error}</p>
+          <button
+            onClick={() => router.push("/signin")}
+            style={{ ...s.submit, marginTop: spacing[4] }}
+          >
+            Back to Sign In
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // Success state
+  if (success) {
+    return (
+      <div style={s.page}>
+        <div style={s.card}>
+          <h1 style={s.title}>Password Updated</h1>
+          <p style={s.message}>Your password has been changed. Redirecting you to sign in…</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Reset form
   return (
     <div style={s.page}>
       <div style={s.card}>
@@ -195,3 +278,25 @@ const s: Record<string, React.CSSProperties> = {
     marginBottom: 0,
   },
 };
+
+export default function ResetPasswordPage() {
+  return (
+    <Suspense fallback={
+      <div style={s.page}>
+        <div style={s.card}>
+          <div style={{
+            width: 32, height: 32,
+            border: `3px solid ${colors.borderSubtle}`,
+            borderTopColor: colors.phosphor,
+            borderRadius: "50%",
+            animation: "spin 0.8s linear infinite",
+            margin: "0 auto",
+          }} />
+          <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+        </div>
+      </div>
+    }>
+      <ResetPasswordForm />
+    </Suspense>
+  );
+}
