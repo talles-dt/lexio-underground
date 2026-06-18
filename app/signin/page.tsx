@@ -100,9 +100,16 @@ export default function SignInPage() {
           const { error: signInError, data } =
             await supabase().auth.signInWithPassword({ email, password });
           if (signInError) {
-            setError(signInError.message);
+            // Provide helpful message for common errors
+            const msg = signInError.message.toLowerCase();
+            if (msg.includes("confirm") || msg.includes("verify") || msg.includes("not confirmed")) {
+              setError("Please confirm your email before signing in. Check your inbox for the confirmation link.");
+            } else if (msg.includes("invalid") || msg.includes("credentials")) {
+              setError("Invalid email or password. Please try again.");
+            } else {
+              setError(signInError.message);
+            }
           } else if (data?.user) {
-            // Redirect to home after successful sign-in
             window.location.href = "/";
           }
         } else {
@@ -116,8 +123,8 @@ export default function SignInPage() {
           if (signUpError) {
             setError(signUpError.message);
           } else {
-            setError(
-              "Check your email for the confirmation link."
+            setSuccess(
+              "Account created! Check your email for the confirmation link before signing in."
             );
           }
         }
