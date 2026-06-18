@@ -4,7 +4,7 @@ import React, { useState, useCallback } from "react";
 import { colors, spacing, radius, typography } from "@/theme/tokens";
 import { supabase } from "@/lib/auth";
 
-type Tab = "signin" | "signup";
+type Tab = "signin" | "signup" | "forgot";
 
 export default function SignInPage() {
   const [tab, setTab] = useState<Tab>("signin");
@@ -12,6 +12,7 @@ export default function SignInPage() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
   const handleOAuthGoogle = useCallback(async () => {
     setError("");
@@ -48,6 +49,36 @@ export default function SignInPage() {
       setLoading(false);
     }
   }, []);
+
+  const handleForgotPassword = useCallback(
+    async (e: React.FormEvent) => {
+      e.preventDefault();
+      setError("");
+      setSuccess("");
+
+      if (!email.trim()) {
+        setError("Email is required.");
+        return;
+      }
+
+      setLoading(true);
+      try {
+        const { error: resetError } = await supabase().auth.resetPasswordForEmail(email, {
+          redirectTo: `${window.location.origin}/auth/reset`,
+        });
+        if (resetError) {
+          setError(resetError.message);
+        } else {
+          setSuccess("Check your email for a password reset link.");
+        }
+      } catch {
+        setError("An unexpected error occurred.");
+      } finally {
+        setLoading(false);
+      }
+    },
+    [email]
+  );
 
   const handleEmailSubmit = useCallback(
     async (e: React.FormEvent) => {
@@ -123,26 +154,43 @@ export default function SignInPage() {
           <button
             type="button"
             style={tab === "signin" ? tabActiveStyle : tabInactiveStyle}
-            onClick={() => {
-              setTab("signin");
-              setError("");
-            }}
+            onClick={() => { setTab("signin"); setError(""); setSuccess(""); }}
           >
             Sign In
           </button>
           <button
             type="button"
             style={tab === "signup" ? tabActiveStyle : tabInactiveStyle}
-            onClick={() => {
-              setTab("signup");
-              setError("");
-            }}
+            onClick={() => { setTab("signup"); setError(""); setSuccess(""); }}
           >
             Sign Up
           </button>
         </div>
 
-        {/* OAuth Buttons */}
+        {/* Forgot password link — only on signin tab */}
+        {tab === "signin" && (
+          <button
+            type="button"
+            onClick={() => { setTab("forgot"); setError(""); setSuccess(""); }}
+            style={{
+              background: "none",
+              border: "none",
+              color: colors.zinc,
+              fontFamily: typography.ui.fontFamily,
+              fontSize: 12,
+              cursor: "pointer",
+              padding: 0,
+              marginBottom: spacing[3],
+              textAlign: "right",
+            }}
+          >
+            Forgot password?
+          </button>
+        )}
+
+        {/* OAuth Buttons — hide on forgot tab */}
+        {tab !== "forgot" && (
+          <>
         <button
           type="button"
           style={{
@@ -175,8 +223,57 @@ export default function SignInPage() {
           <span style={styles.dividerText}>or</span>
           <div style={styles.dividerLine} />
         </div>
+          </>
+        )}
 
-        {/* Email / Password Form */}
+        {/* Forgot Password Form */}
+        {tab === "forgot" && (
+          <form onSubmit={handleForgotPassword} style={styles.form}>
+            <p style={{ ...typography.body, color: colors.zinc, margin: 0, marginBottom: spacing[3], textAlign: "center" }}>
+              Enter your email and we'll send you a link to reset your password.
+            </p>
+            <div style={styles.inputGroup}>
+              <label style={styles.label}>Email</label>
+              <input
+                type="email"
+                style={styles.input}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="you@example.com"
+                autoComplete="email"
+              />
+            </div>
+            <button
+              type="submit"
+              style={{
+                ...styles.submitButton,
+                ...(loading ? { opacity: 0.5, pointerEvents: "none" as const } : {}),
+              }}
+              disabled={loading}
+            >
+              {loading ? "Sending…" : "Send Reset Link"}
+            </button>
+            <button
+              type="button"
+              onClick={() => { setTab("signin"); setError(""); setSuccess(""); }}
+              style={{
+                background: "none",
+                border: "none",
+                color: colors.zinc,
+                cursor: "pointer",
+                fontFamily: typography.ui.fontFamily,
+                fontSize: 13,
+                marginTop: spacing[2],
+                width: "100%",
+              }}
+            >
+              ← Back to sign in
+            </button>
+          </form>
+        )}
+
+        {/* Email / Password Form — hide on forgot tab */}
+        {tab !== "forgot" && (
         <form onSubmit={handleEmailSubmit} style={styles.form}>
           <div style={styles.inputGroup}>
             <label style={styles.label}>Email</label>
@@ -215,9 +312,11 @@ export default function SignInPage() {
             {tab === "signin" ? "Sign In" : "Sign Up"}
           </button>
         </form>
+        )}
 
-        {/* Error Display */}
+        {/* Error / Success Display */}
         {error && <p style={styles.error}>{error}</p>}
+        {success && <p style={styles.success}>{success}</p>}
       </div>
     </div>
   );
@@ -395,6 +494,14 @@ const styles: Record<string, React.CSSProperties> = {
   },
   error: {
     color: colors.crimson,
+    fontSize: typography.ui.fontSize,
+    fontFamily: typography.ui.fontFamily,
+    textAlign: "center",
+    marginTop: spacing.md,
+    marginBottom: 0,
+  },
+  success: {
+    color: colors.phosphor,
     fontSize: typography.ui.fontSize,
     fontFamily: typography.ui.fontFamily,
     textAlign: "center",
