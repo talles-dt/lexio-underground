@@ -8,8 +8,21 @@ import {
   QUESTION_BANK,
   QUESTIONS_BY_PILLAR,
 } from "./question-bank";
+import {
+  ARABIC_QUESTION_BANK,
+  ARABIC_QUESTIONS_BY_PILLAR,
+} from "./question-bank-ar";
 
 export type { Pillar };
+
+// Language-aware question bank
+function getQuestionBank(lang: string) {
+  return lang === "ar" ? ARABIC_QUESTION_BANK : QUESTION_BANK;
+}
+
+function getQuestionsByPillar(lang: string) {
+  return lang === "ar" ? ARABIC_QUESTIONS_BY_PILLAR : QUESTIONS_BY_PILLAR;
+}
 
 // ─── TYPES ──────────────────────────────────────────────────
 export interface PillarState {
@@ -34,11 +47,12 @@ export interface GapNode {
 
 export interface CartografaState {
   pillars: Record<Pillar, PillarState>;
-  currentPillar: Pillar; // which pillar is active
+  currentPillar: Pillar;
   currentStage: 1 | 2 | 3 | 4 | 5;
   history: AnswerRecord[];
   startedAt: number;
   allResolved: boolean;
+  lang: string;
 }
 
 export interface AnswerRecord {
@@ -69,17 +83,17 @@ const STAGE_PILLARS: Record<number, Pillar[]> = {
 const PILLAR_ORDER: Pillar[] = ["grammar", "logic", "vocab", "culture", "comm"];
 
 // ─── INIT ───────────────────────────────────────────────────
-export function createInitialState(): CartografaState {
+export function createInitialState(lang: string = "en"): CartografaState {
   const pillars = {} as Record<Pillar, PillarState>;
   for (const pillar of PILLAR_ORDER) {
     pillars[pillar] = {
       pillar,
-      currentDifficulty: 2, // start at medium
+      currentDifficulty: 2,
       correctAtDifficulty: 0,
       totalCorrect: 0,
       totalAnswered: 0,
       answeredIds: new Set(),
-      score: 0.5, // start at midpoint
+      score: 0.5,
       confidence: 0,
       resolved: false,
       gapNodes: [],
@@ -92,35 +106,26 @@ export function createInitialState(): CartografaState {
     history: [],
     startedAt: Date.now(),
     allResolved: false,
+    lang,
   };
 }
 
 // ─── SELECT NEXT QUESTION ───────────────────────────────────
 export function selectNextQuestion(state: CartografaState): Question | null {
-  // If all pillars resolved, we're done
   if (state.allResolved) return null;
-
   const pillar = state.currentPillar;
   const pillarState = state.pillars[pillar];
+  const byPillar = getQuestionsByPillar(state.lang);
 
-  // If current pillar is resolved, move to next
   if (pillarState.resolved) {
     const nextPillar = getNextUnresolvedPillar(state);
-    if (!nextPillar) {
-      state.allResolved = true;
-      return null;
-    }
+    if (!nextPillar) { state.allResolved = true; return null; }
     state.currentPillar = nextPillar;
     state.currentStage = getStageForPillar(nextPillar);
     return selectNextQuestion(state);
   }
 
-  // Try to find a question at current difficulty
-  let question = pickQuestionAtDifficulty(
-    pillar,
-    pillarState.currentDifficulty,
-    pillarState.answeredIds
-  );
+  let question = pickQuestionAtDifficulty(pillar, pillarState.currentDifficulty, pillarState.answeredIds, byPillar);
 
   // If no question at current difficulty, try adjacent difficulties
   if (!question) {
@@ -287,10 +292,11 @@ function updateScoreAndConfidence(pillarState: PillarState): void {
 function pickQuestionAtDifficulty(
   pillar: Pillar,
   difficulty: number,
-  answeredIds: Set<string>
+  answeredIds: Set<string>,
+  byPillar: Record<string, Question[]> = QUESTIONS_BY_PILLAR
 ): Question | null {
   const clamped = Math.max(1, Math.min(5, difficulty));
-  const candidates = QUESTIONS_BY_PILLAR[pillar].filter(
+  const candidates = (byPillar[pillar] || []).filter(
     (q) => q.difficulty === clamped && !answeredIds.has(q.id)
   );
   if (candidates.length === 0) return null;

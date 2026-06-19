@@ -303,6 +303,7 @@ const s: Record<string, React.CSSProperties> = {
 // ─── LANGUAGES ──────────────────────────────────────────────
 const LANGUAGES = [
   { code: "en", name: "English", sub: "Available now", available: true },
+  { code: "ar", name: "العربية", sub: "Arabic — متاح", available: true },
   { code: "es", name: "Español", sub: "Coming soon", available: false },
   { code: "fr", name: "Français", sub: "Coming soon", available: false },
   { code: "de", name: "Deutsch", sub: "Coming soon", available: false },

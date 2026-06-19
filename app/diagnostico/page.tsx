@@ -56,6 +56,7 @@ interface SerializedState {
   }[];
   startedAt: number;
   allResolved: boolean;
+  lang: string;
 }
 
 function serializeState(state: CartografaState): SerializedState {
@@ -79,7 +80,7 @@ function deserializeState(s: SerializedState): CartografaState {
       answeredIds: new Set(sp.answeredIds),
     };
   }
-  return { ...s, pillars };
+  return { ...s, pillars, lang: s.lang || "en" };
 }
 
 // ─── SESSION ID ────────────────────────────────────────────
@@ -150,7 +151,10 @@ export default function DiagnosticoPage() {
 
       // No resumable session — create fresh
       if (mountedRef.current) {
-        const fresh = createInitialState();
+        const savedLang = typeof window !== "undefined"
+          ? (localStorage.getItem("lexio_ob_lang") || "en")
+          : "en";
+        const fresh = createInitialState(savedLang);
         const newId = generateSessionId();
         setSessionId(newId);
         setEngineState(fresh);
