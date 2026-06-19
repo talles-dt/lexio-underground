@@ -1,77 +1,354 @@
 // src/cartografa/question-bank-ar.ts
 // Arabic Cartografa Question Bank — 50 questions across 5 pillars
+// For English/Portuguese speakers learning Arabic
+// Questions test ARABIC language knowledge (with English/Portuguese prompts)
 // Based on lexio-vault/01-product/cartografa.md
 
 import type { Question } from "./question-bank";
 
-// ─── STAGE 1: GRAMMAR ───────────────────────────────────────
+// ─── STAGE 1: GRAMMAR INTUITION ────────────────────────────
+// Acceptability judgments — detecting what sounds wrong in Arabic
 const arabicGrammarQuestions: Question[] = [
-  { id: "ar_g1", pillar: "grammar", stage: 1, difficulty: 1, type: "likert", prompt: "عندما تسمع I have 25 years بدلاً من I am 25 years old، هل يبدو لك خطأً؟", whyExplanation: "لدي 25 سنة هي ترجمة حرفية من العربية. في الإنجليزية، نستخدم to be للعمر، ليس to have." },
-  { id: "ar_g2", pillar: "grammar", stage: 1, difficulty: 1, type: "likert", prompt: "الجملة She don't like coffee — هل تبدو غريبة لك، حتى بدون معرفة القاعدة بالضبط؟", whyExplanation: "في الإنجليزية، الشخص الثالث (he/she/it) يتطلب doesn't. الحدس بأن تبدو خاطئة هو المستوى الأول من الوعي النحوي." },
-  { id: "ar_g3", pillar: "grammar", stage: 1, difficulty: 2, type: "likert", prompt: "I am working here since 2020 — هل تشعر أن هناك خطأً، حتى بدون معرفة السبب؟", whyExplanation: "في الإنجليزية، نستخدم Present Perfect للأفعال التي بدأت في الماضي وتستمر: I have been working here since 2020." },
-  { id: "ar_g4", pillar: "grammar", stage: 1, difficulty: 2, type: "likert", prompt: "He suggested me to study more — هل تبدو طبيعية أم غريبة لك؟", whyExplanation: "في الإنجليزية، suggest لا تقبل مفعول غير مباشر + فعل. الصحيح: He suggested that I study more." },
-  { id: "ar_g5", pillar: "grammar", stage: 1, difficulty: 3, type: "likert", prompt: "If I would have known, I would have helped — هل تدرك أن هذه الصيغة إشكالية؟", whyExplanation: "Third Conditional الصحيح هو If I had known, I would have helped. استخدام would have في if-clause هو خطأ شائع." },
-  { id: "ar_g6", pillar: "grammar", stage: 1, difficulty: 3, type: "likert", prompt: "هل تلاحظ فرقاً بين I did it و I've done it؟ هل تعرف متى تستخدم كل واحدة؟", whyExplanation: "Simple Past (did) = فعل مكتمل في الماضي. Present Perfect (have done) = فعل له صلة بالحاضر." },
-  { id: "ar_g7", pillar: "grammar", stage: 1, difficulty: 4, type: "likert", prompt: "The data shows vs The data show — هل كنت تعلم أن كلاهما يمكن أن يكون صحيحاً؟", whyExplanation: "data جمع في اللاتينية. في السياقات الأكاديمية، the data show مفضل. في الاستخدام غير الرسمي، the data shows مقبول." },
-  { id: "ar_g8", pillar: "grammar", stage: 1, difficulty: 4, type: "likert", prompt: "Between you and I — هل يبدو خطأً لك، أم يبدو رسمياً وصحيحاً؟", whyExplanation: "الصحيح هو between you and me. Between حرف جر، يتطلب حالة المفعول به." },
-  { id: "ar_g9", pillar: "grammar", stage: 1, difficulty: 5, type: "likert", prompt: "I wish I was there vs I wish I were there — هل تدرك الفرق وأيهما صحيح رسمياً؟", whyExplanation: "صيغة الشرط في الإنجليزية (were لجميع الأشخاص) تختفي في اللغة غير الرسمية. I wish I were صحيح رسمياً." },
-  { id: "ar_g10", pillar: "grammar", stage: 1, difficulty: 5, type: "likert", prompt: "Each student should bring their book — هل تتعرف على هذا كحالة مقبولة لـ they المفرد؟", whyExplanation: "They المفرد له قرون من الاستخدام. يُقبل كضمير محايد جنسياً." },
+  {
+    id: "ar_g1", pillar: "grammar", stage: 1, difficulty: 1, type: "likert",
+    prompt: "Which sounds more natural in Arabic? A) أنا طالب في الجامعة B) أنا طالب في الجامعةِ",
+    whyExplanation: "Arabic uses case endings (إعراب). The كسرة (-i) on الجامعة indicates it's a مجرور (genitive) after في. Native-like intuition detects when case endings are wrong.",
+  },
+  {
+    id: "ar_g2", pillar: "grammar", stage: 1, difficulty: 1, type: "likert",
+    prompt: "Which is correct? A) ذهبت إلى السوق B) ذهبت إلى السوقَ",
+    whyExplanation: "After إلى, the noun should be منصوب (accusative) with فتحة. السوقُ would be wrong here. Detecting this requires grammatical intuition.",
+  },
+  {
+    id: "ar_g3", pillar: "grammar", stage: 1, difficulty: 2, type: "likert",
+    prompt: "Which sounds wrong? A) الطلاب ذهبوا إلى المدرسة B) الطلاب ذهبوا إلى المدرسةِ",
+    whyExplanation: "الطلاب is a جمع مذكر سالم (sound masculine plural). The verb should agree: ذهبوا is correct. But the case ending on المدرسة should be كسرة (genitive).",
+  },
+  {
+    id: "ar_g4", pillar: "grammar", stage: 1, difficulty: 2, type: "likert",
+    prompt: "Which is correct? A) قرأت الكتاب B) قرأت الكتابَ",
+    whyExplanation: "الكتاب is the direct object (مفعول به) and should be منصوب with فتحة. This is a fundamental Arabic grammar rule that learners often miss.",
+  },
+  {
+    id: "ar_g5", pillar: "grammar", stage: 1, difficulty: 3, type: "likert",
+    prompt: "Which sounds wrong? A) جاء الطالبان إلى الفصل B) جاء الطالبين إلى الفصل",
+    whyExplanation: "الطالبان is a مثنى (dual) and should be مرفوع (nominative) as the subject. الطالبين would be wrong here — it's the accusative/genitive form.",
+  },
+  {
+    id: "ar_g6", pillar: "grammar", stage: 1, difficulty: 3, type: "likert",
+    prompt: "Which is correct? A) هذا كتاب جديد B) هذا كتابٌ جديدٌ",
+    whyExplanation: "In Arabic, both the noun and its adjective must agree in case, number, gender, and definiteness. كتابٌ جديدٌ shows proper إعراب agreement.",
+  },
+  {
+    id: "ar_g7", pillar: "grammar", stage: 1, difficulty: 4, type: "likert",
+    prompt: "Which sounds wrong? A) إن الطالبَ مجتهدٌ B) إن الطالبُ مجتهدٌ",
+    whyExplanation: "After إنَّ, the subject becomes منصوب (accusative). So الطالبَ is correct, not الطالبُ. This is an advanced grammar rule.",
+  },
+  {
+    id: "ar_g8", pillar: "grammar", stage: 1, difficulty: 4, type: "likert",
+    prompt: "Which is correct? A) ما جاء الطلاب B) ما جاء الطلابُ",
+    whyExplanation: "After ما النافية, the subject is مرفوع. الطلابُ is correct. This is a subtle rule that even intermediate learners get wrong.",
+  },
+  {
+    id: "ar_g9", pillar: "grammar", stage: 1, difficulty: 5, type: "likert",
+    prompt: "Which sounds wrong? A) لولا الماءُ لهلك الإنسان B) لولا الماءَ لهلك الإنسان",
+    whyExplanation: "After لولا, the subject is منصوب (accusative). الماءَ is correct. This is a very advanced grammar point.",
+  },
+  {
+    id: "ar_g10", pillar: "grammar", stage: 1, difficulty: 5, type: "likert",
+    prompt: "Which is correct? A) ظننت أن الطالبَ مجتهدٌ B) ظننت أن الطالبُ مجتهدٌ",
+    whyExplanation: "After أنَّ, the subject is منصوب. But after أنْ (subjunctive), the verb changes. This tests deep understanding of Arabic complement structures.",
+  },
 ];
 
-// ─── STAGE 2: LOGIC ─────────────────────────────────────────
+// ─── STAGE 2: LOGIC / MAP OF IGNORANCE ─────────────────────
+// Gap identification — finding Arabic knowledge gaps
 const arabicLogicQuestions: Question[] = [
-  { id: "ar_l1", pillar: "logic", stage: 2, difficulty: 1, type: "gap-select", prompt: "ما الفرق بين make و do؟ أي جملة صحيحة؟", options: ["I do a mistake", "I made a mistake", "I did a mistake", "I made the mistake"], correctIndex: 1, whyExplanation: "Make و do فعلان سببيان. Make a mistake تركيب ثابت." },
-  { id: "ar_l2", pillar: "logic", stage: 2, difficulty: 1, type: "gap-select", prompt: "ما هي الطريقة الصحيحة للسؤال عن العادات؟", options: ["Do you like coffee?", "Are you liking coffee?", "Are you like coffee?", "Do you liking coffee?"], correctIndex: 0, whyExplanation: "أفعال الحالة (like, love, know) لا تستخدم Present Continuous في الإنجليزية." },
-  { id: "ar_l3", pillar: "logic", stage: 2, difficulty: 2, type: "gap-select", prompt: "أكمل: I have been living here ___ 2019.", options: ["since", "for", "from", "during"], correctIndex: 0, whyExplanation: "since = نقطة في الزمن (2019). for = مدة (3 سنوات)." },
-  { id: "ar_l4", pillar: "logic", stage: 2, difficulty: 2, type: "gap-select", prompt: "أي جملة تستخدم أداة التعريف بشكل صحيح؟", options: ["I love the music", "I love music", "I love a music", "I love musics"], correctIndex: 1, whyExplanation: "نستخدم أداة التعريف الصفرية مع الأسماء غير المعدودة في المعنى العام." },
-  { id: "ar_l5", pillar: "logic", stage: 2, difficulty: 3, type: "gap-select", prompt: "أي جملة تعبر عن رأي شخصي بشكل صحيح؟", options: ["In my opinion, I think that...", "I think that...", "According to me...", "For my side..."], correctIndex: 1, whyExplanation: "In my opinion, I think تكرار. According to me غير موجودة في الإنجليزية القياسية." },
-  { id: "ar_l6", pillar: "logic", stage: 2, difficulty: 3, type: "gap-select", prompt: "أكمل: If I ___ rich, I would travel the world.", options: ["am", "was", "were", "be"], correctIndex: 2, whyExplanation: "Second Conditional يتطلب were (صيغة الشرط) لجميع الأشخاص." },
-  { id: "ar_l7", pillar: "logic", stage: 2, difficulty: 4, type: "gap-select", prompt: "أي جملة تستخدم حرف الجر الصحيح؟", options: ["I'm interested in learn English", "I'm interested in learning English", "I'm interested to learn English", "I'm interested for learning English"], correctIndex: 1, whyExplanation: "Interested in + المصدر. تصريف الأفعال من أصعب الأجزاء للناطقين بالعربية." },
-  { id: "ar_l8", pillar: "logic", stage: 2, difficulty: 4, type: "gap-select", prompt: "أي جملة تعبر عن المبني للمجهول بشكل صحيح؟", options: ["The book was wrote by her", "The book was written by her", "The book was write by her", "The book has wrote by her"], correctIndex: 1, whyExplanation: "المبني للمجهول: was + اسم المفعول. Written هو اسم المفعول لـ write." },
-  { id: "ar_l9", pillar: "logic", stage: 2, difficulty: 5, type: "gap-select", prompt: "أي جملة تستخدم الكلام المنقول بشكل صحيح؟", options: ["He said that he will come tomorrow", "He said that he would come the next day", "He said that he would come tomorrow", "He said that he will come the next day"], correctIndex: 1, whyExplanation: "الكلام المنقول يتطلب backshift: will would, tomorrow the next day." },
-  { id: "ar_l10", pillar: "logic", stage: 2, difficulty: 5, type: "gap-select", prompt: "أي جملة تستخدم whose بشكل صحيح؟", options: ["The man which car was stolen", "The man who car was stolen", "The man whose car was stolen", "The man that car was stolen"], correctIndex: 2, whyExplanation: "Whose = ضمير ملكية للأشخاص والأشياء. Which/that/who لا تعبر عن الملكية." },
+  {
+    id: "ar_l1", pillar: "logic", stage: 2, difficulty: 1, type: "gap-select",
+    prompt: "What does كتاب mean?",
+    options: ["Pen", "Book", "House", "Car"],
+    correctIndex: 1,
+    whyExplanation: "كتاب (kitab) = book. One of the first Arabic words learners encounter. If you got this wrong, you need to start with basic vocabulary.",
+  },
+  {
+    id: "ar_l2", pillar: "logic", stage: 2, difficulty: 1, type: "gap-select",
+    prompt: "How do you say 'Thank you' in Arabic?",
+    options: ["مرحبا", "شكراً", "مع السلامه", "أهلاً وسهلاً"],
+    correctIndex: 1,
+    whyExplanation: "شكراً (shukran) = thank you. Essential for any Arabic learner.",
+  },
+  {
+    id: "ar_l3", pillar: "logic", stage: 2, difficulty: 2, type: "gap-select",
+    prompt: "What is the plural of كتاب (book)?",
+    options: ["كتب", "كتابات", "كتائب", "مكاتب"],
+    correctIndex: 0,
+    whyExplanation: "كتب (kutub) is the broken plural of كتاب. Arabic plurals are often 'broken' (changing the internal structure) rather than just adding a suffix.",
+  },
+  {
+    id: "ar_l4", pillar: "logic", stage: 2, difficulty: 2, type: "gap-select",
+    prompt: "Which word means 'water' in Arabic?",
+    options: ["نار", "ماء", "هواء", "تراب"],
+    correctIndex: 1,
+    whyExplanation: "ماء (ma') = water. A fundamental vocabulary word.",
+  },
+  {
+    id: "ar_l5", pillar: "logic", stage: 2, difficulty: 3, type: "gap-select",
+    prompt: "What does the root ك-ت-ب relate to?",
+    options: ["Reading", "Writing", "Speaking", "Listening"],
+    correctIndex: 1,
+    whyExplanation: "The root ك-ت-ب (k-t-b) relates to writing: كتاب (book), كاتب (writer), مكتب (office), مكتبة (library). Understanding roots is key to Arabic.",
+  },
+  {
+    id: "ar_l6", pillar: "logic", stage: 2, difficulty: 3, type: "gap-select",
+    prompt: "How do you say 'I want' in Arabic?",
+    options: ["أريد", "أحب", "أعرف", "أفهم"],
+    correctIndex: 0,
+    whyExplanation: "أريد (urid) = I want. One of the most useful phrases for beginners.",
+  },
+  {
+    id: "ar_l7", pillar: "logic", stage: 2, difficulty: 4, type: "gap-select",
+    prompt: "What is the meaning of إن شاء الله?",
+    options: ["God is great", "If God wills", "Thank you", "Peace be upon you"],
+    correctIndex: 1,
+    whyExplanation: "إن شاء الله (in sha' Allah) = If God wills. Used constantly in Arabic speech. Literally 'if God wants'.",
+  },
+  {
+    id: "ar_l8", pillar: "logic", stage: 2, difficulty: 4, type: "gap-select",
+    prompt: "Which is the correct word order for 'The student read the book'?",
+    options: ["قرأ الطالب الكتاب", "الطالب قرأ الكتاب", "الكتاب قرأه الطالب", "All are correct"],
+    correctIndex: 3,
+    whyExplanation: "Arabic has flexible word order. VSO, SVO, and OVS are all grammatically correct, with different emphasis.",
+  },
+  {
+    id: "ar_l9", pillar: "logic", stage: 2, difficulty: 5, type: "gap-select",
+    prompt: "What does the pattern فَعِيل indicate in Arabic morphology?",
+    options: ["Place", "Time", "Adjective/Quality", "Instrument"],
+    correctIndex: 2,
+    whyExplanation: "The pattern فَعِيل (fa'il) often indicates an adjective or quality: كبير (big), صغير (small), جميل (beautiful). Understanding patterns unlocks thousands of words.",
+  },
+  {
+    id: "ar_l10", pillar: "logic", stage: 2, difficulty: 5, type: "gap-select",
+    prompt: "What is the difference between كان and أصبح?",
+    options: ["Both mean 'to be'", "كان = was, أصبح = became", "كان = became, أصبح = was", "Both mean 'to become'"],
+    correctIndex: 1,
+    whyExplanation: "كان (kana) = was (past tense of 'to be'). أصبح (asbaha) = became. Both are essential verbs for describing states and changes.",
+  },
 ];
 
-// ─── STAGE 3: VOCAB ─────────────────────────────────────────
+// ─── STAGE 3: CHUNKING & COLLOCATIONS ──────────────────────
+// Which Arabic words belong together
 const arabicVocabQuestions: Question[] = [
-  { id: "ar_v1", pillar: "vocab", stage: 3, difficulty: 1, type: "chunk", prompt: "ما هو التركيب الطبيعي في الإنجليزية؟", options: ["do a shower", "take a shower", "make a shower", "have a shower"], correctIndex: 1, whyExplanation: "Take a shower هو التركيب الأمريكي القياسي. Have a shower مقبول (بريطاني)." },
-  { id: "ar_v2", pillar: "vocab", stage: 3, difficulty: 1, type: "chunk", prompt: "ما هو التركيب الصحيح للتعبير عن الموافقة؟", options: ["I'm agree", "I agree", "I am agree", "I do agree"], correctIndex: 1, whyExplanation: "Agree فعل، ليس صفة. I agree = أوافق. I'm agree تداخل مباشر من أنا موافق." },
-  { id: "ar_v3", pillar: "vocab", stage: 3, difficulty: 2, type: "chunk", prompt: "أكمل التركيب: pay ___ (دفع غرامة)", options: ["a fine", "a penalty", "a ticket", "a fee"], correctIndex: 0, whyExplanation: "Pay a fine = دفع غرامة. Pay a ticket = دفع تذكرة. Pay a fee = دفع رسوم." },
-  { id: "ar_v4", pillar: "vocab", stage: 3, difficulty: 2, type: "chunk", prompt: "ما هو التركيب الذي يعبر عن البقاء في المنزل بشكل طبيعي؟", options: ["stay at home", "stay in home", "remain at home", "keep at home"], correctIndex: 0, whyExplanation: "Stay at home هو التركيب الأكثر طبيعية وشيوعاً." },
-  { id: "ar_v5", pillar: "vocab", stage: 3, difficulty: 3, type: "chunk", prompt: "ما هو التركيب الأكاديمي الصحيح؟", options: ["make research", "do research", "conduct research", "run research"], correctIndex: 2, whyExplanation: "Conduct research هو التركيب الأكاديمي الرسمي. Do research مقبول غير رسمي." },
-  { id: "ar_v6", pillar: "vocab", stage: 3, difficulty: 3, type: "chunk", prompt: "أكمل: It makes ___ to study daily.", options: ["sense", "meaning", "reason", "logic"], correctIndex: 0, whyExplanation: "Make sense تركيب ثابت. Make meaning موجود لكنه أدبي." },
-  { id: "ar_v7", pillar: "vocab", stage: 3, difficulty: 4, type: "chunk", prompt: "ما هو التركيب الذي يعبر عن الاعتزاز بـ؟", options: ["be proud of", "have pride of", "feel pride of", "be pride of"], correctIndex: 0, whyExplanation: "Be proud of هو التركيب الطبيعي. Have pride in موجود لكنه أكثر تجريداً." },
-  { id: "ar_v8", pillar: "vocab", stage: 3, difficulty: 4, type: "chunk", prompt: "ما هو الفعل الاصطلاحي الصحيح لـ التأجيل؟", options: ["put off", "put away", "put down", "put out"], correctIndex: 0, whyExplanation: "Put off = يؤجل. Put away = يخزن. Put down = يضع/ينتقد. Put out = يطفئ/ينشر." },
-  { id: "ar_v9", pillar: "vocab", stage: 3, difficulty: 5, type: "chunk", prompt: "ما هو التركيب الأكاديمي الذي يعبر عن التوصل إلى استنتاج؟", options: ["reach a conclusion", "arrive at a conclusion", "come to a conclusion", "get to a conclusion"], correctIndex: 0, whyExplanation: "Reach/arrive at/come to a conclusion كلها مقبولة. لكن reach هو الأكثر رسمية." },
-  { id: "ar_v10", pillar: "vocab", stage: 3, difficulty: 5, type: "chunk", prompt: "ما هو التركيب الصحيح لـ التعامل مع مشكلة؟", options: ["deal with a problem", "deal a problem", "handle of a problem", "cope a problem"], correctIndex: 0, whyExplanation: "Deal with فعل اصطلاحي يتطلب with. Cope with صحيح أيضاً لكنه أكثر رسمية." },
+  {
+    id: "ar_v1", pillar: "vocab", stage: 3, difficulty: 1, type: "chunk",
+    prompt: "Which is the natural Arabic collocation for 'make a decision'?",
+    options: ["أخذ قرار", "عمل قرار", "صنع قرار", "فعل قرار"],
+    correctIndex: 0,
+    whyExplanation: "أخذ قرار (akhadha qararan) = make a decision. The verb أخذ (take) collocates with قرار (decision), not عمل or صنع.",
+  },
+  {
+    id: "ar_v2", pillar: "vocab", stage: 3, difficulty: 1, type: "chunk",
+    prompt: "Which is correct for 'good morning'?",
+    options: ["صباح الخير", "صباح جميل", "صباح سعيد", "صباح مشرق"],
+    correctIndex: 0,
+    whyExplanation: "صباح الخير (sabah al-khayr) = good morning. The fixed expression uses الخير (goodness), not جميل or سعيد.",
+  },
+  {
+    id: "ar_v3", pillar: "vocab", stage: 3, difficulty: 2, type: "chunk",
+    prompt: "Which verb collocates with صلاة (prayer)?",
+    options: ["صلى", "عمل", "فعل", "قام"],
+    correctIndex: 0,
+    whyExplanation: "صلى الصلاة (salla al-salah) = to pray. The verb صلى specifically collocates with صلاة. This is a fixed religious/cultural collocation.",
+  },
+  {
+    id: "ar_v4", pillar: "vocab", stage: 3, difficulty: 2, type: "chunk",
+    prompt: "Which is the natural way to say 'I'm hungry' in Arabic?",
+    options: ["أنا جائع", "أنا جوعان", "أنا أشعر بالجوع", "All are correct"],
+    correctIndex: 3,
+    whyExplanation: "All three are correct! جائع and جوعان are adjectives, أشعر بالجوع is a verbal phrase. Arabic has multiple ways to express the same state.",
+  },
+  {
+    id: "ar_v5", pillar: "vocab", stage: 3, difficulty: 3, type: "chunk",
+    prompt: "Which collocates with وقت (time)?",
+    options: ["قضى الوقت", "أكل الوقت", "شرب الوقت", "لبس الوقت"],
+    correctIndex: 0,
+    whyExplanation: "قضى الوقت (qada al-waqt) = spent time. The verb قضى (to spend/use up) collocates with وقت. Other verbs don't make sense here.",
+  },
+  {
+    id: "ar_v6", pillar: "vocab", stage: 3, difficulty: 3, type: "chunk",
+    prompt: "Which is correct for 'thank you very much'?",
+    options: ["شكراً جزيلاً", "شكراً كثيراً", "شكراً كبيراً", "شكراً وافراً"],
+    correctIndex: 0,
+    whyExplanation: "شكراً جزيلاً (shukran jazeelan) = thank you very much. جزيلاً is the specific adverb used with شكراً, not كثيراً or كبيراً.",
+  },
+  {
+    id: "ar_v7", pillar: "vocab", stage: 3, difficulty: 4, type: "chunk",
+    prompt: "Which verb goes with امتحان (exam)?",
+    options: ["خضع للامتحان", "أكل الامتحان", "شرب الامتحان", "لبس الامتحان"],
+    correctIndex: 0,
+    whyExplanation: "خضع للامتحان (khada'a lil-imtihan) = to take an exam. خضع (to undergo) is the specific verb for exams. This is a fixed academic collocation.",
+  },
+  {
+    id: "ar_v8", pillar: "vocab", stage: 3, difficulty: 4, type: "chunk",
+    prompt: "Which is the natural way to say 'I miss you' in Arabic?",
+    options: ["أشتاق إليك", "أفتقدك", "أحن إليك", "All are correct"],
+    correctIndex: 3,
+    whyExplanation: "Arabic has many ways to express missing someone: أشتاق (long for), أفتقد (miss), أحن (yearn). All are correct with slightly different nuances.",
+  },
+  {
+    id: "ar_v9", pillar: "vocab", stage: 3, difficulty: 5, type: "chunk",
+    prompt: "Which collocates with سلام (peace)?",
+    options: ["نشر السلام", "أكل السلام", "شرب السلام", "لبس السلام"],
+    correctIndex: 0,
+    whyExplanation: "نشر السلام (nashr al-salam) = to spread peace. نشر (to spread) is the verb that collocates with سلام in political/religious contexts.",
+  },
+  {
+    id: "ar_v10", pillar: "vocab", stage: 3, difficulty: 5, type: "chunk",
+    prompt: "Which is correct for 'God willing' in a formal context?",
+    options: ["إن شاء الله", "بإذن الله", "ما شاء الله", "All are used"],
+    correctIndex: 3,
+    whyExplanation: "إن شاء الله (if God wills) is most common. بإذن الله (with God's permission) is also used. ما شاء الله (what God has willed) is for past events. Context determines which is appropriate.",
+  },
 ];
 
-// ─── STAGE 4: CULTURE ───────────────────────────────────────
+// ─── STAGE 4: CULTURAL ATOMS ───────────────────────────────
+// Arabic cultural context for English/Portuguese speakers
 const arabicCultureQuestions: Question[] = [
-  { id: "ar_c1", pillar: "culture", stage: 4, difficulty: 1, type: "scenario", prompt: "زميل أمريكي يقول What's up? عندما يراك. ماذا يعني هذا فعلياً؟", options: ["يريد معرفة تفاصيل حياتي", "إنه مجرد تحية غير رسمية، مثل كيف حالك؟", "يسأل عن أنشطتي", "يسأل عن ما يحدث"], correctIndex: 1, whyExplanation: "What's up? تحية غير رسمية. الإجابة المتوقعة هي Not much أو Same old." },
-  { id: "ar_c2", pillar: "culture", stage: 4, difficulty: 1, type: "scenario", prompt: "أنت في مطعم أمريكي والنادل يسأل How are you doing?. ماذا تجيب؟", options: ["I'm fine, thank you. And you?", "Good, thanks. Can I see the menu?", "I'm doing well, I've been busy with work...", "Fine."], correctIndex: 1, whyExplanation: "في سياق الخدمة، How are you doing? هي صيغة اجتماعية، وليست دعوة للمحادثة." },
-  { id: "ar_c3", pillar: "culture", stage: 4, difficulty: 2, type: "scenario", prompt: "في اجتماع عمل، زميلك يقول Let's table this discussion. ماذا يعني؟", options: ["لنناقش هذا على الطاولة", "لنؤجل هذه المناقشة", "لنضع هذا في جدول الأعمال", "لننهي هذه المناقشة"], correctIndex: 1, whyExplanation: "Table كفعل في الإنجليزية الأمريكية يعني تأجيل/وضع جانباً." },
-  { id: "ar_c4", pillar: "culture", stage: 4, difficulty: 2, type: "scenario", prompt: "تتلقى بريداً إلكترونياً يقول Per my last email.... ماذا يعني هذا فعلياً؟", options: ["وفقاً لبريدي الأخير (إشارة محايدة)", "لقد شرحت هذا من قبل (عدوانية سلبية)", "يرجى قراءة بريدي السابق", "متابعة لما قلته سابقاً"], correctIndex: 1, whyExplanation: "Per my last email مشهور كعدوانية سلبية في الشركات. عملياً = لقد قلت هذا بالفعل، انتبه." },
-  { id: "ar_c5", pillar: "culture", stage: 4, difficulty: 3, type: "scenario", prompt: "أمريكي يقول That's interesting حول فكرتك. ماذا يعني عادةً؟", options: ["وجدها مثيرة للاهتمام حقاً", "ليس لديه رأي محدد", "بلباقة، لا يريد القول أنه لم يعجبه", "يريد معرفة المزيد"], correctIndex: 2, whyExplanation: "That's interesting يمكن أن تكون تلطيفاً لـ لا أتفق/لم يعجبني." },
-  { id: "ar_c6", pillar: "culture", stage: 4, difficulty: 3, type: "scenario", prompt: "مدعو لتناول العشاء في منزل أمريكي. ما هو السلوك المتوقع؟", options: ["الوصول في الوقت المحدد بالضبط", "إحضار زجاجة نبيذ أو حلوى", "انتظار أن يقدم لك المضيف الطعام", "جميع البدائل"], correctIndex: 3, whyExplanation: "الثقافة الأمريكية: إحضار هدية، الوصول في الوقت المحدد، انتظار أن يقدم لك المضيف." },
-  { id: "ar_c7", pillar: "culture", stage: 4, difficulty: 4, type: "scenario", prompt: "في بريد إلكتروني مهني، تكتب I hope this email finds you well. متى يكون هذا مناسباً؟", options: ["دائماً، في أي بريد إلكتروني", "فقط في التواصل الأول أو بعد فترة طويلة بدون تواصل", "فقط للرؤساء", "أبداً، إنه قديم"], correctIndex: 1, whyExplanation: "هذه الصيغة مناسبة في التواصل الأول أو بعد فترة طويلة. استخدامها في كل رد يبدو آلياً." },
-  { id: "ar_c8", pillar: "culture", stage: 4, difficulty: 4, type: "scenario", prompt: "شخص يقول You're welcome بعد أن تشكره. هل هناك بديل أكثر طبيعية في سياق غير رسمي؟", options: ["No problem أو Sure thing", "You're welcome هو دائماً الخيار الأفضل", "Don't mention it", "It was nothing"], correctIndex: 0, whyExplanation: "في السياقات غير الرسمية، No problem، Sure thing، Of course أكثر طبيعية." },
-  { id: "ar_c9", pillar: "culture", stage: 4, difficulty: 5, type: "scenario", prompt: "في مفاوضة، زميلك يقول I hear what you're saying, but.... ماذا يشير هذا؟", options: ["يستمع باهتمام", "يختلف لكنه يريد الحفاظ على الانسجام", "لم يفهم وجهة نظرك", "يريد المزيد من التفاصيل"], correctIndex: 1, whyExplanation: "I hear what you're saying, but... هي صيغة لباقة للتعارض. تعني أفهم لكنني أختلف." },
-  { id: "ar_c10", pillar: "culture", stage: 4, difficulty: 5, type: "scenario", prompt: "ترى RSVP في دعوة. ماذا يعني وما هو المتوقع؟", options: ["رد سواء كنت ستحضر أم لا", "إنها مجرد رسمية، لا تحتاج للرد", "تأكيد الحضور عبر البريد الإلكتروني", "الرد فقط إذا لن تحضر"], correctIndex: 0, whyExplanation: "RSVP = الرجاء الرد. إلزامي الرد، سواء كنت ستحضر أم لا." },
+  {
+    id: "ar_c1", pillar: "culture", stage: 4, difficulty: 1, type: "scenario",
+    prompt: "An Arabic colleague says 'إن شاء الله' when discussing future plans. What does this really mean?",
+    options: ["They are certain it will happen", "They are expressing hope while leaving it to God's will", "They are refusing politely", "They are expressing doubt"],
+    correctIndex: 1,
+    whyExplanation: "إن شاء الله (in sha' Allah) is a cultural formula expressing hope while acknowledging God's will. It's not refusal or doubt — it's a fundamental part of Arabic speech.",
+  },
+  {
+    id: "ar_c2", pillar: "culture", stage: 4, difficulty: 1, type: "scenario",
+    prompt: "You're invited to an Arabic home for dinner. What is expected?",
+    options: ["Arrive exactly on time", "Bring a gift like sweets or flowers", "Wait to be served by the host", "All of the above"],
+    correctIndex: 3,
+    whyExplanation: "Arabic hospitality culture: bring a gift, be punctual, and wait to be served. Refusing food can be seen as rude — at least try a small portion.",
+  },
+  {
+    id: "ar_c3", pillar: "culture", stage: 4, difficulty: 2, type: "scenario",
+    prompt: "Someone says 'ما شاء الله' about your achievement. What is the cultural meaning?",
+    options: ["They are jealous", "They are praising God for your blessing", "They are being sarcastic", "They are questioning your ability"],
+    correctIndex: 1,
+    whyExplanation: "ما شاء الله (ma sha' Allah) acknowledges that your achievement comes from God. It's a compliment and a protection against the evil eye, not jealousy.",
+  },
+  {
+    id: "ar_c4", pillar: "culture", stage: 4, difficulty: 2, type: "scenario",
+    prompt: "In Arabic culture, why might someone say 'لا حول ولا قوة إلا بالله'?",
+    options: ["They are giving up", "They are expressing humility before God", "They are cursing", "They are celebrating"],
+    correctIndex: 1,
+    whyExplanation: "لا حول ولا قوة إلا بالله (la hawla wa la quwwata illa billah) expresses humility and acknowledgment that all power comes from God. It's used in many daily situations.",
+  },
+  {
+    id: "ar_c5", pillar: "culture", stage: 4, difficulty: 3, type: "scenario",
+    prompt: "Why do Arabic speakers often use 'والله' (by God) in conversation?",
+    options: ["They are always swearing", "They are emphasizing truthfulness", "They are being religious", "They are angry"],
+    correctIndex: 1,
+    whyExplanation: "والله (wallah) = by God. Used to emphasize that you're telling the truth. It's a cultural speech habit, not necessarily a religious statement.",
+  },
+  {
+    id: "ar_c6", pillar: "culture", stage: 4, difficulty: 3, type: "scenario",
+    prompt: "What does 'على راسي' (on my head) mean when said in response to a request?",
+    options: ["They are refusing", "They are agreeing enthusiastically", "They are confused", "They are asking for time"],
+    correctIndex: 1,
+    whyExplanation: "على راسي (ala rasi) = on my head. It means 'I'd be happy to' or 'with pleasure.' It's a warm, enthusiastic agreement common in Levantine Arabic.",
+  },
+  {
+    id: "ar_c7", pillar: "culture", stage: 4, difficulty: 4, type: "scenario",
+    prompt: "Why might an Arabic speaker say 'تفضل' (tafaddal) when you arrive?",
+    options: ["They want you to leave", "They are inviting you in/asking you to go first", "They are asking for payment", "They are expressing surprise"],
+    correctIndex: 1,
+    whyExplanation: "تفضل (tafaddal) = please go ahead / please come in. It's a fundamental hospitality phrase. The masculine form is used; تفضلي is feminine.",
+  },
+  {
+    id: "ar_c8", pillar: "culture", stage: 4, difficulty: 4, type: "scenario",
+    prompt: "What is the significance of 'بسم الله' (in the name of God) in Arabic culture?",
+    options: ["Only used in religious contexts", "Said before starting any significant action", "Only said during prayer", "A formal greeting"],
+    correctIndex: 1,
+    whyExplanation: "بسم الله (bismillah) is said before eating, drinking, starting a journey, beginning work — almost any action. It's a way of invoking God's blessing on daily activities.",
+  },
+  {
+    id: "ar_c9", pillar: "culture", stage: 4, difficulty: 5, type: "scenario",
+    prompt: "Why might an Arabic speaker use 'يا الله' (ya Allah) frequently in speech?",
+    options: ["They are always praying", "It's an exclamation expressing various emotions", "They are calling for help", "They are being disrespectful"],
+    correctIndex: 1,
+    whyExplanation: "يا الله (ya Allah) is used as an exclamation for surprise, frustration, admiration, or even just as a filler word. It's deeply embedded in everyday Arabic speech.",
+  },
+  {
+    id: "ar_c10", pillar: "culture", stage: 4, difficulty: 5, type: "scenario",
+    prompt: "What does 'الله يعطيك العافية' (God give you health) mean when said to someone working?",
+    options: ["They think you look sick", "They are wishing you well and acknowledging your effort", "They want you to stop working", "They are being sarcastic"],
+    correctIndex: 1,
+    whyExplanation: "الله يعطيك العافية (Allah ya'tik al-afiya) is a common expression of appreciation for someone's work. It literally means 'God give you health/strength.'",
+  },
 ];
 
-// ─── STAGE 5: COMMUNICATION ─────────────────────────────────
+// ─── STAGE 5: COMMUNICATION FLUENCY ────────────────────────
+// Open production — English/Portuguese speaker producing Arabic
 const arabicCommQuestions: Question[] = [
-  { id: "ar_m1", pillar: "comm", stage: 5, difficulty: 1, type: "open-text", prompt: "اكتب جملة بالإنجليزية تستخدم فيها كلمة actually. (1-2 جمل)", whyExplanation: "Actually = في الواقع (وليس atualmente).", keywords: ["actually"] },
-  { id: "ar_m2", pillar: "comm", stage: 5, difficulty: 1, type: "open-text", prompt: "كيف تطلب بأدب من شخص أن يكرر ما قاله؟ اكتب بالإنجليزية.", whyExplanation: "Could you repeat that?, Sorry, I didn't catch that, Pardon? هي أشكال طبيعية.", keywords: ["repeat", "sorry", "pardon", "catch"] },
-  { id: "ar_m3", pillar: "comm", stage: 5, difficulty: 2, type: "open-text", prompt: "اشرح بالإنجليزية ماذا تفعل في العمل/الدراسة. (2-3 جمل)", whyExplanation: "القدرة على وصف الروتين المهني هي علامة الكفاءة.", keywords: ["work", "study", "job", "student"] },
-  { id: "ar_m4", pillar: "comm", stage: 5, difficulty: 2, type: "open-text", prompt: "اكتب بريداً إلكترونياً قصيراً لإلغاء اجتماع بطريقة مهذبة. (3-4 جمل)", whyExplanation: "البريد المهني يتطلب: تحية، سبب مباشر لكن مهذب، بديل، اعتذار موجز.", keywords: ["cancel", "sorry", "reschedule", "apologize"] },
-  { id: "ar_m5", pillar: "comm", stage: 5, difficulty: 3, type: "open-text", prompt: "أعطِ رأيك في تعلم اللغات بالذكاء الاصطناعي. (3-4 جمل)", whyExplanation: "التعبير عن الرأي يتطلب: I think/believe/feel that...، تبرير، أمثلة.", keywords: ["think", "believe", "learning", "language"] },
-  { id: "ar_m6", pillar: "comm", stage: 5, difficulty: 3, type: "open-text", prompt: "احكِ قصة قصيرة عن سوء فهم تعرضت له بالإنجليزية. (4-5 جمل)", whyExplanation: "السرد في الماضي يتطلب إتقان الأزمنة.", keywords: ["was", "went", "said", "thought"] },
-  { id: "ar_m7", pillar: "comm", stage: 5, difficulty: 4, type: "open-text", prompt: "ناقش لصالح أو ضد: التعلم الحضوري أفضل من التعلم عبر الإنترنت للغات. (4-5 جمل)", whyExplanation: "المناقشة تتطلب: أطروحة واضحة، روابط، أمثلة، خلاصة.", keywords: ["however", "because", "example", "conclusion"] },
-  { id: "ar_m8", pillar: "comm", stage: 5, difficulty: 4, type: "open-text", prompt: "اشرح مفهوماً من مجال عملك لشخص لا يفهم شيئاً عن الموضوع. (4-5 جمل)", whyExplanation: "تبسيط المفاهيم المعقدة هو أعلى مهارة تواصلية.", keywords: [] },
-  { id: "ar_m9", pillar: "comm", stage: 5, difficulty: 5, type: "open-text", prompt: "اكتب فقرة رسمية عن مشكلة اجتماعية في العالم العربي. (5-6 جمل)", whyExplanation: "الكتابة الرسمية تتطلب: المبني للمجهول، التحويل إلى أسماء، مفردات أكاديمية.", keywords: ["society", "problem", "issue", "solution"] },
-  { id: "ar_m10", pillar: "comm", stage: 5, difficulty: 5, type: "open-text", prompt: "اكتب مراجعة نقدية (review) لفيلم أو كتاب بالإنجليزية. (5-6 جمل)", whyExplanation: "المراجعة النقدية تتطلب: ملخص موجز، تحليل، رأي مبرر، لغة متطورة.", keywords: ["review", "recommend", "story", "character"] },
+  {
+    id: "ar_m1", pillar: "comm", stage: 5, difficulty: 1, type: "open-text",
+    prompt: "Write 'Hello, how are you?' in Arabic. (Use Arabic script or transliteration)",
+    whyExplanation: "مرحبا، كيف حالك؟ (marhaban, kayfa haluk?) is the most common greeting. Try writing it in Arabic script if you can.",
+    keywords: ["مرحبا", "كيف", "حالك", "marhaban", "kayfa"],
+  },
+  {
+    id: "ar_m2", pillar: "comm", stage: 5, difficulty: 1, type: "open-text",
+    prompt: "Write 'Thank you very much' in Arabic.",
+    whyExplanation: "شكراً جزيلاً (shukran jazeelan) is the standard expression. The word جزيلاً specifically means 'very much' in this context.",
+    keywords: ["شكرا", "جزيلا", "shukran"],
+  },
+  {
+    id: "ar_m3", pillar: "comm", stage: 5, difficulty: 2, type: "open-text",
+    prompt: "Write 'I want to learn Arabic' in Arabic.",
+    whyExplanation: "أريد أن أتعلم العربية (urid an ta'allam al-arabiyya). This uses the verb أراد (to want) + أن (to) + verb in subjunctive.",
+    keywords: ["أريد", "أتعلم", "العربية", "urid"],
+  },
+  {
+    id: "ar_m4", pillar: "comm", stage: 5, difficulty: 2, type: "open-text",
+    prompt: "Write a short self-introduction in Arabic. (2-3 sentences)",
+    whyExplanation: "A basic introduction: name, where you're from, what you do. Tests your ability to form simple Arabic sentences.",
+    keywords: [],
+  },
+  {
+    id: "ar_m5", pillar: "comm", stage: 5, difficulty: 3, type: "open-text",
+    prompt: "Write 'Where is the bathroom?' in Arabic.",
+    whyExplanation: "أين الحمام؟ (ayn al-hammam?) is essential travel vocabulary. أين = where, الحمام = the bathroom.",
+    keywords: ["أين", "الحمام", "ayn"],
+  },
+  {
+    id: "ar_m6", pillar: "comm", stage: 5, difficulty: 3, type: "open-text",
+    prompt: "Write 'I don't understand' in Arabic.",
+    whyExplanation: "لا أفهم (la afham) = I don't understand. One of the most useful phrases for learners.",
+    keywords: ["لا", "أفهم", "la", "afham"],
+  },
+  {
+    id: "ar_m7", pillar: "comm", stage: 5, difficulty: 4, type: "open-text",
+    prompt: "Write a short paragraph about why you want to learn Arabic. (4-5 sentences)",
+    whyExplanation: "Tests your ability to express reasons and motivations in Arabic. Use لأن (because) and أريد (I want).",
+    keywords: [],
+  },
+  {
+    id: "ar_m8", pillar: "comm", stage: 5, difficulty: 4, type: "open-text",
+    prompt: "Write 'Could you please speak more slowly?' in Arabic.",
+    whyExplanation: "هل يمكنك أن تتكلم ببطء أكثر؟ (hal yumkinuk an tatakallam bi-but' akthar?). A practical phrase for learners.",
+    keywords: ["هل", "يمكنك", "تتكلم", "ببطء"],
+  },
+  {
+    id: "ar_m9", pillar: "comm", stage: 5, difficulty: 5, type: "open-text",
+    prompt: "Write a formal letter opening in Arabic. (2-3 sentences)",
+    whyExplanation: "Formal Arabic letter writing uses specific formulas: السيد المحترم (Dear Sir), تحية طيبة وبعد (Greetings and then...).",
+    keywords: [],
+  },
+  {
+    id: "ar_m10", pillar: "comm", stage: 5, difficulty: 5, type: "open-text",
+    prompt: "Write a short review of an Arabic book or film you've experienced. (5-6 sentences)",
+    whyExplanation: "Tests advanced production: opinions, descriptions, recommendations. Use أعجبني (I liked) and أنصح بـ (I recommend).",
+    keywords: [],
+  },
 ];
 
 // ─── FULL ARABIC QUESTION BANK ──────────────────────────────
