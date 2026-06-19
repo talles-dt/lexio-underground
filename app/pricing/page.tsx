@@ -136,7 +136,7 @@ function XIcon({ color }: { color: string }) {
   );
 }
 
-function TierCard({ tier, onSelect }: { tier: TierData; onSelect: (t: Tier) => void }) {
+function TierCard({ tier, onSelect, loading }: { tier: TierData; onSelect: (t: Tier) => void; loading?: boolean }) {
   const isLifetime = tier.id === "pro-lifetime";
   const isFamily = tier.id === "family";
   const accentColor = isLifetime ? colors.amber : isFamily ? colors.phosphor : colors.crimson;
@@ -286,6 +286,7 @@ function TierCard({ tier, onSelect }: { tier: TierData; onSelect: (t: Tier) => v
       <button
         type="button"
         onClick={() => onSelect(tier.id)}
+        disabled={loading}
         style={{
           width: "100%",
           marginTop: spacing[6],
@@ -297,17 +298,12 @@ function TierCard({ tier, onSelect }: { tier: TierData; onSelect: (t: Tier) => v
           fontFamily: typography.ui.fontFamily,
           fontSize: typography.ui.fontSize,
           fontWeight: 600,
-          cursor: "pointer",
+          cursor: loading ? "wait" : "pointer",
+          opacity: loading ? 0.7 : 1,
           transition: `all ${duration.normal}ms ease`,
         }}
-        onMouseEnter={(e) => {
-          (e.target as HTMLElement).style.transform = "scale(1.02)";
-        }}
-        onMouseLeave={(e) => {
-          (e.target as HTMLElement).style.transform = "scale(1)";
-        }}
       >
-        {tier.cta}
+        {loading ? "Redirecting..." : tier.cta}
       </button>
     </div>
   );
@@ -422,7 +418,28 @@ function FAQ() {
 /* ------------------------------------------------------------------ */
 
 export default function PricingPage() {
-  const [selectedTier, setSelectedTier] = useState<Tier | null>(null);
+  const [loading, setLoading] = useState<string | null>(null);
+
+  const handleCheckout = async (tier: Tier) => {
+    setLoading(tier);
+    try {
+      const res = await fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ tier }),
+      });
+      const data = await res.json();
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        alert(data.error || "Checkout failed");
+      }
+    } catch {
+      alert("Checkout error");
+    } finally {
+      setLoading(null);
+    }
+  };
 
   return (
     <div style={{
@@ -467,7 +484,7 @@ export default function PricingPage() {
         alignItems: "start",
       }}>
         {TIERS.map((tier) => (
-          <TierCard key={tier.id} tier={tier} onSelect={setSelectedTier} />
+          <TierCard key={tier.id} tier={tier} onSelect={handleCheckout} loading={loading === tier.id} />
         ))}
       </div>
 
@@ -495,11 +512,6 @@ export default function PricingPage() {
 
       {/* Footer padding */}
       <div style={{ height: spacing[8] }} />
-
-      {/* Hidden: tier selection state for Stripe integration */}
-      {selectedTier && (
-        <input type="hidden" name="selected_tier" value={selectedTier} />
-      )}
     </div>
   );
 }
