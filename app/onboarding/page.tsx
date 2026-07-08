@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { useAuth } from "@/lib/auth";
 import { colors, spacing, radius, typography, duration } from "@/theme/tokens";
 
@@ -276,10 +276,10 @@ const s: Record<string, React.CSSProperties> = {
     backgroundColor: colors.obsidian,
   },
   palaceGrid: {
-    position: "absolute" as const,
-    inset: 0,
-    opacity: 0,
-    transition: `opacity 1.5s ease`,
+      position: "absolute" as const,
+      inset: 0,
+      opacity: 0,
+      transition: `opacity 1.5s ease`,
   },
   palaceGridVisible: {
     opacity: 0.15,
@@ -323,6 +323,7 @@ const FIRST_ROOMS = [
 // ─── COMPONENT ──────────────────────────────────────────────
 export default function OnboardingPage() {
   const router = useRouter();
+  const pathname = usePathname();
   const { signUp, signInWithGoogle, user } = useAuth();
   const [step, setStep] = useState<Step>("landing");
   const [lang, setLang] = useState("en");
@@ -447,8 +448,13 @@ export default function OnboardingPage() {
         try { setDiagResult(JSON.parse(savedResult)); } catch {}
       }
       goToStep("report");
+    } else {
+      // If diagnostic is NOT complete, ensure we are on the diagnostico page
+      if (typeof window !== "undefined" && pathname !== "/diagnostico") {
+        router.push("/diagnostico");
+      }
     }
-  }, [step, goToStep]);
+  }, [step, goToStep, router, pathname]);
 
   // ── Check for returning from Pulse ──────────────────────
   useEffect(() => {
