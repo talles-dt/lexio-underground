@@ -9,6 +9,7 @@ import PalaceConstructionComponent from "@/components/PalaceConstruction";
 import type { PalaceConstructionProps } from "@/components/PalaceConstruction";
 import { PalaceRoomDetail } from "@/components/PalaceRoomDetail";
 import type { PalaceItem } from "@/components/PalaceRoomDetail";
+import { useAuth } from "@/lib/auth"; // Fix: use auth hook
 
 /* ------------------------------------------------------------------ */
 /*  Lazy wrappers (no SSR — SVG canvas)                               */
@@ -28,7 +29,7 @@ const PalaceConstruction = dynamic<PalaceConstructionProps>(
 /*  Supabase client                                                    */
 /* ------------------------------------------------------------------ */
 
-function getSupabase() {
+function getSupabaseClient() {
   return createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL || "",
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "",
@@ -41,6 +42,7 @@ function getSupabase() {
 /* ------------------------------------------------------------------ */
 
 export default function PalacePage() {
+  const { user } = useAuth(); // Get current user
   const [rooms, setRooms] = useState<Room[]>([]);
   const [maturityStage, setMaturityStage] = useState<MaturityStage>("roots");
   const [loading, setLoading] = useState(true);
@@ -59,17 +61,21 @@ export default function PalacePage() {
 
   // Fetch palace data from Supabase
   useEffect(() => {
+    if (!user) {
+      setLoading(false);
+      return;
+    }
     async function loadPalace() {
       try {
-        const supabase = getSupabase();
+        const supabase = getSupabaseClient();
         const { data, error } = await supabase
-          .from("palaces")
-          .select("rooms, total_rooms, maturity_stage")
-          .limit(1)
+          .from("palace")
+          .select("rooms, overall_readiness")
+          .eq("user_id", user!.id)
           .single();
 
         if (data && !error) {
-          setMaturityStage((data as Record<string, unknown>).maturity_stage as MaturityStage || "roots");
+          setMaturityStage((data as Record<string, unknown>).overall_readiness as MaturityStage || "roots");
           const palaceRooms = (data as Record<string, unknown>).rooms as Room[] | undefined;
           if (palaceRooms && Array.isArray(palaceRooms)) {
             setRooms(palaceRooms);
@@ -82,18 +88,18 @@ export default function PalacePage() {
       }
     }
     loadPalace();
-  }, []);
+  }, [user]);
 
   // Handle room click — fetch room detail
   const handleRoomClick = useCallback(async (roomId: string) => {
     setSelectedRoom(roomId);
     try {
-      const supabase = getSupabase();
+      const supabase = getSupabaseClient();
       const { data } = await supabase
         .from("palace_items")
         .select("*")
-        .eq("room_id", roomId)
-        .order("learned_at", { ascending: false })
+        .eq("room", roomId)
+        .order("created_at", { ascending: false })
         .limit(20);
       setRoomDetail(data as Record<string, unknown> | null);
     } catch {
@@ -168,7 +174,7 @@ export default function PalacePage() {
               type: (String(r.type || "vocabulary").replace(/ /g, "_") as PalaceItem["type"]),
               depth: Number(r.depth ?? 0),
               mastered: Boolean(r.mastered),
-              lastReviewed: r.learned_at ? String(r.learned_at) : undefined,
+              lastReviewed: r.created_at ? String(r.created_at) : undefined,
             }))
           : [];
         return (

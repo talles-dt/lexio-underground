@@ -1,17 +1,45 @@
 // app/api/checkout/route.ts
-// Stripe checkout session creation (Phase 5.4)
+// Stripe checkout session creation
 import { NextResponse } from "next/server";
 import { NextRequest } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 
-// Pricing from spec: monthly (R$ 49), annual (R$ 468), lifetime (R$ 1,490)
-const PRICES = {
-  monthly: { amount: 4900, description: "Mensal" },
-  annual: { amount: 46800, description: "Anual" },
-  lifetime: { amount: 149000, description: "Vitalício" },
+// LIVE STRIPE PRODUCTS (from Dashboard)
+// Note: Replace priceId with actual price IDs from Stripe
+const PRODUCTS = {
+  "free": {
+    id: null,
+    priceId: null,
+    description: "Free",
+    amount: 0,
+  },
+  "pro-monthly": {
+    id: "prod_UHndOopeJuM6Pc",
+    priceId: process.env.STRIPE_PRICE_MONTHLY || "price_monthly",
+    description: "Mensal",
+    amount: 4900, // BRL cents
+  },
+  "pro-annual": {
+    id: "prod_UqIzQNu3Dxylv0",
+    priceId: process.env.STRIPE_PRICE_ANNUAL || "price_annual",
+    description: "Anual",
+    amount: 46800,
+  },
+  "pro-lifetime": {
+    id: "prod_UqJ1XB3pKkSXVB",
+    priceId: process.env.STRIPE_PRICE_LIFETIME || "price_lifetime",
+    description: "Vitalício (Founders)",
+    amount: 149000,
+  },
+  "family": {
+    id: "prod_UqJ2qNCxWZ9w4N",
+    priceId: process.env.STRIPE_PRICE_FAMILY || "price_family",
+    description: "Família",
+    amount: 0, // To be confirmed
+  },
 } as const;
 
-export type PriceTier = keyof typeof PRICES;
+export type PriceTier = keyof typeof PRODUCTS;
 
 function getSupabaseAdmin() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
@@ -23,7 +51,7 @@ export async function POST(req: NextRequest) {
   try {
     const { tier, user_id, success_url, cancel_url } = await req.json();
 
-    if (!tier || !PRICES[tier as PriceTier]) {
+    if (!tier || !PRODUCTS[tier as PriceTier]) {
       return NextResponse.json({ error: "Invalid tier" }, { status: 400 });
     }
 
@@ -31,7 +59,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "user_id required" }, { status: 400 });
     }
 
-    const price = PRICES[tier as PriceTier];
+    const product = PRODUCTS[tier as PriceTier];
 
     // If Stripe keys not configured, return mock checkout URL
     if (!process.env.STRIPE_SECRET_KEY) {
@@ -44,9 +72,8 @@ export async function POST(req: NextRequest) {
     const stripe = (await import("stripe")).default;
     const stripeClient = new stripe(process.env.STRIPE_SECRET_KEY as string);
 
+    // Get user and customer ID
     const supabase = getSupabaseAdmin();
-
-    // Get or create customer
     const { data: user } = await supabase
       .from("users")
       .select("email, name, stripe_customer_id")
@@ -55,6 +82,7 @@ export async function POST(req: NextRequest) {
 
     let customerId = user?.stripe_customer_id;
 
+    // Create customer if needed
     if (!customerId) {
       const customer = await stripeClient.customers.create({
         email: user?.email || "",
@@ -71,23 +99,21 @@ export async function POST(req: NextRequest) {
 
     const session = await stripeClient.checkout.sessions.create({
       customer: customerId,
-      mode: tier === "lifetime" ? "payment" : "subscription",
+      mode: tier === "lifetime" || tier === "family" ? "payment" : "subscription",
       line_items: [
         {
           price_data: {
             currency: "brl",
             product_data: {
-              name: `Lexio Underground - ${price.description}`,
+              name: `Lexio Underground - ${product.description}`,
               description:
-                tier === "lifetime"
-                  ? "Acesso vitalício"
-                  : `Assinatura ${price.description.toLowerCase()}`,
+                tier === "lifetime" || tier === "family"
+                  ? `Acesso ${product.description.toLowerCase()}`
+                  : `Assinatura ${product.description.toLowerCase()}`,
             },
-            unit_amount: price.amount,
+            unit_amount: product.amount,
             recurring:
-              tier === "lifetime"
-                ? undefined
-                : { interval: tier === "annual" ? "year" : "month" },
+              tier === "lifetime" || tier === "family" ? undefined : { interval: tier === "annual" ? "year" : "month" },
           },
           quantity: 1,
         },
@@ -104,9 +130,6 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ url: session.url });
   } catch (err) {
     console.error("Checkout error:", err);
-    return NextResponse.json(
-      { error: "Failed to create checkout session" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Failed to create checkout session" }, { status: 500 });
   }
 }

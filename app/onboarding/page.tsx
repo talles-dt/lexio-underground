@@ -6,8 +6,8 @@ import { useAuth } from "@/lib/auth";
 import { colors, spacing, radius, typography, duration } from "@/theme/tokens";
 
 // ─── STEP DEFINITIONS ───────────────────────────────────────
-// The 10-step onboarding flow per lexio-vault/05-onboarding/first-time-flow.md
-// Steps 5 (Cartografa) and 8 (Pulse) redirect to existing pages —
+// The 11-step onboarding flow (added subscription step after report)
+// Steps 5 (Cartografa) and 9 (Pulse) redirect to existing pages —
 // the wizard tracks progress in localStorage and resumes on return.
 
 type Step =
@@ -17,14 +17,15 @@ type Step =
   | "email"          // 4
   | "cartografa"     // 5 → redirects to /diagnostico
   | "report"         // 6 → shown after /diagnostico completion
-  | "roadmap"        // 7
-  | "pulse"          // 8 → redirects to /pulse
-  | "palace-tour"    // 9
-  | "account";       // 10
+  | "subscription"   // 7 → choose subscription or stay free
+  | "roadmap"       // 8
+  | "pulse"          // 9 → redirects to /pulse
+  | "palace-tour"    // 10
+  | "account";       // 11
 
 const STEP_ORDER: Step[] = [
   "landing", "language", "preamble", "email", "cartografa",
-  "report", "roadmap", "pulse", "palace-tour", "account",
+  "report", "subscription", "roadmap", "pulse", "palace-tour", "account",
 ];
 
 const STEP_TITLES: Record<Step, string> = {
@@ -34,6 +35,7 @@ const STEP_TITLES: Record<Step, string> = {
   email: "Save your progress",
   cartografa: "Cartografa",
   report: "Your Map of Ignorance",
+  subscription: "Choose your plan",
   roadmap: "Your first month",
   pulse: "First Pulse",
   "palace-tour": "Your Palace",
