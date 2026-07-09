@@ -147,6 +147,9 @@ export default function DiagnosticoPage() {
         }
       } catch {
         // Resume failed — start fresh
+        if (mountedRef.current) {
+          setIsResuming(false);
+        }
       }
 
       // No resumable session — create fresh
