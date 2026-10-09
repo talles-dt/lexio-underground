@@ -21,6 +21,7 @@ interface Room {
 interface PalaceBlueprintProps {
   rooms?: Room[];
   maturityStage?: MaturityStage;
+  stageLabel?: string;
   onRoomClick?: (roomId: string) => void;
 }
 
@@ -113,7 +114,7 @@ function Room3D({
   const opacity = unlocked ? 1 : 0.3;
   const strokeW = hovered && unlocked ? 2.5 : 1.5;
   const strokeColor = unlocked ? color : colors.zinc;
-  const fillColor = unlocked ? `${color}18` : "transparent";
+  const fillColor = unlocked ? `color-mix(in srgb, ${color} 9.4%, transparent)` : "transparent";
   const zIndex = Math.round(1000 - ty + tz);
 
   return (
@@ -147,7 +148,7 @@ function Room3D({
           transformStyle: "preserve-3d",
           backdropFilter: hovered && unlocked ? "blur(2px)" : "none",
           boxShadow: hovered && unlocked
-            ? `0 0 20px ${color}40, 0 0 40px ${color}20`
+            ? `0 0 20px color-mix(in srgb, ${color} 25.1%, transparent), 0 0 40px color-mix(in srgb, ${color} 12.5%, transparent)`
             : `0 2px 8px rgba(0,0,0,0.3)`,
           transition: `all ${duration.normal}ms ease-out`,
         }}
@@ -207,9 +208,9 @@ function Room3D({
               top: 0,
               width: ROOM_DEPTH,
               height: "100%",
-              backgroundColor: `${color}08`,
-              borderRight: `1px solid ${color}30`,
-              borderTop: `1px solid ${color}30`,
+              backgroundColor: `color-mix(in srgb, ${color} 3.1%, transparent)`,
+              borderRight: `1px solid color-mix(in srgb, ${color} 18.8%, transparent)`,
+              borderTop: `1px solid color-mix(in srgb, ${color} 18.8%, transparent)`,
               transform: `rotateY(90deg) translateZ(${ROOM_DEPTH / 2}px)`,
               transformOrigin: "right center",
               borderRadius: `0 4px 4px 0`,
@@ -223,9 +224,9 @@ function Room3D({
               left: 0,
               width: "100%",
               height: ROOM_DEPTH,
-              backgroundColor: `${color}05`,
-              borderBottom: `1px solid ${color}20`,
-              borderLeft: `1px solid ${color}20`,
+              backgroundColor: `color-mix(in srgb, ${color} 2.0%, transparent)`,
+              borderBottom: `1px solid color-mix(in srgb, ${color} 12.5%, transparent)`,
+              borderLeft: `1px solid color-mix(in srgb, ${color} 12.5%, transparent)`,
               transform: `rotateX(-90deg) translateZ(${ROOM_DEPTH / 2}px)`,
               transformOrigin: "bottom center",
               borderRadius: `0 0 4px 4px`,
@@ -285,7 +286,7 @@ function Door3D({
       <div style={{
         width: "100%",
         height: "100%",
-        background: `repeating-linear-gradient(90deg, ${colors.phosphorFixedDim}80 0px, ${colors.phosphorFixedDim}80 6px, transparent 6px, transparent 12px)`,
+        background: `repeating-linear-gradient(90deg, color-mix(in srgb, ${colors.phosphorFixedDim} 50.2%, transparent) 0px, color-mix(in srgb, ${colors.phosphorFixedDim} 50.2%, transparent) 6px, transparent 6px, transparent 12px)`,
         borderRadius: 2,
       }} />
     </div>
@@ -299,12 +300,21 @@ function Door3D({
 const PalaceBlueprint: React.FC<PalaceBlueprintProps> = ({
   rooms: propRooms,
   maturityStage = "roots",
+  stageLabel,
   onRoomClick,
 }) => {
   const [hoveredRoom, setHoveredRoom] = useState<string | null>(null);
   const [revealedRooms, setRevealedRooms] = useState<Set<string>>(new Set());
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
+  const [sceneScale, setSceneScale] = useState(1);
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+    const observer = new ResizeObserver(([entry]) => setSceneScale(Math.min(1, entry.contentRect.width / 600)));
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, []);
 
   const rooms = (propRooms && propRooms.length > 0 ? propRooms : ROOM_DEFS).map((r) => {
     const def = ROOM_DEFS.find((d) => d.id === r.id);
@@ -381,7 +391,7 @@ const PalaceBlueprint: React.FC<PalaceBlueprintProps> = ({
         letterSpacing: 3,
         transition: `color ${duration.normal}ms ease-out`,
       }}>
-        {maturityStage === "underground" ? "⟐ The Underground ⟐" : maturityStage}
+        {stageLabel || (maturityStage === "underground" ? "⟐ The Underground ⟐" : maturityStage)}
       </div>
 
       {/* 3D Scene container */}
@@ -391,7 +401,7 @@ const PalaceBlueprint: React.FC<PalaceBlueprintProps> = ({
           width: "100%",
           height: 340,
           transformStyle: "preserve-3d",
-          transform: `rotateX(${rotX}deg) rotateZ(${rotZ}deg)`,
+          transform: `scale(${sceneScale}) rotateX(${rotX}deg) rotateZ(${rotZ}deg)`,
           transition: "transform 0.15s ease-out",
         }}
       >
@@ -406,12 +416,12 @@ const PalaceBlueprint: React.FC<PalaceBlueprintProps> = ({
             transform: "translate(-50%, -50%) rotateX(90deg) translateZ(-10px)",
             transformStyle: "preserve-3d",
             backgroundImage: `
-              linear-gradient(${colors.borderSubtle}20 1px, transparent 1px),
-              linear-gradient(90deg, ${colors.borderSubtle}20 1px, transparent 1px)
+              linear-gradient(color-mix(in srgb, ${colors.borderSubtle} 12.5%, transparent) 1px, transparent 1px),
+              linear-gradient(90deg, color-mix(in srgb, ${colors.borderSubtle} 12.5%, transparent) 1px, transparent 1px)
             `,
             backgroundSize: "40px 40px",
             borderRadius: 12,
-            border: `1px solid ${colors.borderSubtle}30`,
+            border: `1px solid color-mix(in srgb, ${colors.borderSubtle} 18.8%, transparent)`,
           }}
         />
 
@@ -452,7 +462,7 @@ const PalaceBlueprint: React.FC<PalaceBlueprintProps> = ({
         })}
 
         {/* "New Rooms" indicator */}
-        {(maturityStage === "branches" || maturityStage === "canopy" || maturityStage === "underground") && (
+        {!stageLabel && (maturityStage === "branches" || maturityStage === "canopy" || maturityStage === "underground") && (
           <div
             style={{
               position: "absolute",
@@ -508,7 +518,7 @@ const PalaceBlueprint: React.FC<PalaceBlueprintProps> = ({
           transform: "translateX(-50%)",
           width: 200,
           height: 40,
-          background: `radial-gradient(ellipse, ${colors.phosphor}10 0%, transparent 70%)`,
+          background: `radial-gradient(ellipse, color-mix(in srgb, ${colors.phosphor} 6.3%, transparent) 0%, transparent 70%)`,
           borderRadius: "50%",
           pointerEvents: "none",
         }}

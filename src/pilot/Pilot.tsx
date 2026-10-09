@@ -8,6 +8,16 @@ import phonos from './phonos-sessions.json';
 import { COMPONENTS, normalizeAnswer, palaceItems, type Component } from './progress';
 import { usePractice } from './usePractice';
 import { Listen, Recorder } from './Recorder';
+import PalaceBlueprint from '@/components/PalaceBlueprint';
+import { GrainOverlay } from '@/lib/stitch-motion';
+const glyphs: Record<Component,string> = {pulse:'ϟ',palace:'⌂',shadow:'◌',phonos:'∿',syntaxis:'⟨⟩'};
+const descriptions: Record<Component,string> = {
+  pulse:'Um pequeno encontro com a língua. Uma memória a mais.',
+  palace:'Dê um lugar ao que aprendeu. Volte até se tornar familiar.',
+  shadow:'Encontre sua voz, um turno de cada vez.',
+  phonos:'Escute de perto. Perceba o gesto. Experimente outra vez.',
+  syntaxis:'A arquitetura da língua, revelada por dentro.',
+};
 const accountsEnabled = process.env.NEXT_PUBLIC_PILOT_ACCOUNTS_ENABLED === 'true';
 const labels: Record<Component,string> = {pulse:'Pulse',palace:'Palácio',shadow:'Shadow',phonos:'Phonos',syntaxis:'Syntaxis'};
 export default function Pilot({ initialComponent = 'pulse' }: { initialComponent?: Component }) {
@@ -32,6 +42,7 @@ function Workspace({ identity, account, onSignOut, initialComponent }: {identity
   const session=phonos.sessions.find(s=>s.id===selected)||phonos.sessions[0];
   const items=palaceItems(practice.events);
   const [activityIndex,setActivityIndex]=useState(0);
+  const [selectedRoom,setSelectedRoom]=useState('grammar');
   const activity=unit?.activities[activityIndex]||unit?.activities[0];
   const reset = () => { setDraft('');setFeedback('');setRevealed(false);setReflection('');setRecorded({});setActivityIndex(0);setShadowStep(0); };
   const move = (c:Component) => {setComponent(c);setSelected('');reset();};
@@ -41,14 +52,19 @@ function Workspace({ identity, account, onSignOut, initialComponent }: {identity
   };
   const latest = (id:string) => [...practice.events].reverse().find(e=>e.activity_id===id);
   const shadowPrompts=['Tell me your name and something you enjoy.','What do you usually do in the morning?','Ask me a question about my routine.'];
-  return <main className="lexio-pilot">
-    <header className="pilot-header"><div><p className="eyebrow">LEXIO UNDERGROUND · PILOTO DE INGLÊS</p><h1>Um espaço para praticar.</h1><p>Comece pequeno. Perceba a forma, experimente a voz e volte ao que importa.</p></div><div>{account?<button onClick={()=>void onSignOut()}>Sair da conta</button>:accountsEnabled ? <Link href="/signin">Entrar na minha conta</Link> : <span className="muted">Prática gratuita · sem cadastro</span>}</div></header>
-    <aside className="pilot-notice">Acervo inicial: estruturas e Pulse do pré-A1 ao A2; Phonos com foco A2–B1. Shadow oferece ensaio guiado nesta versão. A cobertura completa até C1 está em construção.</aside>
-    <nav aria-label="Componentes do Lexio" className="pilot-nav">{COMPONENTS.map(c=><button key={c} aria-current={component===c?'page':undefined} onClick={()=>move(c)}>{labels[c]}</button>)}</nav>
+  return <main className="lexio-pilot" data-component={component}>
+    <GrainOverlay/>
+    <div className="pilot-masthead"><Link href="/" className="lexio-wordmark">LEXIO <span>UNDERGROUND</span></Link><span className="pilot-edition">EN / ACERVO PILOTO</span>{account?<button className="quiet-button" onClick={()=>void onSignOut()}>Sair</button>:accountsEnabled?<Link href="/signin">Entrar</Link>:<span className="pilot-guest">Caderno local</span>}</div>
+    <header className="pilot-header"><div><p className="eyebrow">ESTUDO · MEMÓRIA · DESCOBERTA</p><h1>{labels[component]}</h1><p className="pilot-lede">{descriptions[component]}</p></div><div className="component-sigil" aria-hidden="true"><span>{glyphs[component]}</span></div></header>
+    <nav aria-label="Componentes do Lexio" className="pilot-nav">{COMPONENTS.map(c=><button key={c} aria-label={labels[c]} aria-current={component===c?'page':undefined} onClick={()=>move(c)}><span className="nav-glyph" aria-hidden="true">{glyphs[c]}</span><span>{labels[c]}</span></button>)}</nav>
+    <div className="pilot-statline"><span><i/> Prática em inglês</span><span>{items.length} memórias guardadas</span><span>{items.filter(i=>i.due).length} para revisitar</span></div>
+    <details className="pilot-notice"><summary>Sobre este acervo</summary><p>Estruturas e Pulse do pré-A1 ao A2; Phonos com foco A2–B1. Shadow oferece ensaio guiado nesta versão. A cobertura completa até C1 está em construção.</p></details>
+    <details className="notebook-tools"><summary>Seu caderno · histórico e cópia de segurança</summary>
     <div className="pilot-tools"><p>{account?'Histórico desta conta neste navegador.':'Modo visitante: histórico apenas neste navegador. Em aparelho compartilhado, exporte e remova seus dados antes de sair.'}</p><button onClick={practice.exportHistory}>Exportar histórico</button><label className="import-label">Importar histórico<input aria-label="Importar histórico" type="file" accept="application/json" onChange={e=>{const f=e.target.files?.[0];if(f)void practice.importHistory(f);e.target.value='';}}/></label></div>
     {account && <details><summary>Sincronizar entre dispositivos</summary><p>Envia respostas escritas, reflexões e revisões para sua conta. Nenhum áudio é enviado. O histórico de visitante pode ser exportado e importado por você.</p><label><input type="checkbox" checked={cloudConsent} onChange={e=>setCloudConsent(e.target.checked)}/> Quero sincronizar este histórico com minha conta.</label><button disabled={!cloudConsent||practice.syncing||!practice.ready} onClick={()=>void practice.synchronize()}>Sincronizar agora</button><button disabled={practice.syncing} onClick={()=>{if(window.confirm("Apagar o histórico remoto desta conta? A cópia local permanece e só será reenviada se você sincronizar novamente."))void practice.deleteRemote();}}>Apagar cópia da conta</button></details>}
+    </details>
     <p role="status" className="save-status">{practice.message || (practice.ready?'Histórico pronto.':'Abrindo histórico…')}</p>
-    <section className="pilot-panel" aria-labelledby="component-title"><p className="eyebrow">PRÁTICA · {labels[component].toUpperCase()}</p><h2 id="component-title">{labels[component]}</h2>
+    <section className="pilot-panel" aria-labelledby="component-title"><div className="panel-heading"><p className="eyebrow">{component === "palace" ? "PLANTA DA MEMÓRIA" : "CADERNO DE PRÁTICA"}</p><h2 id="component-title">{component === "pulse" ? "Seu próximo fragmento" : component === "syntaxis" ? "Perceber. Transformar. Construir." : component === "phonos" ? "O som e o gesto" : component === "shadow" ? "Entre na conversa" : "Seu Palácio"}</h2><span className="panel-index" aria-hidden="true">{String(COMPONENTS.indexOf(component)+1).padStart(2,"0")}</span></div>
       {(component==='pulse'||component==='syntaxis') && <label>Faixa do conteúdo — escolha livre, sem atribuir nível ao aluno<select value={level} onChange={e=>{setLevel(e.target.value as SyntaxisLevel);setSelected('');reset();}}>{(['pre_a1','a1','a2'] as SyntaxisLevel[]).map(l=><option key={l} value={l}>{LEVEL_LABELS[l]}</option>)}</select></label>}
       {component==='pulse'&&atom&&<>
         <label>Prática breve<select value={atom.id} onChange={e=>{setSelected(e.target.value);reset();}}>{atoms.map((a,i)=><option value={a.id} key={a.id}>{i+1}. {a.prompt}</option>)}</select></label>
@@ -84,10 +100,17 @@ function Workspace({ identity, account, onSignOut, initialComponent }: {identity
         <button disabled={!practice.ready||!recorded[shadowStep]||!reflection.trim()} onClick={()=>{if(practice.record({component:'shadow',activity_id:`routine-turn-${shadowStep+1}`,kind:'reflection',payload:{reflection,recorded:true,mode:'guided-rehearsal'}})){setFeedback('Reflexão salva. O áudio permanece apenas nesta tela.');}}}>Guardar reflexão do turno</button>
         <button disabled={shadowStep===2||!latest(`routine-turn-${shadowStep+1}`)} onClick={()=>{setShadowStep(s=>s+1);setReflection('');setFeedback('');}}>Próximo turno</button><button onClick={()=>{setShadowStep(0);setReflection('');setRecorded({});}}>Recomeçar ensaio</button>
       </>}
-      {component==='palace'&&<><p>{items.length} itens guardados · {items.filter(i=>i.due).length} para revisar. As datas organizam sua prática; não medem proficiência.</p>{!items.length&&<><p>Guarde seu primeiro exemplo no Pulse ou no Phrasal Lab.</p><button onClick={()=>move('pulse')}>Praticar no Pulse</button></>}{items.map(item=><article className="memory-item" key={item.id}><p className="eyebrow">{String(item.payload.room||'Estruturas')} · {item.due?'REVISAR':'PRÓXIMA REVISÃO: '+new Date(item.dueAt).toLocaleDateString('pt-BR')}</p><h3>{String(item.payload.title)}</h3><details><summary>Tente lembrar antes de revelar</summary><p lang="en">{String(item.payload.content)}</p><p>{String(item.payload.explanation)}</p><Listen text={String(item.payload.content)}/><div>{(['again','remembered'] as const).map(recall=><button key={recall} disabled={!practice.ready} onClick={()=>practice.record({component:'palace',activity_id:item.activity_id,kind:'review',payload:{recall}})}>{recall==='again'?'Quero rever em breve':'Consegui lembrar'}</button>)}</div></details></article>)}</>}
+      {component==='palace'&&<><div className="palace-blueprint-restored"><PalaceBlueprint maturityStage="branches" stageLabel="Planta aberta · cinco salas" rooms={[
+        {id:'entrance',name:'Entrada',pillar:'none',unlocked:true,items:0,connectedTo:['grammar','vocab']},
+        {id:'grammar',name:'Estruturas',pillar:'grammar',unlocked:true,items:items.length,connectedTo:['entrance','logic']},
+        {id:'vocab',name:'Vocabulário',pillar:'vocab',unlocked:true,items:0,connectedTo:['entrance','culture']},
+        {id:'logic',name:'Lógica',pillar:'logic',unlocked:true,items:0,connectedTo:['grammar','comm']},
+        {id:'culture',name:'Cultura',pillar:'culture',unlocked:true,items:0,connectedTo:['vocab','comm']},
+        {id:'comm',name:'Comunicação',pillar:'comm',unlocked:true,items:0,connectedTo:['logic','culture']},
+      ]} onRoomClick={setSelectedRoom}/></div><div className="room-tabs" aria-label="Salas do Palácio">{[['grammar','Estruturas'],['vocab','Vocabulário'],['logic','Lógica'],['culture','Cultura'],['comm','Comunicação']].map(([id,name])=><button key={id} aria-current={selectedRoom===id?'true':undefined} onClick={()=>setSelectedRoom(id)}>{name}</button>)}</div>{selectedRoom!=='grammar'&&<p className="room-empty">Esta sala ainda não tem memórias guardadas. Os exemplos desta primeira coleção ficam em Estruturas.</p>}<p>{items.length} itens guardados · {items.filter(i=>i.due).length} para revisar. As datas organizam sua prática; não medem proficiência.</p>{!items.length&&<><p>Guarde seu primeiro exemplo no Pulse ou no Phrasal Lab.</p><button onClick={()=>move('pulse')}>Praticar no Pulse</button></>}{(selectedRoom==='grammar'?items:[]).map(item=><article className="memory-item" key={item.id}><p className="eyebrow">{String(item.payload.room||'Estruturas')} · {item.due?'REVISAR':'PRÓXIMA REVISÃO: '+new Date(item.dueAt).toLocaleDateString('pt-BR')}</p><h3>{String(item.payload.title)}</h3><details><summary>Tente lembrar antes de revelar</summary><p lang="en">{String(item.payload.content)}</p><p>{String(item.payload.explanation)}</p><Listen text={String(item.payload.content)}/><div>{(['again','remembered'] as const).map(recall=><button key={recall} disabled={!practice.ready} onClick={()=>practice.record({component:'palace',activity_id:item.activity_id,kind:'review',payload:{recall}})}>{recall==='again'?'Quero rever em breve':'Consegui lembrar'}</button>)}</div></details></article>)}</>}
       <p role="status">{feedback}</p>
     </section>
-    <aside className="cartografa"><h2>Cartógrafa</h2><p>O teste de nivelamento é uma frente separada e está em revisão. Você pode praticar sem fazer o teste. A faixa de uma atividade não atribui um nível a você.</p></aside>
+    <aside className="cartografa"><div className="cartografa-symbol" aria-hidden="true">⌖</div><div><p className="eyebrow">UM MAPA ANTES DO CAMINHO</p><h2>Cartógrafa</h2><p>O teste de nivelamento é uma frente separada e está em revisão. Você pode praticar sem fazer o teste. A faixa de uma atividade não atribui um nível a você.</p><Link href="/diagnostico">Sobre o nivelamento →</Link></div></aside>
     <footer><p>{practice.events.length} registros de prática neste histórico. Gravações são temporárias e se perdem ao trocar de atividade; baixe as que quiser guardar.</p><p>Para apagar o histórico deste navegador, exporte primeiro se desejar uma cópia.</p><button onClick={()=>{if(window.confirm('Apagar apenas este histórico local? Uma cópia sincronizada, se existir, permanece na conta.')){localStorage.removeItem(`lexio-practice-v1:${identity}`);window.location.reload();}}}>Apagar histórico local</button><p><Link href="/privacy">Privacidade do piloto</Link></p></footer>
   </main>;
 }
