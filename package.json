@@ -10,7 +10,8 @@
     "format": "prettier --write .",
     "typecheck": "tsc --noEmit",
     "lint": "eslint app src middleware.ts --ext .ts,.tsx",
-    "test:ci": "jest --runInBand"
+    "test:ci": "jest --runInBand",
+    "test:security": "python3 scripts/test-pilot-security.py"
   },
   "dependencies": {
     "@radix-ui/react-dropdown-menu": "^2.0.6",

@@ -27,7 +27,7 @@ Catálogo Syntaxis: checkout local do trabalho de 06/10/2026, arquivos `src/synt
 
 ## Validação
 
-Executar `npm ci`, `npm run lint`, `npm run typecheck`, `npm run test:ci`, `npm run build`. A pipeline de CI contém essas etapas. Os testes legados não substituem os testes do novo percurso.
+Executar `npm ci`, `npm run lint`, `npm run typecheck`, `npm run test:ci`, `npm run build`. A pipeline de CI contém essas etapas. Para reproduzir a bateria SQL localmente, execute `npm run test:security` com Docker disponível; o runner cria um banco descartável sem rede e nunca usa o banco do projeto. Os testes legados não substituem os testes do novo percurso.
 
 `tests/pilot/progress.test.ts` cobre validação de histórico, separação de identidades, deduplicação, revisão e quarentena. `tests/pilot/security.sql` foi executado em PostgreSQL descartável, com os papéis e esquema Auth mínimos e as migrações base relevantes: bloqueio de elevação de role/tier, isolamento de leitura/escrita/exclusão, imutabilidade de eventos, reenvio idempotente e negação a anônimos.
 
