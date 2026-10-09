@@ -50,5 +50,5 @@ A remoção de superfícies antigas neste piloto não extingue direitos comercia
 - Build, tipos e lint passaram; lint mantém dois avisos em componentes legados fora do piloto.
 - 89 testes passaram, um teste legado permanece ignorado. A bateria SQL de isolamento passou no banco descartável.
 - No preview, verificado Pulse → item no Palácio → recarga mantendo o item. Probes autenticados retornaram 410 para Zernio, 503 para os recursos em quarentena e 200 para liveness.
-- Auditoria de dependências de execução após limpeza: zero alertas críticos; sete alertas restantes (cinco altos e dois moderados), inclusive dependências transitivas. F18 permanece parcial e requer tratamento antes de promoção ampla.
+- Auditoria de dependências de execução após limpeza: zero alertas críticos; sete alertas restantes (cinco altos e dois moderados), inclusive dependências transitivas. F18 permanece parcial e requer tratamento antes de promoção ampla. Incluindo ferramentas de desenvolvimento, a auditoria registra 51 alertas (um crítico, 45 altos e cinco moderados); esses números não equivalem a 51 falhas exploráveis da aplicação.
 - Microfone real, sincronização remota, OAuth, validação pedagógica, Cartógrafa, Shadow com IA e currículo completo até C1 não foram certificados nesta entrega.
