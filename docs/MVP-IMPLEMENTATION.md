@@ -46,7 +46,7 @@ A remoção de superfícies antigas neste piloto não extingue direitos comercia
 
 ## Resultado desta execução
 
-- Preview de revisão: https://code-2dgcsvr1c-tallestonatto-5836s-projects.vercel.app/learn (pode exigir acesso Vercel). O domínio de produção existente não foi promovido.
+- Preview de revisão: https://code-j7vn0otxu-tallestonatto-5836s-projects.vercel.app/learn (pode exigir acesso Vercel). O domínio de produção existente não foi promovido.
 - Build, tipos e lint passaram; lint mantém dois avisos em componentes legados; o Palácio reutiliza um deles.
 - 89 testes passaram, um teste legado permanece ignorado. A bateria SQL de isolamento passou no banco descartável.
 - No preview, verificado Pulse → item no Palácio → recarga mantendo o item. Probes autenticados retornaram 410 para Zernio, 503 para os recursos em quarentena e 200 para liveness.
@@ -58,3 +58,5 @@ A remoção de superfícies antigas neste piloto não extingue direitos comercia
 A primeira interface do piloto simplificou excessivamente a identidade do produto. Esta revisão recupera a entrada original, a textura, a paleta obsidiana/marfim/fósforo, as famílias tipográficas do projeto e a planta tridimensional existente do Palácio. As atividades ficam nessa linguagem visual, com navegação entre os cinco componentes e barra inferior no celular. Cartógrafa continua separada e recebe uma tela de aviso consistente.
 
 A planta se ajusta à largura disponível; as salas também têm botões acessíveis. A aparência da planta não representa nível adquirido nem desbloqueio pedagógico. O salvamento local continua funcionando: resposta no Pulse, envio ao Palácio e navegação com o item preservado foram conferidos novamente em 390 px. Build passou e os 89 testes existentes passaram (um ignorado). Isso não certifica o currículo completo até C1 nem todos os fluxos antigos.
+
+Prévia visual publicada e conferida no navegador: `59da974`. A compilação remota também passou. O domínio de produção existente permanece sem promoção.
