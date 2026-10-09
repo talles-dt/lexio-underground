@@ -23,7 +23,7 @@ Apply the SQL file once Supabase is accessible:
 ```bash
 supabase db reset --local
 # OR
-psql "postgresql://postgres:postgres@localhost:5432/postgres" -f migrations/0002_diagnostic_sessions.sql
+psql "[CREDENCIAL REMOVIDA — rotacionar no provedor] -f migrations/0002_diagnostic_sessions.sql
 ```
 
 ## 3. Real Supabase Integration

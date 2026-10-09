@@ -147,6 +147,7 @@ export const useLearnerStore = create<LearnerState>((set, get) => ({
           .single(),
       ]);
       const data = progRes.ok ? await progRes.json() : {};
+      if (get().userId !== userId) return;
       set({
         language,
         maturityStage: (data.maturity_stage as MaturityStage) || "roots",
@@ -157,7 +158,7 @@ export const useLearnerStore = create<LearnerState>((set, get) => ({
         isLoaded: true,
       });
     } catch {
-      set({ isLoaded: true });
+      if (get().userId === userId) set({ isLoaded: true });
     }
   },
 
@@ -182,7 +183,7 @@ export const useLearnerStore = create<LearnerState>((set, get) => ({
     } catch {
       // Will retry on next debounced sync
     } finally {
-      set({ isSyncing: false });
+      if (get().userId === userId) set({ isSyncing: false });
     }
   },
 

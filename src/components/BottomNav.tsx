@@ -53,12 +53,14 @@ const NAV_ITEMS: NavItem[] = [
 
 export function BottomNav() {
   const pathname = usePathname();
+  const isPilot = ["/learn", "/pulse", "/palace", "/phonos", "/syntaxis", "/conversation-shadow", "/privacy"].includes(pathname);
   const hasAccess = useHasAccess();
 
   // Hide on auth routes or when diagnostic not yet complete
   const hiddenRoutes = ["/onboarding", "/signin", "/auth"];
   if (hiddenRoutes.some((r) => pathname.startsWith(r)) || !hasAccess) return null;
 
+  if (isPilot) return null;
   return (
     <nav
       style={{

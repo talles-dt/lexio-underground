@@ -1,29 +1,10 @@
 {
   "root": true,
-  "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
   "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
-    "plugin:react-native/all"
+    "next/core-web-vitals"
   ],
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  },
   "rules": {
-    "react-native/no-unused-styles": "error",
-    "react-native/split-platform-components": "error",
-    "react-native/no-raw-text": "error",
-    "react-native/no-color-literals": "error",
-    "react/react-in-jsx-scope": "off"
-  },
-  "env": {
-    "node": true,
-    "es6": true,
-    "jest": true,
-    "react-native/react-native": true
+    "react/no-unescaped-entities": "off",
+    "react-hooks/exhaustive-deps": "warn"
   }
 }

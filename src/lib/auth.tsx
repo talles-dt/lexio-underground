@@ -14,63 +14,13 @@ import type { User, Session } from "@supabase/supabase-js";
 import type { CookieOptions } from "@supabase/ssr";
 import { useLearnerStore } from "@/stores/learnerStore";
 
-// ─── Cookie helpers ────────────────────────────────────────────
-const COOKIE_PREFIX = "sb";
-
-function getCookie(name: string): string | null {
-  const match = document.cookie.match(new RegExp(`(^| )${name}=([^;]+)`));
-  return match ? decodeURIComponent(match[2]) : null;
-}
-
-function setCookie(name: string, value: string, options?: CookieOptions) {
-  let cookie = `${name}=${encodeURIComponent(value)}`;
-  if (options?.maxAge) cookie += `; max-age=${options.maxAge}`;
-  if (options?.path) cookie += `; path=${options.path}`;
-  if (options?.domain) cookie += `; domain=${options.domain}`;
-  if (options?.sameSite) cookie += `; samesite=${options.sameSite}`;
-  if (options?.secure || typeof window !== "undefined" && window.location.protocol === "https:") {
-    cookie += "; secure";
-  }
-  document.cookie = cookie;
-}
-
-function removeCookie(name: string) {
-  document.cookie = `${name}=; max-age=0; path=/`;
-}
-
-// ─── Supabase client factory ───────────────────────────────────
+import { createBrowserClient } from "@supabase/ssr";
 let _supabase: SupabaseClient | null = null;
-
 function getSupabase(): SupabaseClient {
-  if (!_supabase) {
-    const url = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
-    const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
-    if (!url || !key) {
-      return createClient("https://placeholder.supabase.co", "placeholder");
-    }
-
-    _supabase = createClient(url, key, {
-      auth: {
-        storage: {
-          getItem: (key: string) => {
-            // Try cookie first, then localStorage
-            return getCookie(key) ?? localStorage.getItem(key);
-          },
-          setItem: (key: string, value: string) => {
-            setCookie(key, value, { maxAge: 60 * 60 * 24 * 365, path: "/", sameSite: "lax" });
-            localStorage.setItem(key, value);
-          },
-          removeItem: (key: string) => {
-            removeCookie(key);
-            localStorage.removeItem(key);
-          },
-        },
-        autoRefreshToken: true,
-        persistSession: true,
-        detectSessionInUrl: true,
-      },
-    });
-  }
+  if (!_supabase) _supabase = createBrowserClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL || "https://placeholder.supabase.co",
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "placeholder"
+  );
   return _supabase;
 }
 
@@ -110,6 +60,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   // Listen for auth changes
   useEffect(() => {
+    if (process.env.NEXT_PUBLIC_PILOT_ACCOUNTS_ENABLED !== "true") {
+      setState({ user: null, session: null, loading: false });
+      return;
+    }
     const client = getSupabase();
 
     // Get initial session
@@ -119,7 +73,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         session,
         loading: false,
       });
-    });
+    }).catch(() => setState({ user: null, session: null, loading: false }));
 
     // Listen for auth state changes
     const {
@@ -139,8 +93,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const setAuth = useLearnerStore((s) => s.setAuth);
   useEffect(() => {
     if (state.user && !state.loading) {
+      if (useLearnerStore.getState().userId !== state.user.id) useLearnerStore.getState().reset();
       setAuth(state.user.id, state.user.email || "");
-    }
+    } else if (!state.loading) { useLearnerStore.getState().reset(); }
   }, [state.user, state.loading, setAuth]);
 
   // Sign up with email/password
@@ -193,13 +148,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   // Sign out
   const signOut = useCallback(async () => {
     await getSupabase().auth.signOut();
-    // Clear all auth cookies
-    document.cookie.split(";").forEach((cookie) => {
-      const name = cookie.split("=")[0].trim();
-      if (name.startsWith("sb-") || name.startsWith("supabase")) {
-        removeCookie(name);
-      }
-    });
+    useLearnerStore.getState().reset();
   }, []);
 
   // Link a diagnostic session to the current user

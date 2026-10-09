@@ -1,3 +1,4 @@
+import { createBrowserClient } from "@supabase/ssr";
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
 
 const supabaseUrl =
@@ -12,7 +13,7 @@ const supabaseServiceKey =
   "";
 
 // Regular client (for reads, auth)
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+export const supabase = createBrowserClient(supabaseUrl || "https://placeholder.supabase.co", supabaseAnonKey || "placeholder");
 
 // Admin client (bypasses RLS — for inserts/writes in API routes)
 // Throws if service key is missing — fail fast, don't silently degrade
@@ -26,7 +27,7 @@ export function getSupabaseAdmin(): SupabaseClient {
         "Admin APIs cannot function without the service role key."
       );
     }
-    _supabaseAdmin = createClient(supabaseUrl, supabaseServiceKey);
+    _supabaseAdmin = createClient(supabaseUrl, supabaseServiceKey, { auth: { persistSession: false, autoRefreshToken: false } });
   }
   return _supabaseAdmin;
 }

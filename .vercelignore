@@ -1,0 +1,16 @@
+.env*
+*.backup
+*.bak
+TODO_USER.md
+node_modules
+.next
+.git
+.expo
+dist
+supabase
+scripts
+tests
+work
+outputs
+debug-*.txt
+*.log

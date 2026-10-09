@@ -138,7 +138,7 @@ export default function SignInPage() {
         setLoading(false);
       }
     },
-    [email, password, tab]
+    [email, password, tab, router]
   );
 
   const tabActiveStyle: React.CSSProperties = {

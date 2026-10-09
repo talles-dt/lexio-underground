@@ -1,13 +1,5 @@
 {
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/next",
-      "config": {
-        "distDir": ".next"
-      }
-    }
-  ],
-  "routes": [],
-  "cleanUrls": true
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "installCommand": "npm ci --no-audit --no-fund"
 }
