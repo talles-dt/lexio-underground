@@ -11,12 +11,12 @@ def command(args, **kwargs):
     return subprocess.run(args, check=True, capture_output=True, text=True, **kwargs)
 
 def sql(content):
-    return command(['docker', 'exec', '-i', name, 'psql', '-U', 'postgres', '-v', 'ON_ERROR_STOP=1'], input=content)
+    return command(['docker', 'exec', '-i', name, 'psql', '-h', '127.0.0.1', '-U', 'postgres', '-v', 'ON_ERROR_STOP=1'], input=content)
 
 try:
     command(['docker', 'run', '--name', name, '--network', 'none', '-e', 'POSTGRES_HOST_AUTH_METHOD=trust', '-d', 'postgres:16-alpine'])
     for attempt in range(30):
-        if subprocess.run(['docker', 'exec', name, 'pg_isready', '-U', 'postgres'], capture_output=True).returncode == 0:
+        if subprocess.run(['docker', 'exec', name, 'pg_isready', '-h', '127.0.0.1', '-U', 'postgres'], capture_output=True).returncode == 0:
             break
         time.sleep(0.5)
     else:
