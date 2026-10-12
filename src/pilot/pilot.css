@@ -28,3 +28,5 @@
 
 .lexio-pilot .room-tabs button{background:transparent;color:var(--ivory)}
 .lexio-pilot .room-tabs button[aria-current]{background:color-mix(in srgb,var(--accent) 12%,var(--obsidian));border-color:var(--accent);color:var(--ivory)}
+
+.lexio-pilot .review-filter{display:flex;align-items:center;gap:12px;margin:24px 0}.review-filter input{width:auto;accent-color:var(--phosphor)}

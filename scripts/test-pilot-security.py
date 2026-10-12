@@ -30,7 +30,7 @@ CREATE TABLE auth.users(id uuid PRIMARY KEY, email text, raw_user_meta_data json
 CREATE FUNCTION auth.uid() RETURNS uuid LANGUAGE sql STABLE AS $$ SELECT nullif(current_setting('request.jwt.claim.sub', true),'')::uuid $$;
 GRANT USAGE ON SCHEMA auth,public TO anon,authenticated,service_role;
 GRANT EXECUTE ON FUNCTION auth.uid() TO anon,authenticated,service_role;''')
-    for migration in ['20260528000000_create_diagnostic_sessions.sql', '20260528000001_create_users_table.sql', '20260618000000_admin_system.sql', '20261009043723_lexio_pilot_security_events.sql']:
+    for migration in ['20260528000000_create_diagnostic_sessions.sql', '20260528000001_create_users_table.sql', '20260618000000_admin_system.sql', '20261009043723_lexio_pilot_security_events.sql', '20261011030938_palace_room_events.sql', '20261011031404_close_legacy_profile_privileges.sql']:
         sql((root / 'supabase/migrations' / migration).read_text())
     sql((root / 'tests/pilot/security.sql').read_text())
     print('PASS: SQL permissions, account isolation, immutable events, deduplication and anonymous denial')

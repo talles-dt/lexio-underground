@@ -4,6 +4,9 @@ BEGIN;
 INSERT INTO auth.users(id,email) VALUES ('aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa','a@example.test'), ('bbbbbbbb-bbbb-4bbb-bbbb-bbbbbbbbbbbb','b@example.test');
 SET LOCAL ROLE authenticated;
 SET LOCAL request.jwt.claim.sub = 'aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa';
+DO $$ BEGIN
+ IF has_table_privilege('authenticated','public.users','TRUNCATE') OR has_table_privilege('authenticated','public.diagnostic_sessions','TRUNCATE') THEN RAISE EXCEPTION 'truncate bypass remains'; END IF;
+END $$;
 UPDATE public.users SET name='Allowed' WHERE id=auth.uid();
 DO $$ BEGIN
  IF (SELECT count(*) FROM public.users) <> 1 THEN RAISE EXCEPTION 'cross-user profile leak'; END IF;
@@ -36,6 +39,17 @@ DELETE FROM public.lexio_practice_events;
 SET LOCAL request.jwt.claim.sub = 'aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa';
 DO $$ BEGIN IF (SELECT count(*) FROM public.lexio_practice_events) <> 1 THEN RAISE EXCEPTION 'cross-user delete allowed'; END IF; END $$;
 DELETE FROM public.lexio_practice_events;
+INSERT INTO public.lexio_practice_events(user_id,id,component,activity_id,kind,payload,occurred_at) VALUES (auth.uid(),gen_random_uuid(),'palace','item','move_item','{"room":"culture"}',now());
+DO $$ BEGIN
+ BEGIN
+  INSERT INTO public.lexio_practice_events(user_id,id,component,activity_id,kind,payload,occurred_at) VALUES (auth.uid(),gen_random_uuid(),'palace','item','move_item','{"room":null}',now());
+  RAISE EXCEPTION 'null room allowed';
+ EXCEPTION WHEN check_violation THEN NULL; END;
+ BEGIN
+  INSERT INTO public.lexio_practice_events(user_id,id,component,activity_id,kind,payload,occurred_at) VALUES (auth.uid(),gen_random_uuid(),'pulse','item','move_item','{"room":"vocab"}',now());
+  RAISE EXCEPTION 'invalid component allowed';
+ EXCEPTION WHEN check_violation THEN NULL; END;
+END $$;
 SET LOCAL ROLE anon;
 DO $$ BEGIN
  BEGIN PERFORM * FROM public.diagnostic_sessions; RAISE EXCEPTION 'anonymous diagnostic leak'; EXCEPTION WHEN insufficient_privilege THEN NULL; END;

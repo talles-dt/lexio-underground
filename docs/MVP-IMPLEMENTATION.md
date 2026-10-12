@@ -1,6 +1,6 @@
 # Lexio — primeira implementação do piloto
 
-09/10/2026 · Branch `codex/lexio-mvp-foundation`.
+Atualizado em 12/10/2026 · Branch `codex/lexio-mvp-foundation`.
 
 Lexio Underground é o produto. Pulse, Palácio, Shadow, Phonos e Syntaxis são os componentes. Cartógrafa é uma frente separada. Esta entrega é um piloto inicial de prática, não o MVP curricular completo pré-A1–C1.
 
@@ -17,7 +17,7 @@ Lexio Underground é o produto. Pulse, Palácio, Shadow, Phonos e Syntaxis são 
 - APIs antigas de diagnóstico, geração, cobrança e demais superfícies sem gate aprovado foram colocadas em quarentena: retornam 503 no handler, além da barreira no middleware. Não tratar isso como implementação funcional dessas features.
 - Cartógrafa e preços mostram estado explícito; não há cobrança nem diagnóstico simulado. Notificações inventadas removidas. Zoom liberado.
 - Auth usa o cliente SSR padrão; reset do estado na saída/troca de conta; cargas assíncronas antigas não sobrescrevem a identidade atual.
-- Migração aditiva para eventos e fechamento de grants/RLS auditados. Nenhum dado remoto foi alterado nesta entrega.
+- Migração aditiva para eventos e fechamento de grants/RLS auditados. Em 11/10, as três migrações indicadas abaixo foram aplicadas no banco Lexio; os registros existentes foram preservados.
 
 ## Preservação e proveniência
 
@@ -35,8 +35,8 @@ Verificação no navegador: resposta Pulse → guardar item → Palácio → rev
 
 ## Próximo gate de implementação
 
-1. Confirmar projeto Supabase de destino e comparar schema/migration history, inclusive coexistência com Syntaxis/Liceu.
-2. Fazer backup verificável; aplicar somente a migração nova após revisão contra o schema real. A migração local não corrige o banco remoto por si só.
+1. Concluído em 11/10: projeto Lexio `uykmqubeuopfvyctbipn` confirmado, esquema e histórico comparados; o vínculo local incorreto com Liceu foi corrigido.
+2. Concluído em 11/10: cópias privadas de esquema e dados, manifesto SHA-256, verificação dos blocos COPY e das duas linhas de perfil; aplicação somente das três migrações novas e conferência remota. A restauração integral do backup não foi ensaiada.
 3. Rotacionar a credencial que estava no arquivo rastreado e eventuais credenciais exclusivas do Zernio. Remover a linha do arquivo não revoga um segredo.
 4. Testar login, logout, duas contas, sincronização, exclusão e retomada entre dispositivos. Só então habilitar contas no build e runtime.
 5. Validar gravação real e produzir modelos de áudio revisados. Substituir ensaio Shadow pela conversa real conforme N13–N15, com acesso/cotas e falhas explícitas.
@@ -60,3 +60,37 @@ A primeira interface do piloto simplificou excessivamente a identidade do produt
 A planta se ajusta à largura disponível; as salas também têm botões acessíveis. A aparência da planta não representa nível adquirido nem desbloqueio pedagógico. O salvamento local continua funcionando: resposta no Pulse, envio ao Palácio e navegação com o item preservado foram conferidos novamente em 390 px. Build passou e os 89 testes existentes passaram (um ignorado). Isso não certifica o currículo completo até C1 nem todos os fluxos antigos.
 
 Prévia visual publicada e conferida no navegador: `59da974`. A compilação remota também passou. O domínio de produção existente permanece sem promoção.
+
+
+## Continuidade — 11–12/10/2026
+
+### Jornada e Palácio
+
+- `/learn` retoma componente, faixa escolhida, unidade, atividade, turno de ensaio e sala. A entrada direta em um componente respeita a rota; a navegação interna passa ao workspace comum.
+- Rascunhos por atividade e identidade são guardados localmente a cada edição, separados dos eventos de resposta. Erro de armazenamento preserva o texto em tela e avisa para copiar. Texto vazio permanece vazio ao retomar. Exportação de rascunhos separada do histórico; não há importação de rascunhos nesta etapa.
+- Pulse/Phrasal Lab permitem escolher uma das cinco salas. Memórias antigas continuam em Estruturas; movimentação de sala é um novo evento imutável e preserva conteúdo, contagem e data de revisão.
+- Contagem por sala, filtro de revisões pendentes e ordenação por data. Um lapso reinicia o intervalo de revisão; não usa mais o total histórico de tentativas para avançar logo após um lapso.
+- Syntaxis mostra quantas atividades têm respostas registradas, sem afirmar domínio. O Phrasal Lab exibe todos os verbos catalogados na faixa escolhida, removendo o corte arbitrário em 12.
+- Identidade visual aprovada preservada. Gravações continuam temporárias e não são restauradas junto dos rascunhos.
+
+### Banco remoto
+
+Destino confirmado: `lexio-underground`, `uykmqubeuopfvyctbipn`; Liceu não recebeu estas alterações. A inspeção encontrou as tabelas Syntaxis já existentes no Lexio. O vínculo CLI do checkout apontava para Liceu e foi corrigido para Lexio.
+
+Aplicadas em uma transação e posteriormente registradas/verificadas no histórico:
+
+- `20261009043723_lexio_pilot_security_events.sql`
+- `20261011030938_palace_room_events.sql`
+- `20261011031404_close_legacy_profile_privileges.sql`
+
+Verificação remota: anônimo sem SELECT em perfis/diagnósticos; usuário autenticado sem UPDATE em role/tier e sem TRUNCATE nas duas tabelas; atualização de nome preservada. Tabela de eventos com RLS e três políticas por identidade. As duas linhas de perfil e zero diagnósticos foram preservados. Catálogo Syntaxis não foi alterado. Isto não verifica OAuth nem a experiência de duas contas no navegador.
+
+Evidências privadas em `work/lexio-implementation/remote-readonly` no workspace da tarefa: relatórios de esquema e permissões, dumps e manifesto. Dumps têm dados privados e não pertencem ao Git/deploy. Backup com 30 blocos COPY completos; há referências circulares no Syntaxis, portanto uma restauração integral precisa respeitar a ordem/constraints e ainda requer ensaio. Não executar todo o histórico local de migrações: há versões legadas divergentes e uma migração destrutiva.
+
+### Validação e limites desta etapa
+
+98 testes passaram, um legado ignorado; testes SQL de isolamento e de movimentação de sala passaram em PostgreSQL descartável. Bateria SQL adicionada à CI, ainda sem alegação de execução remota do workflow. Build, tipos e lint passaram, mantendo dois avisos legados.
+
+No navegador: rascunho Pulse após recarga; guardar em Vocabulário, revisar, mover para Cultura e reabrir com data preservada; Syntaxis reabriu em Transformar com o rascunho do dia anterior. Rascunhos e histórico visitante ficam no navegador/origem. Para levar histórico entre URLs de prévia, exportar na origem anterior e importar na nova.
+
+Contas permanecem desligadas na prévia até validar login, saída, troca de conta e sincronização ponta a ponta. A credencial anteriormente exposta ainda precisa de rotação. Microfones reais, Shadow com IA, Cartógrafa, conteúdo e validação pedagógica até C1 seguem pendentes. Esta entrega avança M0/M1/M2; não encerra o MVP.
