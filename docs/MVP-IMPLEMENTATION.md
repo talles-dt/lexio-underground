@@ -94,3 +94,10 @@ Evidências privadas em `work/lexio-implementation/remote-readonly` no workspace
 No navegador: rascunho Pulse após recarga; guardar em Vocabulário, revisar, mover para Cultura e reabrir com data preservada; Syntaxis reabriu em Transformar com o rascunho do dia anterior. Rascunhos e histórico visitante ficam no navegador/origem. Para levar histórico entre URLs de prévia, exportar na origem anterior e importar na nova.
 
 Contas permanecem desligadas na prévia até validar login, saída, troca de conta e sincronização ponta a ponta. A credencial anteriormente exposta ainda precisa de rotação. Microfones reais, Shadow com IA, Cartógrafa, conteúdo e validação pedagógica até C1 seguem pendentes. Esta entrega avança M0/M1/M2; não encerra o MVP.
+
+
+### Prévia desta etapa
+
+https://code-pli76ceh2-tallestonatto-5836s-projects.vercel.app/learn
+
+Código `f633e46`; deployment `dpl_EuNUzzQbEtdPoqoMaspYSTw1ENiB`, preview READY em 12/10, compilação remota aprovada. Navegador no preview confirmou entrada direta em `/pulse` → Syntaxis em `/learn` → Transformar → rascunho → recarga com componente, atividade e texto preservados. O domínio de produção da aplicação não foi promovido; as correções de permissões descritas acima foram efetivamente aplicadas no banco remoto Lexio.
