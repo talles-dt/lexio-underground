@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { colors, spacing, radius, typography } from "@/theme/tokens";
 import { supabase } from "@/lib/auth";
 import { useRouter } from "next/navigation";
@@ -14,6 +14,7 @@ export default function SignInPage() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  useEffect(()=>{if(new URLSearchParams(window.location.search).has("error"))setError("Não foi possível confirmar o acesso. Entre novamente ou solicite um novo link.");},[]);
   const [success, setSuccess] = useState("");
 
   const handleOAuthGoogle = useCallback(async () => {
@@ -66,7 +67,7 @@ export default function SignInPage() {
       setLoading(true);
       try {
         const { error: resetError } = await supabase().auth.resetPasswordForEmail(email, {
-          redirectTo: `${window.location.origin}/auth/reset`,
+          redirectTo: `${window.location.origin}/auth/callback?next=/auth/reset`,
         });
         if (resetError) {
           setError(resetError.message);
@@ -113,7 +114,8 @@ export default function SignInPage() {
             }
           } else if (data?.user) {
             // Let the session cookie propagate, then navigate
-            setTimeout(() => router.push("/"), 300);
+            router.replace("/learn");
+            router.refresh();
             setSuccess("Signing in…");
           }
         } else {
@@ -200,7 +202,7 @@ export default function SignInPage() {
         )}
 
         {/* OAuth Buttons — hide on forgot tab */}
-        {tab !== "forgot" && (
+        {tab !== "forgot" && process.env.NEXT_PUBLIC_PILOT_OAUTH_ENABLED === "true" && (
           <>
         <button
           type="button"
@@ -244,8 +246,9 @@ export default function SignInPage() {
               Enter your email and we'll send you a link to reset your password.
             </p>
             <div style={styles.inputGroup}>
-              <label style={styles.label}>Email</label>
+              <label htmlFor="auth-email" style={styles.label}>Email</label>
               <input
+                id="auth-email"
                 type="email"
                 style={styles.input}
                 value={email}
@@ -287,9 +290,10 @@ export default function SignInPage() {
         {tab !== "forgot" && (
         <form onSubmit={handleEmailSubmit} style={styles.form}>
           <div style={styles.inputGroup}>
-            <label style={styles.label}>Email</label>
+            <label htmlFor="auth-email" style={styles.label}>Email</label>
             <input
-              type="email"
+              id="auth-email"
+                type="email"
               style={styles.input}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -299,8 +303,9 @@ export default function SignInPage() {
           </div>
 
           <div style={styles.inputGroup}>
-            <label style={styles.label}>Password</label>
+            <label htmlFor="auth-password" style={styles.label}>Password</label>
             <input
+              id="auth-password"
               type="password"
               style={styles.input}
               value={password}

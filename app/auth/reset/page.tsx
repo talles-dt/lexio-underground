@@ -1,13 +1,12 @@
 "use client";
 
 import React, { useState, useCallback, useEffect, Suspense } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { colors, spacing, radius, typography } from "@/theme/tokens";
 import { supabase } from "@/lib/auth";
 
 function ResetPasswordForm() {
   const router = useRouter();
-  const searchParams = useSearchParams();
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -15,49 +14,15 @@ function ResetPasswordForm() {
   const [success, setSuccess] = useState(false);
   const [tokenReady, setTokenReady] = useState(false);
 
-  // Supabase puts the token in the URL fragment (#access_token=...).
-  // Next.js can't read fragments server-side, so we extract them client-side
-  // and exchange them for a session via the Supabase auth API.
   useEffect(() => {
-    const hash = window.location.hash;
-    if (hash && hash.includes("access_token")) {
-      // Parse the fragment params
-      const params = new URLSearchParams(hash.replace("#", "?"));
-      const access_token = params.get("access_token");
-      const refresh_token = params.get("refresh_token");
-      if (access_token && refresh_token) {
-        // Exchange the tokens for a session
-        supabase().auth
-          .setSession({ access_token, refresh_token })
-          .then(({ error }) => {
-            if (error) {
-              setError("Invalid or expired reset link. Please request a new one.");
-            } else {
-              setTokenReady(true);
-            }
-          });
-      } else {
-        setError("Invalid reset link. Please request a new one.");
-      }
-    } else {
-      // No hash fragment — check if there are query params (some Supabase configs use ? instead)
-      const accessToken = searchParams.get("access_token");
-      const refreshToken = searchParams.get("refresh_token");
-      if (accessToken && refreshToken) {
-        supabase().auth
-          .setSession({ access_token: accessToken, refresh_token: refreshToken })
-          .then(({ error }) => {
-            if (error) {
-              setError("Invalid or expired reset link. Please request a new one.");
-            } else {
-              setTokenReady(true);
-            }
-          });
-      } else {
-        setError("Invalid reset link. Please request a new one.");
-      }
-    }
-  }, [searchParams]);
+    let alive=true;
+    supabase().auth.getUser().then(({data,error})=>{
+      if(!alive)return;
+      if(error || !data.user) setError("Link inválido ou expirado. Solicite um novo link na tela de entrada.");
+      else setTokenReady(true);
+    }).catch(()=>{if(alive)setError("Não foi possível validar o acesso. Tente novamente.");});
+    return ()=>{alive=false;};
+  }, []);
 
   const handleSubmit = useCallback(
     async (e: React.FormEvent) => {

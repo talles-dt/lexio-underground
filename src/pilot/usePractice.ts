@@ -1,13 +1,15 @@
 'use client';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { supabase } from '@/lib/auth';
-import { isEvent, mergeEvents, parseEvents, storageKey, type PracticeEvent } from './progress';
+import { mergeEvents, parseEvents, storageKey, type PracticeEvent } from './progress';
+import { syncPractice } from './sync';
 export function usePractice(identity: string, account: boolean) {
   const [events, setEvents] = useState<PracticeEvent[]>([]);
   const [ready, setReady] = useState(false);
   const [message, setMessage] = useState('');
   const [syncing, setSyncing] = useState(false);
   const active = useRef(true);
+  const operation = useRef(false);
   const key = storageKey(identity);
   useEffect(() => {
     active.current = true;
@@ -18,6 +20,7 @@ export function usePractice(identity: string, account: boolean) {
     return () => { active.current = false; window.removeEventListener('storage', changed); };
   }, [key]);
   const persist = useCallback((incoming: PracticeEvent[]) => {
+    if(!active.current)throw new Error('cancelled');
     const merged = mergeEvents(parseEvents(localStorage.getItem(key)), incoming);
     // Never announce completion before the durable write succeeds.
     localStorage.setItem(key, JSON.stringify(merged));
@@ -32,44 +35,42 @@ export function usePractice(identity: string, account: boolean) {
     } catch { setMessage('Não foi possível salvar. Libere espaço ou exporte seu histórico e tente novamente.'); return false; }
   };
   const synchronize = async () => {
-    if (!account || !ready || syncing) return;
+    if (!account || !ready || operation.current) return;
+    operation.current=true;
     setSyncing(true); setMessage('Sincronizando…');
     try {
       const client = supabase();
-      const { data: { user }, error: authError } = await client.auth.getUser();
-      if (authError || user?.id !== identity) throw new Error('identity');
-      const remote: PracticeEvent[] = [];
-      for (let offset = 0; ; offset += 500) {
-        const { data, error } = await client.from('lexio_practice_events').select('id,version,component,activity_id,kind,payload,occurred_at').eq('user_id', identity).order('id').range(offset, offset + 499);
-        if (error || !data || !data.every(isEvent)) throw new Error('read');
-        remote.push(...data);
-        if (data.length < 500) break;
-      }
-      if (!active.current) return;
-      const local = persist(remote);
-      const remoteIds = new Set(remote.map(e => e.id));
-      const pending = local.filter(e => !remoteIds.has(e.id));
-      for (let offset = 0; offset < pending.length; offset += 100) {
-        if (!active.current) return;
-        const { error } = await client.from('lexio_practice_events').upsert(pending.slice(offset, offset + 100).map(e => ({ ...e, user_id: identity })), { onConflict: 'user_id,id', ignoreDuplicates: true });
-        if (error) throw new Error('write');
-      }
-      if (active.current) setMessage('Sincronizado com sua conta. Gravações não são enviadas.');
+      const result=await syncPractice(identity,{
+        identity:async()=>{const {data:{user},error}=await client.auth.getUser();return error?null:user?.id||null;},
+        active:()=>active.current,
+        read:async(offset)=>{
+          const {data,error}=await client.from('lexio_practice_events').select('id,version,component,activity_id,kind,payload,occurred_at').eq('user_id',identity).order('id').range(offset,offset+499);
+          if(error||!data)throw new Error('read');return data;
+        },
+        append:async(events)=>{
+          const {error}=await client.from('lexio_practice_events').upsert(events.map(e=>({...e,user_id:identity})),{onConflict:'user_id,id',ignoreDuplicates:true});
+          if(error)throw new Error('write');
+        },
+        persist,
+        local:()=>parseEvents(localStorage.getItem(key)),
+      });
+      if(active.current)setMessage(result.remaining?'Há novas respostas locais. Sincronize novamente para enviá-las.':'Sincronizado com sua conta. Gravações e rascunhos não são enviados.');
     } catch { if (active.current) setMessage('Sincronização indisponível. Seu histórico continua neste navegador; tente novamente depois.'); }
-    finally { if (active.current) setSyncing(false); }
+    finally { operation.current=false; if (active.current) setSyncing(false); }
   };
   const deleteRemote = async () => {
-    if (!account || syncing) return;
+    if (!account || operation.current) return;
+    operation.current=true;
     setSyncing(true);
     try {
       const client = supabase();
       const { data: { user }, error: authError } = await client.auth.getUser();
-      if (authError || user?.id !== identity) throw new Error('identity');
+      if (authError || user?.id !== identity || !active.current) throw new Error('identity');
       const { error } = await client.from('lexio_practice_events').delete().eq('user_id', identity);
       if (error) throw new Error('delete');
       if (active.current) setMessage('Cópia remota apagada. Seu histórico local permanece.');
     } catch { if (active.current) setMessage('Não foi possível apagar a cópia remota. Tente novamente.'); }
-    finally { if (active.current) setSyncing(false); }
+    finally { operation.current=false; if (active.current) setSyncing(false); }
   };
   const exportHistory = () => {
     const blob = new Blob([localStorage.getItem(key) || '[]'], { type: 'application/json' });

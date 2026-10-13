@@ -43,6 +43,8 @@ function PracticeWorkspace({identity,account,onSignOut,initialComponent,notebook
   const [feedback,setFeedback] = useState(''); const [revealed,setRevealed] = useState(false);
   const [recorded,setRecorded] = useState<Record<string,boolean>>({});
   const [cloudConsent,setCloudConsent] = useState(false);
+  const [leaving,setLeaving] = useState(false);
+  const [confirmingExit,setConfirmingExit] = useState(false);
   const [shadowStep,setShadowStep] = useState(resume ? cursor?.shadowStep || 0 : 0);
   const atoms=syntaxisPulseAtoms.filter(a=>a.level===level);
   const atom=atoms.find(a=>a.id===selected)||atoms[0];
@@ -78,7 +80,15 @@ function PracticeWorkspace({identity,account,onSignOut,initialComponent,notebook
   const shadowPrompts=['Tell me your name and something you enjoy.','What do you usually do in the morning?','Ask me a question about my routine.'];
   return <main className="lexio-pilot" data-component={component}>
     <GrainOverlay/>
-    <div className="pilot-masthead"><Link href="/" className="lexio-wordmark">LEXIO <span>UNDERGROUND</span></Link><span className="pilot-edition">EN / ACERVO PILOTO</span>{account?<button className="quiet-button" onClick={()=>void onSignOut()}>Sair</button>:accountsEnabled?<Link href="/signin">Entrar</Link>:<span className="pilot-guest">Caderno local</span>}</div>
+    <div className="pilot-masthead"><Link href="/" className="lexio-wordmark">LEXIO <span>UNDERGROUND</span></Link><span className="pilot-edition">EN / ACERVO PILOTO</span>{account?<button className="quiet-button" disabled={leaving||practice.syncing} onClick={()=>setConfirmingExit(true)}>{leaving?'Saindo…':'Sair'}</button>:accountsEnabled?<Link href="/signin">Entrar</Link>:<span className="pilot-guest">Caderno local</span>}</div>
+    {confirmingExit&&<section className="pilot-notice" role="region" aria-label="Confirmar saída">
+      <p>Sair e apagar as cópias locais desta conta? Sincronize ou exporte antes de sair para guardar respostas e rascunhos. A cópia já sincronizada permanece na conta.</p>
+      <button disabled={leaving||practice.syncing} onClick={async()=>{
+        setLeaving(true);
+        try {await onSignOut();} catch {setFeedback('Não foi possível concluir a saída. Verifique a conexão e tente novamente.');setLeaving(false);}
+      }}>Sair e limpar cópias locais</button>
+      <button disabled={leaving} onClick={()=>setConfirmingExit(false)}>Continuar no caderno</button>
+    </section>}
     <header className="pilot-header"><div><p className="eyebrow">ESTUDO · MEMÓRIA · DESCOBERTA</p><h1>{labels[component]}</h1><p className="pilot-lede">{descriptions[component]}</p></div><div className="component-sigil" aria-hidden="true"><span>{glyphs[component]}</span></div></header>
     <nav aria-label="Componentes do Lexio" className="pilot-nav">{COMPONENTS.map(c=><button key={c} aria-label={labels[c]} aria-current={component===c?'page':undefined} onClick={()=>move(c)}><span className="nav-glyph" aria-hidden="true">{glyphs[c]}</span><span>{labels[c]}</span></button>)}</nav>
     <div className="pilot-statline"><span><i/> Prática em inglês</span><span>{items.length} memórias guardadas</span><span>{items.filter(i=>i.due).length} para revisitar</span></div>

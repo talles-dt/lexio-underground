@@ -9,9 +9,10 @@ import {
   useCallback,
   ReactNode,
 } from "react";
-import { createClient, SupabaseClient } from "@supabase/supabase-js";
+import { SupabaseClient } from "@supabase/supabase-js";
 import type { User, Session } from "@supabase/supabase-js";
-import type { CookieOptions } from "@supabase/ssr";
+import { storageKey } from "@/pilot/progress";
+import { notebookKey } from "@/pilot/notebook";
 import { useLearnerStore } from "@/stores/learnerStore";
 
 import { createBrowserClient } from "@supabase/ssr";
@@ -66,19 +67,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
     const client = getSupabase();
 
-    // Get initial session
-    client.auth.getSession().then(({ data: { session } }) => {
-      setState({
-        user: session?.user ?? null,
-        session,
-        loading: false,
-      });
-    }).catch(() => setState({ user: null, session: null, loading: false }));
-
+    // INITIAL_SESSION and later events share a single ordering source.
+    let alive = true;
     // Listen for auth state changes
     const {
       data: { subscription },
     } = client.auth.onAuthStateChange((_event, session) => {
+      if (!alive) return;
       setState({
         user: session?.user ?? null,
         session,
@@ -86,7 +81,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       });
     });
 
-    return () => subscription.unsubscribe();
+    return () => { alive=false; subscription.unsubscribe(); };
   }, []);
 
   // Sync auth state → learner store
@@ -147,9 +142,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   // Sign out
   const signOut = useCallback(async () => {
-    await getSupabase().auth.signOut();
+    const identity=state.user?.id;
+    const {error}=await getSupabase().auth.signOut({scope:'local'});
+    if(error) throw error;
+    if(identity) {
+      localStorage.removeItem(storageKey(identity));
+      localStorage.removeItem(notebookKey(identity));
+    }
+    setState({user:null,session:null,loading:false});
     useLearnerStore.getState().reset();
-  }, []);
+  }, [state.user?.id]);
 
   // Link a diagnostic session to the current user
   const linkSession = useCallback(

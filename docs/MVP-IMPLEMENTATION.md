@@ -101,3 +101,30 @@ Contas permanecem desligadas na prévia até validar login, saída, troca de con
 https://code-pli76ceh2-tallestonatto-5836s-projects.vercel.app/learn
 
 Código `f633e46`; deployment `dpl_EuNUzzQbEtdPoqoMaspYSTw1ENiB`, preview READY em 12/10, compilação remota aprovada. Navegador no preview confirmou entrada direta em `/pulse` → Syntaxis em `/learn` → Transformar → rascunho → recarga com componente, atividade e texto preservados. O domínio de produção da aplicação não foi promovido; as correções de permissões descritas acima foram efetivamente aplicadas no banco remoto Lexio.
+
+## Contas e sincronização — encerramento em 13/10/2026
+
+A prévia desta etapa habilita contas confirmadas por e-mail/senha e sincronização manual com consentimento:
+https://code-ac2miowl6-tallestonatto-5836s-projects.vercel.app/learn
+
+Deployment `dpl_7RuUhJPHw7Kfmp2YzWsTY11ggtug`. Build e runtime usam `NEXT_PUBLIC_PILOT_ACCOUNTS_ENABLED=true`; `NEXT_PUBLIC_PILOT_OAUTH_ENABLED=false`. Substitui o estado de contas desligadas descrito nas etapas anteriores. Produção não foi promovida.
+
+### Correções
+
+- Login termina em `/learn`; o formulário de e-mail permanece disponível quando OAuth está oculto, com campos associados aos respectivos rótulos.
+- Callback PKCE usa cookies SSR, destino interno permitido, resposta sem cache e erro explícito para código ausente/inválido. Recuperação de senha exige sessão validada; tokens brutos não são lidos da URL pela tela.
+- Inicialização da sessão e mudanças posteriores usam o mesmo fluxo de eventos, evitando a corrida entre uma leitura inicial antiga e a saída.
+- Saída tem confirmação dentro da página, limpa histórico e caderno locais daquela conta e retorna ao visitante. O aviso informa que rascunhos não sincronizados precisam ser exportados antes. A confirmação nativa bloqueava o navegador integrado durante o teste; foi substituída.
+- Sincronização valida identidade, cancela operações desmontadas, pagina leituras em 500 registros e envia em lotes de 100. Reenvio é idempotente. Alterações feitas durante uma sincronização são indicadas como pendentes; falhas preservam o histórico local.
+
+### Evidências
+
+- 114 testes passaram; um teste legado ignorado. Incluem renderização real da tela de entrada com OAuth ligado/desligado, isolamento das operações de sync, cancelamento, falhas, novas edições concorrentes, paginação e lotes. Tipos, lint e compilação remota passaram; os dois avisos legados de hooks permanecem.
+- Duas contas temporárias confirmadas pelo administrador, sem envio de e-mails, no projeto Lexio `uykmqubeuopfvyctbipn`. Login real, reenvio sem duplicação, sessão nova recuperando dados, leitura/inserção/exclusão entre contas bloqueadas, exclusão própria e posterior reenvio verificados por clientes reais. Alteração de `public.users.role` negada com código de permissão `42501`.
+- Navegador: conta A salvou resposta e memória localmente e sincronizou. Conta B permaneceu com zero registros mesmo após sincronizar. Uma origem de prévia sem histórico local recuperou a resposta e a memória de A. Nova resposta escrita na prévia foi confirmada por leitura independente do banco. Recarga preservou sessão, atividade e resposta.
+- Prévia final: A recuperou quatro eventos; saída confirmada na página seguida de recarga manteve visitante com zero registros locais; B entrou e sincronizou permanecendo com zero. B também saiu normalmente. Recuperação sem sessão mostrou link inválido/expirado. `/admin` sem sessão retornou 401; callback sem código retornou 307 para `/signin?error=auth`.
+- As duas contas temporárias foram excluídas após os testes; zero eventos delas permaneceram. Os dois perfis originais em `public.users` foram comparados antes/depois da limpeza e permaneceram iguais. Relatórios privados sem tokens estão no diretório de trabalho `account-validation`.
+
+### Limites
+
+Validação com sessões/origens separadas no mesmo computador, não com dois aparelhos físicos. Confirmação de cadastro e recuperação por e-mail (entrega, links e configuração de destinos) e OAuth não foram certificados; provedores externos ficam ocultos. O sync cobre respostas, reflexões, memórias e revisões; rascunhos, cursor e gravações continuam locais. A rotação da credencial anteriormente exposta permanece pendente. Nada nesta etapa certifica Cartógrafa, microfone real, Shadow com IA ou currículo completo até C1.
