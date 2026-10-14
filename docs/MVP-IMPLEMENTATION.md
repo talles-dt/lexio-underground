@@ -128,3 +128,11 @@ Deployment `dpl_7RuUhJPHw7Kfmp2YzWsTY11ggtug`. Build e runtime usam `NEXT_PUBLIC
 ### Limites
 
 Validação com sessões/origens separadas no mesmo computador, não com dois aparelhos físicos. Confirmação de cadastro e recuperação por e-mail (entrega, links e configuração de destinos) e OAuth não foram certificados; provedores externos ficam ocultos. O sync cobre respostas, reflexões, memórias e revisões; rascunhos, cursor e gravações continuam locais. A rotação da credencial anteriormente exposta permanece pendente. Nada nesta etapa certifica Cartógrafa, microfone real, Shadow com IA ou currículo completo até C1.
+
+### E-mail real e retorno de confirmação — 13/10/2026
+
+O SMTP antigo do Zoho retornou `535 5.7.8 Authentication Failed` em `/signup`. Após o usuário migrar as credenciais para Lark Mail (`smtp.larksuite.com:465`), o cadastro real enviou a confirmação: `/verify` retornou 303, `email_confirmed_at` foi preenchido e houve login manual posterior. Isso valida envio/recebimento/confirmação desse cadastro, sem certificar ainda recuperação de senha ou OAuth.
+
+A mensagem antiga do callback confundia confirmação do endereço com abertura da sessão. Falha retornada ou exceção na troca de código agora encaminha para orientação de login manual, sem afirmar que o e-mail não foi confirmado. Recuperação tem orientação própria para uso do mesmo navegador ou solicitação de novo link. Código ausente continua sendo erro e nunca vira sucesso. O motivo específico da falha de abertura da sessão do usuário ainda não foi comprovado; abrir o link em outro navegador é uma hipótese compatível com PKCE. Não foi implementada confirmação por token hash nem suporte a troca de navegador nesta correção.
+
+119 testes passaram, um legado ignorado; tipos passaram. Cinco novos testes exercitam o callback real com sucesso, erro retornado, exceção, recuperação e ausência de código. Nenhuma senha ou token do usuário foi lido ou registrado.

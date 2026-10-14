@@ -4,6 +4,7 @@ import React, { useState, useCallback, useEffect } from "react";
 import { colors, spacing, radius, typography } from "@/theme/tokens";
 import { supabase } from "@/lib/auth";
 import { useRouter } from "next/navigation";
+import { authErrorMessage } from "@/pilot/auth-navigation";
 
 type Tab = "signin" | "signup" | "forgot";
 
@@ -14,7 +15,7 @@ export default function SignInPage() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  useEffect(()=>{if(new URLSearchParams(window.location.search).has("error"))setError("Não foi possível confirmar o acesso. Entre novamente ou solicite um novo link.");},[]);
+  useEffect(()=>{setError(authErrorMessage(new URLSearchParams(window.location.search).get("error")));},[]);
   const [success, setSuccess] = useState("");
 
   const handleOAuthGoogle = useCallback(async () => {

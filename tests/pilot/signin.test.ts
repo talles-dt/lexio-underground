@@ -2,6 +2,7 @@ import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { readFileSync } from 'node:fs';
 import { transformSync } from '@babel/core';
+import * as authNavigation from '../../src/pilot/auth-navigation';
 import * as tokens from '../../src/theme/tokens';
 // Render the actual screen; the app's JSX-preserving TS config needs a JSX transform here.
 const source=readFileSync('app/signin/page.tsx','utf8');
@@ -9,6 +10,7 @@ const compiled=transformSync(source,{filename:'signin.tsx',configFile:false,babe
 const screen={exports:{} as {default:React.ComponentType}};
 new Function('require','module','exports',compiled)((name:string)=>{
  if(name==='react')return React;
+ if(name==='@/pilot/auth-navigation')return authNavigation;
  if(name==='@/theme/tokens')return tokens;
  if(name==='next/navigation')return {useRouter:()=>({})};
  if(name==='@/lib/auth')return {supabase:()=>{throw new Error('unexpected auth call during render');}};

@@ -7,8 +7,8 @@ export async function GET(request: NextRequest) {
   const response = NextResponse.redirect(new URL(authDestination(url.searchParams.get('next')),url.origin));
   response.headers.set('Cache-Control','private, no-store');
   response.headers.set('Referrer-Policy','no-referrer');
-  const failure = () => {
-    const failed=NextResponse.redirect(new URL('/signin?error=auth',url.origin));
+  const failure = (reason: 'auth'|'session'|'recovery' = 'auth') => {
+    const failed=NextResponse.redirect(new URL(`/signin?error=${reason}`,url.origin));
     failed.headers.set('Cache-Control','private, no-store');
     failed.headers.set('Referrer-Policy','no-referrer');
     return failed;
@@ -18,6 +18,12 @@ export async function GET(request: NextRequest) {
     getAll:()=>request.cookies.getAll(),
     setAll:(cookies)=>cookies.forEach(({name,value,options})=>response.cookies.set(name,value,options)),
   }});
-  const {error}=await client.auth.exchangeCodeForSession(code);
-  return error ? failure() : response;
+  try {
+    const {error}=await client.auth.exchangeCodeForSession(code);
+    if (!error) return response;
+  } catch {
+    // Missing PKCE verifier (for example, a different browser) cannot open a session.
+    // Never infer that email verification itself failed, or log the one-use code.
+  }
+  return failure(url.searchParams.get('next') === '/auth/reset' ? 'recovery' : 'session');
 }
