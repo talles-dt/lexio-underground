@@ -9,7 +9,7 @@ function curriculumAnchors() {
   return (tree: HtmlNode) => {
     const visit = (node: HtmlNode) => {
       if (node.type === 'raw') {
-        const match = node.value?.match(/^<a id="([a-zA-Z0-9_-]+)">\s*<\/a>$/);
+        const match = node.value?.match(/^<a id="([a-zA-Z0-9_-]+)">(?:\s*<\/a>)?$/);
         if (match) { node.type='element'; node.tagName='span'; node.properties={id:match[1]}; node.children=[]; delete node.value; }
       }
       node.children?.forEach(visit);
