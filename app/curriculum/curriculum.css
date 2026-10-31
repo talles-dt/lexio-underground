@@ -1,0 +1,29 @@
+.lexio-curriculum { color:#eee9df; background:#101211; min-height:100vh; font-family:Arial,Helvetica,sans-serif; font-size:17px; line-height:1.75; }
+.lexio-curriculum main { padding:56px 24px 88px; }
+.lexio-curriculum main>div { max-width:880px; margin:0 auto; }
+.lexio-curriculum h1 { font-family:Georgia,serif; font-size:clamp(30px,5vw,48px); font-weight:400; line-height:1.2; margin:32px 0 24px; }
+.lexio-curriculum h2 { font-family:Georgia,serif; font-size:29px; font-weight:400; margin:32px 0 16px; }
+.lexio-curriculum h3 { font-size:20px; line-height:1.4; margin:20px 0 12px; }
+.lexio-curriculum p { margin:16px 0; }
+.lexio-curriculum a { color:#e6bf78; text-decoration:underline; text-underline-offset:4px; }
+.lexio-curriculum a:hover { color:#ffe0a6; }
+.lexio-curriculum a:focus-visible { outline:2px solid #e6bf78; outline-offset:5px; }
+.lexio-curriculum section { margin:32px 0; }
+.lexio-curriculum section:first-of-type { border:1px solid #6c5a3d; border-radius:16px; padding:24px; background:#191b18; }
+.lexio-curriculum section:first-of-type h2 { margin-top:0; }
+.lexio-curriculum section>ul { list-style:none; padding:0; }
+.lexio-curriculum section>ul>li { padding:20px 24px; border:1px solid #353931; border-radius:12px; margin:14px 0; background:#171a16; }
+.lexio-curriculum section>ul>li h3 { margin:0; }
+.lexio-curriculum section>ul>li p { color:#b2b4a9; font-size:14px; margin:6px 0; }
+.lexio-curriculum section>ul>li>div { display:flex; flex-wrap:wrap; gap:12px 20px; font-size:15px; margin-top:12px; }
+.lexio-curriculum a[download] { display:inline-block; padding:12px 24px; background:#e6bf78; color:#151710; border-radius:10px; font-weight:600; text-decoration:none; }
+.lexio-curriculum article { margin-top:32px; }
+.lexio-curriculum article>p { margin:18px 0; }
+.lexio-curriculum article ul,.lexio-curriculum article ol { padding-left:28px; }
+.lexio-curriculum article li { margin:10px 0; }
+.lexio-curriculum article blockquote { border-left:3px solid #e6bf78; padding:4px 22px; margin:24px 0; background:#191b18; }
+.lexio-curriculum article table { display:block; overflow-x:auto; border-collapse:collapse; margin:24px 0; }
+.lexio-curriculum article th,.lexio-curriculum article td { padding:12px; border:1px solid #44483e; text-align:left; }
+.lexio-curriculum article pre { overflow-x:auto; padding:18px; background:#191b18; }
+.lexio-curriculum article [id] { scroll-margin-top:24px; }
+@media(max-width:600px) { .lexio-curriculum main { padding:28px 18px 64px; } .lexio-curriculum section>ul>li { padding:16px; } }
