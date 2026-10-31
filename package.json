@@ -31,6 +31,8 @@
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "react-i18next": "^17.0.8",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
     "resend": "^2.1.0",
     "stripe": "^14.18.0",
     "tailwind-merge": "^2.2.0",

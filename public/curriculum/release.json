@@ -10,8 +10,10 @@
   ],
   "lexical_entries": 446,
   "lexical_sequences": 87,
-  "status": "authored_not_independently_reviewed_or_piloted",
+  "status": "editorially_reviewed_by_project_owner",
   "course_complete": false,
   "archive": "lexio-english-2026-10-31.zip",
-  "sha256": "366b0366063d0762a12ee260a51159407a90d69c09a4c255ccc654bb07c49b5f"
+  "sha256": "b806ead8e52a1658b9a7fced640ea38e19fb2734c77e5ef0e970bab1df0fff08",
+  "review_date": "2026-10-31",
+  "piloted": false
 }
