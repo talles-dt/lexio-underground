@@ -1,0 +1,7 @@
+Customer: One coffee, please.
+Server: Tea?
+Customer: No. Coffee, please.
+Server: Four credits.
+Customer: Four?
+Server: Yes.
+Customer: Thank you.

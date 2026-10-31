@@ -1,0 +1,49 @@
+{
+  "integrity_passed": true,
+  "errors": [],
+  "local_links_checked": 3095,
+  "prototype_files_unchanged": 72,
+  "grammar_targets": 132,
+  "lexical_entries": 446,
+  "foundation_packages": 6,
+  "communicative_units": {
+    "a1": 8,
+    "a2": 7,
+    "b1": 8,
+    "b2": 8
+  },
+  "b2_grammar_families_in_units": 24,
+  "audio_scripts_prepared": 41,
+  "audio_files_produced": 0,
+  "lexical_sequences": {
+    "pre-a1": {
+      "sequences": 19,
+      "targets": 94
+    },
+    "a1": {
+      "sequences": 14,
+      "targets": 78
+    },
+    "a2": {
+      "sequences": 14,
+      "targets": 74
+    },
+    "b1": {
+      "sequences": 14,
+      "targets": 74
+    },
+    "b2": {
+      "sequences": 16,
+      "targets": 72
+    },
+    "c1": {
+      "sequences": 10,
+      "targets": 54
+    }
+  },
+  "lexical_stages_without_registered_evidence": 0,
+  "independent_review": false,
+  "piloted": false,
+  "course_complete": false,
+  "scope": "Structural checks only; no CEFR certification or content sufficiency judgment."
+}

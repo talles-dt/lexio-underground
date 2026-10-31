@@ -1,0 +1,122 @@
+{
+  "pre-a1": {
+    "read": "Name: Eva\nFrom: Brazil\nTuesday, 10:00 in the morning\nRoom 7\nTea: 4 credits",
+    "audio": "Host: Hello. I’m Lee.\nEva: I’m Eva. Room six?\nHost: No, room seven. At ten.\nEva: Again, please.\nHost: Room seven. At ten.\nEva: Thank you.",
+    "questions": [
+      "Qual é a origem de Eva no cartão?",
+      "Qual é o preço do chá?",
+      "Na escuta, que sala foi confirmada?",
+      "Qual expressão pediu repetição?"
+    ],
+    "answers": [
+      "Brazil/Brasil.",
+      "4 créditos.",
+      "Room7/sala7; não6.",
+      "Again, please."
+    ],
+    "writing": "Preencha ficha fictícia com nome, origem e compromisso do cartão. Escreva um pedido de chá.",
+    "interaction": "A é Eva e não sabe a sala; B é Lee e só vê cartão. A pergunta, pede repetição e confirma. Depois B muda hora para11 e A atualiza.",
+    "mediation": "Explique a um colega lusófono onde e quando Eva deve ir. Preserve dia, hora e sala.",
+    "constraints": "Origem Brasil; terça10h, sala7; depois da mudança11h; pedido de tea. Aceitar apontar e blocos com apoio. Não exigir texto corrido."
+  },
+  "a1": {
+    "read": "Hi, I’m Mai. I work from eight to four. Yesterday I visited the park. Today I’m studying at home. I’m going to meet Leo at the café on Friday at five thirty. Would you like to come?",
+    "audio": "Leo: Can we meet at the library on Friday?\nMai: The café, not the library. At five thirty.\nLeo: I finish work at six.\nMai: Let’s meet at six thirty.\nLeo: Great. See you at the café.",
+    "questions": [
+      "Que atividade Mai fez ontem?",
+      "O que Mai faz hoje?",
+      "Qual é o local final?",
+      "Qual é o horário final e por que mudou?"
+    ],
+    "answers": [
+      "Visitou parque.",
+      "Estuda em casa.",
+      "Café.",
+      "18h30; Leo trabalha até18h."
+    ],
+    "writing": "Escreva resposta de50–70 palavras confirmando plano final e contando uma atividade sua de ontem. Pode inventar personagem.",
+    "interaction": "A tem plano inicial17h30; B só pode18h30. Troquem informações e confirmem local/dia/hora. B pergunta o que A fez ontem.",
+    "mediation": "Transmita ao colega lusófono a mudança, distinguindo convite antigo e plano final.",
+    "constraints": "Não manter17h30 após acordo. Uma ação passada e confirmação de sexta18h30 no café. Erros que não impeçam compreensão são toleráveis no nível."
+  },
+  "a2": {
+    "read": "We have 55 credits for a small meeting. Room Green costs40 and is available from two to four. Room Blue costs30 but is only available after six. We need to finish before five. Water costs8 for the group. We have invited five people, but we haven’t booked a room yet.",
+    "audio": "Reception: Green is available, but only from three to five now.\nOrganiser: We need to finish before five. Can we leave at four thirty?\nReception: Yes, the price is still forty.\nOrganiser: Please book it.\nReception: I’ll send confirmation after you complete the form.",
+    "questions": [
+      "Que sala do texto atende a restrição de horário?",
+      "Quanto custam Green e água?",
+      "Qual é o novo período combinado?",
+      "A reserva está confirmada ou ainda condicionada?"
+    ],
+    "answers": [
+      "Green; Blue só depois18h.",
+      "48 créditos, dentro de55.",
+      "15h–16h30.",
+      "Condicionada ao formulário e confirmação; não afirmar que já recebeu."
+    ],
+    "writing": "Escreva atualização de100–130 palavras para convidados com custo, horário e estado da reserva.",
+    "interaction": "A quer confirmar reserva; B informa que falta formulário. A pergunta próximo passo e comunica ao grupo uma alternativa se falhar.",
+    "mediation": "Explique em português a comparação de salas e a pendência de confirmação.",
+    "constraints": "Custo48; início15h; saída16h30; reserva não concluída. Avaliar coerência da atualização e resposta a imprevisto."
+  },
+  "b1": {
+    "read": "A neighbourhood newsletter said the museum would open late every Thursday from next month. The museum later explained that only one trial evening had been approved. Staff for regular late opening had not been confirmed. Visitors who bought travel tickets after reading the headline asked for clearer information. The newsletter published a correction. The approved trial is on the first Thursday, from six to eight, and entry is free.",
+    "audio": "Visitor: Does the correction cancel the late opening?\nStaff: No. One evening is approved, not a weekly programme.\nVisitor: Can I bring a group?\nStaff: Yes, but groups of more than six need to contact us first.\nVisitor: There are eight of us.\nStaff: Then please send the group details before making plans.",
+    "questions": [
+      "Qual diferença entre manchete e correção?",
+      "Qual ação do veículo após esclarecimento?",
+      "O evento foi cancelado?",
+      "Que precisa fazer o grupo de oito?"
+    ],
+    "answers": [
+      "Semanal foi proposto na manchete; só uma noite aprovada.",
+      "Publicou correção.",
+      "Não; uma noite permanece aprovada.",
+      "Contatar museu com dados do grupo antes de planejar; mais de6 exige contato."
+    ],
+    "writing": "Escreva e-mail de180–220 palavras corrigindo plano de um grupo e pedindo a informação faltante sem atribuir culpa pessoal.",
+    "interaction": "A é organizador de oito pessoas; B confirma só uma noite, mas ainda não sabe capacidade para grupo. Negociem próximos passos sem inventar vaga.",
+    "mediation": "Resuma para grupo lusófono fato confirmado, erro anterior e ação necessária.",
+    "constraints": "Uma noite18–20h, entrada gratuita; autorização de grupo de8 ainda não confirmada. Exigir sequência e atribuição, não gramática perfeita."
+  },
+  "b2": {
+    "read": "A fictional survey found that support for an evening workshop rose from30 of100 respondents to45 of100. A publicity draft says, “Our new programme caused a fifty percent rise in support.” The two surveys recruited participants differently, and the programme had not yet started when the second survey was conducted. The team has200 credits. A room costs120; facilitation costs60; optional printed packs cost30. A digital handout is included at no extra cost, but some participants may need print.",
+    "audio": "Chair: Can we approve the workshop and printed packs?\nCoordinator: Not within200. The total would be210.\nChair: Then no one needs print.\nCoordinator: We can’t infer that from the budget. We should check needs and revise the scope.\nChair: Is the claim about support defensible?\nCoordinator: The relative increase is50 percent, but the causal claim is not.",
+    "questions": [
+      "Qual diferença em pontos percentuais?",
+      "Por que causalidade não é sustentada?",
+      "Total com todos os itens?",
+      "Por que ausência de orçamento não prova ausência de necessidade?"
+    ],
+    "answers": [
+      "15 pontos; aumento relativo50%.",
+      "Recrutamento mudou e programa ainda não começou; não isola causa.",
+      "210; excede200 em10.",
+      "Recurso disponível e necessidade são fatos distintos; consultar participantes."
+    ],
+    "writing": "Parecer de280–330 palavras corrigindo publicidade e propondo opção financeiramente viável ou decisão condicionada a revisão de custos.",
+    "interaction": "A defende anunciar tudo hoje. B exige ajuste de orçamento e declaração proporcional à evidência. Produzam acordo com pendências.",
+    "mediation": "Explique em português cálculo, causalidade e necessidade de acessibilidade sem confundir os três.",
+    "constraints": "30→45 equivale15pontos/50% relativo; 210>200. Não inventar desconto ou dispensar impressão sem consulta; pode propor obter10 adicionais como pendência."
+  },
+  "c1": {
+    "read": "Source1: A draft report claims that a mentoring scheme doubled retention from40 to80 percent. Source2: The administrator notes that the first figure counted everyone who registered, whereas the second excluded people who never attended. Source3: A mentor describes a participant whose confidence improved, but says that two others stopped responding. The funding panel has700 credits. A six-session continuation costs600; an optional evaluation workshop costs150. No additional funding is confirmed. The panel asks for a recommendation that distinguishes what can be approved now from what requires a change in scope or resources.",
+    "audio": "Panel member: We seem to have both a strong result and a compelling story.\nReviewer: We have a numerical claim based on different denominators, and an account of one participant’s improvement. Neither should be discarded, but they do different work.\nPanel member: Would a150-credit evaluation settle the matter?\nReviewer: Not automatically. We need to know what it would measure and whether the original records can be reconstructed.\nPanel member: Can we approve continuation meanwhile?\nReviewer: Possibly, as a limited decision with explicit assumptions. We cannot promise that it will reproduce a result we have not established.",
+    "questions": [
+      "Que mudança de denominador existe?",
+      "Qual restrição orçamentária do pacote completo?",
+      "Por que150 em avaliação não garante conclusão?",
+      "Como o avaliador diferencia narrativa e agregado?"
+    ],
+    "answers": [
+      "Todos inscritos versus exclusão de quem não participou; porcentagens não comparáveis diretamente.",
+      "600+150=750, excede700 em50.",
+      "Depende do desenho e recuperabilidade dos registros, não apenas do gasto.",
+      "Um caso ilustra experiência individual; não comprova efeito agregado."
+    ],
+    "writing": "Memorando de450–550 palavras com síntese de fontes, objeção forte, decisão revisável e comunicação pública curta adicional. Para evidência de extensão, combinar com o dossiê integral do projeto final.",
+    "interaction": "A pede decisão imediata. B recomenda escopo limitado. Após3 minutos A informa que registros originais não podem ser recuperados: B deve rever a estratégia de avaliação sem inventar dados.",
+    "mediation": "Escreva síntese de180–220 palavras em português para participantes, preservando a incerteza e distinguindo continuidade de prova de eficácia.",
+    "constraints": "Distinguir denominadores; custo750 não cabe700; não prometer reconstrução impossível após atualização. Avaliar nuance, atribuição, resposta à objeção e clareza para público não especialista."
+  }
+}

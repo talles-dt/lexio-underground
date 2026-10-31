@@ -1,0 +1,7 @@
+Shop assistant: How many eggs?
+Customer: Two eggs, please. And one bottle of milk.
+Shop assistant: Four eggs?
+Customer: No. Two. We have four eggs at home.
+Shop assistant: Two eggs and one bottle of milk. Seven credits.
+Customer: Seven?
+Shop assistant: Yes.

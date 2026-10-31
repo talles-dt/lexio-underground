@@ -1,0 +1,5 @@
+Host: English on Monday. At eleven, not ten. Room four.
+Eva: Again, please.
+Host: Monday. At eleven. Room four.
+Eva: Monday, at eleven, room four.
+Host: Yes.

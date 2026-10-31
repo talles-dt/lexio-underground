@@ -1,0 +1,7 @@
+Jo: Have you confirmed the room yet?
+Staff: Yes. We’ve just confirmed Room B for Saturday, from two to four.
+Jo: Is the total fee twenty-eight credits?
+Staff: Yes. I’ve already sent the confirmation by email.
+Jo: I haven’t received it yet. Could you check the address?
+Staff: Of course. Please use the fictional address on your form.
+Jo: Thank you. I’ll check again.

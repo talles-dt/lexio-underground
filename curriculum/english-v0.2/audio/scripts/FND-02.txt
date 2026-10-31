@@ -1,0 +1,7 @@
+Tutor: Listen. My name is Jo. Write Jo.
+Learner: Again, please.
+Tutor: Write Jo.
+Learner: Kim?
+Tutor: No. Jo.
+Learner: Jo. Thank you.
+Tutor: Yes. Stop.

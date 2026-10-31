@@ -1,0 +1,142 @@
+[
+  {
+    "id": "B2-01",
+    "title": "Reconstituir um projeto e negociar previsões",
+    "prerequisites": [
+      "B1-01",
+      "B1-02",
+      "B1-03"
+    ],
+    "grammar_ids": [
+      "G-B2-DA2B8B",
+      "G-B2-450880",
+      "G-B2-5EAAE6"
+    ],
+    "student_file": "lessons/b2/B2-01/student.md",
+    "teacher_file": "lessons/b2/B2-01/teacher.md",
+    "feedback_file": "lessons/b2/B2-01/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "id": "B2-02",
+    "title": "Discutir alternativas passadas sem confundir hipótese e culpa",
+    "prerequisites": [
+      "B2-01",
+      "B1-04",
+      "B1-08"
+    ],
+    "grammar_ids": [
+      "G-B2-4A2E30",
+      "G-B2-87A6C7",
+      "G-B2-7FC68E"
+    ],
+    "student_file": "lessons/b2/B2-02/student.md",
+    "teacher_file": "lessons/b2/B2-02/teacher.md",
+    "feedback_file": "lessons/b2/B2-02/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "id": "B2-03",
+    "title": "Investigar uma mudança e atribuir relatos com precisão",
+    "prerequisites": [
+      "B2-02",
+      "B1-05",
+      "B1-06"
+    ],
+    "grammar_ids": [
+      "G-B2-E6D32C",
+      "G-B2-F91BAA",
+      "G-B2-77255F"
+    ],
+    "student_file": "lessons/b2/B2-03/student.md",
+    "teacher_file": "lessons/b2/B2-03/teacher.md",
+    "feedback_file": "lessons/b2/B2-03/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "id": "B2-04",
+    "title": "Negociar um serviço e acompanhar o que está sendo feito",
+    "prerequisites": [
+      "B2-03",
+      "B1-06"
+    ],
+    "grammar_ids": [
+      "G-B2-411519",
+      "G-B2-62B6F0",
+      "G-B2-FC151E"
+    ],
+    "student_file": "lessons/b2/B2-04/student.md",
+    "teacher_file": "lessons/b2/B2-04/teacher.md",
+    "feedback_file": "lessons/b2/B2-04/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "id": "B2-05",
+    "title": "Transformar notas densas em orientações compreensíveis",
+    "prerequisites": [
+      "B2-04",
+      "B1-06"
+    ],
+    "grammar_ids": [
+      "G-B2-F507B9",
+      "G-B2-CA6335",
+      "G-B2-225290"
+    ],
+    "student_file": "lessons/b2/B2-05/student.md",
+    "teacher_file": "lessons/b2/B2-05/teacher.md",
+    "feedback_file": "lessons/b2/B2-05/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "id": "B2-06",
+    "title": "Relatar resultados sem ampliar o alcance dos dados",
+    "prerequisites": [
+      "B2-05",
+      "B1-04"
+    ],
+    "grammar_ids": [
+      "G-B2-E8FF04",
+      "G-B2-6CDE3F",
+      "G-B2-E86001"
+    ],
+    "student_file": "lessons/b2/B2-06/student.md",
+    "teacher_file": "lessons/b2/B2-06/teacher.md",
+    "feedback_file": "lessons/b2/B2-06/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "id": "B2-07",
+    "title": "Defender uma posição e explicitar condições",
+    "prerequisites": [
+      "B2-06",
+      "B2-02"
+    ],
+    "grammar_ids": [
+      "G-B2-BCE716",
+      "G-B2-1D7DC5",
+      "G-B2-11868F"
+    ],
+    "student_file": "lessons/b2/B2-07/student.md",
+    "teacher_file": "lessons/b2/B2-07/teacher.md",
+    "feedback_file": "lessons/b2/B2-07/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "id": "B2-08",
+    "title": "Explicar adaptação e tornar decisões transparentes",
+    "prerequisites": [
+      "B2-07",
+      "B1-07",
+      "B2-05"
+    ],
+    "grammar_ids": [
+      "G-B2-080F1E",
+      "G-B2-7C7649",
+      "G-B2-A65F73"
+    ],
+    "student_file": "lessons/b2/B2-08/student.md",
+    "teacher_file": "lessons/b2/B2-08/teacher.md",
+    "feedback_file": "lessons/b2/B2-08/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  }
+]

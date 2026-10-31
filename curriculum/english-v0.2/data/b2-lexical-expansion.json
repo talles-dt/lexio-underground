@@ -1,0 +1,97 @@
+{
+  "source": "LEXIO-AUTHOR-2026-10-29",
+  "level_status": "editorial_proposal_not_external_validation",
+  "note": "Entradas selecionadas para situações B2; não são palavras exclusivas do nível. Ampliação inicial de três domínios, não inventário suficiente.",
+  "entries": [
+    {
+      "entry": "let down",
+      "sense_pt": "decepcionar alguém",
+      "domain": "relationships"
+    },
+    {
+      "entry": "make up",
+      "sense_pt": "fazer as pazes",
+      "domain": "relationships"
+    },
+    {
+      "entry": "take for granted",
+      "sense_pt": "presumir sem conferir ou deixar de valorizar",
+      "domain": "relationships"
+    },
+    {
+      "entry": "set a boundary",
+      "sense_pt": "estabelecer limite pessoal",
+      "domain": "relationships"
+    },
+    {
+      "entry": "resentment",
+      "sense_pt": "ressentimento por injustiça percebida",
+      "domain": "relationships"
+    },
+    {
+      "entry": "supportive",
+      "sense_pt": "que oferece apoio",
+      "domain": "relationships"
+    },
+    {
+      "entry": "cut down on",
+      "sense_pt": "reduzir consumo ou frequência",
+      "domain": "food"
+    },
+    {
+      "entry": "run out of",
+      "sense_pt": "ficar sem um recurso",
+      "domain": "food"
+    },
+    {
+      "entry": "leftovers",
+      "sense_pt": "comida que sobrou de uma refeição",
+      "domain": "food"
+    },
+    {
+      "entry": "use up",
+      "sense_pt": "usar até esgotar",
+      "domain": "food"
+    },
+    {
+      "entry": "bland",
+      "sense_pt": "de sabor pouco marcante",
+      "domain": "food"
+    },
+    {
+      "entry": "filling",
+      "sense_pt": "que dá sensação de saciedade",
+      "domain": "food"
+    },
+    {
+      "entry": "leak",
+      "sense_pt": "vazamento físico",
+      "domain": "housing"
+    },
+    {
+      "entry": "damp",
+      "sense_pt": "levemente úmido",
+      "domain": "housing"
+    },
+    {
+      "entry": "wear and tear",
+      "sense_pt": "desgaste por uso cotidiano",
+      "domain": "housing"
+    },
+    {
+      "entry": "tenancy",
+      "sense_pt": "relação ou período de ocupação como inquilino",
+      "domain": "housing"
+    },
+    {
+      "entry": "deposit",
+      "sense_pt": "valor de garantia em aluguel",
+      "domain": "housing"
+    },
+    {
+      "entry": "notice",
+      "sense_pt": "aviso formal de saída",
+      "domain": "housing"
+    }
+  ]
+}

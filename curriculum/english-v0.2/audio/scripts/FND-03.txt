@@ -1,0 +1,6 @@
+Host: What’s your name?
+Guest: Leo. L, E, O.
+Host: Code two, zero, nine?
+Guest: No. Two, zero, eight.
+Host: Where are you from?
+Guest: I’m from Canada. I’m in Natal.

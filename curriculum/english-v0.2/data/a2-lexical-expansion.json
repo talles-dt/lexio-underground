@@ -1,0 +1,107 @@
+{
+  "source": "LEXIO-AUTHOR-2026-10-30",
+  "level": "a2",
+  "level_status": "editorial_proposal_not_external_validation",
+  "entries": [
+    {
+      "entry": "luggage",
+      "sense_pt": "bagagem como conjunto",
+      "domain": "travel"
+    },
+    {
+      "entry": "check in",
+      "sense_pt": "fazer registro de chegada em hospedagem",
+      "domain": "travel"
+    },
+    {
+      "entry": "check out",
+      "sense_pt": "encerrar estadia na recepção",
+      "domain": "travel"
+    },
+    {
+      "entry": "single room",
+      "sense_pt": "quarto para uma pessoa",
+      "domain": "travel"
+    },
+    {
+      "entry": "reception",
+      "sense_pt": "recepção de hospedagem",
+      "domain": "travel"
+    },
+    {
+      "entry": "headache",
+      "sense_pt": "dor de cabeça relatada",
+      "domain": "health"
+    },
+    {
+      "entry": "sore throat",
+      "sense_pt": "dor ou irritação na garganta relatada",
+      "domain": "health"
+    },
+    {
+      "entry": "feel sick",
+      "sense_pt": "sentir-se enjoado ou indisposto",
+      "domain": "health"
+    },
+    {
+      "entry": "better",
+      "sense_pt": "melhor em comparação ao estado anterior",
+      "domain": "health"
+    },
+    {
+      "entry": "worse",
+      "sense_pt": "pior em comparação ao estado anterior",
+      "domain": "health"
+    },
+    {
+      "entry": "repair",
+      "sense_pt": "consertar um item",
+      "domain": "services"
+    },
+    {
+      "entry": "broken",
+      "sense_pt": "quebrado ou sem funcionar no cenário",
+      "domain": "services"
+    },
+    {
+      "entry": "exchange",
+      "sense_pt": "trocar um item por outro em atendimento",
+      "domain": "services"
+    },
+    {
+      "entry": "delivery",
+      "sense_pt": "entrega de mercadoria",
+      "domain": "services"
+    },
+    {
+      "entry": "cancel",
+      "sense_pt": "cancelar reserva ou pedido",
+      "domain": "services"
+    },
+    {
+      "entry": "exhibition",
+      "sense_pt": "exposição de obras ou objetos",
+      "domain": "culture"
+    },
+    {
+      "entry": "performance",
+      "sense_pt": "apresentação artística ao vivo neste contexto",
+      "domain": "culture"
+    },
+    {
+      "entry": "audience",
+      "sense_pt": "público de uma apresentação",
+      "domain": "culture"
+    },
+    {
+      "entry": "enjoyable",
+      "sense_pt": "agradável de vivenciar",
+      "domain": "culture"
+    },
+    {
+      "entry": "crowded",
+      "sense_pt": "com muitas pessoas em pouco espaço",
+      "domain": "culture"
+    }
+  ]
+}

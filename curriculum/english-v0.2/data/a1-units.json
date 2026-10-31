@@ -1,0 +1,143 @@
+[
+  {
+    "id": "A1-01",
+    "title": "Pessoas, relações e trabalho",
+    "prerequisites": [
+      "FND-01",
+      "FND-03",
+      "FND-04"
+    ],
+    "grammar_ids": [
+      "G-A1-8081E5",
+      "G-A1-5F4B46"
+    ],
+    "student_file": "lessons/a1/A1-01/student.md",
+    "teacher_file": "lessons/a1/A1-01/teacher.md",
+    "feedback_file": "lessons/a1/A1-01/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "id": "A1-02",
+    "title": "Rotinas e uma hora para conversar",
+    "prerequisites": [
+      "A1-01",
+      "FND-06"
+    ],
+    "grammar_ids": [
+      "G-A1-EEE6A7",
+      "G-A1-6E12E9",
+      "G-A1-75B4BC",
+      "G-A1-1A8819"
+    ],
+    "student_file": "lessons/a1/A1-02/student.md",
+    "teacher_file": "lessons/a1/A1-02/teacher.md",
+    "feedback_file": "lessons/a1/A1-02/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "id": "A1-03",
+    "title": "Casa, bairro e o lugar de encontro",
+    "prerequisites": [
+      "A1-01",
+      "A1-02",
+      "FND-04"
+    ],
+    "grammar_ids": [
+      "G-A1-376948",
+      "G-A1-3216C0",
+      "G-A1-820D23"
+    ],
+    "student_file": "lessons/a1/A1-03/student.md",
+    "teacher_file": "lessons/a1/A1-03/teacher.md",
+    "feedback_file": "lessons/a1/A1-03/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "id": "A1-04",
+    "title": "Comprar para uma refeição",
+    "prerequisites": [
+      "A1-02",
+      "A1-03",
+      "FND-05"
+    ],
+    "grammar_ids": [
+      "G-A1-F7592E",
+      "G-A1-FA96AA",
+      "G-A1-DB81DA"
+    ],
+    "student_file": "lessons/a1/A1-04/student.md",
+    "teacher_file": "lessons/a1/A1-04/teacher.md",
+    "feedback_file": "lessons/a1/A1-04/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "id": "A1-05",
+    "title": "O que acontece agora — reconhecer pessoas e objetos",
+    "prerequisites": [
+      "A1-01",
+      "A1-02",
+      "A1-03"
+    ],
+    "grammar_ids": [
+      "G-A1-7F431B",
+      "G-A1-9F9444",
+      "G-A1-8F8A66",
+      "G-A1-DD58DD"
+    ],
+    "student_file": "lessons/a1/A1-05/student.md",
+    "teacher_file": "lessons/a1/A1-05/teacher.md",
+    "feedback_file": "lessons/a1/A1-05/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "id": "A1-06",
+    "title": "Convites, disponibilidade e regras de um encontro",
+    "prerequisites": [
+      "A1-04",
+      "A1-05"
+    ],
+    "grammar_ids": [
+      "G-A1-BA335B",
+      "G-A1-07EB92",
+      "G-A1-FFA2AE"
+    ],
+    "student_file": "lessons/a1/A1-06/student.md",
+    "teacher_file": "lessons/a1/A1-06/teacher.md",
+    "feedback_file": "lessons/a1/A1-06/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "id": "A1-07",
+    "title": "Contar o que aconteceu e explicar uma mudança",
+    "prerequisites": [
+      "A1-05",
+      "A1-06"
+    ],
+    "grammar_ids": [
+      "G-A1-38A6DD",
+      "G-A1-BBE96D",
+      "G-A1-7DDCE4"
+    ],
+    "student_file": "lessons/a1/A1-07/student.md",
+    "teacher_file": "lessons/a1/A1-07/teacher.md",
+    "feedback_file": "lessons/a1/A1-07/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "id": "A1-08",
+    "title": "Planejar uma visita e conferir o que levar",
+    "prerequisites": [
+      "A1-03",
+      "A1-06",
+      "A1-07"
+    ],
+    "grammar_ids": [
+      "G-A1-EFB12C",
+      "G-A1-6659C4"
+    ],
+    "student_file": "lessons/a1/A1-08/student.md",
+    "teacher_file": "lessons/a1/A1-08/teacher.md",
+    "feedback_file": "lessons/a1/A1-08/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  }
+]

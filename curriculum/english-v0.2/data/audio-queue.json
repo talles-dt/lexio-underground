@@ -1,0 +1,1804 @@
+[
+  {
+    "id": "FND-01",
+    "source": "lessons/foundation/FND-01/teacher.md",
+    "script_file": "audio/scripts/FND-01.txt",
+    "script_sha256": "b2f8dfe41b16ae40e16378d122e8f107f36b135928a5f2bc65088d2f8e674d3c",
+    "dialogue": [
+      {
+        "speaker": "Host",
+        "text": "Hello. What’s your name?"
+      },
+      {
+        "speaker": "Guest",
+        "text": "My name is Lee."
+      },
+      {
+        "speaker": "Host",
+        "text": "Jo?"
+      },
+      {
+        "speaker": "Guest",
+        "text": "No. Lee."
+      },
+      {
+        "speaker": "Host",
+        "text": "Lee. Nice to meet you."
+      },
+      {
+        "speaker": "Guest",
+        "text": "Nice to meet you."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "FND-02",
+    "source": "lessons/foundation/FND-02/teacher.md",
+    "script_file": "audio/scripts/FND-02.txt",
+    "script_sha256": "dc0006cc55463a6ef2b70e93a385185ce1813a8a2c99c286158aeab2dce769dd",
+    "dialogue": [
+      {
+        "speaker": "Tutor",
+        "text": "Listen. My name is Jo. Write Jo."
+      },
+      {
+        "speaker": "Learner",
+        "text": "Again, please."
+      },
+      {
+        "speaker": "Tutor",
+        "text": "Write Jo."
+      },
+      {
+        "speaker": "Learner",
+        "text": "Kim?"
+      },
+      {
+        "speaker": "Tutor",
+        "text": "No. Jo."
+      },
+      {
+        "speaker": "Learner",
+        "text": "Jo. Thank you."
+      },
+      {
+        "speaker": "Tutor",
+        "text": "Yes. Stop."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "FND-03",
+    "source": "lessons/foundation/FND-03/teacher.md",
+    "script_file": "audio/scripts/FND-03.txt",
+    "script_sha256": "34236857fb6d600512fc2be355e892621be2e2333d023e823e891888394ccaea",
+    "dialogue": [
+      {
+        "speaker": "Host",
+        "text": "What’s your name?"
+      },
+      {
+        "speaker": "Guest",
+        "text": "Leo. L, E, O."
+      },
+      {
+        "speaker": "Host",
+        "text": "Code two, zero, nine?"
+      },
+      {
+        "speaker": "Guest",
+        "text": "No. Two, zero, eight."
+      },
+      {
+        "speaker": "Host",
+        "text": "Where are you from?"
+      },
+      {
+        "speaker": "Guest",
+        "text": "I’m from Canada. I’m in Natal."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "FND-04",
+    "source": "lessons/foundation/FND-04/teacher.md",
+    "script_file": "audio/scripts/FND-04.txt",
+    "script_sha256": "7e9054d1cd72311542db21ac42bfa10e3b60cae919fe9d4c1e261788423e45e3",
+    "dialogue": [
+      {
+        "speaker": "Host",
+        "text": "Is this your bag, Jo?"
+      },
+      {
+        "speaker": "Jo",
+        "text": "No. My pen."
+      },
+      {
+        "speaker": "Host",
+        "text": "This pen?"
+      },
+      {
+        "speaker": "Jo",
+        "text": "Yes, thank you."
+      },
+      {
+        "speaker": "Host",
+        "text": "Two books?"
+      },
+      {
+        "speaker": "Jo",
+        "text": "No. Three books."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "FND-05",
+    "source": "lessons/foundation/FND-05/teacher.md",
+    "script_file": "audio/scripts/FND-05.txt",
+    "script_sha256": "9e6daea1e7b682f015cb71fb66b9fb291a916c7461addf32b974207118a824a2",
+    "dialogue": [
+      {
+        "speaker": "Customer",
+        "text": "One coffee, please."
+      },
+      {
+        "speaker": "Server",
+        "text": "Tea?"
+      },
+      {
+        "speaker": "Customer",
+        "text": "No. Coffee, please."
+      },
+      {
+        "speaker": "Server",
+        "text": "Four credits."
+      },
+      {
+        "speaker": "Customer",
+        "text": "Four?"
+      },
+      {
+        "speaker": "Server",
+        "text": "Yes."
+      },
+      {
+        "speaker": "Customer",
+        "text": "Thank you."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "FND-06",
+    "source": "lessons/foundation/FND-06/teacher.md",
+    "script_file": "audio/scripts/FND-06.txt",
+    "script_sha256": "a6aad93c9b55f8a4ca19d7b1758dcd84ffc08370d6eb394c2e222b479246e82d",
+    "dialogue": [
+      {
+        "speaker": "Host",
+        "text": "English on Monday. At eleven, not ten. Room four."
+      },
+      {
+        "speaker": "Eva",
+        "text": "Again, please."
+      },
+      {
+        "speaker": "Host",
+        "text": "Monday. At eleven. Room four."
+      },
+      {
+        "speaker": "Eva",
+        "text": "Monday, at eleven, room four."
+      },
+      {
+        "speaker": "Host",
+        "text": "Yes."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "A1-01",
+    "source": "lessons/a1/A1-01/teacher.md",
+    "script_file": "audio/scripts/A1-01.txt",
+    "script_sha256": "dd71fa485ce079261c59a239c33faf0d7012fffd3b37c9a280383620298f2a0b",
+    "dialogue": [
+      {
+        "speaker": "Host",
+        "text": "Is Ben a teacher?"
+      },
+      {
+        "speaker": "Lia",
+        "text": "No, he isn’t. He is a driver. Jo is a teacher."
+      },
+      {
+        "speaker": "Host",
+        "text": "Is Jo your neighbour?"
+      },
+      {
+        "speaker": "Lia",
+        "text": "No. Jo is my partner. Ben is my neighbour."
+      },
+      {
+        "speaker": "Host",
+        "text": "And your job?"
+      },
+      {
+        "speaker": "Lia",
+        "text": "I’m a nurse."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "A1-02",
+    "source": "lessons/a1/A1-02/teacher.md",
+    "script_file": "audio/scripts/A1-02.txt",
+    "script_sha256": "e624b1af597f24be1b8070cf195ede1f81275d39f8b88f3da743ac45d6fac97b",
+    "dialogue": [
+      {
+        "speaker": "Paulo",
+        "text": "Do you work on Friday, Nina?"
+      },
+      {
+        "speaker": "Nina",
+        "text": "No, I don’t. What time do you study English?"
+      },
+      {
+        "speaker": "Paulo",
+        "text": "At nine in the morning. I’m free at noon."
+      },
+      {
+        "speaker": "Nina",
+        "text": "A conversation at noon?"
+      },
+      {
+        "speaker": "Paulo",
+        "text": "Yes. At the library?"
+      },
+      {
+        "speaker": "Nina",
+        "text": "Yes. Friday, at noon, at the library."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "A1-03",
+    "source": "lessons/a1/A1-03/teacher.md",
+    "script_file": "audio/scripts/A1-03.txt",
+    "script_sha256": "75f1f70138266d3e702914c1c31d61d30c880852304955792926ac96f145b2bd",
+    "dialogue": [
+      {
+        "speaker": "Visitor",
+        "text": "Is there a bookshop near the flat?"
+      },
+      {
+        "speaker": "Host",
+        "text": "Yes. The bookshop is opposite the library."
+      },
+      {
+        "speaker": "Visitor",
+        "text": "At A?"
+      },
+      {
+        "speaker": "Host",
+        "text": "No. A is the library. The bookshop is at D."
+      },
+      {
+        "speaker": "Visitor",
+        "text": "And our conversation?"
+      },
+      {
+        "speaker": "Host",
+        "text": "At the café, B, next to the library."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "A1-04",
+    "source": "lessons/a1/A1-04/teacher.md",
+    "script_file": "audio/scripts/A1-04.txt",
+    "script_sha256": "df903f37cc2f9d2ca35ca589ae9140bbe694bd99e4cc177a6d300f9473f84446",
+    "dialogue": [
+      {
+        "speaker": "Shop assistant",
+        "text": "How many eggs?"
+      },
+      {
+        "speaker": "Customer",
+        "text": "Two eggs, please. And one bottle of milk."
+      },
+      {
+        "speaker": "Shop assistant",
+        "text": "Four eggs?"
+      },
+      {
+        "speaker": "Customer",
+        "text": "No. Two. We have four eggs at home."
+      },
+      {
+        "speaker": "Shop assistant",
+        "text": "Two eggs and one bottle of milk. Seven credits."
+      },
+      {
+        "speaker": "Customer",
+        "text": "Seven?"
+      },
+      {
+        "speaker": "Shop assistant",
+        "text": "Yes."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "A1-05",
+    "source": "lessons/a1/A1-05/teacher.md",
+    "script_file": "audio/scripts/A1-05.txt",
+    "script_sha256": "91b68e36b7a9ad85bac08fd30f35b8bd642cbb68d9bfc8334eec3b777dd8b937",
+    "dialogue": [
+      {
+        "speaker": "Caller",
+        "text": "Are you working at the café, Jo?"
+      },
+      {
+        "speaker": "Jo",
+        "text": "No. I’m at home. I’m studying now."
+      },
+      {
+        "speaker": "Caller",
+        "text": "Is Kim studying too?"
+      },
+      {
+        "speaker": "Jo",
+        "text": "No. Kim is cooking."
+      },
+      {
+        "speaker": "Caller",
+        "text": "These blue books near you?"
+      },
+      {
+        "speaker": "Jo",
+        "text": "Yes. These are my books. Those red bags are not mine."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "A1-06",
+    "source": "lessons/a1/A1-06/teacher.md",
+    "script_file": "audio/scripts/A1-06.txt",
+    "script_sha256": "9b28189fed8ddd053093b53a2bc9db8df506bcc93ca407598c66825c58997a47",
+    "dialogue": [
+      {
+        "speaker": "Organiser",
+        "text": "Would you like to join us on Friday?"
+      },
+      {
+        "speaker": "Eva",
+        "text": "Sorry, I can’t come on Friday. I work in the morning."
+      },
+      {
+        "speaker": "Organiser",
+        "text": "Are you free on Saturday at nine?"
+      },
+      {
+        "speaker": "Eva",
+        "text": "Yes. Is the event free?"
+      },
+      {
+        "speaker": "Organiser",
+        "text": "Yes. Bring water. Don’t take photos inside the library."
+      },
+      {
+        "speaker": "Eva",
+        "text": "Saturday at nine. Thank you."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "A1-07",
+    "source": "lessons/a1/A1-07/teacher.md",
+    "script_file": "audio/scripts/A1-07.txt",
+    "script_sha256": "b3802a58a6113f84534016a2000672915ccaf5e8002f8b6c6abea2b1aa4b70bd",
+    "dialogue": [
+      {
+        "speaker": "Eva",
+        "text": "Were you at the library yesterday?"
+      },
+      {
+        "speaker": "Lee",
+        "text": "Yes, at nine. But it was closed."
+      },
+      {
+        "speaker": "Eva",
+        "text": "Did you go home?"
+      },
+      {
+        "speaker": "Lee",
+        "text": "No, we didn’t. We went to the café."
+      },
+      {
+        "speaker": "Eva",
+        "text": "Did you see Kim?"
+      },
+      {
+        "speaker": "Lee",
+        "text": "No. We saw Jo. Kim wasn’t there."
+      },
+      {
+        "speaker": "Eva",
+        "text": "Did you watch a film?"
+      },
+      {
+        "speaker": "Lee",
+        "text": "Yes, we did."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "A1-08",
+    "source": "lessons/a1/A1-08/teacher.md",
+    "script_file": "audio/scripts/A1-08.txt",
+    "script_sha256": "7b0c92f520036c4de84831266e674bcbd9120f51e248b21aa11ba814f8d43092",
+    "dialogue": [
+      {
+        "speaker": "Jo",
+        "text": "Are you going to bring the map, Rui?"
+      },
+      {
+        "speaker": "Rui",
+        "text": "No. Kim is going to bring the map. I’m going to bring water."
+      },
+      {
+        "speaker": "Jo",
+        "text": "And the books?"
+      },
+      {
+        "speaker": "Rui",
+        "text": "They’re in Kim’s bag."
+      },
+      {
+        "speaker": "Jo",
+        "text": "Are we going to buy books?"
+      },
+      {
+        "speaker": "Rui",
+        "text": "No. We’re going to read at the library."
+      },
+      {
+        "speaker": "Jo",
+        "text": "At ten?"
+      },
+      {
+        "speaker": "Rui",
+        "text": "Yes, at ten in the morning."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "A2-01",
+    "source": "lessons/a2/A2-01/teacher.md",
+    "script_file": "audio/scripts/A2-01.txt",
+    "script_sha256": "15357f266b5c5f66cdcb31b0a6445965a1a575f9fd7a22b186ad444a616209ff",
+    "dialogue": [
+      {
+        "speaker": "Organiser",
+        "text": "Is Room B still available from two to four on Saturday?"
+      },
+      {
+        "speaker": "Receptionist",
+        "text": "Yes. There are eight seats."
+      },
+      {
+        "speaker": "Organiser",
+        "text": "Is twenty-eight credits the total fee?"
+      },
+      {
+        "speaker": "Receptionist",
+        "text": "Yes, for the whole room for two hours."
+      },
+      {
+        "speaker": "Organiser",
+        "text": "And it’s at street level?"
+      },
+      {
+        "speaker": "Receptionist",
+        "text": "Yes."
+      },
+      {
+        "speaker": "Organiser",
+        "text": "We’d like Room B, please."
+      },
+      {
+        "speaker": "Receptionist",
+        "text": "I’ll send the confirmation. Please check it when it arrives."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "A2-02",
+    "source": "lessons/a2/A2-02/teacher.md",
+    "script_file": "audio/scripts/A2-02.txt",
+    "script_sha256": "cfe713ac7266e30d368f2daa30c1a864d45223fdddbbb60b946ed1b1aa1893ce",
+    "dialogue": [
+      {
+        "speaker": "Traveller",
+        "text": "Could you tell me where platform six is?"
+      },
+      {
+        "speaker": "Staff",
+        "text": "Next to platform five. Your train leaves at two forty."
+      },
+      {
+        "speaker": "Traveller",
+        "text": "Thank you. I’ll call Jo now."
+      },
+      {
+        "speaker": "Jo",
+        "text": "Hello?"
+      },
+      {
+        "speaker": "Traveller",
+        "text": "The train arrives at three twenty. Can we meet at three thirty?"
+      },
+      {
+        "speaker": "Jo",
+        "text": "Yes. Outside the main entrance. If it rains, we’ll meet at the station café."
+      },
+      {
+        "speaker": "Traveller",
+        "text": "Three thirty. If it rains, the café. Thank you."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "A2-03",
+    "source": "lessons/a2/A2-03/teacher.md",
+    "script_file": "audio/scripts/A2-03.txt",
+    "script_sha256": "cb1f61d55af4e43f5192f873ec3e443a5690fe0c7df995ae703e661bf64f8dad",
+    "dialogue": [
+      {
+        "speaker": "Staff",
+        "text": "Is the blue bag with the white strip yours?"
+      },
+      {
+        "speaker": "Lee",
+        "text": "No. Mine has a red strip."
+      },
+      {
+        "speaker": "Staff",
+        "text": "The one that has two books inside?"
+      },
+      {
+        "speaker": "Lee",
+        "text": "Yes, and a silver bottle."
+      },
+      {
+        "speaker": "Staff",
+        "text": "What were you doing when the bus arrived?"
+      },
+      {
+        "speaker": "Lee",
+        "text": "I was talking on the phone."
+      },
+      {
+        "speaker": "Staff",
+        "text": "The person who found your bag left it here. You can collect it after three."
+      },
+      {
+        "speaker": "Lee",
+        "text": "Thank you. I’ll come at four."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "A2-04",
+    "source": "lessons/a2/A2-04/teacher.md",
+    "script_file": "audio/scripts/A2-04.txt",
+    "script_sha256": "0a7ffcfb1b1d57cfd74d6f1be45166c50033d896352fc7bec889b1ce55b91943",
+    "dialogue": [
+      {
+        "speaker": "Jo",
+        "text": "Have you confirmed the room yet?"
+      },
+      {
+        "speaker": "Staff",
+        "text": "Yes. We’ve just confirmed Room B for Saturday, from two to four."
+      },
+      {
+        "speaker": "Jo",
+        "text": "Is the total fee twenty-eight credits?"
+      },
+      {
+        "speaker": "Staff",
+        "text": "Yes. I’ve already sent the confirmation by email."
+      },
+      {
+        "speaker": "Jo",
+        "text": "I haven’t received it yet. Could you check the address?"
+      },
+      {
+        "speaker": "Staff",
+        "text": "Of course. Please use the fictional address on your form."
+      },
+      {
+        "speaker": "Jo",
+        "text": "Thank you. I’ll check again."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "A2-05",
+    "source": "lessons/a2/A2-05/teacher.md",
+    "script_file": "audio/scripts/A2-05.txt",
+    "script_sha256": "50a325d64415a970d6026e29bc9a2b21938a2c3685b549c5aea5a294a50ae973",
+    "dialogue": [
+      {
+        "speaker": "Learner",
+        "text": "Could you move my appointment to Tuesday at two?"
+      },
+      {
+        "speaker": "Receptionist",
+        "text": "Two isn’t available. We can offer three."
+      },
+      {
+        "speaker": "Learner",
+        "text": "Three is fine. Could I use my own vocabulary card?"
+      },
+      {
+        "speaker": "Receptionist",
+        "text": "Please use the centre’s card during the practice. You mustn’t use a card during the separate observation."
+      },
+      {
+        "speaker": "Learner",
+        "text": "Do I have to bring a notebook?"
+      },
+      {
+        "speaker": "Receptionist",
+        "text": "No, you don’t have to. It’s optional."
+      },
+      {
+        "speaker": "Learner",
+        "text": "And a short break?"
+      },
+      {
+        "speaker": "Receptionist",
+        "text": "Yes, between the activities."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "A2-06",
+    "source": "lessons/a2/A2-06/teacher.md",
+    "script_file": "audio/scripts/A2-06.txt",
+    "script_sha256": "1461f4035836731abdcf82f4670132b462936bc60cba7fed3d94c8c766ea4cbe",
+    "dialogue": [
+      {
+        "speaker": "Support",
+        "text": "Is the microphone on?"
+      },
+      {
+        "speaker": "Learner",
+        "text": "Yes. Should I turn off it now?"
+      },
+      {
+        "speaker": "Support",
+        "text": "Turn it off after the recording. Then look for the file in the practice folder."
+      },
+      {
+        "speaker": "Learner",
+        "text": "I found it. Is it shared automatically?"
+      },
+      {
+        "speaker": "Support",
+        "text": "No. It is checked by the teacher first."
+      },
+      {
+        "speaker": "Learner",
+        "text": "I’ll check the name carefully before I upload it."
+      },
+      {
+        "speaker": "Support",
+        "text": "Good. You don’t need to send us a password."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "A2-07",
+    "source": "lessons/a2/A2-07/teacher.md",
+    "script_file": "audio/scripts/A2-07.txt",
+    "script_sha256": "914ff2041eb5a933f53de804458ab1ed4e33c1c57353584840a3860c9f28eb1b",
+    "dialogue": [
+      {
+        "speaker": "Interviewer",
+        "text": "Did you use to sing alone, Mara?"
+      },
+      {
+        "speaker": "Mara",
+        "text": "No, I didn’t. I used to sing with a choir on Fridays."
+      },
+      {
+        "speaker": "Interviewer",
+        "text": "Do you still sing on Fridays?"
+      },
+      {
+        "speaker": "Mara",
+        "text": "No. Now I sing with a group on Sundays."
+      },
+      {
+        "speaker": "Interviewer",
+        "text": "Did the rain stop the performance?"
+      },
+      {
+        "speaker": "Mara",
+        "text": "No. Although it rained, we performed indoors."
+      },
+      {
+        "speaker": "Interviewer",
+        "text": "What happened after the songs?"
+      },
+      {
+        "speaker": "Mara",
+        "text": "We talked to the audience and put the chairs away."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "B1-01",
+    "source": "lessons/b1/B1-01/teacher.md",
+    "script_file": "audio/scripts/B1-01.txt",
+    "script_sha256": "176cd316099229349dc4daffc6ceb859d515d325b873e47829d3e4317e00c3ee",
+    "dialogue": [
+      {
+        "speaker": "Coordinator",
+        "text": "Have you finished checking the five descriptions?"
+      },
+      {
+        "speaker": "Writer",
+        "text": "Not yet. I’ve been checking them since Monday. I’ve finished three checks, but two still need work."
+      },
+      {
+        "speaker": "Coordinator",
+        "text": "Does that mean three texts have been reviewed by another reader?"
+      },
+      {
+        "speaker": "Writer",
+        "text": "No. Those are my language checks. Only two have had another reader’s feedback."
+      },
+      {
+        "speaker": "Coordinator",
+        "text": "When did you correct the wrong date?"
+      },
+      {
+        "speaker": "Writer",
+        "text": "Last Thursday."
+      },
+      {
+        "speaker": "Coordinator",
+        "text": "Can we announce the guide today?"
+      },
+      {
+        "speaker": "Writer",
+        "text": "I’d wait. We haven’t made the final recordings, and we still need to agree on responsibility for them."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "B1-02",
+    "source": "lessons/b1/B1-02/teacher.md",
+    "script_file": "audio/scripts/B1-02.txt",
+    "script_sha256": "be1fdab926127137769fd4c274cc0e033aa68f8fa8ad6acc0ff1da3c8f75f74e",
+    "dialogue": [
+      {
+        "speaker": "Interviewer",
+        "text": "Had the caretaker left before you arrived?"
+      },
+      {
+        "speaker": "Sam",
+        "text": "Yes. We arrived at six, and he had left at five forty-five."
+      },
+      {
+        "speaker": "Interviewer",
+        "text": "Could you contact him?"
+      },
+      {
+        "speaker": "Sam",
+        "text": "At first, no. Then Mina found the number, and we managed to reach him at six twenty."
+      },
+      {
+        "speaker": "Interviewer",
+        "text": "Did your group use to collect a key every Friday?"
+      },
+      {
+        "speaker": "Sam",
+        "text": "No. We used to have our own key. We would arrive early and set up the chairs."
+      },
+      {
+        "speaker": "Interviewer",
+        "text": "Who failed to pass on the message?"
+      },
+      {
+        "speaker": "Sam",
+        "text": "I can’t identify that from what I know."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "B1-03",
+    "source": "lessons/b1/B1-03/teacher.md",
+    "script_file": "audio/scripts/B1-03.txt",
+    "script_sha256": "8bdb09dade5a59e7d10688774b62943f13b431e88edced539301c92f04f8d96b",
+    "dialogue": [
+      {
+        "speaker": "Jo",
+        "text": "Have they confirmed the guide?"
+      },
+      {
+        "speaker": "Organiser",
+        "text": "Not yet. I’ll call them now."
+      },
+      {
+        "speaker": "Jo",
+        "text": "I’d rather postpone than replace the visit with a walk."
+      },
+      {
+        "speaker": "Organiser",
+        "text": "I understand. We won’t treat the walk as agreed."
+      },
+      {
+        "speaker": "Jo",
+        "text": "And the deposit?"
+      },
+      {
+        "speaker": "Organiser",
+        "text": "We won’t pay unless they confirm the guide and the price."
+      },
+      {
+        "speaker": "Jo",
+        "text": "When will you update us?"
+      },
+      {
+        "speaker": "Organiser",
+        "text": "As soon as I receive their reply. If nothing arrives by Thursday at noon, I’ll ask again. That deadline doesn’t cancel the trip automatically."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "B1-04",
+    "source": "lessons/b1/B1-04/teacher.md",
+    "script_file": "audio/scripts/B1-04.txt",
+    "script_sha256": "317fb0fba95f5efb107b391666d44f4f672c0b65df30a45f8b0a42ae1356e6a0",
+    "dialogue": [
+      {
+        "speaker": "Planner",
+        "text": "The coordinator hasn’t replied. The recorder must be broken."
+      },
+      {
+        "speaker": "Colleague",
+        "text": "That’s possible, but the silence doesn’t prove it. The coordinator might be busy."
+      },
+      {
+        "speaker": "Planner",
+        "text": "If we had two confirmed recorders, we’d use both rooms."
+      },
+      {
+        "speaker": "Colleague",
+        "text": "Yes. For now, could Group A move to ten?"
+      },
+      {
+        "speaker": "Planner",
+        "text": "We don’t know yet. Group B can only come at nine."
+      },
+      {
+        "speaker": "Colleague",
+        "text": "Then ask A before announcing anything. Each participant needs a chair, and either room has enough chairs. The missing information is about equipment and timing, not the number of seats."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "B1-05",
+    "source": "lessons/b1/B1-05/teacher.md",
+    "script_file": "audio/scripts/B1-05.txt",
+    "script_sha256": "69dcf8cce285eb5a6f74371a4e9d238c5db803f9229bea2aef984ea62b12ba60",
+    "dialogue": [
+      {
+        "speaker": "Editor",
+        "text": "Who called Rui?"
+      },
+      {
+        "speaker": "Sam",
+        "text": "Ana called Rui."
+      },
+      {
+        "speaker": "Editor",
+        "text": "And who did Rui call afterwards?"
+      },
+      {
+        "speaker": "Sam",
+        "text": "Jo."
+      },
+      {
+        "speaker": "Editor",
+        "text": "Did Jo ask us to publish the interview?"
+      },
+      {
+        "speaker": "Sam",
+        "text": "No. She asked us not to publish it before the speakers approved their quotations."
+      },
+      {
+        "speaker": "Editor",
+        "text": "Did Ana say all the names were checked?"
+      },
+      {
+        "speaker": "Sam",
+        "text": "No. She told me she had checked the first half and asked me to tell Jo that the rest was incomplete."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "B1-06",
+    "source": "lessons/b1/B1-06/teacher.md",
+    "script_file": "audio/scripts/B1-06.txt",
+    "script_sha256": "1891dfc02d8de69439a2bdbf17e21a93f9d25aa89fd7e8a980dfc885772b9e60",
+    "dialogue": [
+      {
+        "speaker": "Participant",
+        "text": "Has the talk been cancelled?"
+      },
+      {
+        "speaker": "Jo",
+        "text": "No. It has been moved to Room C. It still starts at seven."
+      },
+      {
+        "speaker": "Participant",
+        "text": "The notice I saved says Room A."
+      },
+      {
+        "speaker": "Jo",
+        "text": "That is the older notice. I sent the replacement on Thursday."
+      },
+      {
+        "speaker": "Participant",
+        "text": "Who should I contact about the route?"
+      },
+      {
+        "speaker": "Jo",
+        "text": "Our event team. Room C has a step-free entrance, but please ask about any other conditions you need confirmed."
+      },
+      {
+        "speaker": "Participant",
+        "text": "I’ll forward the updated version and explain that the time hasn’t changed."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "B1-07",
+    "source": "lessons/b1/B1-07/teacher.md",
+    "script_file": "audio/scripts/B1-07.txt",
+    "script_sha256": "2bb38643c76c3ef66dfae4132c8abe490be5af0813ca9b76dc65863a9fcf5da6",
+    "dialogue": [
+      {
+        "speaker": "Organiser",
+        "text": "You can come on Friday, can’t you?"
+      },
+      {
+        "speaker": "Lee",
+        "text": "Actually, I can’t."
+      },
+      {
+        "speaker": "Kim",
+        "text": "Neither can I."
+      },
+      {
+        "speaker": "Jo",
+        "text": "I can come on Saturday."
+      },
+      {
+        "speaker": "Lee",
+        "text": "So can I."
+      },
+      {
+        "speaker": "Organiser",
+        "text": "Is Saturday agreed by everyone?"
+      },
+      {
+        "speaker": "Kim",
+        "text": "We haven’t asked everyone yet."
+      },
+      {
+        "speaker": "Organiser",
+        "text": "Which headset do you prefer?"
+      },
+      {
+        "speaker": "Lee",
+        "text": "The black one that works. We can check our own recordings first and then help each other."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "B1-08",
+    "source": "lessons/b1/B1-08/teacher.md",
+    "script_file": "audio/scripts/B1-08.txt",
+    "script_sha256": "fb6fddd73f5051933c56a6a41f55705c2cea4611fb30e0e70ab8c957155dd098",
+    "dialogue": [
+      {
+        "speaker": "Organiser",
+        "text": "Did Lia stop reading when her schedule changed?"
+      },
+      {
+        "speaker": "Rui",
+        "text": "No. She stopped attending the old evening group. She still reads."
+      },
+      {
+        "speaker": "Organiser",
+        "text": "And she stops to make tea?"
+      },
+      {
+        "speaker": "Rui",
+        "text": "Yes. That is a pause before reading, not a decision to stop reading."
+      },
+      {
+        "speaker": "Organiser",
+        "text": "Why would online meetings be difficult for you?"
+      },
+      {
+        "speaker": "Rui",
+        "text": "Because of my connection and my other Tuesday commitment."
+      },
+      {
+        "speaker": "Organiser",
+        "text": "Please remember to send your dates."
+      },
+      {
+        "speaker": "Rui",
+        "text": "I will. I’m interested in helping, and I look forward to hearing the other members’ preferences."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "B2-01",
+    "source": "lessons/b2/B2-01/teacher.md",
+    "script_file": "audio/scripts/B2-01.txt",
+    "script_sha256": "8eaa49dad835d35a081d987aea931f02226568a6a96ace21e56a326de380720a",
+    "dialogue": [
+      {
+        "speaker": "Editor",
+        "text": "Had you been checking the captions long when the photograph arrived?"
+      },
+      {
+        "speaker": "Reader",
+        "text": "For two hours. Six captions had been checked, but we reopened one."
+      },
+      {
+        "speaker": "Editor",
+        "text": "What will you be doing at ten tomorrow?"
+      },
+      {
+        "speaker": "Reader",
+        "text": "Checking the proof with Jo. We expect to have approved it by noon if no new correction is needed."
+      },
+      {
+        "speaker": "Editor",
+        "text": "So readers can collect the booklets on Friday?"
+      },
+      {
+        "speaker": "Reader",
+        "text": "No. Friday is the estimated end of printing. Binding comes afterwards."
+      },
+      {
+        "speaker": "Editor",
+        "text": "And Monday collection?"
+      },
+      {
+        "speaker": "Reader",
+        "text": "An estimate, not a guarantee. We’ll ask for an update after approval."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "B2-02",
+    "source": "lessons/b2/B2-02/teacher.md",
+    "script_file": "audio/scripts/B2-02.txt",
+    "script_sha256": "3b29726144a4e6e5fdf98356788cea7c51efd913c7e1a68558bfd8d01642c85f",
+    "dialogue": [
+      {
+        "speaker": "Host",
+        "text": "If we had downloaded the file, would the whole event have been perfect?"
+      },
+      {
+        "speaker": "Guest",
+        "text": "We would have had a local copy, but we hadn’t tested the sound. We can’t guarantee the rest."
+      },
+      {
+        "speaker": "Host",
+        "text": "What do you wish had happened?"
+      },
+      {
+        "speaker": "Guest",
+        "text": "I wish we had checked both the file and the equipment."
+      },
+      {
+        "speaker": "Host",
+        "text": "And what do you wish were different now?"
+      },
+      {
+        "speaker": "Guest",
+        "text": "I wish we had a backup procedure. We still don’t."
+      },
+      {
+        "speaker": "Host",
+        "text": "Does the missing copy prove someone caused the failure deliberately?"
+      },
+      {
+        "speaker": "Guest",
+        "text": "No. We should discuss responsibilities without inventing intentions."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "B2-03",
+    "source": "lessons/b2/B2-03/teacher.md",
+    "script_file": "audio/scripts/B2-03.txt",
+    "script_sha256": "a77d4656562ce53e4f4d68b612c1e8538c7e04cb7c520715ae12db8a1592a8ac",
+    "dialogue": [
+      {
+        "speaker": "Interviewer",
+        "text": "Can we say Jo changed the time through the personal account at nine?"
+      },
+      {
+        "speaker": "Administrator",
+        "text": "No. That account could not be used until eleven. But the shared account was available earlier."
+      },
+      {
+        "speaker": "Interviewer",
+        "text": "Mina denied changing it. Does that settle who made the edit?"
+      },
+      {
+        "speaker": "Administrator",
+        "text": "No. Her statement is one source, not a complete investigation."
+      },
+      {
+        "speaker": "Interviewer",
+        "text": "What did Jo suggest?"
+      },
+      {
+        "speaker": "Administrator",
+        "text": "Comparing the exports and sending a correction. The team was persuaded to send it, and did so at two."
+      },
+      {
+        "speaker": "Interviewer",
+        "text": "Is the opening reported to have moved to seven?"
+      },
+      {
+        "speaker": "Administrator",
+        "text": "Someone has reported that, based on the poster. The booking still says six."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "B2-04",
+    "source": "lessons/b2/B2-04/teacher.md",
+    "script_file": "audio/scripts/B2-04.txt",
+    "script_sha256": "1b1a4a49bcc43cc6c3afbe97e7017dbe59e658aafb629fe14740b3b864d9fddc",
+    "dialogue": [
+      {
+        "speaker": "Client",
+        "text": "Could you clarify whether both frames have been repaired?"
+      },
+      {
+        "speaker": "Technician",
+        "text": "One has been repaired and is being checked. The other is still being repaired."
+      },
+      {
+        "speaker": "Client",
+        "text": "And the glass?"
+      },
+      {
+        "speaker": "Technician",
+        "text": "It is being cleaned. No replacement has been ordered."
+      },
+      {
+        "speaker": "Client",
+        "text": "I was wondering whether I could collect both on Thursday."
+      },
+      {
+        "speaker": "Technician",
+        "text": "We can’t confirm that yet. We’ll update you tomorrow morning."
+      },
+      {
+        "speaker": "Client",
+        "text": "Understood. We’ve arranged to have the labels corrected by the print shop, not by you."
+      },
+      {
+        "speaker": "Technician",
+        "text": "That helps. Please arrange collection only after confirmation."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "B2-05",
+    "source": "lessons/b2/B2-05/teacher.md",
+    "script_file": "audio/scripts/B2-05.txt",
+    "script_sha256": "46f8e651891684c84cf8ea803cd6d742aa613b903c76599b8984bc49422650d8",
+    "dialogue": [
+      {
+        "speaker": "Visitor",
+        "text": "Can I borrow a camera from the upper shelf?"
+      },
+      {
+        "speaker": "Volunteer",
+        "text": "Those cameras are awaiting inspection. They aren’t available yet."
+      },
+      {
+        "speaker": "Visitor",
+        "text": "What about the recorders stored in the blue cabinet?"
+      },
+      {
+        "speaker": "Volunteer",
+        "text": "They’re available for a two-day loan."
+      },
+      {
+        "speaker": "Visitor",
+        "text": "If I return one at four thirty, can someone else borrow it immediately?"
+      },
+      {
+        "speaker": "Volunteer",
+        "text": "No. We record the return that day, but inspect it the next morning."
+      },
+      {
+        "speaker": "Visitor",
+        "text": "So recording a return is not the same as approving the item?"
+      },
+      {
+        "speaker": "Volunteer",
+        "text": "Exactly. Staff carry out the inspection before changing its availability."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "B2-06",
+    "source": "lessons/b2/B2-06/teacher.md",
+    "script_file": "audio/scripts/B2-06.txt",
+    "script_sha256": "772c9348ec324e1ef00a7750c5b5d58a45171015f00e7cf6b49fe25ec9ba67f7",
+    "dialogue": [
+      {
+        "speaker": "Editor",
+        "text": "Can we say most residents want longer hours?"
+      },
+      {
+        "speaker": "Researcher",
+        "text": "No. Eight of twelve respondents preferred later closing. We invited twenty registered users."
+      },
+      {
+        "speaker": "Editor",
+        "text": "Did all twenty answer?"
+      },
+      {
+        "speaker": "Researcher",
+        "text": "No, only twelve did."
+      },
+      {
+        "speaker": "Editor",
+        "text": "So none of the others supported the idea?"
+      },
+      {
+        "speaker": "Researcher",
+        "text": "We don’t know. They did not respond."
+      },
+      {
+        "speaker": "Editor",
+        "text": "Was Tuesday the only invitation day?"
+      },
+      {
+        "speaker": "Researcher",
+        "text": "No. We sent invitations on Tuesday and Wednesday. Only registered users were invited."
+      },
+      {
+        "speaker": "Editor",
+        "text": "And weekends?"
+      },
+      {
+        "speaker": "Researcher",
+        "text": "None of the respondents was asked about weekend opening."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "B2-07",
+    "source": "lessons/b2/B2-07/teacher.md",
+    "script_file": "audio/scripts/B2-07.txt",
+    "script_sha256": "2e9fc8794c78b78237ae50398e15926ab5848670feddb88d7da017f552808598",
+    "dialogue": [
+      {
+        "speaker": "Volunteer",
+        "text": "I heard the committee doesn’t support the event."
+      },
+      {
+        "speaker": "Coordinator",
+        "text": "We do support it. What we need is a confirmed indoor room and a completed access check."
+      },
+      {
+        "speaker": "Volunteer",
+        "text": "But Jo sent the plan."
+      },
+      {
+        "speaker": "Coordinator",
+        "text": "It was a draft that Jo sent, not the final plan."
+      },
+      {
+        "speaker": "Volunteer",
+        "text": "If the forecast improves, can we announce the venue?"
+      },
+      {
+        "speaker": "Coordinator",
+        "text": "Even if it improves, those conditions still apply."
+      },
+      {
+        "speaker": "Volunteer",
+        "text": "Has either condition been completed?"
+      },
+      {
+        "speaker": "Coordinator",
+        "text": "Not yet. Only after both are complete will the committee approve the plan."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "B2-08",
+    "source": "lessons/b2/B2-08/teacher.md",
+    "script_file": "audio/scripts/B2-08.txt",
+    "script_sha256": "67b3441151c0bd22e4947bcd2ad996f8276695577c00da0f3b39a87410cfe360",
+    "dialogue": [
+      {
+        "speaker": "Worker",
+        "text": "I used to work evenings. I’m still getting used to the morning shift."
+      },
+      {
+        "speaker": "Colleague",
+        "text": "I’m accustomed to mornings, but I’m not used to this new rota yet."
+      },
+      {
+        "speaker": "Worker",
+        "text": "I can attend Wednesday’s briefing."
+      },
+      {
+        "speaker": "Colleague",
+        "text": "So can I."
+      },
+      {
+        "speaker": "Worker",
+        "text": "Has the expansion been approved?"
+      },
+      {
+        "speaker": "Colleague",
+        "text": "Yes, it has."
+      },
+      {
+        "speaker": "Worker",
+        "text": "Has it started?"
+      },
+      {
+        "speaker": "Colleague",
+        "text": "No, it hasn’t. Approval was on Tuesday; the start is planned for next month."
+      },
+      {
+        "speaker": "Worker",
+        "text": "I hope the draft rota stays open for comments until Friday."
+      },
+      {
+        "speaker": "Colleague",
+        "text": "It does. The coordinator’s message confirms that deadline."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "ASSESS-PRE-A1",
+    "source": "assessments/pre-a1/teacher.md",
+    "script_file": "audio/scripts/ASSESS-PRE-A1.txt",
+    "script_sha256": "6411b2f55969967e81a22fa8444f8fa362743bf935a3ddc0cfd2031b96dddd53",
+    "dialogue": [
+      {
+        "speaker": "Host",
+        "text": "English Club on Friday. At ten, not nine. Room five."
+      },
+      {
+        "speaker": "May",
+        "text": "Again, please."
+      },
+      {
+        "speaker": "Host",
+        "text": "Friday. At ten. Room five."
+      },
+      {
+        "speaker": "May",
+        "text": "Friday, at ten, room five?"
+      },
+      {
+        "speaker": "Host",
+        "text": "Yes. Code six, two, one?"
+      },
+      {
+        "speaker": "May",
+        "text": "No. Six, two, zero."
+      },
+      {
+        "speaker": "Host",
+        "text": "Six, two, zero. Thank you."
+      }
+    ],
+    "reserved_assessment": true,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "ASSESS-A1",
+    "source": "assessments/a1/teacher.md",
+    "script_file": "audio/scripts/ASSESS-A1.txt",
+    "script_sha256": "94c9236337e7cc803ad97f6726f31398265627628e34c385beda402b3e21fc85",
+    "dialogue": [
+      {
+        "speaker": "Receptionist",
+        "text": "Maya, are you free tomorrow at two in the afternoon?"
+      },
+      {
+        "speaker": "Maya",
+        "text": "Yes. At the library?"
+      },
+      {
+        "speaker": "Receptionist",
+        "text": "No. At the café. The library is closed tomorrow."
+      },
+      {
+        "speaker": "Maya",
+        "text": "The café at A?"
+      },
+      {
+        "speaker": "Receptionist",
+        "text": "Yes. At two, not eleven."
+      },
+      {
+        "speaker": "Maya",
+        "text": "Is Leo going to bring the map?"
+      },
+      {
+        "speaker": "Receptionist",
+        "text": "No. Please bring the map, Maya. Leo is going to bring water."
+      },
+      {
+        "speaker": "Maya",
+        "text": "I’m going to bring the map. At two, at the café."
+      },
+      {
+        "speaker": "Receptionist",
+        "text": "Yes. Don’t take photos inside the café."
+      }
+    ],
+    "reserved_assessment": true,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "ASSESS-A2",
+    "source": "assessments/a2/teacher.md",
+    "script_file": "audio/scripts/ASSESS-A2.txt",
+    "script_sha256": "2985e97c2d4ba94aa05f4a7537bf419cbc6ed0870704646b65d084b125ef75f7",
+    "dialogue": [
+      {
+        "speaker": "Receptionist",
+        "text": "Nina, we’ve just confirmed Room B for Sunday, from three to five. The total fee is twenty-five credits."
+      },
+      {
+        "speaker": "Nina",
+        "text": "Have you sent the email yet?"
+      },
+      {
+        "speaker": "Receptionist",
+        "text": "Yes, I’ve already sent it."
+      },
+      {
+        "speaker": "Nina",
+        "text": "I haven’t received it yet. I’ll check again. Thank you."
+      },
+      {
+        "speaker": "Rui",
+        "text": "Nina, my train arrives at two twenty, not two. Can we meet at two thirty?"
+      },
+      {
+        "speaker": "Nina",
+        "text": "Yes. Outside the main entrance. If it rains, we’ll meet at the station café."
+      },
+      {
+        "speaker": "Rui",
+        "text": "Two thirty, at the entrance. If it rains, at the café."
+      },
+      {
+        "speaker": "Nina",
+        "text": "That’s right."
+      }
+    ],
+    "reserved_assessment": true,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  },
+  {
+    "id": "ASSESS-B1",
+    "source": "assessments/b1/teacher.md",
+    "script_file": "audio/scripts/ASSESS-B1.txt",
+    "script_sha256": "ebdeb1b715e9aa3654b26d8613609fd48b81af60918a9c8c75998bdfc12fd1e2",
+    "dialogue": [
+      {
+        "speaker": "Rui",
+        "text": "We’ve matched the titles. Interview A one has been edited, and its speaker has approved that version."
+      },
+      {
+        "speaker": "Lia",
+        "text": "What about B two, the other edited interview?"
+      },
+      {
+        "speaker": "Rui",
+        "text": "Its speaker hasn’t replied yet."
+      },
+      {
+        "speaker": "Lia",
+        "text": "Then the speaker must have refused."
+      },
+      {
+        "speaker": "Rui",
+        "text": "We can’t conclude that. They might be busy, or they might not have received the message. We need to check."
+      },
+      {
+        "speaker": "Lia",
+        "text": "If we had more approved items, we would include a longer listening session."
+      },
+      {
+        "speaker": "Rui",
+        "text": "Yes, but for now we can share only A one. We can describe the rest of the work without playing those recordings."
+      },
+      {
+        "speaker": "Lia",
+        "text": "Is the opening still at three on Saturday, at the library?"
+      },
+      {
+        "speaker": "Rui",
+        "text": "Yes. The location changed earlier; the time hasn’t changed."
+      },
+      {
+        "speaker": "Lia",
+        "text": "I’d rather present a shorter session than treat missing replies as permission."
+      }
+    ],
+    "reserved_assessment": true,
+    "audio_file": null,
+    "generation_status": "not_produced",
+    "listening_review": "not_performed",
+    "variety": null,
+    "voices": null
+  }
+]

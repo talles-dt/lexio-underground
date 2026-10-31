@@ -1,0 +1,8 @@
+Host: If we had downloaded the file, would the whole event have been perfect?
+Guest: We would have had a local copy, but we hadn’t tested the sound. We can’t guarantee the rest.
+Host: What do you wish had happened?
+Guest: I wish we had checked both the file and the equipment.
+Host: And what do you wish were different now?
+Guest: I wish we had a backup procedure. We still don’t.
+Host: Does the missing copy prove someone caused the failure deliberately?
+Guest: No. We should discuss responsibilities without inventing intentions.

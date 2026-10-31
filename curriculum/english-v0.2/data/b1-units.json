@@ -1,0 +1,143 @@
+[
+  {
+    "id": "B1-01",
+    "title": "Relatar progresso sem confundir esforço e resultado",
+    "prerequisites": [
+      "A2-04",
+      "A2-06"
+    ],
+    "grammar_ids": [
+      "G-B1-E3BAF4",
+      "G-B1-EAF150",
+      "G-B1-CB6318"
+    ],
+    "student_file": "lessons/b1/B1-01/student.md",
+    "teacher_file": "lessons/b1/B1-01/teacher.md",
+    "feedback_file": "lessons/b1/B1-01/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "id": "B1-02",
+    "title": "Reconstruir um acontecimento com perspectivas diferentes",
+    "prerequisites": [
+      "B1-01",
+      "A2-03",
+      "A2-07"
+    ],
+    "grammar_ids": [
+      "G-B1-59209A",
+      "G-B1-5C8795",
+      "G-B1-FC3645"
+    ],
+    "student_file": "lessons/b1/B1-02/student.md",
+    "teacher_file": "lessons/b1/B1-02/teacher.md",
+    "feedback_file": "lessons/b1/B1-02/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "id": "B1-03",
+    "title": "Planejar com condições e preferências claras",
+    "prerequisites": [
+      "B1-02",
+      "A2-02",
+      "A2-05"
+    ],
+    "grammar_ids": [
+      "G-B1-1F6EA4",
+      "G-B1-E5D043",
+      "G-B1-F27DD6"
+    ],
+    "student_file": "lessons/b1/B1-03/student.md",
+    "teacher_file": "lessons/b1/B1-03/teacher.md",
+    "feedback_file": "lessons/b1/B1-03/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "id": "B1-04",
+    "title": "Comparar hipóteses e decidir com informação incompleta",
+    "prerequisites": [
+      "B1-01",
+      "B1-03",
+      "A2-01"
+    ],
+    "grammar_ids": [
+      "G-B1-0EFE72",
+      "G-B1-8D148C",
+      "G-B1-55E60C"
+    ],
+    "student_file": "lessons/b1/B1-04/student.md",
+    "teacher_file": "lessons/b1/B1-04/teacher.md",
+    "feedback_file": "lessons/b1/B1-04/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "id": "B1-05",
+    "title": "Transmitir uma mensagem sem mudar quem pediu o quê",
+    "prerequisites": [
+      "B1-02",
+      "B1-04",
+      "A2-05"
+    ],
+    "grammar_ids": [
+      "G-B1-C9900A",
+      "G-B1-BA0450",
+      "G-B1-444515"
+    ],
+    "student_file": "lessons/b1/B1-05/student.md",
+    "teacher_file": "lessons/b1/B1-05/teacher.md",
+    "feedback_file": "lessons/b1/B1-05/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "id": "B1-06",
+    "title": "Explicar uma mudança pública e identificar responsáveis",
+    "prerequisites": [
+      "B1-05",
+      "A2-06"
+    ],
+    "grammar_ids": [
+      "G-B1-D7F097",
+      "G-B1-9F266F",
+      "G-B1-D555F8"
+    ],
+    "student_file": "lessons/b1/B1-06/student.md",
+    "teacher_file": "lessons/b1/B1-06/teacher.md",
+    "feedback_file": "lessons/b1/B1-06/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "id": "B1-07",
+    "title": "Coordenar ajuda e conferir suposições",
+    "prerequisites": [
+      "B1-04",
+      "B1-06"
+    ],
+    "grammar_ids": [
+      "G-B1-51E602",
+      "G-B1-809179",
+      "G-B1-346DE6"
+    ],
+    "student_file": "lessons/b1/B1-07/student.md",
+    "teacher_file": "lessons/b1/B1-07/teacher.md",
+    "feedback_file": "lessons/b1/B1-07/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "id": "B1-08",
+    "title": "Explicar uma escolha e preservar razões e contrastes",
+    "prerequisites": [
+      "B1-05",
+      "B1-07",
+      "A2-07"
+    ],
+    "grammar_ids": [
+      "G-B1-F4C705",
+      "G-B1-EDD761",
+      "G-B1-FDB2DE"
+    ],
+    "student_file": "lessons/b1/B1-08/student.md",
+    "teacher_file": "lessons/b1/B1-08/teacher.md",
+    "feedback_file": "lessons/b1/B1-08/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  }
+]

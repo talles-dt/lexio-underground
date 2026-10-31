@@ -1,0 +1,8 @@
+Receptionist: Nina, we’ve just confirmed Room B for Sunday, from three to five. The total fee is twenty-five credits.
+Nina: Have you sent the email yet?
+Receptionist: Yes, I’ve already sent it.
+Nina: I haven’t received it yet. I’ll check again. Thank you.
+Rui: Nina, my train arrives at two twenty, not two. Can we meet at two thirty?
+Nina: Yes. Outside the main entrance. If it rains, we’ll meet at the station café.
+Rui: Two thirty, at the entrance. If it rains, at the café.
+Nina: That’s right.

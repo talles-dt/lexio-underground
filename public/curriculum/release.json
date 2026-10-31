@@ -1,0 +1,17 @@
+{
+  "edition": "2026-10-31",
+  "levels": [
+    "pre-a1",
+    "a1",
+    "a2",
+    "b1",
+    "b2",
+    "c1"
+  ],
+  "lexical_entries": 446,
+  "lexical_sequences": 87,
+  "status": "authored_not_independently_reviewed_or_piloted",
+  "course_complete": false,
+  "archive": "lexio-english-2026-10-31.zip",
+  "sha256": "366b0366063d0762a12ee260a51159407a90d69c09a4c255ccc654bb07c49b5f"
+}

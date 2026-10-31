@@ -1,0 +1,127 @@
+{
+  "source": "LEXIO-AUTHOR-2026-10-30",
+  "level": "a1",
+  "level_status": "editorial_proposal_not_external_validation",
+  "entries": [
+    {
+      "entry": "have lunch",
+      "sense_pt": "almoçar",
+      "domain": "routine"
+    },
+    {
+      "entry": "have dinner",
+      "sense_pt": "jantar",
+      "domain": "routine"
+    },
+    {
+      "entry": "go to bed",
+      "sense_pt": "ir para cama",
+      "domain": "routine"
+    },
+    {
+      "entry": "take a shower",
+      "sense_pt": "tomar banho de chuveiro",
+      "domain": "routine"
+    },
+    {
+      "entry": "cook",
+      "sense_pt": "cozinhar",
+      "domain": "routine"
+    },
+    {
+      "entry": "clean",
+      "sense_pt": "limpar como ação",
+      "domain": "routine"
+    },
+    {
+      "entry": "living room",
+      "sense_pt": "sala de estar",
+      "domain": "housing"
+    },
+    {
+      "entry": "garden",
+      "sense_pt": "jardim",
+      "domain": "housing"
+    },
+    {
+      "entry": "window",
+      "sense_pt": "janela",
+      "domain": "housing"
+    },
+    {
+      "entry": "bed",
+      "sense_pt": "cama como móvel",
+      "domain": "housing"
+    },
+    {
+      "entry": "fridge",
+      "sense_pt": "geladeira",
+      "domain": "housing"
+    },
+    {
+      "entry": "washing machine",
+      "sense_pt": "máquina de lavar roupas",
+      "domain": "housing"
+    },
+    {
+      "entry": "shirt",
+      "sense_pt": "camisa",
+      "domain": "shopping"
+    },
+    {
+      "entry": "trousers",
+      "sense_pt": "calça no uso britânico",
+      "domain": "shopping"
+    },
+    {
+      "entry": "shoes",
+      "sense_pt": "sapatos",
+      "domain": "shopping"
+    },
+    {
+      "entry": "size",
+      "sense_pt": "tamanho de roupa",
+      "domain": "shopping"
+    },
+    {
+      "entry": "try on",
+      "sense_pt": "experimentar roupa ou calçado",
+      "domain": "shopping"
+    },
+    {
+      "entry": "pay",
+      "sense_pt": "pagar",
+      "domain": "shopping"
+    },
+    {
+      "entry": "ticket",
+      "sense_pt": "passagem de transporte",
+      "domain": "transport"
+    },
+    {
+      "entry": "station",
+      "sense_pt": "estação de trem no cenário",
+      "domain": "transport"
+    },
+    {
+      "entry": "train",
+      "sense_pt": "trem como veículo",
+      "domain": "transport"
+    },
+    {
+      "entry": "bus",
+      "sense_pt": "ônibus como veículo",
+      "domain": "transport"
+    },
+    {
+      "entry": "turn left",
+      "sense_pt": "virar à esquerda",
+      "domain": "transport"
+    },
+    {
+      "entry": "turn right",
+      "sense_pt": "virar à direita",
+      "domain": "transport"
+    }
+  ]
+}

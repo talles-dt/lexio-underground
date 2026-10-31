@@ -1,0 +1,6 @@
+Host: Hello. What’s your name?
+Guest: My name is Lee.
+Host: Jo?
+Guest: No. Lee.
+Host: Lee. Nice to meet you.
+Guest: Nice to meet you.

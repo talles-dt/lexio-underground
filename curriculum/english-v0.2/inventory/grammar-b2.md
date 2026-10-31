@@ -1,0 +1,30 @@
+# Inventário gramatical — B2
+
+Seleção autoral com nível proposto. Explicações e microaulas existem; suficiência e alinhamento externo ainda não foram estabelecidos.
+
+| ID e tópico | Forma, sentido e uso | Contraste | Pré-requisitos |
+|---|---|---|---|
+| [G-B2-DA2B8B — Past perfect contínuo](../lessons/G-B2-DA2B8B.md) | Had been + -ing destaca atividade anterior em curso/duração até ponto passado. | Had waited pode focalizar espera concluída; escolher perspectiva pertinente. | G-B1-5C8795 |
+| [G-B2-450880 — Futuro contínuo e perfeito](../lessons/G-B2-450880.md) | Will be + -ing situa atividade; will have + particípio situa conclusão até marco futuro. | At e by ajudam a distinguir momento e limite, sem serem regras exclusivas. | G-B1-1F6EA4 |
+| [G-B2-5EAAE6 — Futuro no passado](../lessons/G-B2-5EAAE6.md) | Would e was going to apresentam futuro visto de momento passado; resultado pode divergir. | Intenção relatada não prova execução. | G-B2-450880 |
+| [G-B2-4A2E30 — Terceira condicional](../lessons/G-B2-4A2E30.md) | If + had + particípio; would/could/might have + particípio explora alternativa passada. | Might have não garante resultado alternativo; would have é mais forte. | G-B1-F27DD6 |
+| [G-B2-87A6C7 — Condicionais mistas](../lessons/G-B2-87A6C7.md) | Combinar referências temporais quando condição passada afeta presente ou estado atual afetou passado. | Mistura precisa de relação temporal, não é erro a corrigir automaticamente. | G-B2-4A2E30 |
+| [G-B2-7FC68E — Wish e if only](../lessons/G-B2-7FC68E.md) | Wish + passado expressa situação presente desejada; + past perfect arrependimento passado. | I wish I would have called não é a forma-alvo para arrependimento pessoal passado. | G-B2-87A6C7 |
+| [G-B2-E6D32C — Modais perfeitos](../lessons/G-B2-E6D32C.md) | May/might/must/can’t have + particípio fazem inferência passada; should have avalia expectativa/conselho retrospectivo. | Might have missed não afirma que perdeu. | G-B1-E5D043 |
+| [G-B2-411519 — Passiva contínua e agentes](../lessons/G-B2-411519.md) | Be being + particípio focaliza ação passiva em andamento; by nomeia agente quando relevante. | Is repaired pode indicar rotina/estado diferente de ação em andamento. | G-B1-D7F097 |
+| [G-B2-62B6F0 — Causativa have/get something done](../lessons/G-B2-62B6F0.md) | Have/get + objeto + particípio indica serviço obtido ou evento sofrido, conforme contexto. | Had my bike repaired não diz que fiz o reparo pessoalmente. | G-B2-411519 |
+| [G-B2-F91BAA — Passiva de relato](../lessons/G-B2-F91BAA.md) | It is said that… e subject is said to… atribuem relato sem tratá-lo como observação direta. | Is said to não confirma verdade da alegação. | G-B2-62B6F0 |
+| [G-B2-77255F — Verbos de relato e complementação](../lessons/G-B2-77255F.md) | Suggest + -ing/that; persuade + objeto + to; deny + -ing/that; padrões preservam relação entre agentes. | Suggested me to wait não é o padrão-alvo. | G-B1-EDD761 |
+| [G-B2-F507B9 — Relativas reduzidas e particípios](../lessons/G-B2-F507B9.md) | Particípio pode condensar relativa quando relação é clara; manter sujeito interpretável. | Waiting indica ação ativa; submitted recebe ação. | G-B1-D555F8 |
+| [G-B2-CA6335 — Orações participiais e sujeito](../lessons/G-B2-CA6335.md) | Particípio inicial normalmente compartilha sujeito com oração principal; conferir referência. | Having checked the figures, the report was revised deixa agente pendurado. | G-B2-F507B9 |
+| [G-B2-225290 — Grupos nominais complexos](../lessons/G-B2-225290.md) | Modificadores antes/depois do nome condensam informação; identificar núcleo e relações. | Six-week como modificador não recebe plural weeks neste padrão. | G-A1-DB81DA |
+| [G-B2-E8FF04 — Artigos em generalizações](../lessons/G-B2-E8FF04.md) | Plural/incontável sem artigo pode generalizar; the pode marcar conjunto específico ou espécie em certos padrões. | The books altera alcance quando já identifica conjunto. | G-B2-225290 |
+| [G-B2-6CDE3F — Quantificação de alcance](../lessons/G-B2-6CDE3F.md) | Most versus most of; all versus all of; a great deal of; none of; conferir conjunto e contabilidade. | Most of people omite determinante necessário neste padrão. | G-B1-55E60C |
+| [G-B2-E86001 — Posição e alcance de only](../lessons/G-B2-E86001.md) | Posição e foco podem mudar o que only restringe; reescrever para evitar ambiguidade. | As frases restringem pessoa, ação ou destinatário. | G-A2-A86DE3 |
+| [G-B2-BCE716 — Ênfase com do e clefts](../lessons/G-B2-BCE716.md) | Do enfatiza verbo; it-cleft e what-cleft focalizam informação específica. | Ênfase não fornece evidência adicional por si só. | Apoio inicial |
+| [G-B2-1D7DC5 — Inversão após negativos](../lessons/G-B2-1D7DC5.md) | Expressão negativa inicial pode exigir auxiliar antes do sujeito. | Inversão é escolha de foco e registro; não aplicar a toda frase. | G-B2-BCE716 |
+| [G-B2-11868F — Concessão e condição delimitada](../lessons/G-B2-11868F.md) | Even though afirma contraste factual; even if considera condição; provided that impõe condição. | Troca pode mudar se chuva é fato ou hipótese. | G-B1-FDB2DE |
+| [G-B2-080F1E — Referência e elipse](../lessons/G-B2-080F1E.md) | So/neither, auxiliares e elipse evitam repetição; preservar antecedente recuperável. | Antecedente distante pode tornar resumo ambíguo. | G-B2-11868F |
+| [G-B2-FC151E — Distanciamento cortês](../lessons/G-B2-FC151E.md) | Could/would/past forms podem atenuar pedidos; não equivalem automaticamente a tempo passado. | Polidez não deve obscurecer prazo nem transformar pedido em obrigação. | G-B2-E6D32C |
+| [G-B2-7C7649 — Be/get used to e accustomed](../lessons/G-B2-7C7649.md) | Be used to + nome/-ing indica familiaridade; get used to adaptação; used to + base hábito antigo. | As duas frases não dizem a mesma coisa sobre rotina atual. | G-B2-77255F |
+| [G-B2-A65F73 — Categorias e nominalização inicial](../lessons/G-B2-A65F73.md) | Sufixos podem mudar classe; verbo/nome/adjetivo têm padrões e efeitos discursivos diferentes. | Transformar verbo em nome pode esconder quem decidiu; recuperar agente se relevante. | Apoio inicial |

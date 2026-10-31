@@ -1,0 +1,447 @@
+level	domain	entry	sense_pt	pattern	example	usage_note
+pre-a1	identity	hello	cumprimento	hello + nome	Hello, Jo.	hi é alternativa informal; não significa despedida
+pre-a1	identity	name	nome de pessoa	my name is + nome	My name is Lia.	nome fictício é suficiente
+pre-a1	identity	first name	nome próprio	first name + is	My first name is Ana.	não presumir estrutura universal de nomes
+pre-a1	identity	last name	sobrenome	last name + is	My last name is Silva.	confirmar como a pessoa organiza seu nome
+pre-a1	identity	nice to meet you	acolher apresentação	nice to meet you	Nice to meet you, Lee.	não substitui resposta à pergunta de nome
+pre-a1	identity	from	origem	be from + lugar	I’m from Brazil.	distinguir localização atual
+pre-a1	identity	in	localização em lugar	be in + lugar	I’m in Recife.	neste sentido, não origem
+pre-a1	interaction	please	marcar pedido cortês	pedido + please	Water, please.	cortesia também depende de contexto
+pre-a1	interaction	thank you	agradecimento	thank you for + nome	Thank you for your help.	forma mais curta thanks é informal
+pre-a1	interaction	again	mais uma vez	again, please	Again, please.	pedir repetição
+pre-a1	interaction	slowly	com ritmo lento	slowly, please	Slowly, please.	não exige elevar volume
+pre-a1	interaction	help	ajuda	help, please	Help, please.	forma inicial; desenvolver pedidos completos depois
+pre-a1	interaction	yes	confirmação	yes + dado opcional	Yes, room two.	confirmar informação específica
+pre-a1	interaction	no	negação ou correção	no + correção	No, room three.	acrescentar dado certo quando necessário
+pre-a1	learning	listen	escutar	listen to + fonte	Listen to Jo.	não listen Jo no padrão-alvo
+pre-a1	learning	look	olhar	look at + objeto	Look at the name.	look for tem outro sentido
+pre-a1	learning	read	ler	read + texto	Read the name.	no presente, pronúncia difere do passado
+pre-a1	learning	write	escrever	write + dado	Write your name.	w inicial não pronunciado
+pre-a1	learning	stop	parar	stop + atividade posterior	Stop, please.	introduzir inicialmente como instrução inteira
+pre-a1	learning	spell	soletrar	spell + palavra	How do you spell it?	soletrar não é pronunciar a palavra inteira
+pre-a1	objects	book	livro	one book / two books	Two books, please.	plural regular
+pre-a1	objects	pen	caneta	a pen	This is my pen.	não pencil
+pre-a1	objects	bag	bolsa ou saco	my bag	This is my bag.	sentido especificado pelo objeto
+pre-a1	objects	phone	telefone	my phone	This is my phone.	não exigir número real
+pre-a1	objects	chair	cadeira	a chair	This chair is blue.	objeto contável
+pre-a1	objects	table	mesa	under the table	The bag is under the table.	table também tem sentido de tabela, não aqui
+pre-a1	food	water	água	some water	Water, please.	porções podem ser contadas em contexto de pedido
+pre-a1	food	tea	chá	one tea, please	One tea, please.	pedido por porção
+pre-a1	food	coffee	café bebida	a coffee	A coffee, please.	café estabelecimento é café/coffee shop
+pre-a1	food	apple	maçã	an apple	An apple, please.	an por som inicial
+pre-a1	food	bread	pão como alimento	some bread	Some bread, please.	usar loaf/slice para contar quando necessário
+pre-a1	time	today	hoje	today + oração	English today?	bloco inicial apoiado
+pre-a1	time	Monday	segunda-feira	on Monday	We meet on Monday.	dias com inicial maiúscula
+pre-a1	time	Friday	sexta-feira	on Friday	The class is on Friday.	completar semana no banco de apoio
+pre-a1	time	at ten	às dez	at + hora	At ten, please.	confirmar manhã ou noite
+pre-a1	places	room	sala	room + número	Room three.	room também pode significar espaço disponível
+pre-a1	places	here	aqui	be here	I’m here.	referência depende do falante
+pre-a1	people	friend	amigo ou amiga	my friend	This is my friend Jo.	não informa gênero por si só
+pre-a1	transactions	how much	perguntar preço	how much is + item	How much is it?	neste uso pergunta preço, não número de itens
+pre-a1	transactions	code	código	code + dígitos	My code is three zero five.	usar dados fictícios
+a1	people	neighbour	vizinho	my neighbour	My neighbour works at night.	neighbor é grafia americana aceita
+a1	people	partner	companheiro ou parceiro	my partner	My partner studies English.	contexto define relação; não presumir casamento
+a1	people	parent	pai ou mãe	my parents	My parents live nearby.	gênero não especificado no singular
+a1	people	child	criança ou filho	one child / two children	Two children are here.	plural irregular
+a1	work	teacher	professor	a teacher	She is a teacher.	professor em inglês pode designar cargo acadêmico específico
+a1	work	nurse	profissional de enfermagem	a nurse	Jo is a nurse.	não inferir gênero
+a1	work	driver	motorista	a bus driver	He is a bus driver.	combinação especifica veículo
+a1	work	work	trabalhar	work at/in + local	I work at a café.	não confundir work incontável com a job
+a1	work	job	emprego ou posto	get a job	She has a new job.	contável
+a1	routine	get up	levantar-se da cama	get up at + hora	I get up at six.	wake up é acordar, pode ocorrer antes
+a1	routine	wake up	acordar	wake up at + hora	I wake up at five.	não necessariamente levantar-se
+a1	routine	have breakfast	tomar café da manhã	have breakfast	We have breakfast at seven.	sem artigo no uso habitual
+a1	routine	start	começar	start work	I start work at eight.	não exige to antes de work como nome
+a1	routine	finish	terminar	finish work	I finish work at five.	finish + -ing quando verbo seguinte
+a1	routine	usually	geralmente	usually + verbo	I usually walk home.	não significa sempre
+a1	home	kitchen	cozinha	in the kitchen	The table is in the kitchen.	local da casa
+a1	home	bedroom	quarto de dormir	two bedrooms	The flat has two bedrooms.	distinguir room genérico
+a1	home	bathroom	banheiro	where is the bathroom	Where is the bathroom?	uso regional pode variar
+a1	home	flat	apartamento	live in a flat	We live in a small flat.	apartment é alternativa americana frequente
+a1	home	rent	alugar imóvel	rent a flat	We rent a flat.	sentido verbal, não valor do aluguel
+a1	places	library	biblioteca	at the library	I study at the library.	livraria é bookshop/bookstore
+a1	places	bookshop	livraria	go to a bookshop	There is a bookshop nearby.	bookstore é alternativa
+a1	places	bus stop	ponto de ônibus	at the bus stop	Meet me at the bus stop.	não bus station em todo caso
+a1	places	next to	ao lado de	next to + local	The café is next to the bank.	não necessariamente mesma construção
+a1	places	opposite	em frente, lado oposto	opposite + local	The park is opposite the school.	distinguir next to
+a1	food	rice	arroz	some rice	We need some rice.	incontável neste uso
+a1	food	egg	ovo	six eggs	Please buy six eggs.	contável
+a1	food	milk	leite	some milk	I don’t want milk in my coffee.	incontável neste uso
+a1	food	meal	refeição	have a meal	We have a meal together.	não significa carne, que é meat
+a1	shopping	price	preço	the price of + item	What is the price of this bag?	price não é prize, prêmio
+a1	shopping	cheap	barato	be cheap	This ticket is cheap.	pode ter conotação de baixa qualidade em outro contexto
+a1	shopping	expensive	caro	be expensive	The room is expensive.	não significa custo absoluto igual para todos
+a1	leisure	walk	caminhar ou caminhada	go for a walk	Let’s go for a walk.	uma atividade local válida
+a1	leisure	watch	assistir ou observar	watch a film	I watched a film yesterday.	look at uma imagem não equivale a assistir filme
+a1	leisure	free	gratuito	be free	The event is free.	free também significa disponível/livre em outros sentidos
+a1	availability	free	disponível	be free on + dia	Are you free on Friday?	não pergunta preço
+a1	weather	rain	chover	it rains / it’s raining	It’s raining now.	em inglês manter sujeito it
+a1	weather	cold	frio	be cold	It was cold yesterday.	I have a cold é resfriado, outro sentido
+a1	plans	meet	encontrar alguém combinado	meet someone at + lugar	We’re meeting Jo at the café.	não meet with obrigatório neste uso
+a1	plans	invite	convidar	invite someone to + evento	I invited Lee to the meeting.	não invite alguém for todo evento
+a2	travel	delay	atraso	be delayed by + duração	The train is delayed by twenty minutes.	duração de atraso não é horário final de chegada
+a2	travel	platform	plataforma de embarque	platform + número	The train leaves from platform four.	não plataforma digital neste sentido
+a2	travel	miss	perder transporte	miss a bus	I missed the bus.	não significa deixar objeto no ônibus
+a2	travel	get back	voltar	get back at + hora	We got back at ten.	pode ter outros sentidos com objeto
+a2	travel	pick up	buscar alguém	pick someone up	I’ll pick Jo up at six.	pronome no meio: pick her up
+a2	travel	book	reservar	book a room	We haven’t booked a room yet.	verbo distinto de book livro
+a2	travel	return ticket	passagem de ida e volta	a return ticket	I’d like a return ticket.	round-trip ticket é alternativa
+a2	comparison	available	disponível para uso	be available from/to	The room is available after six.	não implica reserva confirmada
+a2	comparison	enough	suficiente	enough + nome	There are enough chairs.	adjetivo + enough em big enough
+a2	comparison	fit	caber ou servir	fit + pessoa/objeto	These shoes don’t fit me.	sentido diferente de saudável em be fit
+a2	comparison	quiet	silencioso	quiet room	I need a quiet room.	não quite, advérbio
+a2	comparison	reliable	confiável	reliable service	The service is usually reliable.	não garantia absoluta de funcionamento
+a2	health	tired	cansado	feel tired	I feel tired today.	não diagnóstico
+a2	health	appointment	compromisso agendado	make/move an appointment	Could we move my appointment?	distinguir reunião informal
+a2	health	rest	descanso	take a rest	I need a short rest.	sem aconselhamento médico específico
+a2	health	break	pausa	take a break	Let’s take a break.	não necessariamente quebrar objeto
+a2	rules	allowed	permitido	be allowed to + verbo	We’re allowed to use the room.	negação proíbe; ausência de obrigação não proíbe
+a2	rules	optional	opcional	be optional	The notebook is optional.	não obrigatório
+a2	digital	attachment	anexo de mensagem	attach/an attachment	The details are in the attachment.	não afirmar que foi enviado sem conferir
+a2	digital	reply	responder mensagem	reply to + mensagem	Please reply to this email.	não reply me no padrão-alvo
+a2	digital	log in	entrar em conta	log in to + serviço	I can’t log in to the site.	login pode funcionar como nome
+a2	digital	password	senha	change a password	I need to change my password.	usar exemplo fictício, não solicitar senha real
+a2	services	collect	buscar item disponível	collect a parcel	I can collect the bag tomorrow.	não necessariamente colecionar
+a2	services	lost	perdido	lost property	Ask at lost property.	uso da frase depende de contexto; objeto perdido não prova roubo
+a2	services	receipt	comprovante de compra	keep the receipt	Please keep the receipt.	não recipe, receita culinária
+a2	collaboration	set up	preparar ou montar	set something up	We need to set up the room.	set it up com pronome no meio
+a2	collaboration	fill in	preencher	fill in a form	Please fill in this form.	fill out é alternativa frequente
+a2	collaboration	turn off	desligar	turn something off	Turn the lamp off when you leave.	turn it off, não turn off it
+a2	collaboration	already	já, conclusão anterior	already + particípio	I’ve already sent the invitation.	não implica outra tarefa concluída
+a2	collaboration	yet	ainda/já em expectativa	not yet / have you…yet	We haven’t booked it yet.	não significa nunca
+a2	culture	character	personagem	a character in a story	The main character misses a bus.	não autor do texto
+a2	culture	ending	final de narrativa	the ending of + obra	I liked the ending of the story.	não exige final feliz
+a2	culture	interested	interessado	interested in + nome/-ing	I’m interested in reading.	distinguir interesting, que provoca interesse
+a2	culture	boring	entediante	be boring	The film was boring for me.	bored descreve quem sente tédio
+a2	access	entrance	entrada de lugar	the entrance to + lugar	The entrance is on the left.	não taxa de entrada neste sentido
+a2	access	step-free	sem degraus	step-free entrance	The building has a step-free entrance.	não garante toda acessibilidade interna
+a2	access	stairs	escada	use the stairs	There are stairs at the entrance.	plural no uso comum
+a2	access	lift	elevador	take the lift	Is there a lift?	elevator é alternativa americana
+a2	planning	budget	verba disponível	within the budget	The room is within our budget.	não necessariamente custo total
+a2	planning	confirm	confirmar	confirm a booking	Please confirm the booking in writing.	pedido de confirmação não é confirmação recebida
+b1	learning	keep up with	acompanhar ritmo	keep up with + atividade	I struggle to keep up with the course.	não implica falta de interesse
+b1	learning	fall behind	ficar para trás	fall behind with/in + trabalho	I fell behind with my reading.	precisa contexto de tarefa
+b1	learning	look up	consultar informação	look something up	I looked the word up.	look it up, não look up it
+b1	learning	take notes	fazer anotações	take notes on + assunto	I took notes on the lecture.	não take a note sempre equivalente
+b1	learning	main point	ideia principal	the main point of + texto	What is the main point of the talk?	distinguir exemplo e tese
+b1	learning	in other words	reformular	in other words + reformulação	In other words, we need more time.	não introduzir prova nova como se fosse paráfrase
+b1	work	shift	turno de trabalho	work a night shift	My shift ends at six.	não shift de mudança neste sentido
+b1	work	apply for	candidatar-se	apply for a job	She applied for a new job.	apply to uma organização/curso pode ter outro complemento
+b1	work	qualification	qualificação comprovada	qualification in + área	The job requires a qualification in teaching.	não inventar credencial no exercício
+b1	work	deadline	prazo final	meet/miss a deadline	We need to meet the deadline.	não duração do trabalho
+b1	choices	give up	deixar de tentar ou fazer	give up + -ing	I don’t want to give up studying.	pronome pode separar em give it up
+b1	choices	work out	resolver ou encontrar solução	work something out	We worked out a better schedule.	exercitar-se é outro sentido
+b1	choices	unless	a menos que	unless + oração	Don’t pay unless they confirm.	condição negativa exige atenção ao sentido
+b1	choices	prefer	preferir	prefer A to B	I prefer mornings to evenings.	não prefer A than B no padrão-alvo
+b1	news	according to	atribuir informação	according to + fonte	According to the manager, it is a proposal.	não significa confirmação independente
+b1	news	claim	alegação	make a claim	The claim needs checking.	claim como verbo tem padrão próprio
+b1	news	correction	retificação	publish a correction	The newsletter published a correction.	não apaga exposição anterior ao erro
+b1	news	proposal	proposta	proposal for + ação	The new timetable is a proposal.	não aprovação
+b1	services	refund	reembolso	ask for a refund	I asked for a refund.	pedido não garante direito ou concessão
+b1	services	replacement	substituição	request a replacement	Could you send a replacement?	não necessariamente reembolso
+b1	services	in advance	antecipadamente	pay/book in advance	We paid in advance.	não significa pagamento adicional
+b1	services	sort out	resolver problema prático	sort something out	We need to sort this out.	sort it out com pronome
+b1	services	complaint	reclamação	make a complaint	I’d like to make a complaint.	não demanda insulto
+b1	interaction	bring up	introduzir assunto	bring something up	Jo brought up the transport problem.	criar filho é outro sentido
+b1	interaction	get along	ter boa convivência	get along with + pessoa	I get along with my neighbours.	get on with é alternativa
+b1	interaction	point of view	perspectiva	from someone’s point of view	From her point of view, timing matters.	não atribuir perspectiva sem conferir
+b1	interaction	I see your point	reconhecer argumento	I see your point, but…	I see your point, but the room is too small.	não exige concordância integral
+b1	interaction	clarify	esclarecer	clarify + informação	Could you clarify the date?	não necessariamente corrigir erro
+b1	community	volunteer	voluntário	volunteer for + tarefa	Two volunteers can help.	não prometer disponibilidade alheia
+b1	community	survey	levantamento com perguntas	carry out a survey	We carried out a short survey.	respostas limitadas não representam automaticamente todos
+b1	community	attend	comparecer	attend + evento	I attended the meeting.	não attend to neste sentido
+b1	community	participate	participar	participate in + atividade	She participated in the discussion.	comparecer e participar podem ser medidos diferentemente
+b1	community	carry out	executar tarefa	carry out a plan	The team carried out the plan.	não confundir proposta e execução
+b1	culture	turn out	mostrar-se afinal	turn out to be	The story turned out to be true.	não presumir resultado antes de verificar
+b1	culture	come across	encontrar por acaso	come across + objeto	I came across an old letter.	causar impressão é outro padrão/sentido
+b1	culture	perhaps	talvez	perhaps + oração	Perhaps the ending suggests hope.	marca hipótese
+b1	environment	waste	desperdício ou resíduo	food waste	We want to reduce food waste.	definir qual sentido no texto
+b1	environment	reuse	reutilizar	reuse + objeto	We reuse the glass jars.	diferente de reciclar material
+b1	money	afford	ter recursos para	afford to + verbo	I can’t afford to travel now.	não juízo sobre responsabilidade pessoal
+b1	money	save up	economizar para objetivo	save up for + item	I’m saving up for a course.	não necessariamente investir
+b2	evidence	back up	sustentar alegação	back up a claim	The figures do not back up that claim.	cópia de segurança é outro sentido
+b2	evidence	account for	explicar ou representar parcela	account for + resultado	Travel costs may account for the difference.	neste exemplo hipótese explicativa
+b2	evidence	point to	indicar indício	point to + conclusão	The comments point to a timing problem.	não prova definitiva
+b2	evidence	bias	viés	selection bias	The survey may contain selection bias.	não implica má-fé
+b2	evidence	sample	amostra	a sample of + grupo	The sample excludes evening users.	não população inteira
+b2	evidence	outcome	resultado	measure an outcome	We need to define the outcome.	não atividade realizada
+b2	evidence	percentage point	ponto percentual	rise by + pontos	Support rose by ten percentage points.	distinguir aumento relativo
+b2	projects	scope	escopo	within/outside the scope	The translation is outside the scope.	não prazo
+b2	projects	deliverable	entrega definida	a project deliverable	The summary is the first deliverable.	jargão de trabalho; explicar a público geral
+b2	projects	trade-off	compromisso entre ganhos e perdas	a trade-off between A and B	There is a trade-off between speed and detail.	não implica escolha binária inevitável
+b2	projects	hand over	entregar responsabilidade	 hand something over	We’ll hand the project over on Friday.	confirmar destinatário e estado da entrega
+b2	projects	provided that	desde que	provided that + condição	We can deliver provided that the draft is approved.	não eliminar condição no resumo
+b2	retrospective	rule out	descartar possibilidade	rule something out	We can’t rule out a transport problem.	não confirmar a possibilidade
+b2	retrospective	look back	olhar retrospectivamente	look back on + evento	Looking back, we needed more time.	não garante causalidade conhecida
+b2	retrospective	contribute to	contribuir para	contribute to + resultado	The schedule may have contributed to low attendance.	não causa única
+b2	services	opt out	deixar de participar voluntariamente	opt out of + atividade	Participants can opt out of recording.	não expulsão
+b2	services	sign up	inscrever-se	sign up for + atividade	I signed up for the workshop.	inscrição não comprova comparecimento
+b2	services	pending	pendente	pending approval	The booking is pending approval.	não aprovado
+b2	services	eligible	elegível	eligible for + benefício	Who is eligible for the discount?	não garantia de recebimento
+b2	media	framing	enquadramento da informação	the framing of + texto	The framing encourages a positive reading.	não afirmar intenção sem evidência
+b2	media	misleading	que pode induzir a erro	a misleading headline	The headline is misleading without the baseline.	não necessariamente falso em cada palavra
+b2	media	underlying	que está na base	underlying figures	Please show the underlying figures.	distinguir dados e interpretação
+b2	media	whereas	enquanto em contraste	oração whereas oração	Costs fell, whereas attendance stayed stable.	não temporal neste uso
+b2	register	abrupt	brusco	an abrupt request	The request may sound abrupt.	depende da relação e contexto
+b2	register	get back to	retornar contato	get back to someone	I’ll get back to you tomorrow.	não garante decisão até amanhã
+b2	register	draft	rascunho	an initial draft	This is a draft, not the final version.	estado editorial
+b2	register	reassure	tranquilizar	 reassure someone that	We reassured them that the room was booked.	só afirmar reserva se confirmada
+b2	culture	draw on	basear-se em recurso	draw on experience	The writer draws on local stories.	não copiar integralmente as fontes
+b2	culture	leave out	omitir	leave something out	The report leaves out the cost.	leave it out com pronome
+b2	culture	narrator	narrador	the narrator of + história	The narrator changes their view.	não necessariamente autor
+b2	culture	interpretation	interpretação	an interpretation of + obra	That interpretation needs textual support.	não única leitura possível por definição
+b2	public	put forward	propor	put forward a proposal	She put forward an alternative.	propor não aprovar
+b2	public	feasible	viável	financially feasible	The plan is financially feasible but needs staff.	viabilidade tem dimensões distintas
+b2	public	follow up	acompanhar depois	follow up on + questão	We’ll follow up on the complaint.	não implica resolução
+b2	technology	privacy	privacidade	protect privacy	We need to protect participants’ privacy.	não afirmar conformidade legal não verificada
+b2	technology	accessibility	acessibilidade	improve accessibility	Captions can improve accessibility.	não solução universal isolada
+b2	environment	sustainable	sustentável	financially sustainable	Is the project financially sustainable?	especificar dimensão ambiental/financeira
+b2	environment	emissions	emissões	cut emissions	The proposal aims to cut emissions.	objetivo não é resultado medido
+b2	money	overhead	custo indireto	overhead costs	The estimate excludes overhead costs.	não confundir com custo direto
+b2	money	value for money	benefício em relação ao custo	offer value for money	The cheaper option may not offer better value for money.	não equivale a menor preço
+c1	synthesis	qualify	limitar uma afirmação	qualify a claim	We need to qualify the claim about access.	qualificar para cargo é outro sentido
+c1	synthesis	concede	reconhecer ponto desfavorável	concede that + oração	The author concedes that the sample is small.	não usar como sinônimo neutro de say
+c1	synthesis	corroborate	corroborar informação	corroborate an account	The record corroborates part of her account.	não confirmar automaticamente todos os detalhes
+c1	synthesis	reconcile	compatibilizar ou conferir divergências	reconcile two accounts	We cannot reconcile the totals yet.	pode exigir correção de definição, não média dos números
+c1	synthesis	boil down to	resumir-se a	boil down to + questão	The disagreement boils down to timing.	usar apenas se não apagar fatores relevantes
+c1	synthesis	insofar as	na medida em que	insofar as + oração	The measure is useful insofar as it answers the question.	registro formal; condição de alcance
+c1	synthesis	plausible	plausível	a plausible explanation	It is plausible, but not established.	verossímil não equivale a comprovado
+c1	argument	bear out	confirmar por evidência	bear out a claim	The evidence does not bear out that conclusion.	bear it out com pronome possível
+c1	argument	counterargument	argumento contrário	address a counterargument	The essay addresses the strongest counterargument.	não caricaturar posição oposta
+c1	argument	premise	premissa	test a premise	The recommendation rests on an untested premise.	premises no plural pode significar instalações
+c1	argument	contingent	dependente de condição	contingent on + nome	Approval is contingent on staffing.	não aprovação incondicional
+c1	argument	on balance	ponderando o conjunto	on balance + conclusão	On balance, a limited trial seems justified.	não esconder critérios de ponderação
+c1	argument	undermine	enfraquecer fundamento	undermine a claim	The counting change undermines the comparison.	não prova que efeito real é zero
+c1	mediation	reservation	ressalva	 have reservations about	I have reservations about the timetable.	não reserva de sala neste sentido
+c1	mediation	common ground	ponto de acordo	find common ground	They found common ground on the need for access.	não consenso total
+c1	mediation	follow through on	levar compromisso adiante	follow through on a promise	We must follow through on the agreed review.	distinguir promessa e execução
+c1	mediation	acknowledge	reconhecer ou registrar	acknowledge a concern	The chair acknowledged the concern.	não implica concordância com toda conclusão
+c1	mediation	impasse	impasse	reach an impasse	The discussion reached an impasse over costs.	não fracasso definitivo
+c1	public	accountable	responsável perante alguém	accountable to + pessoa/grupo	The coordinator is accountable to the committee.	distinguir responsável por tarefa de prestar contas
+c1	public	undertake	assumir ou executar ação	undertake a review	The team undertook a review.	passado não deve ser usado se só houve proposta
+c1	public	assurance	garantia ou afirmação tranquilizadora	give an assurance	They gave no assurance of permanent funding.	não insurance, seguro
+c1	public	provisional	provisório	provisional approval	The approval is provisional.	preservar condição e validade
+c1	public	substantiate	fundamentar com evidência	substantiate a claim	The documents do not substantiate the allegation.	não prova falsidade por si só
+c1	public	withhold	reter ou não fornecer	withhold approval	The committee withheld approval pending clarification.	não revogar algo já aprovado
+c1	literature	subtext	sentido implícito	the subtext of + diálogo	The subtext remains open to interpretation.	exigir apoio textual
+c1	literature	understatement	formulação deliberadamente moderada	use understatement	The quiet remark works as understatement.	intenção deve ser argumentada pelo contexto
+c1	literature	read into	atribuir sentido a	read something into a text	We may be reading too much into the gesture.	não descartar toda interpretação
+c1	literature	hint at	sugerir indiretamente	hint at + ideia	The ending hints at a future reconciliation.	não afirma desfecho
+c1	literature	ambivalence	coexistência de atitudes conflitantes	ambivalence towards/about	The narrator shows ambivalence towards change.	não mera ausência de opinião
+c1	literature	evocative	que evoca associações	evocative imagery	The description uses evocative imagery.	especificar quais associações o texto sustenta
+c1	interaction	brush up on	retomar conhecimento	brush up on + área	I need to brush up on my presentation skills.	não aprender do zero necessariamente
+c1	interaction	come down to	depender em última análise	come down to + fator	The choice may come down to availability.	não reduzir questão complexa sem justificar
+c1	interaction	get the ball rolling	dar início	get the ball rolling	Let’s get the ball rolling with introductions.	informal; traduzir pelo sentido
+c1	interaction	a tall order	pedido difícil	a tall order	Finishing all of it today is a tall order.	não recusa explícita por si só
+c1	interaction	take for granted	presumir ou não valorizar	take something for granted	We took reliable internet for granted.	sentido aqui é presumir disponibilidade
+c1	technology	interoperability	capacidade de sistemas interagirem	interoperability between systems	The review examines interoperability between platforms.	lexicalização receptiva de domínio; explicar a leigos
+c1	technology	unintended consequence	consequência não pretendida	an unintended consequence of	Exclusion was an unintended consequence of the change.	não significa imprevisível ou inevitável
+c1	environment	trade-off	compromisso entre objetivos complexos	trade-offs among + fatores	The policy involves trade-offs among cost, access and emissions.	retomada ampliada do sentido B2, não nova palavra contada duas vezes
+c1	money	opportunity cost	custo da alternativa abandonada	the opportunity cost of + decisão	The review considers the opportunity cost of using the room.	conceito de domínio, explicar sem pressupor formação econômica
+c1	learning	transferability	possibilidade de aplicar em outro contexto	transferability of + conhecimento	We need to test the transferability of this strategy.	resultado local não garante transferência
+b2	relationships	let down	decepcionar alguém	let someone down	I’m sorry I let you down.	let her down: pronome entre verbo e partícula
+b2	relationships	make up	fazer as pazes	make up with someone	They made up after the argument.	não confundir com inventar ou maquiagem
+b2	relationships	take for granted	presumir sem conferir ou deixar de valorizar	take something for granted	I took your availability for granted.	especificar o que foi presumido
+b2	relationships	set a boundary	estabelecer limite pessoal	set a boundary around something	She set a boundary around personal questions.	limite de participação próprio, não controle automático do outro
+b2	relationships	resentment	ressentimento por injustiça percebida	resentment about something	He described resentment about the workload.	nomear sentimento sem diagnóstico nem presumir versão de todos
+b2	relationships	supportive	que oferece apoio	supportive of someone or something	She was supportive even when she disagreed.	apoio não equivale a concordância irrestrita
+b2	food	cut down on	reduzir consumo ou frequência	cut down on something	We want to cut down on disposable packaging.	reduzir não é necessariamente eliminar
+b2	food	run out of	ficar sem um recurso	run out of something	We’ve run out of rice.	distinguir acabar de estar com pouco
+b2	food	leftovers	comida que sobrou de uma refeição	leftovers from a meal	There are leftovers from dinner.	plural neste uso; termo não garante segurança para consumo
+b2	food	use up	usar até esgotar	use something up	We used up the flour.	use it up com pronome
+b2	food	bland	de sabor pouco marcante	find food bland	I find this soup bland.	opinião de sabor não é avaliação nutricional
+b2	food	filling	que dá sensação de saciedade	a filling meal	It was a small but filling meal.	adjetivo neste uso; percepção contextual
+b2	housing	leak	vazamento físico	a leak under or in something	There is a leak under the sink.	local observado não comprova causa
+b2	housing	damp	levemente úmido	a damp wall	The wall feels damp.	descrição sensorial, não diagnóstico
+b2	housing	wear and tear	desgaste por uso cotidiano	normal wear and tear	The chair shows signs of wear and tear.	não classificar juridicamente qualquer dano
+b2	housing	tenancy	relação ou período de ocupação como inquilino	the tenancy starts or ends	The tenancy starts in June.	não significa propriedade; condições dependem do documento
+b2	housing	deposit	valor de garantia em aluguel	pay a deposit	The agreement lists a separate deposit.	sentido selecionado; não equivale automaticamente ao aluguel
+b2	housing	notice	aviso formal de saída	give written notice	She gave written notice yesterday.	aviso não é saída concluída; sem afirmar prazo legal
+pre-a1	numbers	zero	número zero	cartão 0	0: zero.	Códigos podem ser lidos algarismo a algarismo; 10 como quantidade é ten.
+pre-a1	numbers	one	número um	cartão 1	1: one.	Códigos podem ser lidos algarismo a algarismo; 10 como quantidade é ten.
+pre-a1	numbers	two	número dois	cartão 2	2: two.	Códigos podem ser lidos algarismo a algarismo; 10 como quantidade é ten.
+pre-a1	numbers	three	número três	cartão 3	3: three.	Códigos podem ser lidos algarismo a algarismo; 10 como quantidade é ten.
+pre-a1	numbers	four	número quatro	cartão 4	4: four.	Códigos podem ser lidos algarismo a algarismo; 10 como quantidade é ten.
+pre-a1	numbers	five	número cinco	cartão 5	5: five.	Códigos podem ser lidos algarismo a algarismo; 10 como quantidade é ten.
+pre-a1	numbers	six	número seis	cartão 6	6: six.	Códigos podem ser lidos algarismo a algarismo; 10 como quantidade é ten.
+pre-a1	numbers	seven	número sete	cartão 7	7: seven.	Códigos podem ser lidos algarismo a algarismo; 10 como quantidade é ten.
+pre-a1	numbers	eight	número oito	cartão 8	8: eight.	Códigos podem ser lidos algarismo a algarismo; 10 como quantidade é ten.
+pre-a1	numbers	nine	número nove	cartão 9	9: nine.	Códigos podem ser lidos algarismo a algarismo; 10 como quantidade é ten.
+pre-a1	numbers	ten	número dez	cartão 10	10: ten.	Códigos podem ser lidos algarismo a algarismo; 10 como quantidade é ten.
+pre-a1	interaction	goodbye	despedida	goodbye + nome	Goodbye, Jo.	Não é cumprimento de chegada.
+pre-a1	interaction	sorry	pedido breve de desculpa	sorry + correção	Sorry. Ana.	Bloco para reparar erro neste contexto.
+pre-a1	interaction	excuse me	chamar atenção com cortesia	excuse me + pedido	Excuse me. Help, please.	Não exigir distinção completa de todos os usos de sorry/excuse me.
+pre-a1	interaction	I don’t understand	dizer que não entendeu	I don’t understand + pedido de reparo	I don’t understand. Again, please.	Bloco inteiro; não introduzir análise abstrata de do.
+pre-a1	objects	key	chave de abrir porta	a key / my key	This is my key.	Outros sentidos de key ficam fora desta sequência.
+pre-a1	objects	cup	xícara no cartão de objeto	a cup	This is a cup.	Objeto para beber; usar imagem, objeto ou descrição textual.
+pre-a1	places	door	porta	the door	This is the door.	Identificar objeto; não cobrar artigo como regra nova.
+pre-a1	places	toilet	banheiro indicado em placa	Toilet / Toilet, please?	Excuse me. Toilet, please?	Pode nomear vaso em outro contexto; aqui é placa de banheiro. Restroom/bathroom como apoio receptivo opcional.
+pre-a1	food	milk	leite como bebida	milk, please	Milk, please.	Sem a milk no pedido genérico ensinado.
+pre-a1	food	juice	suco como bebida	juice, please	Juice, please.	Tipo de suco não especificado; aceitar pergunta de esclarecimento com apoio.
+pre-a1	food	rice	arroz como alimento	rice, please	Rice, please.	Sem a rice neste bloco.
+pre-a1	food	banana	banana como fruta	a banana / two bananas	A banana, please.	Plural ensinado no bloco two bananas, sem regra abstrata obrigatória.
+pre-a1	time	Tuesday	terça-feira	on Tuesday	On Tuesday.	Usar quadro bilíngue; contrastar Thursday.
+pre-a1	time	Wednesday	quarta-feira	on Wednesday	On Wednesday.	Não avaliar pronúncia só pela grafia.
+pre-a1	time	Thursday	quinta-feira	on Thursday	On Thursday.	Contrastar Tuesday com dia escrito em português.
+pre-a1	time	Saturday	sábado	on Saturday	On Saturday.	Nenhuma suposição sobre dia de trabalho ou descanso.
+pre-a1	time	Sunday	domingo	on Sunday	On Sunday.	Nenhuma suposição religiosa ou familiar.
+pre-a1	time	tomorrow	amanhã relativo ao dia do cenário	tomorrow, at ten	Tomorrow, at ten.	Definir hoje fictício em cada tarefa.
+pre-a1	description	red	cor vermelha	a red bag	My red bag.	Oferecer rótulo textual; não depender de discriminação visual da cor.
+pre-a1	description	blue	cor azul	a blue pen	My blue pen.	Cor antes do objeto no bloco fornecido.
+pre-a1	description	black	cor preta	a black phone	My black phone.	Não cobrar associação sem apoio textual acessível.
+pre-a1	description	white	cor branca	a white cup	The white cup, please.	Descrever objetos, sem extrapolar usos sociais de cores.
+pre-a1	relationships	mother	mãe	my mother	This is my mother, Ana.	Usar família fictícia; não solicitar relato pessoal.
+pre-a1	relationships	father	pai	my father	This is my father, Rui.	Não pressupor estrutura familiar universal.
+pre-a1	relationships	sister	irmã	my sister	This is my sister, Eva.	Relação do personagem, não necessariamente do aluno.
+pre-a1	relationships	brother	irmão	my brother	This is my brother, Ben.	Aceitar atividade com personagens sem exposição pessoal.
+pre-a1	places	home	casa ou lar no bloco de localização	at home	I’m at home.	Bloco inteiro; não confundir at home com in a house sem ensino específico.
+pre-a1	places	work	trabalho no bloco de localização	at work	I’m at work.	Aqui nome, não verbo; não presume emprego real do aluno.
+pre-a1	places	school	escola no bloco de localização	at school	I’m at school.	Contexto adulto pode ser escola de idiomas; não infantilizar.
+a1	routine	have lunch	almoçar	have lunch at + hora	I have lunch at twelve.	Retomar have breakfast; refeição distinta.
+a1	routine	have dinner	jantar	have dinner at + hora	I have dinner at home.	Horários variam; usar personagem fictício.
+a1	routine	go to bed	ir para cama	go to bed at + hora	I go to bed at ten.	Não garante adormecer nesse instante.
+a1	routine	take a shower	tomar banho de chuveiro	take a shower in the morning	I take a shower in the evening.	Have a shower também é válido.
+a1	routine	cook	cozinhar	cook at home	I cook on Saturdays.	Não confundir preparar comida com comer.
+a1	routine	clean	limpar como ação	clean + lugar ou objeto	I clean the kitchen.	Aqui verbo, não adjetivo limpo.
+a1	housing	living room	sala de estar	in the living room	The chair is in the living room.	Distinguir living room de bedroom.
+a1	housing	garden	jardim	a house with a garden	The house has a garden.	Nem toda moradia tem jardim.
+a1	housing	window	janela	next to the window	The chair is next to the window.	Retomar next to e chair.
+a1	housing	bed	cama como móvel	a bed in the bedroom	The bed is in the bedroom.	Não confundir móvel com cômodo.
+a1	housing	fridge	geladeira	in the fridge	The milk is in the fridge.	Refrigerator é alternativa; nenhum conselho de conservação inferido.
+a1	housing	washing machine	máquina de lavar roupas	a washing machine	There is a washing machine in the kitchen.	Não é dishwasher; tipo de aparelho explícito.
+a1	shopping	shirt	camisa	a blue shirt	The blue shirt, please.	Retomar cores; não impor preferência pessoal.
+a1	shopping	trousers	calça no uso britânico	these trousers are	These trousers are black.	Pants é alternativa americana neste sentido; trousers usa plural.
+a1	shopping	shoes	sapatos	these shoes are	These shoes are white.	Plural fornecido como bloco.
+a1	shopping	size	tamanho de roupa	What size?	What size is this shirt?	Não implica equivalência entre sistemas de medidas.
+a1	shopping	try on	experimentar roupa ou calçado	try something on	Can I try it on?	Pronome entre verbo e partícula; try them on no plural.
+a1	shopping	pay	pagar	pay by card	Can I pay by card?	Pergunta de possibilidade não é transação efetuada.
+a1	transport	ticket	passagem de transporte	a ticket to + destino	A ticket to Central, please.	Outros sentidos de ticket fora desta sequência.
+a1	transport	station	estação de trem no cenário	at the station	Meet me at the station.	Distinguir de bus stop.
+a1	transport	train	trem como veículo	by train	I go to work by train.	Não é verbo treinar neste sentido.
+a1	transport	bus	ônibus como veículo	by bus	I go to school by bus.	Retomar bus stop como lugar distinto.
+a1	transport	turn left	virar à esquerda	turn left at + marco	Turn left at the library.	Usar trajeto fictício, com orientação inicial explícita.
+a1	transport	turn right	virar à direita	turn right at + marco	Turn right at the station.	Right aqui é direção, não certo/correto.
+a2	travel	luggage	bagagem como conjunto	some luggage	I have some luggage.	Incontável neste uso: two bags, não two luggages.
+a2	travel	check in	fazer registro de chegada em hospedagem	check in at reception	We checked in at three.	Horário permitido no cenário não é regra universal.
+a2	travel	check out	encerrar estadia na recepção	check out by + hora	Please check out by eleven.	By indica até o limite no aviso; at marca hora escolhida.
+a2	travel	single room	quarto para uma pessoa	book a single room	I booked a single room.	Não garante tamanho de cama ou outras instalações.
+a2	travel	reception	recepção de hospedagem	at reception	Please leave the key at reception.	Sentido de balcão/equipe de recepção; outros usos não avaliados.
+a2	health	headache	dor de cabeça relatada	have a headache	I have a headache.	Relato linguístico, sem inferir causa ou tratamento.
+a2	health	sore throat	dor ou irritação na garganta relatada	have a sore throat	I have a sore throat.	Não identifica doença ou causa.
+a2	health	feel sick	sentir-se enjoado ou indisposto	feel sick	I feel sick.	Pode indicar náusea, especialmente em uso britânico; esclarecer sensação em vez de presumir sentido único.
+a2	health	better	melhor em comparação ao estado anterior	feel better than yesterday	I feel better than yesterday.	Melhora relativa não significa ausência de sintomas.
+a2	health	worse	pior em comparação ao estado anterior	feel worse than yesterday	I feel worse than yesterday.	Comparação de relato; não graduar risco clínico.
+a2	services	repair	consertar um item	repair something	Can you repair this lamp?	Não implica conserto concluído ao solicitar.
+a2	services	broken	quebrado ou sem funcionar no cenário	a broken lamp	The lamp is broken.	Descrever estado conhecido; não inventar causa.
+a2	services	exchange	trocar um item por outro em atendimento	exchange an item for another	Can I exchange this shirt for a larger one?	Política depende do cenário; pedido não garante direito ou aceitação.
+a2	services	delivery	entrega de mercadoria	delivery is included	Delivery is included in the price.	Inclusão no preço não significa entrega já feita.
+a2	services	cancel	cancelar reserva ou pedido	cancel a booking	I’d like to cancel my booking.	Solicitação não é confirmação de cancelamento.
+a2	culture	exhibition	exposição de obras ou objetos	a photography exhibition	We visited a photography exhibition.	Distinguir exposição de apresentação ao vivo.
+a2	culture	performance	apresentação artística ao vivo neste contexto	a dance performance	The dance performance starts at seven.	Não significa desempenho profissional nesta sequência.
+a2	culture	audience	público de uma apresentação	the audience	The audience enjoyed the performance.	Não confundir público com artistas.
+a2	culture	enjoyable	agradável de vivenciar	an enjoyable visit	It was an enjoyable visit.	Opinião contextual, não atributo universal.
+a2	culture	crowded	com muitas pessoas em pouco espaço	a crowded room	The room was crowded.	Não implica lotação oficial excedida sem dados.
+b1	relationships	reliable	confiável quanto a cumprir combinados	a reliable colleague	She is a reliable colleague.	Retoma sentido A2 em contexto interpessoal; não contar como forma inédita.
+b1	relationships	disappointed	decepcionado com resultado ou situação	disappointed about something	I’m disappointed about the cancellation.	Distinguir sentimento de culpa atribuída.
+b1	relationships	apologise	pedir desculpas por algo	apologise for + nome ou -ing	I apologise for arriving late.	Apologize é variante de grafia válida.
+b1	relationships	trust	confiar em alguém neste contexto	trust someone	I trust Jo to check the details.	Não significa prova de que a tarefa foi feita.
+b1	relationships	keep in touch	manter contato	keep in touch with someone	We keep in touch by email.	Não define frequência sem contexto.
+b1	work	responsible for	responsável por tarefa definida	be responsible for + nome ou -ing	I’m responsible for updating the list.	Responsabilidade de tarefa não é culpa por qualquer problema.
+b1	work	training	formação prática para uma função	receive training	We received training on the new system.	Incontável no uso selecionado; sessões podem ser contadas.
+b1	work	experience	experiência acumulada numa atividade	experience in + atividade	I have experience in customer service.	Neste uso incontável; an experience é vivência individual, outro sentido.
+b1	work	arrange	combinar ou organizar um encontro	arrange a meeting	We need to arrange a meeting.	Propor horário não confirma acordo.
+b1	work	take over	assumir tarefa ou função de outra pessoa	take over from someone	Lee will take over from Jo on Monday.	Distinguir transição futura de responsabilidade já assumida.
+b1	travel	journey	trajeto entre lugares	a train journey	The train journey took two hours.	Distinguir trajeto de viagem inteira, que pode incluir estadia.
+b1	travel	accommodation	hospedagem como serviço ou lugar	book accommodation	We haven’t booked accommodation yet.	Incontável no padrão britânico ensinado; usos variam.
+b1	travel	get on	embarcar em ônibus ou trem	get on a bus	We got on the bus at Central.	Não generalizar para carro, que costuma usar get in.
+b1	travel	get off	desembarcar de ônibus ou trem	get off at + parada	Get off at the next stop.	Não generalizar para carro: get out of em outro padrão.
+b1	travel	connection	conexão entre trechos de transporte	miss a connection	We missed our connection.	Sentido de transporte, não internet.
+b1	consumption	fee	taxa cobrada por serviço	a delivery fee	There is a delivery fee.	Taxa específica, não todo preço nem regra tributária.
+b1	consumption	charge	cobrar um valor por serviço	charge someone for something	They charged me for delivery.	Aqui verbo; charge como acusação ou bateria é outro sentido.
+b1	consumption	worth	que vale o custo ou esforço para alguém	be worth + valor ou -ing	The visit was worth the journey.	Juízo situado; não promessa universal de benefício.
+b1	consumption	borrow	pegar emprestado	borrow something from someone	Can I borrow a book from you?	Direção de quem recebe temporariamente, não lend.
+b1	consumption	lend	emprestar para alguém	lend someone something	Jo lent me a book.	Lent é passado; quem fornece empresta, quem recebe toma emprestado.
+pre-a1	relationships	happy	feliz no relato pessoal	I’m happy	I’m happy.	Cartão de personagem; não inferir emoção por aparência.
+pre-a1	relationships	sad	triste no relato pessoal	I’m sad	I’m sad.	Sentimento declarado, não diagnóstico.
+pre-a1	health	hungry	com fome	I’m hungry	I’m hungry.	Estado imediato, não preferência de alimento.
+pre-a1	health	thirsty	com sede	I’m thirsty	I’m thirsty.	Não confundir com hungry.
+pre-a1	health	hot	com calor no bloco pessoal	I’m hot	I’m hot.	Aqui sensação pessoal; outros sentidos dependem do contexto.
+pre-a1	health	cold	com frio no bloco pessoal	I’m cold	I’m cold.	Sensação pessoal; cold já aparece em outro nível/contexto, não forma inédita absoluta.
+a1	relationships	angry	zangado	angry about something	I’m angry about the noise.	Descrever sentimento não prova culpa de outra pessoa.
+a1	relationships	worried	preocupado	worried about something	I’m worried about the test.	Teste fictício; não inferir transtorno.
+a1	relationships	excited	animado com expectativa	excited about something	I’m excited about the trip.	Não usar automaticamente como tradução de excitado sexualmente.
+a1	relationships	bored	entediado como estado de pessoa	feel bored	I feel bored.	Bored descreve pessoa; boring descreve algo que causa tédio.
+a1	relationships	friendly	amistoso no comportamento observado	a friendly person	Jo is friendly.	Uma impressão não descreve todos os comportamentos futuros.
+a1	relationships	shy	tímido na autodescrição	feel shy	I feel shy with new people.	Não atribuir timidez apenas porque alguém fala pouco.
+a2	relationships	nervous	nervoso ou apreensivo antes de situação	nervous about something	I’m nervous about the interview.	Descrever relato, sem diagnóstico.
+a2	relationships	surprised	surpreso com acontecimento	surprised by something	I was surprised by the message.	Surpresa pode ser agradável ou desagradável; não presumir.
+a2	relationships	lonely	solitário como sentimento	feel lonely	I sometimes feel lonely.	Alone é estar só; lonely é sensação, não equivalentes automáticos.
+a2	relationships	upset	chateado ou abalado por situação	upset about something	I’m upset about the cancellation.	Termo amplo; pode requerer esclarecimento.
+a2	relationships	calm	calmo como estado	feel calm	I feel calm now.	Não inferir ausência de preocupação em todos os contextos.
+a2	relationships	proud	orgulhoso de realização ou pessoa	proud of something	I’m proud of my work.	Neste sentido satisfação; não necessariamente arrogância.
+b1	relationships	relieved	aliviado após redução de preocupação	feel relieved	I felt relieved when the message arrived.	Alívio subjetivo não elimina todo risco.
+b1	relationships	embarrassed	constrangido por situação	embarrassed about something	I felt embarrassed about the mistake.	Não traduzir por grávida; não atribuir emoção sem relato.
+b1	relationships	confident	confiante sobre capacidade ou resultado	confident about something	I’m confident about the presentation.	Confiança não comprova acerto futuro.
+b1	relationships	annoyed	irritado com situação	annoyed about something	I was annoyed about the delay.	Relato de sentimento não comprova intenção de causar irritação.
+b1	relationships	grateful	grato pela ajuda ou ação	grateful to someone for something	I’m grateful to Jo for the help.	To identifica pessoa; for identifica motivo.
+b1	relationships	homesick	com saudade de casa ao estar longe	feel homesick	I felt homesick during the trip.	Não significa estar doente em casa.
+b2	relationships	frustrated	frustrado por dificuldade ou impedimento	frustrated by something	I felt frustrated by the repeated delays.	Distinguir sentimento de julgamento global de competência.
+b2	relationships	overwhelmed	sobrecarregado no relato subjetivo	feel overwhelmed by something	I feel overwhelmed by the number of messages.	Sem diagnóstico; esclarecer fonte da sobrecarga.
+b2	relationships	self-conscious	inibido ou excessivamente atento à impressão que causa	self-conscious about something	I feel self-conscious about my accent.	Não equivale simplesmente a autoconsciente em sentido filosófico.
+b2	relationships	sympathetic	compreensivo diante da dificuldade alheia	sympathetic to someone's situation	Jo was sympathetic to my situation.	Não equivale automaticamente a simpático/agradável.
+b2	relationships	considerate	atencioso às necessidades dos outros	considerate of others	It was considerate of Lee to ask first.	Ato específico, não caráter provado para sempre.
+b2	relationships	insensitive	insensível a necessidades ou sentimentos no contexto	insensitive to something	The comment seemed insensitive to their concerns.	Avaliação situada; atribuir fonte quando é percepção de alguém.
+c1	relationships	apprehensive	apreensivo quanto a acontecimento futuro	apprehensive about something	She was apprehensive about the transition.	Incerteza ou preocupação antecipada; não certeza de falha.
+c1	relationships	disillusioned	desiludido após perda de crença ou expectativa	disillusioned with something	He became disillusioned with the process.	Não mera tristeza sem relação com expectativa anterior.
+c1	relationships	conflicted	dividido entre sentimentos ou escolhas	feel conflicted about something	I feel conflicted about accepting the role.	Não implica conflito armado nem ausência total de opinião.
+c1	relationships	wistful	com nostalgia ou desejo suave por algo ausente	wistful about something	He sounded wistful about the old neighbourhood.	Nuance interpretativa; apoiar em texto, não diagnosticar voz real.
+c1	relationships	hold a grudge	guardar ressentimento ligado a ofensa passada	hold a grudge against someone	He says he does not hold a grudge against Jo.	Não inferir ressentimento persistente por um único silêncio.
+c1	relationships	put at ease	deixar alguém mais à vontade	put someone at ease	The clear explanation put me at ease.	Objeto entre put e at ease; efeito relatado, não universal.
+pre-a1	health	head	cabeça como parte do corpo	my head	My head.	Não usar gesto doloroso como diagnóstico.
+pre-a1	health	hand	mão	my hand	My hand.	Uma mão; plural hands pode ser fornecido como bloco.
+pre-a1	health	leg	perna	my leg	My leg.	Não exigir demonstração corporal do aluno.
+pre-a1	health	foot	pé	my foot	My foot.	Feet é plural irregular; só oferecer receptivamente neste pacote.
+pre-a1	shopping	coat	casaco longo no cartão	a coat	My coat.	Jacket também é agasalho; desenho/descrição delimita contraste local.
+pre-a1	shopping	hat	chapéu	a hat	My hat.	Sentido de peça de roupa.
+pre-a1	shopping	socks	meias como peça de roupa	my socks	My socks.	Plural ensinado como bloco, não regra geral exigida.
+pre-a1	shopping	jacket	jaqueta no cartão	a jacket	My jacket.	Categoria contextual, não fronteira universal entre tipos de agasalho.
+a1	health	stomach	barriga ou estômago no relato simples	my stomach	My stomach hurts.	Expressão leiga de localização, não diagnóstico anatômico preciso.
+a1	health	tooth	dente no singular	my tooth	My tooth hurts.	Teeth é plural irregular, apoio receptivo quando necessário.
+a1	health	hurt	doer no relato corporal	my leg hurts	My leg hurts.	Verbo varia no bloco: I hurt / it hurts são usos diferentes; ensinar o selecionado.
+a1	health	feel well	sentir-se bem fisicamente	I don’t feel well	I don’t feel well today.	Well neste bloco de bem-estar; sem inferir doença específica.
+a1	digital	message	mensagem escrita no cenário	a message	I have a message from Jo.	Não implica resposta ou leitura só por recebimento.
+a1	digital	send	enviar mensagem	send a message	I send a message to Jo.	Sent é passado, mas foco inicial é pedido com verbo base.
+a1	digital	open	abrir mensagem no contexto digital	open the message	Open the message, please.	Mesmo verbo pode se aplicar a porta; sentido digital selecionado.
+a1	digital	close	fechar janela de mensagem	close the message	Close the message, please.	Fechar não é apagar no cenário.
+a2	food	recipe	receita culinária	a recipe for soup	This is a recipe for soup.	Não confundir com receipt/comprovante.
+a2	food	ingredient	ingrediente de preparo culinário	an ingredient in a recipe	Rice is an ingredient in this recipe.	Lista não informa sozinha toda condição alimentar do prato.
+a2	food	boil	ferver ou cozinhar em líquido fervente no roteiro	boil water	Boil the water.	Atividade de língua em papel; não solicitar manipular calor.
+a2	food	chop	cortar em pedaços no preparo	chop the vegetables	Chop the vegetables.	Não exige formato único de corte nem prática real com faca.
+a2	weather	windy	com vento	it is windy	It is windy today.	Descrição de tempo, não medida de intensidade por si só.
+a2	weather	storm	tempestade no relato	a storm	There was a storm last night.	Não inferir tipo ou gravidade sem dados.
+a2	weather	forecast	previsão meteorológica	the weather forecast	The forecast says it may rain.	Previsão não equivale a observação de tempo já ocorrido.
+a2	weather	wet	molhado	wet clothes	My clothes are wet.	Descreve estado; causa precisa de contexto.
+b1	learning	assignment	tarefa formal de estudo	complete an assignment	I need to complete the assignment.	Tarefa atribuída, não nota recebida.
+b1	learning	hand in	entregar tarefa para avaliação	hand something in	Please hand it in by Friday.	Pronome no meio; entregar não é ter avaliação concluída.
+b1	learning	feedback	retorno sobre desempenho ou trabalho	receive feedback	I received feedback on my draft.	Incontável no uso ensinado; não se limita a elogio.
+b1	learning	concentrate	concentrar atenção	concentrate on something	I find it hard to concentrate on reading here.	Dificuldade situada não é diagnóstico.
+b1	leisure	match	partida esportiva no cenário	a football match	We watched a football match.	Não significa fósforo ou correspondência de dados nesta sequência.
+b1	leisure	score	placar como resultado numérico	the final score	The final score was two–one.	Resultado parcial não deve virar final sem fonte.
+b1	leisure	team	equipe esportiva neste contexto	a local team	She plays for a local team.	Papel de jogador distingue-se de torcedor.
+b1	leisure	take part	participar de uma atividade	take part in something	We took part in the tournament.	Participação não comprova vitória nem conclusão de todas as etapas.
+b2	work	workload	volume de trabalho atribuído	a heavy workload	The team has a heavy workload.	Volume não mede automaticamente capacidade ou esforço individual.
+b2	work	negotiate	negociar condições com outra parte	negotiate a deadline	We need to negotiate the deadline.	Negociar não garante acordo.
+b2	work	compromise	acordo com concessões entre posições	reach a compromise	We reached a compromise on the schedule.	Não confundir automaticamente com compromisso/promessa em português.
+b2	work	delegate	delegar tarefa a alguém	delegate a task to someone	Jo delegated the task to Lee.	Delegação não implica abandono de toda prestação de contas.
+b2	environment	drought	período de seca no relato	a prolonged drought	The report describes a prolonged drought.	Sem quantificar clima nem atribuir causa sem fonte.
+b2	environment	flood	inundação no relato	a flood	The road was closed after a flood.	Não inferir causa específica apenas da palavra.
+b2	environment	habitat	habitat de uma espécie	protect a habitat	The proposal aims to protect the habitat.	Objetivo declarado não é proteção já demonstrada.
+b2	environment	conserve	conservar recursos ou ambiente	conserve water	The campaign encourages people to conserve water.	Campanha não comprova redução medida de consumo.
+c1	culture	poignant	comovente de modo doloroso ou delicado	a poignant moment	The farewell is a poignant moment in the story.	Avaliação interpretativa apoiada em detalhes, não reação universal.
+c1	culture	contrived	artificial ou forçado na construção narrativa	a contrived ending	The reviewer found the ending contrived.	Avaliação crítica, não fato de autoria desonesta.
+c1	culture	allusion	alusão a outra obra ou referência	an allusion to something	The line may be an allusion to an earlier story.	Sem referência suficiente, marcar hipótese; não inventar fonte.
+c1	culture	satire	sátira como crítica por recursos como ironia ou exagero	satire of something	The passage can be read as satire of bureaucracy.	Leitura depende de contexto; nem toda piada é sátira.
+c1	housing	cramped	apertado com pouco espaço para uso	a cramped room	The room felt cramped with all the equipment inside.	Avaliação relativa ao uso, não medida universal de área.
+c1	housing	well-maintained	bem conservado por manutenção	a well-maintained building	The building appears well-maintained.	Aparência não comprova inspeção técnica nem todos os sistemas.
+c1	housing	soundproof	que impede passagem de som segundo alegação ou especificação	a soundproof room	The advertisement calls the room soundproof.	Distinguir alegação absoluta de isolamento parcial; não certificar desempenho.
+c1	housing	disruption	perturbação ou interrupção da rotina	disruption to something	The work caused disruption to daily routines.	Identificar afetados e período, sem generalizar impacto.

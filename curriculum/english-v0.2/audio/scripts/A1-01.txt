@@ -1,0 +1,6 @@
+Host: Is Ben a teacher?
+Lia: No, he isn’t. He is a driver. Jo is a teacher.
+Host: Is Jo your neighbour?
+Lia: No. Jo is my partner. Ben is my neighbour.
+Host: And your job?
+Lia: I’m a nurse.

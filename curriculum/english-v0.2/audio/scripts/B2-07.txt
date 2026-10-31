@@ -1,0 +1,8 @@
+Volunteer: I heard the committee doesn’t support the event.
+Coordinator: We do support it. What we need is a confirmed indoor room and a completed access check.
+Volunteer: But Jo sent the plan.
+Coordinator: It was a draft that Jo sent, not the final plan.
+Volunteer: If the forecast improves, can we announce the venue?
+Coordinator: Even if it improves, those conditions still apply.
+Volunteer: Has either condition been completed?
+Coordinator: Not yet. Only after both are complete will the committee approve the plan.

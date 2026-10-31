@@ -1,0 +1,9 @@
+Receptionist: Maya, are you free tomorrow at two in the afternoon?
+Maya: Yes. At the library?
+Receptionist: No. At the café. The library is closed tomorrow.
+Maya: The café at A?
+Receptionist: Yes. At two, not eleven.
+Maya: Is Leo going to bring the map?
+Receptionist: No. Please bring the map, Maya. Leo is going to bring water.
+Maya: I’m going to bring the map. At two, at the café.
+Receptionist: Yes. Don’t take photos inside the café.

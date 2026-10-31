@@ -1,0 +1,107 @@
+{
+  "source": "LEXIO-AUTHOR-2026-10-30",
+  "level": "b1",
+  "level_status": "editorial_proposal_not_external_validation",
+  "entries": [
+    {
+      "entry": "reliable",
+      "sense_pt": "confiável quanto a cumprir combinados",
+      "domain": "relationships"
+    },
+    {
+      "entry": "disappointed",
+      "sense_pt": "decepcionado com resultado ou situação",
+      "domain": "relationships"
+    },
+    {
+      "entry": "apologise",
+      "sense_pt": "pedir desculpas por algo",
+      "domain": "relationships"
+    },
+    {
+      "entry": "trust",
+      "sense_pt": "confiar em alguém neste contexto",
+      "domain": "relationships"
+    },
+    {
+      "entry": "keep in touch",
+      "sense_pt": "manter contato",
+      "domain": "relationships"
+    },
+    {
+      "entry": "responsible for",
+      "sense_pt": "responsável por tarefa definida",
+      "domain": "work"
+    },
+    {
+      "entry": "training",
+      "sense_pt": "formação prática para uma função",
+      "domain": "work"
+    },
+    {
+      "entry": "experience",
+      "sense_pt": "experiência acumulada numa atividade",
+      "domain": "work"
+    },
+    {
+      "entry": "arrange",
+      "sense_pt": "combinar ou organizar um encontro",
+      "domain": "work"
+    },
+    {
+      "entry": "take over",
+      "sense_pt": "assumir tarefa ou função de outra pessoa",
+      "domain": "work"
+    },
+    {
+      "entry": "journey",
+      "sense_pt": "trajeto entre lugares",
+      "domain": "travel"
+    },
+    {
+      "entry": "accommodation",
+      "sense_pt": "hospedagem como serviço ou lugar",
+      "domain": "travel"
+    },
+    {
+      "entry": "get on",
+      "sense_pt": "embarcar em ônibus ou trem",
+      "domain": "travel"
+    },
+    {
+      "entry": "get off",
+      "sense_pt": "desembarcar de ônibus ou trem",
+      "domain": "travel"
+    },
+    {
+      "entry": "connection",
+      "sense_pt": "conexão entre trechos de transporte",
+      "domain": "travel"
+    },
+    {
+      "entry": "fee",
+      "sense_pt": "taxa cobrada por serviço",
+      "domain": "consumption"
+    },
+    {
+      "entry": "charge",
+      "sense_pt": "cobrar um valor por serviço",
+      "domain": "consumption"
+    },
+    {
+      "entry": "worth",
+      "sense_pt": "que vale o custo ou esforço para alguém",
+      "domain": "consumption"
+    },
+    {
+      "entry": "borrow",
+      "sense_pt": "pegar emprestado",
+      "domain": "consumption"
+    },
+    {
+      "entry": "lend",
+      "sense_pt": "emprestar para alguém",
+      "domain": "consumption"
+    }
+  ]
+}

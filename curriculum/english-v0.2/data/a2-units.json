@@ -1,0 +1,131 @@
+[
+  {
+    "id": "A2-01",
+    "title": "Escolher um espaço que serve ao grupo",
+    "prerequisites": [
+      "A1-03",
+      "A1-04",
+      "A1-08"
+    ],
+    "grammar_ids": [
+      "G-A2-27F08A",
+      "G-A2-C9B78B",
+      "G-A2-09D4B1",
+      "G-A2-EB541B",
+      "G-A2-C74D3D"
+    ],
+    "student_file": "lessons/a2/A2-01/student.md",
+    "teacher_file": "lessons/a2/A2-01/teacher.md",
+    "feedback_file": "lessons/a2/A2-01/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "id": "A2-02",
+    "title": "Lidar com atraso e combinar a chegada",
+    "prerequisites": [
+      "A2-01",
+      "A1-02",
+      "A1-08"
+    ],
+    "grammar_ids": [
+      "G-A2-42C5AD",
+      "G-A2-A927A0",
+      "G-A2-5BCA02",
+      "G-A2-91C197"
+    ],
+    "student_file": "lessons/a2/A2-02/student.md",
+    "teacher_file": "lessons/a2/A2-02/teacher.md",
+    "feedback_file": "lessons/a2/A2-02/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "id": "A2-03",
+    "title": "Encontrar um objeto sem atribuí-lo à pessoa errada",
+    "prerequisites": [
+      "A2-02",
+      "A1-07",
+      "A1-08"
+    ],
+    "grammar_ids": [
+      "G-A2-298A51",
+      "G-A2-951A00",
+      "G-A2-BD94A7",
+      "G-A2-1DCF1D"
+    ],
+    "student_file": "lessons/a2/A2-03/student.md",
+    "teacher_file": "lessons/a2/A2-03/teacher.md",
+    "feedback_file": "lessons/a2/A2-03/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "id": "A2-04",
+    "title": "Confirmar uma reserva e distinguir feito de pendente",
+    "prerequisites": [
+      "A2-01",
+      "A2-03",
+      "A1-07"
+    ],
+    "grammar_ids": [
+      "G-A2-1AD1FA",
+      "G-A2-7D3AAC",
+      "G-A2-B38511"
+    ],
+    "student_file": "lessons/a2/A2-04/student.md",
+    "teacher_file": "lessons/a2/A2-04/teacher.md",
+    "feedback_file": "lessons/a2/A2-04/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "id": "A2-05",
+    "title": "Pedir ajuda, reorganizar um compromisso e entender regras",
+    "prerequisites": [
+      "A2-04",
+      "A1-06"
+    ],
+    "grammar_ids": [
+      "G-A2-B98CB1",
+      "G-A2-6CC455",
+      "G-A2-4389E8"
+    ],
+    "student_file": "lessons/a2/A2-05/student.md",
+    "teacher_file": "lessons/a2/A2-05/teacher.md",
+    "feedback_file": "lessons/a2/A2-05/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "id": "A2-06",
+    "title": "Explicar um processo e resolver uma dificuldade digital",
+    "prerequisites": [
+      "A2-04",
+      "A2-05",
+      "A1-05"
+    ],
+    "grammar_ids": [
+      "G-A2-56376A",
+      "G-A2-58FB58",
+      "G-A2-A86DE3"
+    ],
+    "student_file": "lessons/a2/A2-06/student.md",
+    "teacher_file": "lessons/a2/A2-06/teacher.md",
+    "feedback_file": "lessons/a2/A2-06/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "id": "A2-07",
+    "title": "Contar como uma rotina cultural mudou",
+    "prerequisites": [
+      "A2-03",
+      "A2-04",
+      "A2-06",
+      "A1-07"
+    ],
+    "grammar_ids": [
+      "G-A2-BCE4D7",
+      "G-A2-12B01E"
+    ],
+    "student_file": "lessons/a2/A2-07/student.md",
+    "teacher_file": "lessons/a2/A2-07/teacher.md",
+    "feedback_file": "lessons/a2/A2-07/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  }
+]

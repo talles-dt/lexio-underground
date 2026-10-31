@@ -1,0 +1,674 @@
+[
+  {
+    "id": "LAB-PRE-A1-SENTENCE-01",
+    "level": "pre-a1",
+    "title": "Construir e perguntar",
+    "grammar_ids": [
+      "G-PRE-A1-AC550F",
+      "G-PRE-A1-02475A",
+      "G-PRE-A1-1744E2"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-PRE-A1-SENTENCE-01.md"
+  },
+  {
+    "id": "LAB-PRE-A1-SENTENCE-02",
+    "level": "pre-a1",
+    "title": "Construir e perguntar",
+    "grammar_ids": [
+      "G-PRE-A1-217665",
+      "G-PRE-A1-E1C4C3",
+      "G-PRE-A1-E5E645"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-PRE-A1-SENTENCE-02.md"
+  },
+  {
+    "id": "LAB-PRE-A1-REFERENCE-01",
+    "level": "pre-a1",
+    "title": "Identificar e quantificar",
+    "grammar_ids": [
+      "G-PRE-A1-69E37E",
+      "G-PRE-A1-FCF7D6",
+      "G-PRE-A1-89D698"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-PRE-A1-REFERENCE-01.md"
+  },
+  {
+    "id": "LAB-PRE-A1-REFERENCE-02",
+    "level": "pre-a1",
+    "title": "Identificar e quantificar",
+    "grammar_ids": [
+      "G-PRE-A1-FDD0E8"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-PRE-A1-REFERENCE-02.md"
+  },
+  {
+    "id": "LAB-PRE-A1-TIME-01",
+    "level": "pre-a1",
+    "title": "Situar no tempo e no espaço",
+    "grammar_ids": [
+      "G-PRE-A1-BB85BC",
+      "G-PRE-A1-50812E"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-PRE-A1-TIME-01.md"
+  },
+  {
+    "id": "LAB-A1-REFERENCE-01",
+    "level": "a1",
+    "title": "Identificar e quantificar",
+    "grammar_ids": [
+      "G-A1-5F4B46",
+      "G-A1-8F8A66",
+      "G-A1-6659C4"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-A1-REFERENCE-01.md"
+  },
+  {
+    "id": "LAB-A1-REFERENCE-02",
+    "level": "a1",
+    "title": "Identificar e quantificar",
+    "grammar_ids": [
+      "G-A1-820D23",
+      "G-A1-DB81DA",
+      "G-A1-F7592E"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-A1-REFERENCE-02.md"
+  },
+  {
+    "id": "LAB-A1-REFERENCE-03",
+    "level": "a1",
+    "title": "Identificar e quantificar",
+    "grammar_ids": [
+      "G-A1-FA96AA",
+      "G-A1-DD58DD"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-A1-REFERENCE-03.md"
+  },
+  {
+    "id": "LAB-A1-SENTENCE-01",
+    "level": "a1",
+    "title": "Construir e perguntar",
+    "grammar_ids": [
+      "G-A1-8081E5",
+      "G-A1-376948",
+      "G-A1-75B4BC"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-A1-SENTENCE-01.md"
+  },
+  {
+    "id": "LAB-A1-SENTENCE-02",
+    "level": "a1",
+    "title": "Construir e perguntar",
+    "grammar_ids": [
+      "G-A1-07EB92"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-A1-SENTENCE-02.md"
+  },
+  {
+    "id": "LAB-A1-TIME-01",
+    "level": "a1",
+    "title": "Situar no tempo e no espaço",
+    "grammar_ids": [
+      "G-A1-3216C0",
+      "G-A1-EEE6A7",
+      "G-A1-6E12E9"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-A1-TIME-01.md"
+  },
+  {
+    "id": "LAB-A1-TIME-02",
+    "level": "a1",
+    "title": "Situar no tempo e no espaço",
+    "grammar_ids": [
+      "G-A1-1A8819",
+      "G-A1-7F431B",
+      "G-A1-9F9444"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-A1-TIME-02.md"
+  },
+  {
+    "id": "LAB-A1-TIME-03",
+    "level": "a1",
+    "title": "Situar no tempo e no espaço",
+    "grammar_ids": [
+      "G-A1-38A6DD",
+      "G-A1-BBE96D",
+      "G-A1-EFB12C"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-A1-TIME-03.md"
+  },
+  {
+    "id": "LAB-A1-DECISIONS-01",
+    "level": "a1",
+    "title": "Decidir e condicionar",
+    "grammar_ids": [
+      "G-A1-BA335B",
+      "G-A1-FFA2AE"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-A1-DECISIONS-01.md"
+  },
+  {
+    "id": "LAB-A1-DISCOURSE-01",
+    "level": "a1",
+    "title": "Organizar e adaptar o discurso",
+    "grammar_ids": [
+      "G-A1-7DDCE4"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-A1-DISCOURSE-01.md"
+  },
+  {
+    "id": "LAB-A2-REFERENCE-01",
+    "level": "a2",
+    "title": "Identificar e quantificar",
+    "grammar_ids": [
+      "G-A2-27F08A",
+      "G-A2-C9B78B",
+      "G-A2-09D4B1"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-A2-REFERENCE-01.md"
+  },
+  {
+    "id": "LAB-A2-REFERENCE-02",
+    "level": "a2",
+    "title": "Identificar e quantificar",
+    "grammar_ids": [
+      "G-A2-EB541B",
+      "G-A2-298A51",
+      "G-A2-951A00"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-A2-REFERENCE-02.md"
+  },
+  {
+    "id": "LAB-A2-TIME-01",
+    "level": "a2",
+    "title": "Situar no tempo e no espaço",
+    "grammar_ids": [
+      "G-A2-BD94A7",
+      "G-A2-1AD1FA",
+      "G-A2-7D3AAC"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-A2-TIME-01.md"
+  },
+  {
+    "id": "LAB-A2-TIME-02",
+    "level": "a2",
+    "title": "Situar no tempo e no espaço",
+    "grammar_ids": [
+      "G-A2-42C5AD",
+      "G-A2-A927A0",
+      "G-A2-A86DE3"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-A2-TIME-02.md"
+  },
+  {
+    "id": "LAB-A2-TIME-03",
+    "level": "a2",
+    "title": "Situar no tempo e no espaço",
+    "grammar_ids": [
+      "G-A2-C74D3D",
+      "G-A2-BCE4D7"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-A2-TIME-03.md"
+  },
+  {
+    "id": "LAB-A2-DECISIONS-01",
+    "level": "a2",
+    "title": "Decidir e condicionar",
+    "grammar_ids": [
+      "G-A2-5BCA02",
+      "G-A2-B98CB1",
+      "G-A2-6CC455"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-A2-DECISIONS-01.md"
+  },
+  {
+    "id": "LAB-A2-PATTERNS-01",
+    "level": "a2",
+    "title": "Relacionar formas e sentidos",
+    "grammar_ids": [
+      "G-A2-4389E8",
+      "G-A2-B38511",
+      "G-A2-56376A"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-A2-PATTERNS-01.md"
+  },
+  {
+    "id": "LAB-A2-PATTERNS-02",
+    "level": "a2",
+    "title": "Relacionar formas e sentidos",
+    "grammar_ids": [
+      "G-A2-58FB58"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-A2-PATTERNS-02.md"
+  },
+  {
+    "id": "LAB-A2-SENTENCE-01",
+    "level": "a2",
+    "title": "Construir e perguntar",
+    "grammar_ids": [
+      "G-A2-1DCF1D",
+      "G-A2-12B01E",
+      "G-A2-91C197"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-A2-SENTENCE-01.md"
+  },
+  {
+    "id": "LAB-B1-TIME-01",
+    "level": "b1",
+    "title": "Situar no tempo e no espaço",
+    "grammar_ids": [
+      "G-B1-E3BAF4",
+      "G-B1-EAF150",
+      "G-B1-CB6318"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-B1-TIME-01.md"
+  },
+  {
+    "id": "LAB-B1-TIME-02",
+    "level": "b1",
+    "title": "Situar no tempo e no espaço",
+    "grammar_ids": [
+      "G-B1-59209A",
+      "G-B1-5C8795",
+      "G-B1-1F6EA4"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-B1-TIME-02.md"
+  },
+  {
+    "id": "LAB-B1-DECISIONS-01",
+    "level": "b1",
+    "title": "Decidir e condicionar",
+    "grammar_ids": [
+      "G-B1-0EFE72",
+      "G-B1-8D148C",
+      "G-B1-FC3645"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-B1-DECISIONS-01.md"
+  },
+  {
+    "id": "LAB-B1-DECISIONS-02",
+    "level": "b1",
+    "title": "Decidir e condicionar",
+    "grammar_ids": [
+      "G-B1-E5D043",
+      "G-B1-F27DD6"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-B1-DECISIONS-02.md"
+  },
+  {
+    "id": "LAB-B1-PATTERNS-01",
+    "level": "b1",
+    "title": "Relacionar formas e sentidos",
+    "grammar_ids": [
+      "G-B1-D7F097",
+      "G-B1-C9900A",
+      "G-B1-BA0450"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-B1-PATTERNS-01.md"
+  },
+  {
+    "id": "LAB-B1-PATTERNS-02",
+    "level": "b1",
+    "title": "Relacionar formas e sentidos",
+    "grammar_ids": [
+      "G-B1-F4C705",
+      "G-B1-EDD761"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-B1-PATTERNS-02.md"
+  },
+  {
+    "id": "LAB-B1-SENTENCE-01",
+    "level": "b1",
+    "title": "Construir e perguntar",
+    "grammar_ids": [
+      "G-B1-9F266F",
+      "G-B1-D555F8",
+      "G-B1-346DE6"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-B1-SENTENCE-01.md"
+  },
+  {
+    "id": "LAB-B1-SENTENCE-02",
+    "level": "b1",
+    "title": "Construir e perguntar",
+    "grammar_ids": [
+      "G-B1-444515"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-B1-SENTENCE-02.md"
+  },
+  {
+    "id": "LAB-B1-REFERENCE-01",
+    "level": "b1",
+    "title": "Identificar e quantificar",
+    "grammar_ids": [
+      "G-B1-51E602",
+      "G-B1-809179",
+      "G-B1-55E60C"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-B1-REFERENCE-01.md"
+  },
+  {
+    "id": "LAB-B1-DISCOURSE-01",
+    "level": "b1",
+    "title": "Organizar e adaptar o discurso",
+    "grammar_ids": [
+      "G-B1-FDB2DE"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-B1-DISCOURSE-01.md"
+  },
+  {
+    "id": "LAB-B2-TIME-01",
+    "level": "b2",
+    "title": "Situar no tempo e no espaço",
+    "grammar_ids": [
+      "G-B2-DA2B8B",
+      "G-B2-450880",
+      "G-B2-5EAAE6"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-B2-TIME-01.md"
+  },
+  {
+    "id": "LAB-B2-TIME-02",
+    "level": "b2",
+    "title": "Situar no tempo e no espaço",
+    "grammar_ids": [
+      "G-B2-E86001"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-B2-TIME-02.md"
+  },
+  {
+    "id": "LAB-B2-DECISIONS-01",
+    "level": "b2",
+    "title": "Decidir e condicionar",
+    "grammar_ids": [
+      "G-B2-4A2E30",
+      "G-B2-87A6C7",
+      "G-B2-7FC68E"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-B2-DECISIONS-01.md"
+  },
+  {
+    "id": "LAB-B2-DECISIONS-02",
+    "level": "b2",
+    "title": "Decidir e condicionar",
+    "grammar_ids": [
+      "G-B2-E6D32C",
+      "G-B2-FC151E"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-B2-DECISIONS-02.md"
+  },
+  {
+    "id": "LAB-B2-PATTERNS-01",
+    "level": "b2",
+    "title": "Relacionar formas e sentidos",
+    "grammar_ids": [
+      "G-B2-411519",
+      "G-B2-62B6F0",
+      "G-B2-F91BAA"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-B2-PATTERNS-01.md"
+  },
+  {
+    "id": "LAB-B2-PATTERNS-02",
+    "level": "b2",
+    "title": "Relacionar formas e sentidos",
+    "grammar_ids": [
+      "G-B2-77255F",
+      "G-B2-7C7649",
+      "G-B2-A65F73"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-B2-PATTERNS-02.md"
+  },
+  {
+    "id": "LAB-B2-SENTENCE-01",
+    "level": "b2",
+    "title": "Construir e perguntar",
+    "grammar_ids": [
+      "G-B2-F507B9",
+      "G-B2-CA6335"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-B2-SENTENCE-01.md"
+  },
+  {
+    "id": "LAB-B2-REFERENCE-01",
+    "level": "b2",
+    "title": "Identificar e quantificar",
+    "grammar_ids": [
+      "G-B2-225290",
+      "G-B2-E8FF04",
+      "G-B2-6CDE3F"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-B2-REFERENCE-01.md"
+  },
+  {
+    "id": "LAB-B2-DISCOURSE-01",
+    "level": "b2",
+    "title": "Organizar e adaptar o discurso",
+    "grammar_ids": [
+      "G-B2-BCE716",
+      "G-B2-1D7DC5",
+      "G-B2-11868F"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-B2-DISCOURSE-01.md"
+  },
+  {
+    "id": "LAB-B2-DISCOURSE-02",
+    "level": "b2",
+    "title": "Organizar e adaptar o discurso",
+    "grammar_ids": [
+      "G-B2-080F1E"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-B2-DISCOURSE-02.md"
+  },
+  {
+    "id": "LAB-C1-DECISIONS-01",
+    "level": "c1",
+    "title": "Decidir e condicionar",
+    "grammar_ids": [
+      "G-C1-B2ED9D",
+      "G-C1-F3558C",
+      "G-C1-C42442"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-C1-DECISIONS-01.md"
+  },
+  {
+    "id": "LAB-C1-TIME-01",
+    "level": "c1",
+    "title": "Situar no tempo e no espaço",
+    "grammar_ids": [
+      "G-C1-C819DA",
+      "G-C1-365F43"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-C1-TIME-01.md"
+  },
+  {
+    "id": "LAB-C1-PATTERNS-01",
+    "level": "c1",
+    "title": "Relacionar formas e sentidos",
+    "grammar_ids": [
+      "G-C1-A136E7",
+      "G-C1-61E2F1",
+      "G-C1-4C3A1A"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-C1-PATTERNS-01.md"
+  },
+  {
+    "id": "LAB-C1-REFERENCE-01",
+    "level": "c1",
+    "title": "Identificar e quantificar",
+    "grammar_ids": [
+      "G-C1-8A14FE",
+      "G-C1-4ECC0B"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-C1-REFERENCE-01.md"
+  },
+  {
+    "id": "LAB-C1-DISCOURSE-01",
+    "level": "c1",
+    "title": "Organizar e adaptar o discurso",
+    "grammar_ids": [
+      "G-C1-887F3D",
+      "G-C1-96C05A",
+      "G-C1-188DE1"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-C1-DISCOURSE-01.md"
+  },
+  {
+    "id": "LAB-C1-DISCOURSE-02",
+    "level": "c1",
+    "title": "Organizar e adaptar o discurso",
+    "grammar_ids": [
+      "G-C1-4872CF",
+      "G-C1-3A2067",
+      "G-C1-EF68DD"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-C1-DISCOURSE-02.md"
+  },
+  {
+    "id": "LAB-C1-DISCOURSE-03",
+    "level": "c1",
+    "title": "Organizar e adaptar o discurso",
+    "grammar_ids": [
+      "G-C1-65AA58",
+      "G-C1-295764",
+      "G-C1-0A9D5D"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-C1-DISCOURSE-03.md"
+  },
+  {
+    "id": "LAB-C1-DISCOURSE-04",
+    "level": "c1",
+    "title": "Organizar e adaptar o discurso",
+    "grammar_ids": [
+      "G-C1-C28394"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-C1-DISCOURSE-04.md"
+  },
+  {
+    "id": "LAB-C1-SENTENCE-01",
+    "level": "c1",
+    "title": "Construir e perguntar",
+    "grammar_ids": [
+      "G-C1-F7504F",
+      "G-C1-AA1AE7",
+      "G-C1-BD4E32"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-C1-SENTENCE-01.md"
+  },
+  {
+    "id": "LAB-C1-SENTENCE-02",
+    "level": "c1",
+    "title": "Construir e perguntar",
+    "grammar_ids": [
+      "G-C1-427506"
+    ],
+    "kind": "supplementary_language_laboratory",
+    "status": "authored_not_piloted",
+    "file": "units/LAB-C1-SENTENCE-02.md"
+  }
+]

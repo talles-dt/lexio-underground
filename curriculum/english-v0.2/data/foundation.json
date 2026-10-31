@@ -1,0 +1,83 @@
+[
+  {
+    "id": "FND-01",
+    "title": "Entrar numa conversa e apresentar-se",
+    "grammar_ids": [
+      "G-PRE-A1-AC550F",
+      "G-PRE-A1-02475A",
+      "G-PRE-A1-1744E2",
+      "G-PRE-A1-89D698"
+    ],
+    "student_file": "lessons/foundation/FND-01/student.md",
+    "teacher_file": "lessons/foundation/FND-01/teacher.md",
+    "feedback_file": "lessons/foundation/FND-01/feedback.md",
+    "status": "written_not_independently_reviewed_or_piloted"
+  },
+  {
+    "id": "FND-02",
+    "title": "Entender instruções e pedir reparo",
+    "grammar_ids": [
+      "G-PRE-A1-E1C4C3",
+      "G-PRE-A1-E5E645",
+      "G-PRE-A1-217665"
+    ],
+    "student_file": "lessons/foundation/FND-02/student.md",
+    "teacher_file": "lessons/foundation/FND-02/teacher.md",
+    "feedback_file": "lessons/foundation/FND-02/feedback.md",
+    "status": "written_not_independently_reviewed_or_piloted"
+  },
+  {
+    "id": "FND-03",
+    "title": "Conferir nome, código e origem",
+    "grammar_ids": [
+      "G-PRE-A1-BB85BC",
+      "G-PRE-A1-217665",
+      "G-PRE-A1-1744E2"
+    ],
+    "student_file": "lessons/foundation/FND-03/student.md",
+    "teacher_file": "lessons/foundation/FND-03/teacher.md",
+    "feedback_file": "lessons/foundation/FND-03/feedback.md",
+    "status": "written_not_independently_reviewed_or_piloted"
+  },
+  {
+    "id": "FND-04",
+    "title": "Identificar objetos e pertencimento",
+    "grammar_ids": [
+      "G-PRE-A1-02475A",
+      "G-PRE-A1-69E37E",
+      "G-PRE-A1-FCF7D6",
+      "G-PRE-A1-89D698"
+    ],
+    "student_file": "lessons/foundation/FND-04/student.md",
+    "teacher_file": "lessons/foundation/FND-04/teacher.md",
+    "feedback_file": "lessons/foundation/FND-04/feedback.md",
+    "status": "written_not_independently_reviewed_or_piloted"
+  },
+  {
+    "id": "FND-05",
+    "title": "Fazer pedido e conferir o preço",
+    "grammar_ids": [
+      "G-PRE-A1-FDD0E8",
+      "G-PRE-A1-217665",
+      "G-PRE-A1-69E37E"
+    ],
+    "student_file": "lessons/foundation/FND-05/student.md",
+    "teacher_file": "lessons/foundation/FND-05/teacher.md",
+    "feedback_file": "lessons/foundation/FND-05/feedback.md",
+    "status": "written_not_independently_reviewed_or_piloted"
+  },
+  {
+    "id": "FND-06",
+    "title": "Participar de um encontro e atualizar a agenda",
+    "grammar_ids": [
+      "G-PRE-A1-50812E",
+      "G-PRE-A1-BB85BC",
+      "G-PRE-A1-E5E645",
+      "G-PRE-A1-FDD0E8"
+    ],
+    "student_file": "lessons/foundation/FND-06/student.md",
+    "teacher_file": "lessons/foundation/FND-06/teacher.md",
+    "feedback_file": "lessons/foundation/FND-06/feedback.md",
+    "status": "written_not_independently_reviewed_or_piloted"
+  }
+]

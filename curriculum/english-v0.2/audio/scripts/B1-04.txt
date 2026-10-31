@@ -1,0 +1,6 @@
+Planner: The coordinator hasn’t replied. The recorder must be broken.
+Colleague: That’s possible, but the silence doesn’t prove it. The coordinator might be busy.
+Planner: If we had two confirmed recorders, we’d use both rooms.
+Colleague: Yes. For now, could Group A move to ten?
+Planner: We don’t know yet. Group B can only come at nine.
+Colleague: Then ask A before announcing anything. Each participant needs a chair, and either room has enough chairs. The missing information is about equipment and timing, not the number of seats.

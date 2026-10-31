@@ -1,0 +1,207 @@
+{
+  "source": "LEXIO-AUTHOR-2026-10-29",
+  "level": "pre-a1",
+  "level_status": "editorial_proposal_not_external_validation",
+  "entries": [
+    {
+      "entry": "zero",
+      "sense_pt": "número zero",
+      "domain": "numbers"
+    },
+    {
+      "entry": "one",
+      "sense_pt": "número um",
+      "domain": "numbers"
+    },
+    {
+      "entry": "two",
+      "sense_pt": "número dois",
+      "domain": "numbers"
+    },
+    {
+      "entry": "three",
+      "sense_pt": "número três",
+      "domain": "numbers"
+    },
+    {
+      "entry": "four",
+      "sense_pt": "número quatro",
+      "domain": "numbers"
+    },
+    {
+      "entry": "five",
+      "sense_pt": "número cinco",
+      "domain": "numbers"
+    },
+    {
+      "entry": "six",
+      "sense_pt": "número seis",
+      "domain": "numbers"
+    },
+    {
+      "entry": "seven",
+      "sense_pt": "número sete",
+      "domain": "numbers"
+    },
+    {
+      "entry": "eight",
+      "sense_pt": "número oito",
+      "domain": "numbers"
+    },
+    {
+      "entry": "nine",
+      "sense_pt": "número nove",
+      "domain": "numbers"
+    },
+    {
+      "entry": "ten",
+      "sense_pt": "número dez",
+      "domain": "numbers"
+    },
+    {
+      "entry": "goodbye",
+      "sense_pt": "despedida",
+      "domain": "interaction"
+    },
+    {
+      "entry": "sorry",
+      "sense_pt": "pedido breve de desculpa",
+      "domain": "interaction"
+    },
+    {
+      "entry": "excuse me",
+      "sense_pt": "chamar atenção com cortesia",
+      "domain": "interaction"
+    },
+    {
+      "entry": "I don’t understand",
+      "sense_pt": "dizer que não entendeu",
+      "domain": "interaction"
+    },
+    {
+      "entry": "key",
+      "sense_pt": "chave de abrir porta",
+      "domain": "objects"
+    },
+    {
+      "entry": "cup",
+      "sense_pt": "xícara no cartão de objeto",
+      "domain": "objects"
+    },
+    {
+      "entry": "door",
+      "sense_pt": "porta",
+      "domain": "places"
+    },
+    {
+      "entry": "toilet",
+      "sense_pt": "banheiro indicado em placa",
+      "domain": "places"
+    },
+    {
+      "entry": "milk",
+      "sense_pt": "leite como bebida",
+      "domain": "food"
+    },
+    {
+      "entry": "juice",
+      "sense_pt": "suco como bebida",
+      "domain": "food"
+    },
+    {
+      "entry": "rice",
+      "sense_pt": "arroz como alimento",
+      "domain": "food"
+    },
+    {
+      "entry": "banana",
+      "sense_pt": "banana como fruta",
+      "domain": "food"
+    },
+    {
+      "entry": "Tuesday",
+      "sense_pt": "terça-feira",
+      "domain": "time"
+    },
+    {
+      "entry": "Wednesday",
+      "sense_pt": "quarta-feira",
+      "domain": "time"
+    },
+    {
+      "entry": "Thursday",
+      "sense_pt": "quinta-feira",
+      "domain": "time"
+    },
+    {
+      "entry": "Saturday",
+      "sense_pt": "sábado",
+      "domain": "time"
+    },
+    {
+      "entry": "Sunday",
+      "sense_pt": "domingo",
+      "domain": "time"
+    },
+    {
+      "entry": "tomorrow",
+      "sense_pt": "amanhã relativo ao dia do cenário",
+      "domain": "time"
+    },
+    {
+      "entry": "red",
+      "sense_pt": "cor vermelha",
+      "domain": "description"
+    },
+    {
+      "entry": "blue",
+      "sense_pt": "cor azul",
+      "domain": "description"
+    },
+    {
+      "entry": "black",
+      "sense_pt": "cor preta",
+      "domain": "description"
+    },
+    {
+      "entry": "white",
+      "sense_pt": "cor branca",
+      "domain": "description"
+    },
+    {
+      "entry": "mother",
+      "sense_pt": "mãe",
+      "domain": "relationships"
+    },
+    {
+      "entry": "father",
+      "sense_pt": "pai",
+      "domain": "relationships"
+    },
+    {
+      "entry": "sister",
+      "sense_pt": "irmã",
+      "domain": "relationships"
+    },
+    {
+      "entry": "brother",
+      "sense_pt": "irmão",
+      "domain": "relationships"
+    },
+    {
+      "entry": "home",
+      "sense_pt": "casa ou lar no bloco de localização",
+      "domain": "places"
+    },
+    {
+      "entry": "work",
+      "sense_pt": "trabalho no bloco de localização",
+      "domain": "places"
+    },
+    {
+      "entry": "school",
+      "sense_pt": "escola no bloco de localização",
+      "domain": "places"
+    }
+  ]
+}

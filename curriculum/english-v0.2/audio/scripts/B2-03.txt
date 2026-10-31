@@ -1,0 +1,8 @@
+Interviewer: Can we say Jo changed the time through the personal account at nine?
+Administrator: No. That account could not be used until eleven. But the shared account was available earlier.
+Interviewer: Mina denied changing it. Does that settle who made the edit?
+Administrator: No. Her statement is one source, not a complete investigation.
+Interviewer: What did Jo suggest?
+Administrator: Comparing the exports and sending a correction. The team was persuaded to send it, and did so at two.
+Interviewer: Is the opening reported to have moved to seven?
+Administrator: Someone has reported that, based on the poster. The booking still says six.

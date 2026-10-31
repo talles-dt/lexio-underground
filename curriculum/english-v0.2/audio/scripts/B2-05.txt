@@ -1,0 +1,8 @@
+Visitor: Can I borrow a camera from the upper shelf?
+Volunteer: Those cameras are awaiting inspection. They aren’t available yet.
+Visitor: What about the recorders stored in the blue cabinet?
+Volunteer: They’re available for a two-day loan.
+Visitor: If I return one at four thirty, can someone else borrow it immediately?
+Volunteer: No. We record the return that day, but inspect it the next morning.
+Visitor: So recording a return is not the same as approving the item?
+Volunteer: Exactly. Staff carry out the inspection before changing its availability.

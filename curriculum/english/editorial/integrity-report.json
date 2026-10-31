@@ -1,0 +1,26 @@
+{
+  "edition": "0.1",
+  "check": "documentary_integrity_only",
+  "units": 48,
+  "levels": {
+    "pre-a1": 8,
+    "a1": 8,
+    "a2": 8,
+    "b1": 8,
+    "b2": 8,
+    "c1": 8
+  },
+  "base_sessions": 192,
+  "reading_texts": 48,
+  "short_audio_scripts": 48,
+  "comprehension_questions": 192,
+  "guided_exercises": 144,
+  "transfer_tasks": 48,
+  "exit_assessments": 6,
+  "local_links_checked": 585,
+  "markdown_files": 67,
+  "human_review": "pending",
+  "human_audio": "not_produced",
+  "learner_pilot": "not_started",
+  "errors": []
+}

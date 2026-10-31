@@ -1,0 +1,8 @@
+Client: Could you clarify whether both frames have been repaired?
+Technician: One has been repaired and is being checked. The other is still being repaired.
+Client: And the glass?
+Technician: It is being cleaned. No replacement has been ordered.
+Client: I was wondering whether I could collect both on Thursday.
+Technician: We can’t confirm that yet. We’ll update you tomorrow morning.
+Client: Understood. We’ve arranged to have the labels corrected by the print shop, not by you.
+Technician: That helps. Please arrange collection only after confirmation.

@@ -1,0 +1,7 @@
+Support: Is the microphone on?
+Learner: Yes. Should I turn off it now?
+Support: Turn it off after the recording. Then look for the file in the practice folder.
+Learner: I found it. Is it shared automatically?
+Support: No. It is checked by the teacher first.
+Learner: I’ll check the name carefully before I upload it.
+Support: Good. You don’t need to send us a password.

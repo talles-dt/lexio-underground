@@ -1,0 +1,6 @@
+Visitor: Is there a bookshop near the flat?
+Host: Yes. The bookshop is opposite the library.
+Visitor: At A?
+Host: No. A is the library. The bookshop is at D.
+Visitor: And our conversation?
+Host: At the café, B, next to the library.
