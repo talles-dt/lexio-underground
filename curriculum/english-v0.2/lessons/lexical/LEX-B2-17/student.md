@@ -71,7 +71,7 @@ Nesta sequência average é soma dividida pela quantidade; médias podem ocultar
 <a id="uso"></a>
 ## Usar para realizar uma tarefa
 
-Dois conjuntos independentes de dados fictícios. A: workshop cards, 12 blue and 6 red; visitors yesterday24/today48. B: two queues lasted10/30min; a procedure changed from20 to10min; only3 of12 archived pages were checked. Redija explicação de100–140palavras para leitor geral, usando blue:red ratio, share of checked pages, doubled visitors, halved procedure time and mean queue time. Forneça cálculo como apoio: 12:6=2:1;3/12=1/4; média(10+30)/2=20. Depois responda se média20 implica que ambas filas duraram20 e se12:6 é proporção de azuis no total.
+Dois conjuntos independentes de dados fictícios. A: workshop cards, 12 blue and 6 red; visitors yesterday 24/today 48. B: two queues lasted 10/30 min; a procedure changed from 20 to 10 min; only 3 of 12 archived pages were checked. Redija explicação de 100–140 palavras para leitor geral, usando blue:red ratio, share of checked pages, doubled visitors, halved procedure time and mean queue time. Forneça cálculo como apoio: 12:6=2:1;3/12=1/4; média(10+30)/2=20. Depois responda se média 20 implica que ambas filas duraram 20 e se 12:6 é proporção de azuis no total.
 
 **Critério:** o destinatário precisa recuperar os dados finais indicados no [retorno](feedback.md). Marque cada palavra como usada com apoio, usada sem modelo, reconhecida somente ou não observada. Sem parceiro, há ensaio, não interação observada.
 

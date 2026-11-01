@@ -81,19 +81,20 @@ GROUPS += [{'id': 'LEX-C1-11',
   'title': 'Qualificar magnitudes e viabilidade conforme o propósito',
   'after': 'B2-06',
   'words': ['negligible', 'substantial', 'disproportionate', 'comparable', 'on the order of', 'within reach'],
-  'situation': 'Editorial note A: two proposed reading rooms measure40/42m²; rent differs; preliminary shelf '
-               'sketch has1mm variation accepted by designer; incomplete catalogue suggests '
-               'around1000titles. Note B: printing estimate fell100→60 units, which editor calls '
-               'substantial; chair thinks half a meeting on two minor items is disproportionate while eight '
-               'remain; registration target50, confirmed45, deadline still open. Write a140–180word briefing '
-               'to a general audience. Attribute judgements, distinguish size comparison from price, and '
+  'situation': 'Editorial note A: two proposed reading rooms measure 40/42 m²; rent differs; preliminary '
+               'shelf sketch has 1 mm variation accepted by designer; incomplete catalogue suggests around '
+               '1000 titles. Note B: printing estimate fell 100→60 units, which editor calls substantial; '
+               'chair thinks half a meeting on two minor items is disproportionate while eight remain; '
+               'registration target 50, confirmed 45, deadline still open. Write a 140–180-word briefing to '
+               'a general audience. Attribute judgements, distinguish size comparison from price, and '
                'qualify reachable target without promising it. Recipient challenges the phrase negligible: '
                'explain the purpose-bound judgement and what another use would require.',
-  'result': 'Comparable in size only;1mm negligible according to designer for preliminary sketch; on the '
-            'order of1000 tentative frompartialcatalogue;40%costreduction describedassubstantial byeditor; '
-            'disproportionate time ischairjudgement;withinreach target conditional '
-            'onfiveadditionalregistrations. Avoid thresholds for adjectives that sources never supply. '
-            'Natural paraphrases welcome; record actual target expressions used.',
+  'result': 'As salas são comparáveis apenas em área; os custos diferem. A variação de 1 mm é insignificante '
+            'para aquele esboço segundo o designer. Cerca de mil títulos é estimativa baseada em catalogação '
+            'parcial. O custo de impressão cai de 100 para 60, redução de 40% que a editora chama de '
+            'substantial. A desproporção do tempo é julgamento do coordenador; atingir a meta depende de '
+            'cinco inscrições adicionais. Não atribuir limiares universais aos adjetivos. Aceitar paráfrases '
+            'naturais e registrar quais expressões-alvo foram efetivamente usadas.',
   'phon': 'Discourse stress and pause before attribution and qualification. Listener should separate source '
           'measurement from editorial judgement; intelligibility and precision matter more than accent '
           'matching.',
@@ -109,20 +110,22 @@ GROUPS += [{'id': 'LEX-C1-11',
             'over the course of',
             'subsequently',
             'with hindsight'],
-  'situation': 'Case record: Monday cumulative registrations10; Tuesday25; Wednesday40. A committee message '
-               'promises a reply in due course, no date. RoomB is temporary for the time being, return date '
-               'unknown. Three revisions occur over the course of a semester; consultation precedes second '
-               'revision, causal link undocumented. Original ten-day deadline was set before an extra '
-               'five-day task became known. Write a160–200word account and a separate three-sentence request '
-               'for a useful response date. Recipient asks whether Wednesday added40 new people and whether '
-               'original planners knew the extra task; answer explicitly with evidence boundaries.',
-  'result': 'Cumulative totals mean newTuesday15,newWednesday15; no stateddateforreply/roomreturn; '
-            'revisionsdistributedthroughsemester; subsequently marks time notcause; withhindsight '
-            'deadlineinadequate without assigningunknownpriorawareness. Request expecteddate respectfully '
-            'instead of inventing one. Modelo: With hindsight, the original deadline was too tight; the '
+  'situation': 'Case record: Monday cumulative registrations 10; Tuesday 25; Wednesday 40. A committee '
+               'message promises a reply in due course, no date. Room B is temporary for the time being, '
+               'return date unknown. Three revisions occur over the course of a semester; consultation '
+               'precedes second revision, causal link undocumented. Original ten-day deadline was set before '
+               'an extra five-day task became known. Write a 160–200-word account and a separate '
+               'three-sentence request for a useful response date. Recipient asks whether Wednesday added 40 '
+               'new people and whether original planners knew the extra task; answer explicitly with '
+               'evidence boundaries.',
+  'result': 'Os totais acumulados mostram 15 novas inscrições na terça e outras 15 na quarta. Não há data '
+            'para resposta nem para retorno à sala original. As três revisões se distribuem pelo semestre; '
+            'subsequently estabelece ordem temporal, não causa. With hindsight permite reavaliar o prazo sem '
+            'afirmar que os responsáveis já conheciam a tarefa adicional. O pedido deve solicitar uma data '
+            'esperada com cortesia. Modelo: With hindsight, the original deadline was too tight; the '
             'additional task, however, was not known when it was set.',
   'phon': 'Agrupar cronologia em blocos e contrastar then/now, total/new, provisional/confirmed. O ouvinte '
           'reconstrói o que era conhecido em cada momento, com texto de apoio se necessário.',
   'pitfall': 'Registro formal pode ser adaptado ao destinatário; não obrigar todas as expressões num único '
              'parágrafo artificial. Avaliar precisão temporal, informação ausente e adequação da '
-             'solicitação; não usar contagem de conectivos como rubrica de C1.'}]
+             'solicitação; não usar contagem de conectivos como rubrica de C 1.'}]

@@ -52,7 +52,7 @@
 
 ## Resultado da situação de uso
 
-Mínimo12, limite20, confirmado15, estimativa18; anúncio não pode declarar20confirmados. No more than two examples; at most twenty/up to twenty como limite. Com21pedidos há demanda maior que limite, não21presenças confirmadas. Modelo: We have fifteen confirmed registrations and estimate approximately eighteen attendees. The workshop needs at least twelve and can accept at most twenty.
+Mínimo 12, limite 20, confirmado 15, estimativa 18; anúncio não pode declarar 20 confirmados. No more than two examples; at most twenty/up to twenty como limite. Com 21 pedidos há demanda maior que limite, não 21 presenças confirmadas. Modelo: We have fifteen confirmed registrations and estimate approximately eighteen attendees. The workshop needs at least twelve and can accept at most twenty.
 
 ## Recuperação
 

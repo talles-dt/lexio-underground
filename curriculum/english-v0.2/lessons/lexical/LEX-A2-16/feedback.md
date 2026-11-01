@@ -52,7 +52,7 @@
 
 ## Resultado da situação de uso
 
-Água 2L; arroz1kg; copos12; mesa2m; cada par4azuis; placa3vermelhos. Modelo: We need two litres of water, not two metres. A quarter of the twelve red cards is three. Se numeracia bloquear, fornecer 4 e3 e avaliar a frase com unidade/fração.
+Água 2 L; arroz 1 kg; copos 12; mesa 2 m; cada par 4 azuis; placa 3 vermelhos. Modelo: We need two litres of water, not two metres. A quarter of the twelve red cards is three. Se numeracia bloquear, fornecer 4 e 3 e avaliar a frase com unidade/fração.
 
 ## Recuperação
 

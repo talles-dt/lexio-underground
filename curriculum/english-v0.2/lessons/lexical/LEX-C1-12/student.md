@@ -71,7 +71,7 @@ Distinguir julgamento atual do que participantes podiam saber antes.
 <a id="uso"></a>
 ## Usar para realizar uma tarefa
 
-Case record: Monday cumulative registrations10; Tuesday25; Wednesday40. A committee message promises a reply in due course, no date. RoomB is temporary for the time being, return date unknown. Three revisions occur over the course of a semester; consultation precedes second revision, causal link undocumented. Original ten-day deadline was set before an extra five-day task became known. Write a160–200word account and a separate three-sentence request for a useful response date. Recipient asks whether Wednesday added40 new people and whether original planners knew the extra task; answer explicitly with evidence boundaries.
+Case record: Monday cumulative registrations 10; Tuesday 25; Wednesday 40. A committee message promises a reply in due course, no date. Room B is temporary for the time being, return date unknown. Three revisions occur over the course of a semester; consultation precedes second revision, causal link undocumented. Original ten-day deadline was set before an extra five-day task became known. Write a 160–200-word account and a separate three-sentence request for a useful response date. Recipient asks whether Wednesday added 40 new people and whether original planners knew the extra task; answer explicitly with evidence boundaries.
 
 **Critério:** o destinatário precisa recuperar os dados finais indicados no [retorno](feedback.md). Marque cada palavra como usada com apoio, usada sem modelo, reconhecida somente ou não observada. Sem parceiro, há ensaio, não interação observada.
 

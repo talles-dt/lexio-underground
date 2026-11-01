@@ -85,11 +85,11 @@ GROUPS += [{'id': 'LEX-B1-15',
                'restrição dos exemplos. Depois a mensagem nova registra 21 solicitações, ainda não '
                'confirmadas. Explique qual número precisa ser limitado segundo o cartão, sem inventar regra '
                'real de segurança ou decidir quem entra.',
-  'result': 'Mínimo12, limite20, confirmado15, estimativa18; anúncio não pode declarar20confirmados. No more '
-            'than two examples; at most twenty/up to twenty como limite. Com21pedidos há demanda maior que '
-            'limite, não21presenças confirmadas. Modelo: We have fifteen confirmed registrations and '
-            'estimate approximately eighteen attendees. The workshop needs at least twelve and can accept at '
-            'most twenty.',
+  'result': 'Mínimo 12, limite 20, confirmado 15, estimativa 18; anúncio não pode declarar 20 confirmados. '
+            'No more than two examples; at most twenty/up to twenty como limite. Com 21 pedidos há demanda '
+            'maior que limite, não 21 presenças confirmadas. Modelo: We have fifteen confirmed registrations '
+            'and estimate approximately eighteen attendees. The workshop needs at least twelve and can '
+            'accept at most twenty.',
   'phon': 'Ênfase em AT LEAST versus AT MOST e valores; pedir ao ouvinte para restituir mínimo, máximo e '
           'confirmado. Apoio escrito dos números permanece disponível para que linguagem, não cálculo, seja '
           'o foco.',
@@ -107,10 +107,10 @@ GROUPS += [{'id': 'LEX-B1-15',
                'palavras com linha do tempo e separe revisão antecipada de reunião adiada. O destinatário '
                'pergunta se atraso cancelou entrega e se overtime foi pago; responda apenas com os '
                'registros. Suporte de datas ordinais se o estudante preferir datas numéricas.',
-  'result': 'Meeting postponed Tuesday→Thursday; review brought forward Friday→Wednesday; atraso30min; '
-            'etiquetas enquanto esperam; entrega por fim após2chamadas; duas pessoas com1hora extra cada, '
-            'remuneração desconhecida. Não somar e chamar two hours overtime por pessoa. Aceitar paráfrases '
-            'naturais e observar cada expressão separadamente.',
+  'result': 'Meeting postponed Tuesday→Thursday; review brought forward Friday→Wednesday; atraso 30 min; '
+            'etiquetas enquanto esperam; entrega por fim após 2 chamadas; duas pessoas com 1 hora extra '
+            'cada, remuneração desconhecida. Não somar e chamar two hours overtime por pessoa. Aceitar '
+            'paráfrases naturais e observar cada expressão separadamente.',
   'phon': 'Contrastar forward/postponed com data original e nova; ouvinte recompõe ordem. Eventually é '
           'resultado posterior, não frequência ocasional. Pausas devem separar estado de espera da '
           'conclusão.',

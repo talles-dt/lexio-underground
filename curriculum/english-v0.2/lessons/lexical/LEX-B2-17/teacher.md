@@ -4,7 +4,7 @@
 
 Pré-requisito: B2-06. Trabalhe apenas este conjunto antes de abrir outro. Apresente cada sentido com os exemplos e objetos/cartões correspondentes. Peça a prática; corrija sem antecipar avaliação. Distribua os cartões da situação de uso em papéis separados; quem recebe a mensagem não deve ver o cartão do colega. Inverta os papéis. Registre dados efetivamente recuperados.
 
-Average está definido como média aritmética, não toda medida de tendência central. Dobrar equivale a aumento de100% sobre base inicial; não converter em200% de aumento. Não inferir causa ou representatividade.
+Average está definido como média aritmética, não toda medida de tendência central. Dobrar equivale a aumento de 100% sobre base inicial; não converter em 200% de aumento. Não inferir causa ou representatividade.
 
 ## Retomada e avaliação
 

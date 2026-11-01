@@ -52,7 +52,7 @@
 
 ## Resultado da situação de uso
 
-Razão azul:vermelho2:1; proporção azul no total12/18=2/3, não2:1. Visitantes dobram24→48; procedimento reduzmetade20→10; médiafilas20 comobservações10e30; arquivos verificados1/4. Apenas esse conjunto fundamenta conclusão. Se cálculo for fornecido, avaliar qualidade da explicação e não habilidade matemática.
+Razão azul:vermelho de 2:1; proporção de azuis no total de 12/18, ou dois terços. Visitantes dobram de 24 para 48; tempo do procedimento cai à metade, de 20 para 10 minutos. Média das duas filas de 20 minutos, com observações de 10 e 30; um quarto das páginas foi verificado. Apenas esses dados fundamentam o relato. Se o cálculo for fornecido, avaliar a explicação linguística, não habilidade matemática.
 
 ## Recuperação
 

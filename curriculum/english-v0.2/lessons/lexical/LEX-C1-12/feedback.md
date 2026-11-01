@@ -52,7 +52,7 @@
 
 ## Resultado da situação de uso
 
-Cumulative totals mean newTuesday15,newWednesday15; no stateddateforreply/roomreturn; revisionsdistributedthroughsemester; subsequently marks time notcause; withhindsight deadlineinadequate without assigningunknownpriorawareness. Request expecteddate respectfully instead of inventing one. Modelo: With hindsight, the original deadline was too tight; the additional task, however, was not known when it was set.
+Os totais acumulados mostram 15 novas inscrições na terça e outras 15 na quarta. Não há data para resposta nem para retorno à sala original. As três revisões se distribuem pelo semestre; subsequently estabelece ordem temporal, não causa. With hindsight permite reavaliar o prazo sem afirmar que os responsáveis já conheciam a tarefa adicional. O pedido deve solicitar uma data esperada com cortesia. Modelo: With hindsight, the original deadline was too tight; the additional task, however, was not known when it was set.
 
 ## Recuperação
 

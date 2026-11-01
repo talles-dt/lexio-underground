@@ -52,7 +52,7 @@
 
 ## Resultado da situação de uso
 
-Comparable in size only;1mm negligible according to designer for preliminary sketch; on the order of1000 tentative frompartialcatalogue;40%costreduction describedassubstantial byeditor; disproportionate time ischairjudgement;withinreach target conditional onfiveadditionalregistrations. Avoid thresholds for adjectives that sources never supply. Natural paraphrases welcome; record actual target expressions used.
+As salas são comparáveis apenas em área; os custos diferem. A variação de 1 mm é insignificante para aquele esboço segundo o designer. Cerca de mil títulos é estimativa baseada em catalogação parcial. O custo de impressão cai de 100 para 60, redução de 40% que a editora chama de substantial. A desproporção do tempo é julgamento do coordenador; atingir a meta depende de cinco inscrições adicionais. Não atribuir limiares universais aos adjetivos. Aceitar paráfrases naturais e registrar quais expressões-alvo foram efetivamente usadas.
 
 ## Recuperação
 

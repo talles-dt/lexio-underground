@@ -85,19 +85,300 @@ over the course of|ao longo de um período|over the course of the year|The polic
 subsequently|posteriormente, em sequência temporal|subsequently + verb|The draft was circulated and subsequently revised.|Sequência temporal não prova que a circulação causou a revisão.|A happened; subsequently B. Isso estabelece causa?|Não; apenas posterioridade.|Documento enviado dia 2, revisto dia 5. Qual evento é subsequent?|A revisão.|Houve consulta, depois mudança; causa não documentada. Redija com limite.|The consultation was followed by a revision; the document was subsequently changed, though the record does not establish why.
 with hindsight|em retrospecto, com conhecimento adquirido depois|with hindsight, + clause|With hindsight, the deadline was unrealistic.|Distinguir julgamento atual do que participantes podiam saber antes.|Com dados posteriores, prazo parece curto. Já sabiam isso no início?|Não necessariamente.|With hindsight autoriza culpar quem não tinha os dados?|Não.|Plano original previa dez dias; depois descobriram tarefa adicional de cinco. Reavalie sem atribuir conhecimento retroativo.|With hindsight, the ten-day deadline was too tight, but the additional task was not known when it was set.'''
 }
-GROUPS = [
- dict(level='pre-a1',id='LEX-PRE-20',title='Confirmar quantidades de onze a dezesseis',after='FND-03',words=['eleven','twelve','thirteen','fourteen','fifteen','sixteen'],situation='Recepção fictícia; quadro visível 11 eleven, 12 twelve, 13 thirteen, 14 fourteen, 15 fifteen, 16 sixteen. Cartão A: books 11, pens 14, cups 16. Cartão B tem caixas rotuladas 11/12/13/14/15/16 e não vê a lista de A. A pede Eleven books, please; B repete Eleven? antes de separar cartão. Rodada invertida: books 13, pens 12, cups 15. Um pedido de confirmação deve ser introduzido em cada rodada; ninguém movimenta objetos reais pesados. Depois o destinatário escreve três quantidades sem copiar a lista do emissor.',result='Primeira entrega books 11, pens 14, cups 16; segunda books 13, pens 12, cups 15. A repetição precisa manter a quantidade, não apenas nomear objeto. Se há apoio numérico, registrar produção apoiada. Números 1–6 não substituem 11–16.',phon='Ouvir e restituir dois números por vez. O falante pode repetir ou mostrar algarismo depois da tentativa; registrar quando houve apoio visual. A compreensão pode ser verificada por escolha de etiqueta, sem exigir soletração.',pitfall='Separar apresentação em dois conjuntos de três se necessário; não testar todas as formas antes de ensino. A pessoa pode usar cartão de quantidade: esta tarefa avalia comunicação, não cálculo mental.'),
- dict(level='pre-a1',id='LEX-PRE-21',title='Distinguir dezessete a vinte e primeiras dezenas',after='FND-05',words=['seventeen','eighteen','nineteen','twenty','thirty','forty'],situation='Quadro: 17 seventeen, 18 eighteen, 19 nineteen, 20 twenty, 30 thirty, 40 forty. Pedido A: cups 17, pens 20, books 30. B recebe inventário com todas as etiquetas e deve repetir cada quantidade antes de marcar. B diz Thirteen? ao receber thirty; A usa No, thirty: 30 com apoio já aprendido. Inversão: cups 18, pens 19, books 40. Confira no final o inventário pedido versus separado, sem converter palavras em preço.',result='Primeira: 17, 20, 30. Segunda: 18, 19, 40. Reparo distingue 13 de 30; consultar a sequência anterior para thirteen. Modelo: Thirty books, please. — Thirteen? — No, thirty. O objetivo é destinatário recuperar 30, não uma pronúncia idêntica à de locutor.',phon='Compare thirteen/thirty e fourteen/forty em frases; mantenha audível final teen quando aplicável. Acento pode variar por ênfase, portanto usar confirmação e contexto, não regra absoluta de posição tônica.',pitfall='Thirty não ensina automaticamente thirty-one etc. Compostos de dezenas e unidades devem ter apoio próprio antes de serem cobrados. Não inferir domínio de números apenas por recitar a lista em ordem.'),
- dict(level='pre-a1',id='LEX-PRE-22',title='Confirmar dezenas de cinquenta a cem',after='FND-06',words=['fifty','sixty','seventy','eighty','ninety','one hundred'],situation='Quadro bilíngue: 50 fifty, 60 sixty, 70 seventy, 80 eighty, 90 ninety, 100 one hundred. A tem quantidade de cartões para três mesas: mesa 1 fifty; mesa 2 eighty; mesa 3 one hundred. B anota números sem ver a lista. Inverter: mesa 1 sixty, mesa 2 seventy, mesa 3 ninety. B precisa confirmar uma quantidade com Again, please. Ofereça etiquetas prontas de 15/50, 18/80, 19/90 para etapa de discriminação com voz disponível. Sem áudio ou pessoa, usar leitura e anotar modalidade escrita.',result='Rodada 1: 50, 80, 100; rodada 2: 60, 70, 90. A pessoa deve corrigir uma troca possível entre teen e ty; não exigir contar fisicamente cem objetos. Evidência auditiva só existe se a lista foi realmente ouvida sem leitura prévia.',phon='Fifty/fifteen, eighty/eighteen e ninety/nineteen em contexto com unidade explícita. Mudar a ordem das etiquetas. Aceitar repetição mais lenta e confirmação por número escrito depois da primeira tentativa.',pitfall='A expansão cobre dezenas exatas, não todo sistema de numeração. Não aplicar números a dosagens, transações reais ou dados pessoais. Avaliação usa as novas quantidades de cada entrada.'),
- dict(level='a1',id='LEX-A1-15',title='Combinar atividades de janeiro a junho',after='A1-08',words=['January','February','March','April','May','June'],situation='Calendário fictício com seis meses e tradução. Cartão A: English class starts in January and ends in June; book club in March; room closed in May. Cartão B: art class in February; library visit in April; book club note says May. Apoios: starts = começa, ends = termina, closed = fechado. Troquem informação com When is the book club? / In March. Reparem a nota incorreta usando March, not May. O destinatário monta quadro mês/atividade e diferencia fim do curso de fechamento da sala.',result='January início do curso; February aula de arte; March clube do livro; April visita; May sala fechada; June fim do curso. Não inferir que o curso para durante todo maio: falta informação sobre outro local. Pergunta aceitável: Is there another room in May?',phon='Confirmar May/March e June quando o colega não entendeu. Datas permanecem apenas por mês, sem exigir ordinais ainda não ensinados. Pode haver leitura oral por pessoa de apoio; texto visto antes limita evidência de escuta.',pitfall='Meses são rótulos culturais de calendário, não previsão de clima ou hábitos. Apresentar três meses por vez, reutilizar o quadro e registrar apoio. Não exigir datas de nascimento.'),
- dict(level='a1',id='LEX-A1-16',title='Reparar uma agenda de julho a dezembro',after='A1-08',words=['July','August','September','October','November','December'],situation='A recebe: course starts in July; exhibition in September; course ends in November. B recebe: new room in August; class visit in October; library closed in December. Quadro traduz exhibition/exposição e os seis meses. Cada participante faz três perguntas When...?; depois verifica um recado que trocou July por June e October por November. Modelo I have July. Is that right? = Tenho julho. Está certo? Devolva uma agenda conjunta, preservando eventos diferentes que ocorrem em meses distintos.',result='July início, August nova sala, September exposição, October visita, November fim do curso, December fechamento da biblioteca. Corrigir June para July; visita não é no mês de encerramento. Não completar datas exatas ausentes.',phon='June/July, September/December e October/November em contexto de atividade. A restituição deve incluir evento e mês, não só repetir a última palavra ouvida.',pitfall='Não associar automaticamente dezembro a férias ou a inverno. O quadro é consulta permitida durante aprendizagem; na avaliação registrar se foi usado. Integração com janeiro–junho pode ocorrer em outra sessão, sem apresentação de doze formas de uma só vez.'),
- dict(level='a1',id='LEX-A1-17',title='Separar duração e horário em uma agenda',after='A1-02',words=['minute','hour','day','week','month','year'],situation='Cartão A: Call: starts at ten, lasts five minutes. Class: starts at two, lasts one hour. Visit: three days. Cartão B: Course: two weeks. Project: six months. Programme: one year. Apoios lasts = dura, programme = programa de estudo, at two = às duas. Perguntem How long? = Quanto tempo? e What time? = A que horas? Complete tabela com início e duração; quando não existe horário inicial, escreva not given = não informado. Compare one hour com at two para impedir troca de início e duração.',result='Chamada início 10h/duração 5min; aula início 2h/duração 1h; visita 3dias, curso 2semanas, projeto6meses, programa1ano, sem horários iniciais informados. Não converter mês automaticamente em trinta dias nem deduzir datas finais sem calendário e início.',phon='O ouvinte repete número e unidade: five MINUTES, one HOUR. Aceitar hour com h não pronunciado e an hour; corrigir apenas quando troca de unidade altera a informação.',pitfall='Apoiar numerais com quadro. Não exigir cálculo de datas ou domínio gramatical de duração até o presente. O exemplo de year é um programa fictício, não relato biográfico.'),
- dict(level='a2',id='LEX-A2-15',title='Ler uma rotina de frequências sem confundir duração',after='A2-01',words=['once','twice','daily','weekly','monthly','every other day'],situation='A tem calendário da biblioteca: doors checked daily; newsletter monthly; book club once a week, on Wednesday. B tem calendário de uma turma: lessons twice a week, Tuesday and Thursday; planning meeting weekly on Monday; short reading practice every other day starting Monday. Apoios doors checked = portas conferidas, newsletter = boletim. Monte uma semana segunda–domingo da leitura (segunda, quarta, sexta, domingo), separada dos encontros. Explique ao destinatário por que twice a week não significa curso de duas semanas. Uma pergunta How long is the course? não pode ser respondida pelos cartões.',result='Portas diariamente; boletim mensal sem dia informado; clube uma vez quarta; aulas terça/quinta; planejamento segunda; leitura segunda/quarta/sexta/domingo. A duração total do curso não está declarada. Modelo: We have lessons twice a week, but the timetable does not say how long the course lasts.',phon='Once/twice com unidade de frequência; contraste every day/every other day em duas frases completas. Não pontuar somente pronúncia da palavra solta. Registrar texto escrito versus voz usada.',pitfall='Calendário serve de apoio; não cobrar aritmética mental nem rotina pessoal. Monthly não vira automaticamente a cada trinta dias. Atividades de revisão devem ocorrer em outra sessão com novo início.'),
- dict(level='a2',id='LEX-A2-16',title='Conferir medidas e porções em listas',after='A2-05',words=['litre','kilogram','metre','half','quarter','dozen'],situation='Encontro fictício, só planejamento em papel. A tem lista: two litres of water; one kilogram of rice; a dozen cups. B tem sala: table two metres long; eight blue cards, half for each pair; twelve red cards, a quarter for the door sign. Apoios rice/arroz, sign/placa, cada par recebe metade dos oito azuis. Troquem quantidades e unidades. Um recado troca two litres of water por two metres of water: expliquem a correção. Calculadora ou cartões já divididos são permitidos; ninguém precisa cozinhar ou medir equipamento real.',result='Água 2L; arroz1kg; copos12; mesa2m; cada par4azuis; placa3vermelhos. Modelo: We need two litres of water, not two metres. A quarter of the twelve red cards is three. Se numeracia bloquear, fornecer 4 e3 e avaliar a frase com unidade/fração.',phon='Recuperar número e unidade em conjunto. Aceitar litre/liter, metre/meter, kilo/kilogram. Apoio oral deve evitar que o aprendiz veja a lista reservada antes de ouvir.',pitfall='Isto não é instrução nutricional nem receita. Half e quarter funcionam em outras construções a ensinar posteriormente; horários quarter past não são cobrados aqui.'),
- dict(level='b1',id='LEX-B1-15',title='Informar estimativas, mínimos e limites',after='B1-04',words=['estimate','approximately','at least','at most','up to','no more than'],situation='Aviso A: Small workshop, room limit 20 participants; at least 12 registrations are needed to run it; 15 are confirmed; organiser estimates approximately 18 will attend. B: each participant may bring no more than 2 written examples; a draft advert says 20 confirmed. Produza anúncio corrigido de 60–90 palavras. Inclua limite, mínimo, confirmado, estimativa e restrição dos exemplos. Depois a mensagem nova registra 21 solicitações, ainda não confirmadas. Explique qual número precisa ser limitado segundo o cartão, sem inventar regra real de segurança ou decidir quem entra.',result='Mínimo12, limite20, confirmado15, estimativa18; anúncio não pode declarar20confirmados. No more than two examples; at most twenty/up to twenty como limite. Com21pedidos há demanda maior que limite, não21presenças confirmadas. Modelo: We have fifteen confirmed registrations and estimate approximately eighteen attendees. The workshop needs at least twelve and can accept at most twenty.',phon='Ênfase em AT LEAST versus AT MOST e valores; pedir ao ouvinte para restituir mínimo, máximo e confirmado. Apoio escrito dos números permanece disponível para que linguagem, não cálculo, seja o foco.',pitfall='Não transformar estimativa em intervalo probabilístico formal. At most e no more than podem expressar o mesmo limite aqui, mas contraste de uso e registro continua contextual. A decisão de admissão não é feita pela atividade.'),
- dict(level='b1',id='LEX-B1-16',title='Reorganizar compromissos e relatar o que aconteceu',after='B1-05',words=['postpone','bring forward','run late','in the meantime','eventually','overtime'],situation='Thread fictícia. A: Tuesday meeting moved to Thursday; Friday review moved to Wednesday of the same week. The delivery is running thirty minutes late. B: team can prepare labels while waiting; after two calls the delivery eventually arrives; two colleagues worked one hour beyond their normal schedule, with no pay information. Escreva atualização de 90–120 palavras com linha do tempo e separe revisão antecipada de reunião adiada. O destinatário pergunta se atraso cancelou entrega e se overtime foi pago; responda apenas com os registros. Suporte de datas ordinais se o estudante preferir datas numéricas.',result='Meeting postponed Tuesday→Thursday; review brought forward Friday→Wednesday; atraso30min; etiquetas enquanto esperam; entrega por fim após2chamadas; duas pessoas com1hora extra cada, remuneração desconhecida. Não somar e chamar two hours overtime por pessoa. Aceitar paráfrases naturais e observar cada expressão separadamente.',phon='Contrastar forward/postponed com data original e nova; ouvinte recompõe ordem. Eventually é resultado posterior, não frequência ocasional. Pausas devem separar estado de espera da conclusão.',pitfall='Não presumir legislação, obrigação ou pagamento de hora extra. Objetivo é relato linguístico fictício. Se há dificuldade com sequência, oferecer cartões ordenáveis antes da produção, registrando apoio.'),
- dict(level='b2',id='LEX-B2-17',title='Comparar razões, proporções e médias com base explícita',after='B2-06',words=['ratio','proportion','fraction','double','halve','average'],situation='Dois conjuntos independentes de dados fictícios. A: workshop cards, 12 blue and 6 red; visitors yesterday24/today48. B: two queues lasted10/30min; a procedure changed from20 to10min; only3 of12 archived pages were checked. Redija explicação de100–140palavras para leitor geral, usando blue:red ratio, share of checked pages, doubled visitors, halved procedure time and mean queue time. Forneça cálculo como apoio: 12:6=2:1;3/12=1/4; média(10+30)/2=20. Depois responda se média20 implica que ambas filas duraram20 e se12:6 é proporção de azuis no total.',result='Razão azul:vermelho2:1; proporção azul no total12/18=2/3, não2:1. Visitantes dobram24→48; procedimento reduzmetade20→10; médiafilas20 comobservações10e30; arquivos verificados1/4. Apenas esse conjunto fundamenta conclusão. Se cálculo for fornecido, avaliar qualidade da explicação e não habilidade matemática.',phon='Pronunciar two to one, one quarter e from twenty to ten dentro de frases. O parceiro registra base e unidade. Pergunta de confirmação deve focalizar denominador ou ordem da razão.',pitfall='Average está definido como média aritmética, não toda medida de tendência central. Dobrar equivale a aumento de100% sobre base inicial; não converter em200% de aumento. Não inferir causa ou representatividade.'),
- dict(level='b2',id='LEX-B2-18',title='Descrever tendências sem apagar oscilações',after='B2-06',words=['peak','plateau','fluctuate','steadily','roughly','overall'],situation='Cartão A: six weekly visits, W1=10,W2=20,W3=30,W4=30,W5=25,W6=40. Cartão B: four session lengths=8,12,9,11minutes; observer estimates roughly30 people at another event, not counted. Produza legenda de gráfico e resumo oral ou escrito. Aumento inicial regular, breve estabilidade, queda e pico devem coexistir na síntese overall. Não misture visitantes com minutos nem a estimativa de outro evento. Pergunta inédita do destinatário: Will next week reach50? Responda com limite da fonte.',result='W1–W3 cresce steadily;W3–W4 breveplateau30;W5queda25;W6peak40 no período;overall10→40 comqueda intermediária. Duraçõesfluctuate8–12min; roughly30 é outra estimativa. Dados não autorizam prever50. Modelo: Overall, visits increased, though the pattern was not steady throughout the six weeks.',phon='Pausas entre tendência geral e ressalva; enfatizar despite/although se usados. Destinatário deve identificar semana do pico e reconhecer incerteza da estimativa, não apenas repetir verbos.',pitfall='Não exigir desenho visual: tabela textual equivalente. Plateau de dois pontos é descrição breve, não estado permanente. Evitar jargão estatístico sem suporte e manter escopo da amostra.'),
- dict(level='c1',id='LEX-C1-11',title='Qualificar magnitudes e viabilidade conforme o propósito',after='B2-06',words=['negligible','substantial','disproportionate','comparable','on the order of','within reach'],situation='Editorial note A: two proposed reading rooms measure40/42m²; rent differs; preliminary shelf sketch has1mm variation accepted by designer; incomplete catalogue suggests around1000titles. Note B: printing estimate fell100→60 units, which editor calls substantial; chair thinks half a meeting on two minor items is disproportionate while eight remain; registration target50, confirmed45, deadline still open. Write a140–180word briefing to a general audience. Attribute judgements, distinguish size comparison from price, and qualify reachable target without promising it. Recipient challenges the phrase negligible: explain the purpose-bound judgement and what another use would require.',result='Comparable in size only;1mm negligible according to designer for preliminary sketch; on the order of1000 tentative frompartialcatalogue;40%costreduction describedassubstantial byeditor; disproportionate time ischairjudgement;withinreach target conditional onfiveadditionalregistrations. Avoid thresholds for adjectives that sources never supply. Natural paraphrases welcome; record actual target expressions used.',phon='Discourse stress and pause before attribution and qualification. Listener should separate source measurement from editorial judgement; intelligibility and precision matter more than accent matching.',pitfall='Não exigir formação estatística; fornecer comparações prontas. Nenhuma opinião sobre custo ou proporção tem validade universal. Não converter adjetivo avaliativo em diagnóstico ou decisão de elegibilidade.'),
- dict(level='c1',id='LEX-C1-12',title='Reconstituir um processo preservando tempo e conhecimento disponível',after='B2-03',words=['cumulative','in due course','for the time being','over the course of','subsequently','with hindsight'],situation='Case record: Monday cumulative registrations10; Tuesday25; Wednesday40. A committee message promises a reply in due course, no date. RoomB is temporary for the time being, return date unknown. Three revisions occur over the course of a semester; consultation precedes second revision, causal link undocumented. Original ten-day deadline was set before an extra five-day task became known. Write a160–200word account and a separate three-sentence request for a useful response date. Recipient asks whether Wednesday added40 new people and whether original planners knew the extra task; answer explicitly with evidence boundaries.',result='Cumulative totals mean newTuesday15,newWednesday15; no stateddateforreply/roomreturn; revisionsdistributedthroughsemester; subsequently marks time notcause; withhindsight deadlineinadequate without assigningunknownpriorawareness. Request expecteddate respectfully instead of inventing one. Modelo: With hindsight, the original deadline was too tight; the additional task, however, was not known when it was set.',phon='Agrupar cronologia em blocos e contrastar then/now, total/new, provisional/confirmed. O ouvinte reconstrói o que era conhecido em cada momento, com texto de apoio se necessário.',pitfall='Registro formal pode ser adaptado ao destinatário; não obrigar todas as expressões num único parágrafo artificial. Avaliar precisão temporal, informação ausente e adequação da solicitação; não usar contagem de conectivos como rubrica de C1.')
-]
+GROUPS = [{'level': 'pre-a1',
+  'id': 'LEX-PRE-20',
+  'title': 'Confirmar quantidades de onze a dezesseis',
+  'after': 'FND-03',
+  'words': ['eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen'],
+  'situation': 'Recepção fictícia; quadro visível 11 eleven, 12 twelve, 13 thirteen, 14 fourteen, 15 '
+               'fifteen, 16 sixteen. Cartão A: books 11, pens 14, cups 16. Cartão B tem caixas rotuladas '
+               '11/12/13/14/15/16 e não vê a lista de A. A pede Eleven books, please; B repete Eleven? antes '
+               'de separar cartão. Rodada invertida: books 13, pens 12, cups 15. Um pedido de confirmação '
+               'deve ser introduzido em cada rodada; ninguém movimenta objetos reais pesados. Depois o '
+               'destinatário escreve três quantidades sem copiar a lista do emissor.',
+  'result': 'Primeira entrega books 11, pens 14, cups 16; segunda books 13, pens 12, cups 15. A repetição '
+            'precisa manter a quantidade, não apenas nomear objeto. Se há apoio numérico, registrar produção '
+            'apoiada. Números 1–6 não substituem 11–16.',
+  'phon': 'Ouvir e restituir dois números por vez. O falante pode repetir ou mostrar algarismo depois da '
+          'tentativa; registrar quando houve apoio visual. A compreensão pode ser verificada por escolha de '
+          'etiqueta, sem exigir soletração.',
+  'pitfall': 'Separar apresentação em dois conjuntos de três se necessário; não testar todas as formas antes '
+             'de ensino. A pessoa pode usar cartão de quantidade: esta tarefa avalia comunicação, não '
+             'cálculo mental.'},
+ {'level': 'pre-a1',
+  'id': 'LEX-PRE-21',
+  'title': 'Distinguir dezessete a vinte e primeiras dezenas',
+  'after': 'FND-05',
+  'words': ['seventeen', 'eighteen', 'nineteen', 'twenty', 'thirty', 'forty'],
+  'situation': 'Quadro: 17 seventeen, 18 eighteen, 19 nineteen, 20 twenty, 30 thirty, 40 forty. Pedido A: '
+               'cups 17, pens 20, books 30. B recebe inventário com todas as etiquetas e deve repetir cada '
+               'quantidade antes de marcar. B diz Thirteen? ao receber thirty; A usa No, thirty: 30 com '
+               'apoio já aprendido. Inversão: cups 18, pens 19, books 40. Confira no final o inventário '
+               'pedido versus separado, sem converter palavras em preço.',
+  'result': 'Primeira: 17, 20, 30. Segunda: 18, 19, 40. Reparo distingue 13 de 30; consultar a sequência '
+            'anterior para thirteen. Modelo: Thirty books, please. — Thirteen? — No, thirty. O objetivo é '
+            'destinatário recuperar 30, não uma pronúncia idêntica à de locutor.',
+  'phon': 'Compare thirteen/thirty e fourteen/forty em frases; mantenha audível final teen quando aplicável. '
+          'Acento pode variar por ênfase, portanto usar confirmação e contexto, não regra absoluta de '
+          'posição tônica.',
+  'pitfall': 'Thirty não ensina automaticamente thirty-one etc. Compostos de dezenas e unidades devem ter '
+             'apoio próprio antes de serem cobrados. Não inferir domínio de números apenas por recitar a '
+             'lista em ordem.'},
+ {'level': 'pre-a1',
+  'id': 'LEX-PRE-22',
+  'title': 'Confirmar dezenas de cinquenta a cem',
+  'after': 'FND-06',
+  'words': ['fifty', 'sixty', 'seventy', 'eighty', 'ninety', 'one hundred'],
+  'situation': 'Quadro bilíngue: 50 fifty, 60 sixty, 70 seventy, 80 eighty, 90 ninety, 100 one hundred. A '
+               'tem quantidade de cartões para três mesas: mesa 1 fifty; mesa 2 eighty; mesa 3 one hundred. '
+               'B anota números sem ver a lista. Inverter: mesa 1 sixty, mesa 2 seventy, mesa 3 ninety. B '
+               'precisa confirmar uma quantidade com Again, please. Ofereça etiquetas prontas de 15/50, '
+               '18/80, 19/90 para etapa de discriminação com voz disponível. Sem áudio ou pessoa, usar '
+               'leitura e anotar modalidade escrita.',
+  'result': 'Rodada 1: 50, 80, 100; rodada 2: 60, 70, 90. A pessoa deve corrigir uma troca possível entre '
+            'teen e ty; não exigir contar fisicamente cem objetos. Evidência auditiva só existe se a lista '
+            'foi realmente ouvida sem leitura prévia.',
+  'phon': 'Fifty/fifteen, eighty/eighteen e ninety/nineteen em contexto com unidade explícita. Mudar a ordem '
+          'das etiquetas. Aceitar repetição mais lenta e confirmação por número escrito depois da primeira '
+          'tentativa.',
+  'pitfall': 'A expansão cobre dezenas exatas, não todo sistema de numeração. Não aplicar números a '
+             'dosagens, transações reais ou dados pessoais. Avaliação usa as novas quantidades de cada '
+             'entrada.'},
+ {'level': 'a1',
+  'id': 'LEX-A1-15',
+  'title': 'Combinar atividades de janeiro a junho',
+  'after': 'A1-08',
+  'words': ['January', 'February', 'March', 'April', 'May', 'June'],
+  'situation': 'Calendário fictício com seis meses e tradução. Cartão A: English class starts in January and '
+               'ends in June; book club in March; room closed in May. Cartão B: art class in February; '
+               'library visit in April; book club note says May. Apoios: starts = começa, ends = termina, '
+               'closed = fechado. Troquem informação com When is the book club? / In March. Reparem a nota '
+               'incorreta usando March, not May. O destinatário monta quadro mês/atividade e diferencia fim '
+               'do curso de fechamento da sala.',
+  'result': 'January início do curso; February aula de arte; March clube do livro; April visita; May sala '
+            'fechada; June fim do curso. Não inferir que o curso para durante todo maio: falta informação '
+            'sobre outro local. Pergunta aceitável: Is there another room in May?',
+  'phon': 'Confirmar May/March e June quando o colega não entendeu. Datas permanecem apenas por mês, sem '
+          'exigir ordinais ainda não ensinados. Pode haver leitura oral por pessoa de apoio; texto visto '
+          'antes limita evidência de escuta.',
+  'pitfall': 'Meses são rótulos culturais de calendário, não previsão de clima ou hábitos. Apresentar três '
+             'meses por vez, reutilizar o quadro e registrar apoio. Não exigir datas de nascimento.'},
+ {'level': 'a1',
+  'id': 'LEX-A1-16',
+  'title': 'Reparar uma agenda de julho a dezembro',
+  'after': 'A1-08',
+  'words': ['July', 'August', 'September', 'October', 'November', 'December'],
+  'situation': 'A recebe: course starts in July; exhibition in September; course ends in November. B recebe: '
+               'new room in August; class visit in October; library closed in December. Quadro traduz '
+               'exhibition/exposição e os seis meses. Cada participante faz três perguntas When...?; depois '
+               'verifica um recado que trocou July por June e October por November. Modelo I have July. Is '
+               'that right? = Tenho julho. Está certo? Devolva uma agenda conjunta, preservando eventos '
+               'diferentes que ocorrem em meses distintos.',
+  'result': 'July início, August nova sala, September exposição, October visita, November fim do curso, '
+            'December fechamento da biblioteca. Corrigir June para July; visita não é no mês de '
+            'encerramento. Não completar datas exatas ausentes.',
+  'phon': 'June/July, September/December e October/November em contexto de atividade. A restituição deve '
+          'incluir evento e mês, não só repetir a última palavra ouvida.',
+  'pitfall': 'Não associar automaticamente dezembro a férias ou a inverno. O quadro é consulta permitida '
+             'durante aprendizagem; na avaliação registrar se foi usado. Integração com janeiro–junho pode '
+             'ocorrer em outra sessão, sem apresentação de doze formas de uma só vez.'},
+ {'level': 'a1',
+  'id': 'LEX-A1-17',
+  'title': 'Separar duração e horário em uma agenda',
+  'after': 'A1-02',
+  'words': ['minute', 'hour', 'day', 'week', 'month', 'year'],
+  'situation': 'Cartão A: Call: starts at ten, lasts five minutes. Class: starts at two, lasts one hour. '
+               'Visit: three days. Cartão B: Course: two weeks. Project: six months. Programme: one year. '
+               'Apoios lasts = dura, programme = programa de estudo, at two = às duas. Perguntem How long? = '
+               'Quanto tempo? e What time? = A que horas? Complete tabela com início e duração; quando não '
+               'existe horário inicial, escreva not given = não informado. Compare one hour com at two para '
+               'impedir troca de início e duração.',
+  'result': 'Chamada início 10 h/duração 5 min; aula início 2 h/duração 1 h; visita 3 dias, curso 2 semanas, '
+            'projeto 6 meses, programa 1 ano, sem horários iniciais informados. Não converter mês '
+            'automaticamente em trinta dias nem deduzir datas finais sem calendário e início.',
+  'phon': 'O ouvinte repete número e unidade: five MINUTES, one HOUR. Aceitar hour com h não pronunciado e '
+          'an hour; corrigir apenas quando troca de unidade altera a informação.',
+  'pitfall': 'Apoiar numerais com quadro. Não exigir cálculo de datas ou domínio gramatical de duração até o '
+             'presente. O exemplo de year é um programa fictício, não relato biográfico.'},
+ {'level': 'a2',
+  'id': 'LEX-A2-15',
+  'title': 'Ler uma rotina de frequências sem confundir duração',
+  'after': 'A2-01',
+  'words': ['once', 'twice', 'daily', 'weekly', 'monthly', 'every other day'],
+  'situation': 'A tem calendário da biblioteca: doors checked daily; newsletter monthly; book club once a '
+               'week, on Wednesday. B tem calendário de uma turma: lessons twice a week, Tuesday and '
+               'Thursday; planning meeting weekly on Monday; short reading practice every other day starting '
+               'Monday. Apoios doors checked = portas conferidas, newsletter = boletim. Monte uma semana '
+               'segunda–domingo da leitura (segunda, quarta, sexta, domingo), separada dos encontros. '
+               'Explique ao destinatário por que twice a week não significa curso de duas semanas. Uma '
+               'pergunta How long is the course? não pode ser respondida pelos cartões.',
+  'result': 'Portas diariamente; boletim mensal sem dia informado; clube uma vez quarta; aulas terça/quinta; '
+            'planejamento segunda; leitura segunda/quarta/sexta/domingo. A duração total do curso não está '
+            'declarada. Modelo: We have lessons twice a week, but the timetable does not say how long the '
+            'course lasts.',
+  'phon': 'Once/twice com unidade de frequência; contraste every day/every other day em duas frases '
+          'completas. Não pontuar somente pronúncia da palavra solta. Registrar texto escrito versus voz '
+          'usada.',
+  'pitfall': 'Calendário serve de apoio; não cobrar aritmética mental nem rotina pessoal. Monthly não vira '
+             'automaticamente a cada trinta dias. Atividades de revisão devem ocorrer em outra sessão com '
+             'novo início.'},
+ {'level': 'a2',
+  'id': 'LEX-A2-16',
+  'title': 'Conferir medidas e porções em listas',
+  'after': 'A2-05',
+  'words': ['litre', 'kilogram', 'metre', 'half', 'quarter', 'dozen'],
+  'situation': 'Encontro fictício, só planejamento em papel. A tem lista: two litres of water; one kilogram '
+               'of rice; a dozen cups. B tem sala: table two metres long; eight blue cards, half for each '
+               'pair; twelve red cards, a quarter for the door sign. Apoios rice/arroz, sign/placa, cada par '
+               'recebe metade dos oito azuis. Troquem quantidades e unidades. Um recado troca two litres of '
+               'water por two metres of water: expliquem a correção. Calculadora ou cartões já divididos são '
+               'permitidos; ninguém precisa cozinhar ou medir equipamento real.',
+  'result': 'Água 2 L; arroz 1 kg; copos 12; mesa 2 m; cada par 4 azuis; placa 3 vermelhos. Modelo: We need '
+            'two litres of water, not two metres. A quarter of the twelve red cards is three. Se numeracia '
+            'bloquear, fornecer 4 e 3 e avaliar a frase com unidade/fração.',
+  'phon': 'Recuperar número e unidade em conjunto. Aceitar litre/liter, metre/meter, kilo/kilogram. Apoio '
+          'oral deve evitar que o aprendiz veja a lista reservada antes de ouvir.',
+  'pitfall': 'Isto não é instrução nutricional nem receita. Half e quarter funcionam em outras construções a '
+             'ensinar posteriormente; horários quarter past não são cobrados aqui.'},
+ {'level': 'b1',
+  'id': 'LEX-B1-15',
+  'title': 'Informar estimativas, mínimos e limites',
+  'after': 'B1-04',
+  'words': ['estimate', 'approximately', 'at least', 'at most', 'up to', 'no more than'],
+  'situation': 'Aviso A: Small workshop, room limit 20 participants; at least 12 registrations are needed to '
+               'run it; 15 are confirmed; organiser estimates approximately 18 will attend. B: each '
+               'participant may bring no more than 2 written examples; a draft advert says 20 confirmed. '
+               'Produza anúncio corrigido de 60–90 palavras. Inclua limite, mínimo, confirmado, estimativa e '
+               'restrição dos exemplos. Depois a mensagem nova registra 21 solicitações, ainda não '
+               'confirmadas. Explique qual número precisa ser limitado segundo o cartão, sem inventar regra '
+               'real de segurança ou decidir quem entra.',
+  'result': 'Mínimo 12, limite 20, confirmado 15, estimativa 18; anúncio não pode declarar 20 confirmados. '
+            'No more than two examples; at most twenty/up to twenty como limite. Com 21 pedidos há demanda '
+            'maior que limite, não 21 presenças confirmadas. Modelo: We have fifteen confirmed registrations '
+            'and estimate approximately eighteen attendees. The workshop needs at least twelve and can '
+            'accept at most twenty.',
+  'phon': 'Ênfase em AT LEAST versus AT MOST e valores; pedir ao ouvinte para restituir mínimo, máximo e '
+          'confirmado. Apoio escrito dos números permanece disponível para que linguagem, não cálculo, seja '
+          'o foco.',
+  'pitfall': 'Não transformar estimativa em intervalo probabilístico formal. At most e no more than podem '
+             'expressar o mesmo limite aqui, mas contraste de uso e registro continua contextual. A decisão '
+             'de admissão não é feita pela atividade.'},
+ {'level': 'b1',
+  'id': 'LEX-B1-16',
+  'title': 'Reorganizar compromissos e relatar o que aconteceu',
+  'after': 'B1-05',
+  'words': ['postpone', 'bring forward', 'run late', 'in the meantime', 'eventually', 'overtime'],
+  'situation': 'Thread fictícia. A: Tuesday meeting moved to Thursday; Friday review moved to Wednesday of '
+               'the same week. The delivery is running thirty minutes late. B: team can prepare labels while '
+               'waiting; after two calls the delivery eventually arrives; two colleagues worked one hour '
+               'beyond their normal schedule, with no pay information. Escreva atualização de 90–120 '
+               'palavras com linha do tempo e separe revisão antecipada de reunião adiada. O destinatário '
+               'pergunta se atraso cancelou entrega e se overtime foi pago; responda apenas com os '
+               'registros. Suporte de datas ordinais se o estudante preferir datas numéricas.',
+  'result': 'Meeting postponed Tuesday→Thursday; review brought forward Friday→Wednesday; atraso 30 min; '
+            'etiquetas enquanto esperam; entrega por fim após 2 chamadas; duas pessoas com 1 hora extra '
+            'cada, remuneração desconhecida. Não somar e chamar two hours overtime por pessoa. Aceitar '
+            'paráfrases naturais e observar cada expressão separadamente.',
+  'phon': 'Contrastar forward/postponed com data original e nova; ouvinte recompõe ordem. Eventually é '
+          'resultado posterior, não frequência ocasional. Pausas devem separar estado de espera da '
+          'conclusão.',
+  'pitfall': 'Não presumir legislação, obrigação ou pagamento de hora extra. Objetivo é relato linguístico '
+             'fictício. Se há dificuldade com sequência, oferecer cartões ordenáveis antes da produção, '
+             'registrando apoio.'},
+ {'level': 'b2',
+  'id': 'LEX-B2-17',
+  'title': 'Comparar razões, proporções e médias com base explícita',
+  'after': 'B2-06',
+  'words': ['ratio', 'proportion', 'fraction', 'double', 'halve', 'average'],
+  'situation': 'Dois conjuntos independentes de dados fictícios. A: workshop cards, 12 blue and 6 red; '
+               'visitors yesterday 24/today 48. B: two queues lasted 10/30 min; a procedure changed from 20 '
+               'to 10 min; only 3 of 12 archived pages were checked. Redija explicação de 100–140 palavras '
+               'para leitor geral, usando blue:red ratio, share of checked pages, doubled visitors, halved '
+               'procedure time and mean queue time. Forneça cálculo como apoio: 12:6=2:1;3/12=1/4; '
+               'média(10+30)/2=20. Depois responda se média 20 implica que ambas filas duraram 20 e se 12:6 '
+               'é proporção de azuis no total.',
+  'result': 'Razão azul:vermelho de 2:1; proporção de azuis no total de 12/18, ou dois terços. Visitantes '
+            'dobram de 24 para 48; tempo do procedimento cai à metade, de 20 para 10 minutos. Média das duas '
+            'filas de 20 minutos, com observações de 10 e 30; um quarto das páginas foi verificado. Apenas '
+            'esses dados fundamentam o relato. Se o cálculo for fornecido, avaliar a explicação linguística, '
+            'não habilidade matemática.',
+  'phon': 'Pronunciar two to one, one quarter e from twenty to ten dentro de frases. O parceiro registra '
+          'base e unidade. Pergunta de confirmação deve focalizar denominador ou ordem da razão.',
+  'pitfall': 'Average está definido como média aritmética, não toda medida de tendência central. Dobrar '
+             'equivale a aumento de 100% sobre base inicial; não converter em 200% de aumento. Não inferir '
+             'causa ou representatividade.'},
+ {'level': 'b2',
+  'id': 'LEX-B2-18',
+  'title': 'Descrever tendências sem apagar oscilações',
+  'after': 'B2-06',
+  'words': ['peak', 'plateau', 'fluctuate', 'steadily', 'roughly', 'overall'],
+  'situation': 'Cartão A: six weekly visits, W 1=10,W 2=20,W 3=30,W 4=30,W 5=25,W 6=40. Cartão B: four '
+               'session lengths=8,12,9,11 minutes; observer estimates roughly 30 people at another event, '
+               'not counted. Produza legenda de gráfico e resumo oral ou escrito. Aumento inicial regular, '
+               'breve estabilidade, queda e pico devem coexistir na síntese overall. Não misture visitantes '
+               'com minutos nem a estimativa de outro evento. Pergunta inédita do destinatário: Will next '
+               'week reach 50? Responda com limite da fonte.',
+  'result': 'Semanas 1–3: crescimento regular; semanas 3–4: breve estabilidade em 30; semana 5: queda para '
+            '25; semana 6: pico de 40 no período. No conjunto, aumento de 10 para 40 com queda '
+            'intermediária. Durações das sessões oscilam entre 8 e 12 minutos; roughly thirty se refere a '
+            'outro evento e continua sendo estimativa. Não há base para prever 50 na semana seguinte. '
+            'Modelo: Overall, visits increased, though the pattern was not steady throughout the six weeks.',
+  'phon': 'Pausas entre tendência geral e ressalva; enfatizar despite/although se usados. Destinatário deve '
+          'identificar semana do pico e reconhecer incerteza da estimativa, não apenas repetir verbos.',
+  'pitfall': 'Não exigir desenho visual: tabela textual equivalente. Plateau de dois pontos é descrição '
+             'breve, não estado permanente. Evitar jargão estatístico sem suporte e manter escopo da '
+             'amostra.'},
+ {'level': 'c1',
+  'id': 'LEX-C1-11',
+  'title': 'Qualificar magnitudes e viabilidade conforme o propósito',
+  'after': 'B2-06',
+  'words': ['negligible', 'substantial', 'disproportionate', 'comparable', 'on the order of', 'within reach'],
+  'situation': 'Editorial note A: two proposed reading rooms measure 40/42 m²; rent differs; preliminary '
+               'shelf sketch has 1 mm variation accepted by designer; incomplete catalogue suggests around '
+               '1000 titles. Note B: printing estimate fell 100→60 units, which editor calls substantial; '
+               'chair thinks half a meeting on two minor items is disproportionate while eight remain; '
+               'registration target 50, confirmed 45, deadline still open. Write a 140–180-word briefing to '
+               'a general audience. Attribute judgements, distinguish size comparison from price, and '
+               'qualify reachable target without promising it. Recipient challenges the phrase negligible: '
+               'explain the purpose-bound judgement and what another use would require.',
+  'result': 'As salas são comparáveis apenas em área; os custos diferem. A variação de 1 mm é insignificante '
+            'para aquele esboço segundo o designer. Cerca de mil títulos é estimativa baseada em catalogação '
+            'parcial. O custo de impressão cai de 100 para 60, redução de 40% que a editora chama de '
+            'substantial. A desproporção do tempo é julgamento do coordenador; atingir a meta depende de '
+            'cinco inscrições adicionais. Não atribuir limiares universais aos adjetivos. Aceitar paráfrases '
+            'naturais e registrar quais expressões-alvo foram efetivamente usadas.',
+  'phon': 'Discourse stress and pause before attribution and qualification. Listener should separate source '
+          'measurement from editorial judgement; intelligibility and precision matter more than accent '
+          'matching.',
+  'pitfall': 'Não exigir formação estatística; fornecer comparações prontas. Nenhuma opinião sobre custo ou '
+             'proporção tem validade universal. Não converter adjetivo avaliativo em diagnóstico ou decisão '
+             'de elegibilidade.'},
+ {'level': 'c1',
+  'id': 'LEX-C1-12',
+  'title': 'Reconstituir um processo preservando tempo e conhecimento disponível',
+  'after': 'B2-03',
+  'words': ['cumulative',
+            'in due course',
+            'for the time being',
+            'over the course of',
+            'subsequently',
+            'with hindsight'],
+  'situation': 'Case record: Monday cumulative registrations 10; Tuesday 25; Wednesday 40. A committee '
+               'message promises a reply in due course, no date. Room B is temporary for the time being, '
+               'return date unknown. Three revisions occur over the course of a semester; consultation '
+               'precedes second revision, causal link undocumented. Original ten-day deadline was set before '
+               'an extra five-day task became known. Write a 160–200-word account and a separate '
+               'three-sentence request for a useful response date. Recipient asks whether Wednesday added 40 '
+               'new people and whether original planners knew the extra task; answer explicitly with '
+               'evidence boundaries.',
+  'result': 'Os totais acumulados mostram 15 novas inscrições na terça e outras 15 na quarta. Não há data '
+            'para resposta nem para retorno à sala original. As três revisões se distribuem pelo semestre; '
+            'subsequently estabelece ordem temporal, não causa. With hindsight permite reavaliar o prazo sem '
+            'afirmar que os responsáveis já conheciam a tarefa adicional. O pedido deve solicitar uma data '
+            'esperada com cortesia. Modelo: With hindsight, the original deadline was too tight; the '
+            'additional task, however, was not known when it was set.',
+  'phon': 'Agrupar cronologia em blocos e contrastar then/now, total/new, provisional/confirmed. O ouvinte '
+          'reconstrói o que era conhecido em cada momento, com texto de apoio se necessário.',
+  'pitfall': 'Registro formal pode ser adaptado ao destinatário; não obrigar todas as expressões num único '
+             'parágrafo artificial. Avaliar precisão temporal, informação ausente e adequação da '
+             'solicitação; não usar contagem de conectivos como rubrica de C 1.'}]

@@ -4,7 +4,7 @@
 
 Pré-requisito: B2-03. Trabalhe apenas este conjunto antes de abrir outro. Apresente cada sentido com os exemplos e objetos/cartões correspondentes. Peça a prática; corrija sem antecipar avaliação. Distribua os cartões da situação de uso em papéis separados; quem recebe a mensagem não deve ver o cartão do colega. Inverta os papéis. Registre dados efetivamente recuperados.
 
-Registro formal pode ser adaptado ao destinatário; não obrigar todas as expressões num único parágrafo artificial. Avaliar precisão temporal, informação ausente e adequação da solicitação; não usar contagem de conectivos como rubrica de C1.
+Registro formal pode ser adaptado ao destinatário; não obrigar todas as expressões num único parágrafo artificial. Avaliar precisão temporal, informação ausente e adequação da solicitação; não usar contagem de conectivos como rubrica de C 1.
 
 ## Retomada e avaliação
 

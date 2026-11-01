@@ -71,7 +71,7 @@ Pode ser figurativo; viabilidade não é realização consumada.
 <a id="uso"></a>
 ## Usar para realizar uma tarefa
 
-Editorial note A: two proposed reading rooms measure40/42m²; rent differs; preliminary shelf sketch has1mm variation accepted by designer; incomplete catalogue suggests around1000titles. Note B: printing estimate fell100→60 units, which editor calls substantial; chair thinks half a meeting on two minor items is disproportionate while eight remain; registration target50, confirmed45, deadline still open. Write a140–180word briefing to a general audience. Attribute judgements, distinguish size comparison from price, and qualify reachable target without promising it. Recipient challenges the phrase negligible: explain the purpose-bound judgement and what another use would require.
+Editorial note A: two proposed reading rooms measure 40/42 m²; rent differs; preliminary shelf sketch has 1 mm variation accepted by designer; incomplete catalogue suggests around 1000 titles. Note B: printing estimate fell 100→60 units, which editor calls substantial; chair thinks half a meeting on two minor items is disproportionate while eight remain; registration target 50, confirmed 45, deadline still open. Write a 140–180-word briefing to a general audience. Attribute judgements, distinguish size comparison from price, and qualify reachable target without promising it. Recipient challenges the phrase negligible: explain the purpose-bound judgement and what another use would require.
 
 **Critério:** o destinatário precisa recuperar os dados finais indicados no [retorno](feedback.md). Marque cada palavra como usada com apoio, usada sem modelo, reconhecida somente ou não observada. Sem parceiro, há ensaio, não interação observada.
 

@@ -71,7 +71,7 @@ Síntese pode coexistir com exceções locais; não apagá-las.
 <a id="uso"></a>
 ## Usar para realizar uma tarefa
 
-Cartão A: six weekly visits, W1=10,W2=20,W3=30,W4=30,W5=25,W6=40. Cartão B: four session lengths=8,12,9,11minutes; observer estimates roughly30 people at another event, not counted. Produza legenda de gráfico e resumo oral ou escrito. Aumento inicial regular, breve estabilidade, queda e pico devem coexistir na síntese overall. Não misture visitantes com minutos nem a estimativa de outro evento. Pergunta inédita do destinatário: Will next week reach50? Responda com limite da fonte.
+Cartão A: six weekly visits, W 1=10,W 2=20,W 3=30,W 4=30,W 5=25,W 6=40. Cartão B: four session lengths=8,12,9,11 minutes; observer estimates roughly 30 people at another event, not counted. Produza legenda de gráfico e resumo oral ou escrito. Aumento inicial regular, breve estabilidade, queda e pico devem coexistir na síntese overall. Não misture visitantes com minutos nem a estimativa de outro evento. Pergunta inédita do destinatário: Will next week reach 50? Responda com limite da fonte.
 
 **Critério:** o destinatário precisa recuperar os dados finais indicados no [retorno](feedback.md). Marque cada palavra como usada com apoio, usada sem modelo, reconhecida somente ou não observada. Sem parceiro, há ensaio, não interação observada.
 

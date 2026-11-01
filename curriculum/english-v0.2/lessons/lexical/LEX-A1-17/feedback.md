@@ -52,7 +52,7 @@
 
 ## Resultado da situação de uso
 
-Chamada início 10h/duração 5min; aula início 2h/duração 1h; visita 3dias, curso 2semanas, projeto6meses, programa1ano, sem horários iniciais informados. Não converter mês automaticamente em trinta dias nem deduzir datas finais sem calendário e início.
+Chamada início 10 h/duração 5 min; aula início 2 h/duração 1 h; visita 3 dias, curso 2 semanas, projeto 6 meses, programa 1 ano, sem horários iniciais informados. Não converter mês automaticamente em trinta dias nem deduzir datas finais sem calendário e início.
 
 ## Recuperação
 

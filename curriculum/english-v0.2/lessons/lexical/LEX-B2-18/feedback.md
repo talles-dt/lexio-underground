@@ -52,7 +52,7 @@
 
 ## Resultado da situação de uso
 
-W1–W3 cresce steadily;W3–W4 breveplateau30;W5queda25;W6peak40 no período;overall10→40 comqueda intermediária. Duraçõesfluctuate8–12min; roughly30 é outra estimativa. Dados não autorizam prever50. Modelo: Overall, visits increased, though the pattern was not steady throughout the six weeks.
+Semanas 1–3: crescimento regular; semanas 3–4: breve estabilidade em 30; semana 5: queda para 25; semana 6: pico de 40 no período. No conjunto, aumento de 10 para 40 com queda intermediária. Durações das sessões oscilam entre 8 e 12 minutos; roughly thirty se refere a outro evento e continua sendo estimativa. Não há base para prever 50 na semana seguinte. Modelo: Overall, visits increased, though the pattern was not steady throughout the six weeks.
 
 ## Recuperação
 

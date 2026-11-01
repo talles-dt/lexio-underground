@@ -52,7 +52,7 @@
 
 ## Resultado da situação de uso
 
-Meeting postponed Tuesday→Thursday; review brought forward Friday→Wednesday; atraso30min; etiquetas enquanto esperam; entrega por fim após2chamadas; duas pessoas com1hora extra cada, remuneração desconhecida. Não somar e chamar two hours overtime por pessoa. Aceitar paráfrases naturais e observar cada expressão separadamente.
+Meeting postponed Tuesday→Thursday; review brought forward Friday→Wednesday; atraso 30 min; etiquetas enquanto esperam; entrega por fim após 2 chamadas; duas pessoas com 1 hora extra cada, remuneração desconhecida. Não somar e chamar two hours overtime por pessoa. Aceitar paráfrases naturais e observar cada expressão separadamente.
 
 ## Recuperação
 
