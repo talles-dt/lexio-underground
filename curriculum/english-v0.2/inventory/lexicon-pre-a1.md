@@ -98,3 +98,21 @@
 | LX-PRE-A1-6BFB7E | **hat** — chapéu | a hat. My hat. | Sentido de peça de roupa. | productive |
 | LX-PRE-A1-DE6725 | **socks** — meias como peça de roupa | my socks. My socks. | Plural ensinado como bloco, não regra geral exigida. | productive |
 | LX-PRE-A1-568736 | **jacket** — jaqueta no cartão | a jacket. My jacket. | Categoria contextual, não fronteira universal entre tipos de agasalho. | productive |
+| LX-PRE-A1-9B5A01 | **eleven** — onze | eleven + plural. Eleven pens. | 11; não confundir com o código 1–1, one one. | productive |
+| LX-PRE-A1-4A4149 | **twelve** — doze | twelve + plural. Twelve cups. | 12; valor diferente de twenty, 20. | productive |
+| LX-PRE-A1-611E21 | **thirteen** — treze | thirteen + plural. Thirteen books. | 13; contraste com thirty, 30, será retomado em outra sequência. | productive |
+| LX-PRE-A1-8B4302 | **fourteen** — quatorze | fourteen + plural. Fourteen chairs. | 14; a terminação teen precisa permanecer recuperável. | productive |
+| LX-PRE-A1-02A2DA | **fifteen** — quinze | fifteen + plural. Fifteen pens. | 15; não fiveteen. Comparar fifty em rodada posterior. | productive |
+| LX-PRE-A1-FDD744 | **sixteen** — dezesseis | sixteen + plural. Sixteen cups. | 16; confirme quantidade, não apenas a presença de six. | productive |
+| LX-PRE-A1-0B4D54 | **seventeen** — dezessete | seventeen + plural. Seventeen chairs. | 17; grafia seventeenth não pertence a esta tarefa. | productive |
+| LX-PRE-A1-9E86EE | **eighteen** — dezoito | eighteen + plural. Eighteen pens. | 18; grafia eighteen, com apenas um t entre eight e een. | productive |
+| LX-PRE-A1-C4AD32 | **nineteen** — dezenove | nineteen + plural. Nineteen books. | 19; contraste com ninety, 90, na próxima sequência. | productive |
+| LX-PRE-A1-85F677 | **twenty** — vinte | twenty + plural. Twenty cups. | 20; two é 2, twelve é 12. | productive |
+| LX-PRE-A1-962C83 | **thirty** — trinta | thirty + plural. Thirty chairs. | 30; contrasta com thirteen, 13. Confirmação numérica é permitida. | productive |
+| LX-PRE-A1-AC6D5A | **forty** — quarenta | forty + plural. Forty pens. | 40; grafia forty, não fourty. | productive |
+| LX-PRE-A1-490A4E | **fifty** — cinquenta | fifty + plural. Fifty chairs. | 50; contraste fifteen, 15; contexto e confirmação importam. | productive |
+| LX-PRE-A1-7578B7 | **sixty** — sessenta | sixty + plural. Sixty books. | 60; não sixteen, 16. | productive |
+| LX-PRE-A1-A61E75 | **seventy** — setenta | seventy + plural. Seventy cups. | 70; contraste seventeen, 17. | productive |
+| LX-PRE-A1-5FC709 | **eighty** — oitenta | eighty + plural. Eighty pens. | 80; grafia eighty; eighteen é 18. | productive |
+| LX-PRE-A1-56C763 | **ninety** — noventa | ninety + plural. Ninety chairs. | 90; grafia ninety; nineteen é 19. | productive |
+| LX-PRE-A1-D8C255 | **one hundred** — cem | one hundred + plural. One hundred cups. | 100; hundred não recebe s após número exato: one hundred cups. | productive |

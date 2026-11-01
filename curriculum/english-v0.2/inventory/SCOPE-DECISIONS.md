@@ -16,7 +16,7 @@ O inventário é autoral e candidato. “Incluído” abaixo significa que exist
 | Relativas e outras subordinadas | Incluídas definidoras, adicionais e reduzidas | Relativas nominais, referências a oração inteira, razão, finalidade e resultado em maior diversidade |
 | Foco, coesão e elipse | Incluídos clefts, inversão, referência e conectores | Controle em textos longos e fala espontânea, com avaliação independente |
 | Registro e pragmática | Incluídos pedidos, relato, reparo, negociação e facilitação | Humor, ironia, desacordo cotidiano, intimidade, fórmulas sociais e implicaturas em vozes variadas |
-| Léxico geral | Inventário inicial ampliado de 240 para 446 entradas por sentido/padrão | Expansão substancial de todos os domínios; não fechado |
+| Léxico geral | Inventário inicial ampliado de 240 para 530 entradas por sentido/padrão | Expansão substancial de todos os domínios; não fechado |
 | Colocações, chunks e multiword verbs | Exemplos incluídos desde níveis iniciais | Inventário amplo por sentido, separabilidade, colocação e registro; não fechado |
 | Formação de palavras | Introdução e retomada avançada | Famílias derivacionais produtivas, falsos cognatos e restrições de formação |
 | Linguagem de especialidade | Extensão receptiva selecionada | Trilhas opcionais a partir dos objetivos do aluno; não prometer cobertura de toda profissão |

@@ -76,3 +76,53 @@ GROUPS += [{'id': 'LEX-C1-10',
   'pitfall': 'Ensino de leitura crítica e registro; não laudo imobiliário nem jurídico. Soundproof em '
              'anúncio é alegação forte; não tratar quiet moment como comprovação. Disruption não implica '
              'paralisação total sem dados.'}]
+
+GROUPS += [{'id': 'LEX-C1-11',
+  'title': 'Qualificar magnitudes e viabilidade conforme o propósito',
+  'after': 'B2-06',
+  'words': ['negligible', 'substantial', 'disproportionate', 'comparable', 'on the order of', 'within reach'],
+  'situation': 'Editorial note A: two proposed reading rooms measure40/42m²; rent differs; preliminary shelf '
+               'sketch has1mm variation accepted by designer; incomplete catalogue suggests '
+               'around1000titles. Note B: printing estimate fell100→60 units, which editor calls '
+               'substantial; chair thinks half a meeting on two minor items is disproportionate while eight '
+               'remain; registration target50, confirmed45, deadline still open. Write a140–180word briefing '
+               'to a general audience. Attribute judgements, distinguish size comparison from price, and '
+               'qualify reachable target without promising it. Recipient challenges the phrase negligible: '
+               'explain the purpose-bound judgement and what another use would require.',
+  'result': 'Comparable in size only;1mm negligible according to designer for preliminary sketch; on the '
+            'order of1000 tentative frompartialcatalogue;40%costreduction describedassubstantial byeditor; '
+            'disproportionate time ischairjudgement;withinreach target conditional '
+            'onfiveadditionalregistrations. Avoid thresholds for adjectives that sources never supply. '
+            'Natural paraphrases welcome; record actual target expressions used.',
+  'phon': 'Discourse stress and pause before attribution and qualification. Listener should separate source '
+          'measurement from editorial judgement; intelligibility and precision matter more than accent '
+          'matching.',
+  'pitfall': 'Não exigir formação estatística; fornecer comparações prontas. Nenhuma opinião sobre custo ou '
+             'proporção tem validade universal. Não converter adjetivo avaliativo em diagnóstico ou decisão '
+             'de elegibilidade.'},
+ {'id': 'LEX-C1-12',
+  'title': 'Reconstituir um processo preservando tempo e conhecimento disponível',
+  'after': 'B2-03',
+  'words': ['cumulative',
+            'in due course',
+            'for the time being',
+            'over the course of',
+            'subsequently',
+            'with hindsight'],
+  'situation': 'Case record: Monday cumulative registrations10; Tuesday25; Wednesday40. A committee message '
+               'promises a reply in due course, no date. RoomB is temporary for the time being, return date '
+               'unknown. Three revisions occur over the course of a semester; consultation precedes second '
+               'revision, causal link undocumented. Original ten-day deadline was set before an extra '
+               'five-day task became known. Write a160–200word account and a separate three-sentence request '
+               'for a useful response date. Recipient asks whether Wednesday added40 new people and whether '
+               'original planners knew the extra task; answer explicitly with evidence boundaries.',
+  'result': 'Cumulative totals mean newTuesday15,newWednesday15; no stateddateforreply/roomreturn; '
+            'revisionsdistributedthroughsemester; subsequently marks time notcause; withhindsight '
+            'deadlineinadequate without assigningunknownpriorawareness. Request expecteddate respectfully '
+            'instead of inventing one. Modelo: With hindsight, the original deadline was too tight; the '
+            'additional task, however, was not known when it was set.',
+  'phon': 'Agrupar cronologia em blocos e contrastar then/now, total/new, provisional/confirmed. O ouvinte '
+          'reconstrói o que era conhecido em cada momento, com texto de apoio se necessário.',
+  'pitfall': 'Registro formal pode ser adaptado ao destinatário; não obrigar todas as expressões num único '
+             'parágrafo artificial. Avaliar precisão temporal, informação ausente e adequação da '
+             'solicitação; não usar contagem de conectivos como rubrica de C1.'}]

@@ -360,6 +360,66 @@
     "status": "written_not_reviewed_or_piloted"
   },
   {
+    "level": "pre-a1",
+    "id": "LEX-PRE-20",
+    "title": "Confirmar quantidades de onze a dezesseis",
+    "after": "FND-03",
+    "lexical_ids": [
+      "LX-PRE-A1-9B5A01",
+      "LX-PRE-A1-4A4149",
+      "LX-PRE-A1-611E21",
+      "LX-PRE-A1-8B4302",
+      "LX-PRE-A1-02A2DA",
+      "LX-PRE-A1-FDD744"
+    ],
+    "student": "lessons/lexical/LEX-PRE-20/student.md",
+    "teacher": "lessons/lexical/LEX-PRE-20/teacher.md",
+    "review": "lessons/lexical/LEX-PRE-20/review.md",
+    "assessment": "lessons/lexical/LEX-PRE-20/assessment.md",
+    "feedback": "lessons/lexical/LEX-PRE-20/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "pre-a1",
+    "id": "LEX-PRE-21",
+    "title": "Distinguir dezessete a vinte e primeiras dezenas",
+    "after": "FND-05",
+    "lexical_ids": [
+      "LX-PRE-A1-0B4D54",
+      "LX-PRE-A1-9E86EE",
+      "LX-PRE-A1-C4AD32",
+      "LX-PRE-A1-85F677",
+      "LX-PRE-A1-962C83",
+      "LX-PRE-A1-AC6D5A"
+    ],
+    "student": "lessons/lexical/LEX-PRE-21/student.md",
+    "teacher": "lessons/lexical/LEX-PRE-21/teacher.md",
+    "review": "lessons/lexical/LEX-PRE-21/review.md",
+    "assessment": "lessons/lexical/LEX-PRE-21/assessment.md",
+    "feedback": "lessons/lexical/LEX-PRE-21/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "pre-a1",
+    "id": "LEX-PRE-22",
+    "title": "Confirmar dezenas de cinquenta a cem",
+    "after": "FND-06",
+    "lexical_ids": [
+      "LX-PRE-A1-490A4E",
+      "LX-PRE-A1-7578B7",
+      "LX-PRE-A1-A61E75",
+      "LX-PRE-A1-5FC709",
+      "LX-PRE-A1-56C763",
+      "LX-PRE-A1-D8C255"
+    ],
+    "student": "lessons/lexical/LEX-PRE-22/student.md",
+    "teacher": "lessons/lexical/LEX-PRE-22/teacher.md",
+    "review": "lessons/lexical/LEX-PRE-22/review.md",
+    "assessment": "lessons/lexical/LEX-PRE-22/assessment.md",
+    "feedback": "lessons/lexical/LEX-PRE-22/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
     "level": "a1",
     "id": "LEX-A1-01",
     "title": "Relações sem presumir uma família",
@@ -634,6 +694,66 @@
     "status": "written_not_reviewed_or_piloted"
   },
   {
+    "level": "a1",
+    "id": "LEX-A1-15",
+    "title": "Combinar atividades de janeiro a junho",
+    "after": "A1-08",
+    "lexical_ids": [
+      "LX-A1-A5800D",
+      "LX-A1-263139",
+      "LX-A1-FE3BC7",
+      "LX-A1-43A734",
+      "LX-A1-BEFA45",
+      "LX-A1-F83761"
+    ],
+    "student": "lessons/lexical/LEX-A1-15/student.md",
+    "teacher": "lessons/lexical/LEX-A1-15/teacher.md",
+    "review": "lessons/lexical/LEX-A1-15/review.md",
+    "assessment": "lessons/lexical/LEX-A1-15/assessment.md",
+    "feedback": "lessons/lexical/LEX-A1-15/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "a1",
+    "id": "LEX-A1-16",
+    "title": "Reparar uma agenda de julho a dezembro",
+    "after": "A1-08",
+    "lexical_ids": [
+      "LX-A1-6B984C",
+      "LX-A1-625D72",
+      "LX-A1-FB093F",
+      "LX-A1-D0BD59",
+      "LX-A1-D8F50F",
+      "LX-A1-B6FC92"
+    ],
+    "student": "lessons/lexical/LEX-A1-16/student.md",
+    "teacher": "lessons/lexical/LEX-A1-16/teacher.md",
+    "review": "lessons/lexical/LEX-A1-16/review.md",
+    "assessment": "lessons/lexical/LEX-A1-16/assessment.md",
+    "feedback": "lessons/lexical/LEX-A1-16/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "a1",
+    "id": "LEX-A1-17",
+    "title": "Separar duração e horário em uma agenda",
+    "after": "A1-02",
+    "lexical_ids": [
+      "LX-A1-8564BE",
+      "LX-A1-10A7FA",
+      "LX-A1-3ED77C",
+      "LX-A1-2D2C3D",
+      "LX-A1-1CCBB3",
+      "LX-A1-EE87AD"
+    ],
+    "student": "lessons/lexical/LEX-A1-17/student.md",
+    "teacher": "lessons/lexical/LEX-A1-17/teacher.md",
+    "review": "lessons/lexical/LEX-A1-17/review.md",
+    "assessment": "lessons/lexical/LEX-A1-17/assessment.md",
+    "feedback": "lessons/lexical/LEX-A1-17/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
     "level": "a2",
     "id": "LEX-A2-01",
     "title": "Reorganizar uma viagem",
@@ -904,6 +1024,46 @@
     "status": "written_not_reviewed_or_piloted"
   },
   {
+    "level": "a2",
+    "id": "LEX-A2-15",
+    "title": "Ler uma rotina de frequências sem confundir duração",
+    "after": "A2-01",
+    "lexical_ids": [
+      "LX-A2-605981",
+      "LX-A2-7B2DD1",
+      "LX-A2-5A5D48",
+      "LX-A2-8C75FB",
+      "LX-A2-B7E6DB",
+      "LX-A2-DFCFB5"
+    ],
+    "student": "lessons/lexical/LEX-A2-15/student.md",
+    "teacher": "lessons/lexical/LEX-A2-15/teacher.md",
+    "review": "lessons/lexical/LEX-A2-15/review.md",
+    "assessment": "lessons/lexical/LEX-A2-15/assessment.md",
+    "feedback": "lessons/lexical/LEX-A2-15/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "a2",
+    "id": "LEX-A2-16",
+    "title": "Conferir medidas e porções em listas",
+    "after": "A2-05",
+    "lexical_ids": [
+      "LX-A2-17784A",
+      "LX-A2-CB137D",
+      "LX-A2-0CDCF7",
+      "LX-A2-B3B4EA",
+      "LX-A2-935802",
+      "LX-A2-AAFC94"
+    ],
+    "student": "lessons/lexical/LEX-A2-16/student.md",
+    "teacher": "lessons/lexical/LEX-A2-16/teacher.md",
+    "review": "lessons/lexical/LEX-A2-16/review.md",
+    "assessment": "lessons/lexical/LEX-A2-16/assessment.md",
+    "feedback": "lessons/lexical/LEX-A2-16/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
     "level": "b1",
     "id": "LEX-B1-01",
     "title": "Acompanhar leituras e explicar uma ideia",
@@ -1171,6 +1331,46 @@
     "review": "lessons/lexical/LEX-B1-14/review.md",
     "assessment": "lessons/lexical/LEX-B1-14/assessment.md",
     "feedback": "lessons/lexical/LEX-B1-14/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "b1",
+    "id": "LEX-B1-15",
+    "title": "Informar estimativas, mínimos e limites",
+    "after": "B1-04",
+    "lexical_ids": [
+      "LX-B1-4EBCBC",
+      "LX-B1-7B411E",
+      "LX-B1-B33F45",
+      "LX-B1-37F63F",
+      "LX-B1-DD7D2E",
+      "LX-B1-FFEEC8"
+    ],
+    "student": "lessons/lexical/LEX-B1-15/student.md",
+    "teacher": "lessons/lexical/LEX-B1-15/teacher.md",
+    "review": "lessons/lexical/LEX-B1-15/review.md",
+    "assessment": "lessons/lexical/LEX-B1-15/assessment.md",
+    "feedback": "lessons/lexical/LEX-B1-15/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "b1",
+    "id": "LEX-B1-16",
+    "title": "Reorganizar compromissos e relatar o que aconteceu",
+    "after": "B1-05",
+    "lexical_ids": [
+      "LX-B1-1EBE90",
+      "LX-B1-2EB00D",
+      "LX-B1-34B8A8",
+      "LX-B1-79309F",
+      "LX-B1-930B69",
+      "LX-B1-FE898B"
+    ],
+    "student": "lessons/lexical/LEX-B1-16/student.md",
+    "teacher": "lessons/lexical/LEX-B1-16/teacher.md",
+    "review": "lessons/lexical/LEX-B1-16/review.md",
+    "assessment": "lessons/lexical/LEX-B1-16/assessment.md",
+    "feedback": "lessons/lexical/LEX-B1-16/feedback.md",
     "status": "written_not_reviewed_or_piloted"
   },
   {
@@ -1470,6 +1670,46 @@
     "status": "written_not_reviewed_or_piloted"
   },
   {
+    "level": "b2",
+    "id": "LEX-B2-17",
+    "title": "Comparar razões, proporções e médias com base explícita",
+    "after": "B2-06",
+    "lexical_ids": [
+      "LX-B2-A212C4",
+      "LX-B2-A0C094",
+      "LX-B2-41D0B0",
+      "LX-B2-5717C2",
+      "LX-B2-6C15BC",
+      "LX-B2-F2A3EE"
+    ],
+    "student": "lessons/lexical/LEX-B2-17/student.md",
+    "teacher": "lessons/lexical/LEX-B2-17/teacher.md",
+    "review": "lessons/lexical/LEX-B2-17/review.md",
+    "assessment": "lessons/lexical/LEX-B2-17/assessment.md",
+    "feedback": "lessons/lexical/LEX-B2-17/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "b2",
+    "id": "LEX-B2-18",
+    "title": "Descrever tendências sem apagar oscilações",
+    "after": "B2-06",
+    "lexical_ids": [
+      "LX-B2-31F66E",
+      "LX-B2-82993D",
+      "LX-B2-B40857",
+      "LX-B2-9E0B85",
+      "LX-B2-DE57EF",
+      "LX-B2-775F12"
+    ],
+    "student": "lessons/lexical/LEX-B2-18/student.md",
+    "teacher": "lessons/lexical/LEX-B2-18/teacher.md",
+    "review": "lessons/lexical/LEX-B2-18/review.md",
+    "assessment": "lessons/lexical/LEX-B2-18/assessment.md",
+    "feedback": "lessons/lexical/LEX-B2-18/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
     "level": "c1",
     "id": "LEX-C1-01",
     "title": "Sintetizar fontes com alcance e divergências explícitos",
@@ -1661,6 +1901,46 @@
     "review": "lessons/lexical/LEX-C1-10/review.md",
     "assessment": "lessons/lexical/LEX-C1-10/assessment.md",
     "feedback": "lessons/lexical/LEX-C1-10/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "c1",
+    "id": "LEX-C1-11",
+    "title": "Qualificar magnitudes e viabilidade conforme o propósito",
+    "after": "B2-06",
+    "lexical_ids": [
+      "LX-C1-72D474",
+      "LX-C1-620955",
+      "LX-C1-D1AF74",
+      "LX-C1-1A698E",
+      "LX-C1-B7748B",
+      "LX-C1-C7EA79"
+    ],
+    "student": "lessons/lexical/LEX-C1-11/student.md",
+    "teacher": "lessons/lexical/LEX-C1-11/teacher.md",
+    "review": "lessons/lexical/LEX-C1-11/review.md",
+    "assessment": "lessons/lexical/LEX-C1-11/assessment.md",
+    "feedback": "lessons/lexical/LEX-C1-11/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "c1",
+    "id": "LEX-C1-12",
+    "title": "Reconstituir um processo preservando tempo e conhecimento disponível",
+    "after": "B2-03",
+    "lexical_ids": [
+      "LX-C1-09D436",
+      "LX-C1-71D0DA",
+      "LX-C1-3C24A4",
+      "LX-C1-4BD82A",
+      "LX-C1-D67BC4",
+      "LX-C1-5C578F"
+    ],
+    "student": "lessons/lexical/LEX-C1-12/student.md",
+    "teacher": "lessons/lexical/LEX-C1-12/teacher.md",
+    "review": "lessons/lexical/LEX-C1-12/review.md",
+    "assessment": "lessons/lexical/LEX-C1-12/assessment.md",
+    "feedback": "lessons/lexical/LEX-C1-12/feedback.md",
     "status": "written_not_reviewed_or_piloted"
   }
 ]

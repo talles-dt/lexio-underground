@@ -107,3 +107,60 @@ GROUPS += [{'id': 'LEX-PRE-19',
   'pitfall': 'Coat/jacket delimitados pelos cartões; não alegar classificação universal de todos os '
              'agasalhos. Personagens não precisam vestir peças; escolha não pressupõe gênero ou hábito '
              'cultural.'}]
+
+GROUPS += [{'id': 'LEX-PRE-20',
+  'title': 'Confirmar quantidades de onze a dezesseis',
+  'after': 'FND-03',
+  'words': ['eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen'],
+  'situation': 'Recepção fictícia; quadro visível 11 eleven, 12 twelve, 13 thirteen, 14 fourteen, 15 '
+               'fifteen, 16 sixteen. Cartão A: books 11, pens 14, cups 16. Cartão B tem caixas rotuladas '
+               '11/12/13/14/15/16 e não vê a lista de A. A pede Eleven books, please; B repete Eleven? antes '
+               'de separar cartão. Rodada invertida: books 13, pens 12, cups 15. Um pedido de confirmação '
+               'deve ser introduzido em cada rodada; ninguém movimenta objetos reais pesados. Depois o '
+               'destinatário escreve três quantidades sem copiar a lista do emissor.',
+  'result': 'Primeira entrega books 11, pens 14, cups 16; segunda books 13, pens 12, cups 15. A repetição '
+            'precisa manter a quantidade, não apenas nomear objeto. Se há apoio numérico, registrar produção '
+            'apoiada. Números 1–6 não substituem 11–16.',
+  'phon': 'Ouvir e restituir dois números por vez. O falante pode repetir ou mostrar algarismo depois da '
+          'tentativa; registrar quando houve apoio visual. A compreensão pode ser verificada por escolha de '
+          'etiqueta, sem exigir soletração.',
+  'pitfall': 'Separar apresentação em dois conjuntos de três se necessário; não testar todas as formas antes '
+             'de ensino. A pessoa pode usar cartão de quantidade: esta tarefa avalia comunicação, não '
+             'cálculo mental.'},
+ {'id': 'LEX-PRE-21',
+  'title': 'Distinguir dezessete a vinte e primeiras dezenas',
+  'after': 'FND-05',
+  'words': ['seventeen', 'eighteen', 'nineteen', 'twenty', 'thirty', 'forty'],
+  'situation': 'Quadro: 17 seventeen, 18 eighteen, 19 nineteen, 20 twenty, 30 thirty, 40 forty. Pedido A: '
+               'cups 17, pens 20, books 30. B recebe inventário com todas as etiquetas e deve repetir cada '
+               'quantidade antes de marcar. B diz Thirteen? ao receber thirty; A usa No, thirty: 30 com '
+               'apoio já aprendido. Inversão: cups 18, pens 19, books 40. Confira no final o inventário '
+               'pedido versus separado, sem converter palavras em preço.',
+  'result': 'Primeira: 17, 20, 30. Segunda: 18, 19, 40. Reparo distingue 13 de 30; consultar a sequência '
+            'anterior para thirteen. Modelo: Thirty books, please. — Thirteen? — No, thirty. O objetivo é '
+            'destinatário recuperar 30, não uma pronúncia idêntica à de locutor.',
+  'phon': 'Compare thirteen/thirty e fourteen/forty em frases; mantenha audível final teen quando aplicável. '
+          'Acento pode variar por ênfase, portanto usar confirmação e contexto, não regra absoluta de '
+          'posição tônica.',
+  'pitfall': 'Thirty não ensina automaticamente thirty-one etc. Compostos de dezenas e unidades devem ter '
+             'apoio próprio antes de serem cobrados. Não inferir domínio de números apenas por recitar a '
+             'lista em ordem.'},
+ {'id': 'LEX-PRE-22',
+  'title': 'Confirmar dezenas de cinquenta a cem',
+  'after': 'FND-06',
+  'words': ['fifty', 'sixty', 'seventy', 'eighty', 'ninety', 'one hundred'],
+  'situation': 'Quadro bilíngue: 50 fifty, 60 sixty, 70 seventy, 80 eighty, 90 ninety, 100 one hundred. A '
+               'tem quantidade de cartões para três mesas: mesa 1 fifty; mesa 2 eighty; mesa 3 one hundred. '
+               'B anota números sem ver a lista. Inverter: mesa 1 sixty, mesa 2 seventy, mesa 3 ninety. B '
+               'precisa confirmar uma quantidade com Again, please. Ofereça etiquetas prontas de 15/50, '
+               '18/80, 19/90 para etapa de discriminação com voz disponível. Sem áudio ou pessoa, usar '
+               'leitura e anotar modalidade escrita.',
+  'result': 'Rodada 1: 50, 80, 100; rodada 2: 60, 70, 90. A pessoa deve corrigir uma troca possível entre '
+            'teen e ty; não exigir contar fisicamente cem objetos. Evidência auditiva só existe se a lista '
+            'foi realmente ouvida sem leitura prévia.',
+  'phon': 'Fifty/fifteen, eighty/eighteen e ninety/nineteen em contexto com unidade explícita. Mudar a ordem '
+          'das etiquetas. Aceitar repetição mais lenta e confirmação por número escrito depois da primeira '
+          'tentativa.',
+  'pitfall': 'A expansão cobre dezenas exatas, não todo sistema de numeração. Não aplicar números a '
+             'dosagens, transações reais ou dados pessoais. Avaliação usa as novas quantidades de cada '
+             'entrada.'}]

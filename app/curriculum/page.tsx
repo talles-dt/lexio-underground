@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import release from '../../src/curriculum/release.json';
 import sequences from '../../curriculum/english-v0.2/data/lexical-sequences.json';
 
 export default function CurriculumPage() {
@@ -8,10 +9,10 @@ export default function CurriculumPage() {
         <Link href="/learn" className="text-sm text-amber-300">← Voltar ao Lexio</Link>
         <p className="text-sm uppercase tracking-widest text-amber-300">Lexio · Biblioteca curricular</p>
         <h1 className="text-4xl font-semibold">Inglês, do pré-A1 ao C1</h1>
-        <p className="text-lg leading-relaxed">Materiais para adultos brasileiros, com percursos de estudo autônomo e com professor. Esta entrega reúne 446 entradas lexicais e 87 sequências de prática, além das unidades e dos materiais de gramática já escritos.</p>
+        <p className="text-lg leading-relaxed">Materiais para adultos brasileiros, com percursos de estudo autônomo e com professor. Esta entrega reúne {release.lexical_entries} entradas lexicais e {release.lexical_sequences} sequências de prática, além das unidades e dos materiais de gramática já escritos.</p>
         <section className="rounded-2xl border border-amber-300/30 p-6 space-y-3">
-          <h2 className="text-xl font-semibold">Edição editorial · 31 de outubro de 2026</h2>
-          <p className="leading-relaxed text-stone-300">Material revisado e aprovado editorialmente pelo responsável pelo projeto. A ampliação da cobertura e a pilotagem continuam em andamento. Os roteiros de áudio ainda não têm gravações.</p>
+          <h2 className="text-xl font-semibold">Edição editorial · {release.edition.split('-').reverse().join('/')}</h2>
+          <p className="leading-relaxed text-stone-300">{release.reviewed_sequences} sequências têm revisão editorial registrada pelo responsável pelo projeto. Outras {release.new_or_changed_sequences} foram acrescentadas ou alteradas depois dessa revisão. A cobertura continua em expansão; pilotagem e gravações de áudio permanecem pendentes.</p>
           <p className="leading-relaxed text-stone-300">O pacote inclui materiais de aluno e professor, respostas comentadas, avaliações e relatórios de cobertura. As sequências estão disponíveis abaixo para estudo e uso com professor. Respostas e avaliações permanecem em documentos separados; esta biblioteca não registra conclusão nem atribui proficiência.</p>
         </section>
         <Link href="/curriculum/read/README.md" className="block text-amber-300 underline">Abrir guia do curso, unidades e materiais de gramática</Link>
@@ -29,7 +30,7 @@ export default function CurriculumPage() {
             </div>
           </li>)}</ul>
         </section>)}
-        <a className="inline-block rounded-xl bg-amber-300 px-6 py-3 font-semibold text-black" href="/curriculum/lexio-english-2026-10-31.zip" download>Baixar os materiais (ZIP)</a>
+        <a className="inline-block rounded-xl bg-amber-300 px-6 py-3 font-semibold text-black" href={'/curriculum/'+release.archive} download>Baixar os materiais (ZIP)</a>
         <p className="text-sm text-stone-400">Abra o README da pasta english-v0.2 para navegar pelos materiais. Os documentos estão em Markdown, com dados e fontes editoriais incluídos.</p>
       </div>
     </main>

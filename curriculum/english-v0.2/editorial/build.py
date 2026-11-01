@@ -45,10 +45,15 @@ for level,filename in [('b2','b2-lexical-expansion.json'),('pre-a1','pre-a1-lexi
         if l['level']==level and (l['entry'],l['sense_pt']) in expanded:
             l['source']=expansion['source']
 
-for row in read_tsv('lexical-scope/emotions-expansion.tsv') + read_tsv('lexical-scope/daily-domains-expansion.tsv'):
+for filename, source in [
+    ('emotions-expansion.tsv', 'LEXIO-AUTHOR-2026-10-30'),
+    ('daily-domains-expansion.tsv', 'LEXIO-AUTHOR-2026-10-30'),
+    ('quantity-time-expansion.tsv', 'LEXIO-AUTHOR-2026-11-01'),
+]:
+    authored={(r['level'],r['entry'],r['sense_pt']) for r in read_tsv('lexical-scope/'+filename)}
     for item in lexicon:
-        if item['level']==row['level'] and item['entry']==row['entry'] and item['sense_pt']==row['sense_pt']:
-            item['source']='LEXIO-AUTHOR-2026-10-30'
+        if (item['level'],item['entry'],item['sense_pt']) in authored:
+            item['source']=source
 
 # Group by coherent grammatical family. These are laboratories, not complete communicative units.
 FAMILY_GROUP={

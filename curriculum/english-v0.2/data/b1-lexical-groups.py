@@ -73,3 +73,47 @@ GROUPS += [{'id': 'LEX-B1-14',
   'pitfall': 'Esporte escolhido é ficcional e não exige conhecer regras além dos dados. One–two e two–one '
              'precisam de orientação por equipe. Apoiar won e half-time com tradução; não contar vocabulário '
              'incidental como inventário concluído.'}]
+
+GROUPS += [{'id': 'LEX-B1-15',
+  'title': 'Informar estimativas, mínimos e limites',
+  'after': 'B1-04',
+  'words': ['estimate', 'approximately', 'at least', 'at most', 'up to', 'no more than'],
+  'situation': 'Aviso A: Small workshop, room limit 20 participants; at least 12 registrations are needed to '
+               'run it; 15 are confirmed; organiser estimates approximately 18 will attend. B: each '
+               'participant may bring no more than 2 written examples; a draft advert says 20 confirmed. '
+               'Produza anúncio corrigido de 60–90 palavras. Inclua limite, mínimo, confirmado, estimativa e '
+               'restrição dos exemplos. Depois a mensagem nova registra 21 solicitações, ainda não '
+               'confirmadas. Explique qual número precisa ser limitado segundo o cartão, sem inventar regra '
+               'real de segurança ou decidir quem entra.',
+  'result': 'Mínimo12, limite20, confirmado15, estimativa18; anúncio não pode declarar20confirmados. No more '
+            'than two examples; at most twenty/up to twenty como limite. Com21pedidos há demanda maior que '
+            'limite, não21presenças confirmadas. Modelo: We have fifteen confirmed registrations and '
+            'estimate approximately eighteen attendees. The workshop needs at least twelve and can accept at '
+            'most twenty.',
+  'phon': 'Ênfase em AT LEAST versus AT MOST e valores; pedir ao ouvinte para restituir mínimo, máximo e '
+          'confirmado. Apoio escrito dos números permanece disponível para que linguagem, não cálculo, seja '
+          'o foco.',
+  'pitfall': 'Não transformar estimativa em intervalo probabilístico formal. At most e no more than podem '
+             'expressar o mesmo limite aqui, mas contraste de uso e registro continua contextual. A decisão '
+             'de admissão não é feita pela atividade.'},
+ {'id': 'LEX-B1-16',
+  'title': 'Reorganizar compromissos e relatar o que aconteceu',
+  'after': 'B1-05',
+  'words': ['postpone', 'bring forward', 'run late', 'in the meantime', 'eventually', 'overtime'],
+  'situation': 'Thread fictícia. A: Tuesday meeting moved to Thursday; Friday review moved to Wednesday of '
+               'the same week. The delivery is running thirty minutes late. B: team can prepare labels while '
+               'waiting; after two calls the delivery eventually arrives; two colleagues worked one hour '
+               'beyond their normal schedule, with no pay information. Escreva atualização de 90–120 '
+               'palavras com linha do tempo e separe revisão antecipada de reunião adiada. O destinatário '
+               'pergunta se atraso cancelou entrega e se overtime foi pago; responda apenas com os '
+               'registros. Suporte de datas ordinais se o estudante preferir datas numéricas.',
+  'result': 'Meeting postponed Tuesday→Thursday; review brought forward Friday→Wednesday; atraso30min; '
+            'etiquetas enquanto esperam; entrega por fim após2chamadas; duas pessoas com1hora extra cada, '
+            'remuneração desconhecida. Não somar e chamar two hours overtime por pessoa. Aceitar paráfrases '
+            'naturais e observar cada expressão separadamente.',
+  'phon': 'Contrastar forward/postponed com data original e nova; ouvinte recompõe ordem. Eventually é '
+          'resultado posterior, não frequência ocasional. Pausas devem separar estado de espera da '
+          'conclusão.',
+  'pitfall': 'Não presumir legislação, obrigação ou pagamento de hora extra. Objetivo é relato linguístico '
+             'fictício. Se há dificuldade com sequência, oferecer cartões ordenáveis antes da produção, '
+             'registrando apoio.'}]

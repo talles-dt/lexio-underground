@@ -78,3 +78,15 @@
 | LX-A2-D353B8 | **storm** — tempestade no relato | a storm. There was a storm last night. | Não inferir tipo ou gravidade sem dados. | productive |
 | LX-A2-CA019B | **forecast** — previsão meteorológica | the weather forecast. The forecast says it may rain. | Previsão não equivale a observação de tempo já ocorrido. | productive |
 | LX-A2-D6E51C | **wet** — molhado | wet clothes. My clothes are wet. | Descreve estado; causa precisa de contexto. | productive |
+| LX-A2-605981 | **once** — uma vez em determinada frequência | once a week. We meet once a week. | Once aqui é frequência; não o conectivo once = assim que. | productive |
+| LX-A2-7B2DD1 | **twice** — duas vezes em determinada frequência | twice a month. She calls twice a month. | Não significa two months; distinguir frequência e duração. | productive |
+| LX-A2-5A5D48 | **daily** — diariamente | a daily update; update daily. The notice is updated daily. | A atualização pode acontecer em horários diferentes; daily não fixa a hora. | productive |
+| LX-A2-8C75FB | **weekly** — semanalmente ou semanal | a weekly meeting; meet weekly. There is a weekly meeting. | Não significa todo dia útil; o dia da semana pode não estar declarado. | productive |
+| LX-A2-B7E6DB | **monthly** — mensalmente ou mensal | a monthly report. We send a monthly report. | Monthly não garante intervalo de exatamente 30 dias. | productive |
+| LX-A2-DFCFB5 | **every other day** — dia sim, dia não | every other day. We practise every other day. | Distinguir every day. Na tarefa, fornecer data de início. | productive |
+| LX-A2-17784A | **litre** — litro como unidade de volume | a litre of water; two litres. We need two litres of water. | Litre/liter são grafias britânica/americana; ambas aceitas. | productive |
+| LX-A2-CB137D | **kilogram** — quilograma como unidade de massa | a kilogram of rice. The bag contains one kilogram of rice. | Kilo é forma corrente; kg é símbolo, sem plural s. | productive |
+| LX-A2-0CDCF7 | **metre** — metro como unidade de comprimento | two metres long. The table is two metres long. | Metre/meter são grafias de variedades; unidade não é metro de transporte. | productive |
+| LX-A2-B3B4EA | **half** — metade de uma quantidade | half a litre; half of the group. Half of the ten cards are blue. | Plural halves; half aqui quantidade, não julgamento aproximado. | productive |
+| LX-A2-935802 | **quarter** — um quarto de uma quantidade | a quarter of the class. A quarter of the twelve chairs are red. | Quarter também aparece em horários e moedas; esses sentidos exigem contexto próprio. | productive |
+| LX-A2-AAFC94 | **dozen** — grupo de doze unidades | a dozen eggs; two dozen. We ordered a dozen cups. | Número exato: two dozen cups, sem s em dozen; dozens of indica quantidade vaga. | productive |

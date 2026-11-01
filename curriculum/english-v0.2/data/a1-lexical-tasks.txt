@@ -77,3 +77,21 @@ message|Diga ter mensagem de Jo com apoio.|I have a message from Jo.|Message rec
 send|Peça envio de mensagem: Please send a message to Jo.|Please send a message to Jo.|Pedido Please send comprova envio concluído?|Não.|Mensagem precisa ir para Lee, não Jo. Formule pedido curto.|Please send the message to Lee.
 open|Instrua abrir mensagem fictícia em papel.|Open the message, please.|Abrir mensagem equivale a responder?|Não.|Cartão traz mensagem fechada. Diga Open the message, please.|Open the message, please; não operar conta real.
 close|Peça fechar mensagem fictícia.|Close the message, please.|Close significa delete neste uso?|Não; fechar e apagar são ações diferentes.|Pessoa acabou leitura e quer fechar sem excluir. Instrua.|Close the message, please; sem instrução de exclusão.
+January|Calendário bilíngue January = janeiro. Quando começa o curso do exemplo?|Em janeiro.|Encontro em janeiro: complete in ___.|In January.|Cartão: Library opens in January. A biblioteca abre em março ou janeiro?|Janeiro.
+February|Agenda: English in February. Selecione fevereiro ou abril.|Fevereiro.|Traduza a etiqueta fevereiro usando February.|February.|Convite diz in February; colega marca January. Corrija com bloco.|It is in February, not January.
+March|Calendário: March = março. Em qual mês ocorre o encontro?|Março.|Complete reunião em março: We meet in ___.|March.|Aviso: The class is in March, not May. Qual mês vale?|Março.
+April|Associe April a abril ou agosto.|Abril.|Agenda em abril: complete in ___.|April.|A visita é in April; uma pessoa anotou August. Corrija o mês.|The visit is in April.
+May|Selecione maio ou março para May.|Maio.|Plano em maio: escreva in May ou in March.|In May.|Cartão: We meet in May. Diga o mês em português.|Maio.
+June|Curso termina in June. Junho ou julho?|Junho.|Escreva a etiqueta junho com apoio June.|June.|Mensagem June, not July. Em qual mês marcar a data?|Junho.
+July|Visita in July: selecione julho ou junho.|Julho.|Complete viagem em julho: in ___.|July.|Agenda diz July; colega lê June. Corrija com frase-modelo.|It is in July, not June.
+August|Associe August a agosto ou abril.|Agosto.|Cartão agosto: escreva August ou April.|August.|The room is available in August. Quando há disponibilidade?|Em agosto.
+September|Aviso: September = setembro. Quando abre a exposição?|Setembro.|Encontro em setembro: complete in ___.|September.|Reserva diz in September; outra diz in October. Qual corresponde a setembro?|In September.
+October|Selecione outubro ou novembro para October.|Outubro.|Agenda outubro: escreva October.|October.|Mensagem: October, not November. Qual mês deve constar no bilhete?|Outubro.
+November|Associe November a novembro ou setembro.|Novembro.|Complete em novembro: in ___.|November.|Two visits: October and November. Qual é em novembro?|A visita marcada November.
+December|Biblioteca closes in December. Em qual mês fecha?|Dezembro.|Encontro dezembro: escreva in December.|In December.|Agenda: opens in November, closes in December. Quando fecha?|Em dezembro; não novembro.
+minute|Chamada de ten minutes: duração de dez minutos ou dez horas?|Dez minutos.|Conversa dura five minutes. Quantos minutos?|Cinco.|Cartão duração 20 minutos: complete twenty ___.|Twenty minutes.
+hour|One hour: uma hora ou um dia?|Uma hora.|Aula two hours long. Duração em português?|Duas horas.|Filme dura one hour, começa às três. Ele dura três horas?|Não; dura uma hora. Três é o início.
+day|Three days a week: três dias ou três semanas?|Três dias por semana.|Viagem two days long. Duração em dias?|Dois dias.|Cartão: one day at school. Complete com day ou year.|One day.
+week|Two weeks: duas semanas ou dois meses?|Duas semanas.|Reserva one week: quantas semanas?|Uma.|Viagem dura three weeks. Copie só a duração em inglês.|Three weeks.
+month|Six months: seis meses ou seis minutos?|Seis meses.|Curso one month long. Qual a unidade?|Mês.|Estadia dura two months. A frase diz duas semanas?|Não; dois meses.
+year|Two years: dois anos ou dois dias?|Dois anos.|Programa one year long. Quanto dura?|Um ano.|Cartão: duration 3 years. Escreva three ___.|Three years.

@@ -8,7 +8,7 @@ Os números são candidatos recuperados pelas etiquetas existentes: um item pode
 |---|---:|---:|---:|---:|---:|---:|
 | Identidade, pessoas e relações | 14 | 10 | 6 | 11 | 12 | 6 |
 | Interação e reparo | 11 | 0 | 0 | 5 | 4 | 10 |
-| Números, medidas e tempo | 21 | 1 | 0 | 0 | 0 | 0 |
+| Números, medidas e tempo | 39 | 19 | 12 | 12 | 12 | 12 |
 | Rotina e cuidados pessoais | 0 | 12 | 0 | 0 | 0 | 0 |
 | Moradia e manutenção | 8 | 11 | 0 | 0 | 6 | 4 |
 | Alimentação e preparo | 9 | 4 | 4 | 0 | 6 | 0 |

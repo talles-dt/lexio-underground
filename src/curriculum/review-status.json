@@ -1,0 +1,3430 @@
+{
+  "ACCEPTANCE.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "EDITORIAL-APPROVAL.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "PILOT.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "README.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "REUSE.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "SOURCES.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "assessments/a1/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "assessments/a1/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "assessments/a1/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "assessments/a2/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "assessments/a2/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "assessments/a2/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "assessments/b1/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "assessments/b1/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "assessments/b1/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "assessments/pre-a1/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "assessments/pre-a1/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "assessments/pre-a1/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "audio/README.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "inventory/SCOPE-DECISIONS.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "inventory/grammar-a1.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "inventory/grammar-a2.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "inventory/grammar-b1.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "inventory/grammar-b2.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "inventory/grammar-c1.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "inventory/grammar-pre-a1.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "inventory/lexicon-a1.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "inventory/lexicon-a2.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "inventory/lexicon-b1.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "inventory/lexicon-b2.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "inventory/lexicon-c1.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "inventory/lexicon-pre-a1.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/G-A1-07EB92.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A1-1A8819.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A1-3216C0.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A1-376948.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A1-38A6DD.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A1-5F4B46.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A1-6659C4.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A1-6E12E9.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A1-75B4BC.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A1-7DDCE4.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A1-7F431B.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A1-8081E5.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A1-820D23.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A1-8F8A66.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A1-9F9444.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A1-BA335B.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A1-BBE96D.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A1-DB81DA.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A1-DD58DD.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A1-EEE6A7.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A1-EFB12C.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A1-F7592E.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A1-FA96AA.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A1-FFA2AE.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A2-09D4B1.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A2-12B01E.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A2-1AD1FA.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A2-1DCF1D.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A2-27F08A.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A2-298A51.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A2-42C5AD.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A2-4389E8.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A2-56376A.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A2-58FB58.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A2-5BCA02.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A2-6CC455.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A2-7D3AAC.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A2-91C197.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A2-951A00.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A2-A86DE3.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A2-A927A0.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A2-B38511.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A2-B98CB1.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A2-BCE4D7.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A2-BD94A7.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A2-C74D3D.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A2-C9B78B.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-A2-EB541B.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B1-0EFE72.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B1-1F6EA4.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B1-346DE6.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B1-444515.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B1-51E602.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B1-55E60C.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B1-59209A.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B1-5C8795.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B1-809179.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B1-8D148C.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B1-9F266F.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B1-BA0450.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B1-C9900A.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B1-CB6318.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B1-D555F8.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B1-D7F097.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B1-E3BAF4.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B1-E5D043.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B1-EAF150.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B1-EDD761.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B1-F27DD6.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B1-F4C705.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B1-FC3645.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B1-FDB2DE.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B2-080F1E.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B2-11868F.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B2-1D7DC5.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B2-225290.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B2-411519.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B2-450880.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B2-4A2E30.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B2-5EAAE6.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B2-62B6F0.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B2-6CDE3F.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B2-77255F.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B2-7C7649.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B2-7FC68E.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B2-87A6C7.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B2-A65F73.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B2-BCE716.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B2-CA6335.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B2-DA2B8B.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B2-E6D32C.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B2-E86001.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B2-E8FF04.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B2-F507B9.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B2-F91BAA.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-B2-FC151E.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-C1-0A9D5D.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-C1-188DE1.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-C1-295764.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-C1-365F43.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-C1-3A2067.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-C1-427506.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-C1-4872CF.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-C1-4C3A1A.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-C1-4ECC0B.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-C1-61E2F1.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-C1-65AA58.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-C1-887F3D.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-C1-8A14FE.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-C1-96C05A.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-C1-A136E7.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-C1-AA1AE7.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-C1-B2ED9D.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-C1-BD4E32.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-C1-C28394.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-C1-C42442.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-C1-C819DA.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-C1-EF68DD.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-C1-F3558C.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-C1-F7504F.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-PRE-A1-02475A.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-PRE-A1-1744E2.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-PRE-A1-217665.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-PRE-A1-50812E.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-PRE-A1-69E37E.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-PRE-A1-89D698.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-PRE-A1-AC550F.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-PRE-A1-BB85BC.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-PRE-A1-E1C4C3.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-PRE-A1-E5E645.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-PRE-A1-FCF7D6.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/G-PRE-A1-FDD0E8.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a1/A1-01/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a1/A1-01/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a1/A1-01/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a1/A1-02/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a1/A1-02/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a1/A1-02/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a1/A1-03/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a1/A1-03/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a1/A1-03/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a1/A1-04/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a1/A1-04/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a1/A1-04/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a1/A1-05/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a1/A1-05/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a1/A1-05/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a1/A1-06/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a1/A1-06/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a1/A1-06/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a1/A1-07/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a1/A1-07/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a1/A1-07/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a1/A1-08/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a1/A1-08/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a1/A1-08/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a2/A2-01/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a2/A2-01/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a2/A2-01/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a2/A2-02/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a2/A2-02/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a2/A2-02/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a2/A2-03/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a2/A2-03/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a2/A2-03/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a2/A2-04/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a2/A2-04/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a2/A2-04/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a2/A2-05/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a2/A2-05/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a2/A2-05/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a2/A2-06/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a2/A2-06/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a2/A2-06/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a2/A2-07/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a2/A2-07/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/a2/A2-07/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b1/B1-01/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b1/B1-01/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b1/B1-01/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b1/B1-02/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b1/B1-02/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b1/B1-02/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b1/B1-03/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b1/B1-03/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b1/B1-03/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b1/B1-04/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b1/B1-04/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b1/B1-04/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b1/B1-05/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b1/B1-05/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b1/B1-05/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b1/B1-06/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b1/B1-06/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b1/B1-06/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b1/B1-07/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b1/B1-07/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b1/B1-07/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b1/B1-08/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b1/B1-08/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b1/B1-08/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b2/B2-01/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b2/B2-01/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b2/B2-01/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b2/B2-02/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b2/B2-02/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b2/B2-02/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b2/B2-03/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b2/B2-03/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b2/B2-03/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b2/B2-04/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b2/B2-04/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b2/B2-04/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b2/B2-05/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b2/B2-05/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b2/B2-05/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b2/B2-06/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b2/B2-06/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b2/B2-06/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b2/B2-07/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b2/B2-07/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b2/B2-07/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b2/B2-08/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b2/B2-08/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b2/B2-08/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b2/review-01/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b2/review-01/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b2/review-01/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b2/review-02/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b2/review-02/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/b2/review-02/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/foundation/FND-01/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/foundation/FND-01/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/foundation/FND-01/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/foundation/FND-02/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/foundation/FND-02/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/foundation/FND-02/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/foundation/FND-03/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/foundation/FND-03/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/foundation/FND-03/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/foundation/FND-04/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/foundation/FND-04/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/foundation/FND-04/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/foundation/FND-05/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/foundation/FND-05/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/foundation/FND-05/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/foundation/FND-06/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/foundation/FND-06/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/foundation/FND-06/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-01/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-01/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-01/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-01/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-01/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-02/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-02/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-02/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-02/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-02/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-03/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-03/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-03/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-03/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-03/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-04/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-04/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-04/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-04/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-04/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-05/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-05/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-05/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-05/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-05/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-06/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-06/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-06/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-06/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-06/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-07/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-07/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-07/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-07/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-07/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-08/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-08/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-08/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-08/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-08/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-09/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-09/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-09/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-09/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-09/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-10/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-10/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-10/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-10/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-10/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-11/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-11/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-11/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-11/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-11/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-12/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-12/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-12/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-12/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-12/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-13/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-13/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-13/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-13/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-13/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-14/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-14/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-14/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-14/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-14/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A1-15/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A1-15/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A1-15/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A1-15/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A1-15/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A1-16/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A1-16/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A1-16/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A1-16/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A1-16/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A1-17/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A1-17/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A1-17/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A1-17/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A1-17/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A2-01/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-01/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-01/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-01/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-01/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-02/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-02/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-02/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-02/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-02/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-03/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-03/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-03/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-03/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-03/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-04/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-04/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-04/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-04/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-04/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-05/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-05/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-05/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-05/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-05/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-06/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-06/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-06/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-06/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-06/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-07/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-07/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-07/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-07/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-07/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-08/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-08/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-08/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-08/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-08/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-09/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-09/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-09/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-09/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-09/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-10/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-10/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-10/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-10/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-10/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-11/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-11/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-11/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-11/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-11/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-12/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-12/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-12/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-12/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-12/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-13/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-13/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-13/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-13/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-13/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-14/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-14/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-14/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-14/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-14/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-A2-15/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A2-15/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A2-15/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A2-15/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A2-15/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A2-16/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A2-16/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A2-16/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A2-16/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A2-16/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B1-01/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-01/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-01/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-01/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-01/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-02/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-02/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-02/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-02/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-02/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-03/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-03/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-03/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-03/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-03/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-04/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-04/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-04/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-04/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-04/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-05/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-05/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-05/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-05/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-05/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-06/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-06/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-06/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-06/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-06/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-07/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-07/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-07/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-07/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-07/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-08/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-08/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-08/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-08/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-08/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-09/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-09/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-09/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-09/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-09/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-10/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-10/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-10/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-10/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-10/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-11/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-11/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-11/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-11/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-11/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-12/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-12/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-12/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-12/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-12/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-13/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-13/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-13/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-13/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-13/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-14/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-14/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-14/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-14/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-14/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B1-15/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B1-15/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B1-15/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B1-15/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B1-15/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B1-16/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B1-16/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B1-16/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B1-16/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B1-16/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B2-01/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-01/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-01/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-01/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-01/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-02/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-02/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-02/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-02/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-02/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-03/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-03/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-03/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-03/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-03/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-04/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-04/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-04/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-04/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-04/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-05/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-05/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-05/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-05/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-05/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-06/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-06/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-06/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-06/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-06/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-07/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-07/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-07/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-07/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-07/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-08/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-08/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-08/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-08/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-08/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-09/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-09/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-09/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-09/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-09/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-10/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-10/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-10/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-10/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-10/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-11/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-11/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-11/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-11/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-11/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-12/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-12/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-12/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-12/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-12/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-13/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-13/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-13/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-13/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-13/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-14/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-14/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-14/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-14/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-14/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-15/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-15/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-15/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-15/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-15/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-16/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-16/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-16/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-16/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-16/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-B2-17/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B2-17/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B2-17/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B2-17/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B2-17/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B2-18/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B2-18/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B2-18/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B2-18/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B2-18/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-C1-01/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-01/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-01/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-01/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-01/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-02/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-02/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-02/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-02/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-02/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-03/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-03/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-03/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-03/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-03/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-04/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-04/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-04/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-04/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-04/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-05/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-05/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-05/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-05/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-05/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-06/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-06/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-06/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-06/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-06/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-07/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-07/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-07/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-07/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-07/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-08/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-08/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-08/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-08/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-08/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-09/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-09/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-09/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-09/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-09/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-10/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-10/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-10/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-10/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-10/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-C1-11/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-C1-11/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-C1-11/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-C1-11/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-C1-11/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-C1-12/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-C1-12/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-C1-12/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-C1-12/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-C1-12/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-01/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-01/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-01/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-01/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-01/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-02/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-02/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-02/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-02/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-02/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-03/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-03/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-03/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-03/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-03/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-04/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-04/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-04/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-04/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-04/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-05/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-05/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-05/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-05/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-05/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-06/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-06/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-06/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-06/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-06/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-07/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-07/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-07/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-07/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-07/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-08/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-08/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-08/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-08/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-08/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-09/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-09/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-09/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-09/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-09/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-10/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-10/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-10/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-10/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-10/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-11/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-11/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-11/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-11/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-11/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-12/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-12/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-12/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-12/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-12/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-13/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-13/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-13/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-13/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-13/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-14/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-14/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-14/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-14/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-14/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-15/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-15/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-15/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-15/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-15/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-16/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-16/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-16/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-16/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-16/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-17/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-17/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-17/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-17/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-17/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-18/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-18/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-18/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-18/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-18/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-19/assessment.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-19/feedback.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-19/review.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-19/student.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-19/teacher.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "lessons/lexical/LEX-PRE-20/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-20/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-20/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-20/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-20/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-21/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-21/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-21/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-21/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-21/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-22/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-22/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-22/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-22/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-22/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "reports/B2-GRAMMAR-CLOSURE.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "reports/COVERAGE.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "reports/EDITORIAL-2026-10-28.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "reports/EDITORIAL-A1-A2.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "reports/EDITORIAL-A2-B1.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "reports/EDITORIAL-B1-B2.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "reports/EXPANSION-COMPLETION-AUDIT.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "reports/LEXICAL-C1-NUCLEUS.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "reports/LEXICAL-EXPANSION-A1.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "reports/LEXICAL-EXPANSION-A2.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "reports/LEXICAL-EXPANSION-B1.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "reports/LEXICAL-EXPANSION-B2.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "reports/LEXICAL-EXPANSION-PRE-A1.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "reports/LEXICAL-IMPLEMENTATION-DAILY-DOMAINS.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "reports/LEXICAL-IMPLEMENTATION-EMOTIONS.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "reports/LEXICAL-IMPLEMENTATION-QUANTITY-TIME.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "reports/LEXICAL-SCOPE-MATRIX.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "units/LAB-A1-DECISIONS-01.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-A1-DISCOURSE-01.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-A1-REFERENCE-01.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-A1-REFERENCE-02.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-A1-REFERENCE-03.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-A1-SENTENCE-01.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-A1-SENTENCE-02.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-A1-TIME-01.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-A1-TIME-02.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-A1-TIME-03.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-A2-DECISIONS-01.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-A2-PATTERNS-01.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-A2-PATTERNS-02.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-A2-REFERENCE-01.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-A2-REFERENCE-02.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-A2-SENTENCE-01.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-A2-TIME-01.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-A2-TIME-02.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-A2-TIME-03.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-B1-DECISIONS-01.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-B1-DECISIONS-02.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-B1-DISCOURSE-01.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-B1-PATTERNS-01.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-B1-PATTERNS-02.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-B1-REFERENCE-01.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-B1-SENTENCE-01.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-B1-SENTENCE-02.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-B1-TIME-01.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-B1-TIME-02.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-B2-DECISIONS-01.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-B2-DECISIONS-02.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-B2-DISCOURSE-01.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-B2-DISCOURSE-02.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-B2-PATTERNS-01.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-B2-PATTERNS-02.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-B2-REFERENCE-01.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-B2-SENTENCE-01.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-B2-TIME-01.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-B2-TIME-02.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-C1-DECISIONS-01.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-C1-DISCOURSE-01.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-C1-DISCOURSE-02.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-C1-DISCOURSE-03.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-C1-DISCOURSE-04.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-C1-PATTERNS-01.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-C1-REFERENCE-01.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-C1-SENTENCE-01.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-C1-SENTENCE-02.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-C1-TIME-01.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-PRE-A1-REFERENCE-01.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-PRE-A1-REFERENCE-02.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-PRE-A1-SENTENCE-01.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-PRE-A1-SENTENCE-02.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  },
+  "units/LAB-PRE-A1-TIME-01.md": {
+    "status": "reviewed_by_project_owner",
+    "date": "2026-10-31"
+  }
+}

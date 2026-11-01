@@ -16,7 +16,7 @@ Cada pacote abre o guia do professor e o retorno comentado. A [fila de áudio](a
 
 ## Expansão lexical pré-A1
 
-O pré-A1 tem agora **94 entradas em 19 sequências**: 40 entradas novas ampliam números, pedidos de reparo, objetos, alimentos, dias, cores, relações e localização. [Abrir a expansão e a ordem de inserção](reports/LEXICAL-EXPANSION-PRE-A1.md). Integre cada sequência após a unidade FND indicada; faça a retomada no encontro seguinte e a avaliação em uma sessão posterior. Isso não encerra o inventário lexical necessário ao nível.
+O pré-A1 tem agora **112 entradas em 22 sequências**: 40 entradas novas ampliam números, pedidos de reparo, objetos, alimentos, dias, cores, relações e localização. [Abrir a expansão e a ordem de inserção](reports/LEXICAL-EXPANSION-PRE-A1.md). Integre cada sequência após a unidade FND indicada; faça a retomada no encontro seguinte e a avaliação em uma sessão posterior. Isso não encerra o inventário lexical necessário ao nível.
 
 ## Primeiro bloco A1
 
@@ -34,7 +34,7 @@ Cada unidade tem ensino, leitura, roteiro de escuta, prática, situação nova, 
 
 ## Núcleo lexical A1
 
-O A1 tem agora **78 entradas em 14 sequências**. As 24 novas entradas ampliam rotina, moradia, roupas/compras e transporte, retomando a base pré-A1 em situações mais abertas. [Abrir material e progressão](reports/LEXICAL-EXPANSION-A1.md). Os sentidos de free como gratuito e disponível permanecem separados. Isso não encerra o vocabulário do nível.
+O A1 tem agora **96 entradas em 17 sequências**. As 24 novas entradas ampliam rotina, moradia, roupas/compras e transporte, retomando a base pré-A1 em situações mais abertas. [Abrir material e progressão](reports/LEXICAL-EXPANSION-A1.md). Os sentidos de free como gratuito e disponível permanecem separados. Isso não encerra o vocabulário do nível.
 
 ## Primeiro bloco A2
 
@@ -51,7 +51,7 @@ Os cenários, valores e procedimentos são fictícios. Guias docentes, respostas
 
 ## Núcleo lexical A2
 
-O A2 tem agora **74 entradas em 14 sequências**. As 20 novas entradas ampliam hospedagem, relato de sensações, atendimento e programas culturais. [Abrir material e progressão](reports/LEXICAL-EXPANSION-A2.md). Ensino, retomada, avaliação e respostas estão separados; o vocabulário do nível ainda não está completo.
+O A2 tem agora **86 entradas em 16 sequências**. As 20 novas entradas ampliam hospedagem, relato de sensações, atendimento e programas culturais. [Abrir material e progressão](reports/LEXICAL-EXPANSION-A2.md). Ensino, retomada, avaliação e respostas estão separados; o vocabulário do nível ainda não está completo.
 
 ## Primeiro bloco B1
 
@@ -69,7 +69,7 @@ Oito unidades articulam relatos, hipóteses, mensagens, decisões e mediação. 
 
 ## Núcleo lexical B1
 
-O B1 tem agora **74 entradas em 14 sequências**. Quatro pacotes novos ampliam relações, trabalho, viagens e consumo; reliable retoma a forma A2 em contexto interpessoal, sem contar como palavra inédita. [Abrir material e progressão](reports/LEXICAL-EXPANSION-B1.md). Prática, retomada, avaliação e respostas permanecem separadas.
+O B1 tem agora **86 entradas em 16 sequências**. Quatro pacotes novos ampliam relações, trabalho, viagens e consumo; reliable retoma a forma A2 em contexto interpessoal, sem contar como palavra inédita. [Abrir material e progressão](reports/LEXICAL-EXPANSION-B1.md). Prática, retomada, avaliação e respostas permanecem separadas.
 
 ## Bloco B2 em expansão
 
@@ -88,13 +88,13 @@ As oito unidades contemplam as **24 famílias gramaticais previstas no inventár
 
 ## Expansão lexical B2
 
-O B2 tem agora **72 entradas em 16 sequências**, com tarefas próprias de ensino, uso, retomada e avaliação. São as 40 entradas anteriores desenvolvidas e 18 novas em relações pessoais, alimentação e moradia. Cada pacote inclui material autônomo, condução docente e respostas comentadas. [Abrir as sequências e os limites da expansão](reports/LEXICAL-EXPANSION-B2.md).
+O B2 tem agora **84 entradas em 18 sequências**, com tarefas próprias de ensino, uso, retomada e avaliação. São as 40 entradas anteriores desenvolvidas e 18 novas em relações pessoais, alimentação e moradia. Cada pacote inclui material autônomo, condução docente e respostas comentadas. [Abrir as sequências e os limites da expansão](reports/LEXICAL-EXPANSION-B2.md).
 
 ## Cobertura lexical dos seis níveis
 
 Escopo confirmado: pré-A1, A1, A2, B1, B2 e C1. C2 está excluído. A [matriz de escopo lexical](reports/LEXICAL-SCOPE-MATRIX.md) organiza 17 domínios por nível e diferencia candidatos de inventário de suficiência pedagógica. As 102 células ainda precisam de revisão de alcance, expansão e validação; nenhuma está declarada completa.
 
-O [núcleo C1](reports/LEXICAL-C1-NUCLEUS.md) tem agora 54 entradas desenvolvidas em dez sequências, incluindo o novo pacote de emoções e interpretação. Os seis níveis somam 446 registros curriculares e 87 sequências; repetição entre níveis não equivale a palavras distintas. **Todas as entradas existentes têm atividades; isso não significa que todo o vocabulário necessário já esteja inventariado.**
+O [núcleo C1](reports/LEXICAL-C1-NUCLEUS.md) tem agora 66 entradas desenvolvidas em doze sequências, incluindo o novo pacote de emoções e interpretação. Os seis níveis somam 530 registros curriculares e 101 sequências; repetição entre níveis não equivale a palavras distintas. **Todas as entradas existentes têm atividades; isso não significa que todo o vocabulário necessário já esteja inventariado.**
 
 ## Novo material transversal
 
@@ -106,10 +106,10 @@ A [nova leva de domínios cotidianos e leitura crítica](reports/LEXICAL-IMPLEME
 
 | Frente | Material disponível | O que impede o fechamento |
 |---|---|---|
-| Inventário | 132 alvos gramaticais e inventário inicial ampliado para 446 entradas lexicais | Subfamílias e extensão lexical ainda incompletas; níveis propostos editorialmente |
+| Inventário | 132 alvos gramaticais e inventário inicial ampliado para 530 entradas lexicais | Subfamílias e extensão lexical ainda incompletas; níveis propostos editorialmente |
 | Rastreabilidade | Registro por item de introdução, prática, uso, revisão e avaliação | Todos os itens atuais têm referências; o inventário continua incompleto por domínio; protocolos gramaticais não equivalem a testes independentes |
 | Redimensionamento | 54 laboratórios gramaticais suplementares | Não são 54 unidades comunicativas completas; número final depende da cobertura |
-| Autoria | Seis pacotes pré-A1, 87 sequências lexicais, oito unidades A1, sete A2, oito B1, oito B2 e quatro amostras avaliativas | Expansão lexical e comunicativa de A1–C1 e suficiência dos blocos ainda pendentes |
+| Autoria | Seis pacotes pré-A1, 101 sequências lexicais, oito unidades A1, sete A2, oito B1, oito B2 e quatro amostras avaliativas | Expansão lexical e comunicativa de A1–C1 e suficiência dos blocos ainda pendentes |
 | Validação | Verificador de integridade e protocolo de pilotagem | Revisão independente, aplicação real e aprovação docente não realizadas |
 
 Leia [critérios de aceitação](ACCEPTANCE.md), [fontes e limites](SOURCES.md), [lacunas de escopo](inventory/SCOPE-DECISIONS.md), [reaproveitamento do protótipo](REUSE.md) e [pilotagem](PILOT.md).
@@ -132,3 +132,7 @@ Pulse recupera e revisa; Palácio organiza expressões; Shadow trabalha escuta e
 As referências dos núcleos lexicais pré-A1, A1, A2, B1 e B2, o complemento avaliativo de objetos e os primeiros blocos A1/A2/B1 foram escritos. Prosseguir com expansão de domínios lexicais, ampliação lexical C1 por domínio, blocos comunicativos adicionais A1/A2/B1, continuação B2 e autoria C1. Produzir apoios sonoros revisados e observar aplicação nas duas modalidades para ajustar extensão e carga. O inventário atual não constitui cobertura exaustiva; o [relatório de cobertura](reports/COVERAGE.md) discrimina as lacunas.
 
 O [registro da expansão lexical](reports/LEXICAL-EXPANSION-B2.md) e o [registro gramatical](reports/EDITORIAL-B1-B2.md) separam entregas e pendências. O protótipo permanece preservado. Nenhuma alteração na aplicação ou publicação acompanha estes materiais. [Relatório de integridade](reports/integrity.json) verifica arquivos, vínculos e referências; não valida pedagogia.
+
+## Números, medidas e tempo — expansão de 01/11/2026
+
+[84 novas entradas em 14 sequências](reports/LEXICAL-IMPLEMENTATION-QUANTITY-TIME.md), com tarefas próprias nos seis níveis. A aprovação editorial de 31/10 refere-se à entrega anterior; novos materiais estão identificados por data de autoria.

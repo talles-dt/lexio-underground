@@ -100,3 +100,57 @@ GROUPS += [{'id': 'LEX-A1-14',
   'pitfall': 'Nenhuma conta real é aberta ou mensagem real enviada. Não exigir domínio de interface '
              'tecnológica; cenário de papel verifica língua. Formas de passado não são necessárias para '
              'executar comandos.'}]
+
+GROUPS += [{'id': 'LEX-A1-15',
+  'title': 'Combinar atividades de janeiro a junho',
+  'after': 'A1-08',
+  'words': ['January', 'February', 'March', 'April', 'May', 'June'],
+  'situation': 'Calendário fictício com seis meses e tradução. Cartão A: English class starts in January and '
+               'ends in June; book club in March; room closed in May. Cartão B: art class in February; '
+               'library visit in April; book club note says May. Apoios: starts = começa, ends = termina, '
+               'closed = fechado. Troquem informação com When is the book club? / In March. Reparem a nota '
+               'incorreta usando March, not May. O destinatário monta quadro mês/atividade e diferencia fim '
+               'do curso de fechamento da sala.',
+  'result': 'January início do curso; February aula de arte; March clube do livro; April visita; May sala '
+            'fechada; June fim do curso. Não inferir que o curso para durante todo maio: falta informação '
+            'sobre outro local. Pergunta aceitável: Is there another room in May?',
+  'phon': 'Confirmar May/March e June quando o colega não entendeu. Datas permanecem apenas por mês, sem '
+          'exigir ordinais ainda não ensinados. Pode haver leitura oral por pessoa de apoio; texto visto '
+          'antes limita evidência de escuta.',
+  'pitfall': 'Meses são rótulos culturais de calendário, não previsão de clima ou hábitos. Apresentar três '
+             'meses por vez, reutilizar o quadro e registrar apoio. Não exigir datas de nascimento.'},
+ {'id': 'LEX-A1-16',
+  'title': 'Reparar uma agenda de julho a dezembro',
+  'after': 'A1-08',
+  'words': ['July', 'August', 'September', 'October', 'November', 'December'],
+  'situation': 'A recebe: course starts in July; exhibition in September; course ends in November. B recebe: '
+               'new room in August; class visit in October; library closed in December. Quadro traduz '
+               'exhibition/exposição e os seis meses. Cada participante faz três perguntas When...?; depois '
+               'verifica um recado que trocou July por June e October por November. Modelo I have July. Is '
+               'that right? = Tenho julho. Está certo? Devolva uma agenda conjunta, preservando eventos '
+               'diferentes que ocorrem em meses distintos.',
+  'result': 'July início, August nova sala, September exposição, October visita, November fim do curso, '
+            'December fechamento da biblioteca. Corrigir June para July; visita não é no mês de '
+            'encerramento. Não completar datas exatas ausentes.',
+  'phon': 'June/July, September/December e October/November em contexto de atividade. A restituição deve '
+          'incluir evento e mês, não só repetir a última palavra ouvida.',
+  'pitfall': 'Não associar automaticamente dezembro a férias ou a inverno. O quadro é consulta permitida '
+             'durante aprendizagem; na avaliação registrar se foi usado. Integração com janeiro–junho pode '
+             'ocorrer em outra sessão, sem apresentação de doze formas de uma só vez.'},
+ {'id': 'LEX-A1-17',
+  'title': 'Separar duração e horário em uma agenda',
+  'after': 'A1-02',
+  'words': ['minute', 'hour', 'day', 'week', 'month', 'year'],
+  'situation': 'Cartão A: Call: starts at ten, lasts five minutes. Class: starts at two, lasts one hour. '
+               'Visit: three days. Cartão B: Course: two weeks. Project: six months. Programme: one year. '
+               'Apoios lasts = dura, programme = programa de estudo, at two = às duas. Perguntem How long? = '
+               'Quanto tempo? e What time? = A que horas? Complete tabela com início e duração; quando não '
+               'existe horário inicial, escreva not given = não informado. Compare one hour com at two para '
+               'impedir troca de início e duração.',
+  'result': 'Chamada início 10h/duração 5min; aula início 2h/duração 1h; visita 3dias, curso 2semanas, '
+            'projeto6meses, programa1ano, sem horários iniciais informados. Não converter mês '
+            'automaticamente em trinta dias nem deduzir datas finais sem calendário e início.',
+  'phon': 'O ouvinte repete número e unidade: five MINUTES, one HOUR. Aceitar hour com h não pronunciado e '
+          'an hour; corrigir apenas quando troca de unidade altera a informação.',
+  'pitfall': 'Apoiar numerais com quadro. Não exigir cálculo de datas ou domínio gramatical de duração até o '
+             'presente. O exemplo de year é um programa fictício, não relato biográfico.'}]

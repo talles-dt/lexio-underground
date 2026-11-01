@@ -78,3 +78,43 @@ GROUPS += [{'id': 'LEX-B2-16',
   'pitfall': 'Os boletins são ficção de ensino, não aconselhamento ambiental ou alerta real. Nenhuma '
              'espécie, causa ou estimativa climática externa foi inventada. Nomear fenômeno não comprova seu '
              'mecanismo.'}]
+
+GROUPS += [{'id': 'LEX-B2-17',
+  'title': 'Comparar razões, proporções e médias com base explícita',
+  'after': 'B2-06',
+  'words': ['ratio', 'proportion', 'fraction', 'double', 'halve', 'average'],
+  'situation': 'Dois conjuntos independentes de dados fictícios. A: workshop cards, 12 blue and 6 red; '
+               'visitors yesterday24/today48. B: two queues lasted10/30min; a procedure changed from20 '
+               'to10min; only3 of12 archived pages were checked. Redija explicação de100–140palavras para '
+               'leitor geral, usando blue:red ratio, share of checked pages, doubled visitors, halved '
+               'procedure time and mean queue time. Forneça cálculo como apoio: 12:6=2:1;3/12=1/4; '
+               'média(10+30)/2=20. Depois responda se média20 implica que ambas filas duraram20 e se12:6 é '
+               'proporção de azuis no total.',
+  'result': 'Razão azul:vermelho2:1; proporção azul no total12/18=2/3, não2:1. Visitantes dobram24→48; '
+            'procedimento reduzmetade20→10; médiafilas20 comobservações10e30; arquivos verificados1/4. '
+            'Apenas esse conjunto fundamenta conclusão. Se cálculo for fornecido, avaliar qualidade da '
+            'explicação e não habilidade matemática.',
+  'phon': 'Pronunciar two to one, one quarter e from twenty to ten dentro de frases. O parceiro registra '
+          'base e unidade. Pergunta de confirmação deve focalizar denominador ou ordem da razão.',
+  'pitfall': 'Average está definido como média aritmética, não toda medida de tendência central. Dobrar '
+             'equivale a aumento de100% sobre base inicial; não converter em200% de aumento. Não inferir '
+             'causa ou representatividade.'},
+ {'id': 'LEX-B2-18',
+  'title': 'Descrever tendências sem apagar oscilações',
+  'after': 'B2-06',
+  'words': ['peak', 'plateau', 'fluctuate', 'steadily', 'roughly', 'overall'],
+  'situation': 'Cartão A: six weekly visits, W1=10,W2=20,W3=30,W4=30,W5=25,W6=40. Cartão B: four session '
+               'lengths=8,12,9,11minutes; observer estimates roughly30 people at another event, not counted. '
+               'Produza legenda de gráfico e resumo oral ou escrito. Aumento inicial regular, breve '
+               'estabilidade, queda e pico devem coexistir na síntese overall. Não misture visitantes com '
+               'minutos nem a estimativa de outro evento. Pergunta inédita do destinatário: Will next week '
+               'reach50? Responda com limite da fonte.',
+  'result': 'W1–W3 cresce steadily;W3–W4 breveplateau30;W5queda25;W6peak40 no período;overall10→40 comqueda '
+            'intermediária. Duraçõesfluctuate8–12min; roughly30 é outra estimativa. Dados não autorizam '
+            'prever50. Modelo: Overall, visits increased, though the pattern was not steady throughout the '
+            'six weeks.',
+  'phon': 'Pausas entre tendência geral e ressalva; enfatizar despite/although se usados. Destinatário deve '
+          'identificar semana do pico e reconhecer incerteza da estimativa, não apenas repetir verbos.',
+  'pitfall': 'Não exigir desenho visual: tabela textual equivalente. Plateau de dois pontos é descrição '
+             'breve, não estado permanente. Evitar jargão estatístico sem suporte e manter escopo da '
+             'amostra.'}]

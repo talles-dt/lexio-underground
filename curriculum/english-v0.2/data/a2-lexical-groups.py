@@ -95,3 +95,42 @@ GROUPS += [{'id': 'LEX-A2-14',
           'escrever síntese reduz confusão temporal.',
   'pitfall': 'Cenário não fornece orientação de segurança meteorológica nem pede previsão real. Wet não '
              'prova chuva; encontro interno confirmado não implica avaliação de segurança de todo trajeto.'}]
+
+GROUPS += [{'id': 'LEX-A2-15',
+  'title': 'Ler uma rotina de frequências sem confundir duração',
+  'after': 'A2-01',
+  'words': ['once', 'twice', 'daily', 'weekly', 'monthly', 'every other day'],
+  'situation': 'A tem calendário da biblioteca: doors checked daily; newsletter monthly; book club once a '
+               'week, on Wednesday. B tem calendário de uma turma: lessons twice a week, Tuesday and '
+               'Thursday; planning meeting weekly on Monday; short reading practice every other day starting '
+               'Monday. Apoios doors checked = portas conferidas, newsletter = boletim. Monte uma semana '
+               'segunda–domingo da leitura (segunda, quarta, sexta, domingo), separada dos encontros. '
+               'Explique ao destinatário por que twice a week não significa curso de duas semanas. Uma '
+               'pergunta How long is the course? não pode ser respondida pelos cartões.',
+  'result': 'Portas diariamente; boletim mensal sem dia informado; clube uma vez quarta; aulas terça/quinta; '
+            'planejamento segunda; leitura segunda/quarta/sexta/domingo. A duração total do curso não está '
+            'declarada. Modelo: We have lessons twice a week, but the timetable does not say how long the '
+            'course lasts.',
+  'phon': 'Once/twice com unidade de frequência; contraste every day/every other day em duas frases '
+          'completas. Não pontuar somente pronúncia da palavra solta. Registrar texto escrito versus voz '
+          'usada.',
+  'pitfall': 'Calendário serve de apoio; não cobrar aritmética mental nem rotina pessoal. Monthly não vira '
+             'automaticamente a cada trinta dias. Atividades de revisão devem ocorrer em outra sessão com '
+             'novo início.'},
+ {'id': 'LEX-A2-16',
+  'title': 'Conferir medidas e porções em listas',
+  'after': 'A2-05',
+  'words': ['litre', 'kilogram', 'metre', 'half', 'quarter', 'dozen'],
+  'situation': 'Encontro fictício, só planejamento em papel. A tem lista: two litres of water; one kilogram '
+               'of rice; a dozen cups. B tem sala: table two metres long; eight blue cards, half for each '
+               'pair; twelve red cards, a quarter for the door sign. Apoios rice/arroz, sign/placa, cada par '
+               'recebe metade dos oito azuis. Troquem quantidades e unidades. Um recado troca two litres of '
+               'water por two metres of water: expliquem a correção. Calculadora ou cartões já divididos são '
+               'permitidos; ninguém precisa cozinhar ou medir equipamento real.',
+  'result': 'Água 2L; arroz1kg; copos12; mesa2m; cada par4azuis; placa3vermelhos. Modelo: We need two litres '
+            'of water, not two metres. A quarter of the twelve red cards is three. Se numeracia bloquear, '
+            'fornecer 4 e3 e avaliar a frase com unidade/fração.',
+  'phon': 'Recuperar número e unidade em conjunto. Aceitar litre/liter, metre/meter, kilo/kilogram. Apoio '
+          'oral deve evitar que o aprendiz veja a lista reservada antes de ouvir.',
+  'pitfall': 'Isto não é instrução nutricional nem receita. Half e quarter funcionam em outras construções a '
+             'ensinar posteriormente; horários quarter past não são cobrados aqui.'}]

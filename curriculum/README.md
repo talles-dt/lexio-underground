@@ -10,3 +10,7 @@ Snapshot do vault `07-curriculum`, preservado para versionamento e publicação.
 
 Verificação: `python3 curriculum/english-v0.2/editorial/validate.py`.
 Pacote público: `/curriculum/lexio-english-2026-10-31.zip`; integridade: `/curriculum/release.json`.
+
+## Expansão de 01/11/2026
+
+530 entradas em 101 sequências; 87 sequências preservam os documentos revisados em 31/10 e 14 são novas. A biblioteca deriva contagens do inventário e identifica revisão por documento. Gerar pacote com `python3 scripts/build-curriculum-release.py --edition YYYY-MM-DD`. O pacote anterior permanece disponível no seu endereço versionado.

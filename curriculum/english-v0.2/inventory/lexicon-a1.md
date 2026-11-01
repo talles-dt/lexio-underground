@@ -82,3 +82,21 @@
 | LX-A1-F3B1A7 | **send** — enviar mensagem | send a message. I send a message to Jo. | Sent é passado, mas foco inicial é pedido com verbo base. | productive |
 | LX-A1-B8962E | **open** — abrir mensagem no contexto digital | open the message. Open the message, please. | Mesmo verbo pode se aplicar a porta; sentido digital selecionado. | productive |
 | LX-A1-24A450 | **close** — fechar janela de mensagem | close the message. Close the message, please. | Fechar não é apagar no cenário. | productive |
+| LX-A1-A5800D | **January** — janeiro | in January. The course starts in January. | Meses com inicial maiúscula; in para mês sem dia. | productive |
+| LX-A1-263139 | **February** — fevereiro | in February. My class starts in February. | Não exigir memorização de quantos dias tem o mês; fornecer calendário. | productive |
+| LX-A1-FE3BC7 | **March** — março | in March. We meet in March. | March é mês aqui; march também pode ter outro sentido, não avaliado. | productive |
+| LX-A1-43A734 | **April** — abril | in April. The shop opens in April. | Não confundir April/abril com August/agosto. | productive |
+| LX-A1-BEFA45 | **May** — maio | in May. My friend visits in May. | Inicial maiúscula distingue o nome do mês na escrita; may modal é outro uso. | productive |
+| LX-A1-F83761 | **June** — junho | in June. The course ends in June. | June/junho e July/julho devem ser conferidos separadamente. | productive |
+| LX-A1-6B984C | **July** — julho | in July. We visit Ana in July. | July/julho não June/junho; confirmar oralmente se necessário. | productive |
+| LX-A1-625D72 | **August** — agosto | in August. My classes start in August. | Sílaba inicial é normalmente tônica no nome do mês; não avaliar sotaque. | productive |
+| LX-A1-FB093F | **September** — setembro | in September. The exhibition opens in September. | Exhibition = exposição, apoio fornecido; início maiúsculo. | productive |
+| LX-A1-D0BD59 | **October** — outubro | in October. We have a meeting in October. | Meeting = reunião; não requer conhecer feriados estrangeiros. | productive |
+| LX-A1-D8F50F | **November** — novembro | in November. The course begins in November. | Begins = começa; apoio, não novo alvo avaliado. | productive |
+| LX-A1-B6FC92 | **December** — dezembro | in December. The library closes in December. | Não inferir festas, férias ou clima a partir do mês. | productive |
+| LX-A1-8564BE | **minute** — minuto como unidade de duração | ten minutes. The call is ten minutes long. | Número maior que um usa minutes; não confundir duração com hora de início. | productive |
+| LX-A1-10A7FA | **hour** — hora como unidade de duração | one hour; two hours. The class lasts one hour. | An hour usa an porque h não é pronunciado no uso padrão. | productive |
+| LX-A1-3ED77C | **day** — dia como unidade e período | one day; three days. I work three days a week. | Day aqui não significa necessariamente período contínuo de 24h de trabalho. | productive |
+| LX-A1-2D2C3D | **week** — semana como período | one week; two weeks. The course lasts two weeks. | A semana tem sete dias; não confundir weekdays com a semana inteira. | productive |
+| LX-A1-1CCBB3 | **month** — mês como período | one month; six months. I study for six months. | Meses não têm todos o mesmo número de dias; não converter automaticamente em 30. | productive |
+| LX-A1-EE87AD | **year** — ano como período | one year; two years. The programme lasts one year. | Programme/program são grafias aceitas; aqui é duração planejada de um programa. | productive |

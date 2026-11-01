@@ -93,3 +93,21 @@ coat|Descrição textual: casaco longo = coat. Leia My coat.|Meu casaco.|No quad
 hat|Leia hat no cartão chapéu.|Chapéu.|Hat é chapéu ou meias?|Chapéu.|Peça chapéu azul com bloco The blue hat, please.|The blue hat, please.
 socks|Ligue socks ao rótulo meias.|Meias.|Complete my ___ para minhas meias usando socks.|My socks.|Cartão mostra meias brancas descritas em texto. Use My white socks.|My white socks; produção apoiada.
 jacket|Leia jacket no cartão jaqueta curta.|Jaqueta.|Qual é a jaqueta no quadro: jacket ou hat?|Jacket.|Cartão diz jaqueta preta. Peça com The black jacket, please.|The black jacket, please.
+eleven|Cartão Quantity: 11. Escolha eleven ou one.|Eleven.|Etiqueta 11 books: quantos livros?|Onze livros.|Pedido eleven cups: selecione caixa 11 ou 1.|Caixa 11.
+twelve|Ligue twelve à etiqueta 12 ou 20.|12.|Pedido: twelve pens. Escreva o número.|12.|Caixa com 12 livros: complete ___ books com twelve ou two.|Twelve books.
+thirteen|Quantidade 13: escolha thirteen ou three.|Thirteen.|Quantos itens em thirteen cups?|13.|B tem caixas 13 e 30. A pede thirteen pens. Qual caixa?|13.
+fourteen|Escreva em algarismos fourteen.|14.|Etiqueta 14 chairs: selecione four ou fourteen.|Fourteen.|A recebe pedido fourteen cups; B oferece 4. Aceitar ou corrigir?|Corrigir para 14; Fourteen, please.
+fifteen|Pedido fifteen books: escolha 5 ou 15.|15.|Cartão 15 cups: complete com fifteen ou five.|Fifteen cups.|Recepção precisa de 15 cadeiras. Diga a quantidade com apoio fifteen.|Fifteen chairs, please.
+sixteen|Traduza sixteen para algarismos.|16.|Selecione etiqueta sixteen para 6 ou 16.|16.|Pedido 16 pens; resposta Six? Corrija com bloco disponível.|Sixteen, please.
+seventeen|Cartão 17: selecione seventeen ou seven.|Seventeen.|Quantos livros em seventeen books?|17.|Caixas 7 e 17. Pedido seventeen cups: selecione a correta.|17.
+eighteen|Pedido eighteen chairs: escolha 8 ou 18.|18.|Cartão 18 cups: leia com apoio eighteen.|Eighteen cups.|A dita eighteen books; B anota 80. Confirme o valor correto em algarismos.|18.
+nineteen|Ligue nineteen a 19 ou 9.|19.|Quantas cadeiras: nineteen chairs?|19.|Duas etiquetas 19 e 90. Selecione nineteen pens.|19.
+twenty|Etiqueta 20: selecione twelve ou twenty.|Twenty.|Pedido twenty pens: escreva a quantidade.|20.|Recepção oferece 12 livros, pedido 20. Corrija com apoio twenty.|Twenty books, please.
+thirty|Escolha 13 ou 30 para thirty.|30.|Etiqueta 30 books: escreva thirty ou thirteen.|Thirty.|Pedido thirty cups; resposta Thirteen? Corrija usando palavra e algarismo.|Thirty: 30.
+forty|Ligue forty ao número 40 ou 14.|40.|Complete Forty chairs = ___ cadeiras.|40.|Cartão 40 cups: selecione forty ou fourteen.|Forty.
+fifty|Pedido fifty cups: escolha 15 ou 50.|50.|Escreva em algarismos fifty pens.|50.|A pede 50 livros; B confirma Fifteen? Responda com fifty.|Fifty books, please.
+sixty|Ligue sixty à etiqueta 60 ou 16.|60.|Pedido sixty chairs: quantas?|60.|Cartão 60 cups: selecione sixteen ou sixty e confirme número.|Sixty, 60.
+seventy|Selecione 17 ou 70 para seventy.|70.|Quantos livros em seventy books?|70.|Pedido 70 pens; escreva bloco usando seventy.|Seventy pens, please.
+eighty|Etiqueta 80: selecione eighteen ou eighty.|Eighty.|Eighty chairs corresponde a 18 ou 80?|80.|Caixa 18 e caixa 80; entregue eighty cups.|Caixa 80.
+ninety|Ligue ninety a 19 ou 90.|90.|Escreva a quantidade de ninety books.|90.|Pedido 90 cups; B anota 19. Corrija com ninety.|Ninety cups: 90.
+one hundred|Selecione 10 ou 100 para one hundred.|100.|One hundred pens: qual quantidade?|100.|Cartão 100 chairs: diga o pedido com apoio one hundred.|One hundred chairs, please.

@@ -445,3 +445,87 @@ c1	housing	cramped	apertado com pouco espaço para uso	a cramped room	The room f
 c1	housing	well-maintained	bem conservado por manutenção	a well-maintained building	The building appears well-maintained.	Aparência não comprova inspeção técnica nem todos os sistemas.
 c1	housing	soundproof	que impede passagem de som segundo alegação ou especificação	a soundproof room	The advertisement calls the room soundproof.	Distinguir alegação absoluta de isolamento parcial; não certificar desempenho.
 c1	housing	disruption	perturbação ou interrupção da rotina	disruption to something	The work caused disruption to daily routines.	Identificar afetados e período, sem generalizar impacto.
+pre-a1	numbers	eleven	onze	eleven + plural	Eleven pens.	11; não confundir com o código 1–1, one one.
+pre-a1	numbers	twelve	doze	twelve + plural	Twelve cups.	12; valor diferente de twenty, 20.
+pre-a1	numbers	thirteen	treze	thirteen + plural	Thirteen books.	13; contraste com thirty, 30, será retomado em outra sequência.
+pre-a1	numbers	fourteen	quatorze	fourteen + plural	Fourteen chairs.	14; a terminação teen precisa permanecer recuperável.
+pre-a1	numbers	fifteen	quinze	fifteen + plural	Fifteen pens.	15; não fiveteen. Comparar fifty em rodada posterior.
+pre-a1	numbers	sixteen	dezesseis	sixteen + plural	Sixteen cups.	16; confirme quantidade, não apenas a presença de six.
+pre-a1	numbers	seventeen	dezessete	seventeen + plural	Seventeen chairs.	17; grafia seventeenth não pertence a esta tarefa.
+pre-a1	numbers	eighteen	dezoito	eighteen + plural	Eighteen pens.	18; grafia eighteen, com apenas um t entre eight e een.
+pre-a1	numbers	nineteen	dezenove	nineteen + plural	Nineteen books.	19; contraste com ninety, 90, na próxima sequência.
+pre-a1	numbers	twenty	vinte	twenty + plural	Twenty cups.	20; two é 2, twelve é 12.
+pre-a1	numbers	thirty	trinta	thirty + plural	Thirty chairs.	30; contrasta com thirteen, 13. Confirmação numérica é permitida.
+pre-a1	numbers	forty	quarenta	forty + plural	Forty pens.	40; grafia forty, não fourty.
+pre-a1	numbers	fifty	cinquenta	fifty + plural	Fifty chairs.	50; contraste fifteen, 15; contexto e confirmação importam.
+pre-a1	numbers	sixty	sessenta	sixty + plural	Sixty books.	60; não sixteen, 16.
+pre-a1	numbers	seventy	setenta	seventy + plural	Seventy cups.	70; contraste seventeen, 17.
+pre-a1	numbers	eighty	oitenta	eighty + plural	Eighty pens.	80; grafia eighty; eighteen é 18.
+pre-a1	numbers	ninety	noventa	ninety + plural	Ninety chairs.	90; grafia ninety; nineteen é 19.
+pre-a1	numbers	one hundred	cem	one hundred + plural	One hundred cups.	100; hundred não recebe s após número exato: one hundred cups.
+a1	time	January	janeiro	in January	The course starts in January.	Meses com inicial maiúscula; in para mês sem dia.
+a1	time	February	fevereiro	in February	My class starts in February.	Não exigir memorização de quantos dias tem o mês; fornecer calendário.
+a1	time	March	março	in March	We meet in March.	March é mês aqui; march também pode ter outro sentido, não avaliado.
+a1	time	April	abril	in April	The shop opens in April.	Não confundir April/abril com August/agosto.
+a1	time	May	maio	in May	My friend visits in May.	Inicial maiúscula distingue o nome do mês na escrita; may modal é outro uso.
+a1	time	June	junho	in June	The course ends in June.	June/junho e July/julho devem ser conferidos separadamente.
+a1	time	July	julho	in July	We visit Ana in July.	July/julho não June/junho; confirmar oralmente se necessário.
+a1	time	August	agosto	in August	My classes start in August.	Sílaba inicial é normalmente tônica no nome do mês; não avaliar sotaque.
+a1	time	September	setembro	in September	The exhibition opens in September.	Exhibition = exposição, apoio fornecido; início maiúsculo.
+a1	time	October	outubro	in October	We have a meeting in October.	Meeting = reunião; não requer conhecer feriados estrangeiros.
+a1	time	November	novembro	in November	The course begins in November.	Begins = começa; apoio, não novo alvo avaliado.
+a1	time	December	dezembro	in December	The library closes in December.	Não inferir festas, férias ou clima a partir do mês.
+a1	time	minute	minuto como unidade de duração	ten minutes	The call is ten minutes long.	Número maior que um usa minutes; não confundir duração com hora de início.
+a1	time	hour	hora como unidade de duração	one hour; two hours	The class lasts one hour.	An hour usa an porque h não é pronunciado no uso padrão.
+a1	time	day	dia como unidade e período	one day; three days	I work three days a week.	Day aqui não significa necessariamente período contínuo de 24h de trabalho.
+a1	time	week	semana como período	one week; two weeks	The course lasts two weeks.	A semana tem sete dias; não confundir weekdays com a semana inteira.
+a1	time	month	mês como período	one month; six months	I study for six months.	Meses não têm todos o mesmo número de dias; não converter automaticamente em 30.
+a1	time	year	ano como período	one year; two years	The programme lasts one year.	Programme/program são grafias aceitas; aqui é duração planejada de um programa.
+a2	time	once	uma vez em determinada frequência	once a week	We meet once a week.	Once aqui é frequência; não o conectivo once = assim que.
+a2	time	twice	duas vezes em determinada frequência	twice a month	She calls twice a month.	Não significa two months; distinguir frequência e duração.
+a2	time	daily	diariamente	a daily update; update daily	The notice is updated daily.	A atualização pode acontecer em horários diferentes; daily não fixa a hora.
+a2	time	weekly	semanalmente ou semanal	a weekly meeting; meet weekly	There is a weekly meeting.	Não significa todo dia útil; o dia da semana pode não estar declarado.
+a2	time	monthly	mensalmente ou mensal	a monthly report	We send a monthly report.	Monthly não garante intervalo de exatamente 30 dias.
+a2	time	every other day	dia sim, dia não	every other day	We practise every other day.	Distinguir every day. Na tarefa, fornecer data de início.
+a2	numbers	litre	litro como unidade de volume	a litre of water; two litres	We need two litres of water.	Litre/liter são grafias britânica/americana; ambas aceitas.
+a2	numbers	kilogram	quilograma como unidade de massa	a kilogram of rice	The bag contains one kilogram of rice.	Kilo é forma corrente; kg é símbolo, sem plural s.
+a2	numbers	metre	metro como unidade de comprimento	two metres long	The table is two metres long.	Metre/meter são grafias de variedades; unidade não é metro de transporte.
+a2	numbers	half	metade de uma quantidade	half a litre; half of the group	Half of the ten cards are blue.	Plural halves; half aqui quantidade, não julgamento aproximado.
+a2	numbers	quarter	um quarto de uma quantidade	a quarter of the class	A quarter of the twelve chairs are red.	Quarter também aparece em horários e moedas; esses sentidos exigem contexto próprio.
+a2	numbers	dozen	grupo de doze unidades	a dozen eggs; two dozen	We ordered a dozen cups.	Número exato: two dozen cups, sem s em dozen; dozens of indica quantidade vaga.
+b1	numbers	estimate	estimativa ou estimar	estimate the cost; an estimate	Our estimate is about fifty people.	Estimativa não é contagem confirmada; indicar fonte e momento.
+b1	numbers	approximately	aproximadamente	approximately thirty minutes	The journey takes approximately thirty minutes.	Não determina tolerância matemática universal.
+b1	numbers	at least	pelo menos, limite inferior inclusivo	at least ten	We need at least ten chairs.	Dez atende a at least ten; nove não. Não confundir com no máximo.
+b1	numbers	at most	no máximo, limite superior inclusivo	at most twenty	The room can take at most twenty people.	Limite linguístico do cartão; não é avaliação real de ocupação segura.
+b1	numbers	up to	até um limite, conforme contexto	up to thirty participants	The workshop has space for up to thirty participants.	Capacidade máxima não é comparecimento nem garantia de lotação.
+b1	numbers	no more than	não mais que, limite superior	no more than three	Use no more than three examples.	No more than pode minimizar em outros contextos; aqui é limite de instrução.
+b1	time	postpone	adiar para momento posterior	postpone the meeting until Friday	They postponed the meeting until Friday.	Não equivale a cancelamento definitivo; o novo momento pode estar ausente.
+b1	time	bring forward	antecipar um compromisso	bring the meeting forward to Monday	They brought the meeting forward from Thursday to Monday.	No contexto da agenda, mover para antes; explicitar datas evita ambiguidade.
+b1	time	run late	estar atrasado em relação ao previsto	run ten minutes late	The class is running ten minutes late.	Relato de atraso não informa automaticamente novo horário final.
+b1	time	in the meantime	nesse intervalo, enquanto se espera	in the meantime, + clause	The room opens at two. In the meantime, wait here.	Conecta ação durante espera; não substitui ultimately/eventually.
+b1	time	eventually	por fim, depois de algum tempo	eventually + verb	After three attempts, we eventually found the room.	Falso cognato: não significa ocasionalmente neste uso.
+b1	time	overtime	tempo de trabalho além do horário normal	work overtime	They worked overtime to finish the task.	Não presumir remuneração ou obrigação; isso depende de informações não fornecidas.
+b2	numbers	ratio	razão entre duas quantidades	a ratio of two to one	The ratio of blue cards to red cards is two to one.	Ordem importa: azul:vermelho não é vermelho:azul; fornecer contagens.
+b2	numbers	proportion	parcela em relação ao total	the proportion of respondents	The proportion choosing A was six out of ten.	Denominador é o grupo definido; não generalizar para população não observada.
+b2	numbers	fraction	fração, parte de um todo	a fraction of the total	Only a small fraction of the archive was checked.	Small fraction não é porcentagem exata sem dados adicionais.
+b2	numbers	double	dobrar ou ser duas vezes uma quantidade	double the number; the number doubled	The number doubled from ten to twenty.	Base precisa estar explícita; double não é aumento de 200%, e sim de 100%.
+b2	numbers	halve	reduzir à metade	halve the time; the time was halved	The waiting time was halved from twenty to ten minutes.	Metade do valor inicial, não diminuição de apenas duas unidades.
+b2	numbers	average	média aritmética neste contexto	an average of; on average	The average of two, four and six is four.	Nesta sequência average é soma dividida pela quantidade; médias podem ocultar diferenças.
+b2	time	peak	atingir um ponto máximo ou esse máximo	peak at; reach a peak	Attendance peaked at forty in June.	Máximo no período fornecido, não recorde histórico universal.
+b2	time	plateau	estabilizar após mudança	plateau at; reach a plateau	Attendance rose and then plateaued at thirty.	Poucos pontos sugerem estabilidade observada, não previsão garantida.
+b2	time	fluctuate	oscilar entre valores	fluctuate between X and Y	Attendance fluctuated between twenty and thirty.	Oscilação não é crescimento contínuo; informar período e unidades.
+b2	time	steadily	de maneira contínua ou regular	increase steadily	The count increased steadily from ten to forty.	Não implica passos exatamente iguais em todo uso; comparar série real.
+b2	time	roughly	aproximadamente, sem precisão exata	roughly half; roughly twenty	Roughly half of the chairs were occupied.	Roughly não informa margem formal de erro; não inventá-la.
+b2	time	overall	considerando o conjunto	overall, + clause; an overall increase	Overall, attendance increased despite a fall in June.	Síntese pode coexistir com exceções locais; não apagá-las.
+c1	numbers	negligible	pequeno a ponto de ter pouca importância para um fim declarado	a negligible difference	For this rough layout, a one-millimetre difference is negligible.	Avaliação depende de escala e finalidade; não equivale a zero universal.
+c1	numbers	substantial	considerável em magnitude ou importância	a substantial increase	The report describes the increase as substantial.	Termo avaliativo sem limiar numérico universal; atribuir julgamento.
+c1	numbers	disproportionate	desproporcional a uma referência explicitada	disproportionate to; a disproportionate share	The time spent was disproportionate to the task’s scope.	A referência precisa estar clara; comparação quantitativa não prova injustiça por si só.
+c1	numbers	comparable	comparável em algum aspecto relevante	comparable in size; comparable to	The two rooms are comparable in size.	Comparable não significa idêntico em tudo; especificar dimensão.
+c1	numbers	on the order of	na ordem de, magnitude aproximada	on the order of a thousand	The archive contains on the order of a thousand items.	Uso quantitativo aproximado; não é número exato nem ordem de execução.
+c1	numbers	within reach	ao alcance, viável diante de condições	within reach of; bring X within reach	The revised target is within reach if the final batch arrives.	Pode ser figurativo; viabilidade não é realização consumada.
+c1	time	cumulative	que se acumula ao longo de ocorrências	a cumulative total; cumulative effect	The cumulative total reached sixty by Friday.	Total acumulado não é necessariamente valor de sexta isoladamente; evitar contagem dupla.
+c1	time	in due course	no momento oportuno, sem prazo exato especificado	respond in due course	The committee will respond in due course.	Pode soar formal ou evasivo; não transformar em data prometida.
+c1	time	for the time being	por enquanto, em caráter temporário	for the time being, + clause	For the time being, the library will use Room B.	Duração final não necessariamente definida; não supor permanência.
+c1	time	over the course of	ao longo de um período	over the course of the year	The policy changed over the course of the year.	Não exige mudança contínua nem informa instante exato.
+c1	time	subsequently	posteriormente, em sequência temporal	subsequently + verb	The draft was circulated and subsequently revised.	Sequência temporal não prova que a circulação causou a revisão.
+c1	time	with hindsight	em retrospecto, com conhecimento adquirido depois	with hindsight, + clause	With hindsight, the deadline was unrealistic.	Distinguir julgamento atual do que participantes podiam saber antes.
