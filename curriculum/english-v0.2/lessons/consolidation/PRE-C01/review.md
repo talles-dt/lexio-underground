@@ -2,8 +2,8 @@
 
 Faça no encontro seguinte antes de reler. [Retorno](feedback.md).
 
-> Tuesday. Manager: Ana. Worker: Kim. Customer: Rui.  
-> Morning: water inside. Cloudy outside.  
+> Tuesday. Manager: Ana. Worker: Kim. Customer: Rui.\
+> Morning: water inside. Cloudy outside.\
 > Task for Kim: read Rui's name. Text Ana: 0902.
 
 1. Recupere quem coordena e quem é cliente.

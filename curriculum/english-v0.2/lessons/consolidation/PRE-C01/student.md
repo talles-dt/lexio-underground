@@ -17,9 +17,9 @@ Não decore tudo primeiro: use o apoio, tente e registre o que consultou.
 
 ## Ler um quadro de recepção
 
-> Monday. Manager: Kim. Worker: Jo. Customer: Lee.  
-> Task for Jo: write Lee's name.  
-> Morning: tea inside. Rainy outside. Warm inside.  
+> Monday. Manager: Kim. Worker: Jo. Customer: Lee.\
+> Task for Jo: write Lee's name.\
+> Morning: tea inside. Rainy outside. Warm inside.\
 > Call Kim: 0508. Text Lee: 0806.
 
 1. Quem coordena? Quem é cliente?

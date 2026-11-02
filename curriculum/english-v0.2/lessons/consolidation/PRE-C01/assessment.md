@@ -2,9 +2,9 @@
 
 Sessão posterior à retomada; não abrir respostas antes. Apoio de formato e perguntas em português é permitido. Registre o canal de cada resposta.
 
-> Friday. Manager: Eva. Worker: Lee. Customer: Jo.  
-> Task for Lee: write Jo's name.  
-> Tea outside in the morning. Sunny.  
+> Friday. Manager: Eva. Worker: Lee. Customer: Jo.\
+> Task for Lee: write Jo's name.\
+> Tea outside in the morning. Sunny.\
 > Call Eva: 0603. Text Jo: 0109.
 
 1. Faça ficha com gerente, trabalhador, cliente e tarefa.
