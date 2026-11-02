@@ -31,11 +31,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/FND-01.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "ab3e578e062524672cefedad06bed02fed07a62157d63c8fc537cac745e753ef",
+    "duration_seconds": 10.484
   },
   {
     "id": "FND-02",
@@ -73,11 +77,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/FND-02.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "e7b7eb5c4106f2c4c192dcca1d9ce7e4e15d6fa71b37509f1a614178d043a672",
+    "duration_seconds": 11.749
   },
   {
     "id": "FND-03",
@@ -111,11 +119,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/FND-03.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "7837c624d1eb6b8ef16d0d056b28d8294dbac02d43df44a5b66be31778149701",
+    "duration_seconds": 13.05
   },
   {
     "id": "FND-04",
@@ -149,11 +161,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/FND-04.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "dc3f50296778ec50c1126a4a7c99ca4d858720aaa5fd4233e1c72b3074c0aa03",
+    "duration_seconds": 9.985
   },
   {
     "id": "FND-05",
@@ -191,11 +207,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/FND-05.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "59d465a8e03f3a4b5d009830ecc550ebc3900b3e5bdbf5ef9b2a15522297f558",
+    "duration_seconds": 11.842
   },
   {
     "id": "FND-06",
@@ -225,11 +245,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/FND-06.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "f13f290ad8f9f8b0bbef8908de250b9e70cf7d1ec87471ae0e8a6a79ef3ec0ac",
+    "duration_seconds": 12.852
   },
   {
     "id": "A1-01",
@@ -263,11 +287,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/A1-01.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "f02882bd8c5f48721319cbf7714fd03ee2d3e3142a7ef45c3628fb56d542bffe",
+    "duration_seconds": 14.164
   },
   {
     "id": "A1-02",
@@ -301,11 +329,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/A1-02.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "c939fc07f8423e41a9e4ac9323a3e0e93dc5537bbeeebcdef6945d9e174b842f",
+    "duration_seconds": 17.403
   },
   {
     "id": "A1-03",
@@ -339,11 +371,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/A1-03.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "257df97edb4e9ba8dcb30f7d3ce09a087ca06f2ba33ee3ded9e4a288681a4262",
+    "duration_seconds": 17.427
   },
   {
     "id": "A1-04",
@@ -381,11 +417,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/A1-04.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "15aa468da02cdc98c92ab9b791985f278f85bd1be6ba1ad3c1721c799e2d66be",
+    "duration_seconds": 19.749
   },
   {
     "id": "A1-05",
@@ -419,11 +459,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/A1-05.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "2b5826bc53574f4f3c6e48771485a729ece41abbb157b5a623a6dfa0877ee328",
+    "duration_seconds": 16.37
   },
   {
     "id": "A1-06",
@@ -457,11 +501,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/A1-06.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "17ea6a16e0ff23d1903ce788458332b459301b987bc1d5c4499ec3615c35d154",
+    "duration_seconds": 20.213
   },
   {
     "id": "A1-07",
@@ -503,11 +551,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/A1-07.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "3ecb606d1b0da5a14b46a293bdba93e9d6e12540ff3b0d3c2c431f45421539a3",
+    "duration_seconds": 17.566
   },
   {
     "id": "A1-08",
@@ -549,11 +601,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/A1-08.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "16d7c57df1e018d80f39c7de49443342a6c96d14368381099bde4c07283b0f51",
+    "duration_seconds": 17.415
   },
   {
     "id": "A2-01",
@@ -595,11 +651,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/A2-01.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "52e2d610dd2e0676b606459e432205bc27b7b451563f7cd5455fe37625dd2fd2",
+    "duration_seconds": 26.97
   },
   {
     "id": "A2-02",
@@ -637,11 +697,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/A2-02.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "149c4ede25844889889d5b242c190a9fdca36f68cb5626fb648971560e168218",
+    "duration_seconds": 26.366
   },
   {
     "id": "A2-03",
@@ -683,11 +747,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/A2-03.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "a40e2ca33437e67227d74d491ce8b9e6ac5de25ca672f1dc5328bb7a5f874004",
+    "duration_seconds": 22.372
   },
   {
     "id": "A2-04",
@@ -725,11 +793,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/A2-04.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "4d085f22a82708ff9a740c885116ad454f4546e08dfcd172e8feb7102d622ff1",
+    "duration_seconds": 24.474
   },
   {
     "id": "A2-05",
@@ -771,11 +843,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/A2-05.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "416fafb5972a1bdfcf5aca26b0b75337bed68a47c24e91684205c94a466fb797",
+    "duration_seconds": 30.29
   },
   {
     "id": "A2-06",
@@ -813,11 +889,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/A2-06.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "4fda02fc2b97f10666f538433d2e7dd3f691ce15b3cba483e7607830b05588c6",
+    "duration_seconds": 23.963
   },
   {
     "id": "A2-07",
@@ -859,11 +939,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/A2-07.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "28a8d09414da9084656df5ac734968978a985028e158a85da6cbdb129173b0de",
+    "duration_seconds": 27.237
   },
   {
     "id": "B1-01",
@@ -905,11 +989,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/B1-01.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "27a183ef9ae588c5ccbba1c3af3b524a549db0c87f982c5181539d78fe89e062",
+    "duration_seconds": 35.736
   },
   {
     "id": "B1-02",
@@ -951,11 +1039,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/B1-02.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "ba01286413e109c5ea851f0f20d593463fdcff696d4b8afb766b24d9145b3b81",
+    "duration_seconds": 32.938
   },
   {
     "id": "B1-03",
@@ -997,11 +1089,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/B1-03.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "8f731887a2aee2fbcd503e7647b7c203fc7564d846eefd6e4181ab4da0b04434",
+    "duration_seconds": 31.939
   },
   {
     "id": "B1-04",
@@ -1035,11 +1131,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/B1-04.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "9839b5d1c417e7d2b31a7fa25fe54bb0b88657bd99711a26b489a510c9e6d807",
+    "duration_seconds": 33.077
   },
   {
     "id": "B1-05",
@@ -1081,11 +1181,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/B1-05.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "3574105db8674d3e3ce0ddc777082999102b54aa17d21011e664defbec2c5e25",
+    "duration_seconds": 26.285
   },
   {
     "id": "B1-06",
@@ -1123,11 +1227,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/B1-06.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "55820743fb49cf8ecbd0ecc09ec591d9fcfe99f0d66495292fb43af88450488f",
+    "duration_seconds": 31.486
   },
   {
     "id": "B1-07",
@@ -1173,11 +1281,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/B1-07.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "366a4e788a9ab3f35708ec62acb337ed759e71bd95ac7ff501db17fdede3f4fb",
+    "duration_seconds": 23.905
   },
   {
     "id": "B1-08",
@@ -1219,11 +1331,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/B1-08.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "3d7e28ed19c49674ba213c4f723218df5f6d00eed354dd424df8daf9dc570c10",
+    "duration_seconds": 31.8
   },
   {
     "id": "B2-01",
@@ -1265,11 +1381,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/B2-01.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "2e28f594d21d7740b66eb08ea187177e0b30013e4daaaf93a62dc15441cb0770",
+    "duration_seconds": 35.167
   },
   {
     "id": "B2-02",
@@ -1311,11 +1431,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/B2-02.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "484a98feedc47a718d3a770cecffaa51ceaecccb98fa9159219fb8b0c94248cf",
+    "duration_seconds": 32.763
   },
   {
     "id": "B2-03",
@@ -1357,11 +1481,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/B2-03.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "ee94df8aa1602716ccac9a43f312fedc16ac70fcf798eb98b49fd1d6caddd715",
+    "duration_seconds": 41.401
   },
   {
     "id": "B2-04",
@@ -1403,11 +1531,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/B2-04.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "5d44bbfb4777bf61d84a6ea06aa5c871e70fe449f0a959657dd99c28319d2586",
+    "duration_seconds": 35.097
   },
   {
     "id": "B2-05",
@@ -1449,11 +1581,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/B2-05.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "aeef41b3cc18dc34a511e39c959ceed9ff464aaee0366d1c198183599d29afda",
+    "duration_seconds": 35.596
   },
   {
     "id": "B2-06",
@@ -1503,11 +1639,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/B2-06.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "9f4d40e9ca0aad56a606d96f059683d133b88d5add4ffba49e7298be1fdf0279",
+    "duration_seconds": 36.548
   },
   {
     "id": "B2-07",
@@ -1549,11 +1689,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/B2-07.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "84f4f0472b61647969a0d82159599e8a2aa7bf067bb343aeb5bc52fe122c23b0",
+    "duration_seconds": 34.76
   },
   {
     "id": "B2-08",
@@ -1603,11 +1747,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/B2-08.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "19116f7a0ea58b1f5caac1b95cd70ea32831ff971c45520186b354b7a86c4524",
+    "duration_seconds": 35.863
   },
   {
     "id": "ASSESS-PRE-A1",
@@ -1645,11 +1793,15 @@
       }
     ],
     "reserved_assessment": true,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/ASSESS-PRE-A1.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "8cfb876b1ca16f72b9aa2e4061ac55553f7f95002a2d7909687805b782220159",
+    "duration_seconds": 19.9
   },
   {
     "id": "ASSESS-A1",
@@ -1695,11 +1847,15 @@
       }
     ],
     "reserved_assessment": true,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/ASSESS-A1.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "6ce9784a9890af07d970c5748673b09ba54bba0e775a720edeaffdfa2961c1c4",
+    "duration_seconds": 31.637
   },
   {
     "id": "ASSESS-A2",
@@ -1741,11 +1897,15 @@
       }
     ],
     "reserved_assessment": true,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/ASSESS-A2.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "c226fe309abecb0d465eaf3b039becb305c44aa06fc70cd44b2617639c88f139",
+    "duration_seconds": 37.14
   },
   {
     "id": "ASSESS-B1",
@@ -1795,11 +1955,15 @@
       }
     ],
     "reserved_assessment": true,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/ASSESS-B1.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "3c6b90b2dd80c17ab62d5c345723d145c598934bd4634d34fbae3214c7ca024a",
+    "duration_seconds": 49.342
   },
   {
     "id": "PRE-C01",
@@ -1813,11 +1977,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/PRE-C01.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "533d5f4ae75955137a2b7eff170c285eab5a5709b983bbe7b456f5dc35943fbd",
+    "duration_seconds": 4.087
   },
   {
     "id": "A1-C01",
@@ -1831,11 +1999,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/A1-C01.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "325f1d8b8c2251120be540599bfd75100a9932c86dc28563a1c35783795fa3f6",
+    "duration_seconds": 8.348
   },
   {
     "id": "A2-C01",
@@ -1849,11 +2021,15 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/A2-C01.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "53d31c92661bfb1e3b5d236860f42c19d28b7db8e9c6c6dfa1967de745422360",
+    "duration_seconds": 12.109
   },
   {
     "id": "B1-C01",
@@ -1867,10 +2043,190 @@
       }
     ],
     "reserved_assessment": false,
-    "audio_file": null,
-    "generation_status": "not_produced",
+    "audio_file": "audio/generated/B1-C01.mp3",
+    "generation_status": "synthetic_draft",
     "listening_review": "not_performed",
-    "variety": null,
-    "voices": null
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "da4cc2eb3497eabdf663dab5edacb4cb5f656b4474af6f575aad2afb1e8a3a88",
+    "duration_seconds": 16.951
+  },
+  {
+    "id": "PRE-C02",
+    "source": "lessons/consolidation/PRE-C02/teacher.md",
+    "script_file": "audio/scripts/PRE-C02.txt",
+    "script_sha256": "d0250c926bdd879e755d1043e1fa0a01af540742e6d0e37cc4aee3c9bd11830f",
+    "dialogue": [
+      {
+        "speaker": "Narrator",
+        "text": "Hello. My name is Eva. I like music. The park, please. One cup, please. Thank you."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": "audio/generated/PRE-C02.mp3",
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "d9f91d06d7c2a7cb658b284adb7b53876e5249cf654aea4d0c9d4452fab1d55d",
+    "duration_seconds": 6.316
+  },
+  {
+    "id": "A1-C02",
+    "source": "lessons/consolidation/A1-C02/teacher.md",
+    "script_file": "audio/scripts/A1-C02.txt",
+    "script_sha256": "fc73a857d4ac58214d516f3ae468bed89e13e25cfda51ea844cf40149b4ee9e0",
+    "dialogue": [
+      {
+        "speaker": "Narrator",
+        "text": "Hi Jo. Saturday at one is fine. Let us meet outside the museum. I will have chicken with rice and tea without sugar. Could you check if we can pay in cash?"
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": "audio/generated/A1-C02.mp3",
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "23f39efea23fcba3c1b959f46e545a186b98a1ec3a115d0d5883336dbde60acc",
+    "duration_seconds": 10.379
+  },
+  {
+    "id": "A2-C02",
+    "source": "lessons/consolidation/A2-C02/teacher.md",
+    "script_file": "audio/scripts/A2-C02.txt",
+    "script_sha256": "aeec9d784ad673c41013d19757080a7cb9f839684e1875e7e1f3c9409a410de5",
+    "dialogue": [
+      {
+        "speaker": "Narrator",
+        "text": "I signed up for the workshop, but I am not sure if I have a place. Do you mean that I should wait until Thursday? And could you explain the donation rule? I have two books, but I cannot give money."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": "audio/generated/A2-C02.mp3",
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "03f2660f8c77dab5e8b7a07a2c00e185b53b790f9433cefd04be2e6d2c630d06",
+    "duration_seconds": 12.481
+  },
+  {
+    "id": "B1-C02",
+    "source": "lessons/consolidation/B1-C02/teacher.md",
+    "script_file": "audio/scripts/B1-C02.txt",
+    "script_sha256": "bd4eed4cab6e7eb14e6e34917368596d1010b6a36c0eae7f9a715f4b4ac84d61",
+    "dialogue": [
+      {
+        "speaker": "Narrator",
+        "text": "I thought the coat was a bargain at first. On balance, I still like it, although the repairs cost more than I expected. The ending of the story surprised me. I tend to prefer clear answers, but this time I enjoyed not knowing who wrote the note. I would recommend discussing two possible explanations rather than choosing one as a fact."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": "audio/generated/B1-C02.mp3",
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "6f66e5aae124cb46d16242da31d2e22cb3b9d7fb1f1da4e512235786b5334b6f",
+    "duration_seconds": 21.804
+  },
+  {
+    "id": "PH-PRE-01",
+    "source": "lessons/pronunciation/PH-PRE-01/teacher.md",
+    "script_file": "audio/scripts/PH-PRE-01.txt",
+    "script_sha256": "617ae2baff54b6e9869dff308dda0ce093393b9661d259939052e28a87b56a08",
+    "dialogue": [
+      {
+        "speaker": "Narrator",
+        "text": "Thirteen. Fifty. Eighteen. Two pens, please. Again, please."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": "audio/generated/PH-PRE-01.mp3",
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "0dfb1b8e0ec7f08ff2ab17006d863ef30e034513b453de60d92773e9979bc3ec",
+    "duration_seconds": 4.876
+  },
+  {
+    "id": "PH-A1-01",
+    "source": "lessons/pronunciation/PH-A1-01/teacher.md",
+    "script_file": "audio/scripts/PH-A1-01.txt",
+    "script_sha256": "d15c86eeb126e125dd6aeab034d38b6294303a9f312c76ee0967922805aecaf5",
+    "dialogue": [
+      {
+        "speaker": "Narrator",
+        "text": "One ship. Two sheep. Three books. Two bags. I walked to the park. I wanted a ticket."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": "audio/generated/PH-A1-01.mp3",
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "b4ba1562bcf2e842ba8aa434cf6c91d05fcac48fd91ea17af055a14c42d50f63",
+    "duration_seconds": 6.118
+  },
+  {
+    "id": "PH-A2-01",
+    "source": "lessons/pronunciation/PH-A2-01/teacher.md",
+    "script_file": "audio/scripts/PH-A2-01.txt",
+    "script_sha256": "b39fd098fc6dd580bb909c920cfdd155033d57ba999d31c4e4ff06216a2214a0",
+    "dialogue": [
+      {
+        "speaker": "Narrator",
+        "text": "I can open the file. I cannot open the other file. Save it before closing it. Switch it off. This is a record. Please record your answer."
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": "audio/generated/PH-A2-01.mp3",
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "fbb876f933519cc57e83b72638d0634800207bd795eef9d529b0b4cc08e76bbc",
+    "duration_seconds": 8.824
+  },
+  {
+    "id": "PH-B1-01",
+    "source": "lessons/pronunciation/PH-B1-01/teacher.md",
+    "script_file": "audio/scripts/PH-B1-01.txt",
+    "script_sha256": "93ca48d0d4a3f1b32b35b6ded3531e78af99d76f5c69351aeea1f604f1ae79d8",
+    "dialogue": [
+      {
+        "speaker": "Narrator",
+        "text": "I said Tuesday, not Thursday. According to Lee, the plan is delayed. If the room is available, we can meet there. It has not been confirmed. Do you mean next Tuesday?"
+      }
+    ],
+    "reserved_assessment": false,
+    "audio_file": "audio/generated/PH-B1-01.mp3",
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "audio_sha256": "475ee5a6e4b21fe879ee20537f9bed6073fec2269f21982872aa081d32ea1f23",
+    "duration_seconds": 11.25
   }
 ]

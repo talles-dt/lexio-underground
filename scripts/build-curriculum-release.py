@@ -1,7 +1,7 @@
 """Package the authored edition without inventing review or proficiency evidence."""
 from pathlib import Path
 from collections import Counter
-import json, zipfile, hashlib, argparse
+import json, zipfile, hashlib, argparse, shutil
 root=Path(__file__).resolve().parents[1]
 parser=argparse.ArgumentParser()
 parser.add_argument('--edition',required=True,help='Explicit ISO date of this editorial release')
@@ -21,6 +21,13 @@ review_status={path:review_for(path,content) for path,content in materials.items
 (root/'src/curriculum/materials.json').write_text(json.dumps(materials,ensure_ascii=False))
 (root/'src/curriculum/review-status.json').write_text(json.dumps(review_status,ensure_ascii=False,indent=2)+'\n')
 public=root/'public/curriculum';public.mkdir(parents=True,exist_ok=True)
+audio_queue=json.loads((base/'data/audio-queue.json').read_text())
+for asset in audio_queue:
+ if asset['audio_file']:
+  source=base/asset['audio_file']
+  assert hashlib.sha256(source.read_bytes()).hexdigest()==asset['audio_sha256']
+  target=public/asset['audio_file'];target.parent.mkdir(parents=True,exist_ok=True)
+  shutil.copyfile(source,target)
 archive=public/f'lexio-english-{args.edition}.zip'
 # Fixed timestamps and order keep the release reproducible on an unchanged snapshot.
 with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED) as z:

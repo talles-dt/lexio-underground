@@ -124,3 +124,33 @@
 | LX-A1-89BAE7 | **twenty-first** — vigésimo primeiro em ordem ou data | the twenty-first. The class is on the twenty-first of May. | 21st combina twenty + first; não twenty-oneth. | productive |
 | LX-A1-EBB8DF | **thirtieth** — trigésimo em ordem ou data | the thirtieth. We meet on the thirtieth of June. | 30th = thirtieth; thirteen/thirteenth é 13/13º. Apoio de calendário é permitido. | productive |
 | LX-A1-C41CBE | **thirty-first** — trigésimo primeiro em ordem ou data | the thirty-first. We meet on the thirty-first of May. | 31st; verificar calendário, pois nem todo mês tem dia 31. | productive |
+| LX-A1-781B14 | **vegetable** — vegetal usado como alimento | some vegetables. We need some vegetables. | Vegetable não equivale a todo vegetal botânico; aqui alimento cotidiano. | productive |
+| LX-A1-77E363 | **fruit** — fruta como categoria alimentar | some fruit. I eat fruit in the morning. | Fruit é usualmente coletivo incontável aqui; fruits pode designar tipos em outros contextos. | productive |
+| LX-A1-E228A6 | **chicken** — carne de frango neste uso | some chicken. We have chicken for lunch. | Chicken também é ave contável; neste exemplo carne, sem a. | productive |
+| LX-A1-C657F8 | **fish** — peixe como alimento neste uso | some fish. I would like some fish. | Neste exemplo alimento; não inferir espécie ou ingredientes não citados. | productive |
+| LX-A1-4570CD | **sugar** — açúcar | without sugar. Tea without sugar, please. | Without = sem; pedido não comprova composição final. | productive |
+| LX-A1-6FC29D | **salt** — sal | with salt; without salt. Rice without salt, please. | Exercício linguístico de preferência, não recomendação de consumo. | productive |
+| LX-A1-206B97 | **cash** — dinheiro em espécie | pay in cash. Can I pay in cash? | Cash não é cartão; não solicitar pagamento real. | productive |
+| LX-A1-8FA6AC | **card** — cartão de pagamento neste uso | pay by card. Can I pay by card? | Card tem outros sentidos; aqui pagamento, não pedir dados reais. | productive |
+| LX-A1-9AAFFE | **change** — troco | my change. My change is two credits. | Change também é mudança; aqui dinheiro devolvido após pagar. | productive |
+| LX-A1-3D52B5 | **checkout** — caixa onde se paga | at the checkout. Please pay at the checkout. | Checkout aqui é local, não saída de hospedagem/check out. | productive |
+| LX-A1-F3ADD5 | **buy** — comprar | buy + item. I want to buy a ticket. | Want to buy é intenção; não compra concluída. | productive |
+| LX-A1-A0DE58 | **sell** — vender | sell + item. They sell books here. | Sell é oferecer/vender; buy é comprar, perspectivas distintas. | productive |
+| LX-A1-A8F08D | **snow** — neve | there is snow. There is snow in the photo. | Não pressupor neve na experiência do aluno nem lugar da foto. | productive |
+| LX-A1-3782F1 | **foggy** — com neblina | it is foggy. It is foggy this morning. | Descreve tempo; não deduzir horário de transporte sem aviso. | productive |
+| LX-A1-C926CD | **cool** — fresco em temperatura | it is cool. It is cool in the evening. | Cool aqui é fresco; outro sentido legal não é alvo. | productive |
+| LX-A1-C49D9A | **umbrella** — guarda-chuva | an umbrella. Take an umbrella. | An antes do som vocálico; take = leve neste comando. | productive |
+| LX-A1-0B60C9 | **season** — estação do ano | the rainy season. It is the rainy season here. | Não impor quatro estações iguais em toda região; rainy season = estação chuvosa. | productive |
+| LX-A1-CE285F | **degree** — grau de temperatura | twenty degrees Celsius. It is twenty degrees Celsius. | Celsius deve ser indicado; não comparar número em escala desconhecida. | productive |
+| LX-A1-2DE738 | **swim** — nadar | go swimming; I swim. I swim on Sunday. | Atividade é relato fictício; não instrução de segurança aquática. | productive |
+| LX-A1-9B13E4 | **dance** — dançar | I like dancing. I like dancing. | Like + -ing é bloco apoiado nesta atividade. | productive |
+| LX-A1-7D0E7E | **sing** — cantar | sing a song. We sing a song. | Song = canção; não é exigido cantar para provar vocabulário. | productive |
+| LX-A1-5E7202 | **concert** — concerto ou show musical | go to a concert. The concert starts at seven. | Concert é evento musical; não qualquer reunião. | productive |
+| LX-A1-637D45 | **museum** — museu | visit a museum. We visit the museum on Saturday. | Visit sem to nesse padrão: visit the museum. | productive |
+| LX-A1-4A2B3B | **weekend** — fim de semana | at the weekend; on the weekend. I am free at the weekend. | At the weekend comum britânico; on the weekend comum americano, ambos aceitos. | productive |
+| LX-A1-2F1E5A | **post office** — agência de correio | at the post office. The post office is next to the library. | Não confundir office isolado com correio. | productive |
+| LX-A1-09863F | **police station** — delegacia ou posto policial | the police station. The police station is opposite the park. | Reconhecimento de lugar; não simular emergência real. | productive |
+| LX-A1-794E53 | **opening hours** — horário de funcionamento | check the opening hours. The opening hours are nine to five. | Hours refere-se ao funcionamento, não duração de cada visita. | productive |
+| LX-A1-D7F0C9 | **closed** — fechado para atendimento | closed on Monday. The museum is closed on Monday. | Closed é estado; close é verbo na forma base. | productive |
+| LX-A1-08374E | **form** — formulário | fill in a form. Please fill in this form. | Fill in/fill out aceitos; use dados fictícios. | productive |
+| LX-A1-B1F313 | **appointment** — horário combinado de atendimento | make an appointment. I need to make an appointment. | Fazer pedido não garante horário; nomeia atendimento agendado. | productive |

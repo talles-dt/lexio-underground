@@ -140,3 +140,27 @@
 | LX-PRE-A1-8E77B9 | **task** — tarefa | a task. This is my task. | Task é tarefa específica; job pode indicar emprego. Bloco my task apoiado. | productive |
 | LX-PRE-A1-1B2285 | **ready** — pronto para começar ou usar | I am ready. I am ready. | Ready não significa tarefa concluída em todos os contextos; aqui pronto para começar. | productive |
 | LX-PRE-A1-5B0EC7 | **finished** — concluído neste contexto | I am finished. I am finished. | Aqui indica que a pessoa terminou a tarefa; não significa simplesmente pronta para iniciar. | productive |
+| LX-PRE-A1-6BC2C0 | **music** — música como atividade e som | listen to music. I like music. | Music é incontável neste uso; I like = eu gosto, bloco apoiado. | productive |
+| LX-PRE-A1-FDCF92 | **film** — filme | watch a film. I watch a film. | Movie é alternativa americana aceita; watch = assistir, apoio. | productive |
+| LX-PRE-A1-2DB5B7 | **game** — jogo | play a game. We play a game. | Play = jogar neste bloco; não se limita a videogame. | productive |
+| LX-PRE-A1-C0CFE7 | **park** — parque | in the park. We meet in the park. | In the park é localização, não ação de estacionar neste uso. | productive |
+| LX-PRE-A1-221965 | **like** — gostar | I like + nome. I like tea. | Bloco para preferência; não exigir todas as pessoas verbais. | productive |
+| LX-PRE-A1-072B36 | **choose** — escolher | choose + opção. Choose tea or water. | Or = ou; escolha pode ser apontada. | productive |
+| LX-PRE-A1-7E994E | **hospital** — hospital | at the hospital. The hospital is here. | Reconhecimento de lugar, sem inferir atendimento específico. | productive |
+| LX-PRE-A1-886308 | **pharmacy** — farmácia | at the pharmacy. The pharmacy is here. | Pharmacy não implica orientação médica nesta atividade. | productive |
+| LX-PRE-A1-80F510 | **shop** — loja | at the shop. The shop is open. | Store é alternativa aceita; open = aberta no apoio. | productive |
+| LX-PRE-A1-06E42D | **exit** — saída | the exit. This is the exit. | Reconhecimento de placa; entrance = entrada, apoio contrastivo. | productive |
+| LX-PRE-A1-7A07D6 | **wait** — esperar | wait here. Wait here, please. | Here = aqui; não equivale a sair imediatamente. | productive |
+| LX-PRE-A1-0A39F7 | **queue** — fila de pessoas | the queue. The queue is here. | Line é alternativa americana aceita neste contexto. | productive |
+| LX-PRE-A1-6CB8B2 | **plate** — prato como objeto | a plate. This is my plate. | Plate é objeto; meal/refeição é outro sentido. | productive |
+| LX-PRE-A1-951EDC | **spoon** — colher | a spoon. One spoon, please. | Peça de utensílio; não avaliar medida culinária. | productive |
+| LX-PRE-A1-D539F5 | **fork** — garfo | a fork. This is your fork. | Your = da pessoa com quem se fala. | productive |
+| LX-PRE-A1-2A57AE | **knife** — faca | a knife. This is a knife. | K inicial não é pronunciado; apenas cartão ou desenho, sem manipular faca. Plural knives fica como apoio. | productive |
+| LX-PRE-A1-573682 | **son** — filho | my son. This is my son. | Não pressupor estrutura familiar do aluno; usar personagem. | productive |
+| LX-PRE-A1-BDC3CE | **daughter** — filha | my daughter. This is my daughter. | Personagem fictício; não exigir relato familiar real. | productive |
+| LX-PRE-A1-5246A2 | **twenty-one** — vinte e um | twenty-one + plural. Twenty-one pens. | 21 junta twenty e one; aplicar dezenas já aprendidas + unidades, com hífen escrito. | productive |
+| LX-PRE-A1-E07289 | **twenty-two** — vinte e dois | twenty-two + plural. Twenty-two books. | 22 = twenty + two; regra reaplicável a 23–29 com tabela de unidades. | productive |
+| LX-PRE-A1-CF6162 | **thirty-five** — trinta e cinco | thirty-five + plural. Thirty-five chairs. | 35 = thirty + five; não fifteen, 15. | productive |
+| LX-PRE-A1-3C6BD9 | **forty-eight** — quarenta e oito | forty-eight + plural. Forty-eight pens. | Forty, não fourty; aplicar dezenas e unidades com apoio. | productive |
+| LX-PRE-A1-34DD43 | **cent** — centésima parte de uma unidade monetária decimal no cenário | fifty cents. Fifty cents. | Cenário usa créditos fictícios divididos em 100 cents; não generalizar para todas as moedas. | productive |
+| LX-PRE-A1-E98948 | **total** — valor total de itens no cenário | the total. The total is three credits. | Total não é preço de cada item; conta e moeda serão fornecidas. | productive |

@@ -1,5 +1,5 @@
 {
-  "edition": "2026-11-01",
+  "edition": "2026-11-02",
   "levels": [
     "pre-a1",
     "a1",
@@ -8,24 +8,24 @@
     "b2",
     "c1"
   ],
-  "lexical_entries": 626,
-  "lexical_sequences": 117,
+  "lexical_entries": 734,
+  "lexical_sequences": 135,
   "by_level": {
     "pre-a1": {
-      "entries": 136,
-      "sequences": 26
+      "entries": 160,
+      "sequences": 30
     },
     "a1": {
-      "entries": 120,
-      "sequences": 21
+      "entries": 150,
+      "sequences": 26
     },
     "a2": {
-      "entries": 110,
-      "sequences": 20
+      "entries": 134,
+      "sequences": 24
     },
     "b1": {
-      "entries": 110,
-      "sequences": 20
+      "entries": 140,
+      "sequences": 25
     },
     "b2": {
       "entries": 84,
@@ -37,10 +37,10 @@
     }
   },
   "reviewed_sequences": 87,
-  "new_or_changed_sequences": 30,
+  "new_or_changed_sequences": 48,
   "status": "mixed_reviewed_and_new_authored_material",
   "course_complete": false,
   "piloted": false,
-  "archive": "lexio-english-2026-11-01.zip",
-  "sha256": "c9142c55c8db77323efd7a7e4f71279c9a2d2ea89e94104c2d899a7352bce5b6"
+  "archive": "lexio-english-2026-11-02.zip",
+  "sha256": "53813e20bec16096d095d2eb0cc31e6a287e712d0f13b1a7619d4b5dc4110671"
 }

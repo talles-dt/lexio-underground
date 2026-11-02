@@ -4,7 +4,7 @@ Estado: protocolo escrito; nenhuma sessão realizada ou pessoa recrutada por est
 
 ## Revisão independente antes da aplicação
 
-Um revisor de inglês/ensino, distinto da autoria, examina cada pacote FND-01–06, as 117 sequências lexicais, as unidades A1-01–08 e A2-01–07, B1-01–08, B2-01–08 e as quatro avaliações: adequação a adultos, sentido das formas, naturalidade dos exemplos, respostas alternativas, vocabulário não explicado, acessibilidade, equivalência dos percursos e adequação dos apoios. Registra item, problema, alteração proposta, justificativa e decisão. A atribuição CEFR requer julgamento docente documentado; o inventário autoral não basta.
+Um revisor de inglês/ensino, distinto da autoria, examina cada pacote FND-01–06, as 135 sequências lexicais, as unidades A1-01–08 e A2-01–07, B1-01–08, B2-01–08 e as quatro avaliações: adequação a adultos, sentido das formas, naturalidade dos exemplos, respostas alternativas, vocabulário não explicado, acessibilidade, equivalência dos percursos e adequação dos apoios. Registra item, problema, alteração proposta, justificativa e decisão. A atribuição CEFR requer julgamento docente documentado; o inventário autoral não basta.
 
 ## Duas modalidades
 
@@ -89,3 +89,5 @@ Revisar os [seis novos pacotes](reports/LEXICAL-IMPLEMENTATION-EMOTIONS.md). Obs
 ## Domínios cotidianos e leitura crítica
 
 Revisar os [12 novos pacotes](reports/LEXICAL-IMPLEMENTATION-DAILY-DOMAINS.md). Conferir apoio para vocabulário incidental, distinção entre observação e inferência, comparação receita/comprovante, placar parcial/final e papéis em delegação. Na leitura crítica C1, aceitar interpretações divergentes com apoio textual. Verificar tarefas acessíveis por rótulos textuais sem exigir imagem, mobilidade corporal ou dados pessoais. Separar ensaio, leitura, escuta e interação observada.
+
+[Kit operacional pré-A1–B1: oito casos e ficha de evidência](pilot/through-b1/README.md). Aplicação e resultados ainda pendentes.

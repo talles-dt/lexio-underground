@@ -234,3 +234,64 @@ GROUPS += [{'id': 'LEX-PRE-25',
           'identificar se a tarefa ainda vai começar ou terminou.',
   'pitfall': 'Não confundir ready com tarefa concluída. Personagens e papéis são fictícios, sem inferência '
              'sobre profissão do aluno.'}]
+
+GROUPS += [{'id': 'LEX-PRE-27',
+  'title': 'Escolher lazer com apoio',
+  'after': 'FND-06',
+  'words': ['music', 'film', 'game', 'park', 'like', 'choose'],
+  'situation': 'Cartão A: likes music; tomorrow park; choices music or film. Cartão B: likes games; today '
+               'home; choices game or music. Apoio likes = gosta; choices = opções. Cada pessoa diz I like e '
+               'aponta uma opção coerente com seu cartão; colega anota atividade, lugar e dia. Troquem '
+               'cartões. Autônomo: escolha em cada ficha, diga os blocos e compare com os dados. Não enviar '
+               'convites reais.',
+  'result': 'A: I like music. Music, please. Park tomorrow. B: I like games. A game, please. Home today. Se '
+            'a pessoa escolher outra opção, precisa informar que mudou de preferência; não inferir gosto do '
+            'parceiro.',
+  'phon': 'O ouvinte distingue music/film/game e today/tomorrow; pausas e apoio visual são permitidos.',
+  'pitfall': 'Gosto não equivale a habilidade nem disponibilidade. Movie é alternativa a film.'},
+ {'id': 'LEX-PRE-28',
+  'title': 'Localizar serviço e entender uma placa',
+  'after': 'FND-06',
+  'words': ['hospital', 'pharmacy', 'shop', 'exit', 'wait', 'queue'],
+  'situation': 'Mapa textual: A hospital; B pharmacy; C shop; D exit. Cartões: Wait here. Queue inside. A '
+               'aponta uma letra; B diz lugar. Depois A lê placa e B aponta esperar aqui/fila dentro/saída. '
+               'Inverta letras com novo mapa fornecido pelo professor ou desenhado pelo aluno, mantendo '
+               'rótulos visíveis. Autônomo: cubra os rótulos e recupere com apoio antes de conferir.',
+  'result': 'A hospital, B pharmacy, C shop, D exit. Wait here = esperar aqui; queue inside = fila dentro. '
+            'Ao trocar letras, usar novo mapa, não memorizar A como hospital permanentemente.',
+  'phon': 'O destinatário confirma hospital/pharmacy e inside/exit com apontar; não avaliar imitação de '
+          'sotaque.',
+  'pitfall': 'Não apresentar fila como senha; line aceito. São placas simuladas, sem indicação de serviço '
+             'real.'},
+ {'id': 'LEX-PRE-29',
+  'title': 'Preparar a mesa com personagens',
+  'after': 'FND-04',
+  'words': ['plate', 'spoon', 'fork', 'knife', 'son', 'daughter'],
+  'situation': 'Use desenhos de utensílios. Cartão de Ana: son Rui; daughter Eva. Rui: one plate, one spoon. '
+               'Eva: one plate, one fork. Cartão de Lee: one plate, one knife. A apresenta filhos fictícios '
+               'com This is my son/daughter; B monta a mesa de papel e confirma quantidades. Troquem Rui/Eva '
+               'como destinatários, preservando utensílios conforme novo cartão. Autônomo: desenhe três '
+               'lugares e escreva nomes/blocos.',
+  'result': 'Três pratos no conjunto; Rui colher, Eva garfo, Lee faca. Son Rui; daughter Eva no cartão de '
+            'Ana. Nenhuma relação de Lee com Ana foi fornecida.',
+  'phon': 'K de knife não é pronunciado no modelo; avaliar identificação do cartão. Plural plates/spoons com '
+          'números apoiados.',
+  'pitfall': 'Não manipular utensílios cortantes; não presumir família real ou relação de todos os '
+             'personagens.'},
+ {'id': 'LEX-PRE-30',
+  'title': 'Combinar dezenas e conferir preço total',
+  'after': 'FND-06',
+  'words': ['twenty-one', 'twenty-two', 'thirty-five', 'forty-eight', 'cent', 'total'],
+  'situation': 'Tabela de apoio: twenty 20, thirty 30, forty 40, fifty 50, sixty 60, seventy 70, eighty 80, '
+               'ninety 90; unidades one a nine já estudadas. Regra: dezena + unidade, sem and, com hífen: '
+               'fifty-two = 52. Cartões de quantidade 21, 22, 35, 48, 57, 69, 83, 94. A lê com tabela; B '
+               'registra. Preços fictícios: one book 2 credits 50 cents; one pen 1 credit 20 cents; total '
+               'fornecido 3 credits 70 cents. A separa quantidade de preço; B confirma cada preço e total. '
+               'Autônomo: faça duas colunas e confira.',
+  'result': '21 twenty-one;22 twenty-two;35 thirty-five;48 forty-eight;57 fifty-seven;69 sixty-nine;83 '
+            'eighty-three;94 ninety-four. Livro 2.50, caneta 1.20, total 3.70. Moeda fictícia tem 100 cents '
+            'por credit. Não confundir 2.50 com 250 unidades.',
+  'phon': 'Leia créditos e cents separadamente, em vez de exigir leitura abreviada. O receptor transcreve 35 '
+          'versus 53.',
+  'pitfall': 'A tabela é apoio permitido para generalizar, não lista de oito números decorados. Preço total '
+             'não é preço unitário.'}]

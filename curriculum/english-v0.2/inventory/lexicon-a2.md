@@ -114,3 +114,27 @@
 | LX-A2-234895 | **mistake** — erro de execução ou entendimento | make a mistake. I made a mistake in the date. | Make a mistake, não do a mistake neste padrão. | productive |
 | LX-A2-693EBD | **instructions** — instruções para realizar tarefa | follow the instructions. Read the instructions before starting. | Aqui plural; pode haver uma instruction específica. Ler não garante cumprir. | productive |
 | LX-A2-DB1FF4 | **resource** — recurso usado para aprender | a learning resource. This dictionary is a useful resource. | Resource pode ser livro, áudio ou ferramenta; disponibilidade não garante adequação. | productive |
+| LX-A2-BE327E | **what I mean is** — introduzir reformulação do próprio sentido | What I mean is + frase. What I mean is that we need more time. | Não significa corrigir qualquer pessoa; esclarece o próprio enunciado. | productive |
+| LX-A2-13949C | **let me check** — pedir tempo para conferir | Let me check + informação. Let me check the date. | Não equivale a confirmação de dado. | productive |
+| LX-A2-BB375E | **could you explain** — pedir explicação | Could you explain + nome?. Could you explain the rule? | Explain something to someone; não explain me sem objeto de coisa. | productive |
+| LX-A2-000BAE | **do you mean** — conferir interpretação | Do you mean + opção?. Do you mean this Friday? | É pergunta para conferir; não afirmar interpretação como fato. | productive |
+| LX-A2-0377C2 | **I'm not sure** — marcar incerteza | I'm not sure + oração. I'm not sure if the shop is open. | Não significa que está fechado; preserva desconhecimento. | productive |
+| LX-A2-A4ECFA | **for example** — introduzir um exemplo | for example, + exemplo. We need supplies, for example paper. | Exemplo não é lista completa; supplies = materiais, apoio. | productive |
+| LX-A2-648324 | **join** — entrar em grupo ou atividade | join a group. I joined a reading group. | Join a group sem to; não é necessariamente comparecer a toda reunião. | productive |
+| LX-A2-D8C27E | **sign up** — inscrever-se | sign up for + atividade. I signed up for the workshop. | Inscrição não garante vaga quando há seleção ou limite informado. | productive |
+| LX-A2-FCE3E2 | **resident** — morador de um lugar | local residents. Local residents can attend. | Resident aqui é morador, sem alegação sobre status migratório. | productive |
+| LX-A2-A13C22 | **meeting** — reunião | attend a meeting. The meeting is on Friday. | Meeting é encontro organizado; não necessariamente aula. | productive |
+| LX-A2-B0B039 | **local council** — órgão de governo local no cenário | contact the local council. The local council received the proposal. | Atribuições variam por local; cenário não define direito ou serviço real. | productive |
+| LX-A2-C9B802 | **donation** — doação | make a donation. They made a donation of books. | Pode ser de objetos ou dinheiro; não pedir doação real. | productive |
+| LX-A2-9F577B | **plug in** — conectar aparelho à alimentação no cenário | plug it in. Plug it in before switching it on. | Simulação em desenho de aparelho inofensivo; não instruir reparo elétrico. Pronome entre plug/in. | productive |
+| LX-A2-7F78ED | **switch on** — ligar aparelho | switch it on. Switch the tablet on. | Turn on é alternativa; não confundir com log in. | productive |
+| LX-A2-846332 | **press** — pressionar botão | press + botão. Press Save. | Press é pressionar neste uso, não imprensa. | productive |
+| LX-A2-B0A73B | **download** — transferir arquivo de serviço para dispositivo | download a file. Download the worksheet. | Cenário com arquivo autorizado fictício; não confundir enviar para serviço/upload. | productive |
+| LX-A2-86D966 | **save** — salvar arquivo ou alterações | save the file. Save the file before closing it. | Save aqui não é economizar dinheiro; fechamento não garante salvamento. | productive |
+| LX-A2-1C3066 | **restart** — reiniciar | restart the device. Restart the device after saving. | Reiniciar não é restaurar configurações de fábrica; seguir roteiro fictício apenas. | productive |
+| LX-A2-A2B049 | **grow up** — crescer durante infância e adolescência | grow up in + lugar. I grew up in a small town. | Grew é passado dado; não é aumentar fisicamente um objeto. | productive |
+| LX-A2-4D74AA | **childhood** — infância | during my childhood. I lived there during my childhood. | Não requer lembranças pessoais; personagem fictício permitido. | productive |
+| LX-A2-6249F8 | **hometown** — cidade considerada de origem | my hometown. I visited my hometown last year. | Pode não coincidir com cidade de nascimento; usar como pessoa descreve. | productive |
+| LX-A2-14E223 | **move abroad** — mudar-se para outro país | move abroad. She moved abroad in May. | Abroad é advérbio, não to abroad; país deve ser fornecido para especificar. | productive |
+| LX-A2-05F314 | **get married** — casar-se | get married to + pessoa. They got married in June. | Got é passado; married to, não with nesse padrão. Não pressupor casamento do aluno. | productive |
+| LX-A2-DEACD5 | **used to** — hábito ou estado anterior contrastado com agora | used to + verbo base. I used to walk to school. | Usado para passado habitual; não confundir be used to estar acostumado. | productive |

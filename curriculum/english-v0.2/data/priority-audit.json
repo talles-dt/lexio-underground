@@ -1,0 +1,1721 @@
+{
+  "levels": [
+    "pre-a1",
+    "a1",
+    "a2",
+    "b1"
+  ],
+  "grammar_mapping": [
+    {
+      "target_id": "G-PRE-A1-AC550F",
+      "level": "pre-a1",
+      "title": "Apresentação com I am",
+      "lesson": "lessons/G-PRE-A1-AC550F.md",
+      "units": [
+        "FND-01"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-PRE-A1-02475A",
+      "level": "pre-a1",
+      "title": "Identificação com this is",
+      "lesson": "lessons/G-PRE-A1-02475A.md",
+      "units": [
+        "FND-01",
+        "FND-04"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-PRE-A1-1744E2",
+      "level": "pre-a1",
+      "title": "Nome como pergunta pronta",
+      "lesson": "lessons/G-PRE-A1-1744E2.md",
+      "units": [
+        "FND-01",
+        "FND-03"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-PRE-A1-217665",
+      "level": "pre-a1",
+      "title": "Correção com yes e no",
+      "lesson": "lessons/G-PRE-A1-217665.md",
+      "units": [
+        "FND-02",
+        "FND-03",
+        "FND-05"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-PRE-A1-69E37E",
+      "level": "pre-a1",
+      "title": "A e an em objetos",
+      "lesson": "lessons/G-PRE-A1-69E37E.md",
+      "units": [
+        "FND-04",
+        "FND-05"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-PRE-A1-FCF7D6",
+      "level": "pre-a1",
+      "title": "Plural regular inicial",
+      "lesson": "lessons/G-PRE-A1-FCF7D6.md",
+      "units": [
+        "FND-04"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-PRE-A1-89D698",
+      "level": "pre-a1",
+      "title": "My e your",
+      "lesson": "lessons/G-PRE-A1-89D698.md",
+      "units": [
+        "FND-01",
+        "FND-04"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-PRE-A1-BB85BC",
+      "level": "pre-a1",
+      "title": "Origem e localização",
+      "lesson": "lessons/G-PRE-A1-BB85BC.md",
+      "units": [
+        "FND-03",
+        "FND-06"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-PRE-A1-E1C4C3",
+      "level": "pre-a1",
+      "title": "Instruções simples",
+      "lesson": "lessons/G-PRE-A1-E1C4C3.md",
+      "units": [
+        "FND-02"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-PRE-A1-E5E645",
+      "level": "pre-a1",
+      "title": "Pedidos de ajuda como blocos",
+      "lesson": "lessons/G-PRE-A1-E5E645.md",
+      "units": [
+        "FND-02",
+        "FND-06"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-PRE-A1-FDD0E8",
+      "level": "pre-a1",
+      "title": "Número e pedido",
+      "lesson": "lessons/G-PRE-A1-FDD0E8.md",
+      "units": [
+        "FND-05",
+        "FND-06"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-PRE-A1-50812E",
+      "level": "pre-a1",
+      "title": "Dia e hora em blocos",
+      "lesson": "lessons/G-PRE-A1-50812E.md",
+      "units": [
+        "FND-06"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A1-5F4B46",
+      "level": "a1",
+      "title": "Sujeito, objeto e posse",
+      "lesson": "lessons/G-A1-5F4B46.md",
+      "units": [
+        "A1-01"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A1-8081E5",
+      "level": "a1",
+      "title": "Be afirmativo, negativo e pergunta",
+      "lesson": "lessons/G-A1-8081E5.md",
+      "units": [
+        "A1-01"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A1-8F8A66",
+      "level": "a1",
+      "title": "Demonstrativos singular/plural",
+      "lesson": "lessons/G-A1-8F8A66.md",
+      "units": [
+        "A1-05"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A1-6659C4",
+      "level": "a1",
+      "title": "Posse com ’s",
+      "lesson": "lessons/G-A1-6659C4.md",
+      "units": [
+        "A1-08"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A1-820D23",
+      "level": "a1",
+      "title": "Artigos e referência básica",
+      "lesson": "lessons/G-A1-820D23.md",
+      "units": [
+        "A1-03"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A1-DB81DA",
+      "level": "a1",
+      "title": "Plurais frequentes e contabilidade",
+      "lesson": "lessons/G-A1-DB81DA.md",
+      "units": [
+        "A1-04"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A1-376948",
+      "level": "a1",
+      "title": "Existência com there is/are",
+      "lesson": "lessons/G-A1-376948.md",
+      "units": [
+        "A1-03"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A1-3216C0",
+      "level": "a1",
+      "title": "Lugar e movimento básico",
+      "lesson": "lessons/G-A1-3216C0.md",
+      "units": [
+        "A1-03"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A1-EEE6A7",
+      "level": "a1",
+      "title": "Presente simples afirmativo",
+      "lesson": "lessons/G-A1-EEE6A7.md",
+      "units": [
+        "A1-02"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A1-6E12E9",
+      "level": "a1",
+      "title": "Do/does e negação",
+      "lesson": "lessons/G-A1-6E12E9.md",
+      "units": [
+        "A1-02"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A1-75B4BC",
+      "level": "a1",
+      "title": "Wh- e informação solicitada",
+      "lesson": "lessons/G-A1-75B4BC.md",
+      "units": [
+        "A1-02"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A1-1A8819",
+      "level": "a1",
+      "title": "Frequência e posição básica",
+      "lesson": "lessons/G-A1-1A8819.md",
+      "units": [
+        "A1-02"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A1-7F431B",
+      "level": "a1",
+      "title": "Presente contínuo",
+      "lesson": "lessons/G-A1-7F431B.md",
+      "units": [
+        "A1-05"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A1-9F9444",
+      "level": "a1",
+      "title": "Rotina versus agora",
+      "lesson": "lessons/G-A1-9F9444.md",
+      "units": [
+        "A1-05"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A1-BA335B",
+      "level": "a1",
+      "title": "Can para capacidade e possibilidade",
+      "lesson": "lessons/G-A1-BA335B.md",
+      "units": [
+        "A1-06"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A1-07EB92",
+      "level": "a1",
+      "title": "Imperativos e don’t",
+      "lesson": "lessons/G-A1-07EB92.md",
+      "units": [
+        "A1-06"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A1-F7592E",
+      "level": "a1",
+      "title": "Some, any e quantidade",
+      "lesson": "lessons/G-A1-F7592E.md",
+      "units": [
+        "A1-04"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A1-FA96AA",
+      "level": "a1",
+      "title": "How much e how many",
+      "lesson": "lessons/G-A1-FA96AA.md",
+      "units": [
+        "A1-04"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A1-DD58DD",
+      "level": "a1",
+      "title": "Adjetivos e intensificação básica",
+      "lesson": "lessons/G-A1-DD58DD.md",
+      "units": [
+        "A1-05"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A1-38A6DD",
+      "level": "a1",
+      "title": "Was e were",
+      "lesson": "lessons/G-A1-38A6DD.md",
+      "units": [
+        "A1-07"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A1-BBE96D",
+      "level": "a1",
+      "title": "Passado simples e did",
+      "lesson": "lessons/G-A1-BBE96D.md",
+      "units": [
+        "A1-07"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A1-EFB12C",
+      "level": "a1",
+      "title": "Plano com going to",
+      "lesson": "lessons/G-A1-EFB12C.md",
+      "units": [
+        "A1-08"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A1-FFA2AE",
+      "level": "a1",
+      "title": "Pedidos e convites iniciais",
+      "lesson": "lessons/G-A1-FFA2AE.md",
+      "units": [
+        "A1-06"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A1-7DDCE4",
+      "level": "a1",
+      "title": "And, but, because e so",
+      "lesson": "lessons/G-A1-7DDCE4.md",
+      "units": [
+        "A1-07"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A2-27F08A",
+      "level": "a2",
+      "title": "Comparativos",
+      "lesson": "lessons/G-A2-27F08A.md",
+      "units": [
+        "A2-01"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A2-C9B78B",
+      "level": "a2",
+      "title": "Superlativos e igualdade",
+      "lesson": "lessons/G-A2-C9B78B.md",
+      "units": [
+        "A2-01"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A2-09D4B1",
+      "level": "a2",
+      "title": "Too e enough",
+      "lesson": "lessons/G-A2-09D4B1.md",
+      "units": [
+        "A2-01"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A2-EB541B",
+      "level": "a2",
+      "title": "Few/little e some quantidade",
+      "lesson": "lessons/G-A2-EB541B.md",
+      "units": [
+        "A2-01"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A2-298A51",
+      "level": "a2",
+      "title": "Possessivos independentes",
+      "lesson": "lessons/G-A2-298A51.md",
+      "units": [
+        "A2-03"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A2-951A00",
+      "level": "a2",
+      "title": "Indefinidos",
+      "lesson": "lessons/G-A2-951A00.md",
+      "units": [
+        "A2-03"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A2-BD94A7",
+      "level": "a2",
+      "title": "Passado contínuo",
+      "lesson": "lessons/G-A2-BD94A7.md",
+      "units": [
+        "A2-03"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A2-1AD1FA",
+      "level": "a2",
+      "title": "Perfect de experiência",
+      "lesson": "lessons/G-A2-1AD1FA.md",
+      "units": [
+        "A2-04"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A2-7D3AAC",
+      "level": "a2",
+      "title": "Already, yet e just",
+      "lesson": "lessons/G-A2-7D3AAC.md",
+      "units": [
+        "A2-04"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A2-42C5AD",
+      "level": "a2",
+      "title": "Decisão e previsão com will",
+      "lesson": "lessons/G-A2-42C5AD.md",
+      "units": [
+        "A2-02"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A2-A927A0",
+      "level": "a2",
+      "title": "Arranjos e horários",
+      "lesson": "lessons/G-A2-A927A0.md",
+      "units": [
+        "A2-02"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A2-5BCA02",
+      "level": "a2",
+      "title": "Condições gerais e futuras",
+      "lesson": "lessons/G-A2-5BCA02.md",
+      "units": [
+        "A2-02"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A2-B98CB1",
+      "level": "a2",
+      "title": "Conselho, obrigação e proibição",
+      "lesson": "lessons/G-A2-B98CB1.md",
+      "units": [
+        "A2-05"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A2-6CC455",
+      "level": "a2",
+      "title": "Permissão e pedido cortês",
+      "lesson": "lessons/G-A2-6CC455.md",
+      "units": [
+        "A2-05"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A2-4389E8",
+      "level": "a2",
+      "title": "Infinitivo e -ing frequentes",
+      "lesson": "lessons/G-A2-4389E8.md",
+      "units": [
+        "A2-05"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A2-B38511",
+      "level": "a2",
+      "title": "Infinitivo de finalidade",
+      "lesson": "lessons/G-A2-B38511.md",
+      "units": [
+        "A2-04"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A2-1DCF1D",
+      "level": "a2",
+      "title": "Relativas definidoras simples",
+      "lesson": "lessons/G-A2-1DCF1D.md",
+      "units": [
+        "A2-03"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A2-12B01E",
+      "level": "a2",
+      "title": "Coordenação e subordinadas temporais",
+      "lesson": "lessons/G-A2-12B01E.md",
+      "units": [
+        "A2-07"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A2-A86DE3",
+      "level": "a2",
+      "title": "Modo e comparação de advérbios",
+      "lesson": "lessons/G-A2-A86DE3.md",
+      "units": [
+        "A2-06"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A2-C74D3D",
+      "level": "a2",
+      "title": "Tempo e duração",
+      "lesson": "lessons/G-A2-C74D3D.md",
+      "units": [
+        "A2-01"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A2-BCE4D7",
+      "level": "a2",
+      "title": "Hábito antigo com used to",
+      "lesson": "lessons/G-A2-BCE4D7.md",
+      "units": [
+        "A2-07"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A2-56376A",
+      "level": "a2",
+      "title": "Passiva básica em processos",
+      "lesson": "lessons/G-A2-56376A.md",
+      "units": [
+        "A2-06"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A2-58FB58",
+      "level": "a2",
+      "title": "Phrasal verbs e posição do objeto",
+      "lesson": "lessons/G-A2-58FB58.md",
+      "units": [
+        "A2-06"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-A2-91C197",
+      "level": "a2",
+      "title": "Perguntas indiretas iniciais",
+      "lesson": "lessons/G-A2-91C197.md",
+      "units": [
+        "A2-02"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-B1-E3BAF4",
+      "level": "b1",
+      "title": "Perfect versus passado fechado",
+      "lesson": "lessons/G-B1-E3BAF4.md",
+      "units": [
+        "B1-01"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-B1-EAF150",
+      "level": "b1",
+      "title": "Perfect com for e since",
+      "lesson": "lessons/G-B1-EAF150.md",
+      "units": [
+        "B1-01"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-B1-CB6318",
+      "level": "b1",
+      "title": "Perfect contínuo",
+      "lesson": "lessons/G-B1-CB6318.md",
+      "units": [
+        "B1-01"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-B1-59209A",
+      "level": "b1",
+      "title": "Past perfect",
+      "lesson": "lessons/G-B1-59209A.md",
+      "units": [
+        "B1-02"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-B1-5C8795",
+      "level": "b1",
+      "title": "Used to, would e estados passados",
+      "lesson": "lessons/G-B1-5C8795.md",
+      "units": [
+        "B1-02"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-B1-1F6EA4",
+      "level": "b1",
+      "title": "Contrastes de futuro",
+      "lesson": "lessons/G-B1-1F6EA4.md",
+      "units": [
+        "B1-03"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-B1-0EFE72",
+      "level": "b1",
+      "title": "Segunda condicional",
+      "lesson": "lessons/G-B1-0EFE72.md",
+      "units": [
+        "B1-04"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-B1-8D148C",
+      "level": "b1",
+      "title": "Dedução e possibilidade",
+      "lesson": "lessons/G-B1-8D148C.md",
+      "units": [
+        "B1-04"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-B1-FC3645",
+      "level": "b1",
+      "title": "Capacidade passada e realização",
+      "lesson": "lessons/G-B1-FC3645.md",
+      "units": [
+        "B1-02"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-B1-E5D043",
+      "level": "b1",
+      "title": "Conselhos e preferências",
+      "lesson": "lessons/G-B1-E5D043.md",
+      "units": [
+        "B1-03"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-B1-D7F097",
+      "level": "b1",
+      "title": "Passiva em tempos frequentes",
+      "lesson": "lessons/G-B1-D7F097.md",
+      "units": [
+        "B1-06"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-B1-C9900A",
+      "level": "b1",
+      "title": "Fala relatada e referência",
+      "lesson": "lessons/G-B1-C9900A.md",
+      "units": [
+        "B1-05"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-B1-BA0450",
+      "level": "b1",
+      "title": "Perguntas e pedidos relatados",
+      "lesson": "lessons/G-B1-BA0450.md",
+      "units": [
+        "B1-05"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-B1-9F266F",
+      "level": "b1",
+      "title": "Relativas e omissão de objeto",
+      "lesson": "lessons/G-B1-9F266F.md",
+      "units": [
+        "B1-06"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-B1-D555F8",
+      "level": "b1",
+      "title": "Relativas não definidoras",
+      "lesson": "lessons/G-B1-D555F8.md",
+      "units": [
+        "B1-06"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-B1-F4C705",
+      "level": "b1",
+      "title": "Gerúndio, infinitivo e preposição",
+      "lesson": "lessons/G-B1-F4C705.md",
+      "units": [
+        "B1-08"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-B1-EDD761",
+      "level": "b1",
+      "title": "Mudança de sentido com to/-ing",
+      "lesson": "lessons/G-B1-EDD761.md",
+      "units": [
+        "B1-08"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-B1-51E602",
+      "level": "b1",
+      "title": "Reflexivos e recíprocos",
+      "lesson": "lessons/G-B1-51E602.md",
+      "units": [
+        "B1-07"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-B1-809179",
+      "level": "b1",
+      "title": "Substituição com one/ones e so",
+      "lesson": "lessons/G-B1-809179.md",
+      "units": [
+        "B1-07"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-B1-55E60C",
+      "level": "b1",
+      "title": "Each, every, both, either e neither",
+      "lesson": "lessons/G-B1-55E60C.md",
+      "units": [
+        "B1-04"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-B1-346DE6",
+      "level": "b1",
+      "title": "Tags e respostas de concordância",
+      "lesson": "lessons/G-B1-346DE6.md",
+      "units": [
+        "B1-07"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-B1-FDB2DE",
+      "level": "b1",
+      "title": "Causa, contraste e resultado",
+      "lesson": "lessons/G-B1-FDB2DE.md",
+      "units": [
+        "B1-08"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-B1-F27DD6",
+      "level": "b1",
+      "title": "Unless e subordinadas futuras",
+      "lesson": "lessons/G-B1-F27DD6.md",
+      "units": [
+        "B1-03"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    },
+    {
+      "target_id": "G-B1-444515",
+      "level": "b1",
+      "title": "Perguntas de sujeito e objeto",
+      "lesson": "lessons/G-B1-444515.md",
+      "units": [
+        "B1-05"
+      ],
+      "mapping": "declared_target_in_authored_unit",
+      "sufficiency": "not_established"
+    }
+  ],
+  "itineraries": [
+    {
+      "level": "pre-a1",
+      "steps": [
+        {
+          "kind": "unit",
+          "id": "FND-01",
+          "path": "lessons/foundation/FND-01/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-PRE-01",
+          "path": "lessons/lexical/LEX-PRE-01/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-PRE-15",
+          "path": "lessons/lexical/LEX-PRE-15/student.md"
+        },
+        {
+          "kind": "unit",
+          "id": "FND-02",
+          "path": "lessons/foundation/FND-02/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-PRE-03",
+          "path": "lessons/lexical/LEX-PRE-03/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-PRE-10",
+          "path": "lessons/lexical/LEX-PRE-10/student.md"
+        },
+        {
+          "kind": "unit",
+          "id": "FND-03",
+          "path": "lessons/foundation/FND-03/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-PRE-02",
+          "path": "lessons/lexical/LEX-PRE-02/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-PRE-04",
+          "path": "lessons/lexical/LEX-PRE-04/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-PRE-08",
+          "path": "lessons/lexical/LEX-PRE-08/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-PRE-16",
+          "path": "lessons/lexical/LEX-PRE-16/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-PRE-20",
+          "path": "lessons/lexical/LEX-PRE-20/student.md"
+        },
+        {
+          "kind": "unit",
+          "id": "FND-04",
+          "path": "lessons/foundation/FND-04/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-PRE-05",
+          "path": "lessons/lexical/LEX-PRE-05/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-PRE-11",
+          "path": "lessons/lexical/LEX-PRE-11/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-PRE-14",
+          "path": "lessons/lexical/LEX-PRE-14/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-PRE-18",
+          "path": "lessons/lexical/LEX-PRE-18/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-PRE-19",
+          "path": "lessons/lexical/LEX-PRE-19/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-PRE-29",
+          "path": "lessons/lexical/LEX-PRE-29/student.md"
+        },
+        {
+          "kind": "unit",
+          "id": "FND-05",
+          "path": "lessons/foundation/FND-05/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-PRE-06",
+          "path": "lessons/lexical/LEX-PRE-06/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-PRE-09",
+          "path": "lessons/lexical/LEX-PRE-09/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-PRE-12",
+          "path": "lessons/lexical/LEX-PRE-12/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-PRE-17",
+          "path": "lessons/lexical/LEX-PRE-17/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-PRE-21",
+          "path": "lessons/lexical/LEX-PRE-21/student.md"
+        },
+        {
+          "kind": "unit",
+          "id": "FND-06",
+          "path": "lessons/foundation/FND-06/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-PRE-07",
+          "path": "lessons/lexical/LEX-PRE-07/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-PRE-13",
+          "path": "lessons/lexical/LEX-PRE-13/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-PRE-22",
+          "path": "lessons/lexical/LEX-PRE-22/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-PRE-23",
+          "path": "lessons/lexical/LEX-PRE-23/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-PRE-24",
+          "path": "lessons/lexical/LEX-PRE-24/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-PRE-25",
+          "path": "lessons/lexical/LEX-PRE-25/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-PRE-26",
+          "path": "lessons/lexical/LEX-PRE-26/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-PRE-27",
+          "path": "lessons/lexical/LEX-PRE-27/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-PRE-28",
+          "path": "lessons/lexical/LEX-PRE-28/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-PRE-30",
+          "path": "lessons/lexical/LEX-PRE-30/student.md"
+        },
+        {
+          "kind": "consolidation",
+          "id": "PRE-C01",
+          "path": "lessons/consolidation/PRE-C01/student.md"
+        },
+        {
+          "kind": "consolidation",
+          "id": "PRE-C02",
+          "path": "lessons/consolidation/PRE-C02/student.md"
+        },
+        {
+          "kind": "pronunciation",
+          "id": "PH-PRE-01",
+          "path": "lessons/pronunciation/PH-PRE-01/student.md"
+        },
+        {
+          "kind": "assessment",
+          "id": "ASSESS-PRE-A1",
+          "path": "assessments/pre-a1/student.md"
+        }
+      ],
+      "lexical_entries": 160
+    },
+    {
+      "level": "a1",
+      "steps": [
+        {
+          "kind": "unit",
+          "id": "A1-01",
+          "path": "lessons/a1/A1-01/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A1-01",
+          "path": "lessons/lexical/LEX-A1-01/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A1-02",
+          "path": "lessons/lexical/LEX-A1-02/student.md"
+        },
+        {
+          "kind": "unit",
+          "id": "A1-02",
+          "path": "lessons/a1/A1-02/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A1-03",
+          "path": "lessons/lexical/LEX-A1-03/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A1-08",
+          "path": "lessons/lexical/LEX-A1-08/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A1-17",
+          "path": "lessons/lexical/LEX-A1-17/student.md"
+        },
+        {
+          "kind": "unit",
+          "id": "A1-03",
+          "path": "lessons/a1/A1-03/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A1-04",
+          "path": "lessons/lexical/LEX-A1-04/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A1-05",
+          "path": "lessons/lexical/LEX-A1-05/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A1-09",
+          "path": "lessons/lexical/LEX-A1-09/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A1-11",
+          "path": "lessons/lexical/LEX-A1-11/student.md"
+        },
+        {
+          "kind": "unit",
+          "id": "A1-04",
+          "path": "lessons/a1/A1-04/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A1-06",
+          "path": "lessons/lexical/LEX-A1-06/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A1-10",
+          "path": "lessons/lexical/LEX-A1-10/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A1-22",
+          "path": "lessons/lexical/LEX-A1-22/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A1-23",
+          "path": "lessons/lexical/LEX-A1-23/student.md"
+        },
+        {
+          "kind": "unit",
+          "id": "A1-05",
+          "path": "lessons/a1/A1-05/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A1-12",
+          "path": "lessons/lexical/LEX-A1-12/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A1-13",
+          "path": "lessons/lexical/LEX-A1-13/student.md"
+        },
+        {
+          "kind": "unit",
+          "id": "A1-06",
+          "path": "lessons/a1/A1-06/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A1-14",
+          "path": "lessons/lexical/LEX-A1-14/student.md"
+        },
+        {
+          "kind": "unit",
+          "id": "A1-07",
+          "path": "lessons/a1/A1-07/student.md"
+        },
+        {
+          "kind": "unit",
+          "id": "A1-08",
+          "path": "lessons/a1/A1-08/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A1-07",
+          "path": "lessons/lexical/LEX-A1-07/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A1-15",
+          "path": "lessons/lexical/LEX-A1-15/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A1-16",
+          "path": "lessons/lexical/LEX-A1-16/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A1-18",
+          "path": "lessons/lexical/LEX-A1-18/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A1-19",
+          "path": "lessons/lexical/LEX-A1-19/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A1-20",
+          "path": "lessons/lexical/LEX-A1-20/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A1-21",
+          "path": "lessons/lexical/LEX-A1-21/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A1-24",
+          "path": "lessons/lexical/LEX-A1-24/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A1-25",
+          "path": "lessons/lexical/LEX-A1-25/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A1-26",
+          "path": "lessons/lexical/LEX-A1-26/student.md"
+        },
+        {
+          "kind": "consolidation",
+          "id": "A1-C01",
+          "path": "lessons/consolidation/A1-C01/student.md"
+        },
+        {
+          "kind": "consolidation",
+          "id": "A1-C02",
+          "path": "lessons/consolidation/A1-C02/student.md"
+        },
+        {
+          "kind": "pronunciation",
+          "id": "PH-A1-01",
+          "path": "lessons/pronunciation/PH-A1-01/student.md"
+        },
+        {
+          "kind": "assessment",
+          "id": "ASSESS-A1",
+          "path": "assessments/a1/student.md"
+        }
+      ],
+      "lexical_entries": 150
+    },
+    {
+      "level": "a2",
+      "steps": [
+        {
+          "kind": "unit",
+          "id": "A2-01",
+          "path": "lessons/a2/A2-01/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A2-02",
+          "path": "lessons/lexical/LEX-A2-02/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A2-07",
+          "path": "lessons/lexical/LEX-A2-07/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A2-15",
+          "path": "lessons/lexical/LEX-A2-15/student.md"
+        },
+        {
+          "kind": "unit",
+          "id": "A2-02",
+          "path": "lessons/a2/A2-02/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A2-01",
+          "path": "lessons/lexical/LEX-A2-01/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A2-14",
+          "path": "lessons/lexical/LEX-A2-14/student.md"
+        },
+        {
+          "kind": "unit",
+          "id": "A2-03",
+          "path": "lessons/a2/A2-03/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A2-05",
+          "path": "lessons/lexical/LEX-A2-05/student.md"
+        },
+        {
+          "kind": "unit",
+          "id": "A2-04",
+          "path": "lessons/a2/A2-04/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A2-08",
+          "path": "lessons/lexical/LEX-A2-08/student.md"
+        },
+        {
+          "kind": "unit",
+          "id": "A2-05",
+          "path": "lessons/a2/A2-05/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A2-03",
+          "path": "lessons/lexical/LEX-A2-03/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A2-09",
+          "path": "lessons/lexical/LEX-A2-09/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A2-13",
+          "path": "lessons/lexical/LEX-A2-13/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A2-16",
+          "path": "lessons/lexical/LEX-A2-16/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A2-17",
+          "path": "lessons/lexical/LEX-A2-17/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A2-18",
+          "path": "lessons/lexical/LEX-A2-18/student.md"
+        },
+        {
+          "kind": "unit",
+          "id": "A2-06",
+          "path": "lessons/a2/A2-06/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A2-04",
+          "path": "lessons/lexical/LEX-A2-04/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A2-10",
+          "path": "lessons/lexical/LEX-A2-10/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A2-23",
+          "path": "lessons/lexical/LEX-A2-23/student.md"
+        },
+        {
+          "kind": "unit",
+          "id": "A2-07",
+          "path": "lessons/a2/A2-07/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A2-06",
+          "path": "lessons/lexical/LEX-A2-06/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A2-11",
+          "path": "lessons/lexical/LEX-A2-11/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A2-12",
+          "path": "lessons/lexical/LEX-A2-12/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A2-19",
+          "path": "lessons/lexical/LEX-A2-19/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A2-20",
+          "path": "lessons/lexical/LEX-A2-20/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A2-21",
+          "path": "lessons/lexical/LEX-A2-21/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A2-22",
+          "path": "lessons/lexical/LEX-A2-22/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-A2-24",
+          "path": "lessons/lexical/LEX-A2-24/student.md"
+        },
+        {
+          "kind": "consolidation",
+          "id": "A2-C01",
+          "path": "lessons/consolidation/A2-C01/student.md"
+        },
+        {
+          "kind": "consolidation",
+          "id": "A2-C02",
+          "path": "lessons/consolidation/A2-C02/student.md"
+        },
+        {
+          "kind": "pronunciation",
+          "id": "PH-A2-01",
+          "path": "lessons/pronunciation/PH-A2-01/student.md"
+        },
+        {
+          "kind": "assessment",
+          "id": "ASSESS-A2",
+          "path": "assessments/a2/student.md"
+        }
+      ],
+      "lexical_entries": 134
+    },
+    {
+      "level": "b1",
+      "steps": [
+        {
+          "kind": "unit",
+          "id": "B1-01",
+          "path": "lessons/b1/B1-01/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-B1-01",
+          "path": "lessons/lexical/LEX-B1-01/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-B1-13",
+          "path": "lessons/lexical/LEX-B1-13/student.md"
+        },
+        {
+          "kind": "unit",
+          "id": "B1-02",
+          "path": "lessons/b1/B1-02/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-B1-10",
+          "path": "lessons/lexical/LEX-B1-10/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-B1-14",
+          "path": "lessons/lexical/LEX-B1-14/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-B1-24",
+          "path": "lessons/lexical/LEX-B1-24/student.md"
+        },
+        {
+          "kind": "unit",
+          "id": "B1-03",
+          "path": "lessons/b1/B1-03/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-B1-02",
+          "path": "lessons/lexical/LEX-B1-02/student.md"
+        },
+        {
+          "kind": "unit",
+          "id": "B1-04",
+          "path": "lessons/b1/B1-04/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-B1-06",
+          "path": "lessons/lexical/LEX-B1-06/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-B1-11",
+          "path": "lessons/lexical/LEX-B1-11/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-B1-15",
+          "path": "lessons/lexical/LEX-B1-15/student.md"
+        },
+        {
+          "kind": "unit",
+          "id": "B1-05",
+          "path": "lessons/b1/B1-05/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-B1-03",
+          "path": "lessons/lexical/LEX-B1-03/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-B1-09",
+          "path": "lessons/lexical/LEX-B1-09/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-B1-16",
+          "path": "lessons/lexical/LEX-B1-16/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-B1-18",
+          "path": "lessons/lexical/LEX-B1-18/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-B1-23",
+          "path": "lessons/lexical/LEX-B1-23/student.md"
+        },
+        {
+          "kind": "unit",
+          "id": "B1-06",
+          "path": "lessons/b1/B1-06/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-B1-04",
+          "path": "lessons/lexical/LEX-B1-04/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-B1-22",
+          "path": "lessons/lexical/LEX-B1-22/student.md"
+        },
+        {
+          "kind": "unit",
+          "id": "B1-07",
+          "path": "lessons/b1/B1-07/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-B1-19",
+          "path": "lessons/lexical/LEX-B1-19/student.md"
+        },
+        {
+          "kind": "unit",
+          "id": "B1-08",
+          "path": "lessons/b1/B1-08/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-B1-05",
+          "path": "lessons/lexical/LEX-B1-05/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-B1-07",
+          "path": "lessons/lexical/LEX-B1-07/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-B1-08",
+          "path": "lessons/lexical/LEX-B1-08/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-B1-12",
+          "path": "lessons/lexical/LEX-B1-12/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-B1-17",
+          "path": "lessons/lexical/LEX-B1-17/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-B1-20",
+          "path": "lessons/lexical/LEX-B1-20/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-B1-21",
+          "path": "lessons/lexical/LEX-B1-21/student.md"
+        },
+        {
+          "kind": "lexical",
+          "id": "LEX-B1-25",
+          "path": "lessons/lexical/LEX-B1-25/student.md"
+        },
+        {
+          "kind": "consolidation",
+          "id": "B1-C01",
+          "path": "lessons/consolidation/B1-C01/student.md"
+        },
+        {
+          "kind": "consolidation",
+          "id": "B1-C02",
+          "path": "lessons/consolidation/B1-C02/student.md"
+        },
+        {
+          "kind": "pronunciation",
+          "id": "PH-B1-01",
+          "path": "lessons/pronunciation/PH-B1-01/student.md"
+        },
+        {
+          "kind": "assessment",
+          "id": "ASSESS-B1",
+          "path": "assessments/b1/student.md"
+        }
+      ],
+      "lexical_entries": 140
+    }
+  ],
+  "all_written_scope_validated": false,
+  "piloted": false
+}

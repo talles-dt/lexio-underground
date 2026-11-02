@@ -34,3 +34,11 @@ with zipfile.ZipFile(archive) as z:
   assert (root/name).read_bytes()==z.read(name),name
 assert release['course_complete'] is False and release['piloted'] is False
 print(f'Release verified: {len(lex)} entries; {len(seq)} sequences; {reviewed} reviewed; archive matches source. No completeness claim.')
+
+queue=load(base/'data/audio-queue.json')
+for asset in queue:
+ if asset['audio_file']:
+  for path in [base/asset['audio_file'],root/'public/curriculum'/asset['audio_file']]:
+   assert hashlib.sha256(path.read_bytes()).hexdigest()==asset['audio_sha256'],path
+  assert asset['duration_seconds']>0
+print(f"Audio integrity verified: {sum(bool(a['audio_file']) for a in queue)} files; listening review remains separate.")

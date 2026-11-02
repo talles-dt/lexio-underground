@@ -1,0 +1,1009 @@
+[
+  {
+    "id": "FND-01",
+    "script_sha256": "b2f8dfe41b16ae40e16378d122e8f107f36b135928a5f2bc65088d2f8e674d3c",
+    "audio_file": "audio/generated/FND-01.mp3",
+    "audio_sha256": "ab3e578e062524672cefedad06bed02fed07a62157d63c8fc537cac745e753ef",
+    "duration_seconds": 10.484,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "FND-02",
+    "script_sha256": "dc0006cc55463a6ef2b70e93a385185ce1813a8a2c99c286158aeab2dce769dd",
+    "audio_file": "audio/generated/FND-02.mp3",
+    "audio_sha256": "e7b7eb5c4106f2c4c192dcca1d9ce7e4e15d6fa71b37509f1a614178d043a672",
+    "duration_seconds": 11.749,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "FND-03",
+    "script_sha256": "34236857fb6d600512fc2be355e892621be2e2333d023e823e891888394ccaea",
+    "audio_file": "audio/generated/FND-03.mp3",
+    "audio_sha256": "7837c624d1eb6b8ef16d0d056b28d8294dbac02d43df44a5b66be31778149701",
+    "duration_seconds": 13.05,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "FND-04",
+    "script_sha256": "7e9054d1cd72311542db21ac42bfa10e3b60cae919fe9d4c1e261788423e45e3",
+    "audio_file": "audio/generated/FND-04.mp3",
+    "audio_sha256": "dc3f50296778ec50c1126a4a7c99ca4d858720aaa5fd4233e1c72b3074c0aa03",
+    "duration_seconds": 9.985,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "FND-05",
+    "script_sha256": "9e6daea1e7b682f015cb71fb66b9fb291a916c7461addf32b974207118a824a2",
+    "audio_file": "audio/generated/FND-05.mp3",
+    "audio_sha256": "59d465a8e03f3a4b5d009830ecc550ebc3900b3e5bdbf5ef9b2a15522297f558",
+    "duration_seconds": 11.842,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "FND-06",
+    "script_sha256": "a6aad93c9b55f8a4ca19d7b1758dcd84ffc08370d6eb394c2e222b479246e82d",
+    "audio_file": "audio/generated/FND-06.mp3",
+    "audio_sha256": "f13f290ad8f9f8b0bbef8908de250b9e70cf7d1ec87471ae0e8a6a79ef3ec0ac",
+    "duration_seconds": 12.852,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "A1-01",
+    "script_sha256": "dd71fa485ce079261c59a239c33faf0d7012fffd3b37c9a280383620298f2a0b",
+    "audio_file": "audio/generated/A1-01.mp3",
+    "audio_sha256": "f02882bd8c5f48721319cbf7714fd03ee2d3e3142a7ef45c3628fb56d542bffe",
+    "duration_seconds": 14.164,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "A1-02",
+    "script_sha256": "e624b1af597f24be1b8070cf195ede1f81275d39f8b88f3da743ac45d6fac97b",
+    "audio_file": "audio/generated/A1-02.mp3",
+    "audio_sha256": "c939fc07f8423e41a9e4ac9323a3e0e93dc5537bbeeebcdef6945d9e174b842f",
+    "duration_seconds": 17.403,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "A1-03",
+    "script_sha256": "75f1f70138266d3e702914c1c31d61d30c880852304955792926ac96f145b2bd",
+    "audio_file": "audio/generated/A1-03.mp3",
+    "audio_sha256": "257df97edb4e9ba8dcb30f7d3ce09a087ca06f2ba33ee3ded9e4a288681a4262",
+    "duration_seconds": 17.427,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "A1-04",
+    "script_sha256": "df903f37cc2f9d2ca35ca589ae9140bbe694bd99e4cc177a6d300f9473f84446",
+    "audio_file": "audio/generated/A1-04.mp3",
+    "audio_sha256": "15aa468da02cdc98c92ab9b791985f278f85bd1be6ba1ad3c1721c799e2d66be",
+    "duration_seconds": 19.749,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "A1-05",
+    "script_sha256": "91b68e36b7a9ad85bac08fd30f35b8bd642cbb68d9bfc8334eec3b777dd8b937",
+    "audio_file": "audio/generated/A1-05.mp3",
+    "audio_sha256": "2b5826bc53574f4f3c6e48771485a729ece41abbb157b5a623a6dfa0877ee328",
+    "duration_seconds": 16.37,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "A1-06",
+    "script_sha256": "9b28189fed8ddd053093b53a2bc9db8df506bcc93ca407598c66825c58997a47",
+    "audio_file": "audio/generated/A1-06.mp3",
+    "audio_sha256": "17ea6a16e0ff23d1903ce788458332b459301b987bc1d5c4499ec3615c35d154",
+    "duration_seconds": 20.213,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "A1-07",
+    "script_sha256": "b3802a58a6113f84534016a2000672915ccaf5e8002f8b6c6abea2b1aa4b70bd",
+    "audio_file": "audio/generated/A1-07.mp3",
+    "audio_sha256": "3ecb606d1b0da5a14b46a293bdba93e9d6e12540ff3b0d3c2c431f45421539a3",
+    "duration_seconds": 17.566,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "A1-08",
+    "script_sha256": "7b0c92f520036c4de84831266e674bcbd9120f51e248b21aa11ba814f8d43092",
+    "audio_file": "audio/generated/A1-08.mp3",
+    "audio_sha256": "16d7c57df1e018d80f39c7de49443342a6c96d14368381099bde4c07283b0f51",
+    "duration_seconds": 17.415,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "A2-01",
+    "script_sha256": "15357f266b5c5f66cdcb31b0a6445965a1a575f9fd7a22b186ad444a616209ff",
+    "audio_file": "audio/generated/A2-01.mp3",
+    "audio_sha256": "52e2d610dd2e0676b606459e432205bc27b7b451563f7cd5455fe37625dd2fd2",
+    "duration_seconds": 26.97,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "A2-02",
+    "script_sha256": "cfe713ac7266e30d368f2daa30c1a864d45223fdddbbb60b946ed1b1aa1893ce",
+    "audio_file": "audio/generated/A2-02.mp3",
+    "audio_sha256": "149c4ede25844889889d5b242c190a9fdca36f68cb5626fb648971560e168218",
+    "duration_seconds": 26.366,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "A2-03",
+    "script_sha256": "cb1f61d55af4e43f5192f873ec3e443a5690fe0c7df995ae703e661bf64f8dad",
+    "audio_file": "audio/generated/A2-03.mp3",
+    "audio_sha256": "a40e2ca33437e67227d74d491ce8b9e6ac5de25ca672f1dc5328bb7a5f874004",
+    "duration_seconds": 22.372,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "A2-04",
+    "script_sha256": "0a7ffcfb1b1d57cfd74d6f1be45166c50033d896352fc7bec889b1ce55b91943",
+    "audio_file": "audio/generated/A2-04.mp3",
+    "audio_sha256": "4d085f22a82708ff9a740c885116ad454f4546e08dfcd172e8feb7102d622ff1",
+    "duration_seconds": 24.474,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "A2-05",
+    "script_sha256": "50a325d64415a970d6026e29bc9a2b21938a2c3685b549c5aea5a294a50ae973",
+    "audio_file": "audio/generated/A2-05.mp3",
+    "audio_sha256": "416fafb5972a1bdfcf5aca26b0b75337bed68a47c24e91684205c94a466fb797",
+    "duration_seconds": 30.29,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "A2-06",
+    "script_sha256": "1461f4035836731abdcf82f4670132b462936bc60cba7fed3d94c8c766ea4cbe",
+    "audio_file": "audio/generated/A2-06.mp3",
+    "audio_sha256": "4fda02fc2b97f10666f538433d2e7dd3f691ce15b3cba483e7607830b05588c6",
+    "duration_seconds": 23.963,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "A2-07",
+    "script_sha256": "914ff2041eb5a933f53de804458ab1ed4e33c1c57353584840a3860c9f28eb1b",
+    "audio_file": "audio/generated/A2-07.mp3",
+    "audio_sha256": "28a8d09414da9084656df5ac734968978a985028e158a85da6cbdb129173b0de",
+    "duration_seconds": 27.237,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "B1-01",
+    "script_sha256": "176cd316099229349dc4daffc6ceb859d515d325b873e47829d3e4317e00c3ee",
+    "audio_file": "audio/generated/B1-01.mp3",
+    "audio_sha256": "27a183ef9ae588c5ccbba1c3af3b524a549db0c87f982c5181539d78fe89e062",
+    "duration_seconds": 35.736,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "B1-02",
+    "script_sha256": "be1fdab926127137769fd4c274cc0e033aa68f8fa8ad6acc0ff1da3c8f75f74e",
+    "audio_file": "audio/generated/B1-02.mp3",
+    "audio_sha256": "ba01286413e109c5ea851f0f20d593463fdcff696d4b8afb766b24d9145b3b81",
+    "duration_seconds": 32.938,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "B1-03",
+    "script_sha256": "8bdb09dade5a59e7d10688774b62943f13b431e88edced539301c92f04f8d96b",
+    "audio_file": "audio/generated/B1-03.mp3",
+    "audio_sha256": "8f731887a2aee2fbcd503e7647b7c203fc7564d846eefd6e4181ab4da0b04434",
+    "duration_seconds": 31.939,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "B1-04",
+    "script_sha256": "317fb0fba95f5efb107b391666d44f4f672c0b65df30a45f8b0a42ae1356e6a0",
+    "audio_file": "audio/generated/B1-04.mp3",
+    "audio_sha256": "9839b5d1c417e7d2b31a7fa25fe54bb0b88657bd99711a26b489a510c9e6d807",
+    "duration_seconds": 33.077,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "B1-05",
+    "script_sha256": "69dcf8cce285eb5a6f74371a4e9d238c5db803f9229bea2aef984ea62b12ba60",
+    "audio_file": "audio/generated/B1-05.mp3",
+    "audio_sha256": "3574105db8674d3e3ce0ddc777082999102b54aa17d21011e664defbec2c5e25",
+    "duration_seconds": 26.285,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "B1-06",
+    "script_sha256": "1891dfc02d8de69439a2bdbf17e21a93f9d25aa89fd7e8a980dfc885772b9e60",
+    "audio_file": "audio/generated/B1-06.mp3",
+    "audio_sha256": "55820743fb49cf8ecbd0ecc09ec591d9fcfe99f0d66495292fb43af88450488f",
+    "duration_seconds": 31.486,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "B1-07",
+    "script_sha256": "2bb38643c76c3ef66dfae4132c8abe490be5af0813ca9b76dc65863a9fcf5da6",
+    "audio_file": "audio/generated/B1-07.mp3",
+    "audio_sha256": "366a4e788a9ab3f35708ec62acb337ed759e71bd95ac7ff501db17fdede3f4fb",
+    "duration_seconds": 23.905,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "B1-08",
+    "script_sha256": "fb6fddd73f5051933c56a6a41f55705c2cea4611fb30e0e70ab8c957155dd098",
+    "audio_file": "audio/generated/B1-08.mp3",
+    "audio_sha256": "3d7e28ed19c49674ba213c4f723218df5f6d00eed354dd424df8daf9dc570c10",
+    "duration_seconds": 31.8,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "B2-01",
+    "script_sha256": "8eaa49dad835d35a081d987aea931f02226568a6a96ace21e56a326de380720a",
+    "audio_file": "audio/generated/B2-01.mp3",
+    "audio_sha256": "2e28f594d21d7740b66eb08ea187177e0b30013e4daaaf93a62dc15441cb0770",
+    "duration_seconds": 35.167,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "B2-02",
+    "script_sha256": "3b29726144a4e6e5fdf98356788cea7c51efd913c7e1a68558bfd8d01642c85f",
+    "audio_file": "audio/generated/B2-02.mp3",
+    "audio_sha256": "484a98feedc47a718d3a770cecffaa51ceaecccb98fa9159219fb8b0c94248cf",
+    "duration_seconds": 32.763,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "B2-03",
+    "script_sha256": "a77d4656562ce53e4f4d68b612c1e8538c7e04cb7c520715ae12db8a1592a8ac",
+    "audio_file": "audio/generated/B2-03.mp3",
+    "audio_sha256": "ee94df8aa1602716ccac9a43f312fedc16ac70fcf798eb98b49fd1d6caddd715",
+    "duration_seconds": 41.401,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "B2-04",
+    "script_sha256": "1b1a4a49bcc43cc6c3afbe97e7017dbe59e658aafb629fe14740b3b864d9fddc",
+    "audio_file": "audio/generated/B2-04.mp3",
+    "audio_sha256": "5d44bbfb4777bf61d84a6ea06aa5c871e70fe449f0a959657dd99c28319d2586",
+    "duration_seconds": 35.097,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "B2-05",
+    "script_sha256": "46f8e651891684c84cf8ea803cd6d742aa613b903c76599b8984bc49422650d8",
+    "audio_file": "audio/generated/B2-05.mp3",
+    "audio_sha256": "aeef41b3cc18dc34a511e39c959ceed9ff464aaee0366d1c198183599d29afda",
+    "duration_seconds": 35.596,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "B2-06",
+    "script_sha256": "772c9348ec324e1ef00a7750c5b5d58a45171015f00e7cf6b49fe25ec9ba67f7",
+    "audio_file": "audio/generated/B2-06.mp3",
+    "audio_sha256": "9f4d40e9ca0aad56a606d96f059683d133b88d5add4ffba49e7298be1fdf0279",
+    "duration_seconds": 36.548,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "B2-07",
+    "script_sha256": "2e9fc8794c78b78237ae50398e15926ab5848670feddb88d7da017f552808598",
+    "audio_file": "audio/generated/B2-07.mp3",
+    "audio_sha256": "84f4f0472b61647969a0d82159599e8a2aa7bf067bb343aeb5bc52fe122c23b0",
+    "duration_seconds": 34.76,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "B2-08",
+    "script_sha256": "67b3441151c0bd22e4947bcd2ad996f8276695577c00da0f3b39a87410cfe360",
+    "audio_file": "audio/generated/B2-08.mp3",
+    "audio_sha256": "19116f7a0ea58b1f5caac1b95cd70ea32831ff971c45520186b354b7a86c4524",
+    "duration_seconds": 35.863,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "ASSESS-PRE-A1",
+    "script_sha256": "6411b2f55969967e81a22fa8444f8fa362743bf935a3ddc0cfd2031b96dddd53",
+    "audio_file": "audio/generated/ASSESS-PRE-A1.mp3",
+    "audio_sha256": "8cfb876b1ca16f72b9aa2e4061ac55553f7f95002a2d7909687805b782220159",
+    "duration_seconds": 19.9,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "ASSESS-A1",
+    "script_sha256": "94c9236337e7cc803ad97f6726f31398265627628e34c385beda402b3e21fc85",
+    "audio_file": "audio/generated/ASSESS-A1.mp3",
+    "audio_sha256": "6ce9784a9890af07d970c5748673b09ba54bba0e775a720edeaffdfa2961c1c4",
+    "duration_seconds": 31.637,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "ASSESS-A2",
+    "script_sha256": "2985e97c2d4ba94aa05f4a7537bf419cbc6ed0870704646b65d084b125ef75f7",
+    "audio_file": "audio/generated/ASSESS-A2.mp3",
+    "audio_sha256": "c226fe309abecb0d465eaf3b039becb305c44aa06fc70cd44b2617639c88f139",
+    "duration_seconds": 37.14,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "ASSESS-B1",
+    "script_sha256": "ebdeb1b715e9aa3654b26d8613609fd48b81af60918a9c8c75998bdfc12fd1e2",
+    "audio_file": "audio/generated/ASSESS-B1.mp3",
+    "audio_sha256": "3c6b90b2dd80c17ab62d5c345723d145c598934bd4634d34fbae3214c7ca024a",
+    "duration_seconds": 49.342,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": true,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "PRE-C01",
+    "script_sha256": "1299bf23a9f0d9ea0e0f10d4e8667e0f1e90eeb015cf189b004633c310e539c6",
+    "audio_file": "audio/generated/PRE-C01.mp3",
+    "audio_sha256": "533d5f4ae75955137a2b7eff170c285eab5a5709b983bbe7b456f5dc35943fbd",
+    "duration_seconds": 4.087,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": false,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "A1-C01",
+    "script_sha256": "ebdd7860194c29e837c1e655ee467e83cf3fef6ac60b2f635651835d59d93d90",
+    "audio_file": "audio/generated/A1-C01.mp3",
+    "audio_sha256": "325f1d8b8c2251120be540599bfd75100a9932c86dc28563a1c35783795fa3f6",
+    "duration_seconds": 8.348,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": false,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "A2-C01",
+    "script_sha256": "34303db5489b62f82ef4cee1f99caca51c7c82e7d99a789eb22c22f2960076bf",
+    "audio_file": "audio/generated/A2-C01.mp3",
+    "audio_sha256": "53d31c92661bfb1e3b5d236860f42c19d28b7db8e9c6c6dfa1967de745422360",
+    "duration_seconds": 12.109,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": false,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "B1-C01",
+    "script_sha256": "4d1e02e6713cd0433593bef92a7090554de06e1b5250d4adda49bd66f88a2aff",
+    "audio_file": "audio/generated/B1-C01.mp3",
+    "audio_sha256": "da4cc2eb3497eabdf663dab5edacb4cb5f656b4474af6f575aad2afb1e8a3a88",
+    "duration_seconds": 16.951,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": false,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "PRE-C02",
+    "script_sha256": "d0250c926bdd879e755d1043e1fa0a01af540742e6d0e37cc4aee3c9bd11830f",
+    "audio_file": "audio/generated/PRE-C02.mp3",
+    "audio_sha256": "d9f91d06d7c2a7cb658b284adb7b53876e5249cf654aea4d0c9d4452fab1d55d",
+    "duration_seconds": 6.316,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": false,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "A1-C02",
+    "script_sha256": "fc73a857d4ac58214d516f3ae468bed89e13e25cfda51ea844cf40149b4ee9e0",
+    "audio_file": "audio/generated/A1-C02.mp3",
+    "audio_sha256": "23f39efea23fcba3c1b959f46e545a186b98a1ec3a115d0d5883336dbde60acc",
+    "duration_seconds": 10.379,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": false,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "A2-C02",
+    "script_sha256": "aeec9d784ad673c41013d19757080a7cb9f839684e1875e7e1f3c9409a410de5",
+    "audio_file": "audio/generated/A2-C02.mp3",
+    "audio_sha256": "03f2660f8c77dab5e8b7a07a2c00e185b53b790f9433cefd04be2e6d2c630d06",
+    "duration_seconds": 12.481,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": false,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "B1-C02",
+    "script_sha256": "bd4eed4cab6e7eb14e6e34917368596d1010b6a36c0eae7f9a715f4b4ac84d61",
+    "audio_file": "audio/generated/B1-C02.mp3",
+    "audio_sha256": "6f66e5aae124cb46d16242da31d2e22cb3b9d7fb1f1da4e512235786b5334b6f",
+    "duration_seconds": 21.804,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": false,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "PH-PRE-01",
+    "script_sha256": "617ae2baff54b6e9869dff308dda0ce093393b9661d259939052e28a87b56a08",
+    "audio_file": "audio/generated/PH-PRE-01.mp3",
+    "audio_sha256": "0dfb1b8e0ec7f08ff2ab17006d863ef30e034513b453de60d92773e9979bc3ec",
+    "duration_seconds": 4.876,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": false,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "PH-A1-01",
+    "script_sha256": "d15c86eeb126e125dd6aeab034d38b6294303a9f312c76ee0967922805aecaf5",
+    "audio_file": "audio/generated/PH-A1-01.mp3",
+    "audio_sha256": "b4ba1562bcf2e842ba8aa434cf6c91d05fcac48fd91ea17af055a14c42d50f63",
+    "duration_seconds": 6.118,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": false,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "PH-A2-01",
+    "script_sha256": "b39fd098fc6dd580bb909c920cfdd155033d57ba999d31c4e4ff06216a2214a0",
+    "audio_file": "audio/generated/PH-A2-01.mp3",
+    "audio_sha256": "fbb876f933519cc57e83b72638d0634800207bd795eef9d529b0b4cc08e76bbc",
+    "duration_seconds": 8.824,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": false,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  },
+  {
+    "id": "PH-B1-01",
+    "script_sha256": "93ca48d0d4a3f1b32b35b6ded3531e78af99d76f5c69351aeea1f604f1ae79d8",
+    "audio_file": "audio/generated/PH-B1-01.mp3",
+    "audio_sha256": "475ee5a6e4b21fe879ee20537f9bed6073fec2269f21982872aa081d32ea1f23",
+    "duration_seconds": 11.25,
+    "generation_status": "synthetic_draft",
+    "listening_review": "not_performed",
+    "variety": "en-US",
+    "voices": [
+      "en_US-ljspeech-high"
+    ],
+    "engine": "piper-tts 1.8.0",
+    "model_sha256": "5d4f08ba6a2a48c44592eed3ce56bf85e9de3dd4e20df90541ae68a8310c029a",
+    "length_scale": 1.12,
+    "speaker_labels_spoken": false,
+    "model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/ljspeech/high/MODEL_CARD",
+    "dataset_license": "public domain per model card"
+  }
+]

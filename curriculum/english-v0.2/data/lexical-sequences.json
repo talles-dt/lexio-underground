@@ -500,6 +500,86 @@
     "status": "written_not_reviewed_or_piloted"
   },
   {
+    "level": "pre-a1",
+    "id": "LEX-PRE-27",
+    "title": "Escolher lazer com apoio",
+    "after": "FND-06",
+    "lexical_ids": [
+      "LX-PRE-A1-6BC2C0",
+      "LX-PRE-A1-FDCF92",
+      "LX-PRE-A1-2DB5B7",
+      "LX-PRE-A1-C0CFE7",
+      "LX-PRE-A1-221965",
+      "LX-PRE-A1-072B36"
+    ],
+    "student": "lessons/lexical/LEX-PRE-27/student.md",
+    "teacher": "lessons/lexical/LEX-PRE-27/teacher.md",
+    "review": "lessons/lexical/LEX-PRE-27/review.md",
+    "assessment": "lessons/lexical/LEX-PRE-27/assessment.md",
+    "feedback": "lessons/lexical/LEX-PRE-27/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "pre-a1",
+    "id": "LEX-PRE-28",
+    "title": "Localizar serviço e entender uma placa",
+    "after": "FND-06",
+    "lexical_ids": [
+      "LX-PRE-A1-7E994E",
+      "LX-PRE-A1-886308",
+      "LX-PRE-A1-80F510",
+      "LX-PRE-A1-06E42D",
+      "LX-PRE-A1-7A07D6",
+      "LX-PRE-A1-0A39F7"
+    ],
+    "student": "lessons/lexical/LEX-PRE-28/student.md",
+    "teacher": "lessons/lexical/LEX-PRE-28/teacher.md",
+    "review": "lessons/lexical/LEX-PRE-28/review.md",
+    "assessment": "lessons/lexical/LEX-PRE-28/assessment.md",
+    "feedback": "lessons/lexical/LEX-PRE-28/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "pre-a1",
+    "id": "LEX-PRE-29",
+    "title": "Preparar a mesa com personagens",
+    "after": "FND-04",
+    "lexical_ids": [
+      "LX-PRE-A1-6CB8B2",
+      "LX-PRE-A1-951EDC",
+      "LX-PRE-A1-D539F5",
+      "LX-PRE-A1-2A57AE",
+      "LX-PRE-A1-573682",
+      "LX-PRE-A1-BDC3CE"
+    ],
+    "student": "lessons/lexical/LEX-PRE-29/student.md",
+    "teacher": "lessons/lexical/LEX-PRE-29/teacher.md",
+    "review": "lessons/lexical/LEX-PRE-29/review.md",
+    "assessment": "lessons/lexical/LEX-PRE-29/assessment.md",
+    "feedback": "lessons/lexical/LEX-PRE-29/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "pre-a1",
+    "id": "LEX-PRE-30",
+    "title": "Combinar dezenas e conferir preço total",
+    "after": "FND-06",
+    "lexical_ids": [
+      "LX-PRE-A1-5246A2",
+      "LX-PRE-A1-E07289",
+      "LX-PRE-A1-CF6162",
+      "LX-PRE-A1-3C6BD9",
+      "LX-PRE-A1-34DD43",
+      "LX-PRE-A1-E98948"
+    ],
+    "student": "lessons/lexical/LEX-PRE-30/student.md",
+    "teacher": "lessons/lexical/LEX-PRE-30/teacher.md",
+    "review": "lessons/lexical/LEX-PRE-30/review.md",
+    "assessment": "lessons/lexical/LEX-PRE-30/assessment.md",
+    "feedback": "lessons/lexical/LEX-PRE-30/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
     "level": "a1",
     "id": "LEX-A1-01",
     "title": "Relações sem presumir uma família",
@@ -914,6 +994,106 @@
     "status": "written_not_reviewed_or_piloted"
   },
   {
+    "level": "a1",
+    "id": "LEX-A1-22",
+    "title": "Ler cardápio e fazer pedido",
+    "after": "A1-04",
+    "lexical_ids": [
+      "LX-A1-781B14",
+      "LX-A1-77E363",
+      "LX-A1-E228A6",
+      "LX-A1-C657F8",
+      "LX-A1-4570CD",
+      "LX-A1-6FC29D"
+    ],
+    "student": "lessons/lexical/LEX-A1-22/student.md",
+    "teacher": "lessons/lexical/LEX-A1-22/teacher.md",
+    "review": "lessons/lexical/LEX-A1-22/review.md",
+    "assessment": "lessons/lexical/LEX-A1-22/assessment.md",
+    "feedback": "lessons/lexical/LEX-A1-22/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "a1",
+    "id": "LEX-A1-23",
+    "title": "Comprar e conferir pagamento e troco",
+    "after": "A1-04",
+    "lexical_ids": [
+      "LX-A1-206B97",
+      "LX-A1-8FA6AC",
+      "LX-A1-9AAFFE",
+      "LX-A1-3D52B5",
+      "LX-A1-F3ADD5",
+      "LX-A1-A0DE58"
+    ],
+    "student": "lessons/lexical/LEX-A1-23/student.md",
+    "teacher": "lessons/lexical/LEX-A1-23/teacher.md",
+    "review": "lessons/lexical/LEX-A1-23/review.md",
+    "assessment": "lessons/lexical/LEX-A1-23/assessment.md",
+    "feedback": "lessons/lexical/LEX-A1-23/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "a1",
+    "id": "LEX-A1-24",
+    "title": "Interpretar clima em mensagem pessoal",
+    "after": "A1-08",
+    "lexical_ids": [
+      "LX-A1-A8F08D",
+      "LX-A1-3782F1",
+      "LX-A1-C926CD",
+      "LX-A1-C49D9A",
+      "LX-A1-0B60C9",
+      "LX-A1-CE285F"
+    ],
+    "student": "lessons/lexical/LEX-A1-24/student.md",
+    "teacher": "lessons/lexical/LEX-A1-24/teacher.md",
+    "review": "lessons/lexical/LEX-A1-24/review.md",
+    "assessment": "lessons/lexical/LEX-A1-24/assessment.md",
+    "feedback": "lessons/lexical/LEX-A1-24/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "a1",
+    "id": "LEX-A1-25",
+    "title": "Aceitar convite e explicar indisponibilidade",
+    "after": "A1-08",
+    "lexical_ids": [
+      "LX-A1-2DE738",
+      "LX-A1-9B13E4",
+      "LX-A1-7D0E7E",
+      "LX-A1-5E7202",
+      "LX-A1-637D45",
+      "LX-A1-4A2B3B"
+    ],
+    "student": "lessons/lexical/LEX-A1-25/student.md",
+    "teacher": "lessons/lexical/LEX-A1-25/teacher.md",
+    "review": "lessons/lexical/LEX-A1-25/review.md",
+    "assessment": "lessons/lexical/LEX-A1-25/assessment.md",
+    "feedback": "lessons/lexical/LEX-A1-25/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "a1",
+    "id": "LEX-A1-26",
+    "title": "Ler horários e pedir atendimento",
+    "after": "A1-08",
+    "lexical_ids": [
+      "LX-A1-2F1E5A",
+      "LX-A1-09863F",
+      "LX-A1-794E53",
+      "LX-A1-D7F0C9",
+      "LX-A1-08374E",
+      "LX-A1-B1F313"
+    ],
+    "student": "lessons/lexical/LEX-A1-26/student.md",
+    "teacher": "lessons/lexical/LEX-A1-26/teacher.md",
+    "review": "lessons/lexical/LEX-A1-26/review.md",
+    "assessment": "lessons/lexical/LEX-A1-26/assessment.md",
+    "feedback": "lessons/lexical/LEX-A1-26/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
     "level": "a2",
     "id": "LEX-A2-01",
     "title": "Reorganizar uma viagem",
@@ -1304,6 +1484,86 @@
     "status": "written_not_reviewed_or_piloted"
   },
   {
+    "level": "a2",
+    "id": "LEX-A2-21",
+    "title": "Reformular e conferir sem inventar resposta",
+    "after": "A2-07",
+    "lexical_ids": [
+      "LX-A2-BE327E",
+      "LX-A2-13949C",
+      "LX-A2-BB375E",
+      "LX-A2-000BAE",
+      "LX-A2-0377C2",
+      "LX-A2-A4ECFA"
+    ],
+    "student": "lessons/lexical/LEX-A2-21/student.md",
+    "teacher": "lessons/lexical/LEX-A2-21/teacher.md",
+    "review": "lessons/lexical/LEX-A2-21/review.md",
+    "assessment": "lessons/lexical/LEX-A2-21/assessment.md",
+    "feedback": "lessons/lexical/LEX-A2-21/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "a2",
+    "id": "LEX-A2-22",
+    "title": "Participar de atividade comunitária",
+    "after": "A2-07",
+    "lexical_ids": [
+      "LX-A2-648324",
+      "LX-A2-D8C27E",
+      "LX-A2-FCE3E2",
+      "LX-A2-A13C22",
+      "LX-A2-B0B039",
+      "LX-A2-C9B802"
+    ],
+    "student": "lessons/lexical/LEX-A2-22/student.md",
+    "teacher": "lessons/lexical/LEX-A2-22/teacher.md",
+    "review": "lessons/lexical/LEX-A2-22/review.md",
+    "assessment": "lessons/lexical/LEX-A2-22/assessment.md",
+    "feedback": "lessons/lexical/LEX-A2-22/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "a2",
+    "id": "LEX-A2-23",
+    "title": "Explicar um procedimento digital simulado",
+    "after": "A2-06",
+    "lexical_ids": [
+      "LX-A2-9F577B",
+      "LX-A2-7F78ED",
+      "LX-A2-846332",
+      "LX-A2-B0A73B",
+      "LX-A2-86D966",
+      "LX-A2-1C3066"
+    ],
+    "student": "lessons/lexical/LEX-A2-23/student.md",
+    "teacher": "lessons/lexical/LEX-A2-23/teacher.md",
+    "review": "lessons/lexical/LEX-A2-23/review.md",
+    "assessment": "lessons/lexical/LEX-A2-23/assessment.md",
+    "feedback": "lessons/lexical/LEX-A2-23/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "a2",
+    "id": "LEX-A2-24",
+    "title": "Contar mudança pessoal com fonte e período",
+    "after": "A2-07",
+    "lexical_ids": [
+      "LX-A2-A2B049",
+      "LX-A2-4D74AA",
+      "LX-A2-6249F8",
+      "LX-A2-14E223",
+      "LX-A2-05F314",
+      "LX-A2-DEACD5"
+    ],
+    "student": "lessons/lexical/LEX-A2-24/student.md",
+    "teacher": "lessons/lexical/LEX-A2-24/teacher.md",
+    "review": "lessons/lexical/LEX-A2-24/review.md",
+    "assessment": "lessons/lexical/LEX-A2-24/assessment.md",
+    "feedback": "lessons/lexical/LEX-A2-24/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
     "level": "b1",
     "id": "LEX-B1-01",
     "title": "Acompanhar leituras e explicar uma ideia",
@@ -1691,6 +1951,106 @@
     "review": "lessons/lexical/LEX-B1-20/review.md",
     "assessment": "lessons/lexical/LEX-B1-20/assessment.md",
     "feedback": "lessons/lexical/LEX-B1-20/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "b1",
+    "id": "LEX-B1-21",
+    "title": "Avaliar compra usada e pedido de devolução",
+    "after": "B1-08",
+    "lexical_ids": [
+      "LX-B1-7105F9",
+      "LX-B1-2DC0F8",
+      "LX-B1-EAA09E",
+      "LX-B1-35A197",
+      "LX-B1-E26D6A",
+      "LX-B1-2E2662"
+    ],
+    "student": "lessons/lexical/LEX-B1-21/student.md",
+    "teacher": "lessons/lexical/LEX-B1-21/teacher.md",
+    "review": "lessons/lexical/LEX-B1-21/review.md",
+    "assessment": "lessons/lexical/LEX-B1-21/assessment.md",
+    "feedback": "lessons/lexical/LEX-B1-21/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "b1",
+    "id": "LEX-B1-22",
+    "title": "Comparar relatos ambientais por alcance",
+    "after": "B1-06",
+    "lexical_ids": [
+      "LX-B1-7F5E65",
+      "LX-B1-AF0032",
+      "LX-B1-701B53",
+      "LX-B1-CAB9AA",
+      "LX-B1-20466D",
+      "LX-B1-33A3ED"
+    ],
+    "student": "lessons/lexical/LEX-B1-22/student.md",
+    "teacher": "lessons/lexical/LEX-B1-22/teacher.md",
+    "review": "lessons/lexical/LEX-B1-22/review.md",
+    "assessment": "lessons/lexical/LEX-B1-22/assessment.md",
+    "feedback": "lessons/lexical/LEX-B1-22/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "b1",
+    "id": "LEX-B1-23",
+    "title": "Ler manchete junto do corpo da notícia",
+    "after": "B1-05",
+    "lexical_ids": [
+      "LX-B1-B108D8",
+      "LX-B1-456031",
+      "LX-B1-3A90F2",
+      "LX-B1-1E85FD",
+      "LX-B1-96ABF8",
+      "LX-B1-EE823C"
+    ],
+    "student": "lessons/lexical/LEX-B1-23/student.md",
+    "teacher": "lessons/lexical/LEX-B1-23/teacher.md",
+    "review": "lessons/lexical/LEX-B1-23/review.md",
+    "assessment": "lessons/lexical/LEX-B1-23/assessment.md",
+    "feedback": "lessons/lexical/LEX-B1-23/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "b1",
+    "id": "LEX-B1-24",
+    "title": "Interpretar uma história e seu final aberto",
+    "after": "B1-02",
+    "lexical_ids": [
+      "LX-B1-A1353B",
+      "LX-B1-99D6E1",
+      "LX-B1-AE8056",
+      "LX-B1-AE29F5",
+      "LX-B1-1E7E09",
+      "LX-B1-04742D"
+    ],
+    "student": "lessons/lexical/LEX-B1-24/student.md",
+    "teacher": "lessons/lexical/LEX-B1-24/teacher.md",
+    "review": "lessons/lexical/LEX-B1-24/review.md",
+    "assessment": "lessons/lexical/LEX-B1-24/assessment.md",
+    "feedback": "lessons/lexical/LEX-B1-24/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "b1",
+    "id": "LEX-B1-25",
+    "title": "Justificar escolha com critérios e contrapontos",
+    "after": "B1-08",
+    "lexical_ids": [
+      "LX-B1-D205B3",
+      "LX-B1-16481C",
+      "LX-B1-359E67",
+      "LX-B1-6E1D57",
+      "LX-B1-1A969F",
+      "LX-B1-923035"
+    ],
+    "student": "lessons/lexical/LEX-B1-25/student.md",
+    "teacher": "lessons/lexical/LEX-B1-25/teacher.md",
+    "review": "lessons/lexical/LEX-B1-25/review.md",
+    "assessment": "lessons/lexical/LEX-B1-25/assessment.md",
+    "feedback": "lessons/lexical/LEX-B1-25/feedback.md",
     "status": "written_not_reviewed_or_piloted"
   },
   {

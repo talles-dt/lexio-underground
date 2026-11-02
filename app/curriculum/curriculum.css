@@ -27,3 +27,12 @@
 .lexio-curriculum article pre { overflow-x:auto; padding:18px; background:#191b18; }
 .lexio-curriculum article [id] { scroll-margin-top:24px; }
 @media(max-width:600px) { .lexio-curriculum main { padding:28px 18px 64px; } .lexio-curriculum section>ul>li { padding:16px; } }
+.lexio-curriculum .curriculum-listening { border:1px solid #6c5a3d; border-radius:16px; padding:24px; background:#191b18; }
+.lexio-curriculum .curriculum-listening h2 { margin-top:0; }
+.lexio-curriculum .curriculum-listening label { display:block; margin:16px 0; }
+.lexio-curriculum .curriculum-listening select { display:block; max-width:100%; background:#101211; color:#eee9df; border:1px solid #6c5a3d; border-radius:6px; padding:10px; margin-top:6px; }
+.lexio-curriculum .listening-controls { display:flex; gap:12px; flex-wrap:wrap; }
+.lexio-curriculum .curriculum-listening button { padding:10px 18px; border:1px solid #e6bf78; border-radius:8px; background:#e6bf78; color:#151710; cursor:pointer; }
+.lexio-curriculum .curriculum-listening button:disabled { opacity:.5; cursor:not-allowed; }
+.lexio-curriculum .curriculum-listening summary { cursor:pointer; color:#e6bf78; }
+.lexio-curriculum .curriculum-listening :is(button,select,summary):focus-visible { outline:2px solid #ffe0a6; outline-offset:4px; }

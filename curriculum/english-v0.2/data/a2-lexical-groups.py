@@ -216,3 +216,71 @@ GROUPS += [{'id': 'LEX-A2-19',
           'escuta realizada.',
   'pitfall': 'Não equiparar contagem de itens memorizados a nível CEFR, nem afirmar progresso sem dizer em '
              'quê e com qual evidência.'}]
+
+GROUPS += [{'id': 'LEX-A2-21',
+  'title': 'Reformular e conferir sem inventar resposta',
+  'after': 'A2-07',
+  'words': ['what I mean is',
+            'let me check',
+            'could you explain',
+            'do you mean',
+            "I'm not sure",
+            'for example'],
+  'situation': 'Mensagem: We need supplies soon. A sabe supplies = pens and paper as examples; soon = by '
+               'Friday noon; room not confirmed. B pergunta significado, confirma prazo e sala. A reformula, '
+               'dá exemplo e indica incerteza. Troquem com equipment = projector and screen, prazo Monday at '
+               'ten; screen = tela, apoio. Autônomo: escreva pedidos de esclarecimento antes de consultar '
+               'cartão A e marque o que permaneceu desconhecido.',
+  'result': 'Could you explain supplies? Do you mean by Friday noon? A: What I mean is pens and paper, for '
+            'example. I’m not sure about the room. Let me check. Segundo: Monday at ten; sala desconhecida. '
+            'Exemplo não restringe lista a dois itens.',
+  'phon': 'Entonação de confirmação em Do you mean? deve abrir espaço à correção, não impor interpretação.',
+  'pitfall': 'Não transformar Let me check em dado confirmado; explain it to me, não explain me isolado.'},
+ {'id': 'LEX-A2-22',
+  'title': 'Participar de atividade comunitária',
+  'after': 'A2-07',
+  'words': ['join', 'sign up', 'resident', 'meeting', 'local council', 'donation'],
+  'situation': 'Aviso de grupo de leitura: residents and visitors welcome; meeting Friday 18:00; sign up for '
+               'workshop, places not yet confirmed; donation of books optional. Carta: local council has '
+               'received request for room, decision pending. A quer join e B explica inscrição, doação '
+               'opcional e sala pendente. Escreva recado de 60–80 palavras a pessoa que não viu aviso. '
+               'Autônomo: marque o que é obrigatório/opcional/pendente antes de resumir.',
+  'result': 'Moradores e visitantes podem participar; reunião sexta 18 h; inscrição na oficina sem vaga '
+            'confirmada; livros opcionais; sala sem aprovação. I would like to join. How do I sign up? Do I '
+            'need to make a donation? Resposta: optional.',
+  'phon': 'Destaque optional e not confirmed; o destinatário não deve entender obrigação de doar.',
+  'pitfall': 'Não confundir cadastro com vaga nem recebimento de pedido pelo conselho com aprovação.'},
+ {'id': 'LEX-A2-23',
+  'title': 'Explicar um procedimento digital simulado',
+  'after': 'A2-06',
+  'words': ['plug in', 'switch on', 'press', 'download', 'save', 'restart'],
+  'situation': 'Use desenho de tablet, sem conta real. Roteiro: plug in; switch on; press Download to '
+               'receive worksheet; complete name field with fictitious name; press Save; restart after '
+               'saving. B recebeu versão errada restart before save. A explica ordem e corrige B. '
+               'Transferência: novo desenho já ligado e arquivo já baixado; diga apenas etapas ainda '
+               'necessárias, sem repetir preparação concluída. Autônomo: numere cartões, escreva instruções '
+               'e compare estado inicial.',
+  'result': 'Primeiro conectar/ligar, baixar, preencher, salvar e reiniciar. No segundo já ligado e arquivo '
+            'local: preencher, salvar, reiniciar; não inventar login ou reset. Modelo: Save the file before '
+            'restarting.',
+  'phon': 'Agrupe verbos e objeto: plug IT in, switch IT on, press SAVE. Ouvir ordem é diferente de só '
+          'conhecer palavras.',
+  'pitfall': 'Restart não é reset; não executar configuração real nem pedir senha. Download e save são '
+             'etapas diferentes.'},
+ {'id': 'LEX-A2-24',
+  'title': 'Contar mudança pessoal com fonte e período',
+  'after': 'A2-07',
+  'words': ['grow up', 'childhood', 'hometown', 'move abroad', 'get married', 'used to'],
+  'situation': 'Perfil fictício: Jo born in Natal, grew up in Recife, calls Recife hometown. During '
+               'childhood walked to school. Moved from Brazil to Portugal in May. Plans to get married next '
+               'year; not married yet. Now takes bus to class. A escreve perfil de 80–100 palavras; B '
+               'confere nascimento, infância, mudança e plano. Transferência: Kim nasceu e cresceu em '
+               'Curitiba, mudou para Porto Alegre, casou emJune; não mudou abroad. Autônomo: use linha do '
+               'tempo com planned/completed antes de redigir.',
+  'result': 'Jo grew up in Recife, hometown Recife, born Natal; moved abroad in May; marriage planned, not '
+            'completed. Used to walk, now bus. Kim mudança interna não abroad; got married in June. Não '
+            'inventar nacionalidade ou experiência familiar real.',
+  'phon': 'Marque used to versus now e planned versus got married; destinatário deve recuperar sequência '
+          'temporal.',
+  'pitfall': 'Hometown não é automaticamente birthplace; não exigir compartilhar história pessoal nem '
+             'presumir casamento.'}]

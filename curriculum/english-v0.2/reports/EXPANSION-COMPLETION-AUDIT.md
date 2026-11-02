@@ -34,3 +34,7 @@ Objetivo ativo: concluir a expansão completa pré-A1–C1 e fazer deploy. C2 pe
 ## Prioridade revisada: pré-A1 até B1
 
 Pedido do responsável: deixar ao menos até B1 completo. A execução agora prioriza esses quatro níveis, sem remover B2/C1 nem declarar suficiência por contagem. O lote seguinte adiciona 96 alvos, 16 sequências e quatro consolidações; totais correntes no [relatório da prioridade](PRIORITY-THROUGH-B1.md). O objetivo permanece aberto enquanto houver lacunas materiais.
+
+## Checkpoint de 02/11/2026
+
+108 novos alvos, 18 sequências, quatro consolidações e quatro laboratórios de inteligibilidade; 734 registros e 135 sequências na edição. [Estado por lacuna](B1-GAP-CLOSURE.md). Registros de pilotagem e gravações editoriais revisadas continuam ausentes; objetivo integral não concluído.

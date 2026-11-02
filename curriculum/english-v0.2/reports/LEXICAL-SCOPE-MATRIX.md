@@ -6,23 +6,23 @@ Os números são candidatos recuperados pelas etiquetas existentes: um item pode
 
 | Domínio | Pré-A1 | A1 | A2 | B1 | B2 | C1 |
 |---|---:|---:|---:|---:|---:|---:|
-| Identidade, pessoas e relações | 14 | 10 | 6 | 11 | 12 | 6 |
-| Interação e reparo | 11 | 6 | 0 | 5 | 4 | 10 |
-| Números, medidas e tempo | 39 | 31 | 12 | 12 | 12 | 12 |
+| Identidade, pessoas e relações | 14 | 10 | 12 | 11 | 12 | 6 |
+| Interação e reparo | 11 | 6 | 6 | 5 | 4 | 10 |
+| Números, medidas e tempo | 45 | 31 | 12 | 12 | 12 | 12 |
 | Rotina e cuidados pessoais | 6 | 12 | 6 | 6 | 0 | 0 |
-| Moradia e manutenção | 8 | 11 | 6 | 6 | 6 | 4 |
-| Alimentação e preparo | 9 | 4 | 4 | 6 | 6 | 0 |
-| Vestuário e aparência | 8 | 9 | 6 | 0 | 0 | 0 |
+| Moradia e manutenção | 14 | 11 | 6 | 6 | 6 | 4 |
+| Alimentação e preparo | 9 | 10 | 4 | 6 | 6 | 0 |
+| Vestuário e aparência | 8 | 9 | 6 | 6 | 0 | 0 |
 | Corpo, sensações e saúde cotidiana | 8 | 4 | 9 | 6 | 0 | 0 |
 | Cidade, transporte e viagens | 7 | 11 | 16 | 5 | 0 | 0 |
-| Dinheiro, compras e serviços | 2 | 0 | 8 | 12 | 6 | 1 |
+| Dinheiro, compras e serviços | 2 | 6 | 8 | 12 | 6 | 1 |
 | Trabalho e projetos | 6 | 5 | 5 | 9 | 9 | 0 |
 | Estudo e vida acadêmica | 6 | 6 | 6 | 10 | 0 | 1 |
-| Lazer, esporte e cultura | 0 | 3 | 9 | 7 | 4 | 10 |
-| Mídia, tecnologia e comunicação | 6 | 4 | 4 | 4 | 6 | 2 |
-| Natureza, clima e sustentabilidade | 6 | 2 | 4 | 2 | 6 | 1 |
-| Comunidade e instituições | 0 | 0 | 2 | 5 | 3 | 6 |
-| Opinião, evidência e decisão | 0 | 2 | 7 | 4 | 10 | 13 |
+| Lazer, esporte e cultura | 6 | 9 | 9 | 13 | 4 | 10 |
+| Mídia, tecnologia e comunicação | 6 | 4 | 10 | 10 | 6 | 2 |
+| Natureza, clima e sustentabilidade | 6 | 8 | 4 | 8 | 6 | 1 |
+| Comunidade e instituições | 6 | 6 | 8 | 5 | 3 | 6 |
+| Opinião, evidência e decisão | 0 | 2 | 7 | 10 | 10 | 13 |
 
 ## Progressão funcional por domínio
 

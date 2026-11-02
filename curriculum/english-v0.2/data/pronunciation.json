@@ -1,0 +1,34 @@
+[
+  {
+    "id": "PH-PRE-01",
+    "level": "pre-a1",
+    "title": "Números, objetos e pedido de repetição",
+    "student": "lessons/pronunciation/PH-PRE-01/student.md",
+    "teacher": "lessons/pronunciation/PH-PRE-01/teacher.md",
+    "feedback": "lessons/pronunciation/PH-PRE-01/feedback.md"
+  },
+  {
+    "id": "PH-A1-01",
+    "level": "a1",
+    "title": "Vogais, plurais e terminações de passado",
+    "student": "lessons/pronunciation/PH-A1-01/student.md",
+    "teacher": "lessons/pronunciation/PH-A1-01/teacher.md",
+    "feedback": "lessons/pronunciation/PH-A1-01/feedback.md"
+  },
+  {
+    "id": "PH-A2-01",
+    "level": "a2",
+    "title": "Acento de palavra, redução e sequência",
+    "student": "lessons/pronunciation/PH-A2-01/student.md",
+    "teacher": "lessons/pronunciation/PH-A2-01/teacher.md",
+    "feedback": "lessons/pronunciation/PH-A2-01/feedback.md"
+  },
+  {
+    "id": "PH-B1-01",
+    "level": "b1",
+    "title": "Grupos de sentido, foco e entonação de reparo",
+    "student": "lessons/pronunciation/PH-B1-01/student.md",
+    "teacher": "lessons/pronunciation/PH-B1-01/teacher.md",
+    "feedback": "lessons/pronunciation/PH-B1-01/feedback.md"
+  }
+]

@@ -6,10 +6,10 @@ Derivado de inventários e referências de atividades. **Não é índice de prof
 
 | Nível | Entradas do núcleo | Etapas I/P/U/R/A com referência | Etapas sem referência específica |
 |---|---:|---:|---:|
-| PRE-A1 | 136 | 136 / 136 / 136 / 136 / 136 | 0 |
-| A1 | 120 | 120 / 120 / 120 / 120 / 120 | 0 |
-| A2 | 110 | 110 / 110 / 110 / 110 / 110 | 0 |
-| B1 | 110 | 110 / 110 / 110 / 110 / 110 | 0 |
+| PRE-A1 | 160 | 160 / 160 / 160 / 160 / 160 | 0 |
+| A1 | 150 | 150 / 150 / 150 / 150 / 150 | 0 |
+| A2 | 134 | 134 / 134 / 134 / 134 / 134 | 0 |
+| B1 | 140 | 140 / 140 / 140 / 140 / 140 | 0 |
 | B2 | 84 | 84 / 84 / 84 / 84 / 84 | 0 |
 | C1 | 66 | 66 / 66 / 66 / 66 / 66 | 0 |
 
@@ -45,6 +45,10 @@ I = introdução; P = prática; U = uso contextualizado; R = retomada em encontr
 | LEX-PRE-24 — Tempo e lugar de um encontro | FND-06 | [Ensino](../lessons/lexical/LEX-PRE-24/student.md) · [Retomada](../lessons/lexical/LEX-PRE-24/review.md) · [Avaliação](../lessons/lexical/LEX-PRE-24/assessment.md) |
 | LEX-PRE-25 — Escolher canal e identificar um contato | FND-06 | [Ensino](../lessons/lexical/LEX-PRE-25/student.md) · [Retomada](../lessons/lexical/LEX-PRE-25/review.md) · [Avaliação](../lessons/lexical/LEX-PRE-25/assessment.md) |
 | LEX-PRE-26 — Pessoas, tarefa e status de trabalho | FND-06 | [Ensino](../lessons/lexical/LEX-PRE-26/student.md) · [Retomada](../lessons/lexical/LEX-PRE-26/review.md) · [Avaliação](../lessons/lexical/LEX-PRE-26/assessment.md) |
+| LEX-PRE-27 — Escolher lazer com apoio | FND-06 | [Ensino](../lessons/lexical/LEX-PRE-27/student.md) · [Retomada](../lessons/lexical/LEX-PRE-27/review.md) · [Avaliação](../lessons/lexical/LEX-PRE-27/assessment.md) |
+| LEX-PRE-28 — Localizar serviço e entender uma placa | FND-06 | [Ensino](../lessons/lexical/LEX-PRE-28/student.md) · [Retomada](../lessons/lexical/LEX-PRE-28/review.md) · [Avaliação](../lessons/lexical/LEX-PRE-28/assessment.md) |
+| LEX-PRE-29 — Preparar a mesa com personagens | FND-04 | [Ensino](../lessons/lexical/LEX-PRE-29/student.md) · [Retomada](../lessons/lexical/LEX-PRE-29/review.md) · [Avaliação](../lessons/lexical/LEX-PRE-29/assessment.md) |
+| LEX-PRE-30 — Combinar dezenas e conferir preço total | FND-06 | [Ensino](../lessons/lexical/LEX-PRE-30/student.md) · [Retomada](../lessons/lexical/LEX-PRE-30/review.md) · [Avaliação](../lessons/lexical/LEX-PRE-30/assessment.md) |
 
 ## Sequências lexicais A1
 
@@ -71,6 +75,11 @@ I = introdução; P = prática; U = uso contextualizado; R = retomada em encontr
 | LEX-A1-19 — Organizar uma aula e pedir ajuda para estudar | A1-08 | [Ensino](../lessons/lexical/LEX-A1-19/student.md) · [Retomada](../lessons/lexical/LEX-A1-19/review.md) · [Avaliação](../lessons/lexical/LEX-A1-19/assessment.md) |
 | LEX-A1-20 — Combinar horas sem trocar o período do dia | A1-08 | [Ensino](../lessons/lexical/LEX-A1-20/student.md) · [Retomada](../lessons/lexical/LEX-A1-20/review.md) · [Avaliação](../lessons/lexical/LEX-A1-20/assessment.md) |
 | LEX-A1-21 — Conferir datas e ordem | A1-08 | [Ensino](../lessons/lexical/LEX-A1-21/student.md) · [Retomada](../lessons/lexical/LEX-A1-21/review.md) · [Avaliação](../lessons/lexical/LEX-A1-21/assessment.md) |
+| LEX-A1-22 — Ler cardápio e fazer pedido | A1-04 | [Ensino](../lessons/lexical/LEX-A1-22/student.md) · [Retomada](../lessons/lexical/LEX-A1-22/review.md) · [Avaliação](../lessons/lexical/LEX-A1-22/assessment.md) |
+| LEX-A1-23 — Comprar e conferir pagamento e troco | A1-04 | [Ensino](../lessons/lexical/LEX-A1-23/student.md) · [Retomada](../lessons/lexical/LEX-A1-23/review.md) · [Avaliação](../lessons/lexical/LEX-A1-23/assessment.md) |
+| LEX-A1-24 — Interpretar clima em mensagem pessoal | A1-08 | [Ensino](../lessons/lexical/LEX-A1-24/student.md) · [Retomada](../lessons/lexical/LEX-A1-24/review.md) · [Avaliação](../lessons/lexical/LEX-A1-24/assessment.md) |
+| LEX-A1-25 — Aceitar convite e explicar indisponibilidade | A1-08 | [Ensino](../lessons/lexical/LEX-A1-25/student.md) · [Retomada](../lessons/lexical/LEX-A1-25/review.md) · [Avaliação](../lessons/lexical/LEX-A1-25/assessment.md) |
+| LEX-A1-26 — Ler horários e pedir atendimento | A1-08 | [Ensino](../lessons/lexical/LEX-A1-26/student.md) · [Retomada](../lessons/lexical/LEX-A1-26/review.md) · [Avaliação](../lessons/lexical/LEX-A1-26/assessment.md) |
 
 ## Sequências lexicais A2
 
@@ -96,6 +105,10 @@ I = introdução; P = prática; U = uso contextualizado; R = retomada em encontr
 | LEX-A2-18 — Descrever caimento e diferenças em uma compra | A2-05 | [Ensino](../lessons/lexical/LEX-A2-18/student.md) · [Retomada](../lessons/lexical/LEX-A2-18/review.md) · [Avaliação](../lessons/lexical/LEX-A2-18/assessment.md) |
 | LEX-A2-19 — Combinar tarefas domésticas e revezamento | A2-07 | [Ensino](../lessons/lexical/LEX-A2-19/student.md) · [Retomada](../lessons/lexical/LEX-A2-19/review.md) · [Avaliação](../lessons/lexical/LEX-A2-19/assessment.md) |
 | LEX-A2-20 — Escolher recursos e rever o estudo | A2-07 | [Ensino](../lessons/lexical/LEX-A2-20/student.md) · [Retomada](../lessons/lexical/LEX-A2-20/review.md) · [Avaliação](../lessons/lexical/LEX-A2-20/assessment.md) |
+| LEX-A2-21 — Reformular e conferir sem inventar resposta | A2-07 | [Ensino](../lessons/lexical/LEX-A2-21/student.md) · [Retomada](../lessons/lexical/LEX-A2-21/review.md) · [Avaliação](../lessons/lexical/LEX-A2-21/assessment.md) |
+| LEX-A2-22 — Participar de atividade comunitária | A2-07 | [Ensino](../lessons/lexical/LEX-A2-22/student.md) · [Retomada](../lessons/lexical/LEX-A2-22/review.md) · [Avaliação](../lessons/lexical/LEX-A2-22/assessment.md) |
+| LEX-A2-23 — Explicar um procedimento digital simulado | A2-06 | [Ensino](../lessons/lexical/LEX-A2-23/student.md) · [Retomada](../lessons/lexical/LEX-A2-23/review.md) · [Avaliação](../lessons/lexical/LEX-A2-23/assessment.md) |
+| LEX-A2-24 — Contar mudança pessoal com fonte e período | A2-07 | [Ensino](../lessons/lexical/LEX-A2-24/student.md) · [Retomada](../lessons/lexical/LEX-A2-24/review.md) · [Avaliação](../lessons/lexical/LEX-A2-24/assessment.md) |
 
 ## Sequências lexicais B1
 
@@ -121,6 +134,11 @@ I = introdução; P = prática; U = uso contextualizado; R = retomada em encontr
 | LEX-B1-18 — Organizar um relato de saúde sem acrescentar conclusões | B1-05 | [Ensino](../lessons/lexical/LEX-B1-18/student.md) · [Retomada](../lessons/lexical/LEX-B1-18/review.md) · [Avaliação](../lessons/lexical/LEX-B1-18/assessment.md) |
 | LEX-B1-19 — Negociar responsabilidades em uma casa compartilhada | B1-07 | [Ensino](../lessons/lexical/LEX-B1-19/student.md) · [Retomada](../lessons/lexical/LEX-B1-19/review.md) · [Avaliação](../lessons/lexical/LEX-B1-19/assessment.md) |
 | LEX-B1-20 — Reorganizar hábitos com resultado e tentativa separados | B1-08 | [Ensino](../lessons/lexical/LEX-B1-20/student.md) · [Retomada](../lessons/lexical/LEX-B1-20/review.md) · [Avaliação](../lessons/lexical/LEX-B1-20/assessment.md) |
+| LEX-B1-21 — Avaliar compra usada e pedido de devolução | B1-08 | [Ensino](../lessons/lexical/LEX-B1-21/student.md) · [Retomada](../lessons/lexical/LEX-B1-21/review.md) · [Avaliação](../lessons/lexical/LEX-B1-21/assessment.md) |
+| LEX-B1-22 — Comparar relatos ambientais por alcance | B1-06 | [Ensino](../lessons/lexical/LEX-B1-22/student.md) · [Retomada](../lessons/lexical/LEX-B1-22/review.md) · [Avaliação](../lessons/lexical/LEX-B1-22/assessment.md) |
+| LEX-B1-23 — Ler manchete junto do corpo da notícia | B1-05 | [Ensino](../lessons/lexical/LEX-B1-23/student.md) · [Retomada](../lessons/lexical/LEX-B1-23/review.md) · [Avaliação](../lessons/lexical/LEX-B1-23/assessment.md) |
+| LEX-B1-24 — Interpretar uma história e seu final aberto | B1-02 | [Ensino](../lessons/lexical/LEX-B1-24/student.md) · [Retomada](../lessons/lexical/LEX-B1-24/review.md) · [Avaliação](../lessons/lexical/LEX-B1-24/assessment.md) |
+| LEX-B1-25 — Justificar escolha com critérios e contrapontos | B1-08 | [Ensino](../lessons/lexical/LEX-B1-25/student.md) · [Retomada](../lessons/lexical/LEX-B1-25/review.md) · [Avaliação](../lessons/lexical/LEX-B1-25/assessment.md) |
 
 ## Sequências lexicais B2
 

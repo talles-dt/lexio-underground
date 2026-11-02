@@ -51,6 +51,7 @@ for filename, source in [
     ('quantity-time-expansion.tsv', 'LEXIO-AUTHOR-2026-11-01'),
     ('through-b1-daily-expansion.tsv', 'LEXIO-AUTHOR-2026-11-01'),
     ('through-b1-time-life-expansion.tsv', 'LEXIO-AUTHOR-2026-11-01'),
+    ('b1-gap-closure-expansion.tsv', 'LEXIO-AUTHOR-2026-11-01'),
 ]:
     authored={(r['level'],r['entry'],r['sense_pt']) for r in read_tsv('lexical-scope/'+filename)}
     for item in lexicon:
@@ -379,6 +380,12 @@ runpy.run_path(str(ROOT / "editorial/build_a1.py"), run_name="__main__", init_gl
 
 runpy.run_path(str(ROOT / "editorial/build_report.py"), run_name="__main__")
 
+runpy.run_path(str(ROOT / "editorial/build_gap_consolidations.py"), run_name="__main__")
+
+runpy.run_path(str(ROOT / "editorial/build_pronunciation.py"), run_name="__main__")
+
 runpy.run_path(str(ROOT / "editorial/build_audio_queue.py"), run_name="__main__")
 
 runpy.run_path(str(ROOT / 'editorial/build_lexical_scope.py'), run_name='__main__')
+
+runpy.run_path(str(ROOT / 'editorial/build_priority_audit.py'), run_name='__main__')

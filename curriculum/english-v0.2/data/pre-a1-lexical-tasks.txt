@@ -135,3 +135,27 @@ customer|Customer é cliente ou gerente?|Cliente.|Complete cliente: a ___.|Custo
 task|Task é tarefa ou dia da semana?|Tarefa.|Complete minha tarefa: my ___.|Task.|Cartão Task: read names. Apoio read names = ler nomes. Qual tarefa?|Ler os nomes.
 ready|I am ready antes de começar: já terminou necessariamente?|Não; está pronto para começar.|Complete Estou pronto: I am ___.|Ready.|Pessoa diz not ready. Começar imediatamente foi confirmado?|Não.
 finished|I am finished após tarefa: terminou ou vai começar?|Terminou.|Complete Terminei: I am ___.|Finished.|Cartão Task: write name. Nome escrito; pessoa diz I am finished. Qual status?|Tarefa de escrever nome concluída; não inferir outras tarefas.
+music|I like music: gosta de música ou mercado?|Música.|Complete ouvir música: listen to ___.|Music.|Cartão preference: music. Diga o gosto com I like.|I like music.
+film|Film é filme ou livro?|Filme.|Complete assistir a um filme: watch a ___.|Film; movie também vale.|Cartão film tonight; tonight = hoje à noite. Qual atividade e período?|Filme hoje à noite.
+game|Game significa jogo ou sempre videogame?|Jogo; não necessariamente videogame.|Complete jogar um jogo: play a ___.|Game.|Card says board game; board = tabuleiro. É obrigatório usar computador?|Não; é jogo de tabuleiro.
+park|In the park: no parque ou em casa?|No parque.|Complete no parque: in the ___.|Park.|Meet in the park tomorrow: lugar e dia?|No parque, amanhã.
+like|I like tea informa gosto ou preço?|Gosto.|Complete gosto de música: I ___ music.|Like.|Cartão gosta de jogos: diga frase com games.|I like games.
+choose|Choose tea or water pede escolher uma bebida ou beber ambas?|Escolher uma.|Complete escolha um jogo: ___ a game.|Choose.|Duas opções film/music; escolha music e diga palavra.|Music; I choose music também vale.
+hospital|Hospital identifica lugar de saúde ou cinema?|Lugar de saúde.|Complete placa hospital: ___.|Hospital.|Mapa mostra hospital junto à letra H. Para onde aponta H?|Hospital.
+pharmacy|Pharmacy é farmácia ou parque?|Farmácia.|Complete a farmácia: the ___.|Pharmacy.|Mapa P = pharmacy. Diga o serviço.|Pharmacy; farmácia.
+shop|Shop open: loja aberta ou fechada?|Aberta.|Complete loja: a ___.|Shop; store aceito.|Cartão shop closed, closed = fechado. É possível inferir aberta?|Não; está fechada no cartão.
+exit|Exit indica entrada ou saída?|Saída.|Complete placa saída: ___.|Exit.|Mapa mostra Exit A e Entrance B. Qual corresponde à saída?|A.
+wait|Wait here pede esperar ou sair?|Esperar aqui.|Complete espere por favor: ___, please.|Wait.|Cartão Wait outside. Onde esperar?|Fora.
+queue|Queue: fila ou senha numérica obrigatoriamente?|Fila.|Complete a fila: the ___.|Queue; line aceito.|Aviso queue inside; onde está a fila?|Dentro.
+plate|Plate: prato ou bebida?|Prato.|Complete dois pratos: two ___.|Plates.|Pedido one plate; foram entregues two. Corrija com one.|One plate, please.
+spoon|Spoon: colher ou faca?|Colher.|Complete duas colheres: two ___.|Spoons.|Cartão three spoons: escolha quantidade 2 ou 3.|Três.
+fork|Fork é garfo ou chave?|Garfo.|Complete meu garfo: my ___.|Fork.|Ao devolver garfo de Jo, diga This is your...|This is your fork.
+knife|Knife é faca ou prato?|Faca.|Complete uma faca: a ___.|Knife.|Cartão knife, spoon; qual palavra é faca?|Knife.
+son|Son é filho ou irmão?|Filho.|Complete meu filho: my ___.|Son.|Cartão Rui: son of Ana. Qual relação de Rui com Ana?|Filho.
+daughter|Daughter é filha ou mãe?|Filha.|Complete minha filha: my ___.|Daughter.|Cartão Eva: daughter of Lee. Apresente relação com This is my daughter no papel de Lee.|This is my daughter Eva.
+twenty-one|Twenty-one corresponde a 21 ou 12?|21.|Escreva 21 com twenty-one.|Twenty-one.|Pedido twenty-one cups: quantos copos?|21.
+twenty-two|Twenty-two: 22 ou 20?|22.|Combine twenty + three para 23.|Twenty-three.|Combine twenty + four para 24, com apoio four.|Twenty-four; avaliar combinação, não memorização inédita.
+thirty-five|Thirty-five: 35 ou 15?|35.|Combine thirty + six para 36.|Thirty-six.|Cartão 37; use thirty e seven.|Thirty-seven.
+forty-eight|Forty-eight: 48 ou 84?|48.|Combine forty + nine para 49.|Forty-nine.|Cartão 68; use sixty e eight.|Sixty-eight.
+cent|50 cents em moeda de 100 cents por unidade equivale a metade de uma unidade?|Sim; relação fornecida.|Escreva 25 cents com twenty-five.|Twenty-five cents.|Etiqueta 1 credit 20 cents. Os cents são 2 ou 20?|20.
+total|Dois itens 1 e 2 créditos; total fornecido 3. Total é cada item ou conjunto?|Conjunto.|Cartão total 4 credits. Diga Total: four credits.|Total: four credits.|Dois copos, total 5 credits. Podemos dizer cada copo custa cinco?|Não; cinco é o total.

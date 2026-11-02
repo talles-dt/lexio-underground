@@ -234,3 +234,82 @@ GROUPS += [{'id': 'LEX-A1-20',
           'exigir realização nativa de th para registrar data correta.',
   'pitfall': 'Não interpretar formato de data como universal. Estes seis ordinais não substituem o ensino '
              'posterior dos demais; fornecer tabela quando forem necessários.'}]
+
+GROUPS += [{'id': 'LEX-A1-22',
+  'title': 'Ler cardápio e fazer pedido',
+  'after': 'A1-04',
+  'words': ['vegetable', 'fruit', 'chicken', 'fish', 'sugar', 'salt'],
+  'situation': 'Menu fictício: chicken with rice; fish with vegetables; fruit; tea with or without sugar. A '
+               'pede fish with vegetables e tea without sugar. Também pergunta se rice without salt está '
+               'disponível; atendente B tem resposta no, not today. B confirma pedido e recusa sem mudar o '
+               'menu. Troquem com chicken with rice e fruit, perguntando tea without sugar, disponível. '
+               'Autônomo: escreva pedido, resposta possível do cartão e lista final separando recusa.',
+  'result': 'Primeiro: peixe com vegetais e chá sem açúcar pedidos; arroz sem sal indisponível hoje. '
+            'Segundo: frango com arroz, fruta e chá sem açúcar conforme cartão. Pedido não é análise de '
+            'ingredientes ou garantia de alergia.',
+  'phon': 'Destaque WITHOUT em contrastes with/without; interlocutor deve recuperar omissão solicitada.',
+  'pitfall': 'Chicken/fish são alimentos neste uso; não pedir a chicken quando quer porção de carne.'},
+ {'id': 'LEX-A1-23',
+  'title': 'Comprar e conferir pagamento e troco',
+  'after': 'A1-04',
+  'words': ['cash', 'card', 'change', 'checkout', 'buy', 'sell'],
+  'situation': 'Loja fictícia vende books and pens, não tickets. Placa cash only. Cliente quer buy a book, '
+               'price three credits; entrega five credits; conta fornecida five minus three is two. '
+               'Atendente orienta checkout e confirma change. Troquem com loja cards accepted, pen two '
+               'credits; pagando by card não há troco no cartão do exercício. Autônomo: produza perguntas e '
+               'ficha item/preço/meio/troco, sem realizar pagamento.',
+  'result': 'Primeiro: livro 3, espécie, entrega 5, troco 2, no caixa; não vende ingresso. Segundo: caneta '
+            '2, cartão aceito, sem troco indicado. Can I pay by card? é pergunta, não confirmação de '
+            'aceitação.',
+  'phon': 'Contraste cash/card e buy/sell em blocos; confirme números antes de encerrar.',
+  'pitfall': 'Não coletar cartão real, conta ou recibo real; buy é perspectiva do comprador, sell do '
+             'vendedor.'},
+ {'id': 'LEX-A1-24',
+  'title': 'Interpretar clima em mensagem pessoal',
+  'after': 'A1-08',
+  'words': ['snow', 'foggy', 'cool', 'umbrella', 'season', 'degree'],
+  'situation': 'Mensagem de Kim: It is the rainy season here. It is twenty degrees Celsius. It was foggy '
+               'this morning and it is cool this evening. Take an umbrella tomorrow. The photo of snow is '
+               'from last year. A explica mensagem em português; B faz três perguntas sobre hoje, amanhã e '
+               'foto. Troquem com rainy season, eighteen degrees Celsius, foggy yesterday, cool tonight e '
+               'foto sem data; nesse caso a data deve ficar desconhecida. Autônomo: marque o período de cada '
+               'afirmação antes de resumir.',
+  'result': 'Atual: estação chuvosa, 20°C; neblina de manhã, fresco à noite; levar guarda-chuva amanhã; neve '
+            'só em foto do ano passado. Segundo cenário:18°C, neblina ontem; data da foto desconhecida.',
+  'phon': 'Destaque today/yesterday/last year e teen/ty em eighteen/twenty; não supor previsão a partir de '
+          'foto.',
+  'pitfall': 'Não impor hemisfério ou quatro estações universais; não converter Celsius/Fahrenheit sem '
+             'apoio.'},
+ {'id': 'LEX-A1-25',
+  'title': 'Aceitar convite e explicar indisponibilidade',
+  'after': 'A1-08',
+  'words': ['swim', 'dance', 'sing', 'concert', 'museum', 'weekend'],
+  'situation': 'Convites: museum Saturday 10:00, concert Saturday 19:00, dancing Sunday 16:00. Jo likes '
+               'music and dancing, is free Saturday evening, busy Sunday. Kim likes swimming and singing, is '
+               'free Saturday morning, but there is no swimming event in the list. A recomenda um convite a '
+               'Jo com horário; B explica por que não pode prometer atividade preferida a Kim. Depois '
+               'escrevam mensagem de 35–50 palavras convidando Jo e pedindo resposta. Autônomo: faça convite '
+               'e recusa alternativa com because.',
+  'result': 'Jo pode receber convite para concert Saturday at seven in the evening; dancing Sunday conflita '
+            'com disponibilidade. Kim pode escolher museu se quiser, mas swimming/singing não estão '
+            'oferecidos. Modelo: Would you like to go to the concert on Saturday? It starts at seven. Please '
+            'let me know.',
+  'phon': 'Confira Saturday/Sunday e horário da noite; destinatário confirma qual evento.',
+  'pitfall': 'Gostar de algo não prova que evento existe; convite não confirma participação.'},
+ {'id': 'LEX-A1-26',
+  'title': 'Ler horários e pedir atendimento',
+  'after': 'A1-08',
+  'words': ['post office', 'police station', 'opening hours', 'closed', 'form', 'appointment'],
+  'situation': 'Mapa: post office next to library; police station opposite park. Aviso fictício do centro '
+               'comunitário: opening hours Monday–Friday 09:00–17:00; closed Saturday and Sunday; '
+               'appointments by request; fill in a form. A quer atendimento Saturday; B explica horário e '
+               'pede formulário com nome fictício, sem confirmar data. Troquem com pedido Tuesday morning; é '
+               'dentro do funcionamento, mas horário individual ainda precisa confirmação. Autônomo: escreva '
+               'mensagem pedindo appointment e indicando uma disponibilidade.',
+  'result': 'Correio ao lado da biblioteca; posto policial em frente ao parque. Sábado fechado. Terça de '
+            'manhã é possível disponibilidade, não appointment confirmado. Modelo: Could I make an '
+            'appointment? I am free on Tuesday morning. Is there a form?',
+  'phon': 'Pratique fourteen/four e horários com confirmação escrita quando necessário; foco na informação '
+          'disponível.',
+  'pitfall': 'Horário de funcionamento não equivale a agendamento; não inventar documentos ou regras reais '
+             'de serviço.'}]

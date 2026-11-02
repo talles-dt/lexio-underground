@@ -62,6 +62,21 @@ for level in ['a1','a2','b1','b2']:
     for u in unit_indexes[level]:
         for field in ['student_file','teacher_file','feedback_file']:
             check((ROOT/u[field]).is_file(),'Missing unit file '+u['id'])
+# Guard the declared priority grammar mapping and navigation, without asserting sufficiency.
+priority=read('priority-audit.json')
+check(priority['levels']==['pre-a1','a1','a2','b1'],'Priority level scope changed')
+expected_priority={g['id'] for g in grammar if g['level'] in priority['levels']}
+check({g['target_id'] for g in priority['grammar_mapping']}==expected_priority,'Priority grammar mapping incomplete')
+for itinerary in priority['itineraries']:
+    ids=[step['id'] for step in itinerary['steps']]
+    check(len(ids)==len(set(ids)),'Duplicate itinerary step '+itinerary['level'])
+    for step in itinerary['steps']:
+        check((ROOT/step['path']).is_file(),'Missing itinerary material '+step['id'])
+pronunciation=read('pronunciation.json')
+check({u['level'] for u in pronunciation}==set(priority['levels']),'Pronunciation priority levels missing')
+for unit in pronunciation:
+    for field in ['student','teacher','feedback']:
+        check((ROOT/unit[field]).is_file(),'Missing pronunciation '+unit['id']+field)
 b2_source=runpy.run_path(str(ROOT/'data/b2-units.py'))['UNITS']
 b2_covered={t for u in b2_source for t in u['targets']}
 b2_expected={g['title'] for g in grammar if g['level']=='b2'}
@@ -117,7 +132,7 @@ for file in ROOT.rglob('*.md'):
         if target:
             links+=1
             check((file.parent/target).exists() or (file.parent/target).resolve()==(ROOT/'reports/integrity.json').resolve(),f'Broken link {file.relative_to(ROOT)}: {target}')
-report={'integrity_passed':not errors,'errors':errors,'local_links_checked':links,'prototype_files_unchanged':len(manifest['files']) if not any('Prototype changed' in e for e in errors) else False,'grammar_targets':len(grammar),'lexical_entries':len(lexicon),'foundation_packages':len(foundation),'communicative_units':{k:len(v) for k,v in unit_indexes.items()},'b2_grammar_families_in_units':len(b2_covered),'consolidation_packages':len(consolidation),'audio_scripts_prepared':len(audio_queue),'audio_files_produced':sum(bool(a['audio_file']) for a in audio_queue),'lexical_sequences':sequence_counts,'lexical_stages_without_registered_evidence':sum(not r['written'] for r in coverage if r['target_id'].startswith('LX-')),'independent_review':False,'piloted':False,'course_complete':False,'scope':'Structural checks only; no CEFR certification or content sufficiency judgment.'}
+report={'integrity_passed':not errors,'errors':errors,'local_links_checked':links,'prototype_files_unchanged':len(manifest['files']) if not any('Prototype changed' in e for e in errors) else False,'grammar_targets':len(grammar),'lexical_entries':len(lexicon),'foundation_packages':len(foundation),'communicative_units':{k:len(v) for k,v in unit_indexes.items()},'b2_grammar_families_in_units':len(b2_covered),'consolidation_packages':len(consolidation),'pronunciation_packages':len(pronunciation),'priority_grammar_targets_mapped':len(expected_priority),'audio_scripts_prepared':len(audio_queue),'audio_files_produced':sum(bool(a['audio_file']) for a in audio_queue),'lexical_sequences':sequence_counts,'lexical_stages_without_registered_evidence':sum(not r['written'] for r in coverage if r['target_id'].startswith('LX-')),'independent_review':False,'piloted':False,'course_complete':False,'scope':'Structural checks only; no CEFR certification or content sufficiency judgment.'}
 (ROOT/'reports/integrity.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps(report,ensure_ascii=False,indent=2))
 raise SystemExit(bool(errors))

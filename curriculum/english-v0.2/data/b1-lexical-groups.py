@@ -204,3 +204,87 @@ GROUPS += [{'id': 'LEX-B1-19',
           'apenas a intenção.',
   'pitfall': 'Cut down não exige abandonar; manage to implica conseguir no relato. Não tirar conclusão sobre '
              'caráter ou disciplina da pessoa a partir de diário fictício.'}]
+
+GROUPS += [{'id': 'LEX-B1-21',
+  'title': 'Avaliar compra usada e pedido de devolução',
+  'after': 'B1-08',
+  'words': ['brand', 'second-hand', 'worn out', 'durable', 'bargain', 'return'],
+  'situation': 'Anúncio: second-hand coat, Brand A, 20 credits, described as durable; condition not '
+               'specified. Inspeção fictícia: cuffs worn out; repair estimate 15 credits. Outra peçaBrand B '
+               'nova 40 credits, sem avaliação de duração. Cliente pediu return do usado, loja ainda não '
+               'respondeu. Compare custo total fornecido 35 versus 40, condição e limites das alegações em '
+               '110–140 palavras. Autônomo: use três colunas advert/observed/pending e formule recomendação '
+               'condicional.',
+  'result': 'Usado 20+reparo 15=35, novo 40; usado mangas gastas; durable é anúncio, não prova. Bargain '
+            'depende de utilidade e custo total. Return solicitado, sem aceitação/reembolso. Marca sozinha '
+            'não resolve comparação.',
+  'phon': 'Destaque asked to return versus returned; ouvinte identifica status da solicitação.',
+  'pitfall': 'Não ensinar direito de consumidor sem jurisdição; regras e preços fictícios. Second-hand não '
+             'significa worn out por definição.'},
+ {'id': 'LEX-B1-22',
+  'title': 'Comparar relatos ambientais por alcance',
+  'after': 'B1-06',
+  'words': ['pollution', 'recycle', 'renewable energy', 'wildlife', 'litter', 'drought'],
+  'situation': 'Boletim fictício: residents concerned about air pollution, no measurements supplied;20 boxes '
+               'collected to recycle, processing unverified; renewable energy proposal under discussion; '
+               'observers saw two birds beside path; litter removed from that path only; regional report '
+               'describes drought lasting four months. A resume para vizinho em 110–140 palavras; B pergunta '
+               'o que não sabemos. Transferência: dados de outro parque sem número de caixas, sem duração de '
+               'seca; não reutilize números anteriores. Autônomo: separe observed/reported/proposed/unknown.',
+  'result': 'Não há concentração medida; coleta não prova reciclagem; proposta não instalação; duas aves '
+            'observadas não total da fauna; caminho limpo não parque todo; seca de quatro meses é relato '
+            'regional. Resumo preserva atribuição e alcance.',
+  'phon': 'Destaque only, proposed e reported; não acelerar fala ao ponto de perder ressalvas.',
+  'pitfall': 'Não inferir seca de dia ensolarado nem ausência de impacto a partir de renewable. Nenhum '
+             'aconselhamento de manuseio de lixo.'},
+ {'id': 'LEX-B1-23',
+  'title': 'Ler manchete junto do corpo da notícia',
+  'after': 'B1-05',
+  'words': ['headline', 'source', 'article', 'report', 'misleading', 'evidence'],
+  'situation': 'Headline: NEW BUS ROUTE OPENS. Article dated Monday: local paper reports a proposed route; '
+               'vote next month; no start date; no evidence supplied for claim that journey times will '
+               'halve. Social repost omits date and uses headline only. A escreve resumo de 100–130 palavras '
+               'para grupo; B verifica fonte, status e evidência. Transferência: notícia diferente diz route '
+               'approved but start date unknown. Preserve diferença entre proposta e aprovação. Autônomo: '
+               'produza versão corrigida do post e explique duas mudanças.',
+  'result': 'Primeira rota proposta, votação futura; manchete pode induzir erro, sem prova de intenção. '
+            'Fonte jornal local; sem evidência no artigo para reduzir tempo pela metade. Segunda: aprovada, '
+            'início desconhecido. Não dizer toda alegação é falsa apenas por ausência de evidência '
+            'apresentada.',
+  'phon': 'Destaque reports/proposed/approved e fecha cada frase antes de mudar fonte.',
+  'pitfall': 'Fonte identificada não é sinônimo de verificação; article não é só headline.'},
+ {'id': 'LEX-B1-24',
+  'title': 'Interpretar uma história e seu final aberto',
+  'after': 'B1-02',
+  'words': ['plot', 'setting', 'narrator', 'scene', 'unexpected', 'ending'],
+  'situation': 'Texto: In a small town one winter, I found a letter on the last bus. The address was mine, '
+               'but the name was not. At home, Jo recognised the handwriting. “Perhaps it is for the person '
+               'who lived here before,” Jo said. I put the unopened letter on the table. The next morning it '
+               'was gone. Nobody explained where it went. A identifica setting, opening scene e fatos do '
+               'plot; B propõe interpretação marcada como hipótese. Escrevam opinião sobre ending em 100–130 '
+               'palavras, citando detalhes. Autônomo: separar fatos e duas hipóteses antes de comentar. '
+               'Apoio: handwriting caligrafia; unopened não aberta; gone desaparecida.',
+  'result': 'Ambientação cidade pequena no inverno; início ônibus, depois casa; narrador primeira pessoa não '
+            'sabe destino. Jo sugere destinatário antigo, não confirma. Conteúdo e destino da carta '
+            'desconhecidos. Unexpected pode ser reação atribuída ao leitor, não propriedade universal.',
+  'phon': 'Use pausas entre sequência e hipótese; perhaps deve permanecer audível.',
+  'pitfall': 'Narrador não é autor real; final aberto não autoriza afirmar roubo ou culpa de Jo.'},
+ {'id': 'LEX-B1-25',
+  'title': 'Justificar escolha com critérios e contrapontos',
+  'after': 'B1-08',
+  'words': ['in my opinion', 'advantage', 'drawback', 'recommend', 'tend to', 'on balance'],
+  'situation': 'Opções para encontro: museum 10 credits, 20 minutes away, lift available, closes 17:00; '
+               'park free, 10 minutes away, forecast rain, covered area unknown. Grupo precisa de acesso sem '
+               'escada e encontro 16:00–18:00. A prefere museu; B parque. Identifiquem que nenhuma opção '
+               'satisfaz todos os critérios confirmados. Recomende conferir horário estendido ou área '
+               'coberta; escreva 110–140 palavras sem inventar disponibilidade. Autônomo: faça duas '
+               'propostas condicionais e explique preferência pessoal separadamente dos dados.',
+  'result': 'Museu: elevador e opção coberta implícita? Não usar coberto como dado se não fornecido; dados '
+            'garantidos são custo, 20 min, elevador, fecha 17. Falha término 18. Parque barato/perto, chuva '
+            'prevista, cobertura desconhecida e acesso sem escada também não informado. On balance pode '
+            'levar a adiar decisão e conferir, não escolher à força. I tend to prefer museums é autorrelato, '
+            'não argumento factual suficiente.',
+  'phon': 'Marque although/but e if ao contrastar vantagens e requisitos; interlocutor deve recuperar '
+          'condição da recomendação.',
+  'pitfall': 'Tend to não significa always; recommend checking é padrão. Não confundir preferência com '
+             'viabilidade comprovada.'}]

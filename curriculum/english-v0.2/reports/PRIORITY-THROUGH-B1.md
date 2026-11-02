@@ -1,5 +1,7 @@
 # Prioridade editorial — pré-A1 até B1
 
+**Checkpoint histórico de 01/11.** Consulte a [entrega de 02/11 e estado atualizado das lacunas](B1-GAP-CLOSURE.md); as contagens abaixo preservam o lote anterior.
+
 Pedido vigente: completar ao menos pré-A1, A1, A2 e B1. Esta entrega implementa uma nova parte desse trabalho; não reduz o curso a estes pacotes nem declara que o fechamento foi alcançado.
 
 ## Material acrescentado

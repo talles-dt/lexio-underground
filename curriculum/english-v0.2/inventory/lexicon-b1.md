@@ -114,3 +114,33 @@
 | LX-B1-8C0AF1 | **make time for** — reservar tempo para | make time for + atividade/pessoa. I make time for reading. | Não implica tempo extra disponível para todos; exprime escolha no cenário. | productive |
 | LX-B1-B38A57 | **balance** — equilibrar demandas | balance A and B. She tries to balance work and study. | Balance não exige quantidades de horas iguais nem garante sucesso. | productive |
 | LX-B1-BC420A | **manage to** — conseguir realizar apesar de dificuldade | manage to + verbo. I managed to finish on time. | Manage to indica realização; try to indica tentativa sem garantir resultado. | productive |
+| LX-B1-7105F9 | **brand** — marca comercial | a clothing brand. I compared two clothing brands. | Marca não prova qualidade; comparar dados concretos. | productive |
+| LX-B1-2DC0F8 | **second-hand** — usado anteriormente por outra pessoa | second-hand clothes. I bought a second-hand coat. | Não implica defeito nem condição perfeita. | productive |
+| LX-B1-EAA09E | **worn out** — muito gasto pelo uso | be worn out. The soles are worn out. | Aqui objeto gasto; em pessoas pode significar exausto, não alvo. | productive |
+| LX-B1-35A197 | **durable** — durável, resistente ao uso | a durable material. The advert calls the material durable. | Alegação do anúncio não é teste de duração. | productive |
+| LX-B1-E26D6A | **bargain** — compra considerada vantajosa pelo preço | a bargain. At that price, it seemed a bargain. | Julgamento depende de condição, utilidade e custos, não só desconto. | productive |
+| LX-B1-2E2662 | **return** — devolver produto | return an item. I asked to return the jacket. | Pedir devolução não confirma aceitação; regras são dadas no cenário. | productive |
+| LX-B1-7F5E65 | **pollution** — poluição | air pollution. Residents discussed air pollution. | Identificar tema não mede concentração nem causa específica. | productive |
+| LX-B1-AF0032 | **recycle** — encaminhar material para reciclagem | recycle paper. The school collects paper to recycle. | Coleta não prova processamento concluído; regras locais variam. | productive |
+| LX-B1-701B53 | **renewable energy** — energia de fontes renováveis | use renewable energy. The proposal mentions renewable energy. | Termo não prova ausência total de impactos nem execução da proposta. | productive |
+| LX-B1-CAB9AA | **wildlife** — animais selvagens em contexto ambiental | local wildlife. The group observed local wildlife. | Incontável neste uso; observação não autoriza estimativa populacional sem dados. | productive |
+| LX-B1-20466D | **litter** — lixo descartado em local inadequado | pick up litter. Volunteers picked up litter in the park. | Litter é incontável; atividade descrita, não orientação para manipular resíduos. | productive |
+| LX-B1-33A3ED | **drought** — seca prolongada | a drought. The report describes a drought in the region. | Não inferir drought de um único dia sem chuva. | productive |
+| LX-B1-B108D8 | **headline** — manchete | read the headline. The headline mentions a new bus route. | Manchete pode omitir condições presentes no corpo da notícia. | productive |
+| LX-B1-456031 | **source** — fonte de informação | check the source. Check the source before sharing. | Identificar fonte não garante correção; examinar conteúdo e data. | productive |
+| LX-B1-3A90F2 | **article** — artigo ou matéria escrita | an article about + tema. I read an article about transport. | An article não é apenas título; aqui gênero textual. | productive |
+| LX-B1-1E85FD | **report** — relatar ou reportagem neste uso verbal | report that + oração. The paper reports that the plan is delayed. | Reports that atribui informação; não converte automaticamente em fato verificado por quem resume. | productive |
+| LX-B1-96ABF8 | **misleading** — que pode induzir interpretação errada | a misleading headline. The headline is misleading without the date. | Misleading não prova intenção deliberada de enganar. | productive |
+| LX-B1-EE823C | **evidence** — evidência ou elementos que sustentam afirmação | evidence for + afirmação. The article gives no evidence for the claim. | Incontável: evidence, a piece of evidence. Ausência no texto não prova inexistência em todo lugar. | productive |
+| LX-B1-A1353B | **plot** — enredo | the plot of a story. The plot follows a lost letter. | Plot é encadeamento da história, não necessariamente opinião do leitor. | productive |
+| LX-B1-99D6E1 | **setting** — ambientação de lugar e tempo | the setting of a story. The setting is a small town in winter. | Setting aqui não é configuração de aplicativo. | productive |
+| LX-B1-AE8056 | **narrator** — voz que narra uma história | the narrator says. The narrator does not know why Jo left. | Narrador não é necessariamente autor nem onisciente. | productive |
+| LX-B1-AE29F5 | **scene** — cena | the opening scene. The opening scene takes place on a bus. | Opening = inicial, apoio; cena não é história inteira. | productive |
+| LX-B1-1E7E09 | **unexpected** — inesperado | an unexpected ending. The ending was unexpected for me. | Julgamento do leitor; não universalizar reação. | productive |
+| LX-B1-04742D | **ending** — desfecho | the ending of a story. The ending leaves a question unanswered. | Final aberto não permite inventar solução. | productive |
+| LX-B1-D205B3 | **in my opinion** — marcar opinião própria | In my opinion, + oração. In my opinion, the second option is better. | Expressão não torna opinião evidência factual. | productive |
+| LX-B1-16481C | **advantage** — vantagem relativa a critério | an advantage of + opção. An advantage is the shorter journey. | Vantagem depende do propósito, não universal. | productive |
+| LX-B1-359E67 | **drawback** — desvantagem ou limitação | a drawback of + opção. A drawback is the higher price. | Pode coexistir com vantagens. | productive |
+| LX-B1-6E1D57 | **recommend** — recomendar | recommend + nome/-ing. I recommend checking the timetable. | Recommend doing, não recommend to do sem objeto nesse padrão. | productive |
+| LX-B1-1A969F | **tend to** — indicar tendência, não regra sem exceções | tend to + verbo. I tend to read at night. | Não significa always; aqui autorrelato. | productive |
+| LX-B1-923035 | **on balance** — após considerar vantagens e limitações | On balance, + conclusão. On balance, I would choose the train. | Conclusão deve respeitar critérios e pendências; não é unanimidade. | productive |

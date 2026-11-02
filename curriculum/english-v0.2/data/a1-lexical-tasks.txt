@@ -119,3 +119,33 @@ third|Third: 3º ou 30º?|3º.|Complete terceiro: the ___.|Third.|Data 3 Septemb
 twenty-first|Twenty-first of May: 21 ou 12 de maio?|21 de maio.|Complete data 21 June: the ___ of June.|Twenty-first.|Agenda 21 October: leia a data com apoio.|The twenty-first of October.
 thirtieth|Thirtieth of June: dia 30 ou 13?|30 de junho.|Complete 30 November: the ___ of November.|Thirtieth.|Mensagem June thirtieth; colega marca June thirteen. Qual data correta?|30 de junho.
 thirty-first|Thirty-first of May: 31 ou 30 de maio?|31 de maio.|Complete 31 October: the ___ of October.|Thirty-first.|Formulário diz 31 April; calendário fornecido mostra April termina em 30. Confirme se é possível registrar essa data.|Não; pedir correção, sem inventar nova data.
+vegetable|Vegetables no carrinho: alimentos ou utensílios?|Alimentos.|Complete legumes/verduras: some ___.|Vegetables.|Lista vegetables: carrots and onions. Apoio cenouras e cebolas. Quais itens buscar?|Cenouras e cebolas.
+fruit|Some fruit inclui banana ou garfo?|Banana.|Complete fruta de manhã: fruit in the ___.|Morning.|Lista two apples and a banana. Diga categoria com fruit.|Fruit.
+chicken|Escolha some chicken/a chicken para carne já servida.|Some chicken.|Complete frango no almoço: chicken for ___.|Lunch.|Cardápio chicken with rice. Identifique carne e acompanhamento.|Frango com arroz.
+fish|Some fish informa espécie exata?|Não; peixe.|Complete pedido de peixe: I would like some ___.|Fish.|Menu fish with vegetables. Qual acompanhamento?|Vegetais/legumes/verduras; não arroz.
+sugar|Without sugar pede adicionar ou omitir açúcar?|Omitir.|Complete café sem açúcar: coffee ___ sugar.|Without.|Pedido no sugar; atendente não confirmou. Você já pode afirmar que bebida foi preparada sem açúcar?|Não; só conhece o pedido.
+salt|Salt é sal ou açúcar?|Sal.|Complete sem sal: without ___.|Salt.|Duas etiquetas with salt/without salt. Escolha a segunda para pedido sem sal.|Without salt.
+cash|Cash significa espécie ou cartão?|Espécie.|Complete pagar em espécie: pay in ___.|Cash.|Loja cash only. Cartão é aceito segundo a placa?|Não; apenas espécie.
+card|Pay by card: espécie ou cartão?|Cartão.|Complete posso pagar com cartão: Can I pay by ___?|Card.|Placa cards accepted. Segundo placa, cartão é aceito?|Sim.
+change|Preço 3, entrega 5, troco fornecido 2. Change é 2 ou 5?|2.|Complete meu troco: my ___.|Change.|Preço 4, paga 10, conta fornecida 10−4=6. Diga troco.|Six credits change; my change is six credits.
+checkout|Checkout de loja é local de pagar ou trocar roupa?|Pagar.|Complete no caixa: at the ___.|Checkout.|Aviso pay at checkout; onde concluir pagamento fictício?|No caixa.
+buy|Want to buy informa compra já feita?|Não; intenção.|Complete comprar pão: ___ bread.|Buy.|Pessoa diz I bought a ticket; bought = passado dado. Comprou ou só quis comprar?|Comprou no relato.
+sell|Loja sells books; cliente buys books. Quem vende?|Loja.|Complete vendem chá: They ___ tea.|Sell.|Cartão They don't sell tickets. É correto procurar ingresso ali com base nessa informação?|Não; o aviso diz que não vendem.
+snow|Snow na foto é neve ou chuva?|Neve.|Complete há neve: There is ___.|Snow.|Relato photo shows snow. Isso prova que neva hoje onde o aluno está?|Não.
+foggy|Foggy significa com neblina ou ensolarado?|Com neblina.|Complete manhã com neblina: It is ___ this morning.|Foggy.|Previsão foggy tomorrow. É observação de hoje?|Não; previsão para amanhã.
+cool|Cool evening descreve temperatura ou aprovação da festa obrigatoriamente?|Temperatura fresca.|Complete noite fresca: a ___ evening.|Cool.|Relato cool, not cold. Preserve contraste em português.|Fresco, não frio intenso no contraste dado.
+umbrella|Escolha a/an umbrella.|An umbrella.|Complete leve guarda-chuva: Take an ___.|Umbrella.|Pedido one umbrella; recebido two. Quantidade correta?|Um.
+season|Rainy season indica período chuvoso ou hora exata?|Período chuvoso.|Complete estação chuvosa: the rainy ___.|Season.|Mesma data em dois lugares. Podemos inferir mesma season/clima?|Não, sem contexto local.
+degree|20 degrees Celsius: escala informada?|Sim; Celsius.|Complete 18 graus Celsius com eighteen: eighteen ___ Celsius.|Degrees.|Uma placa 20°C e outra 20°F. São temperaturas iguais só porque número é 20?|Não; escalas diferentes.
+swim|Swim: nadar ou cantar?|Nadar.|Complete eu nado: I ___.|Swim.|Cartão swimming Sunday. Qual atividade e dia?|Natação no domingo.
+dance|Likes dancing: gosta de dançar ou ler?|Dançar.|Complete dançar: ___.|Dance.|Convite dancing Friday, pessoa gosta de dança mas não está livre. Pode aceitar só com base no gosto?|Não; disponibilidade também importa.
+sing|Sing a song: cantar ou assistir filme?|Cantar uma canção.|Complete cantar: ___.|Sing.|Cartão sing together; together = juntos. Explique atividade.|Cantar juntos.
+concert|Concert: música ao vivo ou aula obrigatoriamente?|Evento musical.|Complete ir ao show: go to a ___.|Concert.|Ingresso concert 19:00. Diga início em inglês.|The concert starts at seven in the evening.
+museum|Escolha visit the museum/visit to the museum.|Visit the museum.|Complete museu: ___.|Museum.|Aviso museum closed Monday. Visita segunda está disponível segundo aviso?|Não.
+weekend|Weekend significa fim de semana ou todos os dias úteis?|Fim de semana.|Reescreva at the weekend com variante on.|On the weekend.|Pessoa free Saturday, busy Sunday. É correto dizer free all weekend?|Não; só sábado informado.
+post office|Post office: correio ou hospital?|Correio.|Complete agência de correio: post ___.|Office.|Mapa library then post office next door. Localize correio.|Ao lado da biblioteca.
+police station|Police station é estação de trem?|Não; delegacia/posto policial.|Complete posto policial: police ___.|Station.|Mapa police station opposite park. Onde fica em relação ao parque?|Em frente ao parque.
+opening hours|Opening hours 9–17: funcionamento ou visita dura oito horas obrigatoriamente?|Funcionamento.|Complete horário de funcionamento: opening ___.|Hours.|Placa Mon–Fri 09:00–17:00. Domingo está incluído?|Não.
+closed|Closed Monday: abre ou fecha ao público segunda?|Não atende segunda.|Complete fechado domingo: ___ on Sunday.|Closed.|Placa closed today; pessoa quer entrar hoje. Há atendimento confirmado?|Não.
+form|Form é formulário ou fila?|Formulário.|Complete preencher formulário: fill in a ___.|Form.|Campo Name vazio; deve colocar nome fictício ou preço?|Nome fictício.
+appointment|Appointment é atendimento combinado ou fila sem hora necessariamente?|Atendimento combinado.|Complete marcar atendimento: make an ___.|Appointment.|Mensagem appointment requested, no time confirmed. Há hora marcada?|Não; solicitada, não confirmada.

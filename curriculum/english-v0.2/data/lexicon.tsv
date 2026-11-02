@@ -625,3 +625,111 @@ b1	routine	stick to	manter-se fiel a plano	stick to a routine	I find it hard to 
 b1	routine	make time for	reservar tempo para	make time for + atividade/pessoa	I make time for reading.	Não implica tempo extra disponível para todos; exprime escolha no cenário.
 b1	routine	balance	equilibrar demandas	balance A and B	She tries to balance work and study.	Balance não exige quantidades de horas iguais nem garante sucesso.
 b1	routine	manage to	conseguir realizar apesar de dificuldade	manage to + verbo	I managed to finish on time.	Manage to indica realização; try to indica tentativa sem garantir resultado.
+pre-a1	leisure	music	música como atividade e som	listen to music	I like music.	Music é incontável neste uso; I like = eu gosto, bloco apoiado.
+pre-a1	leisure	film	filme	watch a film	I watch a film.	Movie é alternativa americana aceita; watch = assistir, apoio.
+pre-a1	leisure	game	jogo	play a game	We play a game.	Play = jogar neste bloco; não se limita a videogame.
+pre-a1	leisure	park	parque	in the park	We meet in the park.	In the park é localização, não ação de estacionar neste uso.
+pre-a1	leisure	like	gostar	I like + nome	I like tea.	Bloco para preferência; não exigir todas as pessoas verbais.
+pre-a1	leisure	choose	escolher	choose + opção	Choose tea or water.	Or = ou; escolha pode ser apontada.
+pre-a1	community	hospital	hospital	at the hospital	The hospital is here.	Reconhecimento de lugar, sem inferir atendimento específico.
+pre-a1	community	pharmacy	farmácia	at the pharmacy	The pharmacy is here.	Pharmacy não implica orientação médica nesta atividade.
+pre-a1	community	shop	loja	at the shop	The shop is open.	Store é alternativa aceita; open = aberta no apoio.
+pre-a1	community	exit	saída	the exit	This is the exit.	Reconhecimento de placa; entrance = entrada, apoio contrastivo.
+pre-a1	community	wait	esperar	wait here	Wait here, please.	Here = aqui; não equivale a sair imediatamente.
+pre-a1	community	queue	fila de pessoas	the queue	The queue is here.	Line é alternativa americana aceita neste contexto.
+pre-a1	objects	plate	prato como objeto	a plate	This is my plate.	Plate é objeto; meal/refeição é outro sentido.
+pre-a1	objects	spoon	colher	a spoon	One spoon, please.	Peça de utensílio; não avaliar medida culinária.
+pre-a1	objects	fork	garfo	a fork	This is your fork.	Your = da pessoa com quem se fala.
+pre-a1	objects	knife	faca	a knife	This is a knife.	K inicial não é pronunciado; apenas cartão ou desenho, sem manipular faca. Plural knives fica como apoio.
+pre-a1	objects	son	filho	my son	This is my son.	Não pressupor estrutura familiar do aluno; usar personagem.
+pre-a1	objects	daughter	filha	my daughter	This is my daughter.	Personagem fictício; não exigir relato familiar real.
+pre-a1	numbers	twenty-one	vinte e um	twenty-one + plural	Twenty-one pens.	21 junta twenty e one; aplicar dezenas já aprendidas + unidades, com hífen escrito.
+pre-a1	numbers	twenty-two	vinte e dois	twenty-two + plural	Twenty-two books.	22 = twenty + two; regra reaplicável a 23–29 com tabela de unidades.
+pre-a1	numbers	thirty-five	trinta e cinco	thirty-five + plural	Thirty-five chairs.	35 = thirty + five; não fifteen, 15.
+pre-a1	numbers	forty-eight	quarenta e oito	forty-eight + plural	Forty-eight pens.	Forty, não fourty; aplicar dezenas e unidades com apoio.
+pre-a1	numbers	cent	centésima parte de uma unidade monetária decimal no cenário	fifty cents	Fifty cents.	Cenário usa créditos fictícios divididos em 100 cents; não generalizar para todas as moedas.
+pre-a1	numbers	total	valor total de itens no cenário	the total	The total is three credits.	Total não é preço de cada item; conta e moeda serão fornecidas.
+a1	food	vegetable	vegetal usado como alimento	some vegetables	We need some vegetables.	Vegetable não equivale a todo vegetal botânico; aqui alimento cotidiano.
+a1	food	fruit	fruta como categoria alimentar	some fruit	I eat fruit in the morning.	Fruit é usualmente coletivo incontável aqui; fruits pode designar tipos em outros contextos.
+a1	food	chicken	carne de frango neste uso	some chicken	We have chicken for lunch.	Chicken também é ave contável; neste exemplo carne, sem a.
+a1	food	fish	peixe como alimento neste uso	some fish	I would like some fish.	Neste exemplo alimento; não inferir espécie ou ingredientes não citados.
+a1	food	sugar	açúcar	without sugar	Tea without sugar, please.	Without = sem; pedido não comprova composição final.
+a1	food	salt	sal	with salt; without salt	Rice without salt, please.	Exercício linguístico de preferência, não recomendação de consumo.
+a1	transactions	cash	dinheiro em espécie	pay in cash	Can I pay in cash?	Cash não é cartão; não solicitar pagamento real.
+a1	transactions	card	cartão de pagamento neste uso	pay by card	Can I pay by card?	Card tem outros sentidos; aqui pagamento, não pedir dados reais.
+a1	transactions	change	troco	my change	My change is two credits.	Change também é mudança; aqui dinheiro devolvido após pagar.
+a1	transactions	checkout	caixa onde se paga	at the checkout	Please pay at the checkout.	Checkout aqui é local, não saída de hospedagem/check out.
+a1	transactions	buy	comprar	buy + item	I want to buy a ticket.	Want to buy é intenção; não compra concluída.
+a1	transactions	sell	vender	sell + item	They sell books here.	Sell é oferecer/vender; buy é comprar, perspectivas distintas.
+a1	weather	snow	neve	there is snow	There is snow in the photo.	Não pressupor neve na experiência do aluno nem lugar da foto.
+a1	weather	foggy	com neblina	it is foggy	It is foggy this morning.	Descreve tempo; não deduzir horário de transporte sem aviso.
+a1	weather	cool	fresco em temperatura	it is cool	It is cool in the evening.	Cool aqui é fresco; outro sentido legal não é alvo.
+a1	weather	umbrella	guarda-chuva	an umbrella	Take an umbrella.	An antes do som vocálico; take = leve neste comando.
+a1	weather	season	estação do ano	the rainy season	It is the rainy season here.	Não impor quatro estações iguais em toda região; rainy season = estação chuvosa.
+a1	weather	degree	grau de temperatura	twenty degrees Celsius	It is twenty degrees Celsius.	Celsius deve ser indicado; não comparar número em escala desconhecida.
+a1	leisure	swim	nadar	go swimming; I swim	I swim on Sunday.	Atividade é relato fictício; não instrução de segurança aquática.
+a1	leisure	dance	dançar	I like dancing	I like dancing.	Like + -ing é bloco apoiado nesta atividade.
+a1	leisure	sing	cantar	sing a song	We sing a song.	Song = canção; não é exigido cantar para provar vocabulário.
+a1	leisure	concert	concerto ou show musical	go to a concert	The concert starts at seven.	Concert é evento musical; não qualquer reunião.
+a1	leisure	museum	museu	visit a museum	We visit the museum on Saturday.	Visit sem to nesse padrão: visit the museum.
+a1	leisure	weekend	fim de semana	at the weekend; on the weekend	I am free at the weekend.	At the weekend comum britânico; on the weekend comum americano, ambos aceitos.
+a1	community	post office	agência de correio	at the post office	The post office is next to the library.	Não confundir office isolado com correio.
+a1	community	police station	delegacia ou posto policial	the police station	The police station is opposite the park.	Reconhecimento de lugar; não simular emergência real.
+a1	community	opening hours	horário de funcionamento	check the opening hours	The opening hours are nine to five.	Hours refere-se ao funcionamento, não duração de cada visita.
+a1	community	closed	fechado para atendimento	closed on Monday	The museum is closed on Monday.	Closed é estado; close é verbo na forma base.
+a1	community	form	formulário	fill in a form	Please fill in this form.	Fill in/fill out aceitos; use dados fictícios.
+a1	community	appointment	horário combinado de atendimento	make an appointment	I need to make an appointment.	Fazer pedido não garante horário; nomeia atendimento agendado.
+a2	interaction	what I mean is	introduzir reformulação do próprio sentido	What I mean is + frase	What I mean is that we need more time.	Não significa corrigir qualquer pessoa; esclarece o próprio enunciado.
+a2	interaction	let me check	pedir tempo para conferir	Let me check + informação	Let me check the date.	Não equivale a confirmação de dado.
+a2	interaction	could you explain	pedir explicação	Could you explain + nome?	Could you explain the rule?	Explain something to someone; não explain me sem objeto de coisa.
+a2	interaction	do you mean	conferir interpretação	Do you mean + opção?	Do you mean this Friday?	É pergunta para conferir; não afirmar interpretação como fato.
+a2	interaction	I'm not sure	marcar incerteza	I'm not sure + oração	I'm not sure if the shop is open.	Não significa que está fechado; preserva desconhecimento.
+a2	interaction	for example	introduzir um exemplo	for example, + exemplo	We need supplies, for example paper.	Exemplo não é lista completa; supplies = materiais, apoio.
+a2	community	join	entrar em grupo ou atividade	join a group	I joined a reading group.	Join a group sem to; não é necessariamente comparecer a toda reunião.
+a2	community	sign up	inscrever-se	sign up for + atividade	I signed up for the workshop.	Inscrição não garante vaga quando há seleção ou limite informado.
+a2	community	resident	morador de um lugar	local residents	Local residents can attend.	Resident aqui é morador, sem alegação sobre status migratório.
+a2	community	meeting	reunião	attend a meeting	The meeting is on Friday.	Meeting é encontro organizado; não necessariamente aula.
+a2	community	local council	órgão de governo local no cenário	contact the local council	The local council received the proposal.	Atribuições variam por local; cenário não define direito ou serviço real.
+a2	community	donation	doação	make a donation	They made a donation of books.	Pode ser de objetos ou dinheiro; não pedir doação real.
+a2	digital	plug in	conectar aparelho à alimentação no cenário	plug it in	Plug it in before switching it on.	Simulação em desenho de aparelho inofensivo; não instruir reparo elétrico. Pronome entre plug/in.
+a2	digital	switch on	ligar aparelho	switch it on	Switch the tablet on.	Turn on é alternativa; não confundir com log in.
+a2	digital	press	pressionar botão	press + botão	Press Save.	Press é pressionar neste uso, não imprensa.
+a2	digital	download	transferir arquivo de serviço para dispositivo	download a file	Download the worksheet.	Cenário com arquivo autorizado fictício; não confundir enviar para serviço/upload.
+a2	digital	save	salvar arquivo ou alterações	save the file	Save the file before closing it.	Save aqui não é economizar dinheiro; fechamento não garante salvamento.
+a2	digital	restart	reiniciar	restart the device	Restart the device after saving.	Reiniciar não é restaurar configurações de fábrica; seguir roteiro fictício apenas.
+a2	relationships	grow up	crescer durante infância e adolescência	grow up in + lugar	I grew up in a small town.	Grew é passado dado; não é aumentar fisicamente um objeto.
+a2	relationships	childhood	infância	during my childhood	I lived there during my childhood.	Não requer lembranças pessoais; personagem fictício permitido.
+a2	relationships	hometown	cidade considerada de origem	my hometown	I visited my hometown last year.	Pode não coincidir com cidade de nascimento; usar como pessoa descreve.
+a2	relationships	move abroad	mudar-se para outro país	move abroad	She moved abroad in May.	Abroad é advérbio, não to abroad; país deve ser fornecido para especificar.
+a2	relationships	get married	casar-se	get married to + pessoa	They got married in June.	Got é passado; married to, não with nesse padrão. Não pressupor casamento do aluno.
+a2	relationships	used to	hábito ou estado anterior contrastado com agora	used to + verbo base	I used to walk to school.	Usado para passado habitual; não confundir be used to estar acostumado.
+b1	shopping	brand	marca comercial	a clothing brand	I compared two clothing brands.	Marca não prova qualidade; comparar dados concretos.
+b1	shopping	second-hand	usado anteriormente por outra pessoa	second-hand clothes	I bought a second-hand coat.	Não implica defeito nem condição perfeita.
+b1	shopping	worn out	muito gasto pelo uso	be worn out	The soles are worn out.	Aqui objeto gasto; em pessoas pode significar exausto, não alvo.
+b1	shopping	durable	durável, resistente ao uso	a durable material	The advert calls the material durable.	Alegação do anúncio não é teste de duração.
+b1	shopping	bargain	compra considerada vantajosa pelo preço	a bargain	At that price, it seemed a bargain.	Julgamento depende de condição, utilidade e custos, não só desconto.
+b1	shopping	return	devolver produto	return an item	I asked to return the jacket.	Pedir devolução não confirma aceitação; regras são dadas no cenário.
+b1	environment	pollution	poluição	air pollution	Residents discussed air pollution.	Identificar tema não mede concentração nem causa específica.
+b1	environment	recycle	encaminhar material para reciclagem	recycle paper	The school collects paper to recycle.	Coleta não prova processamento concluído; regras locais variam.
+b1	environment	renewable energy	energia de fontes renováveis	use renewable energy	The proposal mentions renewable energy.	Termo não prova ausência total de impactos nem execução da proposta.
+b1	environment	wildlife	animais selvagens em contexto ambiental	local wildlife	The group observed local wildlife.	Incontável neste uso; observação não autoriza estimativa populacional sem dados.
+b1	environment	litter	lixo descartado em local inadequado	pick up litter	Volunteers picked up litter in the park.	Litter é incontável; atividade descrita, não orientação para manipular resíduos.
+b1	environment	drought	seca prolongada	a drought	The report describes a drought in the region.	Não inferir drought de um único dia sem chuva.
+b1	news	headline	manchete	read the headline	The headline mentions a new bus route.	Manchete pode omitir condições presentes no corpo da notícia.
+b1	news	source	fonte de informação	check the source	Check the source before sharing.	Identificar fonte não garante correção; examinar conteúdo e data.
+b1	news	article	artigo ou matéria escrita	an article about + tema	I read an article about transport.	An article não é apenas título; aqui gênero textual.
+b1	news	report	relatar ou reportagem neste uso verbal	report that + oração	The paper reports that the plan is delayed.	Reports that atribui informação; não converte automaticamente em fato verificado por quem resume.
+b1	news	misleading	que pode induzir interpretação errada	a misleading headline	The headline is misleading without the date.	Misleading não prova intenção deliberada de enganar.
+b1	news	evidence	evidência ou elementos que sustentam afirmação	evidence for + afirmação	The article gives no evidence for the claim.	Incontável: evidence, a piece of evidence. Ausência no texto não prova inexistência em todo lugar.
+b1	culture	plot	enredo	the plot of a story	The plot follows a lost letter.	Plot é encadeamento da história, não necessariamente opinião do leitor.
+b1	culture	setting	ambientação de lugar e tempo	the setting of a story	The setting is a small town in winter.	Setting aqui não é configuração de aplicativo.
+b1	culture	narrator	voz que narra uma história	the narrator says	The narrator does not know why Jo left.	Narrador não é necessariamente autor nem onisciente.
+b1	culture	scene	cena	the opening scene	The opening scene takes place on a bus.	Opening = inicial, apoio; cena não é história inteira.
+b1	culture	unexpected	inesperado	an unexpected ending	The ending was unexpected for me.	Julgamento do leitor; não universalizar reação.
+b1	culture	ending	desfecho	the ending of a story	The ending leaves a question unanswered.	Final aberto não permite inventar solução.
+b1	choices	in my opinion	marcar opinião própria	In my opinion, + oração	In my opinion, the second option is better.	Expressão não torna opinião evidência factual.
+b1	choices	advantage	vantagem relativa a critério	an advantage of + opção	An advantage is the shorter journey.	Vantagem depende do propósito, não universal.
+b1	choices	drawback	desvantagem ou limitação	a drawback of + opção	A drawback is the higher price.	Pode coexistir com vantagens.
+b1	choices	recommend	recomendar	recommend + nome/-ing	I recommend checking the timetable.	Recommend doing, não recommend to do sem objeto nesse padrão.
+b1	choices	tend to	indicar tendência, não regra sem exceções	tend to + verbo	I tend to read at night.	Não significa always; aqui autorrelato.
+b1	choices	on balance	após considerar vantagens e limitações	On balance, + conclusão	On balance, I would choose the train.	Conclusão deve respeitar critérios e pendências; não é unanimidade.
