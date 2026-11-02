@@ -10,6 +10,12 @@ for level in ['pre-a1','a1','a2','b1']:
     path=f'assessments/{level}/teacher.md'
     script='\n'.join(line.removeprefix('> ').rstrip() for line in (ROOT/path).read_text().splitlines() if line.startswith('> '))
     items.append(('ASSESS-'+level.upper(),path,script,True))
+# Consolidation scripts are extracted from the authored teacher page, not duplicated.
+for unit in json.loads((ROOT/'data/consolidation.json').read_text()):
+    source=unit['teacher']
+    matches=re.findall(r'\*\*“([^”]+)”\*\*', (ROOT/source).read_text())
+    assert len(matches)==1, ('Expected one exact consolidation script', unit['id'])
+    items.append((unit['id'],source,'Narrator: '+matches[0],False))
 queue=[]
 for ident,source,script,reserved in items:
     dialogue=[]

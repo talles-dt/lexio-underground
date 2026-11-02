@@ -154,3 +154,83 @@ GROUPS += [{'id': 'LEX-A1-15',
           'an hour; corrigir apenas quando troca de unidade altera a informação.',
   'pitfall': 'Apoiar numerais com quadro. Não exigir cálculo de datas ou domínio gramatical de duração até o '
              'presente. O exemplo de year é um programa fictício, não relato biográfico.'}]
+
+GROUPS += [{'id': 'LEX-A1-18',
+  'title': 'Pedir esclarecimento e corrigir dados',
+  'after': 'A1-08',
+  'words': ['could you repeat that',
+            'what does it mean',
+            'how do you spell',
+            'is that right',
+            'I mean',
+            'please write it down'],
+  'situation': 'Cartão A, recepção: nome Lee; room four; Tuesday at ten; closed = fechado. A inicialmente '
+               'diz room three e corrige com I mean room four. B precisa preencher nome, sala e horário. B '
+               'pede soletração, repetição da hora, significado de closed, confirma a sala e pede o horário '
+               'por escrito. A responde L-E-E e fornece os dados do cartão. Inverta com Kim, room two, '
+               'Friday at twelve, open = aberto; a correção parte de room one. Autônomo: escreva perguntas '
+               'adequadas às seis dificuldades e compare com o retorno; as respostas do outro papel ficam em '
+               'cartão separado.',
+  'result': 'Ficha 1: Lee, room four, Tuesday at ten; closed significa fechado. Perguntas-modelo: How do you '
+            'spell your name? Could you repeat that, please? What does “closed” mean? Room four. Is that '
+            'right? Please write it down. A: Room three — I mean room four. Ficha 2: Kim, room two, Friday '
+            'at twelve; open = aberto. Registrar o dado corrigido, não os dois como alternativas.',
+  'phon': 'Use entonação de pergunta audível em Is that right? e pausa antes da correção I mean. O '
+          'destinatário deve recuperar a informação final.',
+  'pitfall': 'Repetir som, explicar sentido e soletrar resolvem problemas diferentes. Não avaliar apenas se '
+             'a frase foi decorada.'},
+ {'id': 'LEX-A1-19',
+  'title': 'Organizar uma aula e pedir ajuda para estudar',
+  'after': 'A1-08',
+  'words': ['lesson', 'homework', 'question', 'answer', 'page', 'practise'],
+  'situation': 'A tem recado: English lesson Thursday; homework page twelve, questions one and two; practise '
+               'with Jo on Friday. B tem uma anotação incorreta: lesson Tuesday, homework page twenty, '
+               'practise alone. Apoio: alone = sozinho. B faz perguntas e registra correções. A não inventa '
+               'as respostas do exercício: elas não estão no recado. Troquem usando Monday, page ten, '
+               'question three, practise with Kim on Wednesday. Autônomo: escreva um recado de quatro linhas '
+               'e uma pergunta sobre informação ausente.',
+  'result': 'Primeiro: aula quinta; tarefa página 12, perguntas 1 e 2; prática com Jo sexta. As respostas '
+            'das perguntas não foram fornecidas. Modelo: My lesson is on Thursday. The homework is on page '
+            'twelve, questions one and two. I practise with Jo on Friday. Can I ask a question? Segundo: '
+            'Monday, page ten, question three, Kim on Wednesday.',
+  'phon': 'Pratique question e answer em blocos ask a question/write an answer; faça o colega identificar '
+          'qual campo deve preencher.',
+  'pitfall': 'Não usar homeworks para contar exercícios. Praticar é uma ação; não registrar domínio como '
+             'consequência automática.'}]
+
+GROUPS += [{'id': 'LEX-A1-20',
+  'title': 'Combinar horas sem trocar o período do dia',
+  'after': 'A1-08',
+  'words': ["o'clock", 'half past', 'a quarter past', 'a quarter to', 'noon', 'midnight'],
+  'situation': 'A tem agenda: lesson 09:00; bus 09:30; lunch 12:00. B tem agenda: meeting 13:15; shop closes '
+               '16:45; film ends 00:00 at the end of Saturday. Apoio: lunch = almoço; at the end of Saturday '
+               '= no fim do sábado. Troquem horários usando blocos desta aula e confirmem em 24 horas. Uma '
+               'terceira mensagem diz midnight Friday sem data: façam pergunta em português ou inglês para '
+               'esclarecer a noite antes de registrar. Autônomo: converta os seis horários nas duas direções '
+               'e escreva qual dado falta na terceira mensagem.',
+  'result': 'Nine o’clock in the morning = 09:00; half past nine in the morning = 09:30; noon = 12:00; a '
+            'quarter past one in the afternoon = 13:15; a quarter to five in the afternoon = 16:45; midnight '
+            'at the end of Saturday = 00:00 de domingo. Midnight Friday isolado exige confirmação, sem supor '
+            'uma das datas. Leituras digitais como nine thirty são aceitas.',
+  'phon': 'Diferencie PAST e TO, repita hora e período e peça que o colega escreva o horário. Correção '
+          'funcional vale mais que sotaque.',
+  'pitfall': 'Half past não significa meia hora antes. A quarter to usa a hora seguinte. Não ensinar 12 '
+             'a.m./p.m. sem esclarecer meio-dia/meia-noite.'},
+ {'id': 'LEX-A1-21',
+  'title': 'Conferir datas e ordem',
+  'after': 'A1-08',
+  'words': ['first', 'second', 'third', 'twenty-first', 'thirtieth', 'thirty-first'],
+  'situation': 'Cartões: first lesson 1 May; second lesson 2 May; third lesson 3 May; visit 21 June; meeting '
+               '30 June; party 31 May. Apoio: first/second/third lesson = primeira/segunda/terceira aula; '
+               'party = festa. A dita datas com o mês por extenso; B registra em formato dia + nome do mês. '
+               'Depois B recebe erro 31 April; calendário de apoio: April 30 days, May 31 days, June 30 '
+               'days. B deve pedir correção, não escolher outra data. Autônomo: confira as seis datas e '
+               'explique o erro. Datas numéricas como 05/06 exigem perguntar qual convenção foi usada.',
+  'result': 'The first/second/third of May; the twenty-first of June; the thirtieth of June; the '
+            'thirty-first of May. Aceitar May first etc. O calendário invalida 31 April, sem revelar a data '
+            'pretendida. 05/06 pode ser 5 June ou May 6 conforme convenção; escrever mês por extenso após '
+            'confirmação.',
+  'phon': 'Compare third e thirtieth com número escrito como apoio; o ouvinte confirma 3 versus 30. Não '
+          'exigir realização nativa de th para registrar data correta.',
+  'pitfall': 'Não interpretar formato de data como universal. Estes seis ordinais não substituem o ensino '
+             'posterior dos demais; fornecer tabela quando forem necessários.'}]

@@ -117,3 +117,90 @@ GROUPS += [{'id': 'LEX-B1-15',
   'pitfall': 'Não presumir legislação, obrigação ou pagamento de hora extra. Objetivo é relato linguístico '
              'fictício. Se há dificuldade com sequência, oferecer cartões ordenáveis antes da produção, '
              'registrando apoio.'}]
+
+GROUPS += [{'id': 'LEX-B1-17',
+  'title': 'Explicar preferências e conferir um pedido de comida',
+  'after': 'B1-08',
+  'words': ['leftovers', 'homemade', 'portion', 'flavour', 'spicy', 'leave out'],
+  'situation': 'Um grupo escreve relato de um almoço. Fonte A: bread described by host as homemade; soup '
+               'mild, not spicy; Lee requested a small portion and asked to leave out onions. Fonte B: '
+               'kitchen could not leave out onions; Lee chose another dish; there were leftovers from the '
+               'meal. Quantities and storage details are not given. Compare as fontes e redija 100–130 '
+               'palavras para alguém que não estava presente, atribuindo a descrição homemade ao anfitrião. '
+               'Depois faça diálogo cliente/atendente para um novo pedido: small portion, spicy dish, leave '
+               'out salt; a possibilidade de alteração precisa ser perguntada. Autônomo: escreva as duas '
+               'falas e marque que a resposta do restaurante é desconhecida.',
+  'result': 'Relato deve preservar homemade como descrição do anfitrião, mild flavour e not spicy da sopa, '
+            'pedido de porção pequena, recusa de omitir cebola, escolha de outro prato e sobras sem '
+            'quantidade. Modelo curto de diálogo: Could I have a small portion? Is it spicy? Could you leave '
+            'out the salt? Resposta-modelo só para ensaio: I need to check with the kitchen. Não afirmar '
+            'pedido atendido nem inventar manejo das sobras.',
+  'phon': 'Destaque palavras de contraste mild/not spicy e could/could not no relato. O ouvinte deve '
+          'identificar o pedido recusado.',
+  'pitfall': 'Não equiparar homemade a saudável, spicy a quente de temperatura, ou pedido de omissão a '
+             'garantia de ausência de alergênico.'},
+ {'id': 'LEX-B1-18',
+  'title': 'Organizar um relato de saúde sem acrescentar conclusões',
+  'after': 'B1-05',
+  'words': ['symptom', 'since', 'for two days', 'medical history', 'follow-up', 'recover'],
+  'situation': 'Use exclusivamente personagem fictício. Fonte: Today is Thursday. Jo reports tiredness since '
+               'Monday and a headache for two days. Medical history field is blank. A follow-up is planned '
+               'for next week, day not confirmed. Jo says, “I am still recovering from an illness.” A '
+               'transmite o relato à recepção; B confere duração versus início, dados ausentes e status do '
+               'acompanhamento. Redija 90–120 palavras ou faça relato oral com notas. Autônomo: use os '
+               'mesmos dados para redigir um resumo e uma pergunta de esclarecimento; não preencha lacunas '
+               'com experiência pessoal.',
+  'result': 'Modelo: Jo reports tiredness since Monday and a headache for two days. The medical history '
+            'field is blank, so that information has not been provided. A follow-up is planned for next '
+            'week, but the day has not been confirmed. Jo says they are still recovering from an illness. '
+            'Could you confirm the follow-up date? Não atribuir doença específica, recuperação total ou '
+            'histórico negativo; não transformar a duração de dois dias em horário exato.',
+  'phon': 'Destaque SINCE Monday e FOR two DAYS; preserve still em still recovering. O destinatário registra '
+          'início, duração e informação ausente separadamente.',
+  'pitfall': 'Blank não significa no history. Avaliar fidelidade do inglês, sem diagnosticar, recomendar '
+             'tratamento ou solicitar dados pessoais reais.'}]
+
+GROUPS += [{'id': 'LEX-B1-19',
+  'title': 'Negociar responsabilidades em uma casa compartilhada',
+  'after': 'B1-07',
+  'words': ['household', 'share the bills', 'maintenance', 'permission', 'notice', 'compromise'],
+  'situation': 'Três adultos não aparentados formam um household. Regra fictícia acordada: Ana pays 50% of '
+               'bills, Lee 30%, Jo 20%; give 14 days’ notice before moving out. Maintenance requested '
+               'Monday; visit not confirmed. Permission to paint requested, no reply. Ana wants cleaning '
+               'Saturday; Lee Sunday; Jo can do either. A representa Ana, B Lee, e um terceiro registra a '
+               'proposta; em dupla alternem Jo. Negociem compromisso de limpeza e escrevam 110–140 palavras '
+               'distinguindo acordo atual, proposta e resposta pendente. Para avaliação oral, o destinatário '
+               'devolve a tabela de decisões. Autônomo: redija duas propostas e escolha uma justificando '
+               'concessões, sem registrar aceitação real.',
+  'result': 'Divisão não é igual: 50/30/20. Aviso fictício é 14 dias; manutenção e pintura permanecem '
+            'pendentes. Compromisso possível: alternate Saturday and Sunday each week, if all three agree. '
+            'Modelo: Our household shares the bills in agreed proportions. We have requested maintenance, '
+            'but no visit is confirmed. We have also asked for permission to paint. I suggest alternating '
+            'Saturday and Sunday for cleaning. This could be a compromise, but we still need everyone’s '
+            'agreement. Não chamar proposta unilateral de acordo.',
+  'phon': 'Destaque requested versus confirmed e can versus cannot no diálogo; peça ao colega classificar '
+          'decisão como acordada ou pendente.',
+  'pitfall': 'Compromise é concessão/acordo, não qualquer compromisso de agenda. O prazo é dado do cenário, '
+             'sem alegação de regra jurídica.'},
+ {'id': 'LEX-B1-20',
+  'title': 'Reorganizar hábitos com resultado e tentativa separados',
+  'after': 'B1-08',
+  'words': ['cut down on', 'put off', 'stick to', 'make time for', 'balance', 'manage to'],
+  'situation': 'Diário fictício: Plan — read twice this week, reduce streaming from five evenings to three, '
+               'submit assignment Friday. Actual — read Monday and Thursday for ten minutes each; streamed '
+               'four evenings; postponed laundry from Tuesday to Saturday; submitted assignment Friday '
+               'despite extra work. A entrevista B sobre objetivo, ação e resultado; escrevam resumo de '
+               '110–140 palavras sem chamar toda a semana sucesso ou fracasso. Compare com segundo plano: '
+               'wanted to read twice, read once; streamed three evenings; assignment not submitted. '
+               'Autônomo: produza duas colunas planned/actual e só depois use as expressões para avaliar '
+               'cada ação.',
+  'result': 'Primeiro: made time for reading e stuck to reading plan; cut down on streaming de cinco para '
+            'quatro, mas não atingiu três; put off laundry until Saturday; managed to submit assignment on '
+            'Friday; balance work/study foi desafio, não resultado perfeito comprovado. Segundo: leitura '
+            'abaixo da meta, streaming na meta, did not manage to submit assignment. Modelo: I made time for '
+            'reading and stuck to that part of the plan. I cut down on streaming, but not as much as '
+            'planned. I put off the laundry and managed to submit my assignment on Friday.',
+  'phon': 'Preserve did/did not e managed/tried no relato. O ouvinte deve reconstruir o que ocorreu, não '
+          'apenas a intenção.',
+  'pitfall': 'Cut down não exige abandonar; manage to implica conseguir no relato. Não tirar conclusão sobre '
+             'caráter ou disciplina da pessoa a partir de diário fictício.'}]

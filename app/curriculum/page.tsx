@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import release from '../../src/curriculum/release.json';
 import sequences from '../../curriculum/english-v0.2/data/lexical-sequences.json';
+import consolidations from '../../curriculum/english-v0.2/data/consolidation.json';
 
 export default function CurriculumPage() {
   return (
@@ -16,6 +17,14 @@ export default function CurriculumPage() {
           <p className="leading-relaxed text-stone-300">O pacote inclui materiais de aluno e professor, respostas comentadas, avaliações e relatórios de cobertura. As sequências estão disponíveis abaixo para estudo e uso com professor. Respostas e avaliações permanecem em documentos separados; esta biblioteca não registra conclusão nem atribui proficiência.</p>
         </section>
         <Link href="/curriculum/read/README.md" className="block text-amber-300 underline">Abrir guia do curso, unidades e materiais de gramática</Link>
+        <section className="rounded-2xl border border-amber-300/30 p-6 space-y-3">
+          <h2 className="text-xl font-semibold">Percurso prioritário: pré-A1 até B1</h2>
+          <p className="leading-relaxed text-stone-300">Depois das novas sequências de cada nível, reúna o que estudou em tarefas de leitura, conversa, escrita e transmissão de informações. Cada encontro inclui orientação ao professor, retomada e avaliação em situação nova.</p>
+          <Link href="/curriculum/read/reports/PRIORITY-THROUGH-B1.md" className="block text-amber-300 underline">Ver ordem de estudo e conteúdos ainda em expansão</Link>
+          <ul className="space-y-3">{consolidations.map(unit => <li key={unit.id}>
+            <Link href={'/curriculum/read/'+unit.student} className="text-amber-300 underline">{unit.level === 'pre-a1' ? 'Pré-A1' : unit.level.toUpperCase()} · {unit.title}</Link>
+          </li>)}</ul>
+        </section>
         {['pre-a1','a1','a2','b1','b2','c1'].map(level => <section key={level} className="space-y-4">
           <h2 className="text-2xl font-semibold">{level === 'pre-a1' ? 'Pré-A1' : level.toUpperCase()}</h2>
           <ul className="space-y-3">{sequences.filter(s=>s.level===level).map(s=><li key={s.id} className="rounded-xl border border-stone-700 p-4">

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "PRE-C01",
+    "level": "pre-a1",
+    "title": "Recepção, rotina e recado",
+    "student": "lessons/consolidation/PRE-C01/student.md",
+    "teacher": "lessons/consolidation/PRE-C01/teacher.md",
+    "review": "lessons/consolidation/PRE-C01/review.md",
+    "assessment": "lessons/consolidation/PRE-C01/assessment.md",
+    "feedback": "lessons/consolidation/PRE-C01/feedback.md"
+  },
+  {
+    "id": "A1-C01",
+    "level": "a1",
+    "title": "Marcar aula e conferir o recado",
+    "student": "lessons/consolidation/A1-C01/student.md",
+    "teacher": "lessons/consolidation/A1-C01/teacher.md",
+    "review": "lessons/consolidation/A1-C01/review.md",
+    "assessment": "lessons/consolidation/A1-C01/assessment.md",
+    "feedback": "lessons/consolidation/A1-C01/feedback.md"
+  },
+  {
+    "id": "A2-C01",
+    "level": "a2",
+    "title": "Resolver uma semana de mudanças",
+    "student": "lessons/consolidation/A2-C01/student.md",
+    "teacher": "lessons/consolidation/A2-C01/teacher.md",
+    "review": "lessons/consolidation/A2-C01/review.md",
+    "assessment": "lessons/consolidation/A2-C01/assessment.md",
+    "feedback": "lessons/consolidation/A2-C01/feedback.md"
+  },
+  {
+    "id": "B1-C01",
+    "level": "b1",
+    "title": "Relatar, negociar e preservar limites da informação",
+    "student": "lessons/consolidation/B1-C01/student.md",
+    "teacher": "lessons/consolidation/B1-C01/teacher.md",
+    "review": "lessons/consolidation/B1-C01/review.md",
+    "assessment": "lessons/consolidation/B1-C01/assessment.md",
+    "feedback": "lessons/consolidation/B1-C01/feedback.md"
+  }
+]

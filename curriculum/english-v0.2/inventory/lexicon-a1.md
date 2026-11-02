@@ -100,3 +100,27 @@
 | LX-A1-2D2C3D | **week** — semana como período | one week; two weeks. The course lasts two weeks. | A semana tem sete dias; não confundir weekdays com a semana inteira. | productive |
 | LX-A1-1CCBB3 | **month** — mês como período | one month; six months. I study for six months. | Meses não têm todos o mesmo número de dias; não converter automaticamente em 30. | productive |
 | LX-A1-EE87AD | **year** — ano como período | one year; two years. The programme lasts one year. | Programme/program são grafias aceitas; aqui é duração planejada de um programa. | productive |
+| LX-A1-0927E8 | **could you repeat that** — pedir repetição com cortesia | Could you repeat that, please?. Could you repeat that, please? | Aprenda como expressão; não exige estudar todos os usos de could. | productive |
+| LX-A1-D68F6D | **what does it mean** — perguntar o significado | What does it mean?. What does it mean? | Para citar palavra: What does “closed” mean? Não confundir significado com soletração. | productive |
+| LX-A1-723A7A | **how do you spell** — pedir soletração | How do you spell + palavra/nome?. How do you spell your name? | A resposta precisa de letras, não apenas repetir o nome. | productive |
+| LX-A1-0B476C | **is that right** — confirmar entendimento | Is that right?. Room three. Is that right? | Repita o dado antes de perguntar; right aqui é correto, não direita. | productive |
+| LX-A1-319096 | **I mean** — corrigir ou reformular o que se disse | I mean + correção. Tuesday — I mean Thursday. | O dado depois de I mean substitui o dado corrigido neste uso. | productive |
+| LX-A1-3363F8 | **please write it down** — pedir registro escrito | Please write it down.. Please write it down. | Write down = registrar por escrito; it vem entre write e down. | productive |
+| LX-A1-F029D0 | **lesson** — aula como encontro ou conteúdo | an English lesson. My English lesson is on Tuesday. | Lesson pode ser encontro ou unidade de conteúdo; aqui é encontro. | productive |
+| LX-A1-3CFCD8 | **homework** — tarefa de casa | do homework. I do my homework at home. | Homework é incontável: não a homework nem homeworks neste uso. | productive |
+| LX-A1-4E0622 | **question** — pergunta | ask a question. Can I ask a question? | Question não significa questão/problema em todo contexto; aqui pedir informação. | productive |
+| LX-A1-255D73 | **answer** — resposta | write an answer. Write your answer here. | Answer também é verbo; aqui substantivo. An answer, não a answer. | productive |
+| LX-A1-C4A329 | **page** — página | on page + número. The exercise is on page ten. | On page ten é localização; não exigir que saiba o exercício inteiro. | productive |
+| LX-A1-BEECC8 | **practise** — praticar uma habilidade | practise English. I practise English with Jo. | Practice como verbo é a grafia americana; ambas aceitas. Practice não significa praticar automaticamente domínio. | productive |
+| LX-A1-48284D | **o'clock** — hora exata | at three o'clock. The class starts at three o'clock. | O'clock é usado com hora inteira; não three thirty o'clock. | productive |
+| LX-A1-F3140F | **half past** — trinta minutos depois da hora | half past + hora. The bus leaves at half past nine. | Half past nine = 9:30; não 8:30. Nine thirty também vale. | productive |
+| LX-A1-184116 | **a quarter past** — quinze minutos depois da hora | a quarter past + hora. We meet at a quarter past four. | A quarter past four = 4:15; four fifteen também vale. | productive |
+| LX-A1-7E87A8 | **a quarter to** — quinze minutos antes da hora seguinte | a quarter to + hora seguinte. The shop closes at a quarter to six. | A quarter to six = 5:45. Five forty-five também vale. Hora após to é a próxima. | productive |
+| LX-A1-9681D8 | **noon** — meio-dia | at noon. The office closes at noon. | Noon = 12:00 do meio-dia; não midnight. | productive |
+| LX-A1-109B72 | **midnight** — meia-noite | at midnight. The film ends at midnight. | Midnight é fronteira entre datas; confirmar qual noite quando importar. | productive |
+| LX-A1-9F7326 | **first** — primeiro em ordem ou data | the first; on the first of May. The lesson is on the first of May. | First corresponde a 1st; em datas costuma haver the/of na fala deste padrão. | productive |
+| LX-A1-5A6BFC | **second** — segundo em ordem ou data | the second; on the second of May. The visit is on the second of May. | Second aqui é ordinal 2nd, não unidade de tempo. | productive |
+| LX-A1-DD3E1A | **third** — terceiro em ordem ou data | the third; on the third of May. The meeting is on the third of May. | Third corresponde a 3rd; three é quantidade, third é ordem. | productive |
+| LX-A1-89BAE7 | **twenty-first** — vigésimo primeiro em ordem ou data | the twenty-first. The class is on the twenty-first of May. | 21st combina twenty + first; não twenty-oneth. | productive |
+| LX-A1-EBB8DF | **thirtieth** — trigésimo em ordem ou data | the thirtieth. We meet on the thirtieth of June. | 30th = thirtieth; thirteen/thirteenth é 13/13º. Apoio de calendário é permitido. | productive |
+| LX-A1-C41CBE | **thirty-first** — trigésimo primeiro em ordem ou data | the thirty-first. We meet on the thirty-first of May. | 31st; verificar calendário, pois nem todo mês tem dia 31. | productive |

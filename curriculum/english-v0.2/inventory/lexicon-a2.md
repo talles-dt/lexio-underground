@@ -90,3 +90,27 @@
 | LX-A2-B3B4EA | **half** — metade de uma quantidade | half a litre; half of the group. Half of the ten cards are blue. | Plural halves; half aqui quantidade, não julgamento aproximado. | productive |
 | LX-A2-935802 | **quarter** — um quarto de uma quantidade | a quarter of the class. A quarter of the twelve chairs are red. | Quarter também aparece em horários e moedas; esses sentidos exigem contexto próprio. | productive |
 | LX-A2-AAFC94 | **dozen** — grupo de doze unidades | a dozen eggs; two dozen. We ordered a dozen cups. | Número exato: two dozen cups, sem s em dozen; dozens of indica quantidade vaga. | productive |
+| LX-A2-B04953 | **leak** — vazamento | a leak in + lugar. There is a leak in the kitchen. | Leak é substantivo aqui; relate observação, sem adivinhar causa. | productive |
+| LX-A2-76DFB0 | **heating** — sistema de aquecimento | the heating is not working. The heating is not working. | Heating é incontável neste uso; não a heating. | productive |
+| LX-A2-5AA7BD | **landlord** — pessoa que aluga imóvel a outra | contact the landlord. We contacted the landlord about the leak. | Landlord é locador; tenant é inquilino. Termos não definem direitos legais nesta atividade. | productive |
+| LX-A2-52A214 | **tenant** — pessoa que ocupa imóvel alugado | the tenant of a flat. The tenant reported the problem. | Tenant é inquilino; não implica propriedade. | productive |
+| LX-A2-102A40 | **move in** — passar a morar em um lugar | move in on + dia. We moved in on Monday. | Moved in significa começar a morar; move out é sair de vez, não apenas sair para trabalhar. | productive |
+| LX-A2-755252 | **move out** — deixar de morar em um lugar | move out on + dia. They moved out on Friday. | Não é sair momentaneamente; é desocupar como morador. | productive |
+| LX-A2-BCA598 | **loose** — folgado no corpo | too loose. This shirt is too loose. | Loose não é lose/perder. Too loose indica mais folgado do que desejado. | productive |
+| LX-A2-E46F5A | **tight** — apertado no corpo | too tight. These shoes are too tight. | Tight descreve ajuste; small é tamanho, nem sempre mesmo problema. | productive |
+| LX-A2-2C8B2B | **cotton** — algodão como material | made of cotton. This shirt is made of cotton. | Material só pode ser afirmado com informação da etiqueta no cenário. | productive |
+| LX-A2-5313B3 | **wool** — lã como material | made of wool. The coat is made of wool. | Wool não afirma ausência de mistura; conferir proporção se houver. | productive |
+| LX-A2-6D7614 | **sleeve** — manga de roupa | long sleeves. The shirt has long sleeves. | Sleeve não é manga/fruta. Sleeves no plural para as duas. | productive |
+| LX-A2-79BD26 | **pocket** — bolso | a pocket; two pockets. The jacket has two pockets. | Pocket é substantivo aqui; não confundir com bolsa/bag. | productive |
+| LX-A2-9E87E9 | **do the laundry** — lavar roupas como tarefa doméstica | do the laundry. I do the laundry on Saturday. | Laundry é incontável; expressão descreve tarefa, não só máquina. | productive |
+| LX-A2-402184 | **do the washing-up** — lavar louça | do the washing-up. We do the washing-up after dinner. | Do the dishes é alternativa comum, aceita. Não confundir laundry. | productive |
+| LX-A2-B2ED52 | **take turns** — revezar-se | take turns + -ing. We take turns cleaning. | Take turns implica alternância, não necessariamente divisão igual de todo trabalho. | productive |
+| LX-A2-F70D67 | **look after** — cuidar de alguém ou algo | look after + pessoa/animal. I look after my sister's cat. | Look after não é apenas olhar; responsabilidades específicas dependem do contexto. | productive |
+| LX-A2-3615F1 | **on time** — na hora prevista | arrive on time. I arrived on time. | On time = pontual; in time = a tempo para algo, sentido próximo mas distinto. | productive |
+| LX-A2-C9CDF2 | **in a hurry** — com pressa | be in a hurry. I am in a hurry today. | A hurry com artigo; não in hurry. | productive |
+| LX-A2-EFAFC6 | **revise** — rever conteúdo para estudo | revise for a test. I revise for the test on Friday. | No uso britânico é estudar revisão; review/study for são alternativas americanas. Não significa só corrigir texto. | productive |
+| LX-A2-D1C70A | **memorise** — memorizar | memorise + informação. I memorised the phone number. | Memorize é grafia americana; memorização não prova uso em situação nova. | productive |
+| LX-A2-F8807B | **make progress** — avançar na aprendizagem | make progress in + área. I am making progress in English. | Progress é incontável: não a progress. Evidência de avanço deve ser descrita separadamente. | productive |
+| LX-A2-234895 | **mistake** — erro de execução ou entendimento | make a mistake. I made a mistake in the date. | Make a mistake, não do a mistake neste padrão. | productive |
+| LX-A2-693EBD | **instructions** — instruções para realizar tarefa | follow the instructions. Read the instructions before starting. | Aqui plural; pode haver uma instruction específica. Ler não garante cumprir. | productive |
+| LX-A2-DB1FF4 | **resource** — recurso usado para aprender | a learning resource. This dictionary is a useful resource. | Resource pode ser livro, áudio ou ferramenta; disponibilidade não garante adequação. | productive |

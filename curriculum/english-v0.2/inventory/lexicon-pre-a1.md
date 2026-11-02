@@ -116,3 +116,27 @@
 | LX-PRE-A1-5FC709 | **eighty** — oitenta | eighty + plural. Eighty pens. | 80; grafia eighty; eighteen é 18. | productive |
 | LX-PRE-A1-56C763 | **ninety** — noventa | ninety + plural. Ninety chairs. | 90; grafia ninety; nineteen é 19. | productive |
 | LX-PRE-A1-D8C255 | **one hundred** — cem | one hundred + plural. One hundred cups. | 100; hundred não recebe s após número exato: one hundred cups. | productive |
+| LX-PRE-A1-3E56AC | **eat** — comer | eat + alimento. I eat bread. | Use eat para alimento; drink para bebida. I eat é bloco apoiado, sem exigir conjugação completa. | productive |
+| LX-PRE-A1-6C8161 | **drink** — beber | drink + bebida. I drink water. | Water não precisa de a neste exemplo. | productive |
+| LX-PRE-A1-B99260 | **sleep** — dormir | sleep; I sleep. I sleep at home. | Sleep é dormir; go to bed é ir para a cama, nem sempre dormir imediatamente. | productive |
+| LX-PRE-A1-EE72A3 | **wash** — lavar | wash my hands. I wash my hands. | Hands é plural de hand; o bloco my hands significa minhas mãos. | productive |
+| LX-PRE-A1-C7BA4B | **morning** — manhã | in the morning. I drink tea in the morning. | In the morning é expressão; não at the morning. | productive |
+| LX-PRE-A1-D6CFDA | **night** — noite | at night. I sleep at night. | At night é o bloco aqui; rotina do exemplo não é regra para todos. | productive |
+| LX-PRE-A1-B93096 | **sunny** — ensolarado | it is sunny. It is sunny today. | Sunny descreve o tempo; sun é o sol, não são a mesma forma. | productive |
+| LX-PRE-A1-078D43 | **rainy** — chuvoso | it is rainy. It is rainy today. | Rainy é adjetivo; não exigir a forma raining nesta atividade. | productive |
+| LX-PRE-A1-1A9643 | **cloudy** — nublado | it is cloudy. It is cloudy today. | Cloudy não afirma que está chovendo. | productive |
+| LX-PRE-A1-514F9C | **warm** — morno ou de temperatura agradável relativamente alta | it is warm. It is warm here. | Warm e hot não são graus numéricos fixos; warm costuma ser menos intenso que hot. | productive |
+| LX-PRE-A1-6DCCA8 | **outside** — do lado de fora | outside; it is cold outside. It is cold outside. | Outside indica lugar; não significa sempre ao ar livre em todos os usos. | productive |
+| LX-PRE-A1-F5F909 | **inside** — do lado de dentro | inside; it is warm inside. It is warm inside. | Inside é o contraste de outside neste cenário. | productive |
+| LX-PRE-A1-E0995E | **call** — ligar por telefone | call + nome. Call Jo, please. | Call é ligar neste cenário; phone já foi apresentado. | productive |
+| LX-PRE-A1-C3C591 | **text** — enviar mensagem de texto | text + nome. Text Jo, please. | Text é verbo aqui; uma mensagem de voz não é necessariamente text. | productive |
+| LX-PRE-A1-8ADB10 | **number** — número identificador | phone number. My phone number is on the card. | Use número fictício; não pedir contato real para exercício. | productive |
+| LX-PRE-A1-0F92A4 | **email** — endereço ou mensagem de correio eletrônico | email address. My email address is on the card. | No exercício use jo@example.com, endereço reservado para exemplos. | productive |
+| LX-PRE-A1-55F256 | **photo** — fotografia | a photo. This is a photo of Jo. | Photo é substantivo; a photo of = uma foto de. | productive |
+| LX-PRE-A1-5A6B06 | **click** — clicar em controle de interface | click + botão. Click Open. | Atividade em cartão/desenho; não clicar em links reais. Open = abrir, apoio. | productive |
+| LX-PRE-A1-9ADC30 | **worker** — pessoa que trabalha | a worker. Jo is a worker here. | Worker não especifica profissão; here = aqui já apresentado. | productive |
+| LX-PRE-A1-87F9ED | **manager** — pessoa que coordena trabalho | the manager. Lee is the manager. | Cargo não implica gênero; aceitar nome fictício. | productive |
+| LX-PRE-A1-E1A733 | **customer** — cliente | a customer. Ana is a customer. | Customer recebe/compra serviço ou produto; não é funcionário por essa palavra. | productive |
+| LX-PRE-A1-8E77B9 | **task** — tarefa | a task. This is my task. | Task é tarefa específica; job pode indicar emprego. Bloco my task apoiado. | productive |
+| LX-PRE-A1-1B2285 | **ready** — pronto para começar ou usar | I am ready. I am ready. | Ready não significa tarefa concluída em todos os contextos; aqui pronto para começar. | productive |
+| LX-PRE-A1-5B0EC7 | **finished** — concluído neste contexto | I am finished. I am finished. | Aqui indica que a pessoa terminou a tarefa; não significa simplesmente pronta para iniciar. | productive |

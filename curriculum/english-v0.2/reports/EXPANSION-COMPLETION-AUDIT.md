@@ -30,3 +30,7 @@ Objetivo ativo: concluir a expansão completa pré-A1–C1 e fazer deploy. C2 pe
 - Total: 530 entradas e 101 sequências.
 - Requisitos lexicais remanescentes estão na matriz e no relatório do lote. Não há declaração de curso completo ou de suficiência dos seis níveis.
 - O próximo trabalho inclui completar horas/datas e expandir os domínios ainda sem inventário explícito em diversos níveis, especialmente rotina, moradia, vestuário, saúde, transporte, aprendizagem e comunidade.
+
+## Prioridade revisada: pré-A1 até B1
+
+Pedido do responsável: deixar ao menos até B1 completo. A execução agora prioriza esses quatro níveis, sem remover B2/C1 nem declarar suficiência por contagem. O lote seguinte adiciona 96 alvos, 16 sequências e quatro consolidações; totais correntes no [relatório da prioridade](PRIORITY-THROUGH-B1.md). O objetivo permanece aberto enquanto houver lacunas materiais.

@@ -134,3 +134,85 @@ GROUPS += [{'id': 'LEX-A2-15',
           'oral deve evitar que o aprendiz veja a lista reservada antes de ouvir.',
   'pitfall': 'Isto não é instrução nutricional nem receita. Half e quarter funcionam em outras construções a '
              'ensinar posteriormente; horários quarter past não são cobrados aqui.'}]
+
+GROUPS += [{'id': 'LEX-A2-17',
+  'title': 'Relatar problemas na moradia',
+  'after': 'A2-05',
+  'words': ['leak', 'heating', 'landlord', 'tenant', 'move in', 'move out'],
+  'situation': 'Cartão do morador: Lee is the tenant; Ana is the landlord. Lee moved in on Monday. On '
+               'Tuesday Lee noticed a leak in the kitchen and heating that did not work. The cause is '
+               'unknown. Cartão da recepção: Ana can receive a message; no repair date is confirmed. The '
+               'previous tenant moved out on Friday. A relata os problemas; B confirma papéis, datas e '
+               'informação ainda ausente. Escrevam mensagem de 50–70 palavras. Inverta com Jo/Rui, moved in '
+               'Wednesday, leak in bathroom, previous tenant moved out Monday. Autônomo: leia os cartões em '
+               'separado, redija e confira cada fato.',
+  'result': 'Modelo: Hello Ana. I moved in on Monday. There is a leak in the kitchen and the heating is not '
+            'working. I do not know the cause. Could you confirm when someone can check the problems? Please '
+            'send me a message. Lee, the tenant. A saída do antigo inquilino sexta é fato separado; não '
+            'prova que causou vazamento. Nenhuma data de reparo deve ser registrada como confirmada.',
+  'phon': 'Contraste moved IN e moved OUT, preservando o sentido mesmo sem imitar redução de fala. Datas '
+          'devem ser confirmadas pelo interlocutor.',
+  'pitfall': 'Landlord/tenant não são intercambiáveis. O cenário treina comunicação, não aconselhamento '
+             'legal nem diagnóstico de manutenção.'},
+ {'id': 'LEX-A2-18',
+  'title': 'Descrever caimento e diferenças em uma compra',
+  'after': 'A2-05',
+  'words': ['loose', 'tight', 'cotton', 'wool', 'sleeve', 'pocket'],
+  'situation': 'Pedido: cotton shirt, short sleeves, two pockets. Entrega: label 100% cotton; long sleeves; '
+               'no pockets; shoulders too tight, body loose. Apoio: shoulders = ombros; body = corpo da '
+               'peça; label = etiqueta. Cliente explica três diferenças e dois problemas de caimento. '
+               'Atendente oferece examinar outro modelo, sem garantir troca. Segundo cartão: wool coat, two '
+               'pockets requested; label 50% wool; one pocket; sleeves too tight. Autônomo: escreva mensagem '
+               'de 60–80 palavras distinguindo pedido, etiqueta e sensação de caimento.',
+  'result': 'Primeiro produto: material cotton corresponde; mangas longas e ausência de bolsos divergem; '
+            'ombros apertados e corpo folgado são relatos de caimento. Modelo: I ordered a cotton shirt with '
+            'short sleeves and two pockets. The label says 100% cotton, but the sleeves are long and there '
+            'are no pockets. It is too tight at the shoulders and loose around the body. Could I see another '
+            'model? Segundo: apenas 50% wool, um bolso e mangas apertadas; nenhuma troca confirmada.',
+  'phon': 'Diferencie loose de lose com modelo audível; avalie se o destinatário entende folgado versus '
+          'apertado. Preserve plural em sleeves/pockets de forma inteligível.',
+  'pitfall': 'Não inferir material pelo toque; não transformar preferência de caimento em defeito '
+             'comprovado.'}]
+
+GROUPS += [{'id': 'LEX-A2-19',
+  'title': 'Combinar tarefas domésticas e revezamento',
+  'after': 'A2-07',
+  'words': ['do the laundry', 'do the washing-up', 'take turns', 'look after', 'on time', 'in a hurry'],
+  'situation': 'Dois colegas dividem tarefas. Cartão A: Jo cooks Monday, does laundry Saturday, looks after '
+               'plants while Lee is away. Cartão B: Lee does washing-up Monday; Jo Tuesday; both agree to '
+               'alternate after that. Lee must leave at 08:00 and is in a hurry; departure is 08:00. Apoio: '
+               'plants = plantas; alternate = alternar. Monte uma tabela e explique quem faz o quê; não use '
+               'in a hurry para inferir atraso. Inverta mudando laundry para Sunday e partida para 08:15, '
+               'prazo 08:00. Autônomo: escreva duas mensagens e confira se alterou os dados do segundo '
+               'cenário.',
+  'result': 'Primeiro: Jo cozinha segunda, lava roupas sábado, cuida plantas na ausência de Lee; louça '
+            'segunda Lee, terça Jo, depois alternância. Lee sai pontualmente às 08:00 apesar da pressa. '
+            'Segundo: roupa domingo; saída 08:15 não foi on time para 08:00. Modelo: We take turns doing the '
+            'washing-up. Jo does the laundry on Saturday and looks after the plants. Lee is in a hurry but '
+            'leaves on time.',
+  'phon': 'Marque os verbos e dias em blocos; o interlocutor precisa recuperar tarefa, responsável e dia, '
+          'sem medir fluência por velocidade.',
+  'pitfall': 'Não assumir distribuição doméstica por gênero nem equivaler revezamento a igualdade de todas '
+             'as tarefas.'},
+ {'id': 'LEX-A2-20',
+  'title': 'Escolher recursos e rever o estudo',
+  'after': 'A2-07',
+  'words': ['revise', 'memorise', 'make progress', 'mistake', 'instructions', 'resource'],
+  'situation': 'Relato de Lee: I memorised ten answers. In a new task, I understood two instructions that I '
+               'did not understand last week. I made a mistake in the date. Resources: dictionary available, '
+               'notes available, audio unavailable today. A ajuda Lee a preparar revisão para uma tarefa '
+               'nova de leitura: escolha recurso, identifique evidência limitada de avanço e proponha ação '
+               'para o erro. B explica o plano em 60–90 palavras. Troquem com Kim: memorised five phrases; '
+               'understood a new message; mistake in room number; resources notes and audio available, '
+               'dictionary unavailable. Autônomo: compare memorizar e usar em situação nova, citando dado de '
+               'cada cartão.',
+  'result': 'Lee pode consultar notas/dicionário e revisar a distinção de datas; avanço observado é entender '
+            'duas instruções antes não compreendidas. Dez respostas decoradas não comprovam dez usos novos. '
+            'Modelo: I will revise my notes and use the dictionary as a resource. I memorised ten answers, '
+            'but I still made a mistake in the date. I am making progress in understanding instructions. '
+            'Audio is not available today. Kim: avanço em mensagem nova, corrigir sala; não inventar '
+            'dicionário disponível.',
+  'phon': 'Diferencie instrução e resposta ao ler cartões; áudio indisponível não deve ser registrado como '
+          'escuta realizada.',
+  'pitfall': 'Não equiparar contagem de itens memorizados a nível CEFR, nem afirmar progresso sem dizer em '
+             'quê e com qual evidência.'}]

@@ -529,3 +529,99 @@ c1	time	for the time being	por enquanto, em caráter temporário	for the time be
 c1	time	over the course of	ao longo de um período	over the course of the year	The policy changed over the course of the year.	Não exige mudança contínua nem informa instante exato.
 c1	time	subsequently	posteriormente, em sequência temporal	subsequently + verb	The draft was circulated and subsequently revised.	Sequência temporal não prova que a circulação causou a revisão.
 c1	time	with hindsight	em retrospecto, com conhecimento adquirido depois	with hindsight, + clause	With hindsight, the deadline was unrealistic.	Distinguir julgamento atual do que participantes podiam saber antes.
+pre-a1	routine	eat	comer	eat + alimento	I eat bread.	Use eat para alimento; drink para bebida. I eat é bloco apoiado, sem exigir conjugação completa.
+pre-a1	routine	drink	beber	drink + bebida	I drink water.	Water não precisa de a neste exemplo.
+pre-a1	routine	sleep	dormir	sleep; I sleep	I sleep at home.	Sleep é dormir; go to bed é ir para a cama, nem sempre dormir imediatamente.
+pre-a1	routine	wash	lavar	wash my hands	I wash my hands.	Hands é plural de hand; o bloco my hands significa minhas mãos.
+pre-a1	routine	morning	manhã	in the morning	I drink tea in the morning.	In the morning é expressão; não at the morning.
+pre-a1	routine	night	noite	at night	I sleep at night.	At night é o bloco aqui; rotina do exemplo não é regra para todos.
+pre-a1	weather	sunny	ensolarado	it is sunny	It is sunny today.	Sunny descreve o tempo; sun é o sol, não são a mesma forma.
+pre-a1	weather	rainy	chuvoso	it is rainy	It is rainy today.	Rainy é adjetivo; não exigir a forma raining nesta atividade.
+pre-a1	weather	cloudy	nublado	it is cloudy	It is cloudy today.	Cloudy não afirma que está chovendo.
+pre-a1	weather	warm	morno ou de temperatura agradável relativamente alta	it is warm	It is warm here.	Warm e hot não são graus numéricos fixos; warm costuma ser menos intenso que hot.
+pre-a1	weather	outside	do lado de fora	outside; it is cold outside	It is cold outside.	Outside indica lugar; não significa sempre ao ar livre em todos os usos.
+pre-a1	weather	inside	do lado de dentro	inside; it is warm inside	It is warm inside.	Inside é o contraste de outside neste cenário.
+a1	interaction	could you repeat that	pedir repetição com cortesia	Could you repeat that, please?	Could you repeat that, please?	Aprenda como expressão; não exige estudar todos os usos de could.
+a1	interaction	what does it mean	perguntar o significado	What does it mean?	What does it mean?	Para citar palavra: What does “closed” mean? Não confundir significado com soletração.
+a1	interaction	how do you spell	pedir soletração	How do you spell + palavra/nome?	How do you spell your name?	A resposta precisa de letras, não apenas repetir o nome.
+a1	interaction	is that right	confirmar entendimento	Is that right?	Room three. Is that right?	Repita o dado antes de perguntar; right aqui é correto, não direita.
+a1	interaction	I mean	corrigir ou reformular o que se disse	I mean + correção	Tuesday — I mean Thursday.	O dado depois de I mean substitui o dado corrigido neste uso.
+a1	interaction	please write it down	pedir registro escrito	Please write it down.	Please write it down.	Write down = registrar por escrito; it vem entre write e down.
+a1	learning	lesson	aula como encontro ou conteúdo	an English lesson	My English lesson is on Tuesday.	Lesson pode ser encontro ou unidade de conteúdo; aqui é encontro.
+a1	learning	homework	tarefa de casa	do homework	I do my homework at home.	Homework é incontável: não a homework nem homeworks neste uso.
+a1	learning	question	pergunta	ask a question	Can I ask a question?	Question não significa questão/problema em todo contexto; aqui pedir informação.
+a1	learning	answer	resposta	write an answer	Write your answer here.	Answer também é verbo; aqui substantivo. An answer, não a answer.
+a1	learning	page	página	on page + número	The exercise is on page ten.	On page ten é localização; não exigir que saiba o exercício inteiro.
+a1	learning	practise	praticar uma habilidade	practise English	I practise English with Jo.	Practice como verbo é a grafia americana; ambas aceitas. Practice não significa praticar automaticamente domínio.
+a2	housing	leak	vazamento	a leak in + lugar	There is a leak in the kitchen.	Leak é substantivo aqui; relate observação, sem adivinhar causa.
+a2	housing	heating	sistema de aquecimento	the heating is not working	The heating is not working.	Heating é incontável neste uso; não a heating.
+a2	housing	landlord	pessoa que aluga imóvel a outra	contact the landlord	We contacted the landlord about the leak.	Landlord é locador; tenant é inquilino. Termos não definem direitos legais nesta atividade.
+a2	housing	tenant	pessoa que ocupa imóvel alugado	the tenant of a flat	The tenant reported the problem.	Tenant é inquilino; não implica propriedade.
+a2	housing	move in	passar a morar em um lugar	move in on + dia	We moved in on Monday.	Moved in significa começar a morar; move out é sair de vez, não apenas sair para trabalhar.
+a2	housing	move out	deixar de morar em um lugar	move out on + dia	They moved out on Friday.	Não é sair momentaneamente; é desocupar como morador.
+a2	shopping	loose	folgado no corpo	too loose	This shirt is too loose.	Loose não é lose/perder. Too loose indica mais folgado do que desejado.
+a2	shopping	tight	apertado no corpo	too tight	These shoes are too tight.	Tight descreve ajuste; small é tamanho, nem sempre mesmo problema.
+a2	shopping	cotton	algodão como material	made of cotton	This shirt is made of cotton.	Material só pode ser afirmado com informação da etiqueta no cenário.
+a2	shopping	wool	lã como material	made of wool	The coat is made of wool.	Wool não afirma ausência de mistura; conferir proporção se houver.
+a2	shopping	sleeve	manga de roupa	long sleeves	The shirt has long sleeves.	Sleeve não é manga/fruta. Sleeves no plural para as duas.
+a2	shopping	pocket	bolso	a pocket; two pockets	The jacket has two pockets.	Pocket é substantivo aqui; não confundir com bolsa/bag.
+b1	food	leftovers	comida que sobrou de uma refeição	use the leftovers	We used the leftovers for lunch.	Plural neste uso; frase não fornece orientação de conservação de alimentos.
+b1	food	homemade	feito em casa	homemade bread	The bread is homemade.	Homemade não prova segurança, qualidade ou valor nutricional.
+b1	food	portion	porção servida	a small portion	I ordered a small portion.	Portion é quantidade servida; não é medida universal.
+b1	food	flavour	sabor característico	a mild flavour	The soup has a mild flavour.	Flavor é grafia americana aceita; mild = suave, apoio fornecido.
+b1	food	spicy	picante	too spicy for me	The dish is too spicy for me.	Spicy pode ser rico em especiarias; neste cenário foi explicitado ardor/picância. Não confundir temperatura.
+b1	food	leave out	omitir ingrediente no preparo	leave out + ingrediente	Could you leave out the onions?	Pedido não confirma que seja possível, nem garante ausência de contaminação; não usar como garantia de alergia.
+b1	health	symptom	sinal ou sensação relatada em contexto de saúde	describe a symptom	She described her symptoms.	Trabalho linguístico: relato não estabelece diagnóstico.
+b1	health	since	desde um ponto inicial	since Monday	I have felt tired since Monday.	Since introduz início; for introduz duração. O dado é autorrelato fictício.
+b1	health	for two days	por um período de dois dias	have had + sintoma + for two days	I have had a headache for two days.	For marca duração; não usar since two days.
+b1	health	medical history	histórico de saúde relatado ou registrado	ask about medical history	The form asks about medical history.	Use personagem fictício; não solicitar dados pessoais reais para atividade.
+b1	health	follow-up	acompanhamento posterior	a follow-up appointment	A follow-up appointment was arranged.	Substantivo/adjetivo com hífen; follow up verbo em duas palavras. Não implica recuperação completa.
+b1	health	recover	recuperar-se	recover from + condição/evento	He is recovering from an illness.	Recovering descreve processo; recovered conclusão relatada, não diagnóstico nosso.
+pre-a1	digital	call	ligar por telefone	call + nome	Call Jo, please.	Call é ligar neste cenário; phone já foi apresentado.
+pre-a1	digital	text	enviar mensagem de texto	text + nome	Text Jo, please.	Text é verbo aqui; uma mensagem de voz não é necessariamente text.
+pre-a1	digital	number	número identificador	phone number	My phone number is on the card.	Use número fictício; não pedir contato real para exercício.
+pre-a1	digital	email	endereço ou mensagem de correio eletrônico	email address	My email address is on the card.	No exercício use jo@example.com, endereço reservado para exemplos.
+pre-a1	digital	photo	fotografia	a photo	This is a photo of Jo.	Photo é substantivo; a photo of = uma foto de.
+pre-a1	digital	click	clicar em controle de interface	click + botão	Click Open.	Atividade em cartão/desenho; não clicar em links reais. Open = abrir, apoio.
+pre-a1	work	worker	pessoa que trabalha	a worker	Jo is a worker here.	Worker não especifica profissão; here = aqui já apresentado.
+pre-a1	work	manager	pessoa que coordena trabalho	the manager	Lee is the manager.	Cargo não implica gênero; aceitar nome fictício.
+pre-a1	work	customer	cliente	a customer	Ana is a customer.	Customer recebe/compra serviço ou produto; não é funcionário por essa palavra.
+pre-a1	work	task	tarefa	a task	This is my task.	Task é tarefa específica; job pode indicar emprego. Bloco my task apoiado.
+pre-a1	work	ready	pronto para começar ou usar	I am ready	I am ready.	Ready não significa tarefa concluída em todos os contextos; aqui pronto para começar.
+pre-a1	work	finished	concluído neste contexto	I am finished	I am finished.	Aqui indica que a pessoa terminou a tarefa; não significa simplesmente pronta para iniciar.
+a1	time	o'clock	hora exata	at three o'clock	The class starts at three o'clock.	O'clock é usado com hora inteira; não three thirty o'clock.
+a1	time	half past	trinta minutos depois da hora	half past + hora	The bus leaves at half past nine.	Half past nine = 9:30; não 8:30. Nine thirty também vale.
+a1	time	a quarter past	quinze minutos depois da hora	a quarter past + hora	We meet at a quarter past four.	A quarter past four = 4:15; four fifteen também vale.
+a1	time	a quarter to	quinze minutos antes da hora seguinte	a quarter to + hora seguinte	The shop closes at a quarter to six.	A quarter to six = 5:45. Five forty-five também vale. Hora após to é a próxima.
+a1	time	noon	meio-dia	at noon	The office closes at noon.	Noon = 12:00 do meio-dia; não midnight.
+a1	time	midnight	meia-noite	at midnight	The film ends at midnight.	Midnight é fronteira entre datas; confirmar qual noite quando importar.
+a1	numbers	first	primeiro em ordem ou data	the first; on the first of May	The lesson is on the first of May.	First corresponde a 1st; em datas costuma haver the/of na fala deste padrão.
+a1	numbers	second	segundo em ordem ou data	the second; on the second of May	The visit is on the second of May.	Second aqui é ordinal 2nd, não unidade de tempo.
+a1	numbers	third	terceiro em ordem ou data	the third; on the third of May	The meeting is on the third of May.	Third corresponde a 3rd; three é quantidade, third é ordem.
+a1	numbers	twenty-first	vigésimo primeiro em ordem ou data	the twenty-first	The class is on the twenty-first of May.	21st combina twenty + first; não twenty-oneth.
+a1	numbers	thirtieth	trigésimo em ordem ou data	the thirtieth	We meet on the thirtieth of June.	30th = thirtieth; thirteen/thirteenth é 13/13º. Apoio de calendário é permitido.
+a1	numbers	thirty-first	trigésimo primeiro em ordem ou data	the thirty-first	We meet on the thirty-first of May.	31st; verificar calendário, pois nem todo mês tem dia 31.
+a2	routine	do the laundry	lavar roupas como tarefa doméstica	do the laundry	I do the laundry on Saturday.	Laundry é incontável; expressão descreve tarefa, não só máquina.
+a2	routine	do the washing-up	lavar louça	do the washing-up	We do the washing-up after dinner.	Do the dishes é alternativa comum, aceita. Não confundir laundry.
+a2	routine	take turns	revezar-se	take turns + -ing	We take turns cleaning.	Take turns implica alternância, não necessariamente divisão igual de todo trabalho.
+a2	routine	look after	cuidar de alguém ou algo	look after + pessoa/animal	I look after my sister's cat.	Look after não é apenas olhar; responsabilidades específicas dependem do contexto.
+a2	routine	on time	na hora prevista	arrive on time	I arrived on time.	On time = pontual; in time = a tempo para algo, sentido próximo mas distinto.
+a2	routine	in a hurry	com pressa	be in a hurry	I am in a hurry today.	A hurry com artigo; não in hurry.
+a2	learning	revise	rever conteúdo para estudo	revise for a test	I revise for the test on Friday.	No uso britânico é estudar revisão; review/study for são alternativas americanas. Não significa só corrigir texto.
+a2	learning	memorise	memorizar	memorise + informação	I memorised the phone number.	Memorize é grafia americana; memorização não prova uso em situação nova.
+a2	learning	make progress	avançar na aprendizagem	make progress in + área	I am making progress in English.	Progress é incontável: não a progress. Evidência de avanço deve ser descrita separadamente.
+a2	learning	mistake	erro de execução ou entendimento	make a mistake	I made a mistake in the date.	Make a mistake, não do a mistake neste padrão.
+a2	learning	instructions	instruções para realizar tarefa	follow the instructions	Read the instructions before starting.	Aqui plural; pode haver uma instruction específica. Ler não garante cumprir.
+a2	learning	resource	recurso usado para aprender	a learning resource	This dictionary is a useful resource.	Resource pode ser livro, áudio ou ferramenta; disponibilidade não garante adequação.
+b1	housing	household	pessoas que compartilham uma residência	members of a household	Three people live in this household.	Household não significa necessariamente parentes/família.
+b1	housing	share the bills	dividir despesas cobradas	share the bills with + pessoa	We share the bills with our flatmates.	Share não garante partes iguais; explicitar regra acordada.
+b1	housing	maintenance	manutenção	arrange maintenance	We need to arrange maintenance.	Incontável neste uso; não inventar obrigação legal do morador ou proprietário.
+b1	housing	permission	permissão	ask for permission to + verbo	We asked for permission to paint the room.	Permission é incontável; pedir não é obter.
+b1	housing	notice	aviso prévio neste cenário	give notice	They gave notice before moving out.	Duração de aviso depende da regra fornecida; não ensinar prazo legal genérico.
+b1	housing	compromise	acordo com concessões	reach a compromise	We reached a compromise about the cleaning rota.	Compromise não é compromisso/agendamento em português; envolve concessões.
+b1	routine	cut down on	reduzir consumo ou frequência	cut down on + nome/-ing	I want to cut down on screen time.	Cut down on não significa eliminar totalmente.
+b1	routine	put off	adiar tarefa ou ação	put off + nome/-ing	I kept putting off the laundry.	Put off cleaning; não put off to clean neste padrão.
+b1	routine	stick to	manter-se fiel a plano	stick to a routine	I find it hard to stick to my routine.	Stick to não é colar fisicamente neste uso; passado stuck to.
+b1	routine	make time for	reservar tempo para	make time for + atividade/pessoa	I make time for reading.	Não implica tempo extra disponível para todos; exprime escolha no cenário.
+b1	routine	balance	equilibrar demandas	balance A and B	She tries to balance work and study.	Balance não exige quantidades de horas iguais nem garante sucesso.
+b1	routine	manage to	conseguir realizar apesar de dificuldade	manage to + verbo	I managed to finish on time.	Manage to indica realização; try to indica tentativa sem garantir resultado.

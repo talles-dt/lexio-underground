@@ -83,6 +83,12 @@ for seq in lex_sequences:
 for level in ['pre-a1','a1','a2','b1']:
     for name in ['student','teacher','feedback']:
         check((ROOT/'assessments'/level/(name+'.md')).is_file(),'Missing assessment '+level)
+consolidation=read('consolidation.json')
+check(len({u['id'] for u in consolidation})==len(consolidation),'Duplicate consolidation ID')
+check({u['level'] for u in consolidation}=={'pre-a1','a1','a2','b1'},'Consolidation priority levels missing')
+for unit in consolidation:
+    for field in ['student','teacher','review','assessment','feedback']:
+        check((ROOT/unit[field]).is_file(),'Missing consolidation '+unit['id']+' '+field)
 audio_queue=read('audio-queue.json')
 for asset in audio_queue:
     script=ROOT/asset['script_file']
@@ -111,7 +117,7 @@ for file in ROOT.rglob('*.md'):
         if target:
             links+=1
             check((file.parent/target).exists() or (file.parent/target).resolve()==(ROOT/'reports/integrity.json').resolve(),f'Broken link {file.relative_to(ROOT)}: {target}')
-report={'integrity_passed':not errors,'errors':errors,'local_links_checked':links,'prototype_files_unchanged':len(manifest['files']) if not any('Prototype changed' in e for e in errors) else False,'grammar_targets':len(grammar),'lexical_entries':len(lexicon),'foundation_packages':len(foundation),'communicative_units':{k:len(v) for k,v in unit_indexes.items()},'b2_grammar_families_in_units':len(b2_covered),'audio_scripts_prepared':len(audio_queue),'audio_files_produced':sum(bool(a['audio_file']) for a in audio_queue),'lexical_sequences':sequence_counts,'lexical_stages_without_registered_evidence':sum(not r['written'] for r in coverage if r['target_id'].startswith('LX-')),'independent_review':False,'piloted':False,'course_complete':False,'scope':'Structural checks only; no CEFR certification or content sufficiency judgment.'}
+report={'integrity_passed':not errors,'errors':errors,'local_links_checked':links,'prototype_files_unchanged':len(manifest['files']) if not any('Prototype changed' in e for e in errors) else False,'grammar_targets':len(grammar),'lexical_entries':len(lexicon),'foundation_packages':len(foundation),'communicative_units':{k:len(v) for k,v in unit_indexes.items()},'b2_grammar_families_in_units':len(b2_covered),'consolidation_packages':len(consolidation),'audio_scripts_prepared':len(audio_queue),'audio_files_produced':sum(bool(a['audio_file']) for a in audio_queue),'lexical_sequences':sequence_counts,'lexical_stages_without_registered_evidence':sum(not r['written'] for r in coverage if r['target_id'].startswith('LX-')),'independent_review':False,'piloted':False,'course_complete':False,'scope':'Structural checks only; no CEFR certification or content sufficiency judgment.'}
 (ROOT/'reports/integrity.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps(report,ensure_ascii=False,indent=2))
 raise SystemExit(bool(errors))

@@ -49,6 +49,8 @@ for filename, source in [
     ('emotions-expansion.tsv', 'LEXIO-AUTHOR-2026-10-30'),
     ('daily-domains-expansion.tsv', 'LEXIO-AUTHOR-2026-10-30'),
     ('quantity-time-expansion.tsv', 'LEXIO-AUTHOR-2026-11-01'),
+    ('through-b1-daily-expansion.tsv', 'LEXIO-AUTHOR-2026-11-01'),
+    ('through-b1-time-life-expansion.tsv', 'LEXIO-AUTHOR-2026-11-01'),
 ]:
     authored={(r['level'],r['entry'],r['sense_pt']) for r in read_tsv('lexical-scope/'+filename)}
     for item in lexicon:

@@ -420,6 +420,86 @@
     "status": "written_not_reviewed_or_piloted"
   },
   {
+    "level": "pre-a1",
+    "id": "LEX-PRE-23",
+    "title": "Ações e períodos do dia",
+    "after": "FND-06",
+    "lexical_ids": [
+      "LX-PRE-A1-3E56AC",
+      "LX-PRE-A1-6C8161",
+      "LX-PRE-A1-B99260",
+      "LX-PRE-A1-EE72A3",
+      "LX-PRE-A1-C7BA4B",
+      "LX-PRE-A1-D6CFDA"
+    ],
+    "student": "lessons/lexical/LEX-PRE-23/student.md",
+    "teacher": "lessons/lexical/LEX-PRE-23/teacher.md",
+    "review": "lessons/lexical/LEX-PRE-23/review.md",
+    "assessment": "lessons/lexical/LEX-PRE-23/assessment.md",
+    "feedback": "lessons/lexical/LEX-PRE-23/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "pre-a1",
+    "id": "LEX-PRE-24",
+    "title": "Tempo e lugar de um encontro",
+    "after": "FND-06",
+    "lexical_ids": [
+      "LX-PRE-A1-B93096",
+      "LX-PRE-A1-078D43",
+      "LX-PRE-A1-1A9643",
+      "LX-PRE-A1-514F9C",
+      "LX-PRE-A1-6DCCA8",
+      "LX-PRE-A1-F5F909"
+    ],
+    "student": "lessons/lexical/LEX-PRE-24/student.md",
+    "teacher": "lessons/lexical/LEX-PRE-24/teacher.md",
+    "review": "lessons/lexical/LEX-PRE-24/review.md",
+    "assessment": "lessons/lexical/LEX-PRE-24/assessment.md",
+    "feedback": "lessons/lexical/LEX-PRE-24/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "pre-a1",
+    "id": "LEX-PRE-25",
+    "title": "Escolher canal e identificar um contato",
+    "after": "FND-06",
+    "lexical_ids": [
+      "LX-PRE-A1-E0995E",
+      "LX-PRE-A1-C3C591",
+      "LX-PRE-A1-8ADB10",
+      "LX-PRE-A1-0F92A4",
+      "LX-PRE-A1-55F256",
+      "LX-PRE-A1-5A6B06"
+    ],
+    "student": "lessons/lexical/LEX-PRE-25/student.md",
+    "teacher": "lessons/lexical/LEX-PRE-25/teacher.md",
+    "review": "lessons/lexical/LEX-PRE-25/review.md",
+    "assessment": "lessons/lexical/LEX-PRE-25/assessment.md",
+    "feedback": "lessons/lexical/LEX-PRE-25/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "pre-a1",
+    "id": "LEX-PRE-26",
+    "title": "Pessoas, tarefa e status de trabalho",
+    "after": "FND-06",
+    "lexical_ids": [
+      "LX-PRE-A1-9ADC30",
+      "LX-PRE-A1-87F9ED",
+      "LX-PRE-A1-E1A733",
+      "LX-PRE-A1-8E77B9",
+      "LX-PRE-A1-1B2285",
+      "LX-PRE-A1-5B0EC7"
+    ],
+    "student": "lessons/lexical/LEX-PRE-26/student.md",
+    "teacher": "lessons/lexical/LEX-PRE-26/teacher.md",
+    "review": "lessons/lexical/LEX-PRE-26/review.md",
+    "assessment": "lessons/lexical/LEX-PRE-26/assessment.md",
+    "feedback": "lessons/lexical/LEX-PRE-26/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
     "level": "a1",
     "id": "LEX-A1-01",
     "title": "Relações sem presumir uma família",
@@ -754,6 +834,86 @@
     "status": "written_not_reviewed_or_piloted"
   },
   {
+    "level": "a1",
+    "id": "LEX-A1-18",
+    "title": "Pedir esclarecimento e corrigir dados",
+    "after": "A1-08",
+    "lexical_ids": [
+      "LX-A1-0927E8",
+      "LX-A1-D68F6D",
+      "LX-A1-723A7A",
+      "LX-A1-0B476C",
+      "LX-A1-319096",
+      "LX-A1-3363F8"
+    ],
+    "student": "lessons/lexical/LEX-A1-18/student.md",
+    "teacher": "lessons/lexical/LEX-A1-18/teacher.md",
+    "review": "lessons/lexical/LEX-A1-18/review.md",
+    "assessment": "lessons/lexical/LEX-A1-18/assessment.md",
+    "feedback": "lessons/lexical/LEX-A1-18/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "a1",
+    "id": "LEX-A1-19",
+    "title": "Organizar uma aula e pedir ajuda para estudar",
+    "after": "A1-08",
+    "lexical_ids": [
+      "LX-A1-F029D0",
+      "LX-A1-3CFCD8",
+      "LX-A1-4E0622",
+      "LX-A1-255D73",
+      "LX-A1-C4A329",
+      "LX-A1-BEECC8"
+    ],
+    "student": "lessons/lexical/LEX-A1-19/student.md",
+    "teacher": "lessons/lexical/LEX-A1-19/teacher.md",
+    "review": "lessons/lexical/LEX-A1-19/review.md",
+    "assessment": "lessons/lexical/LEX-A1-19/assessment.md",
+    "feedback": "lessons/lexical/LEX-A1-19/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "a1",
+    "id": "LEX-A1-20",
+    "title": "Combinar horas sem trocar o período do dia",
+    "after": "A1-08",
+    "lexical_ids": [
+      "LX-A1-48284D",
+      "LX-A1-F3140F",
+      "LX-A1-184116",
+      "LX-A1-7E87A8",
+      "LX-A1-9681D8",
+      "LX-A1-109B72"
+    ],
+    "student": "lessons/lexical/LEX-A1-20/student.md",
+    "teacher": "lessons/lexical/LEX-A1-20/teacher.md",
+    "review": "lessons/lexical/LEX-A1-20/review.md",
+    "assessment": "lessons/lexical/LEX-A1-20/assessment.md",
+    "feedback": "lessons/lexical/LEX-A1-20/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "a1",
+    "id": "LEX-A1-21",
+    "title": "Conferir datas e ordem",
+    "after": "A1-08",
+    "lexical_ids": [
+      "LX-A1-9F7326",
+      "LX-A1-5A6BFC",
+      "LX-A1-DD3E1A",
+      "LX-A1-89BAE7",
+      "LX-A1-EBB8DF",
+      "LX-A1-C41CBE"
+    ],
+    "student": "lessons/lexical/LEX-A1-21/student.md",
+    "teacher": "lessons/lexical/LEX-A1-21/teacher.md",
+    "review": "lessons/lexical/LEX-A1-21/review.md",
+    "assessment": "lessons/lexical/LEX-A1-21/assessment.md",
+    "feedback": "lessons/lexical/LEX-A1-21/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
     "level": "a2",
     "id": "LEX-A2-01",
     "title": "Reorganizar uma viagem",
@@ -1064,6 +1224,86 @@
     "status": "written_not_reviewed_or_piloted"
   },
   {
+    "level": "a2",
+    "id": "LEX-A2-17",
+    "title": "Relatar problemas na moradia",
+    "after": "A2-05",
+    "lexical_ids": [
+      "LX-A2-B04953",
+      "LX-A2-76DFB0",
+      "LX-A2-5AA7BD",
+      "LX-A2-52A214",
+      "LX-A2-102A40",
+      "LX-A2-755252"
+    ],
+    "student": "lessons/lexical/LEX-A2-17/student.md",
+    "teacher": "lessons/lexical/LEX-A2-17/teacher.md",
+    "review": "lessons/lexical/LEX-A2-17/review.md",
+    "assessment": "lessons/lexical/LEX-A2-17/assessment.md",
+    "feedback": "lessons/lexical/LEX-A2-17/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "a2",
+    "id": "LEX-A2-18",
+    "title": "Descrever caimento e diferenças em uma compra",
+    "after": "A2-05",
+    "lexical_ids": [
+      "LX-A2-BCA598",
+      "LX-A2-E46F5A",
+      "LX-A2-2C8B2B",
+      "LX-A2-5313B3",
+      "LX-A2-6D7614",
+      "LX-A2-79BD26"
+    ],
+    "student": "lessons/lexical/LEX-A2-18/student.md",
+    "teacher": "lessons/lexical/LEX-A2-18/teacher.md",
+    "review": "lessons/lexical/LEX-A2-18/review.md",
+    "assessment": "lessons/lexical/LEX-A2-18/assessment.md",
+    "feedback": "lessons/lexical/LEX-A2-18/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "a2",
+    "id": "LEX-A2-19",
+    "title": "Combinar tarefas domésticas e revezamento",
+    "after": "A2-07",
+    "lexical_ids": [
+      "LX-A2-9E87E9",
+      "LX-A2-402184",
+      "LX-A2-B2ED52",
+      "LX-A2-F70D67",
+      "LX-A2-3615F1",
+      "LX-A2-C9CDF2"
+    ],
+    "student": "lessons/lexical/LEX-A2-19/student.md",
+    "teacher": "lessons/lexical/LEX-A2-19/teacher.md",
+    "review": "lessons/lexical/LEX-A2-19/review.md",
+    "assessment": "lessons/lexical/LEX-A2-19/assessment.md",
+    "feedback": "lessons/lexical/LEX-A2-19/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "a2",
+    "id": "LEX-A2-20",
+    "title": "Escolher recursos e rever o estudo",
+    "after": "A2-07",
+    "lexical_ids": [
+      "LX-A2-EFAFC6",
+      "LX-A2-D1C70A",
+      "LX-A2-F8807B",
+      "LX-A2-234895",
+      "LX-A2-693EBD",
+      "LX-A2-DB1FF4"
+    ],
+    "student": "lessons/lexical/LEX-A2-20/student.md",
+    "teacher": "lessons/lexical/LEX-A2-20/teacher.md",
+    "review": "lessons/lexical/LEX-A2-20/review.md",
+    "assessment": "lessons/lexical/LEX-A2-20/assessment.md",
+    "feedback": "lessons/lexical/LEX-A2-20/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
     "level": "b1",
     "id": "LEX-B1-01",
     "title": "Acompanhar leituras e explicar uma ideia",
@@ -1371,6 +1611,86 @@
     "review": "lessons/lexical/LEX-B1-16/review.md",
     "assessment": "lessons/lexical/LEX-B1-16/assessment.md",
     "feedback": "lessons/lexical/LEX-B1-16/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "b1",
+    "id": "LEX-B1-17",
+    "title": "Explicar preferências e conferir um pedido de comida",
+    "after": "B1-08",
+    "lexical_ids": [
+      "LX-B1-E94A30",
+      "LX-B1-2B84DB",
+      "LX-B1-73D6A8",
+      "LX-B1-356E38",
+      "LX-B1-496D67",
+      "LX-B1-F0B6FD"
+    ],
+    "student": "lessons/lexical/LEX-B1-17/student.md",
+    "teacher": "lessons/lexical/LEX-B1-17/teacher.md",
+    "review": "lessons/lexical/LEX-B1-17/review.md",
+    "assessment": "lessons/lexical/LEX-B1-17/assessment.md",
+    "feedback": "lessons/lexical/LEX-B1-17/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "b1",
+    "id": "LEX-B1-18",
+    "title": "Organizar um relato de saúde sem acrescentar conclusões",
+    "after": "B1-05",
+    "lexical_ids": [
+      "LX-B1-D39373",
+      "LX-B1-24FA89",
+      "LX-B1-30B4F1",
+      "LX-B1-38C6E5",
+      "LX-B1-467788",
+      "LX-B1-392810"
+    ],
+    "student": "lessons/lexical/LEX-B1-18/student.md",
+    "teacher": "lessons/lexical/LEX-B1-18/teacher.md",
+    "review": "lessons/lexical/LEX-B1-18/review.md",
+    "assessment": "lessons/lexical/LEX-B1-18/assessment.md",
+    "feedback": "lessons/lexical/LEX-B1-18/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "b1",
+    "id": "LEX-B1-19",
+    "title": "Negociar responsabilidades em uma casa compartilhada",
+    "after": "B1-07",
+    "lexical_ids": [
+      "LX-B1-6DDFB7",
+      "LX-B1-6305A9",
+      "LX-B1-C00DB6",
+      "LX-B1-87FD04",
+      "LX-B1-73C948",
+      "LX-B1-0743DC"
+    ],
+    "student": "lessons/lexical/LEX-B1-19/student.md",
+    "teacher": "lessons/lexical/LEX-B1-19/teacher.md",
+    "review": "lessons/lexical/LEX-B1-19/review.md",
+    "assessment": "lessons/lexical/LEX-B1-19/assessment.md",
+    "feedback": "lessons/lexical/LEX-B1-19/feedback.md",
+    "status": "written_not_reviewed_or_piloted"
+  },
+  {
+    "level": "b1",
+    "id": "LEX-B1-20",
+    "title": "Reorganizar hábitos com resultado e tentativa separados",
+    "after": "B1-08",
+    "lexical_ids": [
+      "LX-B1-E33EEF",
+      "LX-B1-6558BA",
+      "LX-B1-19400C",
+      "LX-B1-8C0AF1",
+      "LX-B1-B38A57",
+      "LX-B1-BC420A"
+    ],
+    "student": "lessons/lexical/LEX-B1-20/student.md",
+    "teacher": "lessons/lexical/LEX-B1-20/teacher.md",
+    "review": "lessons/lexical/LEX-B1-20/review.md",
+    "assessment": "lessons/lexical/LEX-B1-20/assessment.md",
+    "feedback": "lessons/lexical/LEX-B1-20/feedback.md",
     "status": "written_not_reviewed_or_piloted"
   },
   {

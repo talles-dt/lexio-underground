@@ -111,3 +111,27 @@ seventy|Selecione 17 ou 70 para seventy.|70.|Quantos livros em seventy books?|70
 eighty|Etiqueta 80: selecione eighteen ou eighty.|Eighty.|Eighty chairs corresponde a 18 ou 80?|80.|Caixa 18 e caixa 80; entregue eighty cups.|Caixa 80.
 ninety|Ligue ninety a 19 ou 90.|90.|Escreva a quantidade de ninety books.|90.|Pedido 90 cups; B anota 19. Corrija com ninety.|Ninety cups: 90.
 one hundred|Selecione 10 ou 100 para one hundred.|100.|One hundred pens: qual quantidade?|100.|Cartão 100 chairs: diga o pedido com apoio one hundred.|One hundred chairs, please.
+eat|Escolha eat/drink para bread.|Eat bread: bread é alimento.|Complete comer uma banana: ___ a banana.|Eat a banana.|Cartão apple: peça completar I ___ an apple.|I eat an apple.
+drink|Escolha eat/drink para water.|Drink water.|Complete beber chá: ___ tea.|Drink tea.|Cartão coffee: complete I ___ coffee.|I drink coffee.
+sleep|I sleep: dormir ou beber?|Dormir.|Cartão dormir: escolha sleep/eat.|Sleep.|I sleep at home: indique ação e lugar.|Dormir em casa.
+wash|Complete lavar as mãos: ___ my hands.|Wash my hands.|I wash my hands: lavar ou escrever?|Lavar as mãos.|Cartão mãos + lavar: diga o bloco com wash.|Wash my hands; I wash my hands também vale.
+morning|Morning é manhã ou noite?|Manhã.|Complete pela manhã: in the ___.|Morning.|Aviso tea in the morning: a bebida é oferecida à noite?|Não, pela manhã.
+night|Escolha at/in the para ___ night no exemplo.|At night.|Sleep at night: dormir de manhã ou à noite?|À noite.|Cartão night + sleep: complete I sleep ___.|I sleep at night.
+sunny|Sunny: com sol ou com chuva?|Com sol.|Hoje com sol: complete It is ___.|Sunny.|Cartão tomorrow: sunny. Diga como estará o tempo com apoio Sunny tomorrow.|Sunny tomorrow; não today.
+rainy|Rainy: chuvoso ou ensolarado?|Chuvoso.|Tempo chuvoso: selecione rainy/sunny.|Rainy.|Cartão today: rainy; amanhã: sunny. Qual descreve hoje?|Rainy.
+cloudy|Cloudy implica chuva obrigatoriamente?|Não; significa nublado.|Complete céu nublado: It is ___.|Cloudy.|Aviso cloudy, no rain: diga em português o que sabemos.|Nublado, sem chuva no aviso.
+warm|Escolha warm/hot para a descrição fornecida agradável, não muito quente.|Warm.|It is warm here: o lugar é descrito como gelado?|Não; relativamente quente/agradável.|Pessoa diz warm, not hot. Preserve o contraste em português.|Morno ou quentinho, não muito quente; depende do contexto.
+outside|Cold outside: frio dentro ou fora?|Fora.|Complete do lado de fora: ___.|Outside.|Aviso warm here, cold outside: onde está frio?|Do lado de fora.
+inside|Warm inside: quente dentro ou fora?|Dentro.|Cartão dentro: escolha inside/outside.|Inside.|It is rainy outside. Tea inside. Onde está o chá?|Dentro.
+call|Call Jo pede telefonar ou escrever obrigatoriamente?|Telefonar.|Complete ligue para Kim: ___ Kim, please.|Call.|Cartão Call Ana, not Lee. Para quem ligar?|Ana.
+text|Text Jo pede mensagem escrita ou chamada obrigatoriamente?|Mensagem escrita.|Complete mande mensagem para Lee: ___ Lee.|Text.|Cartão text Kim; resposta diz call Kim. Isso preserva o canal?|Não; text pede mensagem escrita.
+number|Phone number é nome ou número de telefone?|Número de telefone.|Complete número de telefone: phone ___.|Number.|Cartão Name: Jo; phone number: 0506. Qual é o número?|0506, preservando zero inicial.
+email|Email address indica endereço postal ou eletrônico?|Eletrônico.|Cartão email: lee@example.com. Copie sem mudar letras.|lee@example.com.|Dois cartões phone: 0506; email: kim@example.com. Qual campo é eletrônico?|kim@example.com.
+photo|Photo of Jo: fotografia de Jo ou telefone?|Fotografia de Jo.|Complete uma foto: a ___.|Photo.|Cartão photo of Lee; nome da pessoa retratada?|Lee.
+click|Click Open pede clicar em qual botão: Open ou Close?|Open.|Cartão botão Help; complete ___ Help.|Click.|Desenho contém Send e Open. Instrução Click Open. Aponte o controle correto.|Open; não Send.
+worker|Worker informa função profissional específica?|Não; pessoa que trabalha.|Complete trabalhador: a ___.|Worker.|Jo is a worker here. Sabemos que Jo é professor?|Não; a função não foi especificada.
+manager|The manager: pessoa que coordena ou cliente obrigatoriamente?|Pessoa que coordena.|Cartão Manager: Kim. Quem coordena?|Kim.|Worker: Jo; Manager: Lee. Quem procurar se instrução diz manager?|Lee.
+customer|Customer é cliente ou gerente?|Cliente.|Complete cliente: a ___.|Customer.|Cartão Ana customer, Jo worker. Quem é cliente?|Ana.
+task|Task é tarefa ou dia da semana?|Tarefa.|Complete minha tarefa: my ___.|Task.|Cartão Task: read names. Apoio read names = ler nomes. Qual tarefa?|Ler os nomes.
+ready|I am ready antes de começar: já terminou necessariamente?|Não; está pronto para começar.|Complete Estou pronto: I am ___.|Ready.|Pessoa diz not ready. Começar imediatamente foi confirmado?|Não.
+finished|I am finished após tarefa: terminou ou vai começar?|Terminou.|Complete Terminei: I am ___.|Finished.|Cartão Task: write name. Nome escrito; pessoa diz I am finished. Qual status?|Tarefa de escrever nome concluída; não inferir outras tarefas.

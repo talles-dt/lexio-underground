@@ -164,3 +164,73 @@ GROUPS += [{'id': 'LEX-PRE-20',
   'pitfall': 'A expansão cobre dezenas exatas, não todo sistema de numeração. Não aplicar números a '
              'dosagens, transações reais ou dados pessoais. Avaliação usa as novas quantidades de cada '
              'entrada.'}]
+
+GROUPS += [{'id': 'LEX-PRE-23',
+  'title': 'Ações e períodos do dia',
+  'after': 'FND-06',
+  'words': ['eat', 'drink', 'sleep', 'wash', 'morning', 'night'],
+  'situation': 'Use cartões com apoio: eat bread = comer pão; drink water = beber água; wash my hands = '
+               'lavar minhas mãos; sleep = dormir; morning = manhã; night = noite. A tem Morning: eat bread, '
+               'drink water, wash my hands; Night: sleep. B recebe uma tabela vazia Morning/Night e registra '
+               'as ações que A aponta e diz. B confirma cada ação com o bloco fornecido. Troquem: Morning: '
+               'wash my hands, drink tea; Night: eat rice, sleep. No percurso autônomo, cubra o cartão, '
+               'grave ou escreva os blocos e depois confira a tabela; isso é ensaio.',
+  'result': 'Primeiro cartão: manhã — comer pão, beber água, lavar as mãos; noite — dormir. Segundo: manhã — '
+            'lavar mãos, beber chá; noite — comer arroz, dormir. Exemplo apoiado: In the morning: eat bread, '
+            'drink water, wash my hands. At night: sleep. Aceitar apontar e dizer blocos; não exigir '
+            'narrativa conjugada no pré-A1.',
+  'phon': 'Contraste eat e it apenas como apoio de escuta; o critério é recuperar eat/drink e morning/night '
+          'no cartão. Não pontuar sotaque.',
+  'pitfall': 'Não traduzir beber por eat nem impor que todos durmam à noite. O calendário é fictício e pode '
+             'representar trabalho em turnos.'},
+ {'id': 'LEX-PRE-24',
+  'title': 'Tempo e lugar de um encontro',
+  'after': 'FND-06',
+  'words': ['sunny', 'rainy', 'cloudy', 'warm', 'outside', 'inside'],
+  'situation': 'Cartão A: Today: rainy outside; tea inside; warm inside. Cartão B: Tomorrow: cloudy in the '
+               'morning; sunny later; meeting outside. Apoio: later = depois; meeting = encontro. A informa '
+               'o próprio cartão com blocos; B registra tempo e lugar. B depois informa seu cartão a A. Diga '
+               'I don’t understand se faltar compreensão; confirme apontando os termos. Autônomo: faça duas '
+               'notas separadas hoje/amanhã, confira os cartões e marque quais blocos precisaram de '
+               'tradução.',
+  'result': 'Hoje: chuvoso fora, chá dentro, ambiente interno descrito como warm. Amanhã: nublado de manhã, '
+            'ensolarado depois, encontro fora. Cloudy não autoriza acrescentar chuva amanhã. Modelo: Rainy '
+            'outside. Tea inside. Warm inside. Tomorrow: cloudy, then sunny; meeting outside.',
+  'phon': 'Trabalhe o contraste INside/OUTside com indicação de dois lugares em desenho; confirme se o '
+          'ouvinte localiza o evento.',
+  'pitfall': 'Cold/hot/warm são descrições relativas; não converter em graus não fornecidos. Não interpretar '
+             'sunny como garantia para planejar viagem real.'}]
+
+GROUPS += [{'id': 'LEX-PRE-25',
+  'title': 'Escolher canal e identificar um contato',
+  'after': 'FND-06',
+  'words': ['call', 'text', 'number', 'email', 'photo', 'click'],
+  'situation': 'Use cartões fictícios, sem enviar mensagens reais: Jo, phone number 0506, email '
+               'jo@example.com, photo of Jo. A lê instruções Call Jo; Text Jo; Click Open. B aponta '
+               'telefone, campo de mensagem escrita e botão Open em um desenho. A pergunta number? e email?; '
+               'B aponta/copia os dados. Troque para Kim, number 0804, kim@example.com, photo of Kim. '
+               'Autônomo: desenhe a ficha, marque o controle pedido e confira com o cartão. Apoio: phone = '
+               'telefone; Open = abrir.',
+  'result': 'Jo: número 0506, e-mail jo@example.com, foto de Jo; call usa telefone, text mensagem escrita, '
+            'click Open o botão Open. Kim: 0804, kim@example.com, foto de Kim. Preservar zeros iniciais. Não '
+            'há envio nem cadastro real.',
+  'phon': 'Diga dígitos um a um e confira a transcrição; pedir repetição é permitido. Não avaliar domínio '
+          'oral de e-mail apenas pela cópia escrita.',
+  'pitfall': 'Text como verbo não é qualquer tipo de comunicação. Evitar pedir dados reais e não usar links '
+             'ou botões externos na simulação.'},
+ {'id': 'LEX-PRE-26',
+  'title': 'Pessoas, tarefa e status de trabalho',
+  'after': 'FND-06',
+  'words': ['worker', 'manager', 'customer', 'task', 'ready', 'finished'],
+  'situation': 'Cartão de uma recepção: Manager Lee; Worker Jo; Customer Ana. Task for Jo: write Ana. Apoio: '
+               'for = para. A pergunta Manager? Worker? Customer? e B aponta/diz nomes. Antes de escrever, '
+               'Jo diz I am ready; depois de escrever Ana, diz I am finished. Troquem papéis com Manager '
+               'Kim, Worker Rui, Customer Eva; task read Eva. Autônomo: registre nomes e dois status em '
+               'ordem, sem afirmar execução se apenas leu o roteiro.',
+  'result': 'Primeiro: Lee coordena, Jo trabalha, Ana é cliente; tarefa escrever Ana. Ready antes de '
+            'iniciar; finished após concluir a tarefa observada. Segundo: Kim coordena, Rui trabalha, Eva é '
+            'cliente; tarefa ler Eva. Saber o cargo não informa outras qualificações.',
+  'phon': 'Contraste READY e FINished em dois momentos com cartões visuais; o destinatário precisa '
+          'identificar se a tarefa ainda vai começar ou terminou.',
+  'pitfall': 'Não confundir ready com tarefa concluída. Personagens e papéis são fictícios, sem inferência '
+             'sobre profissão do aluno.'}]

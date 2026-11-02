@@ -72,8 +72,8 @@
     "date": "2026-10-31"
   },
   "audio/README.md": {
-    "status": "reviewed_by_project_owner",
-    "date": "2026-10-31"
+    "status": "authored_after_review",
+    "date": null
   },
   "inventory/SCOPE-DECISIONS.md": {
     "status": "authored_after_review",
@@ -1051,6 +1051,86 @@
     "status": "reviewed_by_project_owner",
     "date": "2026-10-31"
   },
+  "lessons/consolidation/A1-C01/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/consolidation/A1-C01/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/consolidation/A1-C01/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/consolidation/A1-C01/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/consolidation/A1-C01/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/consolidation/A2-C01/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/consolidation/A2-C01/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/consolidation/A2-C01/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/consolidation/A2-C01/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/consolidation/A2-C01/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/consolidation/B1-C01/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/consolidation/B1-C01/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/consolidation/B1-C01/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/consolidation/B1-C01/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/consolidation/B1-C01/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/consolidation/PRE-C01/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/consolidation/PRE-C01/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/consolidation/PRE-C01/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/consolidation/PRE-C01/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/consolidation/PRE-C01/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
   "lessons/foundation/FND-01/feedback.md": {
     "status": "reviewed_by_project_owner",
     "date": "2026-10-31"
@@ -1463,6 +1543,86 @@
     "status": "authored_after_review",
     "date": null
   },
+  "lessons/lexical/LEX-A1-18/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A1-18/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A1-18/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A1-18/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A1-18/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A1-19/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A1-19/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A1-19/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A1-19/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A1-19/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A1-20/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A1-20/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A1-20/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A1-20/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A1-20/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A1-21/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A1-21/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A1-21/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A1-21/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A1-21/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
   "lessons/lexical/LEX-A2-01/assessment.md": {
     "status": "reviewed_by_project_owner",
     "date": "2026-10-31"
@@ -1783,6 +1943,86 @@
     "status": "authored_after_review",
     "date": null
   },
+  "lessons/lexical/LEX-A2-17/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A2-17/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A2-17/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A2-17/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A2-17/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A2-18/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A2-18/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A2-18/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A2-18/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A2-18/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A2-19/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A2-19/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A2-19/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A2-19/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A2-19/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A2-20/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A2-20/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A2-20/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A2-20/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-A2-20/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
   "lessons/lexical/LEX-B1-01/assessment.md": {
     "status": "reviewed_by_project_owner",
     "date": "2026-10-31"
@@ -2100,6 +2340,86 @@
     "date": null
   },
   "lessons/lexical/LEX-B1-16/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B1-17/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B1-17/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B1-17/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B1-17/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B1-17/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B1-18/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B1-18/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B1-18/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B1-18/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B1-18/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B1-19/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B1-19/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B1-19/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B1-19/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B1-19/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B1-20/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B1-20/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B1-20/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B1-20/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-B1-20/teacher.md": {
     "status": "authored_after_review",
     "date": null
   },
@@ -3143,6 +3463,86 @@
     "status": "authored_after_review",
     "date": null
   },
+  "lessons/lexical/LEX-PRE-23/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-23/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-23/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-23/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-23/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-24/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-24/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-24/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-24/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-24/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-25/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-25/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-25/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-25/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-25/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-26/assessment.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-26/feedback.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-26/review.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-26/student.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "lessons/lexical/LEX-PRE-26/teacher.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
   "reports/B2-GRAMMAR-CLOSURE.md": {
     "status": "reviewed_by_project_owner",
     "date": "2026-10-31"
@@ -3208,6 +3608,10 @@
     "date": null
   },
   "reports/LEXICAL-SCOPE-MATRIX.md": {
+    "status": "authored_after_review",
+    "date": null
+  },
+  "reports/PRIORITY-THROUGH-B1.md": {
     "status": "authored_after_review",
     "date": null
   },

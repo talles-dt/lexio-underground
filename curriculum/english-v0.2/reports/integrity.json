@@ -1,10 +1,10 @@
 {
   "integrity_passed": true,
   "errors": [],
-  "local_links_checked": 3362,
+  "local_links_checked": 3729,
   "prototype_files_unchanged": 72,
   "grammar_targets": 132,
-  "lexical_entries": 530,
+  "lexical_entries": 626,
   "foundation_packages": 6,
   "communicative_units": {
     "a1": 8,
@@ -13,24 +13,25 @@
     "b2": 8
   },
   "b2_grammar_families_in_units": 24,
-  "audio_scripts_prepared": 41,
+  "consolidation_packages": 4,
+  "audio_scripts_prepared": 45,
   "audio_files_produced": 0,
   "lexical_sequences": {
     "pre-a1": {
-      "sequences": 22,
-      "targets": 112
+      "sequences": 26,
+      "targets": 136
     },
     "a1": {
-      "sequences": 17,
-      "targets": 96
+      "sequences": 21,
+      "targets": 120
     },
     "a2": {
-      "sequences": 16,
-      "targets": 86
+      "sequences": 20,
+      "targets": 110
     },
     "b1": {
-      "sequences": 16,
-      "targets": 86
+      "sequences": 20,
+      "targets": 110
     },
     "b2": {
       "sequences": 18,
